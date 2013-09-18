@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BDE004F6073" version="9.0">
+<noteinfo noteid="1c2" sequence="1" unid="5BD5E64DD3244D9080257BE10048C60E">
+<created><datetime dst="true">20130909T141452,94+01</datetime></created>
+<modified><datetime dst="true">20130909T141453,04+01</datetime></modified>
+<revised><datetime dst="true">20130909T141453,03+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130909T141453,04+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130909T141453,04+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$TITLE"><text>validationEngine.jquery.css</text></item>
+<item name="$Flags"><text>34C=Q</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+
+<item name="$FileModDT" sign="true"><datetime dst="true">20120830T145714,00+01</datetime></item>
+
+<item name="$FileNames" sign="true"><text>validationEngine.jquery.css</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>

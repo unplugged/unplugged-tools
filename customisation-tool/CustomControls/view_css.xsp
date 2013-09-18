@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="CSS"></xp:dominoView>
+	</xp:this.data>
+	<div class="row-fluid" style="padding-top: 10px;">
+		<div class="well">
+			<h1>My Custom UIs</h1>
+		</div>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Description</th>
+					<th>Date Created</th>
+				</tr>
+			</thead>
+			<tbody>
+				<xp:repeat id="cssdocs" value="#{view1}" var="cssdoc"
+					indexVar="cssindex" rows="999" disableOutputTag="true">
+					<xp:panel tagName="tr" id="tr">
+						<xp:this.attrs>
+							<xp:attr name="onclick">
+								<xp:this.value><![CDATA[#{javascript:var url = "customise.xsp?action=editDocument&documentId=" + cssdoc.getColumnValue("UNID");
+return "window.location.href='" + url + "'";}]]></xp:this.value>
+							</xp:attr>
+						</xp:this.attrs>
+						<xp:text id="description" tagName="td"
+							value="#{cssdoc.Description}">
+						</xp:text>
+						<xp:text id="datecreated" tagName="td"
+							value="#{cssdoc.$2}">
+							<xp:this.converter>
+								<xp:convertDateTime type="date"></xp:convertDateTime>
+							</xp:this.converter>
+						</xp:text>
+					</xp:panel>
+				</xp:repeat>
+			</tbody>
+		</table>
+	</div>
+</xp:view>
