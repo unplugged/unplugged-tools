@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='80257BE90037B6D2'>
+<noteinfo noteid='3c6' unid='4A0ABBE04D6FC0F780257BE9003BAEB0' sequence='6'>
+<created><datetime dst='true'>20130917T115153,44+01</datetime></created>
+<modified><datetime dst='true'>20130917T131055,98+01</datetime></modified>
+<revised><datetime dst='true'>20130917T131055,97+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20130917T131055,98+01</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130917T115153,44+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>CSS By Owner|cssbyowner</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+WgAFACYAIQAEAAUAAwAJAAQAT3duZXJ1cmwkQ29uZmxpY3QkUkVGAAQABAAAACIABQAEAEZvcm0B
+AAkAQ3VzdG9tQ1NTAAoCBAAEAAMABwAMAAUACTNTNFMA
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+HAACAABEiGYHAAAFAABmAAUAAwBPd25lcnVybA==
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQACAAMACAAAAFZDAwAFAAUAAAAAAJcAAQAACgABAAAAAAAAAAICAAAAVkMBAAMAAwAAAAAA7QEB
+AAAKAAAAAAAAAAAAAgIAAABPd25lck93bmVydXJsVVJMJgABAAAAAQEACQEAAAoBAQ4KAAABAK0r
+AQABAAEAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAD//wAAAAAAAAAAAAAA
+AAAAV0MBAQAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAEIAAAAAAAEA
+////AAUA////AAEAAAAAAAAAAAAAAAAAAQD///8AAQD///8AAAABAAAAAAABAAAAAAABAAAAAAAA
+AAgAAAAAAAEA
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$Flags'><text>PY</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$SelQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAAif8VAAAAAAABAAkAQ3VzdG9tQ1NTAA==
+</rawitemdata></item></note>
+

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='80257BE90037B6D2'>
+<noteinfo noteid='16a' unid='E0D490C28053F0E180257BE900384DDA' sequence='1'>
+<created><datetime dst='true'>20130917T111459,46+01</datetime></created>
+<modified><datetime dst='true'>20130917T111459,47+01</datetime></modified>
+<revised><datetime dst='true'>20130917T111459,46+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20130917T112458,68+01</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130917T111459,47+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>All Documents</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+VAACAAwAAgAkMWkAAwACAA4AAgAkMpAAVgEDAAUAIgAdAAQABAACAAIACQBGb3JtJDEkMiRDb25m
+bGljdAAEAAQAAAAIAGYAAwAHAAoABAAJTDFT
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+GgACAABECGYHAAAEAIBmAAQAAgBGb3JtJDE=
+</rawitemdata></item>
+<item name='$Collation1' summary='true'>
+<rawitemdata type='2'>
+DwABAABEgGYAAAACACQy
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQADAAAACgAAAFZDAwAEAAQAAAAAAFAAAQAACgABAAAAAAAAAAICAAAAVkMBAAIADAAOAAAAwgAB
+AAAKAAAAAAAAAAAAAgIAAABWQwABAgAEABwAAABQAAEAAAoAAAAAAAAAAAACAgAAAEZvcm1Gb3Jt
+JDFEYXRlIENyZWF0ZWQOAAIADAACACQxaQADACQyVU5JRBwAAgAOAAIAJDKQAFYBAwAHAAwABQAJ
+MFMwRQAmAAEAAAABAQAJAQAACgEBAAoAAAEArSsBAAEAAQAAAAAAAAAAAFdDAQEACQAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAE
+AAAAAAD//wAAAAAAAAAAAAAAAAAAV0MBAQAJAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA//8AAAAA
+AAAAAAAAAAAAAEIAAAAAAAEA////AAUA////AAEAAAAAAAAAAAAAAAAAAQD///8AAQD///8AAAAB
+AAAAAAABAAAAAAABAAAAAAAAAAgAAAAAAAEA
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$Flags'><text>Y</text></item></note>
+
