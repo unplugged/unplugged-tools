@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BDE004F6073" version="9.0">
+<noteinfo noteid="217e" sequence="8" unid="F2429CC092A4392680257BF20026A695">
+<created><datetime dst="true">20130926T080210,13+01</datetime></created>
+<modified><datetime dst="true">20130926T082711,93+01</datetime></modified>
+<revised><datetime dst="true">20130926T082711,92+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130926T082711,93+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130926T080210,17+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20130704T125236,00+01</datetime></item>
+<item name="$TITLE" sign="true"><text>tinycolor-0.9.15.js</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+
+<item name="$FileNames" sign="true"><text>tinycolor-0.9.15.js</text></item></note>

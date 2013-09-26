@@ -1,0 +1,597 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+%REM
+	Library DatabaseCSSutils
+	Created Sep 19, 2013 by Julian Woodward/Axiot
+	Description: Comments for Library
+%END REM
+Option Public
+Option Declare
+
+
+
+Use "OpenLogFunctions"
+
+'++LotusScript Development Environment:2:5:(Forward):0:1
+Declare Sub Initialize
+Declare Function CreateFileResourceDXL(sFilePath As String, sResourceName As String) As NotesStream
+Declare Function CreateFileResourceDXLSameName(sFileDirectory As String, sFileName As String) As NotesStream
+Declare Function CreateDatabaseCopyForUser(sSourcePath As String, sTargetDirectory As String, sUserName As String) As String
+Declare Function CreateDatabaseCopiesForUser(asDatabases As Variant, sRootDirectory As String, sUserName As String) As Variant
+Declare Sub TEST_ImportFileResource
+Declare Sub TEST_DatabaseCopyCreation
+Declare Function ImportFileResourceIntoDatabasesUsingDXL(asDatabases As Variant, sFileDirectory As String, sFileName As String) As Variant
+Declare Function ImportFileResource(db As NotesDatabase, dxl As NotesStream) As Boolean
+Declare Function CreateStylesheetResourceDXL(sFilePath As String, sResourceName As String) As NotesStream
+Declare Function CreateStylesheetResourceDXLSameName(sFileDirectory As String, sFileName As String) As NotesStream
+Declare Sub CreateMIMEEntity(session As NotesSession, filePath As String, tempDoc As NotesDocument, entity As NotesMIMEEntity, fileSize As Long)
+Declare Sub CreateDXLFile(session As NotesSession, filePath As String, entity As NotesMIMEEntity, fileSize As Long)
+Declare Sub ImportDXLFile(session As NotesSession, filePath As String, db As NotesDatabase)
+
+'++LotusScript Development Environment:2:5:(Declarations):0:2
+
+'++LotusScript Development Environment:2:2:Initialize:1:10
+Sub Initialize
+	
+End Sub
+
+
+'++LotusScript Development Environment:2:1:CreateFileResourceDXL:12:8
+
+
+%REM
+	Function CreateFileResourceDXL
+	Description: Create the DXL for importing a file resource into Notes. The file contents
+	are read and Base64-encoded, and appropriate DXL header/footer sections are added.
+	sFilePath = full path to file including filename
+	sResourceName = the resource name to create in Notes
+	NB: This hard-codes the Domino 8.5.3 DTD. Will need updating for Domino 9.
+%END REM
+
+Function CreateFileResourceDXL(sFilePath As String, sResourceName As String) As NotesStream
+	Dim sess As New NotesSession
+	Dim dxl As NotesStream
+	Dim filestream As NotesStream
+	Dim dxlheader As String
+	Dim dxlfooter As String
+	Dim fileText As String
+	Dim encodedText As String
+	
+	On Error GoTo ErrHandler
+	
+	' Create a stream
+	Set dxl = sess.CreateStream()
+	
+	' Add header stuff
+	dxlheader = _
+|<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE fileresource SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+	<fileresource name='{RESOURCENAME}' xmlns='http://www.lotus.com/dxl' 
+	publicaccess='false' mimetype='text/css' charset='UTF-8'>
+	<filedata>|
+	dxlheader = Replace(dxlheader, "{RESOURCENAME}", sResourceName)
+
+	dxl.WriteText(dxlheader)
+	
+	' Open the file resource and read it in
+	Set filestream = sess.CreateStream()
+	If Not filestream.Open(sFilePath, "ASCII") Then
+		Call LogErrorEx("Unable to open file " & sFilePath, SEVERITY_HIGH, Nothing)
+		Exit Function
+	End If
+	If filestream.Bytes = 0 Then
+		Call LogErrorEx("No content found in file " & sFilePath, SEVERITY_HIGH, Nothing)
+		Exit Function
+	End If
+	fileText = filestream.ReadText()
+	Call filestream.Close()
+	
+	' Now Base64-encode the file contents
+	Dim stream As NotesStream
+	Set stream = sess.CreateStream	
+	Dim body As NotesMIMEEntity
+	Dim doc As NotesDocument
+
+	sess.ConvertMIME = False
+
+	Call stream.WriteText(filetext)
+	Set doc = sess.CurrentDatabase.CreateDocument
+	Set body = doc.CreateMIMEEntity
+	Call body.SetContentFromText(stream, "", ENC_NONE)
+	Call body.EncodeContent(ENC_BASE64)
+
+	encodedText = body.ContentAsText
+	
+	' Add the base64-encoded contents to the output stream
+	dxl.WriteText(encodedText)
+	
+	' Add the footer
+	dxlfooter = _
+|</filedata>
+</fileresource>|
+	dxl.WriteText(dxlfooter)
+
+	Set CreateFileResourceDXL = dxl
+	GoTo Done
+		
+ErrHandler:
+	Call LogError()
+	Resume Done
+	
+Done:
+	Exit Function
+
+End Function
+
+
+
+'++LotusScript Development Environment:2:1:CreateFileResourceDXLSameName:8:8
+
+
+
+%REM
+	Function CreateFileResourceDXLSameName
+	Description: Comments for Function
+%END REM
+Function CreateFileResourceDXLSameName(sFileDirectory As String, sFileName As String) As NotesStream
+	Set CreateFileResourceDXLSameName = CreateFileResourceDXL(sFileDirectory & "\" & sFileName, sFileName)
+End Function
+
+
+'++LotusScript Development Environment:2:1:CreateDatabaseCopyForUser:9:8
+%REM
+	Function CreateDatabaseCopyForUser
+	Description: Given the path to a database, create a copy of that database in
+	the given target directory and add a name to the ACL with Manager access.
+	sSourcePath = full path to source database
+	sTargetDirectory = directory into which copy should be put
+	sUserName = name of user to add to the ACL
+%END REM
+Function CreateDatabaseCopyForUser(sSourcePath As String, sTargetDirectory As String, sUserName As String) As String
+	Dim sess As New NotesSession
+	Dim db As NotesDatabase
+	Dim dbSource As NotesDatabase
+	Dim dbTarget As NotesDatabase
+	Dim dc As NotesDocumentCollection
+	Dim doc As NotesDocument
+
+	On Error GoTo ErrHandler
+	
+	' Open the source database
+	Set db = sess.CurrentDatabase
+	Set dbSource = New NotesDatabase(db.Server, sSourcePath)
+	If Not dbSource.IsOpen Then
+		Call LogErrorEx("Unable to open database: " & sSourcePath, SEVERITY_HIGH, Nothing)
+	Else
+		Set dbTarget = dbSource.CreateCopy(db.Server, sTargetDirectory & "\" & dbSource.FileName)
+		
+		' Now copy all the documents into the new database
+		Set dc = dbSource.AllDocuments
+		Set doc = dc.GetFirstDocument()
+		Do While Not (doc Is Nothing)
+			Call doc.CopyToDatabase(dbTarget)
+			Set doc = dc.GetNextDocument(doc)
+		Loop
+		
+		' And add the user to the ACL with manager access
+		Dim acl As NotesACL
+		Dim acle As NotesACLEntry
+		Set acl = dbTarget.Acl
+		Set acle = acl.GetEntry(sUserName)
+		If acle Is Nothing Then
+			' Add the user as Manager
+			Set acle = acl.CreateACLEntry(sUserName, ACLLEVEL_MANAGER)
+		Else
+			' User was already there - make sure they're Manager
+			acle.Level = ACLLEVEL_MANAGER
+		End If
+		Call acl.Save()
+		
+		' At this point we'll call it a success
+		CreateDatabaseCopyForUser = dbTarget.FilePath
+	End If
+	
+	GoTo Done
+	
+ErrHandler:
+	Call LogError()
+	Resume Done
+	
+Done:
+	Exit Function
+End Function
+
+
+'++LotusScript Development Environment:2:1:CreateDatabaseCopiesForUser:11:8
+%REM
+	Function CreateDatabaseCopiesForUser
+	Description: Given an array of database paths, create a full copy of them all in a unique
+	subdirectory and give the specified user Manager access to them all.
+	asDatabases = an array of full paths to the source databases
+	sRootDirectory = the directory within which the unique subdirectory should be placed (empty string for top)
+	sUserName = the user to add to the ACL of the new databases
+	Returns: an array of databases successfully created. The calling code can check the size of that
+	array to confirm that all were created properly.
+%END REM
+Function CreateDatabaseCopiesForUser(asDatabases As Variant, sRootDirectory As String, sUserName As String) As Variant
+	Dim sess As New NotesSession
+	Dim asRet As Variant
+	Dim docTmp As NotesDocument
+	Dim i As integer
+	Dim v As Variant
+	Dim s As String
+	Dim sDirectory As String
+	Dim iDone As Integer
+
+	iDone = 0
+	
+	ReDim asRet(0) As String
+	
+	On Error GoTo ErrHandler
+		
+	' Generate a unique subdirectory name
+	Set docTmp = sess.CurrentDatabase.CreateDocument
+	v = Evaluate(|@Unique|, docTmp)
+	sDirectory = sRootDirectory & "\" & v(0)
+	
+	For i = 0 To UBound(asDatabases)
+		s = CreateDatabaseCopyForUser(asDatabases(0), sDirectory, sUserName)
+		If s<>"" Then
+			If iDone > 0 Then
+				ReDim Preserve asRet(iDone)
+			End If
+			asRet(iDone) = s
+			iDone = iDone + 1
+		End If
+	Next
+	
+	GoTo Done
+	
+ErrHandler:
+	Call LogError()
+	Resume Done
+
+Done:
+	CreateDatabaseCopiesForUser = asRet
+	
+End Function
+
+
+'++LotusScript Development Environment:2:2:TEST_ImportFileResource:5:8
+%REM
+	Sub TEST_ImportFileResource
+	Description: Comments for Sub
+%END REM
+Sub TEST_ImportFileResource
+	Dim sess As New NotesSession
+	Dim db As NotesDatabase
+	
+	Set db = sess.CurrentDatabase
+	
+	Dim asDatabases(0) As String
+	asDatabases(0) = db.FilePath
+	
+	Dim cssDirectory As String
+	Dim cssFile As String
+	cssDirectory = 	"C:\Users\Julian Woodward\Desktop"
+	cssFile = "MattCSSFile.css"
+	
+	Dim asDone As Variant
+	asDone = ImportFileResourceIntoDatabasesUsingDXL(asDatabases, cssDirectory, cssFile)
+
+	' Can use individual function thus, but you'll want the ImportFileResourceIntoDatabasesUsingDXL function.
+	'	Dim dxl As NotesStream
+	'	Set dxl = CreateFileResourceDXL("C:\Users\Julian Woodward\Desktop\MattCSSFile.css", "MattSpecialSauce.css")
+	'	Call ImportFileResource(db, dxl)
+	
+End Sub
+
+
+
+'++LotusScript Development Environment:2:2:TEST_DatabaseCopyCreation:5:8
+%REM
+	Sub TEST_DatabaseCopyCreation
+	Description: Comments for Sub
+%END REM
+Sub TEST_DatabaseCopyCreation
+	Dim asDatabases(0) As String
+	asDatabases(0) = "DEV\Sandbox.nsf"
+	
+	Dim vRet As Variant
+	vRet = CreateDatabaseCopiesForUser(asDatabases, "TESTING123", "CN=Fred Bloggs/O=MegaCorpInc")
+	
+	
+End Sub
+
+'++LotusScript Development Environment:2:1:ImportFileResourceIntoDatabasesUsingDXL:11:8
+%REM
+	Function ImportFileResourceIntoDatabasesUsingDXL
+	Description: Import a file resource into one or more Notes databases
+	asDatabases - a string array with the full filepaths of the databases
+	sFileDirectory - the directory in which the file is sitting
+	sFileName - the filename to import
+	Returns: a string array will the entries from asDatabases where the file resource
+	was successfully created. The calling code can check the number of elements in here
+	to make sure that everything worked.
+%END REM
+Function ImportFileResourceIntoDatabasesUsingDXL(asDatabases As Variant, sFileDirectory As String, sFileName As String) As Variant
+	On Error GoTo err_import
+	Dim sess As New NotesSession
+	Dim asRet As Variant
+	Dim iDone As Integer
+	Dim db As NotesDatabase
+	Dim i
+	
+	iDone = 0
+	ReDim asRet(0) As String
+	
+	' Create the necessary DXL
+	Dim dxl As NotesStream
+	'Set dxl = CreateFileResourceDXLSameName(sFileDirectory, sFileName)
+	'Set dxl = CreateStylesheetResourceDXLSameName(sFileDirectory, sFileName)
+	
+	For i = 0 To UBound(asDatabases)
+		' Open the database
+		Set db = New NotesDatabase(sess.CurrentDatabase.Server, asDatabases(i))
+		If Not db.IsOpen Then
+			' Log an error
+			Call LogErrorEx("Unable to open database " & asDatabases(i), SEVERITY_MEDIUM, Nothing)
+		Else
+			' Import the file resource into that database
+			'If ImportFileResource(db, dxl) Then
+				' Remember that we've successfully processed it
+			'	If iDone > 0 Then
+			'		ReDim Preserve asRet(iDone)
+			'	End If
+			'	asRet(iDone) = asDatabases(i)
+			'	iDone = iDone + 1
+			'End If
+			Dim tempDoc As NotesDocument
+			Dim entity As NotesMIMEEntity
+			Dim fileSize As Long 
+			Dim dbCurrent As NotesDatabase
+			Set dbCurrent = sess.Currentdatabase
+			Set tempDoc = dbCurrent.CreateDocument 
+			Call logEvent("sFileDirectory = " + sFileDirectory, SEVERITY_LOW, Nothing)
+			Call logEvent("sFileName = " + sFileName, SEVERITY_LOW, Nothing)
+			Call CreateMIMEEntity(sess, sFileDirectory & "\" & sfileName, tempDoc, entity, fileSize)
+			Call CreateDXLFile(sess, sFileDirectory & "\" & sfileName, entity, fileSize)
+			Call ImportDXLFile(sess, sFileDirectory & "\" & sfileName, db)
+			'Kill sFileDirectory & "\" & sfileName
+			'Kill sFileDirectory & "\"  & StrLeftBack(sfileName, ".") & ".dxl"
+			' Remember that we've successfully processed it
+			If iDone > 0 Then
+				ReDim Preserve asRet(iDone)
+			End If
+			asRet(iDone) = asDatabases(i)
+			iDone = iDone + 1
+		End If
+	Next
+	
+	' Delete the original file from the disk
+	On Error GoTo DeleteError
+	'Kill sFileDirectory & "\" & sFileName
+	GoTo DeletionDone
+DeleteError:
+	Call LogError()
+	Resume DeletionDone
+DeletionDone:
+	
+	ImportFileResourceIntoDatabasesUsingDXL = asRet
+	
+	Exit function
+err_import:
+	Call logError()
+	Exit function
+End Function
+
+
+'++LotusScript Development Environment:2:1:ImportFileResource:8:8
+%REM
+	Function ImportFileResource
+	Description: Import a file resource into Notes using the DXL provided.
+	If the resource already exists it will be overwritten.
+	db = the Notes database
+	dxl = the DXL as a stream
+%END REM
+Function ImportFileResource(db As NotesDatabase, dxl As NotesStream) As Boolean
+	On Error GoTo ErrHandler
+	Dim sess As New NotesSession
+	Dim importer As NotesDXLImporter
+	Set importer = sess.CreateDXLImporter(dxl, db)
+	importer.ReplicaRequiredForReplaceOrUpdate = False
+	importer.DesignImportOption = DXLIMPORTOPTION_REPLACE_ELSE_CREATE
+	Call importer.Process
+	ImportFileResource = True
+	GoTo Done
+	
+ErrHandler:
+	ImportFileResource = False
+	Call LogError()
+	Resume Done
+
+Done:
+	Exit Function
+End Function
+
+
+'++LotusScript Development Environment:2:2:CreateDXLFile:0:8
+
+'++LotusScript Development Environment:2:1:CreateStylesheetResourceDXL:1:8
+Function CreateStylesheetResourceDXL(sFilePath As String, sResourceName As String) As NotesStream
+	 
+	Dim sess As New NotesSession
+	Dim dxl As NotesStream
+	Dim filestream As NotesStream
+	Dim dxlheader As String
+	Dim dxlfooter As String
+	Dim fileText As String
+	Dim encodedText As String
+	
+	On Error GoTo ErrHandler
+	
+	' Create a stream
+	Set dxl = sess.CreateStream()
+	
+	' Add header stuff
+	dxlheader = _
+|{<?xml version='1.0' encoding='utf-8'?> 
+<stylesheetresource name='| & sResourceName & |  
+noreplace='false' publicaccess='false' designerversion='8'> 
+<filedata>|
+
+	dxl.WriteText(dxlheader)
+	
+	' Open the file resource and read it in
+	Set filestream = sess.CreateStream()
+	If Not filestream.Open(sFilePath, "ASCII") Then
+	   Call LogErrorEx("Unable to open file " & sFilePath, SEVERITY_HIGH, Nothing)
+	   Exit Function
+   End If
+	If filestream.Bytes = 0 Then
+	   Call LogErrorEx("No content found in file " & sFilePath, SEVERITY_HIGH, Nothing)
+	   Exit Function
+   End If
+	fileText = filestream.ReadText()
+	Call filestream.Close()
+	
+	' Now Base64-encode the file contents
+	Dim stream As NotesStream
+	Set stream = sess.CreateStream	
+	Dim body As NotesMIMEEntity
+	Dim doc As NotesDocument
+
+	sess.ConvertMIME = False
+
+	Call stream.WriteText(filetext)
+	Dim filesize As Long
+	fileSize = stream.Bytes
+	
+	Set doc = sess.CurrentDatabase.CreateDocument
+	Set body = doc.CreateMIMEEntity
+	Call body.SetContentFromText(stream, "", ENC_NONE)
+	Call body.EncodeContent(ENC_BASE64)
+
+	encodedText = body.ContentAsText
+	
+	' Add the base64-encoded contents to the output stream
+	dxl.WriteText(encodedText)
+	
+	' Add the footer
+	dxlfooter =	|</filedata><item name='$FileSize' sign='true'><numberlist><number>|
+	dxlfooter = dxlfooter & CStr(fileSize) & |</number></numberlist></item>|
+	dxlfooter = dxlfooter & |<item name='$FileModDT' sign='true'><datetimelist><datetime>|  
+	dxlfooter = dxlfooter & Format$(Now, "YYYYMMDD") & "T" & Format$(Now, "HHMMSS") & ",00-00"
+	dxlfooter = dxlfooter & |</datetime></datetimelist></item>|  
+	dxlfooter = dxlfooter & |</stylesheetresource>|
+	dxl.WriteText(dxlfooter)
+
+	Set CreateStylesheetResourceDXL = dxl
+	GoTo Done
+	
+ErrHandler:
+	Call LogError()
+	Resume Done
+	
+Done:
+	Exit Function
+End function
+
+'++LotusScript Development Environment:2:1:CreateStylesheetResourceDXLSameName:5:8
+%REM
+	Function CreateStylesheetResourceDXLSameName
+	Description: Comments for Function
+%END REM
+Function CreateStylesheetResourceDXLSameName(sFileDirectory As String, sFileName As String) As NotesStream
+	Set CreateStylesheetResourceDXLSameName = CreateStylesheetResourceDXL(sFileDirectory & "\" & sFileName, sFileName)
+End Function
+
+'++LotusScript Development Environment:2:2:CreateMIMEEntity:1:8
+Sub CreateMIMEEntity(session As NotesSession, filePath As String, tempDoc As NotesDocument, entity As NotesMIMEEntity, fileSize As Long)
+	On Error GoTo err_createmime 
+   Dim stream As NotesStream 
+    
+   Set stream = session.CreateStream 
+   If Not stream.Open(filePath) Then 
+      Error 4000, "Cannot open file " & filePath & " for processing." 
+   End If 
+    
+   fileSize = stream.Bytes 
+    
+   Call tempDoc.ReplaceItemValue("Form", "Temporary Document") 
+   Set entity = tempDoc.CreateMIMEEntity 
+   Call entity.SetContentFromBytes(stream, "text/plain", ENC_NONE) 
+   Call entity.EncodeContent(ENC_BASE64) 
+   Call stream.Close
+   
+   Exit Sub
+   
+err_createmime:
+   Call logError()
+   Exit Sub 
+End Sub
+
+'++LotusScript Development Environment:2:2:CreateDXLFile:2:8
+ 
+Sub CreateDXLFile(session As NotesSession, filePath As String, entity As NotesMIMEEntity, fileSize As Long)
+	On Error GoTo err_createdxl 
+   Dim stream As NotesStream 
+   Dim directory As String 
+   Dim fileName As String 
+    
+   If InStr(filePath, "\") <> 0 Then 
+      directory = StrLeftBack(filePath, "\") & "\" 
+      fileName = StrRightBack(filePath, "\") 
+   Else 
+      directory = StrLeftBack(filePath, "/") & "/" 
+      fileName = StrRightBack(filePath, "/") 
+   End If 
+    
+   Set stream = session.CreateStream 
+   If Not stream.Open(directory & "\" & StrLeftBack(fileName, ".") & ".dxl", "ISO-8859-1") Then 
+      Error 4001, "Cannot create file " & directory & StrLeftBack(fileName, ".") & ".dxl on the server." 
+   End If 
+   Call stream.WriteText({<?xml version='1.0' encoding='utf-8'?>}) 
+   Call stream.WriteText({<stylesheetresource name='} & fileName & {'}) 
+   Call stream.WriteText({ noreplace='false' publicaccess='false' designerversion='8'>}) 
+   Call stream.WriteText({<filedata>}) 
+   Call stream.WriteText(entity.ContentAsText) 
+   Call stream.WriteText({</filedata>}) 
+   Call stream.WriteText({<item name='$FileSize' sign='true'><numberlist><number>}) 
+   Call stream.WriteText(CStr(fileSize) & {</number></numberlist></item>}) 
+   Call stream.WriteText({<item name='$FileModDT' sign='true'><datetimelist><datetime>}) 
+   Call stream.WriteText(Format$(Now, "YYYYMMDD") & "T" & Format$(Now, "HHMMSS") & ",00-00") 
+   Call stream.WriteText({</datetime></datetimelist></item>}) 
+   Call stream.WriteText({</stylesheetresource>}) 
+   Call stream.Close
+   
+   Exit Sub
+err_createdxl:
+   Call logError()
+   Exit Sub 
+End Sub 
+
+'++LotusScript Development Environment:2:2:ImportDXLFile:2:8
+
+Sub ImportDXLFile(session As NotesSession, filePath As String, db As NotesDatabase)
+	On Error GoTo err_import 
+   Dim stream As NotesStream 
+   Dim importer As NotesDXLImporter 
+   Dim dxlPath As String 
+    
+   dxlPath = StrLeftBack(filePath, ".") & ".dxl" 
+   Set stream = session.CreateStream 
+   If Not stream.Open(dxlPath, "ISO-8859-1") Then 
+      Error 4002, "Cannot open file " & dxlPath & " after it was created." 
+   End If 
+   Set importer = session.CreateDXLImporter(stream, db) 
+   importer.ReplaceDBProperties = False 
+   importer.ReplicaRequiredForReplaceOrUpdate = False 
+   importer.DesignImportOption = DXLIMPORTOPTION_REPLACE_ELSE_CREATE  
+   Call importer.Process 
+   Call stream.Close
+   
+   Exit Sub
+err_import:
+   Call LogError()
+   Exit Sub 
+End Sub 

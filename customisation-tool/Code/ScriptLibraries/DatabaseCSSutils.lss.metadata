@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="filter" replicaid="80257BDE004F6073" version="9.0">
+<noteinfo noteid="2092" sequence="25" unid="F1FEF1A51911387F80257BEC0055F0A2">
+<created><datetime dst="true">20130920T163841,62+01</datetime></created>
+<modified><datetime dst="true">20130923T094440,14+01</datetime></modified>
+<revised><datetime dst="true">20130923T094440,13+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130923T094440,14+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130920T163841,65+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Julian Woodward/O=Axiot</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$TITLE" sign="true"><text>DatabaseCSSutils</text></item>
+<item name="$Flags"><text>s34Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$Comment"><text>LS functions for creating databases and importing CSS file resources into them</text></item></note>

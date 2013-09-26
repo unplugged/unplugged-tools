@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BDE004F6073" version="9.0">
+<noteinfo noteid="2176" sequence="3" unid="0BEF2E5AF41BE74B80257BF200262A37">
+<created><datetime dst="true">20130926T075651,75+01</datetime></created>
+<modified><datetime dst="true">20130926T075732,18+01</datetime></modified>
+<revised><datetime dst="true">20130926T075732,17+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130926T075732,18+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130926T075651,80+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+
+<item name="$FileModDT" sign="true"><datetime dst="true">20130926T075646,00+01</datetime></item>
+
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>jquery-1.9.1.min.map</text></item>
+<item name="$TITLE" sign="true"><textlist><text>jquery-1.9.1.min.map</text><text>jquery.min.map</text></textlist></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>
