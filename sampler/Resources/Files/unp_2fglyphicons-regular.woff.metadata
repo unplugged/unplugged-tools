@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="3d2" sequence="2" unid="896F391A8DC88CC980257BF10033C6A2">
+<created><datetime dst="true">20130925T102531,86+01</datetime></created>
+<modified><datetime dst="true">20130925T154359,53+01</datetime></modified>
+<revised><datetime dst="true">20130925T102556,43+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130925T154359,53+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130925T154359,53+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+
+<item name="$FileModDT" sign="true"><datetime dst="true">20130625T065214,00+01</datetime></item>
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>glyphicons-regular.woff</text></item>
+<item name="$TITLE" sign="true"><textlist><text>unp/glyphicons-regular.woff</text></textlist></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>

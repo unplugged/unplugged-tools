@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" createForm="false"
+
+	pageTitle="Databases" disableTheme="true" themeId="none">
+
+
+
+	<xp:this.resources>
+
+		<xp:metaData name="viewport"
+
+			content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+		</xp:metaData>
+
+		<xp:metaData name="apple-mobile-web-app-capable"
+
+			content="yes">
+
+		</xp:metaData>
+
+		<xp:metaData name="apple-mobile-web-app-status-bar-style"
+
+			content="black">
+
+		</xp:metaData>
+
+		
+
+		<xp:styleSheet href="/reset.css"></xp:styleSheet>
+
+		<xp:styleSheet href="/workspace.css"></xp:styleSheet>
+
+		
+
+		<xp:script src="unp/jquery-1.7.2.min.js" clientSide="true"></xp:script>
+
+	</xp:this.resources>
+
+
+
+<xp:this.beforeRenderResponse><![CDATA[#{javascript:
+
+
+
+var dbDir = session.getDbDirectory("");
+
+var doc = dbDir.getFirstDatabase();
+
+viewScope.dbList = [];
+
+var count = 0;
+
+while (null != doc) {
+
+	viewScope.dbList[count] = {};
+
+	viewScope.dbList[count].path = doc.getFilePath();
+
+	viewScope.dbList[count].ctrlId = "delDB_" + count;
+
+	doc = dbDir.getNextDatabase();
+
+	count++;
+
+}
+
+
+
+}]]></xp:this.beforeRenderResponse>
+
+
+
+<header> 
+
+	<h1>Databases</h1>
+
+</header> 
+
+
+
+<section id="content">
+
+	<div class="">
+
+		<div class="box">
+
+			<form id="unpDBsForm" name="unpDBsForm" action="DelDBs.xsp" method="post">
+
+			<xp:repeat var="dbItem" value="#{javascript:viewScope.dbList}">
+
+			<div>
+
+			<input class="check" name="#{javascript:dbItem.ctrlId}" type="checkbox" value="#{javascript:dbItem.path}"></input>
+
+			<label class="check"><xp:text value="#{javascript:dbItem.path}"/></label>
+
+			</div>
+
+			</xp:repeat>
+
+			
+
+			<div style="margin-top: 2em;">
+
+			<input class="check" type="checkbox" id="toggleDel" onclick="toggleDelButton()"></input>
+
+			<label class="check">Confirm Delete?</label>
+
+			</div>
+
+			
+
+			<input type="hidden" name="dbCount" value="#{javascript:viewScope.dbList.length}"></input>
+
+			
+
+			<a id="delBtn" class="button save">
+
+				Delete Selected
+
+			</a>
+
+			<a class="button cancel" onclick="window.location.href='UnpAbout.xsp'">
+
+				Cancel
+
+			</a>				
+
+
+
+			</form>		
+
+		</div>
+
+	</div>
+
+</section> 
+
+
+
+<xp:scriptBlock>
+
+<xp:this.value escape="false">
+
+function toggleDelButton() {
+
+	if ($("#toggleDel").is(':checked')) {
+
+		$("#delBtn").addClass("green").click(function() { document.unpDBsForm.submit(); });
+
+	}
+
+	else {
+
+		$("#delBtn").removeClass("green").unbind('click');
+
+	}
+
+}
+
+
+
+</xp:this.value>		
+
+</xp:scriptBlock>
+
+
+
+</xp:view>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" createForm="false"
+	pageTitle="Unplugged" disableTheme="true" themeId="none">
+
+	<xp:this.resources>
+		<xp:metaData name="viewport"
+			content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		</xp:metaData>
+		<xp:metaData name="apple-mobile-web-app-capable"
+			content="yes">
+		</xp:metaData>
+		<xp:metaData name="apple-mobile-web-app-status-bar-style"
+			content="black">
+		</xp:metaData>
+		<xp:styleSheet href="/reset.css"></xp:styleSheet>
+		<xp:styleSheet href="unp/jquery.jscrollpane.css"></xp:styleSheet>
+		<xp:styleSheet href="/workspace.css"></xp:styleSheet>
+		
+		<xp:script src="unp/iscroll-lite.js" clientSide="true"></xp:script>
+		<xp:script src="unp/workspace.js" clientSide="true"></xp:script>
+		<xp:script src="unp/jquery-1.6.1.min.js" clientSide="true"></xp:script>
+		<xp:script src="unp/jquery.jscrollpane.min.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+
+<header> 
+	<h1>Options</h1>
+</header> 
+
+<section id="content" style="overflow: inherit;">
+	<div class="">
+		<div class="box">
+			<form id="unpOptionsForm" name="unpOptionsForm" action="SaveSettings.xsp" method="post">
+				<label>Sync:</label>
+				<select name="unpReplicate" id="unpReplicate">
+					<option value="Yes">On Startup</option>
+					<option value="No">Manual</option>
+				</select>
+				<label>Server:</label>
+				<input type="text" id="unpServer" name="unpServer"
+							value='#{javascript:session.getEnvironmentString("home.server", true)}'/>
+				<label>Username:</label>
+				<input type="text" id="unpName" name="unpName"
+							value='#{javascript:session.getEnvironmentString("home.user", true)}'/>
+				<label>Password:</label>
+				<input type="password" id="unpPassword" name="unpPassword"
+							value='#{javascript:session.getEnvironmentString("home.password", true)}'/>
+				<label>Use HTTPS:</label>
+				<select name="unpHttpSecure" id="unpHttpSecure">
+					<option value="No">No</option>
+					<option value="Yes">Yes</option>
+				</select>
+                <label>Scheduled Sync:</label>
+                <select name="syncSchedule" id="syncSchedule">
+                    <option value="0">Never</option>
+                    <option value="1">Every day</option>
+                    <option value="2">Every week</option>
+                </select>
+				<label>Log Level:</label>
+				<select name="logLevel" id="logLevel">
+					<option value="3">Errors</option>
+					<option value="2">Warnings</option>
+					<option value="1">Information</option>
+					<option value="0">Debug</option>
+				</select>
+				<div style="padding-left:0em;float:left" >
+				<a style="width:100px;" class="button green save" onclick="document.unpOptionsForm.submit()">
+					Save
+				</a>
+				</div>
+				<div style="padding-left:1em;float:left">
+				<a style="width:100px;" class="button cancel" onclick="window.location.href='UnpAbout.xsp'">
+					Cancel
+				</a>
+				</div>	
+                
+                <br style="clear: both;" />
+							
+			</form>		
+		</div>
+	</div>
+</section> 
+
+<xp:scriptBlock>
+<xp:this.value escape="false">
+	updateSelect("unpReplicate", "#{javascript:session.getEnvironmentString("rep.onLaunch", true);}", { "Yes":0, "No":1 });
+	updateSelect("logLevel", "#{javascript:session.getEnvironmentString("unp.log.level", true);}", { "3":0, "2":1, "1":2, "0":3 });
+	updateSelect("unpHttpSecure", "#{javascript:session.getEnvironmentString("home.https", true);}", { "No":0, "Yes":1 });
+	updateSelect("syncSchedule", "#{javascript:session.getEnvironmentString("unp.sync.schedule", true);}", { "0":0, "1":1, "2":2 });
+	
+	$(function() {
+		var scrollElem = $('#content').jScrollPane();
+		$(window).bind("resize", function() {
+			scrollElem.data('jsp').reinitialise();
+		});
+	});
+	
+</xp:this.value>		
+</xp:scriptBlock>
+
+</xp:view>

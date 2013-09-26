@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
+
+	<xp:this.beforeRenderResponse>
+		<xp:executeScript>
+			<xp:this.script><![CDATA[#{javascript:
+var wsDb = session.getDatabase("", "unpws.unp");
+                
+for (var i = 0; i < param.dbCount; ++i) {
+	var dbName = param["delDB_" + i];
+	if (dbName) {
+		print("Deleting: " + dbName);
+		var db = session.getDatabase("", dbName);
+		db.remove();
+                
+		var dbView = wsDb.getView("Databases");
+        var wsDoc = dbView.getFirstDocument();
+        while (wsDoc) {
+            if (wsDoc.getItemValueString("Path").toUpperCase() == dbName.toUpperCase()) {
+                wsDoc.removePermanently();
+                break;
+            }
+            wsDoc = dbView.getNextDocument(wsDoc);
+        }
+	}
+}
+
+wsDb.close();
+                
+context.redirectToPage("UnpDBs.xsp");
+}]]></xp:this.script>
+		</xp:executeScript>
+	</xp:this.beforeRenderResponse></xp:view>

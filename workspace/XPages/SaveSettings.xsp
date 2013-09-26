@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
+
+	<xp:this.beforeRenderResponse>
+		<xp:executeScript>
+			<xp:this.script><![CDATA[#{javascript:
+session.setEnvironmentVar("rep.onLaunch", param.unpReplicate, true);
+session.setEnvironmentVar("home.server", param.unpServer, true);
+session.setEnvironmentVar("home.user", param.unpName, true);
+session.setEnvironmentVar("home.password", param.unpPassword, true);
+session.setEnvironmentVar("unp.log.level", param.logLevel, true);
+session.setEnvironmentVar("home.https", param.unpHttpSecure, true);
+session.setEnvironmentVar("unp.sync.schedule", param.syncSchedule, true);
+context.redirectToPage("UnpAbout.xsp");
+}]]></xp:this.script>
+		</xp:executeScript>
+	</xp:this.beforeRenderResponse></xp:view>

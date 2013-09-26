@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" createForm="false"
+	pageTitle="Unplugged" disableTheme="true" themeId="none">
+
+	<xp:this.resources>
+		<xp:metaData name="viewport"
+			content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		</xp:metaData>
+		<xp:metaData name="apple-mobile-web-app-capable"
+			content="yes">
+		</xp:metaData>
+		<xp:metaData name="apple-mobile-web-app-status-bar-style"
+			content="black">
+		</xp:metaData>
+
+		<xp:styleSheet href="/reset.css"></xp:styleSheet>
+		<xp:styleSheet href="unp/jquery.jscrollpane.css"></xp:styleSheet>
+		<xp:styleSheet href="/workspace.css"></xp:styleSheet>
+		
+		<xp:script src="unp/iscroll-lite.js" clientSide="true"></xp:script>
+		<xp:script src="unp/workspace.js" clientSide="true"></xp:script>
+		<xp:script src="unp/jquery-1.6.1.min.js" clientSide="true"></xp:script>
+		<xp:script src="unp/jquery.jscrollpane.min.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+
+<header> 
+	<h1>About</h1>
+</header> 
+
+<section id="content">
+	<div class="">
+		<div class="box">
+			<h2>Teamstudio Unplugged</h2>
+			<p>Version&#160;<xp:text value='#{javascript:session.getNotesVersion()}'/></p>
+			<p>Copyright&#160;<xp:text value='#{javascript:session.getNotesBuildDate().substring(6,10)}'/>. All Rights Reserved.</p>
+			<p><strong>User:</strong> <xp:text value='#{javascript:var name = session.getEnvironmentString("ro.username.full", true); if (""==name) name="(none)"; else name=@Name("[abbreviate]", name); name;}' /></p>
+			<p><strong>Last Sync:</strong> <xp:text value='#{javascript:var rep = session.getEnvironmentString("ro.last.replicate", true); if (""==rep) { rep="(never)"; } else { rep = @Text(new Date(parseInt(rep))); } rep;}' /></p>
+			<a class="button options" onclick="window.location.href='UnpOptions.xsp'">Options</a>
+			<a class="button options" onclick="window.location.href='UnpDBs.xsp'">Databases</a>
+			<a class="button log" onclick="window.location.href='/UnpluggedLog.unp/'">Log</a>			
+		</div>
+	</div>
+</section> 
+
+<footer>
+</footer>
+
+<a class="button sync" onclick="window.location.href='UnpMain.xsp'">
+	Back
+</a>
+
+<xp:scriptBlock>
+<xp:this.value escape="false">
+$(function() {
+	if( "0" != "#{javascript:context.getUrlParameter("AutoLaunch")}") {
+		if ("" != "#{javascript:session.getEnvironmentString("ws.autoLaunch.path", true);}") {
+			window.location.href="#{javascript:"/"+session.getEnvironmentString("ws.autoLaunch.path", true) + "/";}";
+		}			
+	}
+
+	var scrollElem = $('#content').jScrollPane();
+	$(window).bind("resize", function() {
+		scrollElem.data('jsp').reinitialise();
+	});
+});
+</xp:this.value>		
+</xp:scriptBlock>
+
+</xp:view>

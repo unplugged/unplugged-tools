@@ -28,19 +28,18 @@
 				<xp:attr name="type" value="text/css"></xp:attr>
 				<xp:attr name="href">
 					<xp:this.value><![CDATA[#{javascript:var url = cssdoc.getColumnValue("URL");
-		sessionScope.cssurl = url;
-		return url;}]]></xp:this.value>
+return url;}]]></xp:this.value>
 				</xp:attr>
 			</xp:this.attrs>
 		</xp:panel>
 	</xp:repeat>
-	<unp:unpHeader search="none" viewsButton="false" title="Unplugged"
-		headerHomeLink="/UnpMain.xsp">
+	<unp:unpHeader search="none" viewsButton="false" title="Unplugged">
 	</unp:unpHeader>
+
 	<unp:unpWorkspace imgurlcol="ImgUrl" labelcol="Title"
 		linkurlcol="UnpUrl" badgeidcol="BadgeID">
 		<unp:this.disabledbadges><![CDATA[#{javascript:var out = ["DisabledChiclet"];
 return out;}]]></unp:this.disabledbadges>
 	</unp:unpWorkspace>
-	<unp:unpFooter synctype="alldbs"></unp:unpFooter>
+	<unp:unpFooter synctype="alldbs" settingsurl="UnpAbout.xsp"></unp:unpFooter>
 </xp:view>
