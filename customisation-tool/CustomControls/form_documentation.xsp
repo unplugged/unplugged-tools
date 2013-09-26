@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:this.data>
+		<xp:dominoView var="tabs" viewName="Tabs"></xp:dominoView>
+		<xp:dominoView var="view1" viewName="Documentation">
+			<xp:this.categoryFilter><![CDATA[#{javascript:var filter = context.getUrlParameter("currenttab");
+if (filter == "" || filter == null){
+	filter = tabs.getFirstDocument().getItemValueString("TabTitle");
+}
+return filter;}]]></xp:this.categoryFilter>
+		</xp:dominoView>
+	</xp:this.data>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<a class="brand" href="documentation.xsp">Documentation</a>
+			<ul class="nav">
+				<xp:repeat id="navbar" value="#{tabs}" var="tab"
+					indexVar="tabindex" disableOutputTag="true">
+					<xp:panel id="tabitem" tagName="li">
+						<xp:this.styleClass><![CDATA[#{javascript:if (tab.getColumnValue("Title") == context.getUrlParameter("currenttab") || (context.getUrlParameter("currenttab") == "" && tabindex == 0)){
+	return "active";
+}}]]></xp:this.styleClass>
+						<xp:link escape="true" id="tablink"
+							value="/documentation.xsp">
+							<xp:this.text><![CDATA[#{javascript:tab.getColumnValue("Title")}]]></xp:this.text>
+							<xp:this.parameters>
+								<xp:parameter name="currenttab">
+									<xp:this.value><![CDATA[#{javascript:tab.getColumnValue("Title")}]]></xp:this.value>
+								</xp:parameter>
+							</xp:this.parameters>
+						</xp:link>
+					</xp:panel>
+				</xp:repeat>
+			</ul>
+		</div>
+	</div>
+
+	<div class="span3 bs-docs-sidebar nav hidden-phone">
+		<ul class="nav-list bs-docs-sidenav affix">
+			<xp:repeat id="repeat3" rows="999" value="#{view1}"
+				var="doc" indexVar="docindex" disableOutputTag="true">
+				<li>
+					<xp:panel id="homepage" tagName="a">
+						<xp:this.attrs>
+							<xp:attr name="href">
+								<xp:this.value><![CDATA[#{javascript:var out = "<section id=\"" + @ReplaceSubstring(doc.getColumnValue("Title"), ["'", " ", "?"], "") + "\">";
+out += "<div class=\"page-header\"><h1>" + doc.getColumnValue("Title") + "</h1>";
+out += "<p>" + doc.getColumnValue("Body") + "</p>";
+out += "</section>"
+var text = doc.getColumnValue("Title");
+if (viewScope.homehtml == null){
+	viewScope.homehtml = out;
+}else{
+	viewScope.homehtml = viewScope.homehtml + out;
+}
+return "#" + @ReplaceSubstring(text, ["'", " ", "?"], "");}]]></xp:this.value>
+							</xp:attr>
+						</xp:this.attrs>
+						<i class="icon-chevron-right"></i>
+						<xp:text value="#{doc.Title}"
+							id="titletext">
+						</xp:text>
+					</xp:panel>
+				</li>
+			</xp:repeat>
+		</ul>
+	</div>
+
+	<xp:text escape="false" id="contentholder" tagName="div">
+		<xp:this.value><![CDATA[#{javascript:var out = "<div id=\"content\" class=\"span9\">";
+return out + viewScope.homehtml + "</div>";}]]></xp:this.value>
+	</xp:text>
+
+</xp:view>

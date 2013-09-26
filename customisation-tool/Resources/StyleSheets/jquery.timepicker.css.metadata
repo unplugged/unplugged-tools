@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BDE004F6073" version="9.0">
+<noteinfo noteid="2266" sequence="1" unid="C6B2AFFBC0502D7880257BF20047F3BE">
+<created><datetime dst="true">20130926T140554,54+01</datetime></created>
+<modified><datetime dst="true">20130926T140554,56+01</datetime></modified>
+<revised><datetime dst="true">20130926T140554,55+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130926T140554,56+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130926T140554,56+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$TITLE"><text>jquery.timepicker.css</text></item>
+<item name="$Flags"><text>D34C=Q</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+
+<item name="$FileModDT" sign="true"><datetime dst="true">20130918T164136,00+01</datetime></item>
+
+<item name="$FileNames" sign="true"><text>jquery.timepicker.css</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>

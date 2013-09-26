@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="CSS">
+			<xp:this.querySaveDocument><![CDATA[#{javascript:saveCSS()}]]></xp:this.querySaveDocument>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:script src="/xpCSS.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	
+	<xp:table styleClass="table">
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Description:" id="description_Label1"
+					for="description1">
+				</xp:label>
+			</xp:td>
+			<xp:td colspan="2">
+				<xp:inputText value="#{document1.Description}"
+					id="description1">
+					<xp:this.defaultValue><![CDATA[#{javascript:var d1=new Date();
+return d1.toString('dd MMM yyyy hh:mm');}]]></xp:this.defaultValue>
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr style="display: none;">
+			<xp:td>
+				<xp:label value="Filename:" id="filename_Label1"
+					for="filename1">
+				</xp:label>
+			</xp:td>
+			<xp:td colspan="2">
+				<xp:inputText value="#{document1.filename}"
+					id="filename1" defaultValue="unplugged.css">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="LESS File" id="lessfile_label"
+					for="lessfile">
+				</xp:label>
+			</xp:td>
+			<xp:td colspan="2">
+				<xp:comboBox id="lessfile"
+					value="#{document1.LESSFile}">
+					<xp:selectItems>
+						<xp:this.value><![CDATA[#{javascript:@DbColumn(@DbName(), "LESS", 1)}]]></xp:this.value>
+					</xp:selectItems>
+				</xp:comboBox>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<h2>Customise Variables</h2>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@bodybackgroundcolor:"
+					id="bodybackgroundcolor_Label1" for="bodybackgroundcolor1">
+				</xp:label>
+				<xp:inputText value="#{document1.bodybackgroundcolor}"
+					id="bodybackgroundcolor1" themeId="MediumEditBox"
+					defaultValue="#464646" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@iheaderbackground:"
+					id="iheaderbackground_Label1" for="iheaderbackground1">
+				</xp:label>
+				<xp:inputText value="#{document1.iheaderbackground}"
+					id="iheaderbackground1" themeId="MediumEditBox"
+					defaultValue="-webkit-linear-gradient(#343434, #121212)">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@iheaderborderbottom:"
+					id="iHeaderborderbottom_Label1" for="iHeaderborderbottom1">
+				</xp:label>
+				<xp:inputText value="#{document1.iHeaderborderbottom}"
+					id="iHeaderborderbottom1" themeId="MediumEditBox"
+					defaultValue="#000000" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@viewsbuttonbackground:"
+					id="viewsbuttonbackground_Label1" for="viewsbuttonbackground1">
+				</xp:label>
+				<xp:inputText value="#{document1.viewsbuttonbackground}"
+					id="viewsbuttonbackground1" themeId="MediumEditBox"
+					defaultValue="#464646" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@backbuttonbackground:"
+					id="backbuttonbackground_Label1" for="backbuttonbackground1">
+				</xp:label>
+				<xp:inputText value="#{document1.backbuttonbackground}"
+					id="backbuttonbackground1" themeId="MediumEditBox"
+					defaultValue="#464646" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@footertabtextcolor:"
+					id="footertabtextcolor_Label1" for="footertabtextcolor1">
+				</xp:label>
+				<xp:inputText value="#{document1.footertabtextcolor}"
+					id="footertabtextcolor1" themeId="MediumEditBox"
+					defaultValue="#CCCCCC" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@tabselectedfootertabtextcolor:"
+					id="tabselectedfootertabtextcolor_Label1"
+					for="tabselectedfootertabtextcolor1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.tabselectedfootertabtextcolor}"
+					id="tabselectedfootertabtextcolor1" themeId="MediumEditBox"
+					defaultValue="#FFFFFF" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@homebuttonbackground:"
+					id="homebuttonbackground_Label1" for="homebuttonbackground1">
+				</xp:label>
+				<xp:inputText value="#{document1.homebuttonbackground}"
+					id="homebuttonbackground1" themeId="MediumEditBox"
+					defaultValue="-webkit-linear-gradient(#808080, #464646)">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@searchbuttonbackground:"
+					id="searchbuttonbackground_Label1" for="searchbuttonbackground1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.searchbuttonbackground}"
+					id="searchbuttonbackground1" themeId="MediumEditBox"
+					defaultValue="#464646" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@newbuttonbackground:"
+					id="newbuttonbackground_Label1" for="newbuttonbackground1">
+				</xp:label>
+				<xp:inputText value="#{document1.newbuttonbackground}"
+					id="newbuttonbackground1" themeId="MediumEditBox"
+					defaultValue="#464646" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@settingsbuttonbackground:"
+					id="settingsbuttonbackground_Label1"
+					for="settingsbuttonbackground1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.settingsbuttonbackground}"
+					id="settingsbuttonbackground1" themeId="MediumEditBox"
+					defaultValue="#464646" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@footerbordertop:"
+					id="footerbordertop_Label1" for="footerbordertop1">
+				</xp:label>
+				<xp:inputText value="#{document1.footerbordertop}"
+					id="footerbordertop1" themeId="MediumEditBox"
+					defaultValue="#000000" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@footerbackground:"
+					id="footerbackground_Label1" for="footerbackground1">
+				</xp:label>
+				<xp:inputText value="#{document1.footerbackground}"
+					id="footerbackground1" themeId="MediumEditBox"
+					defaultValue="-webkit-linear-gradient(#343434, #121212)">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@footerspancolor:"
+					id="footerspancolor_Label1" for="footerspancolor1">
+				</xp:label>
+				<xp:inputText value="#{document1.footerspancolor}"
+					id="footerspancolor1" themeId="MediumEditBox"
+					defaultValue="#FFFFFF" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@inputsearchframeinputborder:"
+					id="inputsearchframeinputborder_Label1"
+					for="inputsearchframeinputborder1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.inputsearchframeinputborder}"
+					id="inputsearchframeinputborder1" themeId="MediumEditBox"
+					defaultValue="none">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@inputsearchframeinputbackground:"
+					id="inputsearchframeinputbackground_Label1"
+					for="inputsearchframeinputbackground1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.inputsearchframeinputbackground}"
+					id="inputsearchframeinputbackground1" themeId="MediumEditBox"
+					defaultValue="#000000" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@inputsearchframeinputboxshadow:"
+					id="inputsearchframeinputboxshadow_Label1"
+					for="inputsearchframeinputboxshadow1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.inputsearchframeinputboxshadow}"
+					id="inputsearchframeinputboxshadow1" themeId="MediumEditBox"
+					defaultValue="0 1px 0 rgba(255, 255, 255, 0.2)">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@inputsearchframeinputcolor:"
+					id="inputsearchframeinputcolor_Label1"
+					for="inputsearchframeinputcolor1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.inputsearchframeinputcolor}"
+					id="inputsearchframeinputcolor1" themeId="MediumEditBox"
+					defaultValue="#BBB" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@navscrollareaullibackground:"
+					id="navscrollareaullibackground_Label1"
+					for="navscrollareaullibackground1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.navscrollareaullibackground}"
+					id="navscrollareaullibackground1" themeId="MediumEditBox"
+					defaultValue="#222" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@navscrollareaulliborder:"
+					id="navscrollareaulliborder_Label1"
+					for="navscrollareaulliborder1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.navscrollareaulliborder}"
+					id="navscrollareaulliborder1" themeId="MediumEditBox"
+					defaultValue="#111111" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@navscrollareaullicolor:"
+					id="navscrollareaullicolor_Label1" for="navscrollareaullicolor1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.navscrollareaullicolor}"
+					id="navscrollareaullicolor1" themeId="MediumEditBox"
+					defaultValue="#DDD" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@navscrollareaullitextshadow:"
+					id="navscrollareaullitextshadow_Label1"
+					for="navscrollareaullitextshadow1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.navscrollareaullitextshadow}"
+					id="navscrollareaullitextshadow1" themeId="MediumEditBox"
+					defaultValue="0 1px 0 rgba(0, 0, 0, 0.5)">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@viewmenuitemselectedbackground:"
+					id="viewmenuitemselectedbackground_Label1"
+					for="viewmenuitemselectedbackground1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.viewmenuitemselectedbackground}"
+					id="viewmenuitemselectedbackground1" themeId="MediumEditBox"
+					defaultValue="#3773F1" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@spantitletextshadow:"
+					id="spantitletextshadow_Label1" for="spantitletextshadow1">
+				</xp:label>
+				<xp:inputText value="#{document1.spantitletextshadow}"
+					id="spantitletextshadow1" themeId="MediumEditBox"
+					defaultValue="0px 1px 0px #000">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@spantitlecolor:"
+					id="spantitlecolor_Label1" for="spantitlecolor1">
+				</xp:label>
+				<xp:inputText value="#{document1.spantitlecolor}"
+					id="spantitlecolor1" themeId="MediumEditBox"
+					defaultValue="#FFFFFF" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@swiperscrollcontainerbackgroundc:"
+					id="swiperscrollcontainerbackgroundc_Label1"
+					for="swiperscrollcontainerbackgroundc1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.swiperscrollcontainerbackgroundc}"
+					id="swiperscrollcontainerbackgroundc1" themeId="MediumEditBox"
+					defaultValue="#3C3C3C" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@hviewtitlecolor:"
+					id="hviewtitlecolor_Label1" for="hviewtitlecolor1">
+				</xp:label>
+				<xp:inputText value="#{document1.hviewtitlecolor}"
+					id="hviewtitlecolor1" themeId="MediumEditBox"
+					defaultValue="#E5E5E5" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@hviewtitlebordertop:"
+					id="hviewtitlebordertop_Label1" for="hviewtitlebordertop1">
+				</xp:label>
+				<xp:inputText value="#{document1.hviewtitlebordertop}"
+					id="hviewtitlebordertop1" themeId="MediumEditBox"
+					defaultValue="#2D2D2D" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@hviewtitlebackgroundcolor:"
+					id="hviewtitlebackgroundcolor_Label1"
+					for="hviewtitlebackgroundcolor1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.hviewtitlebackgroundcolor}"
+					id="hviewtitlebackgroundcolor1" themeId="MediumEditBox"
+					defaultValue="#3C3C3C" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@viewmenuitemsubbackgroundcolor:"
+					id="viewmenuitemsubbackgroundcolor_Label1"
+					for="viewmenuitemsubbackgroundcolor1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.viewmenuitemsubbackgroundcolor}"
+					id="viewmenuitemsubbackgroundcolor1" themeId="MediumEditBox"
+					defaultValue="#000000" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@viewmenuitemsubbackgroundborder:"
+					id="viewmenuitemsubbackgroundborder_Label1"
+					for="viewmenuitemsubbackgroundborder1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.viewmenuitemsubbackgroundborder}"
+					id="viewmenuitemsubbackgroundborder1" themeId="MediumEditBox"
+					defaultValue="#000000" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@viewmenuitemsubsubbackgroundcolo:"
+					id="viewmenuitemsubsubbackgroundcolo_Label1"
+					for="viewmenuitemsubsubbackgroundcolo1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.viewmenuitemsubsubbackgroundcolo}"
+					id="viewmenuitemsubsubbackgroundcolo1" themeId="MediumEditBox"
+					defaultValue="#000000" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@viewmenuitemsubsubbackgroundbord:"
+					id="viewmenuitemsubsubbackgroundbord_Label1"
+					for="viewmenuitemsubsubbackgroundbord1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.viewmenuitemsubsubbackgroundbord}"
+					id="viewmenuitemsubsubbackgroundbord1" themeId="MediumEditBox"
+					defaultValue="#000000" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@viewmenuitemselectedbackgroundco:"
+					id="viewmenuitemselectedbackgroundco_Label1"
+					for="viewmenuitemselectedbackgroundco1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.viewmenuitemselectedbackgroundco}"
+					id="viewmenuitemselectedbackgroundco1" themeId="MediumEditBox"
+					defaultValue="#0078F4" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@viewmenuitemselectedborder:"
+					id="viewmenuitemselectedborder_Label1"
+					for="viewmenuitemselectedborder1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.viewmenuitemselectedborder}"
+					id="viewmenuitemselectedborder1" themeId="MediumEditBox"
+					defaultValue="#000000" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@h1hviewh1color:"
+					id="h1hviewh1color_Label1" for="h1hviewh1color1">
+				</xp:label>
+				<xp:inputText value="#{document1.h1hviewh1color}"
+					id="h1hviewh1color1" themeId="MediumEditBox"
+					defaultValue="#FFFFFF" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@hviewcategorycolor:"
+					id="hviewcategorycolor_Label1" for="hviewcategorycolor1">
+				</xp:label>
+				<xp:inputText value="#{document1.hviewcategorycolor}"
+					id="hviewcategorycolor1" themeId="MediumEditBox"
+					defaultValue="#E5E5E5" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@hviewcategorybordertop:"
+					id="hviewcategorybordertop_Label1" for="hviewcategorybordertop1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.hviewcategorybordertop}"
+					id="hviewcategorybordertop1" themeId="MediumEditBox"
+					defaultValue="1px solid #2D2D2D">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@hviewcategoryborderleft:"
+					id="hviewcategoryborderleft_Label1"
+					for="hviewcategoryborderleft1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.hviewcategoryborderleft}"
+					id="hviewcategoryborderleft1" themeId="MediumEditBox"
+					defaultValue="1px solid #2D2D2D">
+				</xp:inputText>
+			</xp:td>
+			<xp:td>
+				<xp:label value="@hviewcategoryborderright:"
+					id="hviewcategoryborderright_Label1"
+					for="hviewcategoryborderright1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.hviewcategoryborderright}"
+					id="hviewcategoryborderright1" themeId="MediumEditBox"
+					defaultValue="1px solid #2D2D2D">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:label value="@hviewcategorybackgroundcolor:"
+					id="hviewcategorybackgroundcolor_Label1"
+					for="hviewcategorybackgroundcolor1">
+				</xp:label>
+				<xp:inputText
+					value="#{document1.hviewcategorybackgroundcolor}"
+					id="hviewcategorybackgroundcolor1" themeId="MediumEditBox"
+					defaultValue="#3C3C3C" styleClass="pick-a-color">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr rendered="false">
+			<xp:td>
+				<xp:label value="Value:" id="value_Label1"
+					for="value1">
+				</xp:label>
+				<xp:inputTextarea id="value1"
+					value="#{document1.Value}">
+				</xp:inputTextarea>
+			</xp:td>
+
+		</xp:tr>
+		<xp:tr>
+			<xp:td></xp:td>
+			<xp:td>
+				<xp:button value="Submit" id="button1"
+					styleClass="btn btn-primary">
+
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:actionGroup>
+								<xp:saveDocument var="document1"></xp:saveDocument>
+								<xp:openPage name="/customuis.xsp"></xp:openPage>
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:td>
+		</xp:tr>
+	</xp:table></xp:view>
