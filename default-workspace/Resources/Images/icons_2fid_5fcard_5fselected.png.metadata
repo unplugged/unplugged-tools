@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF300244980" version="9.0">
+<noteinfo noteid="16a" sequence="1" unid="80D101093EBD2D8580257BE90038CF0A">
+<created><datetime dst="true">20130917T112030,18+01</datetime></created>
+<modified><datetime dst="true">20130927T073621,58+01</datetime></modified>
+<revised><datetime dst="true">20130917T112030,21+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130927T073621,58+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130927T073621,58+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$TITLE" sign="true"><text>icons/id_card_selected.png</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20130528T113259,00+01</datetime></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$ImageNames" sign="true"><text>id_card_selected.png</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

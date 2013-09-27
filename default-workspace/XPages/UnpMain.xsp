@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" createForm="false"
+	pageTitle="Unplugged"
+	rendered="#{javascript: ( ('0' == context.getUrlParameter('AutoLaunch')) || (0==session.getEnvironmentString('ws.autoLaunch.path', true).length) )}"
+	xmlns:unp="http://unplugged.teamstudio.com">
+	<xp:this.beforeRenderResponse>
+		<xp:executeScript>
+			<xp:this.script><![CDATA[#{javascript:
+                if("0" != context.getUrlParameter("AutoLaunch")){
+                    var url = session.getEnvironmentString("ws.autoLaunch.path", true);
+                    if(0 != url.length){
+                        context.redirectToPage("/" + url + "/");
+                    }
+                }
+            }]]></xp:this.script>
+		</xp:executeScript>
+	</xp:this.beforeRenderResponse>
+
+	<xp:this.data>
+		<xp:dominoView var="dbs" viewName="Databases"
+			databaseName="unpws.nsf">
+		</xp:dominoView>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:styleSheet href="/unplugged.css"></xp:styleSheet>
+	</xp:this.resources>
+	<unp:unpHeader search="none" searchPage="UnpSearch.xsp"
+		viewsButton="false" title="Unplugged Workspace App">
+	</unp:unpHeader>
+	<unp:unpWorkspace imgurlcol="ImgUrl" labelcol="Title"
+		linkurlcol="UnpUrl" alertlevel="" alertlevelhighlabel="High"
+		alertlevelelevatedlabel="Elevated" alertlevelnormallabel="Normal">
+	</unp:unpWorkspace>
+	<unp:unpFooter settingsurl="unp:settings" synctype="alldbs"></unp:unpFooter>
+
+</xp:view>

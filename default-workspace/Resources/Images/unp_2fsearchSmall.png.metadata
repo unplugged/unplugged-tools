@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF300244980" version="9.0">
+<noteinfo noteid="28e" sequence="1" unid="00790FFF8602C95980257BE90038CF53">
+<created><datetime dst="true">20130917T112030,91+01</datetime></created>
+<modified><datetime dst="true">20130927T073623,04+01</datetime></modified>
+<revised><datetime dst="true">20130917T112031,67+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130927T073623,04+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130927T073623,04+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$TITLE" sign="true"><text>unp/searchSmall.png</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$ImageNames" sign="true"><text>search.png</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20110519T090738,00+01</datetime></item>
+<item name="$Flags"><text>34CiQ&amp;</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		Copyright 2013 Teamstudio Inc Licensed under the Apache License,
+		Version 2.0 (the "License"); you may not use this file except in
+		compliance with the License. You may obtain a copy of the License at
+		http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+		applicable law or agreed to in writing, software distributed under the
+		License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+		CONDITIONS OF ANY KIND, either express or implied. See the License for
+		the specific language governing permissions and limitations under the
+		License
+	-->
+
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<style>
+		body {
+		padding-bottom: 45px;
+		}
+		@media screen and (min-width: 701px) {
+		body {
+		padding-bottom: 60px;
+		}
+		}
+		@media screen and (max-width: 700px) {
+		body {
+		padding-bottom: 45px;
+		}
+		}
+	</style>
+	<xp:this.resources>
+		<xp:script src="/unp/jquery-1.7.2.min.js" clientSide="true"></xp:script>
+		<xp:script src="/unp/jquery.blockUI.min.js" clientSide="true"></xp:script>
+		<xp:script src="/unp/iScroll.min.js" clientSide="true"></xp:script>
+		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
+		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+
+	<xp:panel styleClass="footer black">
+		<xp:link id="link1" styleClass="syncButton" value="unp:sync">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete">
+			</xp:eventHandler>
+			<span class="synclabel">Sync</span>
+		</xp:link>
+		<xp:text
+			value='#{javascript:var rep = session.getEnvironmentString("ro.last.replicate", true); 
+			if (""==rep)
+	    		rep="(never)"; 
+	    	else 
+	    		rep=@Text(new Date(parseInt(rep))); 
+	    	return "Updated: " + rep.substring(0,14);}' />
+		<xp:panel tagName="div" id="newButton" styleClass="newButton"
+			rendered="#{javascript:compositeData.newDocTarget != null;}">
+			<xp:this.attrs>
+				<xp:attr name="onclick">
+					<xp:this.value><![CDATA[#{javascript:"openDocument('" + compositeData.newDocTarget + "?action=newDocument', 'content');"}]]></xp:this.value>
+				</xp:attr>
+			</xp:this.attrs>
+			<span>New</span>
+		</xp:panel>
+		<xp:panel tagName="div" id="settingsButton" styleClass="settingsButton"
+			rendered="#{javascript:compositeData.settingsurl != null;}">
+			<xp:this.attrs>
+				<xp:attr name="onclick">
+					<xp:this.value><![CDATA[#{javascript:"window.location.href='" + compositeData.settingsurl + "';"}]]></xp:this.value>
+				</xp:attr>
+			</xp:this.attrs>
+			<span class="settingsbuttonlabel">Settings</span>
+		</xp:panel>
+	</xp:panel>
+
+	<!-- <script type="text/javascript" src="unplugged.js"></script> -->
+</xp:view>
