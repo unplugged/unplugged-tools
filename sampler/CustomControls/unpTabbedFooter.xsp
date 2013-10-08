@@ -36,8 +36,7 @@
 				<xp:repeat id="repeat1" rows="30" disableOutputTag="true"
 					var="menuItem" value="#{javascript:compositeData.tab;}">
 					<xp:panel tagName="li">
-						<xp:this.styleClass><![CDATA[#{javascript:
-if (("/" + getCurrentXPage()) == menuItem.page){
+						<xp:this.styleClass><![CDATA[#{javascript:if (matchCurrentURL(menuItem.page)){
 	return "menuitem" + viewScope.menuItemIndex + " tabSelected";
 }else{
 	return "menuitem" + viewScope.menuItemIndex + " viewMenuItem";
@@ -54,24 +53,15 @@ if (!isEmpty(menuItem.page)){
 return js;}]]></xp:this.value>
 							</xp:attr>
 						</xp:this.attrs>
-						<xp:image id="image2">
+						<xp:panel tagName="i" id="icon">
 							<xp:this.rendered><![CDATA[#{javascript:if (viewScope.menuItemIndex == null){
 	viewScope.menuItemIndex = 0;
 }else{
 	viewScope.menuItemIndex = viewScope.menuItemIndex + 1;
 }
 menuItem.icon != null && menuItem.icon != ""}]]></xp:this.rendered>
-							<xp:this.styleClass><![CDATA[#{javascript:
-return "background:  url('" + menuItem.icon + "') 50% 0% no-repeat; padding-top: 10px;margin-bottom:5px;"
-}]]>
-							</xp:this.styleClass>
-							<xp:this.url><![CDATA[#{javascript:if (("/" + getCurrentXPage()) == menuItem.page){
-	return menuItem.iconselected;
-}else{
-	return menuItem.icon;
-}}]]></xp:this.url>
-						</xp:image>
-						<br />
+							<xp:this.styleClass><![CDATA[#{javascript:"glyphicons white " + menuItem.icon;}]]></xp:this.styleClass>
+						</xp:panel>
 						<xp:text id="menutext" styleClass="footerTabtext"
 							value="#{javascript:menuItem.label;}">
 						</xp:text>
@@ -99,11 +89,13 @@ db.replicate("someserver");}]]></xp:this.script>
 				</xp:this.action>
 				<xp:this.script><![CDATA[$.blockUI();]]></xp:this.script>
 			</xp:eventHandler>
-			<span class="synclabel">Sync</span>
+			<span class="icon"></span>
+			<span class="label">Sync</span>
 		</xp:link>
 		<xp:link id="link2" styleClass="syncButton" value="#">
 			<xp:this.rendered><![CDATA[#{javascript:isUnpluggedServer() && compositeData.synctype == "alldbs";}]]></xp:this.rendered>
-			<span class="synclabel">Sync</span>
+			<span class="icon"></span>
+			<span class="label">Sync</span>
 			<xp:eventHandler event="onclick" submit="false">
 				<xp:this.script><![CDATA[syncAllDbs()]]></xp:this.script>
 			</xp:eventHandler>

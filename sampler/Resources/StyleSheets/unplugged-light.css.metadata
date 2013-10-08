@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="14a" sequence="1" unid="DF75E37924B6D9F680257BF00051443E">
-<created><datetime dst="true">20130924T154738,86+01</datetime></created>
-<modified><datetime dst="true">20130925T154356,29+01</datetime></modified>
-<revised><datetime dst="true">20130924T154738,89+01</datetime></revised>
-<lastaccessed><datetime dst="true">20130925T154356,29+01</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130925T154356,29+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<item name="$TITLE" sign="true"><text>unplugged-light.css</text></item>
-<item name="$DesignerVersion"><text>8</text></item>
-<item name="$FileModDT" sign="true"><datetime dst="true">20130905T084656,31+01</datetime></item>
-<item name="$FileNames" sign="true"><text>unplugged-light.css</text></item>
+<noteinfo noteid="48e" sequence="1" unid="CA8FB09AB3195C5380257BFE0050D7FF">
+<created><datetime dst="true">20131008T154301,75+01</datetime></created>
+<modified><datetime dst="true">20131008T154301,82+01</datetime></modified>
+<revised><datetime dst="true">20131008T154301,81+01</datetime></revised>
+<lastaccessed><datetime dst="true">20131008T154301,82+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20131008T154301,82+01</datetime></addedtofile></noteinfo>
+<updatedby><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<item name="$TITLE"><textlist><text>unplugged-light.css</text></textlist></item>
+<item name="$Flags"><text>34C=Q</text></item>
+<item name="$DesignerVersion"><text>6</text></item>
+<item name="$FileNames"><textlist><text>unplugged-light.css</text></textlist></item>
 
 
-<item name="$FileModDT" sign="true"><datetimelist><datetime>20130905T084656,00+00</datetime></datetimelist></item>
 
-
-<item name="$Flags"><text>=34QC</text></item>
-<item name="$FlagsExt" sign="true"><text>D</text></item></note>
+<item name="$FileModDT"><datetime dst="true">20131008T150117,48+01</datetime></item></note>

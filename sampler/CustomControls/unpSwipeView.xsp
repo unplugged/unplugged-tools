@@ -83,7 +83,8 @@ viewScope.put("images", images);
 				<xp:attr name="href" value="#">
 				</xp:attr>
 			</xp:this.attrs>
-			Close
+			<span class="icon"></span>
+			<span class="label">Close</span>
 		</xp:panel>
 	</div>
 	<div id="swipepreviousbutton" onclick="gallery.prev()">

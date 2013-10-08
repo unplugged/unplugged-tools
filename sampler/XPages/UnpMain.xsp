@@ -11,46 +11,157 @@
 		License
 	-->
 
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom"
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:unp="http://unplugged.teamstudio.com">
 
 	<xp:this.data>
-		<xp:dominoView var="cssview"
-			databaseName="UnpDemoWorkspace.nsf" viewName="CSS By Owner"
-			categoryFilter="#{javascript:@UserName()}">
+		<xp:dominoView var="cssview" databaseName="UnpDemoWorkspace.nsf"
+			viewName="CSS By Owner" categoryFilter="#{javascript:@UserName()}">
 		</xp:dominoView>
 	</xp:this.data>
-	<xp:repeat id="repeat1" rows="30" value="#{cssview}" var="cssdoc">
-		<xp:panel tagName="link" id="css">
-		<xp:this.attrs>
-			<xp:attr name="rel" value="stylesheet"></xp:attr>
-			<xp:attr name="type" value="text/css"></xp:attr>
-			<xp:attr name="href">
-				<xp:this.value><![CDATA[#{cssdoc.URL}]]></xp:this.value>
-			</xp:attr>
-		</xp:this.attrs>
-	</xp:panel>
-	</xp:repeat>
-	
-	<unp:unpHeader viewsButton="true"
-		title="Sampler" search="none">
+	<xp:this.resources>
+		<xp:styleSheet href="unp/jquery.jqplot.min.css"></xp:styleSheet>
+		<xp:styleSheet>
+			<xp:this.href><![CDATA[#{javascript:if (context.getUrlParameter("css")!= null && context.getUrlParameter("css")!=""){
+	return context.getUrlParameter("css");
+}else{
+	return "unplugged-dark.css";
+}}]]></xp:this.href>
+		</xp:styleSheet>
+	</xp:this.resources>
+
+	<unp:unpHeader viewsButton="true" title="Sampler" search="none">
 	</unp:unpHeader>
 	<unp:unpNavigator>
 		<unp:this.menuItem>
-			<unp:menuItem label="Demo" page="/UnpDemoWidgets.xsp"
-				ajaxtargetid="content" ajaxloadid="contentwrapper">
+			<unp:menuItem submenu="no" disabled="no" label="Dashboard"
+				icon="dashboard" page="/UnpMain.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Typography" icon="text_underline">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Read Mode" page="/TypographyReadMode.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Edit Mode" page="/TypographyEditMode.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="UI Elements" icon="hand_up">
+			</unp:menuItem>
+
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Accordion">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="All Widgets">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="CSS Controls">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Database Search">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Debug Toolbar">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Dialog">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Flat View">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Flat View (Categorized)">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Flat View (Different Database)">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Footer Tabs">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Header / Footer (with back button)">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Header / Footer (with views button)">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Navigator (no icons)">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Navigator (with icons)">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Navigator (computed)">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Swipe View">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" page="/Glyphicons.xsp"
+				ajaxtargetid="content" submenu="no" disabled="no" label="Glyphicons"
+				icon="leaf">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Forms" icon="edit">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Read Mode" page="/FormsReadMode.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Edit Mode" page="/FormsEditMode.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Workspace" icon="show_thumbnails">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Contacts" icon="group">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Companies">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Contacts">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Activities" icon="cogwheels">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="My Activities">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Activities By Company">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Activities By Contact">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Media" icon="file">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Library">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Favorites">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Performance" icon="settings">
 			</unp:menuItem>
 		</unp:this.menuItem>
 	</unp:unpNavigator>
 	<div id="content">
-		<unp:unpScrollableArea>
-			<xp:this.facets>
-				<xp:panel xp:key="facet_1">
-					
-				</xp:panel>
-			</xp:this.facets>
-		</unp:unpScrollableArea>
+		<xc:form_dashboard></xc:form_dashboard>
 	</div>
-	<unp:unpFooter synctype="alldbs"></unp:unpFooter>
+
+	<unp:unpTabbedFooter synctype="alldbs">
+		<unp:this.tab>
+			<unp:tab page="/UnpMain.xsp" label="Dark" icon="moon"></unp:tab>
+			<unp:tab page="/UnpMain.xsp?css=unplugged-light.css" label="Light"
+				icon="sun"></unp:tab>
+			<unp:tab page="/UnpMain.xsp?css=unplugged-ios7.css" label="iOS7"
+				icon="iphone"></unp:tab>
+		</unp:this.tab>
+	</unp:unpTabbedFooter>
+	<script type="text/javascript" src="unp/jquery.jqplot.min.js"></script>
+	<script type="text/javascript" src="unp/jqplot.pieRenderer.min.js"></script>
 </xp:view>

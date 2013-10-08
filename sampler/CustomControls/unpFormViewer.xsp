@@ -14,7 +14,6 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:this.resources>
 		<xp:script src="/unp/jquery.blockUI.min.js" clientSide="true"></xp:script>
-		<xp:script src="/unp/iScroll.min.js" clientSide="true"></xp:script>
 		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
 		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
@@ -73,7 +72,8 @@ if (compositeData.editxpagewithajax != "no"){
 }}]]></xp:this.value>
 						</xp:attr>
 					</xp:this.attrs>
-					<span class="formbuttonlabel">Edit</span>
+					<span class="icon"></span>
+					<span class="label">Edit</span>
 				</xp:panel>
 				<xp:panel id="closebutton" styleClass="cancelButton"
 					tagName="li">
@@ -82,7 +82,8 @@ if (compositeData.editxpagewithajax != "no"){
 							<xp:this.value><![CDATA[#{javascript:"$.blockUI();window.location.href='" + compositeData.closexpagename + "';"}]]></xp:this.value>
 						</xp:attr>
 					</xp:this.attrs>
-					<span class="formbuttonlabel">Close</span>
+					<span class="icon"></span>
+					<span class="label">Close</span>
 				</xp:panel>
 			</xp:panel>
 			<xp:callback facetName="facet_1" id="callback1"></xp:callback>
@@ -95,7 +96,8 @@ if (compositeData.editxpagewithajax != "no"){
 							<xp:this.value><![CDATA[#{javascript:"openDocument('" + compositeData.newresponsexpagename + "?action=newDocument&parentunid=" + document1.getDocument().getUniversalID() + "', 'content');"}]]></xp:this.value>
 						</xp:attr>
 					</xp:this.attrs>
-					<span class="formbuttonlabel">New Response</span>
+					<span class="icon"></span>
+					<span class="label">New Response</span>
 				</xp:panel>
 			</xp:panel>
 			<br />

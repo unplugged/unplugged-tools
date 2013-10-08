@@ -24,7 +24,6 @@
 		<xp:script src="/unp/jquery-2.0.3.min.js" clientSide="true"></xp:script>
 		<xp:script src="/unp/fastclick.js" clientSide="true"></xp:script>
 		<xp:script src="/unp/jquery.blockUI.min.js" clientSide="true"></xp:script>
-		<xp:script src="/unp/iScroll.min.js" clientSide="true"></xp:script>
 		<xp:script src="/unp/jquery.autocomplete.js" clientSide="true"></xp:script>
 		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
 		<xp:styleSheet href="/unpDialog.css"></xp:styleSheet>
@@ -34,7 +33,7 @@
 		<xp:metaData name="apple-mobile-web-app-capable" content="yes">
 		</xp:metaData>
 		<xp:metaData name="viewport"
-			content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1">
+			content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi">
 		</xp:metaData>
 		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
@@ -76,19 +75,17 @@ else{ return true;
 }else{
 	return compositeData.viewsButton;
 }}]]></xp:this.rendered>
-			<xp:label value="Views" id="viewslabel" styleClass="viewslabel">
-			</xp:label>
+			<span class="icon"></span>
+			<span class="label">Views</span>
 		</xp:panel>
 
 		<xp:label id="title" value="#{javascript:compositeData.title}"
 			styleClass="title">
-			<xp:this.attrs>
-				<xp:attr name="href" value="versionPopup"></xp:attr>
-			</xp:this.attrs>
 		</xp:label>
 		<xp:panel id="searchbutton" rendered="#{javascript:compositeData.search != 'none'}"
 			styleClass="searchButton">
-			<span class="searchlabel"></span>
+			<span class="icon"></span>
+			<span class="label">Search</span>
 		</xp:panel>
 		<xp:panel id="homebutton" styleClass="homeButton">
 			<xp:this.attrs>
@@ -101,7 +98,8 @@ else{ return true;
 }]]></xp:this.value>
 				</xp:attr>
 			</xp:this.attrs>
-			<span class="homelabel"></span>
+			<span class="icon"></span>
+			<span class="label">Home</span>
 		</xp:panel>
 
 	</xp:panel>

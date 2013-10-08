@@ -375,7 +375,9 @@ function initiscroll() {
 		}
 		return false;
 	});
+	
 	if (unpluggedserver) {
+		/*
 		if (!getURLParameter("starttime")){
 			document.addEventListener('touchmove', touchmovehandler);
 		}
@@ -457,6 +459,7 @@ function initiscroll() {
 							$(".atozpicker").show();
 							return false;
 						});
+		*/
 		$(".atozpicker").show();
 	} else {
 		$(".atozpicker").show();
@@ -667,7 +670,6 @@ function openHViewDialog(xpage, source, unid){
 function expandMenuItem(menuitem){
 	$(".viewMenuItemSub").hide();
 	$(".viewMenuItemSubSub").hide();
-	//$(".navScrollArea .viewMenuItem img").prop("src", "unp/right-arrow-trans-white-large.png");
 	if ($(menuitem).hasClass("viewMenuItemSub")){
 		//We need to toggle a sub-sub menu
 		var bFinishedCategory = false;
@@ -677,10 +679,8 @@ function expandMenuItem(menuitem){
 				return false;
 			}else if($(this).hasClass("viewMenuItemSub")){
 				if ($(this).is(':visible')){
-					//$(menuitem).find("img").prop("src", "unp/right-arrow-trans-white-large.png");
 					bimg = true;
 				}else{
-					//$(menuitem).find("img").prop("src", "unp/down-arrow-trans-white-large.png");
 					bimg = true;
 				}
 				$(this).toggle();
@@ -737,6 +737,7 @@ function expandMenuItem(menuitem){
 			}
 		});
 	}
+	$(menuitem).toggleClass("expanded");
 	fixNavigatorBottomCorners();
 }
 function fixNavigatorBottomCorners(){

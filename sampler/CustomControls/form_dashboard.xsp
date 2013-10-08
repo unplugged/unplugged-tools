@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+
+	<unp:unpScrollableArea>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<div class="panel" style="height: 600px;">
+					<h1>Dashboard</h1>
+					<div style="width: 50%; float: left;">
+						<h2>Open Cases By Owner</h2>
+						<div id="pie1"
+							style="margin-top:20px; margin-left:20px; width:100%; height:400px;">
+						</div>
+					</div>
+					<div style="width: 50%; float: right;">
+						<h2></h2>
+					</div>
+					<script>
+						$(document).ready(function(){
+							var plot1 = $.jqplot('pie1', [
+							    [
+							        ['Case Assignment', 6],
+							        ['Grant Norman', 21],
+							        ['John Coolidge', 2], 
+							        ['Larry Barker', 13], 
+							        ['Lindsey Thomson', 11], 
+							        ['Richard Sharpe', 2], 
+							        ['Other', 2]
+							    ]
+							], {
+							    gridPadding: {
+							        top: 0,
+							        bottom: 38,
+							        left: 0,
+							        right: 0
+							    },
+							    seriesDefaults: {
+							        renderer: $.jqplot.PieRenderer,
+							        trendline: {
+							            show: false
+							        },
+							        rendererOptions: {
+							            padding: 8,
+							            showDataLabels: true
+							        }
+							    },
+							    legend: {
+							        show: true,
+							        placement: 'outside',
+							        rendererOptions: {
+							            numberRows: 1
+							        },
+							        location: 's',
+							        marginTop: '15px'
+							    }
+							});
+						});
+					</script>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</unp:unpScrollableArea>
+</xp:view>

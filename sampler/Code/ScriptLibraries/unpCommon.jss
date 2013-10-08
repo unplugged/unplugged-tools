@@ -25,6 +25,22 @@ function getCurrentXPage(){
 	return viewScope.currentxpage;
 }
 
+function matchCurrentURL(compare){
+	var url = rightBack(context.getUrl().toString(), "/");
+	print("url = " + url);
+	print("compare = " + rightBack(compare, "/"));
+	if (url == rightBack(compare, "/")){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function rightBack(sourceStr, keyStr){
+	arr = sourceStr.split(keyStr);
+	return (sourceStr.indexOf(keyStr) == -1 | keyStr=='') ? '' : arr.pop()
+}
+
 /*
  * Returns the current db path in the format "/dir/mydb.nsf"
  */
