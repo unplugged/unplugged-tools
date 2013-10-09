@@ -670,7 +670,9 @@ function openHViewDialog(xpage, source, unid){
 function expandMenuItem(menuitem){
 	$(".viewMenuItemSub").hide();
 	$(".viewMenuItemSubSub").hide();
-	if ($(menuitem).hasClass("viewMenuItemSub")){
+	if ($(menuitem).hasClass("expanded")){
+		//We need to leave everything collapsed
+	}else if ($(menuitem).hasClass("viewMenuItemSub")){
 		//We need to toggle a sub-sub menu
 		var bFinishedCategory = false;
 		$(menuitem).show();
@@ -678,24 +680,10 @@ function expandMenuItem(menuitem){
 			if (!$(this).hasClass("viewMenuItemSubSub") && !$(this).hasClass("viewMenuItemSub")){
 				return false;
 			}else if($(this).hasClass("viewMenuItemSub")){
-				if ($(this).is(':visible')){
-					bimg = true;
-				}else{
-					bimg = true;
-				}
 				$(this).toggle();
 				bFinishedCategory = true;
 			}else{
 				if ($(this).hasClass("viewMenuItemSubSub") && !bFinishedCategory){
-					if (i==0){
-						if ($(this).is(':visible')){
-							//$(menuitem).find("img").prop("src", "unp/right-arrow-trans-white-large.png");
-							bimg = true;
-						}else{
-							//$(menuitem).find("img").prop("src", "unp/down-arrow-trans-white-large.png");
-							bimg = true;
-						}
-					}
 					$(this).toggle();
 				}
 			}
@@ -706,13 +694,6 @@ function expandMenuItem(menuitem){
 				return false;
 			}
 			if($(this).hasClass("viewMenuItemSub")){
-				if ($(this).is(':visible')){
-					//$(menuitem).find("img").prop("src", "unp/right-arrow-trans-white-large.png");
-					bimg = true;
-				}else{
-					//$(menuitem).find("img").prop("src", "unp/down-arrow-trans-white-large.png");
-					bimg = true;
-				}
 				$(this).toggle();
 			}
 		})
@@ -723,21 +704,17 @@ function expandMenuItem(menuitem){
 				return false;
 			}else{
 				if ($(this).hasClass("viewMenuItemSub")){
-					if (i==0){
-						if ($(this).is(':visible')){
-							//$(menuitem).find("img").prop("src", "unp/right-arrow-trans-white-large.png");
-							bimg = true;
-						}else{
-							//$(menuitem).find("img").prop("src", "unp/down-arrow-trans-white-large.png");
-							bimg = true;
-						}
-					}
 					$(this).toggle();
 				}
 			}
 		});
 	}
-	$(menuitem).toggleClass("expanded");
+	if ($(menuitem).hasClass("expanded")){
+		$(".viewMenuItem").removeClass("expanded");
+	}else{
+		$(".viewMenuItem").removeClass("expanded");
+		$(menuitem).addClass("expanded");
+	}
 	fixNavigatorBottomCorners();
 }
 function fixNavigatorBottomCorners(){
