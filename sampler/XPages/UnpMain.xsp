@@ -21,6 +21,7 @@
 	</xp:this.data>
 	<xp:this.resources>
 		<xp:styleSheet href="unp/jquery.jqplot.min.css"></xp:styleSheet>
+		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
 	</xp:this.resources>
 	<xp:panel tagName="link">
 		<xp:this.attrs>
@@ -55,33 +56,26 @@
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="no" disabled="no" label="UI Elements" icon="hand_up">
 			</unp:menuItem>
-
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Accordion" page="/Accordion.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="All Widgets">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="CSS Controls">
+				submenu="sub" disabled="no" label="CSS Controls" page="/CSSControls.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Database Search">
 			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Debug Toolbar">
+			<unp:menuItem submenu="sub" disabled="no"
+				label="Debug Toolbar" page="/DebugToolbar.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Dialog">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Flat View">
+				submenu="sub" disabled="no" label="Flat View" page="/FlatView.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Flat View (Categorized)">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Flat View (Different Database)">
+				submenu="sub" disabled="no" label="Flat View (Categorized)" page="/FlatViewCategorized.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Footer Tabs">

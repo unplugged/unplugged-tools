@@ -1,4 +1,4 @@
-iscrollcontent, #menuPane{
+.iscrollcontent, #menuPane{
 	position: fixed;
 	right: 0px;
 	left: 0px;

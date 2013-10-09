@@ -52,43 +52,46 @@ $(window)
 					} catch (e) {
 
 					}
-					try{
+					try {
 						fixNavigatorBottomCorners();
-					}catch(e){
-						
+					} catch (e) {
+
 					}
-					try{
+					try {
 						FastClick.attach(document.body);
-					}catch(e){
-						
+					} catch (e) {
+
 					}
-					
-					$(".footerTabtext").each(function(){
-						if ($(this).height() > 15){
+
+					$(".footerTabtext").each( function() {
+						if ($(this).height() > 15) {
 							$(this).parent().css("position", "relative");
 							$(this).parent().css("top", "-7px");
 						}
 					});
-					
+
 					initHorizontalView();
 					initDeleteable();
 					initAutoComplete();
-					
+
 				});
 
 function getURLParameter(name) {
-    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+	return decodeURIComponent((new RegExp(
+			'[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [
+			, "" ])[1].replace(/\+/g, '%20'))
+			|| null;
 }
 
-$(window).scroll( function() {
-	if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-		$(".loadmorebutton").click();
-	}
-});
+/*
+ * $(window).scroll( function() { if ($(window).scrollTop() + $(window).height() ==
+ * $(document).height()) { $(".loadmorebutton").click(); } });
+ */
 
-window.addEventListener("orientationchange", setTimeout("changeorientation", 100), false);
+window.addEventListener("orientationchange", setTimeout("changeorientation",
+		100), false);
 
-function changeorientation(){
+function changeorientation() {
 	alert("Orientation change");
 	hideViewsMenu();
 	initiscroll();
@@ -167,7 +170,6 @@ function openDocument(url, target) {
 	// $.blockUI();
 	// document.location.href = url;
 	var thisArea = $("#" + target);
-	History.pushState(url, url, url.replace(" ", "%20"));
 	thisArea.load(url.replace(" ", "%20") + " #contentwrapper",
 			function() {
 
@@ -215,19 +217,23 @@ function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname)
 			url : url,
 			data : data,
 			cache : false,
-			encoding:"UTF-8",
+			encoding : "UTF-8",
 			beforeSend : function() {
 				console.log("About to open URL");
 			}
-		}).done( function(response) {
-			console.log(response.length);
-			if (response.length == 32) {
-				openDocument(viewxpagename + "?action=openDocument&documentId=" + response, "content");
-				initiscroll();
-			} else {
-				alert(response);
-			}
-		});
+		}).done(
+				function(response) {
+					console.log(response.length);
+					if (response.length == 32) {
+						openDocument(
+								viewxpagename
+										+ "?action=openDocument&documentId="
+										+ response, "content");
+						initiscroll();
+					} else {
+						alert(response);
+					}
+				});
 	} else {
 		return false;
 	}
@@ -275,7 +281,6 @@ function hideViewsMenu() {
 var firedrequests;
 function loadPage(url, target, menuitem) {
 	var thisArea = $("#" + target);
-	History.pushState(url, url, url);
 	thisArea.load(url, function() {
 
 		if (firedrequests != null) {
@@ -297,7 +302,7 @@ function loadPage(url, target, menuitem) {
 
 function openPage(url, target) {
 	$.blockUI();
-	
+
 	document.location.href = url;
 }
 
@@ -313,31 +318,31 @@ function initDeleteable() {
 }
 
 var swipers = null;
-function initHorizontalView(){
-	try{
-		if (swipers != null){
-			//We need to destroy the existing swipers and re-init
-			for (var i=0; i<swipers.length; i++){
+function initHorizontalView() {
+	try {
+		if (swipers != null) {
+			// We need to destroy the existing swipers and re-init
+			for ( var i = 0; i < swipers.length; i++) {
 				swipers[i].destroy();
 			}
 		}
 		swipers = new Array();
-		$(".swiper-container").each(function(){
-			//First we need to re-size the swipe area
-			var items = $(this).find(".hviewitem").length;
-			$(this).find(".swiper-slide").width((items * 140));
-			//Now init the swiper
-			var mySwiper = $(this).swiper({
-				scrollContainer:true, 
-				freeMode: true,
-				freeModeFluid: true,
-				momentumBounce: true
-			});
+		$(".swiper-container").each( function() {
+			// First we need to re-size the swipe area
+				var items = $(this).find(".hviewitem").length;
+				$(this).find(".swiper-slide").width((items * 140));
+				// Now init the swiper
+				var mySwiper = $(this).swiper( {
+					scrollContainer : true,
+					freeMode : true,
+					freeModeFluid : true,
+					momentumBounce : true
+				});
 
-			swipers.push(mySwiper);
-		})
-	}catch(e){
-		
+				swipers.push(mySwiper);
+			})
+	} catch (e) {
+
 	}
 }
 
@@ -365,103 +370,39 @@ function initiscroll() {
 	// Register the letter click events
 	$(".atozletter").click( function(event) {
 		event.stopPropagation();
-		if ($(this).hasClass("switchletterlist")){
+		if ($(this).hasClass("switchletterlist")) {
 			$(".atozpicker").toggle();
 			$(".numberpicker").toggle();
-		}else{
+		} else {
 			jumpToLetter($(this), event);
 		}
 		return false;
 	});
-	
-	if (unpluggedserver) {
-		/*
-		if (!getURLParameter("starttime")){
-			document.addEventListener('touchmove', touchmovehandler);
-		}
-		// Initialise any iScroll that needs it
-		try {
-			pullUpEl = document.getElementById('pullUp');
-			pullUpOffset = pullUpEl.offsetHeight;
-		} catch (e) {
-		}
-		try {
-			scrollContent.destroy();
-			delete scrollContent;
-		} catch (e) {
-		}
-
-		try {
-			scrollMenu.destroy();
-			delete scrollMenu;
-		} catch (e) {
-		}
-		try {
-			scrollMenu = new iScroll('menu', {
-				bounce : true,
-				momentum : false
-			});
-		} catch (e) {
-		}
-		
-		$(".iscrollcontent")
-				.each(
-						function() {
-							scrollContent = new iScroll(
-									$(this).attr("id"),
-									{
-										useTransition : true,
-										onRefresh : function() {
-											if (pullUpEl) {
-												if (pullUpEl.className
-														.match('loading')) {
-													pullUpEl.className = '';
-													pullUpEl
-															.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
-												}
-											}
-										},
-										onScrollMove : function() {
-											if (pullUpEl) {
-												if (this.y < (this.maxScrollY - 5)
-														&& !pullUpEl.className
-																.match('flip')) {
-													pullUpEl.className = 'flip';
-													pullUpEl
-															.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
-													this.maxScrollY = this.maxScrollY;
-												} else if (this.y > (this.maxScrollY + 5)
-														&& pullUpEl.className
-																.match('flip')) {
-													pullUpEl.className = '';
-													pullUpEl
-															.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
-													this.maxScrollY = pullUpOffset;
-												}
-											}
-											$(".acResults").hide();
-										},
-										onScrollEnd : function() {
-											if (pullUpEl) {
-												if (pullUpEl.className
-														.match('flip')) {
-													pullUpEl.className = 'loading';
-													pullUpEl
-															.querySelector('.pullUpLabel').innerHTML = 'Loading...';
-													$(".loadmorebutton")
-															.click();
-												}
-											}
-										}
-									});
-							$(".atozpicker").show();
-							return false;
-						});
-		*/
-		$(".atozpicker").show();
-	} else {
-		$(".atozpicker").show();
+	try {
+		pullUpEl = document.getElementById('pullUp');
+		pullUpOffset = pullUpEl.offsetHeight;
+	} catch (e) {
 	}
+
+	$('.iscrollcontent')
+			.bind(
+					'scroll',
+					function() {
+						if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+							if (pullUpEl) {
+								pullUpEl.className = 'flip';
+								pullUpEl
+										.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
+								if (pullUpEl.className.match('flip')) {
+									pullUpEl.className = 'loading';
+									pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';
+									$(".loadmorebutton").click();
+								}
+							}
+						}
+					})
+
+	$(".atozpicker").show();
 }
 
 function jumpToLetter(letterelement, event) {
@@ -484,7 +425,7 @@ function jumpToLetter(letterelement, event) {
 }
 
 function openDialog(id) {
-	if (id != null && id != "#"){
+	if (id != null && id != "#") {
 		$("#underlay" + id).css('display', 'block');
 		$("#" + id).css('display', 'block');
 		var boxes = $("div");
@@ -545,9 +486,11 @@ function accordionLoadMore(obj, viewName, catName, xpage, dbname) {
 	$(obj).nextAll(".summaryDataRow:first").children(".accLoadMoreLink").show();
 	$(thisArea).append($(".summaryDataRow li"));
 
-	//check if there's only 1 expanded category and set a class to create a rounded bottom border
-	if ( $("#summaryList .categoryrow").length == 1 ) {
-		$("#summaryList div.summaryDataRow ul.accordionRowSet li:last-child").addClass("roundedBottom");
+	// check if there's only 1 expanded category and set a class to create a
+	// rounded bottom border
+	if ($("#summaryList .categoryrow").length == 1) {
+		$("#summaryList div.summaryDataRow ul.accordionRowSet li:last-child")
+				.addClass("roundedBottom");
 	}
 }
 
@@ -596,65 +539,71 @@ function x$(idTag, param) { // Updated 18 Feb 2012
 	return ($("#" + idTag));
 }
 
-function doHViewFilter(language, year, primaryview, filterview, xpage, source, toplevelcategory){
-	if (language == null){
+function doHViewFilter(language, year, primaryview, filterview, xpage, source,
+		toplevelcategory) {
+	if (language == null) {
 		language = $(".languagelabel").text();
 	}
-	if (year == null){
+	if (year == null) {
 		year = $(".yearlabel").text();
 	}
 	var thisArea = $("#repeatholder");
-	var url = ("UnpHorizontalViewFilter.xsp?languagefilter=" + language + 
-											"&yearfilter=" + year).replace(" ", "%20") + 
-											"&primaryview=" + primaryview.replace(" ", "%20") + 
-											"&filterview=" + filterview.replace(" ", "%20") + 
-											"&xpage=" + xpage + 
-											"&source=" + source + 
-											"&toplevelcategory=" + toplevelcategory;
-	thisArea.load(url.replace(" ", "%20") + " #repeatholder",
-			function() {
-				initiscroll();
-				initHorizontalView();
-				closeDialog('hviewPopup');
-				return false;
-			});
+	var url = ("UnpHorizontalViewFilter.xsp?languagefilter=" + language
+			+ "&yearfilter=" + year).replace(" ", "%20")
+			+ "&primaryview="
+			+ primaryview.replace(" ", "%20")
+			+ "&filterview="
+			+ filterview.replace(" ", "%20")
+			+ "&xpage="
+			+ xpage
+			+ "&source="
+			+ source
+			+ "&toplevelcategory="
+			+ toplevelcategory;
+	thisArea.load(url.replace(" ", "%20") + " #repeatholder", function() {
+		initiscroll();
+		initHorizontalView();
+		closeDialog('hviewPopup');
+		return false;
+	});
 	$(".dropdown-menu").hide();
 	$(".languagelabel").text(language);
 	$(".yearlabel").text(year);
 }
 
-function loadMoreHorizontal(button, category, primaryview, filterview, xpage, source){
+function loadMoreHorizontal(button, category, primaryview, filterview, xpage,
+		source) {
 	var language = $(".languagelabel").text().replace(" ", "%20");
 	var year = $(".yearlabel").text().replace(" ", "%20");
 	var categoryrep = category.replace(" ", "-");
 	categoryrep = categoryrep.replace("~", "-");
 	var thisArea = $(".swiper-" + categoryrep);
 	var itemcount = $(".swiper-slide-" + categoryrep + " .hviewitem").length;
-	var url = "UnpHorizontalViewList.xsp?category=" + category.replace(" ", "%20") + 
-										"&languagefilter=" + language + 
-										"&yearfilter=" + year + 
-										"&start=" + (itemcount - 1) + 
-										"&primaryview=" + primaryview.replace(" ", "%20") + 
-										"&filterview=" + filterview.replace(" ", "%20") + 
-										"&xpage=" + xpage + 
-										"&source=" + source;
-	$.ajax({
-	    url: url,
-	    dataType: 'html',
-	    success: function(html) {
-	        $('.swiper-slide-' + categoryrep).append($('#loadmoreresults .hviewitem', $(html)));
-	        if (html.indexOf("NOMORERECORDS") > -1){
-	        	$(".loadmorebutton-" + categoryrep).hide();
-	        }else{
-	        	$(".loadmorebutton-" + categoryrep).appendTo($('.swiper-slide-' + categoryrep));
-	        }
-	        initHorizontalView();
-	    }
+	var url = "UnpHorizontalViewList.xsp?category="
+			+ category.replace(" ", "%20") + "&languagefilter=" + language
+			+ "&yearfilter=" + year + "&start=" + (itemcount - 1)
+			+ "&primaryview=" + primaryview.replace(" ", "%20")
+			+ "&filterview=" + filterview.replace(" ", "%20") + "&xpage="
+			+ xpage + "&source=" + source;
+	$.ajax( {
+		url : url,
+		dataType : 'html',
+		success : function(html) {
+			$('.swiper-slide-' + categoryrep).append(
+					$('#loadmoreresults .hviewitem', $(html)));
+			if (html.indexOf("NOMORERECORDS") > -1) {
+				$(".loadmorebutton-" + categoryrep).hide();
+			} else {
+				$(".loadmorebutton-" + categoryrep).appendTo(
+						$('.swiper-slide-' + categoryrep));
+			}
+			initHorizontalView();
+		}
 	});
 }
 
-function openHViewDialog(xpage, source, unid){
-	if (xpage.indexOf(".xsp") == -1){
+function openHViewDialog(xpage, source, unid) {
+	if (xpage.indexOf(".xsp") == -1) {
 		xpage += ".xsp";
 	}
 	var url = xpage + "?action=openDocument&documentId=" + unid;
@@ -665,65 +614,74 @@ function openHViewDialog(xpage, source, unid){
 			});
 }
 
-function expandMenuItem(menuitem){
+function expandMenuItem(menuitem) {
 	$(".viewMenuItemSub").hide();
 	$(".viewMenuItemSubSub").hide();
-	if ($(menuitem).hasClass("expanded")){
-		//We need to leave everything collapsed
-	}else if ($(menuitem).hasClass("viewMenuItemSub")){
-		//We need to toggle a sub-sub menu
+	if ($(menuitem).hasClass("expanded")) {
+		// We need to leave everything collapsed
+	} else if ($(menuitem).hasClass("viewMenuItemSub")) {
+		// We need to toggle a sub-sub menu
 		var bFinishedCategory = false;
 		$(menuitem).show();
-		$(menuitem).nextAll().each(function(i){
-			if (!$(this).hasClass("viewMenuItemSubSub") && !$(this).hasClass("viewMenuItemSub")){
-				return false;
-			}else if($(this).hasClass("viewMenuItemSub")){
-				$(this).toggle();
-				bFinishedCategory = true;
-			}else{
-				if ($(this).hasClass("viewMenuItemSubSub") && !bFinishedCategory){
-					$(this).toggle();
-				}
-			}
-		});
-		//Now we need to make sure that any previous sub categories are shown as well
-		$(menuitem).prevAll().each(function(i){
-			if (!$(this).hasClass("viewMenuItemSub") && !$(this).hasClass("viewMenuItemSubSub")){
-				return false;
-			}
-			if($(this).hasClass("viewMenuItemSub")){
-				$(this).toggle();
-			}
-		})
-	}else{
-		//We need to toggle a sub menu
-		$(menuitem).nextAll().each(function(i){
-			if (!$(this).hasClass("viewMenuItemSub") && !$(this).hasClass("viewMenuItemSubSub")){
-				return false;
-			}else{
-				if ($(this).hasClass("viewMenuItemSub")){
-					$(this).toggle();
-				}
-			}
-		});
+		$(menuitem).nextAll().each(
+				function(i) {
+					if (!$(this).hasClass("viewMenuItemSubSub")
+							&& !$(this).hasClass("viewMenuItemSub")) {
+						return false;
+					} else if ($(this).hasClass("viewMenuItemSub")) {
+						$(this).toggle();
+						bFinishedCategory = true;
+					} else {
+						if ($(this).hasClass("viewMenuItemSubSub")
+								&& !bFinishedCategory) {
+							$(this).toggle();
+						}
+					}
+				});
+		// Now we need to make sure that any previous sub categories are shown
+		// as well
+		$(menuitem).prevAll().each(
+				function(i) {
+					if (!$(this).hasClass("viewMenuItemSub")
+							&& !$(this).hasClass("viewMenuItemSubSub")) {
+						return false;
+					}
+					if ($(this).hasClass("viewMenuItemSub")) {
+						$(this).toggle();
+					}
+				})
+	} else {
+		// We need to toggle a sub menu
+		$(menuitem).nextAll().each(
+				function(i) {
+					if (!$(this).hasClass("viewMenuItemSub")
+							&& !$(this).hasClass("viewMenuItemSubSub")) {
+						return false;
+					} else {
+						if ($(this).hasClass("viewMenuItemSub")) {
+							$(this).toggle();
+						}
+					}
+				});
 	}
-	if ($(menuitem).hasClass("expanded")){
+	if ($(menuitem).hasClass("expanded")) {
 		$(".viewMenuItem").removeClass("expanded");
-	}else{
+	} else {
 		$(".viewMenuItem").removeClass("expanded");
 		$(menuitem).addClass("expanded");
 	}
 	fixNavigatorBottomCorners();
 }
-function fixNavigatorBottomCorners(){
+function fixNavigatorBottomCorners() {
 	$(".navroundedbottom").removeClass("navroundedbottom");
-	$(".navScrollArea .viewMenuItem").not(':hidden').last().addClass("navroundedbottom");
+	$(".navScrollArea .viewMenuItem").not(':hidden').last().addClass(
+			"navroundedbottom");
 	$("#menuitems li a").removeClass("navroundedbottom");
 	$("#menuitems li a").not(':hidden').last().addClass("navroundedbottom");
 }
 
-function hviewFavourite(xpage, unid){
-	if (xpage.indexOf(".xsp") == -1){
+function hviewFavourite(xpage, unid) {
+	if (xpage.indexOf(".xsp") == -1) {
 		xpage += ".xsp";
 	}
 	var url = xpage + "?favorite=toggle&action=openDocument&documentId=" + unid;
@@ -731,29 +689,29 @@ function hviewFavourite(xpage, unid){
 	$("[unid='" + unid + "'] .badge-favorite").toggle();
 }
 
-function hviewEmail(xpage, unid){
+function hviewEmail(xpage, unid) {
 	$("#hviewdialogbuttons").toggle();
-	$("#emailholder").toggle();	
+	$("#emailholder").toggle();
 }
 
-function hviewEmailSend(xpage, unid){
-	alert("This needs to be implemented");	
+function hviewEmailSend(xpage, unid) {
+	alert("This needs to be implemented");
 }
 
-function hviewEmailCancel(xpage, unid){
+function hviewEmailCancel(xpage, unid) {
 	$("#hviewdialogbuttons").toggle();
-	$("#emailholder").toggle();	
+	$("#emailholder").toggle();
 }
 
-function dropdownToggle(element){
-	if (element != null){
+function dropdownToggle(element) {
+	if (element != null) {
 		$(element).next().toggle();
-	}else{
+	} else {
 		$(".dropdown-menu").toggle();
 	}
 }
 
-function switchCSS(obj, newcss){
+function switchCSS(obj, newcss) {
 	$("#footerTabBar li").removeClass("tabSelected");
 	$(obj).addClass("tabSelected");
 	$("[unp-id='primarycss']").attr("href", newcss);
