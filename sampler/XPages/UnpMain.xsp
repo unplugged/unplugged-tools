@@ -57,7 +57,7 @@
 			</unp:menuItem>
 
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Accordion">
+				submenu="sub" disabled="no" label="Accordion" page="/Accordion.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="All Widgets">

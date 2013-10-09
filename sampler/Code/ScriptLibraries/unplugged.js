@@ -167,6 +167,7 @@ function openDocument(url, target) {
 	// $.blockUI();
 	// document.location.href = url;
 	var thisArea = $("#" + target);
+	History.pushState(url, url, url.replace(" ", "%20"));
 	thisArea.load(url.replace(" ", "%20") + " #contentwrapper",
 			function() {
 
@@ -221,13 +222,8 @@ function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname)
 		}).done( function(response) {
 			console.log(response.length);
 			if (response.length == 32) {
-				// openDocument(
-				// viewxpagename
-				// + "?action=openDocument&documentId="
-				// + response, "content");
-				// initiscroll();
-				$.blockUI();
-				window.location.href = "UnpMain.xsp";
+				openDocument(viewxpagename + "?action=openDocument&documentId=" + response, "content");
+				initiscroll();
 			} else {
 				alert(response);
 			}
@@ -279,6 +275,7 @@ function hideViewsMenu() {
 var firedrequests;
 function loadPage(url, target, menuitem) {
 	var thisArea = $("#" + target);
+	History.pushState(url, url, url);
 	thisArea.load(url, function() {
 
 		if (firedrequests != null) {
@@ -300,6 +297,7 @@ function loadPage(url, target, menuitem) {
 
 function openPage(url, target) {
 	$.blockUI();
+	
 	document.location.href = url;
 }
 
