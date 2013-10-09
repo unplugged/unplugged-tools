@@ -777,3 +777,9 @@ function dropdownToggle(element){
 		$(".dropdown-menu").toggle();
 	}
 }
+
+function switchCSS(obj, newcss){
+	$("#footerTabBar li").removeClass("tabSelected");
+	$(obj).addClass("tabSelected");
+	$("[unp-id='primarycss']").attr("href", newcss);
+}

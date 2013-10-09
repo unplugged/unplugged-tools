@@ -37,8 +37,12 @@ function matchCurrentURL(compare){
 }
 
 function rightBack(sourceStr, keyStr){
-	arr = sourceStr.split(keyStr);
-	return (sourceStr.indexOf(keyStr) == -1 | keyStr=='') ? '' : arr.pop()
+	try{
+		arr = sourceStr.split(keyStr);
+		return (sourceStr.indexOf(keyStr) == -1 | keyStr=='') ? '' : arr.pop()
+	}catch(e){
+		return "";
+	}
 }
 
 /*

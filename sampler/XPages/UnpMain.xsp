@@ -21,15 +21,21 @@
 	</xp:this.data>
 	<xp:this.resources>
 		<xp:styleSheet href="unp/jquery.jqplot.min.css"></xp:styleSheet>
-		<xp:styleSheet>
-			<xp:this.href><![CDATA[#{javascript:if (context.getUrlParameter("css")!= null && context.getUrlParameter("css")!=""){
+	</xp:this.resources>
+	<xp:panel tagName="link">
+		<xp:this.attrs>
+			<xp:attr name="type" value="text/css"></xp:attr>
+			<xp:attr name="rel" value="stylesheet"></xp:attr>
+			<xp:attr name="href">
+				<xp:this.value><![CDATA[#{javascript:if (context.getUrlParameter("css")!= null && context.getUrlParameter("css")!=""){
 	return context.getUrlParameter("css");
 }else{
 	return "unplugged-dark.css";
-}}]]></xp:this.href>
-		</xp:styleSheet>
-	</xp:this.resources>
-
+}}]]></xp:this.value>
+			</xp:attr>
+			<xp:attr name="unp-id" value="primarycss"></xp:attr>
+		</xp:this.attrs>
+	</xp:panel>
 	<unp:unpHeader viewsButton="true" title="Sampler" search="none">
 	</unp:unpHeader>
 	<unp:unpNavigator>
@@ -155,10 +161,12 @@
 
 	<unp:unpTabbedFooter synctype="alldbs">
 		<unp:this.tab>
-			<unp:tab page="/UnpMain.xsp" label="Dark" icon="moon"></unp:tab>
-			<unp:tab page="/UnpMain.xsp?css=unplugged-light.css" label="Light"
+			<unp:tab label="Dark" icon="moon"
+				callback="switchCSS(this, 'unplugged-dark.css')">
+			</unp:tab>
+			<unp:tab callback="switchCSS(this, 'unplugged-light.css')" label="Light"
 				icon="sun"></unp:tab>
-			<unp:tab page="/UnpMain.xsp?css=unplugged-ios7.css" label="iOS7"
+			<unp:tab callback="switchCSS(this, 'unplugged-ios7.css')" label="iOS7"
 				icon="iphone"></unp:tab>
 		</unp:this.tab>
 	</unp:unpTabbedFooter>
