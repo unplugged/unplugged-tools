@@ -1,4 +1,4 @@
-.iscrollcontent, #menuPane{
+.iscrollcontent{
 	position: fixed;
 	right: 0px;
 	left: 0px;
@@ -9,3 +9,42 @@
 	-webkit-overflow-scrolling: touch;
 }
 
+#menuPane{
+	position: fixed;
+	overflow-x: none;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.notoppadscroll{
+	position: fixed;
+	right: 0px;
+	left: 0px;
+	top: 0px;
+	bottom: 60px;
+	overflow-x: none;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.bottompadscroll {
+	position: fixed;
+	right: 0px;
+	left: 0px;
+	top: 60px;
+	bottom: 0px;
+	overflow-x: none;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.nopadscroll {
+	position: fixed;
+	right: 0px;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	overflow-x: none;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}

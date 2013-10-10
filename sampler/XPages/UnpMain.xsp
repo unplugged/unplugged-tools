@@ -22,6 +22,7 @@
 	<xp:this.resources>
 		<xp:styleSheet href="unp/jquery.jqplot.min.css"></xp:styleSheet>
 		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
+		<xp:script src="/custom.js" clientSide="true"></xp:script>
 	</xp:this.resources>
 	<xp:panel tagName="link">
 		<xp:this.attrs>
@@ -69,7 +70,8 @@
 				label="Debug Toolbar" page="/DebugToolbar.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Dialog">
+				submenu="sub" disabled="no" label="Dialog" page="/Dialog.xsp"
+				callback="initDialog();">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Flat View" page="/FlatView.xsp">
@@ -78,13 +80,13 @@
 				submenu="sub" disabled="no" label="Flat View (Categorized)" page="/FlatViewCategorized.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Footer Tabs">
+				submenu="sub" disabled="no" label="Footer Tabs" page="/IFrameWrapper.xsp?src=FooterTabs.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Header / Footer (with back button)">
+				submenu="sub" disabled="no" label="Header / Footer (with back button)" page="/IFrameWrapper.xsp?src=HeaderBackButton.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Header / Footer (with views button)">
+				submenu="sub" disabled="no" label="Header / Footer (with views button)" page="/IFrameWrapper.xsp?src=HeaderViewsButton.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Navigator (no icons)">

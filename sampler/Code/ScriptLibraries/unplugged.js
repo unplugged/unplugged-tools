@@ -73,8 +73,24 @@ $(window)
 					initHorizontalView();
 					initDeleteable();
 					initAutoComplete();
-
+					$(document).ajaxStop(initHideFooter);
 				});
+
+function initHideFooter(){
+	try{
+		$(':input, textarea, select').on('focus', function(){
+			$(".footer").hide();
+			$(".iHeader").hide();
+		});
+		$(':input, textarea, select').on('blur', function(){
+			$(".footer").show();
+			$(".iHeader").show();
+			window.scrollTo(0, 1);
+		});
+	}catch(e){
+		
+	}
+}
 
 function getURLParameter(name) {
 	return decodeURIComponent((new RegExp(
@@ -709,10 +725,4 @@ function dropdownToggle(element) {
 	} else {
 		$(".dropdown-menu").toggle();
 	}
-}
-
-function switchCSS(obj, newcss) {
-	$("#footerTabBar li").removeClass("tabSelected");
-	$(obj).addClass("tabSelected");
-	$("[unp-id='primarycss']").attr("href", newcss);
 }

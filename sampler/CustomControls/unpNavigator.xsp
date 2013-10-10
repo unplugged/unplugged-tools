@@ -44,16 +44,20 @@ if (menuItem.disabled == "yes"){
 return out;}]]></xp:this.styleClass>
 							<xp:this.attrs>
 								<xp:attr name="onclick">
-									<xp:this.value><![CDATA[#{javascript:
+									<xp:this.value><![CDATA[#{javascript:var out = "";
 if (typeof menuItem.page != "undefined" && menuItem.page != "" && menuItem.page != null){
 	if (menuItem.ajaxloadid != null && menuItem.ajaxloadid != ""){
-		return "loadPage('" + getDbPath() + menuItem.page + " #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + ");";
+		out = "loadPage('" + getDbPath() + menuItem.page + " #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + ");";
 	}else{
-		return "openPage('" + getDbPath() + menuItem.page + "', '" + menuItem.ajaxtargetid + "')";
+		out = "openPage('" + getDbPath() + menuItem.page + "', '" + menuItem.ajaxtargetid + "');";
 	}
 }else{
-	return "expandMenuItem(this)";
-}}]]></xp:this.value>
+	out = "expandMenuItem(this);";
+}
+if (menuItem.callback != "undefined" && menuItem.callback != null && menuItem.callback != ""){
+	out += menuItem.callback;
+}
+return out;}]]></xp:this.value>
 									<xp:this.rendered><![CDATA[#{javascript:menuItem.disabled != "yes"}]]></xp:this.rendered>
 								</xp:attr>
 							</xp:this.attrs>
