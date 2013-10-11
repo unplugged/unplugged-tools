@@ -9,7 +9,7 @@
 	-webkit-overflow-scrolling: touch;
 }
 
-#menuPane{
+#menuPane, .wsscroll{
 	position: fixed;
 	overflow-x: none;
 	overflow-y: scroll;
@@ -47,4 +47,22 @@
 	overflow-x: none;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
+}
+
+@media screen and (min-width: 701px) {
+	.iscrollcontent {
+		top: 60px;
+		bottom: 60px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.iscrollcontent {
+		top: 45px;
+		bottom: 45px;
+	}
+	.wsscroll {
+		top: 45px;
+		bottom: 45px;
+	}
 }
