@@ -195,6 +195,9 @@ function openDocument(url, target) {
 				if (firedrequests != null) {
 					firedrequests = new Array();
 				}
+				
+				unp.storePageRequest(url);
+				
 				initiscroll();
 				if (url.indexOf("editDocument") > -1
 						|| url.indexOf("newDocument") > -1) {
@@ -301,25 +304,38 @@ function hideViewsMenu() {
 }
 
 var firedrequests;
-function loadPage(url, target, menuitem) {
+function loadPage(url, target, menuitem, pushState) {
+	
+	var _pushState = true;
+	if (arguments.length >= 4) {
+		_pushState = pushState;
+	}
+	
 	var thisArea = $("#" + target);
 	thisArea.load(url, function() {
 
 		if (firedrequests != null) {
 			firedrequests = new Array();
 		}
+		
+		if (_pushState) {
+			unp.storePageRequest(url);
+		}
+		
 		initiscroll();
 		initHorizontalView();
 		initDeleteable();
 		initAutoComplete();
 		return false;
 	});
-	var menuitems = $("#menuitems li");
-	menuitems.removeClass("viewMenuItemSelected");
-	menuitems.addClass("viewMenuItem");
-	$(".menuitem" + menuitem).removeClass("viewMenuItem");
-	$(".menuitem" + menuitem).addClass("viewMenuItemSelected");
-	hideViewsMenu();
+	if (_pushState){
+		var menuitems = $("#menuitems li");
+		menuitems.removeClass("viewMenuItemSelected");
+		menuitems.addClass("viewMenuItem");
+		$(".menuitem" + menuitem).removeClass("viewMenuItem");
+		$(".menuitem" + menuitem).addClass("viewMenuItemSelected");
+		hideViewsMenu();
+	}
 }
 
 function openPage(url, target) {
@@ -665,6 +681,7 @@ function expandMenuItem(menuitem) {
 				})
 	} else {
 		// We need to toggle a sub menu
+		var bClickedFirst = false;
 		$(menuitem).nextAll().each(
 				function(i) {
 					if (!$(this).hasClass("viewMenuItemSub")
@@ -672,6 +689,10 @@ function expandMenuItem(menuitem) {
 						return false;
 					} else {
 						if ($(this).hasClass("viewMenuItemSub")) {
+							if (!bClickedFirst){
+								$(this).click();
+								bClickedFirst = true;
+							}
 							$(this).toggle();
 						}
 					}
@@ -722,4 +743,33 @@ function dropdownToggle(element) {
 	} else {
 		$(".dropdown-menu").toggle();
 	}
+}
+
+//create unp namespace object (if not created before)
+if (!unp) {
+
+	var unp = {
+			
+		_firstLoad : true,
+		
+		storePageRequest : function(url) {
+			
+			this._firstLoad = false;
+			
+			if (url.indexOf("#")>-1) {
+				url = url.substring(0, url.indexOf(" #"));
+			}
+			history.pushState(null, "", url);
+			console.log("pushed " + url);
+		
+		}
+			
+	}
+	
+	$(window).bind("popstate", function() {
+		if (!unp._firstLoad) {
+		   loadPage(location.href + " #contentwrapper", 'content', null, false, false);
+		}
+	});
+	
 }

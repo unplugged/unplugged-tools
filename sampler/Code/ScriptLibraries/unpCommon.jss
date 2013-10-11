@@ -27,8 +27,6 @@ function getCurrentXPage(){
 
 function matchCurrentURL(compare){
 	var url = rightBack(context.getUrl().toString(), "/");
-	print("url = " + url);
-	print("compare = " + rightBack(compare, "/"));
 	if (url == rightBack(compare, "/")){
 		return true;
 	}else{

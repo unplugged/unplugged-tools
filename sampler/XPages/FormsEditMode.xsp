@@ -11,39 +11,55 @@
 		License
 	-->
 
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:unp="http://unplugged.teamstudio.com">
+	<xp:this.data>
+		<xp:dominoDocument var="document2" formName="Person"
+			action="editDocument">
+			<xp:this.documentId><![CDATA[#{javascript:var vw:NotesView = database.getView("People By Last Name");
+var doc = vw.getFirstDocument();
+return doc.getUniversalID();}]]></xp:this.documentId>
+		</xp:dominoDocument>
+	</xp:this.data>
 	<div id="contentwrapper">
 		<unp:unpScrollableArea>
 			<xp:this.facets>
 				<unp:unpFormEditor showbuttons="yes"
-					closexpagename="UnpDemoWidgets.xsp" viewxpagename="FormsReadMode.xsp"
-					formname="Person" title="Person" xp:key="facet_1">
+					viewxpagename="FormsReadMode.xsp" formname="Person" title="Person"
+					xp:key="facet_1">
 					<xp:this.facets>
 						<xp:panel xp:key="facet_1">
 							<ul class="fieldlist">
 								<li>
-									<xp:label value="First Name" id="firstnamelabel" for="firstname">
+									
+									<xp:label value="First Name"
+										id="firstnamelabel" for="firstname">
 									</xp:label>
-									<xp:inputText id="firstname" value="#{document1.FirstName}"
+									<xp:inputText id="firstname"
+										value="#{document2.FirstName}"
 										styleClass="required xspInputFieldEditBox deletable">
 									</xp:inputText>
 								</li>
 								<li>
-									<xp:label value="Last Name" id="lastnamelabel" for="lastname">
+									<xp:label value="Last Name"
+										id="lastnamelabel" for="lastname">
 									</xp:label>
-									<xp:inputText id="lastname" value="#{document1.LastName}"
+									<xp:inputText id="lastname"
+										value="#{document2.LastName}"
 										styleClass="required xspInputFieldEditBox deletable">
 									</xp:inputText>
 								</li>
 								<li>
-									<xp:label value="Date" id="datelabel" for="date">
+									<xp:label value="Date"
+										id="datelabel" for="date">
 									</xp:label>
-									<xp:inputText id="date" value="#{document1.InitialContactDate}"
+									<xp:inputText id="date"
+										value="#{document2.InitialContactDate}"
 										styleClass="xspInputFieldEditBox" type="date">
 										<xp:this.converter>
 											<xp:convertDateTime>
-												<xp:this.pattern><![CDATA[${javascript:if (document1.isEditable()){
+												<xp:this.pattern><![CDATA[${javascript:if (document2.isEditable()){
 	return "yyyy-MM-dd";
 }else{
 	return "dd MMM yyyy";
@@ -53,69 +69,81 @@
 									</xp:inputText>
 								</li>
 								<li>
-									<xp:label value="Email" id="emaillabel" for="email">
+									<xp:label value="Email"
+										id="emaillabel" for="email">
 									</xp:label>
-									<xp:inputText id="email" value="#{document1.Email}"
-										type="email" styleClass="xspInputFieldEditBox deletable">
-									</xp:inputText>
-								</li>
-								<li>
-									<xp:label value="Company" id="companylabel"
-										for="company">
-									</xp:label>
-									<xp:inputText id="company" value="#{document1.Company}"
-									styleClass="required xspInputFieldEditBox deletable autocomplete">
-									<xp:this.attrs>
-										<xp:attr name="auto-src" value="CompanyAuto.xsp">
-										</xp:attr>
-									</xp:this.attrs>
-								</xp:inputText>
-								</li>
-								<li>
-									<xp:label value="Street Address" id="streetaddresslabel" for="streetaddress">
-									</xp:label>
-									<xp:inputText id="streetaddress" value="#{document1.StreetAddress}"
+									<xp:inputText id="email"
+										value="#{document2.Email}" type="email"
 										styleClass="xspInputFieldEditBox deletable">
 									</xp:inputText>
 								</li>
 								<li>
-									<xp:label value="City" id="citylabel" for="city">
+									<xp:label value="Company"
+										id="companylabel" for="company">
 									</xp:label>
-									<xp:inputText id="city" value="#{document1.City}"
+									<xp:inputText id="company"
+										value="#{document2.Company}"
+										styleClass="required xspInputFieldEditBox deletable autocomplete">
+										<xp:this.attrs>
+											<xp:attr name="auto-src"
+												value="CompanyAuto.xsp">
+											</xp:attr>
+										</xp:this.attrs>
+									</xp:inputText>
+								</li>
+								<li>
+									<xp:label value="Street Address"
+										id="streetaddresslabel" for="streetaddress">
+									</xp:label>
+									<xp:inputText id="streetaddress"
+										value="#{document2.StreetAddress}"
 										styleClass="xspInputFieldEditBox deletable">
 									</xp:inputText>
 								</li>
 								<li>
-									<xp:label value="Zip Code" id="zipcodelabel" for="zipcode">
+									<xp:label value="City"
+										id="citylabel" for="city">
 									</xp:label>
-									<xp:inputText id="zipcode" value="#{document1.ZipCode}"
+									<xp:inputText id="city"
+										value="#{document2.City}"
 										styleClass="xspInputFieldEditBox deletable">
 									</xp:inputText>
 								</li>
 								<li>
-									<xp:label value="Country" id="countrylabel" for="country">
+									<xp:label value="Zip Code"
+										id="zipcodelabel" for="zipcode">
 									</xp:label>
-									<xp:comboBox id="country" value="#{document1.Country}"
-										styleClass="xspListBox">
+									<xp:inputText id="zipcode"
+										value="#{document2.ZipCode}"
+										styleClass="xspInputFieldEditBox deletable">
+									</xp:inputText>
+								</li>
+								<li>
+									<xp:label value="Country"
+										id="countrylabel" for="country">
+									</xp:label>
+									<xp:comboBox id="country"
+										value="#{document2.Country}" styleClass="xspListBox">
 										<xp:selectItems>
 											<xp:this.value><![CDATA[#{javascript:@Unique(@DbColumn(@DbName(), "People By Country", 1))}]]></xp:this.value>
 										</xp:selectItems>
 									</xp:comboBox>
 								</li>
 								<li>
-									<xp:label value="Phone" id="phonelabel" for="phone">
+									<xp:label value="Phone"
+										id="phonelabel" for="phone">
 									</xp:label>
 									<xp:inputText id="phone"
-										value="#{document1.Phone}"
+										value="#{document2.Phone}"
 										styleClass="xspInputFieldEditBox deletable" type="tel">
 									</xp:inputText>
 								</li>
 								<li>
-									<xp:label value="Details" id="detailslabel" for="description"
-										styleClass="widelabel">
+									<xp:label value="Details"
+										id="detailslabel" for="description" styleClass="widelabel">
 									</xp:label>
-									<xp:inputTextarea id="description" styleClass="richtextfield"
-										value="#{document1.Bio}">
+									<xp:inputTextarea id="description"
+										styleClass="richtextfield" value="#{document2.Bio}">
 									</xp:inputTextarea>
 								</li>
 							</ul>

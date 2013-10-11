@@ -199,12 +199,77 @@ a:hover {
   color: #bbbbbb;
 }
 /* BUTTONS */
+.button {
+  height: 36px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+  line-height: 36px;
+  font-size: 17px;
+  color: #eeeeee;
+  background-color: #636363;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+  display: inline-block;
+  border: 1px solid #535353;
+  padding: 0 15px;
+}
+/* DIALOG */
+.savebutton {
+  color: #ffffff;
+  background: #4d9400;
+  border: 1px solid #3d8400;
+}
+.cancelbutton {
+  color: #ffffff;
+  background: #a21414;
+  border: 1px solid #920404;
+}
+/* FORMS */
+.editButton .label,
+.cancelButton .label,
+.proceedButton .label,
+.saveButton .label {
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+  padding: 0;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  line-height: 36px;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+}
+.editButton .label {
+  color: #eeeeee;
+  border: 1px solid #535353;
+  background-color: #636363;
+  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+}
+.cancelButton .label {
+  color: #ffffff;
+  border: 1px solid #920404;
+  background-color: #a21414;
+  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+}
+.proceedButton .label,
+.saveButton .label {
+  color: #ffffff;
+  border: 1px solid #3d8400;
+  background-color: #4d9400;
+  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+}
+/* NAVBAR/FOOTER BUTTONS */
 .viewsButton,
 .homeButton,
 .searchButton,
 .syncButton,
 .newButton,
-.settingsButton {
+.settingsButton,
+.backButton {
   position: absolute;
   min-width: 36px;
   height: 36px;
@@ -226,7 +291,8 @@ a:hover {
   .searchButton,
   .syncButton,
   .newButton,
-  .settingsButton {
+  .settingsButton,
+  .backButton {
     top: 5px;
     height: 34px;
   }
@@ -236,7 +302,8 @@ a:hover {
 .searchButton .label,
 .syncButton .label,
 .newButton .label,
-.settingsButton .label {
+.settingsButton .label,
+.backButton .label {
   display: block;
   padding: 0 12px 0 36px;
 }
@@ -246,7 +313,8 @@ a:hover {
   .searchButton .label,
   .syncButton .label,
   .newButton .label,
-  .settingsButton .label {
+  .settingsButton .label,
+  .backButton .label {
     display: none;
   }
 }
@@ -255,7 +323,8 @@ a:hover {
 .searchButton .icon:before,
 .syncButton .icon:before,
 .newButton .icon:before,
-.settingsButton .icon:before {
+.settingsButton .icon:before,
+.backButton .icon:before {
   position: absolute;
   left: 8px;
   top: 8px;
@@ -273,7 +342,8 @@ a:hover {
   .searchButton .icon:before,
   .syncButton .icon:before,
   .newButton .icon:before,
-  .settingsButton .icon:before {
+  .settingsButton .icon:before,
+  .backButton .icon:before {
     top: 7px;
   }
 }
@@ -290,12 +360,14 @@ a:hover {
   }
 }
 .viewsButton,
-.syncButton {
+.syncButton,
+.backButton {
   left: 10px;
 }
 @media screen and (max-width: 700px) {
   .viewsButton,
-  .syncButton {
+  .syncButton,
+  .backButton {
     left: 4px;
   }
 }
@@ -338,6 +410,9 @@ a:hover {
 }
 .settingsButton .icon:before {
   content: "\E137";
+}
+.backButton .icon:before {
+  content: "\E225";
 }
 @media screen and (min-width: 1001px) {
   .viewsButton,
@@ -884,43 +959,13 @@ li.data-row .singleLineIcon {
 #formholder ul.buttons li.saveButton {
   width: 50%;
 }
-#formholder ul.buttons li.editButton .label,
-#formholder ul.buttons li.cancelButton .label,
-#formholder ul.buttons li.proceedButton .label,
-#formholder ul.buttons li.saveButton .label {
-  height: 36px;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
-  padding: 0;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.4);
-  font-weight: bold;
-  line-height: 36px;
-  font-size: 16px;
-  text-align: center;
-  display: block;
-}
-#formholder ul.buttons li.editButton .label {
-  color: #eeeeee;
-  border: 1px solid transparent;
-  background-color: #636363;
-  margin-right: 6px;
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
-}
 #formholder ul.buttons li.cancelButton .label {
-  color: #ffffff;
-  border: 1px solid transparent;
-  background-color: #a21414;
   margin-left: 6px;
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
 }
+#formholder ul.buttons li.editButton .label,
 #formholder ul.buttons li.proceedButton .label,
 #formholder ul.buttons li.saveButton .label {
-  color: #ffffff;
-  border: 1px solid transparent;
-  background-color: #4d9400;
   margin-right: 6px;
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
 }
 #formholder ul.buttons li.proceedButton {
   padding-left: 25% !important;
@@ -938,10 +983,13 @@ li.data-row .singleLineIcon {
 }
 #formholder ul.fieldlist li:last-child {
   border-bottom: 0;
-  -webkit-border-radius-bottom-left: 10px;
-  -webkit-border-radius-bottom-right: 10px;
+  border-radius: 0 0 10px 10px;
 }
-#formholder .xspTextComputedField {
+#formholder .customform ul.fieldlist li:last-child {
+  border-radius: 0;
+}
+#formholder .xspTextComputedField,
+#formholder .xspLink {
   display: block;
   font-size: 16px;
   padding: 10px 0;
@@ -1385,7 +1433,8 @@ li.data-row .singleLineIcon {
   -webkit-animation-timing-function: linear;
 }
 /* CONTENT AREA */
-.panel {
+.panel,
+fieldset {
   background: #fff;
   color: #333;
   font-size: 16px;
@@ -1396,79 +1445,88 @@ li.data-row .singleLineIcon {
   margin: 10px;
   padding: 15px 20px;
   overflow: hidden;
+  border: 0;
 }
-.panel h1,
 .panel h2,
-.panel h3,
-.panel h4,
-.panel h5,
-.panel h6 {
+fieldset h2 {
+  line-height: 24px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  color: #333333;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
-.panel p {
-  margin-bottom: 20px;
+.panel h2 .xspTextComputedField,
+fieldset h2 .xspTextComputedField {
+  color: #333333;
+  font-size: 24px;
+  font-weight: bold;
 }
-.panel h1 {
+legend {
+  background: #fff;
+  color: #333;
+  border: 1px solid #EEE;
+  padding: 2px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+/* SAMPLER APP: Typography */
+#typography h1,
+#typography h2,
+#typography h3,
+#typography h4,
+#typography h5,
+#typography h6 {
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+  text-shadow: none;
+  color: #333;
+}
+#typography h1 {
   font-size: 40px;
   line-height: 1.2;
 }
-.panel h2 {
+#typography h2 {
   font-size: 36px;
   line-height: 1.2;
 }
-.panel h3 {
+#typography h3 {
   font-size: 30px;
   line-height: 1.2;
 }
-.panel h4 {
+#typography h4 {
   font-size: 24px;
   line-height: 1.2;
 }
-.panel h5 {
+#typography h5 {
   font-size: 20px;
   line-height: 1.2;
 }
-.panel h6 {
+#typography h6 {
   font-size: 16px;
   line-height: 1.2;
 }
-/*
-fieldset {
-	background: #fff;
-	color: #333;
-	border: 1px solid #EEE;
-	font-size: 16px;
-	line-height: 24px;
-	text-overflow: ellipsis;
-	display: block;
-	white-space: nowrap;
-	border-radius: @content-border-radius;
-	margin: @content-padding;
-	padding: 10px 15px;
+#bodycopy p {
+  margin-bottom: 20px;
 }
-legend {
-	background: #fff;
-	color: #333;
-	border: 1px solid #EEE;
-	padding: 2px;
-	font-size: 12px;
-	text-overflow: ellipsis;
-	display: block;
-	white-space: nowrap;
-	border-radius: @content-border-radius;
-	font-weight: bold;
-	margin-top: 20px;
-}
-*/
-/* Glyphicons List */
-.panel .list-fonts {
+/* SAMPLER APP: Glyphicons */
+.list-fonts {
   margin: 0;
   padding: 0;
   border-top: 1px solid #EEE;
   border-left: 1px solid #EEE;
 }
-.panel .list-fonts a {
+.list-fonts a {
   width: 20%;
   padding: 0;
   margin: 0;
@@ -1482,21 +1540,21 @@ legend {
   margin-left: -1px;
 }
 @media screen and (max-width: 700px) {
-  .panel .list-fonts a {
+  .list-fonts a {
     width: 25%;
   }
 }
 @media screen and (max-width: 400px) {
-  .panel .list-fonts a {
+  .list-fonts a {
     width: 33%;
   }
 }
-.panel .list-fonts a:before {
+.list-fonts a:before {
   width: 100%;
   text-align: center;
   top: 12px;
 }
-.panel .list-fonts a strong {
+.list-fonts a strong {
   display: block;
   text-align: center;
   white-space: nowrap;
@@ -1504,18 +1562,29 @@ legend {
   font-weight: normal;
   overflow: visible;
 }
-.panel .list-fonts a span {
+.list-fonts a span {
   display: none;
 }
 /* DIALOG */
-#dialogContent {
+#dialogPopup {
+  border-radius: 10px;
+  box-shadow: none;
+  max-width: 600px;
+  padding: 0;
+  margin: 0 auto;
+}
+#dialogPopup h2 {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+#dialogPopup #dialogContent {
   font-size: 16px;
-  font-family: "Helvetica Neue", sans-serif;
+  padding: 15px 20px;
 }
-.dialogbuttons {
-  padding-top: 10px;
+#dialogPopup .dialogbuttons {
+  padding: 10px;
 }
-.dialogbuttons .button {
+#dialogPopup .dialogbuttons .button {
   border-radius: 6px;
   width: 48%;
   margin-right: 6px;
@@ -1531,17 +1600,7 @@ legend {
   display: block;
   color: #eeeeee;
   background: #636363;
-  border: 1px solid transparent;
-}
-.dialogbuttons .savebutton {
-  color: #ffffff;
-  background: #4d9400;
-  border: 1px solid transparent;
-}
-.dialogbuttons .cancelbutton {
-  color: #ffffff;
-  background: #a21414;
-  border: 1px solid transparent;
+  border: 1px solid #535353;
 }
 /**Autocomplete**/
 .acResults {

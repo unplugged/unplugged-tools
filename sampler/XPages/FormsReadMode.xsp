@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
 	<xp:this.data>
-		<xp:dominoDocument var="document1" formName="Person"></xp:dominoDocument>
+		<xp:dominoDocument var="document2" formName="Person"
+			action="openDocument">
+			<xp:this.documentId><![CDATA[#{javascript:var vw:NotesView = database.getView("People By Last Name");
+var doc = vw.getFirstDocument();
+return doc.getUniversalID();}]]></xp:this.documentId>
+		</xp:dominoDocument>
 	</xp:this.data>
 	<div id="contentwrapper">
 		<unp:unpScrollableArea>
@@ -9,7 +14,8 @@
 				<unp:unpFormViewer showbuttons="true"
 					editxpagewithajax="yes" position="menu-aligned" xp:key="facet_1"
 					editxpagename="FormsEditMode.xsp" title="Person"
-					titleiconfield="thumbnail">
+					titleiconfield="thumbnail"
+					formname="Person">
 					<xp:this.facets>
 						<xp:panel xp:key="facet_1">
 							<ul class="fieldlist">
@@ -18,7 +24,7 @@
 										id="firstnamelabel" for="firstname">
 									</xp:label>
 									<xp:text id="firstname"
-										value="#{document1.FirstName}">
+										value="#{document2.FirstName}">
 									</xp:text>
 								</li>
 								<li>
@@ -26,7 +32,7 @@
 										id="lastnamelabel" for="lastname">
 									</xp:label>
 									<xp:text id="lastname"
-										value="#{document1.LastName}">
+										value="#{document2.LastName}">
 									</xp:text>
 								</li>
 								<li>
@@ -34,7 +40,7 @@
 										for="birthday">
 									</xp:label>
 									<xp:text id="birthday"
-										value="#{document1.InitialContactDate}">
+										value="#{document2.InitialContactDate}">
 									</xp:text>
 								</li>
 								<li>
@@ -42,8 +48,8 @@
 										id="emaillabel" for="email">
 									</xp:label>
 									<xp:link escape="true"
-										text="#{document1.Email}" id="email">
-										<xp:this.value><![CDATA[#{javascript:"mailto:" + document1.getItemValueString("Email")}]]></xp:this.value>
+										text="#{document2.Email}" id="email">
+										<xp:this.value><![CDATA[#{javascript:"mailto:" + document2.getItemValueString("Email")}]]></xp:this.value>
 									</xp:link>
 								</li>
 								<li>
@@ -51,7 +57,7 @@
 										id="Company" for="company">
 									</xp:label>
 									<xp:text id="company"
-										value="#{document1.Company}">
+										value="#{document2.Company}">
 									</xp:text>
 								</li>
 								<li>
@@ -59,16 +65,16 @@
 										id="addresslabel" for="address">
 									</xp:label>
 									<xp:text id="address"
-										value="#{document1.StreetAddress}">
+										value="#{document2.StreetAddress}">
 									</xp:text>
 									<xp:text id="city"
-										value="#{document1.City}">
+										value="#{document2.City}">
 									</xp:text>
 									<xp:text id="zipcode"
-										value="#{document1.ZipCode}">
+										value="#{document2.ZipCode}">
 									</xp:text>
 									<xp:text id="country"
-										value="#{document1.country}">
+										value="#{document2.country}">
 									</xp:text>
 								</li>
 								<li>
@@ -76,12 +82,12 @@
 										id="phonelabel" for="phone">
 									</xp:label>
 									<xp:text id="dept"
-										value="#{document1.Phone}">
+										value="#{document2.Phone}">
 									</xp:text>
 								</li>
 								<li>
 									<xp:text id="description"
-										tagName="div" value="#{document1.Bio}" escape="false"
+										tagName="div" value="#{document2.Bio}" escape="false"
 										styleClass="body_richtext">
 									</xp:text>
 								</li>

@@ -19,3 +19,7 @@ function initDialog(){
 		}
 	}, 1000);
 }
+
+function readForm(url, index){
+	loadPage(url + ' #contentwrapper', 'content', index);
+}
