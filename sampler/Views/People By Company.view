@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='80257BF10050ED2F'>
-<noteinfo noteid='3416' unid='D8E2EA77E1290FBC80257BFF004366EA' sequence='4'>
+<noteinfo noteid='3416' unid='D8E2EA77E1290FBC80257BFF004366EA' sequence='5'>
 <created><datetime dst='true'>20131009T131612,58+01</datetime></created>
-<modified><datetime dst='true'>20131009T131627,85+01</datetime></modified>
-<revised><datetime dst='true'>20131009T131627,84+01</datetime></revised>
-<lastaccessed><datetime dst='true'>20131009T144354,01+01</datetime></lastaccessed>
+<modified><datetime dst='true'>20131014T105804,24+01</datetime></modified>
+<revised><datetime dst='true'>20131014T105804,23+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20131014T105804,24+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131009T131612,58+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
@@ -12,9 +12,10 @@
 <item name='$TITLE' sign='true'><text>People By Company</text></item>
 <item name='$Index' sign='true'><text/></item>
 <item name='$Formula' summary='true' sign='true'><formula compiled='true'>
-pgAFAJgAlAAOAAcACQAIAA0ABAAHAAcABQAFABIAEQADAAkABABDb21wYW55Rmlyc3ROYW1lTGFz
+yAAFAJgAlAAOAAcACQAIAA0ABAAHAAcABQAFABIAEQADAAkABABDb21wYW55Rmlyc3ROYW1lTGFz
 dE5hbWVTdHJlZXRBZGRyZXNzQ2l0eVppcENvZGVDb3VudHJ5UGhvbmVFbWFpbEluaXRpYWxDb250
-YWN0RGF0ZVRIVU1CTkFJTEZJTEVOQU1FU0VYJENvbmZsaWN0JFJFRgQABAAAAAgAZgADAA==
+YWN0RGF0ZVRIVU1CTkFJTEZJTEVOQU1FU0VYJENvbmZsaWN0JFJFRgQABAAAAB4ABQAEAEZvcm0B
+AAYAUGVyc29uCgIEAAQAAwAHAAwABQAJM1M0UwA=
 </formula></item>
 <item name='$Collation' summary='true'>
 <rawitemdata type='2'>
@@ -23,6 +24,10 @@ MwADAABEgGYAAAAHAABmAAcACQCBZgAQAAgAQ29tcGFueUZpcnN0TmFtZUxhc3ROYW1l
 <item name='$Comment' sign='true'><text/></item>
 <item name='$Flags'><text>Y</text></item>
 <item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$SelQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAAif8SAAAAAAABAAYAUGVyc29u
+</rawitemdata></item>
 <item name='$ViewFormat' sign='true'>
 <rawitemdata type='5'>
 AQAMAAwACAAAAFZDAQAHAAcAAAAAAFAAAQAACgAAAAAAAAAAAAICAAAAVkMBAAkACQAAAAAAUAAB
@@ -59,9 +64,9 @@ AQBOfL7/KAAAAAUAAACdAQAADgAAAAAAAABfRWRpdCBEb2N1bWVudAIAAgq+/ygAAAAFAAAAnQEA
 AA4AAAAAAAAAX1NlbmQgRG9jdW1lbnQDAAMKvv8iAAAABQAAAJ0BAAAIAAAAAAAAAF9Gb3J3YXJk
 BAAECr7/LAAAAAUAAACdAQAAEgAAAAAAAABfTW92ZSBUbyBGb2xkZXIuLi4FAD18vv8uAAAABQAA
 AJ0BAAATAAAAAAAAAF9SZW1vdmUgRnJvbSBGb2xkZXIABgA+fL7/IAAAAAUAAACdAQAABQAAAAAA
-AABfUmVhZAAHAF58vv8iAAAABQAAAJ0BAAAHAAAAAAAAAF9VbnJlYWQDCABufL7/LgAAAAUAAACd
+AABfUmVhZAAHAF58vv8iAAAABQAAAJ0BAAAHAAAAAAAAAF9VbnJlYWQACABufL7/LgAAAAUAAACd
 AQAAEwAAAAAAAABfT3BlbiBpbiBOZXcgV2luZG93AAkAfny+/yQAAAAFAAAAnQEAAAkAAAAAAAAA
-X1ByaW50Li4uAAoAjny+/yIAAAAFAAAAnQEAAAcAAAAAAAAAX0RlbGV0ZWwLAJ58vv8uAAAABQAA
+X1ByaW50Li4ucAoAjny+/yIAAAAFAAAAnQEAAAcAAAAAAAAAX0RlbGV0ZQALAJ58vv8uAAAABQAA
 AJ0BAAAUAAAAAAAAAF9Eb2N1bWVudCBQcm9wZXJ0aWVzDACufL7/HgAAAAUAAACdAQAABAAAAAAA
 AABDX3V0DQC+fL7/IAAAAAUAAACdAQAABQAAAAAAAABfQ29weQAOAM58vv8wAAAABQAAAJ0BAAAW
 AAAAAAAAAENvcHkgYXMgRG9jdW1lbnQgX0xpbmsPAN58vv8oAAAABQAAAJ0BAAAOAAAAAAAAAENv

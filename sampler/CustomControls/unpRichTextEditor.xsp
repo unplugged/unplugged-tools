@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.resources>
+		<xp:script src="/unp/advanced.js" clientSide="true"></xp:script>
+		<xp:script src="/unp/wysihtml5-0.3.0.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<div class="richtexteditor">
+		<div id="toolbar" style="display: none;">
+			<ul class="toolbarbuttons">
+				<li>
+					<a data-wysihtml5-command="bold" title="CTRL+B">
+						bold
+					</a>
+				</li>
+				<li>
+					<a data-wysihtml5-command="italic" title="CTRL+I">
+						italic
+					</a>
+				</li>
+				<li>
+					<a data-wysihtml5-command="createLink">
+						insert link
+					</a>
+				</li>
+				<li>
+					<a data-wysihtml5-command="formatBlock"
+						data-wysihtml5-command-value="h1">
+						h1
+					</a>
+				</li>
+				<li>
+					<a data-wysihtml5-command="formatBlock"
+						data-wysihtml5-command-value="h2">
+						h2
+					</a>
+				</li>
+				<li>
+					<a data-wysihtml5-command="insertUnorderedList">
+						insertUnorderedList
+					</a>
+				</li>
+				<li>
+					<a data-wysihtml5-command="insertOrderedList">
+						insertOrderedList
+					</a>
+				</li>
+				<li>
+					<a data-wysihtml5-command="insertSpeech">speech</a>
+				</li>
+				<li>
+					<a data-wysihtml5-action="change_view">
+						switch to html view
+					</a>
+				</li>
+			</ul>
+			<div data-wysihtml5-dialog="createLink"
+				style="display: none;">
+				<label>
+					Link:
+					<input data-wysihtml5-dialog-field="href"
+						value="http://">
+					</input>
+				</label>
+				<a data-wysihtml5-dialog-action="save">OK</a>
+				&#160;
+				<a data-wysihtml5-dialog-action="cancel">Cancel</a>
+			</div>
+		</div>
+		<xp:callback facetName="insertfieldhere" id="callback1"></xp:callback>
+	</div>
+</xp:view>

@@ -17,7 +17,10 @@
 		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 
-	<xp:this.beforePageLoad><![CDATA[#{javascript:dBar.init( (compositeData.defaultCollapsed=="true" ? true : false) );
+	<xp:this.beforePageLoad><![CDATA[#{javascript:try{
+	dBar.init( (compositeData.defaultCollapsed=="true" ? true : false) );
+}catch(e){
+}
 	}]]></xp:this.beforePageLoad>
 	<style type="text/css">
 		div.dBar {

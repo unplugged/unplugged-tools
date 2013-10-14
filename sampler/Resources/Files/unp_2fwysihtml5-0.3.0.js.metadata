@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="346e" sequence="2" unid="DB83846FE92A7DC780257C0400359643">
+<created><datetime dst="true">20131014T104518,75+01</datetime></created>
+<modified><datetime dst="true">20131014T104523,65+01</datetime></modified>
+<revised><datetime dst="true">20131014T104523,64+01</datetime></revised>
+<lastaccessed><datetime dst="true">20131014T104523,65+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20131014T104517,85+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+
+<item name="$FileModDT" sign="true"><datetime dst="true">20120518T074314,00+01</datetime></item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>wysihtml5-0.3.0.js</text></item>
+<item name="$TITLE" sign="true"><textlist><text>unp/wysihtml5-0.3.0.js</text></textlist></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>

@@ -23,6 +23,7 @@
 		<xp:styleSheet href="unp/jquery.jqplot.min.css"></xp:styleSheet>
 		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
 		<xp:script src="/custom.js" clientSide="true"></xp:script>
+		<xp:script src="/unp/wysihtml5-0.3.0.js" clientSide="true"></xp:script>
 	</xp:this.resources>
 	<xp:panel tagName="link">
 		<xp:this.attrs>
@@ -66,15 +67,10 @@
 				submenu="sub" disabled="no" label="CSS Controls" page="/CSSControls.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Database Search">
+				submenu="sub" disabled="yes" label="Database Search">
 			</unp:menuItem>
 			<unp:menuItem submenu="sub" disabled="no"
-				label="Debug Toolbar">
-				<unp:this.page><![CDATA[#{javascript:if (isUnpluggedServer()){
-	return "/DebugToolbar.xsp";
-}else{
-	return null;
-}}]]></unp:this.page>
+				label="Debug Toolbar" page="/DebugToolbar.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Dialog" page="/Dialog.xsp"
@@ -87,7 +83,7 @@
 				submenu="sub" disabled="no" label="Flat View (Categorized)" page="/FlatViewCategorized.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Swipe View">
+				submenu="sub" disabled="yes" label="Swipe View">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" page="/Glyphicons.xsp"
 				ajaxtargetid="content" submenu="no" disabled="no" label="Glyphicons"
@@ -104,40 +100,40 @@
 				submenu="sub" disabled="no" label="Edit Mode" page="/FormsEditMode.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="Workspace" icon="show_thumbnails">
+				submenu="no" disabled="yes" label="Workspace" icon="show_thumbnails">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="Contacts" icon="group">
+				submenu="no" disabled="yes" label="Contacts" icon="group">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Companies">
+				submenu="sub" disabled="yes" label="Companies">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Contacts">
+				submenu="sub" disabled="yes" label="Contacts">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="Activities" icon="cogwheels">
+				submenu="no" disabled="yes" label="Activities" icon="cogwheels">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="My Activities">
+				submenu="sub" disabled="yes" label="My Activities">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Activities By Company">
+				submenu="sub" disabled="yes" label="Activities By Company">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Activities By Contact">
+				submenu="sub" disabled="yes" label="Activities By Contact">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="Media" icon="file">
+				submenu="no" disabled="yes" label="Media" icon="file">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Library">
+				submenu="sub" disabled="yes" label="Library">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Favorites">
+				submenu="sub" disabled="yes" label="Favorites">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="Performance" icon="settings">
+				submenu="no" disabled="yes" label="Performance" icon="settings">
 			</unp:menuItem>
 		</unp:this.menuItem>
 	</unp:unpNavigator>
