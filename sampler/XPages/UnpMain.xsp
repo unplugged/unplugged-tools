@@ -23,7 +23,6 @@
 		<xp:styleSheet href="unp/jquery.jqplot.min.css"></xp:styleSheet>
 		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
 		<xp:script src="/custom.js" clientSide="true"></xp:script>
-		<xp:script src="/unp/wysihtml5-0.3.0.js" clientSide="true"></xp:script>
 	</xp:this.resources>
 	<xp:panel tagName="link">
 		<xp:this.attrs>
