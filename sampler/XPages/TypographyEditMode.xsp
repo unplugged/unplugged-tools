@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="RefData"
+			action="editDocument">
+			<xp:this.documentId><![CDATA[#{javascript:var vw:NotesView = database.getView("Reference Data");
+var doc:NotesDocument = vw.getDocumentByKey("SamplerEditHTML");
+if (doc != null){
+	return doc.getUniversalID();
+}}]]></xp:this.documentId>
+		</xp:dominoDocument>
+	</xp:this.data>
 	<div id="contentwrapper">
 		<unp:unpScrollableArea>
 			<xp:this.facets>
 				<xp:panel xp:key="facet_1">
 					<div class="panel typographyeditmode">
-					<unp:unpRichTextEditor>
-						<xp:this.facets>
-							<xp:inputTextarea id="description"
-								xp:key="insertfieldhere" styleClass="richtextfield">
-								<xp:this.attrs>
-									<xp:attr name="placeholder"
-										value="Insert Text...">
-									</xp:attr>
-								</xp:this.attrs>
-								<xp:this.defaultValue><![CDATA[#{javascript:@DbLookup(@DbName(), "Reference Data", "SamplerEditHTML", 2)}]]></xp:this.defaultValue>
-							</xp:inputTextarea>
-						</xp:this.facets>
-					</unp:unpRichTextEditor>
+						<unp:unpRichTextEditor>
+							<xp:this.facets>
+								<xp:inputTextarea id="description" xp:key="insertfieldhere"
+									styleClass="richtextfield" value="#{document1.Value}">
+									<xp:this.attrs>
+										<xp:attr name="placeholder" value="Insert Text...">
+										</xp:attr>
+									</xp:this.attrs>
+								</xp:inputTextarea>
+							</xp:this.facets>
+						</unp:unpRichTextEditor>
 					</div>
 				</xp:panel>
 			</xp:this.facets>

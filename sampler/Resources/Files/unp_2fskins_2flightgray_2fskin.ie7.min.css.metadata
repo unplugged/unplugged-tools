@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="349e" sequence="3" unid="79B5EF852FFAED3E80257C040049996C">
+<created><datetime dst="true">20131014T142354,04+01</datetime></created>
+<modified><datetime dst="true">20131014T142444,57+01</datetime></modified>
+<revised><datetime dst="true">20131014T142444,56+01</datetime></revised>
+<lastaccessed><datetime dst="true">20131014T142444,57+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20131014T142354,10+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+
+<item name="$FileModDT" sign="true"><datetime dst="true">20131010T132246,00+01</datetime></item>
+
+
+<item name="$FileNames" sign="true"><text>skin.ie7.min.css</text></item>
+<item name="$TITLE" sign="true"><text>unp/skins/lightgray/skin.ie7.min.css</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>

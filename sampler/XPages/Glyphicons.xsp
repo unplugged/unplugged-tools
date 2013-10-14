@@ -6,7 +6,7 @@
 			<xp:this.facets>
 				<xp:panel xp:key="facet_1">
 					<div class="panel">
-						<h1>Fonts</h1>
+						<h1>Glyphicons</h1>
 						<div class="list list-fonts c">
 							<a href="" class="glyphicons glass">
 								<strong>glass</strong>

@@ -101,6 +101,20 @@ function initHideFooter() {
 
 var editor = null;
 function initRichText() {
+	tinymce.init({
+	    selector: "textarea", 
+	    menubar: false, 
+	    toolbar: "bold italic underline formatselect bullist numlist blockquote removeformat"
+	 });
+	$('iframe').wrap(function(){
+        var $this = $(this);
+        return $('<div />').css({
+            width: $this.attr('width'),
+            height: $this.attr('height'),
+            overflow: 'auto',
+            '-webkit-overflow-scrolling': 'touch'
+        });
+    });
 }
 
 function getURLParameter(name) {
@@ -234,6 +248,9 @@ function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname)
 		scrollContent.scrollTo(0, -60, 0);
 	} catch (e) {
 	}
+	$('textarea').each(function(){
+		$(this).tinymce().save();
+	});
 	var data = $(".customform :input").serialize();
 	var url = 'UnpSaveDocument.xsp?unid=' + unid + "&formname=" + formname
 			+ "&rnd=" + Math.floor(Math.random() * 1001);

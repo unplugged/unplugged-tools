@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="34b2" sequence="3" unid="B7B5CBB84B2B539D80257C04004A07AE">
+<created><datetime dst="true">20131014T142836,30+01</datetime></created>
+<modified><datetime dst="true">20131014T142927,32+01</datetime></modified>
+<revised><datetime dst="true">20131014T142927,31+01</datetime></revised>
+<lastaccessed><datetime dst="true">20131014T142927,32+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20131014T142836,36+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20131010T132246,00+01</datetime></item>
+
+<item name="$FileNames" sign="true"><text>trans.gif</text></item>
+<item name="$TITLE" sign="true"><text>unp/skins/lightgray/img/trans.gif</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>

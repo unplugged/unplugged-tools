@@ -140,15 +140,17 @@
 		<xc:form_dashboard></xc:form_dashboard>
 	</div>
 
-	<unp:unpTabbedFooter synctype="alldbs">
+	<unp:unpTabbedFooter synctype="currentdb">
 		<unp:this.tab>
 			<unp:tab label="Dark" icon="moon"
 				callback="switchCSS(this, 'unplugged-dark.css')">
 			</unp:tab>
-			<unp:tab callback="switchCSS(this, 'unplugged-light.css')" label="Light"
-				icon="sun"></unp:tab>
-			<unp:tab callback="switchCSS(this, 'unplugged-ios7.css')" label="iOS7"
-				icon="iphone"></unp:tab>
+			<unp:tab callback="switchCSS(this, 'unplugged-light.css')"
+				label="Light" icon="sun">
+			</unp:tab>
+			<unp:tab callback="switchCSS(this, 'unplugged-ios7.css')"
+				label="iOS7" icon="iphone">
+			</unp:tab>
 		</unp:this.tab>
 	</unp:unpTabbedFooter>
 	<script type="text/javascript" src="unp/jquery.jqplot.min.js"></script>
