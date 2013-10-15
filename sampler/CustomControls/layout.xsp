@@ -25,7 +25,8 @@
 			<xp:attr name="unp-id" value="primarycss"></xp:attr>
 		</xp:this.attrs>
 	</xp:panel>
-	<unp:unpHeader viewsButton="true" title="Sampler" search="none">
+	<unp:unpHeader viewsButton="true" title="Sampler" search="database"
+		searchPage="DatabaseSearchResults.xsp">
 	</unp:unpHeader>
 	<unp:unpNavigator>
 		<unp:this.menuItem>
@@ -51,9 +52,6 @@
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="CSS Controls" page="/CSSControls.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Database Search" page="/IFrameWrapper.xsp?src=DatabaseSearch.xsp">
 			</unp:menuItem>
 			<unp:menuItem submenu="sub" disabled="no"
 				label="Debug Toolbar" page="/DebugToolbar.xsp">
