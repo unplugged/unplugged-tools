@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+	<div id="contentwrapper">
+		<unp:unpSwipeView formName="RefData" closeXPage="UnpMain.xsp">
+			<unp:this.DocUNID><![CDATA[#{javascript:var vw:NotesView = database.getView("Reference Data");
+var doc:NotesDocument = vw.getDocumentByKey("SamplerSwipeView");
+if (doc != null){
+	return doc.getUniversalID();
+}}]]></unp:this.DocUNID>
+		</unp:unpSwipeView>
+	</div>
+</xp:view>

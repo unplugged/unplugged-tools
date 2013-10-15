@@ -24,23 +24,14 @@
 			<xp:attr name="unp-id" value="primarycss"></xp:attr>
 		</xp:this.attrs>
 	</xp:panel>
-	<unp:unpHeader search="none" searchPage="UnpSearch.xsp"
-		viewsButton="true" title="Views Button" headerHomeLink="/HeaderViewsButton.xsp">
+	<unp:unpHeader search="database"
+		searchPage="DatabaseSearchResults.xsp" viewsButton="false"
+		title="Database Search" headerHomeLink="/DatabaseSearch.xsp">
 	</unp:unpHeader>
-	<unp:unpNavigator>
-		<unp:this.menuItem>
-			<unp:menuItem submenu="no" disabled="no" label="Menu Item">
-			</unp:menuItem>
-		</unp:this.menuItem>
-	</unp:unpNavigator>
 	<div id="content">
 		<xp:panel styleClass="panel nobottompadscroll">
-			<p>This is the demo of the header bar views button</p>
-			<p>This control allows us to display a header bar with different
-				buttons. In this case we're showing the Views Button which will show
-				and hide the navigator control. The button is only visible when the
-				screen is not wide enough to show the navigator and content
-				together.</p>
+			<p>This is the demo of the database search facility</p>
+			<p>We can search for text, and matching records will be returned to us</p>
 		</xp:panel>
 	</div>
 

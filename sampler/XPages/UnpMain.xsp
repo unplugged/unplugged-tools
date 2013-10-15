@@ -66,7 +66,7 @@
 				submenu="sub" disabled="no" label="CSS Controls" page="/CSSControls.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="yes" label="Database Search">
+				submenu="sub" disabled="no" label="Database Search" page="/IFrameWrapper.xsp?src=DatabaseSearch.xsp">
 			</unp:menuItem>
 			<unp:menuItem submenu="sub" disabled="no"
 				label="Debug Toolbar" page="/DebugToolbar.xsp">
@@ -81,8 +81,8 @@
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Flat View (Categorized)" page="/FlatViewCategorized.xsp">
 			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="yes" label="Swipe View">
+			<unp:menuItem
+				submenu="sub" disabled="no" label="Swipe View" page="/SwipeView.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" page="/Glyphicons.xsp"
 				ajaxtargetid="content" submenu="no" disabled="no" label="Glyphicons"
