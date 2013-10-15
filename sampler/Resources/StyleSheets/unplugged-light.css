@@ -1447,20 +1447,31 @@ fieldset {
   overflow: hidden;
   border: 0;
 }
-.panel h2,
-fieldset h2 {
-  line-height: 24px;
+.panel h1,
+fieldset h1 {
+  line-height: 1.2;
   text-decoration: none;
   text-overflow: ellipsis;
   color: #657893;
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+.panel h2,
+fieldset h2 {
+  line-height: 1.2;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  color: #657893;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 .panel h2 .xspTextComputedField,
 fieldset h2 .xspTextComputedField {
   color: #657893;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: bold;
 }
 legend {
@@ -1521,23 +1532,20 @@ legend {
 }
 /* SAMPLER APP: Glyphicons */
 .list-fonts {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   border-top: 1px solid #EEE;
   border-left: 1px solid #EEE;
 }
 .list-fonts a {
-  width: 20%;
-  padding: 0;
-  margin: 0;
+  width: 20% !important;
+  margin: 0 0 0 -1px !important;
   top: 0;
   text-align: center;
   float: left;
-  padding-top: 42px;
-  padding-bottom: 12px;
+  padding: 42px 0 12px 0 !important;
   border-bottom: 1px solid #EEE;
   border-right: 1px solid #EEE;
-  margin-left: -1px;
 }
 @media screen and (max-width: 700px) {
   .list-fonts a {
@@ -1560,10 +1568,10 @@ legend {
   white-space: nowrap;
   font-size: 13px;
   font-weight: normal;
-  overflow: visible;
+  overflow: visible !important;
 }
 .list-fonts a span {
-  display: none;
+  display: none !important;
 }
 /* DIALOG */
 #dialogPopup {
