@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<!--
+<!--
 		Copyright 2013 Teamstudio Inc Licensed under the Apache License,
 		Version 2.0 (the "License"); you may not use this file except in
 		compliance with the License. You may obtain a copy of the License at
@@ -20,8 +20,10 @@
 	<xp:this.beforePageLoad><![CDATA[#{javascript:try{
 	dBar.init( (compositeData.defaultCollapsed=="true" ? true : false) );
 }catch(e){
+	print("Error in beforePageLoad");
 }
 	}]]></xp:this.beforePageLoad>
+	
 	<style type="text/css">
 		div.dBar {
 		margin-top: 10px;
@@ -95,7 +97,7 @@
 	</style>
 
 	<xp:panel id="restoreDBar" styleClass="dBar"
-		rendered="#{javascript:!dBar.isEnabled()}">
+		rendered="#{javascript:try{!dBar.isEnabled()}catch(e){return false;}}">
 
 		<div class="header">
 			<h1>Unplugged Debug Toolbar</h1>
@@ -113,7 +115,7 @@
 	</xp:panel>
 
 	<xp:panel id="dBar" styleClass="dBar"
-		rendered="#{javascript:dBar.isEnabled()}">
+		rendered="#{javascript:try{dBar.isEnabled()}catch(e){return true;}}">
 
 		<div class="header">
 			<h1>Unplugged Debug Toolbar</h1>
@@ -128,7 +130,7 @@
 					</xp:eventHandler>
 				</xp:button>
 
-				<xp:button id="btnCollapse" rendered="#{javascript:!dBar.isCollapsed()}"
+				<xp:button id="btnCollapse" rendered="#{javascript:try{!dBar.isCollapsed()}catch(e){return true;}}"
 					styleClass="button debugbuttonsmall">
 					<xp:this.value><![CDATA[<]]></xp:this.value>
 					<xp:eventHandler event="onclick" submit="true"
@@ -137,7 +139,7 @@
 					</xp:eventHandler>
 				</xp:button>
 
-				<xp:button id="btnExpand" rendered="#{javascript:dBar.isCollapsed()}"
+				<xp:button id="btnExpand" rendered="#{javascript:try{dBar.isCollapsed()}catch(e){return true;}}"
 					styleClass="button debugbuttonsmall">
 					<xp:this.value><![CDATA[>]]></xp:this.value>
 					<xp:eventHandler event="onclick" submit="true"
@@ -151,7 +153,7 @@
 
 		</div>
 
-		<xp:div rendered="#{javascript:!dBar.isCollapsed()}" id="dBarContent">
+		<xp:div rendered="#{javascript:try{!dBar.isCollapsed()}catch(e){return true;}}" id="dBarContent">
 
 			<!-- actions -->
 			<div class="section">
@@ -231,13 +233,13 @@
 
 				<div class="content">
 
-					<xp:text rendered="#{javascript:dBar.getMessages().length==0}"
+					<xp:text rendered="#{javascript:try{dBar.getMessages().length==0}catch(e){return true;}}"
 						value="No messages found" />
 
 					<table class="grid">
 						<tbody>
 							<xp:repeat id="repeat1" rows="200" var="msg">
-								<xp:this.value><![CDATA[#{javascript:dBar.getMessages();}]]></xp:this.value>
+								<xp:this.value><![CDATA[#{javascript:try{dBar.getMessages();}catch(e){return null;}}]]></xp:this.value>
 								<tr style="vertical-align:top">
 
 									<td style="white-space:nowrap">

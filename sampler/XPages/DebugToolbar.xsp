@@ -55,38 +55,26 @@ try {
 		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
 		<xp:styleSheet href="/unplugged-dark.css"></xp:styleSheet>
 	</xp:this.resources>
-
-
-	<unp:unpHeader search="none" searchPage="UnpSearch.xsp"
-		headerHomeLink="/UnpMain.xsp" viewsButton="false"
-		title="Debug Toolbar" backButtonText="Back"
-		backButtonURL="/UnpMain.xsp">
-	</unp:unpHeader>
-	<unp:unpNavigator>
-		<unp:this.menuItem>
-			<unp:menuItem submenu="no" disabled="no" label="Home Page"
-				icon="dashboard" page="/UnpMain.xsp">
-			</unp:menuItem>
-		</unp:this.menuItem>
-	</unp:unpNavigator>
-	<unp:unpScrollableArea>
+	<xc:layout>
 		<xp:this.facets>
-			<xp:panel xp:key="facet_1" styleClass="left-aligned">
-				<unp:unpDebugToolbar defaultCollapsed="false"></unp:unpDebugToolbar>
+			<xp:panel xp:key="facet_1">
+				<unp:unpScrollableArea>
+					<xp:this.facets>
+						<xp:panel xp:key="facet_1">
+							<xp:panel styleClass="panel"
+								rendered="#{javascript:!isUnpluggedServer()}">
+								<p>
+									This page is a demonstration of the Debug
+									Toolbar. The toolbar is only active when running
+									Teamstudio Unplugged, this is what it would look
+									like, but the buttons will not work.
+								</p>
+							</xp:panel>
+							<unp:unpDebugToolbar defaultCollapsed="false"></unp:unpDebugToolbar>
+						</xp:panel>
+					</xp:this.facets>
+				</unp:unpScrollableArea>
 			</xp:panel>
 		</xp:this.facets>
-	</unp:unpScrollableArea>
-
-
-	<unp:unpFooter synctype="none"></unp:unpFooter>
-
-	<xp:this.afterPageLoad><![CDATA[#{javascript:try{
-	dBar.debug("afterPageLoad");
-}catch(e){
-}}]]></xp:this.afterPageLoad>
-	<xp:this.beforeRenderResponse><![CDATA[#{javascript:try{
-	dBar.debug("beforeRenderResponse")
-}catch(e){
-};}]]></xp:this.beforeRenderResponse>
-
+	</xc:layout>
 </xp:view>
