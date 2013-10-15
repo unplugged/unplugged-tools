@@ -104,7 +104,7 @@ function initRichText() {
 	tinymce.init({
 	    selector: "textarea", 
 	    menubar: false, 
-	    toolbar: "bold italic underline formatselect bullist numlist blockquote removeformat", 
+	    toolbar: "bold", 
 	    statusbar: false, 
 	    cleanup: false
 	 });
