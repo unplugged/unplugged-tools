@@ -79,6 +79,25 @@ function isAndroid(){
 	}
 }
 
+function isIOS(){
+	var useragent = context.getUserAgent().getUserAgent();
+	if (useragent.indexOf("AppleWebKit") > -1 && useragent.indexOf("Mobile") > -1 && useragent.indexOf("Android") == -1){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function getiOSVersion(){
+	if (!isIOS()){
+		return 0;
+	}
+	var useragent = context.getUserAgent().getUserAgent();
+	useragent = rightBack(useragent, "/");
+	useragent = @Left(useragent, useragent.length - 4);
+	return parseInt(useragent, 10) - 4;
+}
+
 function $A( object ){
 	if( typeof object === 'undefined' || object === null ){ return []; }
 	if( typeof object === 'string' ){ return [ object ]; }
