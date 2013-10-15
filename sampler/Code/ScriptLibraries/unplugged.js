@@ -104,17 +104,10 @@ function initRichText() {
 	tinymce.init({
 	    selector: "textarea", 
 	    menubar: false, 
-	    toolbar: "bold italic underline formatselect bullist numlist blockquote removeformat"
+	    toolbar: "bold italic underline formatselect bullist numlist blockquote removeformat", 
+	    statusbar: false, 
+	    cleanup: false
 	 });
-	$('iframe').wrap(function(){
-        var $this = $(this);
-        return $('<div />').css({
-            width: $this.attr('width'),
-            height: $this.attr('height'),
-            overflow: 'auto',
-            '-webkit-overflow-scrolling': 'touch'
-        });
-    });
 }
 
 function getURLParameter(name) {

@@ -128,11 +128,13 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												</xp:label>
 												<unp:unpRichTextEditor>
 													<xp:this.facets>
-														<xp:inputTextarea id="bio" xp:key="insertfieldhere"
+														<xp:inputTextarea
+															id="bio" xp:key="insertfieldhere"
 															styleClass="richtextfield" value="#{document2.Bio}"
-															style="height: 300px;">
+															style="height: auto;">
 															<xp:this.attrs>
-																<xp:attr name="placeholder" value="Insert Text...">
+																<xp:attr
+																	name="placeholder" value="Insert Text...">
 																</xp:attr>
 															</xp:this.attrs>
 														</xp:inputTextarea>

@@ -25,7 +25,7 @@
 		<xp:script src="/unp/fastclick.js" clientSide="true"></xp:script>
 		<xp:script src="/unp/jquery.blockUI.min.js" clientSide="true"></xp:script>
 		<xp:script src="/unp/jquery.autocomplete.js" clientSide="true"></xp:script>
-		<xp:script src="/unp/tinymce.min.js" clientSide="true"></xp:script>
+		<xp:script src="/unp/tinymce.js" clientSide="true"></xp:script>
 		<xp:script src="/unp/jquery.tinymce.min.js" clientSide="true"></xp:script>
 		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
 		<xp:styleSheet href="/unpDialog.css"></xp:styleSheet>
