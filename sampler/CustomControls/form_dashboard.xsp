@@ -4,59 +4,36 @@
 	<unp:unpScrollableArea>
 		<xp:this.facets>
 			<xp:panel xp:key="facet_1">
-				<div class="panel" style="height: 600px;">
+				<div id="chartsholder" class="panel">
 					<h1>Dashboard</h1>
-					<div style="width: 50%; float: left;">
+					<div class="piechartpanel">
 						<h2>Open Cases By Owner</h2>
-						<div id="pie1"
-							style="margin-top:20px; margin-left:20px; width:100%; height:400px;">
+						<div id="pie1">
 						</div>
 					</div>
-					<div style="width: 50%; float: right;">
-						<h2></h2>
+					<div class="barchartspanel">
+						<h2>Activity</h2>
+						<div id="stackchartholder" class="chartpanelelement">
+							<h3>Forecast</h3>
+							<div id="stackchart"></div>
+						</div>
+						<div id="barchart1holder" class="chartpanelelement">
+							<h3>Assigned Records</h3>
+							<div id="barchart1" class="barchart"></div>
+						</div>
+						<div id="barchart2holder" class="chartpanelelement">
+							<h3>Current Month Forecast</h3>
+							<div id="barchart2" class="barchart"></div>
+						</div>
+						<div id="barchart3holder" class="chartpanelelement">
+							<h3>Current Quarter Activity</h3>
+							<div id="barchart3" class="barchart"></div>
+						</div>
 					</div>
-					<script>
-						$(document).ready(function(){
-							var plot1 = $.jqplot('pie1', [
-							    [
-							        ['Case Assignment', 6],
-							        ['Grant Norman', 21],
-							        ['John Coolidge', 2], 
-							        ['Larry Barker', 13], 
-							        ['Lindsey Thomson', 11], 
-							        ['Richard Sharpe', 2], 
-							        ['Other', 2]
-							    ]
-							], {
-							    gridPadding: {
-							        top: 0,
-							        bottom: 38,
-							        left: 0,
-							        right: 0
-							    },
-							    seriesDefaults: {
-							        renderer: $.jqplot.PieRenderer,
-							        trendline: {
-							            show: false
-							        },
-							        rendererOptions: {
-							            padding: 8,
-							            showDataLabels: true
-							        }
-							    },
-							    legend: {
-							        show: true,
-							        placement: 'outside',
-							        rendererOptions: {
-							            numberRows: 1
-							        },
-							        location: 's',
-							        marginTop: '15px'
-							    }
-							});
-						});
-					</script>
 				</div>
+				<script>
+					$(document).ready(buildCharts);
+				</script>
 			</xp:panel>
 		</xp:this.facets>
 	</unp:unpScrollableArea>

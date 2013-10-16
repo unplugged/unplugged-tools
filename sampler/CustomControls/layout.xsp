@@ -7,7 +7,6 @@
 		</xp:dominoView>
 	</xp:this.data>
 	<xp:this.resources>
-		<xp:styleSheet href="unp/jquery.jqplot.min.css"></xp:styleSheet>
 		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
 		<xp:script src="/custom.js" clientSide="true"></xp:script>
 	</xp:this.resources>
@@ -87,13 +86,13 @@
 				icon="show_thumbnails" page="/Workspace.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="yes" label="Contacts" icon="group">
+				submenu="no" disabled="no" label="Contacts" icon="group">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="yes" label="Companies">
+				submenu="sub" disabled="no" label="Companies" page="/Companies.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="yes" label="Contacts">
+				submenu="sub" disabled="no" label="Contacts" page="/Contacts.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="no" disabled="yes" label="Activities" icon="cogwheels">
@@ -137,6 +136,8 @@
 			</unp:tab>
 		</unp:this.tab>
 	</unp:unpTabbedFooter>
-	<script type="text/javascript" src="unp/jquery.jqplot.min.js"></script>
-	<script type="text/javascript" src="unp/jqplot.pieRenderer.min.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.pie.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.stack.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.categories.js"></script>
 </xp:view>
