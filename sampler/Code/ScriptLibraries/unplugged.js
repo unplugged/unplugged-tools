@@ -106,7 +106,10 @@ function initRichText() {
 	    menubar: false, 
 	    toolbar: "bold", 
 	    statusbar: false, 
-	    cleanup: false
+	    cleanup: false, 
+	    content_css: $("[unp-id='primarycss']").attr('href'), 
+	    body_id: "unpluggedmce", 
+	    body_class: "unpluggedmce"
 	 });
 }
 
@@ -377,9 +380,9 @@ function initHorizontalView() {
 	try {
 		if (swipers != null) {
 			// We need to destroy the existing swipers and re-init
-			for ( var i = 0; i < swipers.length; i++) {
-				swipers[i].destroy();
-			}
+			//for ( var i = 0; i < swipers.length; i++) {
+			//	swipers[i].destroy();
+			//}
 		}
 		swipers = new Array();
 		$(".swiper-container").each( function() {
@@ -387,14 +390,14 @@ function initHorizontalView() {
 				var items = $(this).find(".hviewitem").length;
 				$(this).find(".swiper-slide").width((items * 140));
 				// Now init the swiper
-				var mySwiper = $(this).swiper( {
-					scrollContainer : true,
-					freeMode : true,
-					freeModeFluid : true,
-					momentumBounce : true
-				});
+				//var mySwiper = $(this).swiper( {
+				//	scrollContainer : true,
+				//	freeMode : true,
+				//	freeModeFluid : true,
+				//	momentumBounce : true
+				//});
 
-				swipers.push(mySwiper);
+				//swipers.push(mySwiper);
 			})
 	} catch (e) {
 
@@ -739,6 +742,15 @@ function hviewFavourite(xpage, unid) {
 	var url = xpage + "?favorite=toggle&action=openDocument&documentId=" + unid;
 	$("#hviewitemcontent").load(url.replace(" ", "%20") + " #results");
 	$("[unid='" + unid + "'] .badge-favorite").toggle();
+	closeDialog("hviewPopup");
+}
+
+function hviewDownloadNow(){
+	alert("This feature has not been enabled");
+}
+
+function hviewDownloadLater(){
+	alert("This feature has not been enabled");
 }
 
 function hviewEmail(xpage, unid) {

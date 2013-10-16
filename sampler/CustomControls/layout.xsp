@@ -107,13 +107,13 @@
 				submenu="sub" disabled="yes" label="Activities By Contact">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="yes" label="Media" icon="file">
+				submenu="no" disabled="no" label="Media" icon="file">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="yes" label="Library">
+				submenu="sub" disabled="no" label="Library" page="/MediaLibrary.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="yes" label="Favorites">
+				submenu="sub" disabled="no" label="Favorites" page="/MediaLibraryFavorites.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="no" disabled="yes" label="Performance" icon="settings">

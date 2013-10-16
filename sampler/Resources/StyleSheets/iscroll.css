@@ -16,6 +16,12 @@
 	-webkit-overflow-scrolling: touch;
 }
 
+.swiper-container {
+	overflow-x: scroll !important;
+	overflow-y: none !important;
+	-webkit-overflow-scrolling: touch !important;
+}
+
 .notoppadscroll {
 	position: fixed;
 	right: 0px;

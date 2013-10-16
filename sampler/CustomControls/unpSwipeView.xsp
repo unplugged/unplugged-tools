@@ -69,7 +69,6 @@ viewScope.put("images", images);
 		<xp:script src="/unp/fastclick.js" clientSide="true"></xp:script>
 		<xp:script src="/unp/jquery.blockUI.min.js" clientSide="true"></xp:script>
 		<xp:script src="unp/swipeview.js" clientSide="true"></xp:script>
-		<xp:styleSheet href="/unpSwipeView.css"></xp:styleSheet>
 		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 	<div id="wrapper"></div>
