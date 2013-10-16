@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="1b6" sequence="1" unid="613A56C8EBD8FDDF80257BF0005147AB">
-<created><datetime dst="true">20130924T154747,63+01</datetime></created>
-<modified><datetime dst="true">20130925T154356,83+01</datetime></modified>
-<revised><datetime dst="true">20130924T154747,89+01</datetime></revised>
-<lastaccessed><datetime dst="true">20130925T154356,83+01</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130925T154356,83+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<noteinfo noteid="35ae" sequence="1" unid="DCA2527D61EBB01280257C050059F8FB">
+<created><datetime dst="true">20131015T172244,43+01</datetime></created>
+<modified><datetime dst="true">20131015T172244,57+01</datetime></modified>
+<revised><datetime dst="true">20131015T172244,56+01</datetime></revised>
+<lastaccessed><datetime dst="true">20131015T172244,57+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20131015T172244,57+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <item name="$TITLE"><text>unplugged.less</text></item>
 <item name="$FlagsExt"><text>D</text></item>
-<item name="$FileModDT" sign="true"><datetime dst="true">20130708T150222,00+01</datetime></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-
-
-<item name="$FileNames" sign="true"><text>unplugged.less</text></item>
 <item name="$EditFilePath"><text>C:\Users\whitemx\AppData\Local\Temp\notes95E17C\~unplugged5.less</text></item>
-<item name="$Flags"><text>345CgQ</text></item></note>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FileNames"><textlist><text>unplugged.less</text></textlist></item>
+
+
+<item name="$FileModDT"><datetime dst="true">20131015T144628,99+01</datetime></item></note>

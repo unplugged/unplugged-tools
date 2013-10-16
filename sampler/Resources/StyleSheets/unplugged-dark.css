@@ -1453,9 +1453,9 @@ fieldset h1 {
   text-decoration: none;
   text-overflow: ellipsis;
   color: #333333;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .panel h2,
 fieldset h2 {
@@ -1465,7 +1465,6 @@ fieldset h2 {
   color: #999999;
   font-size: 16px;
   font-weight: bold;
-  text-transform: uppercase;
   margin-bottom: 15px;
 }
 .panel h2 .xspTextComputedField,

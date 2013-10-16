@@ -83,8 +83,8 @@
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Edit Mode" page="/FormsEditMode.xsp">
 			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="yes" label="Workspace" icon="show_thumbnails">
+			<unp:menuItem submenu="no" disabled="no" label="Workspace"
+				icon="show_thumbnails" page="/Workspace.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="no" disabled="yes" label="Contacts" icon="group">

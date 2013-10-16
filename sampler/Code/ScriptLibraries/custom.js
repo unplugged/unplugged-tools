@@ -23,3 +23,7 @@ function initDialog(){
 function readForm(url, index){
 	loadPage(url + ' #contentwrapper', 'content', index);
 }
+
+function adjustIFrameSize(){
+	setTimeout(function(){$("iframe").height($(window).height() - 120);}, 1500);
+}
