@@ -21,7 +21,7 @@
 		<name>InputField.EditBox</name>
 		<property mode="concat">
 			<name>styleClass</name>
-			<value>input-xxlarge</value>
+			<value>input-lg</value>
 		</property>
 	</control>
 	
@@ -29,7 +29,7 @@
 		<name>MediumEditBox</name>
 		<property mode="concat">
 			<name>styleClass</name>
-			<value>input-xlarge</value>
+			<value>form-control</value>
 		</property>
 	</control>
 

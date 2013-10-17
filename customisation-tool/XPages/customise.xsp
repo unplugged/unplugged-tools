@@ -1,10 +1,819 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="CSS">
+			<xp:this.querySaveDocument><![CDATA[#{javascript:var doc:NotesDocument = document1.getDocument(true);
+saveCSS(doc);}]]></xp:this.querySaveDocument>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:script src="/xpCSS.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+
+
 	<xc:layout>
 		<xp:this.facets>
-			<xc:form_css xp:key="facet_1"></xc:form_css>
+			<xp:panel xp:key="facet_2">
+				<div class="tab-content">
+					<div class="tab-pane active" id="settingstab">
+						<ul class="nav nav-tabs subnavigation">
+							<li class="active">
+								<a data-toggle="tab" href="#settingscontent">Settings</a>
+							</li>
+						</ul>
+						<div class="tab-content options">
+							<div class="tab-pane active" id="settingscontent">
+								<h4>Settings</h4>
+								<ul>
+									<li>
+										<xp:label id="descriptionlabel" for="description1"
+											value="Description">
+										</xp:label>
+										<xp:inputText value="#{document1.Description}"
+											id="description1" themeId="MediumEditBox">
+											<xp:this.defaultValue><![CDATA[#{javascript:var d1=new Date();
+return d1.toString('dd MMM yyyy hh:mm');}]]></xp:this.defaultValue>
+										</xp:inputText>
+									</li>
+									<li style="display: none;">
+										<xp:label id="lessfilelabel" for="lessfile"
+											value="LESS File">
+										</xp:label>
+										<xp:inputText value="#{document1.filename}" id="filename1"
+											defaultValue="unplugged.css" style="display: none;">
+										</xp:inputText>
+										<xp:comboBox id="lessfile" value="#{document1.LESSFile}">
+											<xp:selectItems>
+												<xp:this.value><![CDATA[#{javascript:@DbColumn(@DbName(), "LESS", 1)}]]></xp:this.value>
+											</xp:selectItems>
+										</xp:comboBox>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="headertab">
+						<ul class="nav nav-tabs subnavigation">
+							<li class="active">
+								<a data-toggle="tab" href="#headercontent">
+									Content
+								</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#headersearch">
+									Search
+								</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#headerbuttons">
+									Buttons
+								</a>
+							</li>
+						</ul>
 
+						<div class="tab-content options">
+							<div class="tab-pane active" id="headercontent">
+								<h4>Content</h4>
+								<ul>
+									<li>
+										<xp:label value="Background:" id="iheaderbackground_Label1"
+											for="iheaderbackground1">
+										</xp:label>
+										<xp:inputText value="#{document1.iheaderbackground}"
+											id="iheaderbackground1" themeId="MediumEditBox"
+											defaultValue="-webkit-linear-gradient(#343434, #121212)">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@iHeader-background">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+									</li>
+									<li>
+										<xp:label value="Border Bottom:" id="iHeaderborderbottom_Label1"
+											for="iHeaderborderbottom1">
+										</xp:label>
+										<xp:inputText value="#{document1.iHeaderborderbottom}"
+											id="iHeaderborderbottom1" themeId="MediumEditBox"
+											defaultValue="#000000" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@iHeader-border-bottom">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#000000">
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane options" id="headersearch">
+								<h4>Search</h4>
+								<ul>
+									<li>
+										<xp:label value="Border:" id="inputsearchframeinputborder_Label1"
+											for="inputsearchframeinputborder1">
+										</xp:label>
+										<xp:inputText value="#{document1.inputsearchframeinputborder}"
+											id="inputsearchframeinputborder1" themeId="MediumEditBox"
+											defaultValue="none">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@input-search-frame-input-border">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+									</li>
+									<li>
+										<xp:label value="Background:"
+											id="inputsearchframeinputbackground_Label1" for="inputsearchframeinputbackground1">
+										</xp:label>
+										<xp:inputText value="#{document1.inputsearchframeinputbackground}"
+											id="inputsearchframeinputbackground1" themeId="MediumEditBox"
+											defaultValue="#000000" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@input-search-frame-input-background">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#000000">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Box shadow:"
+											id="inputsearchframeinputboxshadow_Label1" for="inputsearchframeinputboxshadow1">
+										</xp:label>
+										<xp:inputText value="#{document1.inputsearchframeinputboxshadow}"
+											id="inputsearchframeinputboxshadow1" themeId="MediumEditBox"
+											defaultValue="0 1px 0 rgba(255, 255, 255, 0.2)">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@input-search-frame-input-box-shadow">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+									</li>
+									<li>
+										<xp:label value="Color:" id="inputsearchframeinputcolor_Label1"
+											for="inputsearchframeinputcolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.inputsearchframeinputcolor}"
+											id="inputsearchframeinputcolor1" themeId="MediumEditBox"
+											defaultValue="#BBB" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@input-search-frame-input-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#BBB">
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane options" id="headerbuttons">
+								<h4>Buttons</h4>
+								<ul>
+									<li>
+										<xp:label value="Back bg:" id="backbuttonbackground_Label1"
+											for="backbuttonbackground1">
+										</xp:label>
+										<xp:inputText value="#{document1.backbuttonbackground}"
+											id="backbuttonbackground1" themeId="MediumEditBox"
+											defaultValue="#464646" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@backButton-background">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#464646">
+										</a>
+									</li>
+									<li>
+										<xp:label value="View bg:" id="viewsbuttonbackground_Label1"
+											for="viewsbuttonbackground1">
+										</xp:label>
+										<xp:inputText value="#{document1.viewsbuttonbackground}"
+											id="viewsbuttonbackground1" themeId="MediumEditBox"
+											defaultValue="#464646" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@viewsButton-background">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#464646">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Home bg:" id="homebuttonbackground_Label1"
+											for="homebuttonbackground1">
+										</xp:label>
+										<xp:inputText value="#{document1.homebuttonbackground}"
+											id="homebuttonbackground1" themeId="MediumEditBox"
+											defaultValue="-webkit-linear-gradient(#808080, #464646)">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@homeButton-background">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+									</li>
+									<li>
+										<xp:label value="Search bg:" id="searchbuttonbackground_Label1"
+											for="searchbuttonbackground1">
+										</xp:label>
+										<xp:inputText value="#{document1.searchbuttonbackground}"
+											id="searchbuttonbackground1" themeId="MediumEditBox"
+											defaultValue="#464646" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@searchButton-background">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#464646">
+										</a>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane" id="bodytab">
+
+						<ul class="nav nav-tabs subnavigation">
+							<li class="active">
+								<a data-toggle="tab" href="#bodycontent">
+									Content
+								</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#bodyscroller">
+									Horizontal Scroller
+								</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#bodynavigator">
+									Navigator
+								</a>
+							</li>
+						</ul>
+
+						<div class="tab-content">
+							<div class="tab-pane active options" id="bodycontent">
+								<h4>Content</h4>
+								<ul>
+									<li>
+										<xp:label value="BG Color:" id="bodybackgroundcolor_Label1"
+											for="bodybackgroundcolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.bodybackgroundcolor}"
+											id="bodybackgroundcolor1" themeId="MediumEditBox"
+											defaultValue="#464646" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@body-background-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#464646">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Title Text Shadow:" id="spantitletextshadow_Label1"
+											for="spantitletextshadow1">
+										</xp:label>
+										<xp:inputText value="#{document1.spantitletextshadow}"
+											id="spantitletextshadow1" themeId="MediumEditBox"
+											defaultValue="0px 1px 0px #000">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@span-title-text-shadow">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+									</li>
+									<li>
+										<xp:label value="Title Color:" id="spantitlecolor_Label1"
+											for="spantitlecolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.spantitlecolor}"
+											id="spantitlecolor1" themeId="MediumEditBox" defaultValue="#FFFFFF"
+											styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@span-title-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#FFFFFF">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Row Item BG:" id="navscrollareaullibackground_Label1"
+											for="navscrollareaullibackground1">
+										</xp:label>
+										<xp:inputText value="#{document1.navscrollareaullibackground}"
+											id="navscrollareaullibackground1" themeId="MediumEditBox"
+											defaultValue="#222" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@navScrollArea-ul-li-background">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#222">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Row Item Border:" id="navscrollareaulliborder_Label1"
+											for="navscrollareaulliborder1">
+										</xp:label>
+										<xp:inputText value="#{document1.navscrollareaulliborder}"
+											id="navscrollareaulliborder1" themeId="MediumEditBox"
+											defaultValue="#111111" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@navScrollArea-ul-li-border">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#222">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Row Item Color:" id="navscrollareaullicolor_Label1"
+											for="navscrollareaullicolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.navscrollareaullicolor}"
+											id="navscrollareaullicolor1" themeId="MediumEditBox"
+											defaultValue="#DDD" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@navScrollArea-ul-li-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#DDD">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Row Item Text Shadow:" id="navscrollareaullitextshadow_Label1"
+											for="navscrollareaullitextshadow1">
+										</xp:label>
+										<xp:inputText value="#{document1.navscrollareaullitextshadow}"
+											id="navscrollareaullitextshadow1" themeId="MediumEditBox"
+											defaultValue="0 1px 0 rgba(0, 0, 0, 0.5)">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@navScrollArea-ul-li-text-shadow">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane options" id="bodyscroller">
+								<h4>Horizontal Scroller</h4>
+								<ul>
+									<li>
+										<xp:label value="H1 Color:" id="h1hviewh1color_Label1"
+											for="h1hviewh1color1">
+										</xp:label>
+										<xp:inputText value="#{document1.h1hviewh1color}"
+											id="h1hviewh1color1" themeId="MediumEditBox" defaultValue="#FFFFFF"
+											styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@h1-hview-h1-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#FFFFFF">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Category Color:" id="hviewcategorycolor_Label1"
+											for="hviewcategorycolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.hviewcategorycolor}"
+											id="hviewcategorycolor1" themeId="MediumEditBox"
+											defaultValue="#E5E5E5" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@hviewcategory-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#E5E5E5">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Category Border Top:" id="hviewcategorybordertop_Label1"
+											for="hviewcategorybordertop1">
+										</xp:label>
+										<xp:inputText value="#{document1.hviewcategorybordertop}"
+											id="hviewcategorybordertop1" themeId="MediumEditBox"
+											defaultValue="1px solid #2D2D2D">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@hviewcategory-border-top">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+									</li>
+									<li>
+										<xp:label value="Category Border Left:" id="hviewcategoryborderleft_Label1"
+											for="hviewcategoryborderleft">
+										</xp:label>
+										<xp:inputText value="#{document1.hviewcategoryborderleft}"
+											id="hviewcategoryborderleft" themeId="MediumEditBox"
+											defaultValue="1px solid #2D2D2D">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@hviewcategory-border-left">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+									</li>
+									<li>
+										<xp:label value="Category Border Right:" id="hviewcategoryborderright_Label1"
+											for="hviewcategoryborderright">
+										</xp:label>
+										<xp:inputText value="#{document1.hviewcategoryborderright}"
+											id="hviewcategoryborderright" themeId="MediumEditBox"
+											defaultValue="1px solid #2D2D2D">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@hviewcategory-border-right">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+									</li>
+									<li>
+										<xp:label value="Category BG Color:" id="hviewcategorybackgroundcolor_Label1"
+											for="hviewcategorybackgroundcolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.hviewcategorybackgroundcolor}"
+											id="hviewcategorybackgroundcolor1" themeId="MediumEditBox"
+											defaultValue="#3C3C3C" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@hviewcategory-background-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#3C3C3C">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Container BG Color:"
+											id="swiperscrollcontainerbackgroundc_Label1" for="swiperscrollcontainerbackgroundc1">
+										</xp:label>
+										<xp:inputText value="#{document1.swiperscrollcontainerbackgroundc}"
+											id="swiperscrollcontainerbackgroundc1" themeId="MediumEditBox"
+											defaultValue="#3C3C3C" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less"
+													value="@swiper-scroll-container-background-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#3C3C3C">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Title Color:" id="hviewtitlecolor_Label1"
+											for="hviewtitlecolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.hviewtitlecolor}"
+											id="hviewtitlecolor1" themeId="MediumEditBox" defaultValue="#E5E5E5"
+											styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@hviewtitle-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#E5E5E5">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Title Border Top:" id="hviewtitlebordertop_Label1"
+											for="hviewtitlebordertop1">
+										</xp:label>
+										<xp:inputText value="#{document1.hviewtitlebordertop}"
+											id="hviewtitlebordertop1" themeId="MediumEditBox"
+											defaultValue="#2D2D2D" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@hviewtitle-border-top">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#2D2D2D">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Title BG:" id="hviewtitlebackgroundcolor_Label1"
+											for="hviewtitlebackgroundcolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.hviewtitlebackgroundcolor}"
+											id="hviewtitlebackgroundcolor1" themeId="MediumEditBox"
+											defaultValue="#3C3C3C" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@hviewtitle-background-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#3C3C3C">
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane options" id="bodynavigator">
+								<h4>Navigator</h4>
+								<ul>
+									<li>
+										<xp:label value="Selected BG:"
+											id="viewmenuitemselectedbackground_Label1" for="viewmenuitemselectedbackground1">
+										</xp:label>
+										<xp:inputText value="#{document1.viewmenuitemselectedbackground}"
+											id="viewmenuitemselectedbackground1" themeId="MediumEditBox"
+											defaultValue="#3773F1" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less"
+													value="@navScrollArea-ul-li-viewMenuItemSelected-background">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#3773F1">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Sub BG:"
+											id="viewmenuitemsubbackgroundcolor_Label1" for="viewmenuitemsubbackgroundcolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.viewmenuitemsubbackgroundcolor}"
+											id="viewmenuitemsubbackgroundcolor1" themeId="MediumEditBox"
+											defaultValue="#000000" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less"
+													value="@navScrollArea-ul-li-viewMenuItemSub-background-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#000000">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Sub Border:"
+											id="viewmenuitemsubbackgroundborder_Label1" for="viewmenuitemsubbackgroundborder1">
+										</xp:label>
+										<xp:inputText value="#{document1.viewmenuitemsubbackgroundborder}"
+											id="viewmenuitemsubbackgroundborder1" themeId="MediumEditBox"
+											defaultValue="#000000" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less"
+													value="@navScrollArea-ul-li-viewMenuItemSub-background-border">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#000000">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Sub Sub BG:"
+											id="viewmenuitemsubsubbackgroundcolo_Label1" for="viewmenuitemsubsubbackgroundcolo1">
+										</xp:label>
+										<xp:inputText value="#{document1.viewmenuitemsubsubbackgroundcolo}"
+											id="viewmenuitemsubsubbackgroundcolo1" themeId="MediumEditBox"
+											defaultValue="#000000" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less"
+													value="@navScrollArea-ul-li-viewMenuItemSubSub-background-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#000000">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Sub Sub Border:"
+											id="viewmenuitemsubsubbackgroundbord_Label1" for="viewmenuitemsubsubbackgroundbord1">
+										</xp:label>
+										<xp:inputText value="#{document1.viewmenuitemsubsubbackgroundbord}"
+											id="viewmenuitemsubsubbackgroundbord1" themeId="MediumEditBox"
+											defaultValue="#000000" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less"
+													value="@navScrollArea-ul-li-viewMenuItemSubSub-background-border">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#000000">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Selected BG:"
+											id="viewmenuitemselectedbackgroundco_Label1" for="viewmenuitemselectedbackgroundco1">
+										</xp:label>
+										<xp:inputText value="#{document1.viewmenuitemselectedbackgroundco}"
+											id="viewmenuitemselectedbackgroundco1" themeId="MediumEditBox"
+											defaultValue="#0078F4" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less"
+													value="@navScrollArea-ul-li-viewMenuItemSelected-background-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#0078F4">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Selected Border:" id="viewmenuitemselectedborder_Label1"
+											for="viewmenuitemselectedborder1">
+										</xp:label>
+										<xp:inputText value="#{document1.viewmenuitemselectedborder}"
+											id="viewmenuitemselectedborder1" themeId="MediumEditBox"
+											defaultValue="#000000" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less"
+													value="@navScrollArea-ul-li-viewMenuItemSelected-border">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#000000">
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="tab-pane" id="footertab">
+						<ul class="nav nav-tabs subnavigation">
+							<li class="active">
+								<a data-toggle="tab" href="#footercontent">
+									Content
+								</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#footerbuttons">
+									Buttons
+								</a>
+							</li>
+						</ul>
+
+						<div class="tab-content">
+							<div class="tab-pane active options" id="footercontent">
+								<h4>Content</h4>
+								<ul>
+									<li>
+										<xp:label value="Text Color:" id="footertabtextcolor_Label1"
+											for="footertabtextcolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.footertabtextcolor}"
+											id="footertabtextcolor1" themeId="MediumEditBox"
+											defaultValue="#CCCCCC" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@footerTabtext-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#CCCCCC">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Selected Text Color:"
+											id="tabselectedfootertabtextcolor_Label1" for="tabselectedfootertabtextcolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.tabselectedfootertabtextcolor}"
+											id="tabselectedfootertabtextcolor1" themeId="MediumEditBox"
+											defaultValue="#FFFFFF" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@tabSelected-footerTabtext-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#FFFFFF">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Top Border:" id="footerbordertop_Label1"
+											for="footerbordertop1">
+										</xp:label>
+										<xp:inputText value="#{document1.footerbordertop}"
+											id="footerbordertop1" themeId="MediumEditBox" defaultValue="#000000"
+											styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@footer-border-top">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#000000">
+										</a>
+									</li>
+									<li>
+										<xp:label value="Background:" id="footerbackground_Label1"
+											for="footerbackground1">
+										</xp:label>
+										<xp:inputText value="#{document1.footerbackground}"
+											id="footerbackground1" themeId="MediumEditBox"
+											defaultValue="-webkit-linear-gradient(#343434, #121212)">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@footer-background">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+									</li>
+									<li>
+										<xp:label value="Span Color:" id="footerspancolor_Label1"
+											for="footerspancolor1">
+										</xp:label>
+										<xp:inputText value="#{document1.footerspancolor}"
+											id="footerspancolor1" themeId="MediumEditBox" defaultValue="#FFFFFF"
+											styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@footer-span-color">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#FFFFFF">
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane options" id="footerbuttons">
+								<h4>Buttons</h4>
+								<ul class="options">
+									<li>
+										<xp:label value="Settings BG:" id="settingsbuttonbackground_Label1"
+											for="settingsbuttonbackground1">
+										</xp:label>
+										<xp:inputText value="#{document1.settingsbuttonbackground}"
+											id="settingsbuttonbackground1" themeId="MediumEditBox"
+											defaultValue="#464646" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@settingsButton-background">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#464646">
+										</a>
+									</li>
+									<li>
+										<xp:label value="New BG:" id="newbuttonbackground_Label1"
+											for="newbuttonbackground1">
+										</xp:label>
+										<xp:inputText value="#{document1.newbuttonbackground}"
+											id="newbuttonbackground1" themeId="MediumEditBox"
+											defaultValue="#464646" styleClass="pick-a-color">
+											<xp:this.attrs>
+												<xp:attr name="unp-less" value="@newButton-background">
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:inputText>
+										<a href="#" class="color-picker" style="background-color:#464646">
+										</a>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<iframe id="previewframe" class="preview" src="/UnpSampler.nsf/UnpMain.xsp">
+
+				</iframe>
+			</xp:panel>
+			<xp:panel xp:key="facet_1">
+				<ul id="headertabs" class="navigation nav nav-tabs">
+					<li class="active">
+						<a data-toggle="tab" href="#settingstab">
+							Settings
+						</a>
+					</li>
+					<li>
+						<a data-toggle="tab" href="#headertab">
+							Header
+						</a>
+					</li>
+					<li>
+						<a href="#bodytab" data-toggle="tab">Body</a>
+					</li>
+					<li>
+						<a href="#footertab" data-toggle="tab">
+							Footer
+						</a>
+					</li>
+					<xp:panel tagName="li" id="savetab">
+						<xp:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous"}]]></xp:this.rendered>
+						<xp:link id="savebutton" styleClass="save">
+							<xp:this.text><![CDATA[Save & Export]]></xp:this.text>
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="complete">
+								<xp:this.action>
+									<xp:actionGroup>
+										<xp:saveDocument
+											var="document1">
+										</xp:saveDocument>
+										<xp:openPage
+											name="/customuis.xsp">
+										</xp:openPage>
+									</xp:actionGroup>
+								</xp:this.action>
+								<xp:this.script><![CDATA[$.blockUI( {
+		message : '<h1><img src="ajax-loader.gif" /> Just a moment...</h1>'
+	});]]></xp:this.script>
+							</xp:eventHandler>
+						</xp:link>
+					</xp:panel>
+				</ul>
+			</xp:panel>
 		</xp:this.facets>
+
 	</xc:layout>
-	
+
 </xp:view>

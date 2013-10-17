@@ -5,7 +5,16 @@
 
 	<xc:layout>
 		<xp:this.facets>
-			<xc:form_registration xp:key="facet_1"></xc:form_registration>
+			<xc:form_registration xp:key="facet_2"></xc:form_registration>
+			<xp:panel xp:key="facet_1">
+				<ul id="headertabs" class="navigation nav nav-tabs">
+					<li class="active">
+						<a data-toggle="tab" href="#registrationtab">
+							Registration
+						</a>
+					</li>
+				</ul>
+			</xp:panel>
 		</xp:this.facets>
 	</xc:layout>
 	<xp:this.navigationRules>

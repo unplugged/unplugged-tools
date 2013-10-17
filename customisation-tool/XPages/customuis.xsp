@@ -4,7 +4,16 @@
 
 	<xc:layout>
 		<xp:this.facets>
-			<xc:view_css xp:key="facet_1"></xc:view_css>
+			<xc:view_css xp:key="facet_2"></xc:view_css>
+			<xp:panel xp:key="facet_1">
+				<ul id="headertabs" class="navigation nav nav-tabs">
+					<li class="active">
+						<a data-toggle="tab">
+							My Saved Themes
+						</a>
+					</li>
+				</ul>
+			</xp:panel>
 		</xp:this.facets>
 	</xc:layout>
 </xp:view>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
+
+	<xp:this.resources>
+		<xp:script src="/xpCSS.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:var exCon = facesContext.getExternalContext(); 
+var writer = facesContext.getResponseWriter();
+var response = exCon.getResponse();
+response.setContentType("text/plain; charset=\"utf-8\"");
+var resp;
+try{
+	var doc:NotesDocument = database.getDocumentByUNID(context.getUrlParameter("unid"));
+	saveCSS(doc);
+	doc.save();
+	resp = "OK";
+}catch(mainerror){
+	resp = mainerror;
+}
+if(resp == "OK")
+{
+	writer.write(unid);
+} else {
+	writer.write("Error: " + resp);
+}
+writer.endDocument();
+facesContext.responseComplete();}]]></xp:this.afterRenderResponse></xp:view>

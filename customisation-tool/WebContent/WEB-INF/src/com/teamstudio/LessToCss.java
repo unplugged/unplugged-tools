@@ -85,7 +85,7 @@ public class LessToCss implements Serializable {
 				e.printStackTrace();
 			}
 
-			cleanupfiles(FulllessFile);
+			//cleanupfiles(FulllessFile);
 			cleanupfiles(FulljarFile);
 
 			cSSFileLocation = FullcssFile;

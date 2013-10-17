@@ -5,112 +5,74 @@
 		<xp:metaData name="charset" content="utf-8"></xp:metaData>
 		<xp:metaData name="viewport" content="width=device-width, initial-scale=1.0">
 		</xp:metaData>
-		<xp:styleSheet href="/custom.css"></xp:styleSheet>
-		<xp:styleSheet href="/bootstrap.min.css"></xp:styleSheet>
-		<xp:styleSheet href="/docs.css"></xp:styleSheet>
-		<xp:styleSheet href="/glyphicons.css"></xp:styleSheet>
-		<xp:styleSheet href="/pick-a-color-1.1.7.min.css"></xp:styleSheet>
 		<xp:script src="/jquery-2.0.3.min.js" clientSide="true"></xp:script>
+		<xp:script src="/bootstrap.min.js" clientSide="true"></xp:script>
 		<xp:script src="/jquery.blockUI.js" clientSide="true"></xp:script>
-		<xp:script src="/bootstrap.js" clientSide="true"></xp:script>
+		<xp:script src="/bootstrap-colorpicker.min.js" clientSide="true"></xp:script>
+		<xp:styleSheet href="/bootstrap.min.css"></xp:styleSheet>
+		<xp:styleSheet href="/bootstrap-colorpicker.min.css"></xp:styleSheet>
+		<xp:styleSheet href="/custom.css"></xp:styleSheet>
+		<xp:styleSheet href="/glyphicons.css"></xp:styleSheet>
 		<xp:script src="/tinycolor-0.9.15.js" clientSide="true"></xp:script>
-		<xp:script src="/pick-a-color-1.1.7.min.js" clientSide="true"></xp:script>
 		<xp:script src="/xpCommon.jss" clientSide="false"></xp:script>
 		<xp:script src="/common.js" clientSide="true"></xp:script>
 	</xp:this.resources>
 	<!--
-		[if lt IE 9]> <script
-		src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		[if lt IE 9]> 
+		<script src="html5shiv.js"></script> 
+		<script src="respond.min.js"></script> 
 		<![endif]
 	-->
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<xp:link id="homelink" styleClass="brand" value="/home.xsp"
+	<div class="row header">
+		<div class="container">
+			<h1>
+				<xp:link id="homelink" value="/home.xsp"
 					title="#{javascript: database.getTitle()}">
-					Unplugged Controls Library
+					Unplugged Customiser
 				</xp:link>
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<div class="nav-collapse collapse">
-					<ul class="nav pull-right">
-						<xp:panel tagName="li">
-							<xp:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous";}]]></xp:this.rendered>
-							<xp:text escape="true" styleClass="navbar-link" id="profilelink" tagName="a">
-								<xp:this.value><![CDATA[#{javascript:@Name("[CN]", @UserName())}]]></xp:this.value>
-							</xp:text>
-						</xp:panel>
-						<li>
-							<xp:link id="loginlink" text="Login" styleClass="navbar-link">
-								<xp:this.value><![CDATA[#{javascript:getDbPath() + "?opendatabase&login=true"}]]></xp:this.value>
-								<xp:this.rendered><![CDATA[#{javascript:@UserName() == "Anonymous"}]]></xp:this.rendered>
-							</xp:link>
-							<xp:link id="logoutlink" text="Logout" styleClass="navbar-link">
-								<xp:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous"}]]></xp:this.rendered>
-								<xp:this.value><![CDATA[#{javascript:getDbPath() + "?logout&redirectto=" + getDbPath()}]]></xp:this.value>
-							</xp:link>
-						</li>
-					</ul>
+			</h1>
+			<ul class="buttons">
+				<li>
+					<xp:link text="Customise..." id="customiselink"
+						value="/customise.xsp">
+						<xp:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous"}]]></xp:this.rendered>
+					</xp:link>
+				</li>
+				<li>
+					<xp:link escape="true" id="customuislink"
+						value="/customuis.xsp">
+						<xp:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous"}]]></xp:this.rendered>
+						<xp:this.text><![CDATA[#{javascript:var list = $A(@DbLookup(@DbName(), "CSS By Owner", @UserName(), 2));
+return "My Saved Themes (" + list.length + ")";}]]></xp:this.text>
+					</xp:link>
+					<xp:link escape="true" text="Register" id="registerlink"
+						value="/registration.xsp">
+						<xp:this.rendered><![CDATA[#{javascript:@UserName() == "Anonymous"}]]></xp:this.rendered>
+					</xp:link>
+				</li>
+				<li>
+					<xp:link id="loginlink" text="Login">
+						<xp:this.value><![CDATA[#{javascript:getDbPath() + "?opendatabase&login=true"}]]></xp:this.value>
+						<xp:this.rendered><![CDATA[#{javascript:@UserName() == "Anonymous"}]]></xp:this.rendered>
+					</xp:link>
+					<xp:link id="logoutlink" text="Logout">
+						<xp:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous"}]]></xp:this.rendered>
+						<xp:this.value><![CDATA[#{javascript:getDbPath() + "?logout&redirectto=" + getDbPath()}]]></xp:this.value>
+					</xp:link>
+				</li>
+			</ul>
 
-					<ul class="nav">
-						<xp:panel tagName="li" id="home">
-							<xp:this.styleClass><![CDATA[#{javascript:if (getCurrentXPage() == "/home.xsp"){
-	return "active";
-}}]]></xp:this.styleClass>
-							<xp:link escape="true" text="Home" id="navhomelink"
-								value="/home.xsp">
-							</xp:link>
-						</xp:panel>
-						<xp:panel tagName="li" id="documentation">
-							<xp:this.styleClass><![CDATA[#{javascript:if (getCurrentXPage() == "/documentation.xsp"){
-	return "active";
-}}]]></xp:this.styleClass>
-							<xp:link escape="true" text="Documentation" id="navdoclink"
-								value="/documentation.xsp">
-							</xp:link>
-						</xp:panel>
-						<xp:panel tagName="li" id="register">
-							<xp:this.styleClass><![CDATA[#{javascript:if (getCurrentXPage() == "/registration.xsp"){
-	return "active";
-}}]]></xp:this.styleClass>
-							<xp:this.rendered><![CDATA[#{javascript:@UserName() == "Anonymous"}]]></xp:this.rendered>
-							<xp:link escape="true" text="Register"
-								id="navregisterlink" value="/registration.xsp">
-							</xp:link>
-						</xp:panel>
-						<xp:panel tagName="li" id="customuis">
-							<xp:this.styleClass><![CDATA[#{javascript:if (getCurrentXPage() == "/customuis.xsp"){
-	return "active";
-}}]]></xp:this.styleClass>
-							<xp:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous"}]]></xp:this.rendered>
-							<xp:link escape="true" text="Custom UIs"
-								id="customuislink" value="/customuis.xsp">
-							</xp:link>
-						</xp:panel>
-						<xp:panel tagName="li" id="customise">
-							<xp:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous"}]]></xp:this.rendered>
-							<xp:this.styleClass><![CDATA[#{javascript:if (getCurrentXPage() == "/customise.xsp"){
-	return "active";
-}}]]></xp:this.styleClass>
-							<xp:link escape="true" text="Customise" id="navcustomiselink"
-								value="/customise.xsp">
-							</xp:link>
-						</xp:panel>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
+			<xp:callback facetName="facet_1" id="callback1"></xp:callback>
+
+
 		</div>
 	</div>
 
-	<div id="container" class="container-fluid">
-		<div class="row-fluid">
-			<xp:callback facetName="facet_1" id="callback1"></xp:callback>
-		</div><!--/row-->
-		<hr />
-		
-		<xc:layout_footer></xc:layout_footer>
-	</div><!--/.fluid-container-->
+	<div class="content">
+		<div class="container">
+			<xp:callback facetName="facet_2" id="callback2"></xp:callback>
+		</div>
+	</div>
+
+	
 </xp:view>

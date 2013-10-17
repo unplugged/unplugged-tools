@@ -1,5 +1,4 @@
-function saveCSS(){
-	var doc:NotesDocument = document1.getDocument(true);
+function saveCSS(doc){
 	//Get the LESS body
 	var vwLess:NotesView = database.getView("LESS");
 	var docLess:NotesDocument = vwLess.getDocumentByKey(doc.getItemValueString("LessFile"), true);
@@ -20,7 +19,7 @@ function saveCSS(){
 	item.appendText(less);
 	var filename = doc.getItemValue("filename").elementAt(0);
 	filename = LessToCssBean.createCSSFileFromLessText(less, filename);
-	document1.replaceItemValue("CSSFilePath", filename);
+	doc.replaceItemValue("CSSFilePath", filename);
 	//Set readers fields on the document in this database
 	var item:NotesItem = doc.replaceItemValue("Owner", @UserName());
 	item.setReaders(true);
@@ -48,5 +47,5 @@ function saveCSS(){
 	//Remove the CSS file from the disk
 	LessToCssBean.cleanupfiles(filename);
 	
-	document1.replaceItemValue("LastSaved", session.createDateTime(new Date()));
+	doc.replaceItemValue("LastSaved", session.createDateTime(new Date()));
 }
