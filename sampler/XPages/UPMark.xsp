@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:layout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<div id="contentwrapper" class="left-aligned">
+					<unp:unpScrollableArea>
+						<xp:this.facets>
+							<xp:panel xp:key="facet_1">
+								<div class="panel">
+									<h2>UPMark</h2>
+									<p>This page runs a suite of tests which involve opening
+										various pages in this application and timing each event.</p>
+									<p>When you press the button below, the test runs and when
+										it's finished the results will be displayed. The results are
+										very dependent on the device being used, so your phone might
+										be faster than your iPad for example.</p>
+									<input type="button" class="button" value="Start Test..."
+										onclick="startTest()" />
+								</div>
+								<div id="qunit" class="panel" style="display: none;"></div>
+
+								<iframe id="upmarkiframe" src="" style="width: 0px; height: 0px;"></iframe>
+
+
+							</xp:panel>
+						</xp:this.facets>
+					</unp:unpScrollableArea>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:layout>
+
+</xp:view>

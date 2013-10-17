@@ -116,7 +116,7 @@
 				submenu="sub" disabled="no" label="Favorites" page="/MediaLibraryFavorites.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="yes" label="Performance" icon="settings">
+				submenu="no" disabled="no" label="Performance" icon="settings" page="/UPMark.xsp">
 			</unp:menuItem>
 		</unp:this.menuItem>
 	</unp:unpNavigator>

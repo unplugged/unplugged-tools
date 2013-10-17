@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com" xmlns:xc="http://www.ibm.com/xsp/custom">
+	
+	<xc:layout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<div id="contentwrapper">
+					<unp:unpScrollableArea>
+						<xp:this.facets>
+							<unp:unpFlatView insetData="true" detailColumn="Company"
+								summaryColumn="FullName" title="People" viewName="People By Last Name"
+								xpageDoc="FormsReadMode.xsp" xp:key="facet_1" numberofrows="20"
+								refreshmethod="pull" position="menu-aligned" photoColumn="Photo"
+								wrapsummarytext="yes">
+							</unp:unpFlatView>
+						</xp:this.facets>
+					</unp:unpScrollableArea>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:layout>
+	<div id="qunit" class="panel"></div>
+	<div id="extraresources">
+		<link rel="stylesheet" type="text/css" href="unp/qunit-1.12.css"></link>
+	</div>
+	
+	<script type="text/javascript" src="unp/qunit-1.12.js"></script>
+	<script type="text/javascript" src="unpperformance.js"></script>
+</xp:view>

@@ -232,3 +232,10 @@ function labelFormatter(label, series) {
 	return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>"
 			+ label + "<br/>" + Math.round(series.percent) + "%</div>";
 }
+
+function startTest(){
+	$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', './unp/qunit-1.12.css?open&rnd=' + getRnd(10000)) );
+	$("#qunit").html("<p><i class=\"glyphicons stopwatch\" /> Running test, this can take up to 30 seconds...</p>");
+	$("#qunit").show();
+	$("#upmarkiframe").attr("src", "UPMarkStart.xsp?starttime=" + Date.now());
+}

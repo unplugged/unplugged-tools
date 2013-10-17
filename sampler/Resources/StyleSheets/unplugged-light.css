@@ -1529,6 +1529,17 @@ legend {
 #bodycopy p {
   margin-bottom: 20px;
 }
+/* SAMPLER APP: Typography */
+.typographyeditmode .mce-panel {
+  border-color: transparent;
+  background: transparent;
+}
+.typographyeditmode .mce-flow-layout-item {
+  float: right;
+}
+.typographyeditmode iframe body#tinymce {
+  font-family: "Helvetica Neue", sans-serif;
+}
 /* SAMPLER APP: Glyphicons */
 .list-fonts {
   margin: 0 !important;
@@ -1609,6 +1620,13 @@ legend {
   background: #959eb2;
   border: 1px solid transparent;
 }
+/*********************
+
+OLD CSS STARTS HERE
+
+Not sure what any of it does, but I don't want to move/change it in case I break anything!
+
+**********************/
 /**Autocomplete**/
 .acResults {
   padding: 0px;
