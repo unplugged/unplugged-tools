@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Custom UIs">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	pageTitle="Custom UIs">
 
+	<xp:this.acl>
+		<xp:acl>
+			<xp:this.entries>
+				<xp:aclEntry right="NOACCESS" name="Anonymous"
+					fullName="Anonymous" type="USER">
+				</xp:aclEntry>
+			</xp:this.entries>
+		</xp:acl>
+	</xp:this.acl>
 	<xc:layout>
 		<xp:this.facets>
 			<xc:view_css xp:key="facet_2"></xc:view_css>
 			<xp:panel xp:key="facet_1">
-				<ul id="headertabs" class="navigation nav nav-tabs">
-					<li class="active">
-						<a data-toggle="tab">
-							My Saved Themes
-						</a>
-					</li>
-				</ul>
+
 			</xp:panel>
 		</xp:this.facets>
 	</xc:layout>

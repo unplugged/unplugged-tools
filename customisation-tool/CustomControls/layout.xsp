@@ -18,10 +18,8 @@
 		<xp:script src="/common.js" clientSide="true"></xp:script>
 	</xp:this.resources>
 	<!--
-		[if lt IE 9]> 
-		<script src="html5shiv.js"></script> 
-		<script src="respond.min.js"></script> 
-		<![endif]
+		[if lt IE 9]> <script src="html5shiv.js"></script> <script
+		src="respond.min.js"></script> <![endif]
 	-->
 	<div class="row header">
 		<div class="container">
@@ -32,15 +30,19 @@
 				</xp:link>
 			</h1>
 			<ul class="buttons">
-				<li>
-					<xp:link text="Customise..." id="customiselink"
-						value="/customise.xsp">
+				<xp:panel tagName="li">
+						<xp:this.styleClass><![CDATA[#{javascript:if (getCurrentXPage() == "/customise.xsp"){
+	return "active";
+}}]]></xp:this.styleClass>
+					<xp:link text="Customise..." id="customiselink" value="/customise.xsp">
 						<xp:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous"}]]></xp:this.rendered>
 					</xp:link>
-				</li>
-				<li>
-					<xp:link escape="true" id="customuislink"
-						value="/customuis.xsp">
+				</xp:panel>
+				<xp:panel tagName="li">
+						<xp:this.styleClass><![CDATA[#{javascript:if (getCurrentXPage() == "/registration.xsp" || getCurrentXPage() == "/customuis.xsp"){
+	return "active";
+}}]]></xp:this.styleClass>
+					<xp:link escape="true" id="customuislink" value="/customuis.xsp">
 						<xp:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous"}]]></xp:this.rendered>
 						<xp:this.text><![CDATA[#{javascript:var list = $A(@DbLookup(@DbName(), "CSS By Owner", @UserName(), 2));
 return "My Saved Themes (" + list.length + ")";}]]></xp:this.text>
@@ -49,7 +51,7 @@ return "My Saved Themes (" + list.length + ")";}]]></xp:this.text>
 						value="/registration.xsp">
 						<xp:this.rendered><![CDATA[#{javascript:@UserName() == "Anonymous"}]]></xp:this.rendered>
 					</xp:link>
-				</li>
+				</xp:panel>
 				<li>
 					<xp:link id="loginlink" text="Login">
 						<xp:this.value><![CDATA[#{javascript:getDbPath() + "?opendatabase&login=true"}]]></xp:this.value>
@@ -68,11 +70,7 @@ return "My Saved Themes (" + list.length + ")";}]]></xp:this.text>
 		</div>
 	</div>
 
-	<div class="content">
-		<div class="container">
-			<xp:callback facetName="facet_2" id="callback2"></xp:callback>
-		</div>
-	</div>
+	<xp:callback facetName="facet_2" id="callback2"></xp:callback>
 
-	
+
 </xp:view>

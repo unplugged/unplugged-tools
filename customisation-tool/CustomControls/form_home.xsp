@@ -1,57 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 
-	<div class="well" style="margin-top: 20px;">
-		<p>Our goal with this project is to create a highly-optimised set
-			of XPages
-			mobile controls with</p>
-		<ol>
-			<li>close-to-native performance</li>
+	<div class="row content">
+		<div class="container">
 
-			<li>attractive aesthetics and</li>
+			<h2>The Unplugged Controls Project</h2>
+			<h3>Highly optimized XPages mobile controls</h3>
 
-			<li>compatible with the Teamstudio Unplugged mobile offline
-				XPages engine
-				running on iOS and Android devices</li>
-		</ol>
+			<div class="feature col-sm-4">
+				<i class="glyphicons cogwheels"></i>
+				<h4>Close-to-native performance</h4>
+				<p>Lightweight HTML5, Javascript, CSS</p>
+			</div>
+
+			<div class="feature col-sm-4">
+				<i class="glyphicons eye_open"></i>
+				<h4>Attractive Aesthetics</h4>
+				<p>Easy to re-style</p>
+			</div>
+
+			<div class="feature col-sm-4">
+				<i class="glyphicons ipad"></i>
+				<h4>Compatible with Teamstudio Unplugged</h4>
+				<p>XPages web server for iOS and Android</p>
+			</div>
+
+		</div>
 	</div>
-	<div class="panel">
-		<p>We wanted to make it as easy as possible for (reasonably
-			experienced)
-			XPage developers who don’t have much or any mobile development
-			experience to create attractive Unplugged mobile apps.</p>
 
-		<p>Using these controls, we've also provided 3 application
-			templates (Doc
-			Library, Journal, Teamroom) that are compatible with the original Lotus
-			Domino application templates. We are targeting both smartphone and
-			tablet users, for iOS (iOS 5.01 and higher) and Android devices
-			(Android 3.0 and higher).</p>
-
-		<p>It is our intention to publish periodic updates to these controls
-			to
-			OpenNTF.</p>
-
-		<p>
-			<strong>**Update: All Doc is now on the Wiki at:</strong>
-			<a href="https://github.com/unplugged/unplugged-controls/wiki">https://github.com/unplugged/unplugged-controls/wiki
-			</a>
-		</p>
-
-		<p>
-			<strong>IMPORTANT:</strong>
-			When running the sample application on your server, open the
-			'HomeLinks' view and ensure it is empty. Then open the 'Databases'
-			view, select all documents and run the agent "Generate Home
-			Workspace".
-			This will create the documents required to populate the home page with
-			icons.
-		</p>
-
-		<p>These controls are primarily designed to work with the
-			Unplugged platform
-			from Teamstudio. However they have been extended and tested to work on
-			Web-kit based mobile browsers for standard Mobile Web Development in
-			XPages. To find out more about Teamstudio Unplugged click here.</p>
+	<div class="row footer">
+		<div class="container">
+			<div class="col-sm-6">
+				<p>Our goal with this project is to create a highly-optimised set
+					of XPages mobile controls with:</p>
+				<ol>
+					<li>close-to-native performance</li>
+					<li>attractive aesthetics and </li>
+					<li>compatible with the Teamstudio Unplugged mobile
+						offline XPages engine running on iOS and Android devices.</li>
+				</ol>
+				<p>We wanted to make it as easy as possible for (reasonably
+					experienced) XPage developers to create attractive Unplugged mobile
+					apps. Unplugged Controls can be styled to match a customer's
+					preferred branding using the new Unplugged Re-Styler.</p>
+				<p>
+					We're also providing several app templates (Teamroom, Doc Library,
+					Journal, Contacts, Activities, Media, Approvals) built from the
+					controls to give you a faster start with your development projects.
+					These controls target both tablet and smartphone users, for iOS
+					(iOS 6.0 and higher) and Android devices (Android 4.0 and higher).
+					We also publish periodic updates of to these controls to&#160;
+					<a href="#">OpenNTF</a>
+					.
+				</p>
+			</div>
+			<div class="col-sm-6">
+				<p>
+					These controls are primarily designed to work with the Unplugged
+					platform from Teamstudio. However they have been extended and
+					tested to work on Webkit-based browsers for standard mobile web
+					development using XPages. To find out more about Teamstudio
+					Unplugged,&#160;
+					<a href="http://www.teamstudio.com/solutions/unplugged/">click here</a>
+					.
+				</p>
+				<p>
+					<strong>
+						Update: All documentation is on the&#160;
+						<a href="https://github.com/unplugged/unplugged-controls/wiki">Unplugged Controls Wiki</a>
+						.
+					</strong>
+				</p>
+				<p>
+					<strong>IMPORTANT:</strong>
+					When running the sample application on your server, open the
+					'HomeLinks' view and ensure it is empty. Then open the 'Databases'
+					view, select all documents and run the agent "Generate Home
+					Workspace". This will create the documents required to populate the
+					home page with icons.
+				</p>
+			</div>
+		</div>
 	</div>
 </xp:view>

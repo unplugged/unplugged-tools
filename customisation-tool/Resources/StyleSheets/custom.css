@@ -12,13 +12,32 @@ ul {
 	color: #666;
 	font-weight: bold;
 	box-shadow: none;
+	border: 0;
+	-webkit-transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+	background: #C7C7C7;
+	color: #666;
+	-webkit-transition: background 0.3s, color 0.3s;
+}
+
+.btn.green {
+	background: #52c255;
+	color: white;
+}
+
+.btn.green:hover {
+	background: #32a235;
 }
 
 a {
 	-webkit-transition: background 0.3s, color 0.3s;
+	color: #1b921e;
 }
 
 a:hover {
+	color: #007200;
 	text-decoration: none;
 	-webkit-transition: background 0.3s, color 0.3s;
 }
@@ -41,8 +60,8 @@ a:hover {
 
 .header h1 a {
 	background: url(logo.png) no-repeat;
-	width: 388px;
-	height: 41px;
+	width: 353px;
+	height: 46px;
 	text-indent: -9999px;
 	display: block;
 }
@@ -59,17 +78,11 @@ a:hover {
 
 .header ul.buttons a {
 	display: block;
-	background: #D7D7D7;
-	color: #666;
 	font-weight: bold;
 	border-radius: 4px;
 	font-size: 16px;
 	line-height: 40px;
 	padding: 0 18px;	
-}
-
-.header ul.buttons a:hover {
-	background: #C7C7C7;
 }
 
 /* NAVIGATION */
@@ -100,7 +113,9 @@ a:hover {
 	border-bottom: 0px;	
 }
 
-.nav-tabs>li.active>a:hover, .navigation a:hover, .nav-tabs>li>a:hover {
+.nav-tabs > li.active > a:hover, 
+.navigation a:hover, 
+.nav-tabs > li > a:hover {
 	background: #666;
 	color: white;
 	background-color: #666;
@@ -114,7 +129,10 @@ a:hover {
     margin-right: 2px;
 }
 
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus, .nav-tabs>li.active, .nav-tabs>li.active>a:focus, .navigation a.active {
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus,  
+.navigation a.active {
 	background: #666;
 	color: white;
 	background-color: #666;
@@ -156,6 +174,13 @@ a:hover {
 .subnavigation a:hover,
 .subnavigation a.active {
 	color: #FFF;
+}
+
+
+/* CONTENT */
+
+.content {
+	background: #333;
 }
 
 
@@ -234,3 +259,111 @@ a:hover {
 tbody tr {
 	cursor: pointer;
 }
+
+
+
+
+/* HOMEPAGE */
+
+body.homepage {
+	background: #DDD;
+}
+
+.homepage .content {
+	text-align: center;
+	padding: 90px 0;
+}
+
+.homepage h2 {
+	color: #62d952;
+	font-size: 66px;
+	font-weight: bold;
+	letter-spacing: -2px;
+}
+
+.homepage h3 {
+	color: #999;
+	font-size: 36px;
+	font-weight: normal;
+	margin-bottom: 70px;
+}
+
+.homepage .feature {
+	position: relative;
+}
+
+.homepage .feature i {
+	display: block;
+	height: 100px;
+}
+
+.homepage .feature i:before {
+	color: #ededed;
+	font-size: 80px;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+.homepage .feature h4 {
+	color: #ededed;
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.homepage .feature p {
+	color: #AAA;
+	font-size: 16px;
+}
+
+.homepage .footer {
+	background: #DDD;
+	padding: 60px 0;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.homepage .footer p,
+.homepage .footer ol {
+	margin-bottom: 24px;
+}
+
+.homepage .footer ol {
+	font-weight: bold;
+}
+
+.homepage .footer a {
+	font-weight: bold;
+}
+
+/*.panel, 
+.well {
+	background: #EEE;
+	border-radius: 5px;
+	box-shadow: none;
+	border: 0;
+	padding: 20px;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.panel p,
+.well p {
+	margin-bottom: 20px; 
+}*/
+
+
+/* LOGIN/REGISTER */
+
+.panel input[type=text],
+.panel input[type=email],
+.panel input[type=password] {
+	border-radius: 3px;
+	border: 0;
+	box-shadow: 0 1px rgba(0,0,0,0.2);
+}
+
+
+/* FOOTER */
+

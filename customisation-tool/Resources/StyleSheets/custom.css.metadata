@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BDE004F6073" version="9.0">
-<noteinfo noteid="225e" sequence="1" unid="4F16D931E21F841680257BF20047F3BB">
-<created><datetime dst="true">20130926T140554,51+01</datetime></created>
-<modified><datetime dst="true">20130926T140554,51+01</datetime></modified>
-<revised><datetime dst="true">20130926T140554,50+01</datetime></revised>
-<lastaccessed><datetime dst="true">20130926T140554,51+01</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130926T140554,51+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name="$TITLE"><text>custom.css</text></item>
+<noteinfo noteid="22f2" sequence="1" unid="EC13D273C62879D280257C070039C60E">
+<created><datetime dst="true">20131017T113102,54+01</datetime></created>
+<modified><datetime dst="true">20131017T113102,55+01</datetime></modified>
+<revised><datetime dst="true">20131017T113102,54+01</datetime></revised>
+<lastaccessed><datetime dst="true">20131017T113102,55+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20131017T113102,55+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Unplugged User/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <item name="$Flags"><text>34C=Q</text></item>
-<item name="$FlagsExt"><text>D</text></item>
+<item name="$DesignerVersion"><text>6</text></item>
+<item name="$TITLE"><textlist><text>custom.css</text></textlist></item>
+<item name="$FileNames"><textlist><text>custom.css</text></textlist></item>
 
-<item name="$FileModDT" sign="true"><datetime dst="true">20130918T164136,00+01</datetime></item>
 
-<item name="$FileNames" sign="true"><text>custom.css</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item></note>
+<item name="$FileModDT"><datetime dst="true">20131016T161017,26+01</datetime></item></note>
