@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
 
-	<xp:this.data>
-		<xp:dominoView var="cssview" databaseName="UnpDemoWorkspace.nsf"
-			viewName="CSS By Owner" categoryFilter="#{javascript:@UserName()}">
-		</xp:dominoView>
-	</xp:this.data>
 	<xp:this.resources>
 		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
 		<xp:script src="/custom.js" clientSide="true"></xp:script>
@@ -35,13 +30,11 @@
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="no" disabled="no" label="Typography" icon="text_underline">
 			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper"
-				ajaxtargetid="content" submenu="sub" disabled="no"
-				label="Read Mode" page="/TypographyReadMode.xsp">
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Read Mode" page="/TypographyReadMode.xsp">
 			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper"
-				ajaxtargetid="content" submenu="sub" disabled="no"
-				label="Edit Mode" page="/TypographyEditMode.xsp">
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Edit Mode" page="/TypographyEditMode.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="no" disabled="no" label="UI Elements" icon="hand_up">
@@ -52,8 +45,8 @@
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="CSS Controls" page="/CSSControls.xsp">
 			</unp:menuItem>
-			<unp:menuItem submenu="sub" disabled="no"
-				label="Debug Toolbar" page="/DebugToolbar.xsp">
+			<unp:menuItem submenu="sub" disabled="no" label="Debug Toolbar"
+				page="/DebugToolbar.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Dialog" page="/Dialog.xsp"
@@ -65,8 +58,8 @@
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Flat View (Categorized)" page="/FlatViewCategorized.xsp">
 			</unp:menuItem>
-			<unp:menuItem
-				submenu="sub" disabled="no" label="Swipe View" page="/SwipeView.xsp">
+			<unp:menuItem submenu="sub" disabled="no" label="Swipe View"
+				page="/SwipeView.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" page="/Glyphicons.xsp"
 				ajaxtargetid="content" submenu="no" disabled="no" label="Glyphicons"
@@ -75,9 +68,8 @@
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="no" disabled="no" label="Forms" icon="edit">
 			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper"
-				ajaxtargetid="content" submenu="sub" disabled="no"
-				label="Read Mode" page="/FormsReadMode.xsp">
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Read Mode" page="/FormsReadMode.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Edit Mode" page="/FormsEditMode.xsp">
