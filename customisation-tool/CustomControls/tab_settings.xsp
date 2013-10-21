@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div class="tab-pane active" id="settingstab">
+		<ul class="nav nav-tabs subnavigation">
+			<li class="active">
+				<a data-toggle="tab" href="#settingscontent">Settings</a>
+			</li>
+		</ul>
+		<div class="tab-content options">
+			<div class="tab-pane active" id="settingscontent">
+				<h4>Settings</h4>
+				<ul>
+					<li>
+						<xp:label id="descriptionlabel" for="description1" value="Description">
+						</xp:label>
+						<xp:inputText value="#{document1.Description}" id="description1"
+							themeId="MediumEditBox">
+							<xp:this.defaultValue><![CDATA[#{javascript:var d1=new Date();
+return d1.toString('dd MMM yyyy hh:mm');}]]></xp:this.defaultValue>
+						</xp:inputText>
+					</li>
+					<li style="display: none;">
+						<xp:label id="lessfilelabel" for="lessfile" value="LESS File">
+						</xp:label>
+						<xp:inputText value="#{document1.filename}" id="filename1"
+							defaultValue="unplugged.css" style="display: none;">
+						</xp:inputText>
+						<xp:comboBox id="lessfile"
+							value="#{document1.LESSFile}">
+							<xp:this.defaultValue><![CDATA[#{javascript:@Subset(@DbColumn(@DbName(), "LESS", 1), -1)}]]></xp:this.defaultValue>
+							<xp:selectItems>
+								<xp:this.value><![CDATA[#{javascript:@DbColumn(@DbName(), "LESS", 1)}]]></xp:this.value>
+							</xp:selectItems>
+						</xp:comboBox>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</xp:view>

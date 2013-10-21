@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div class="tab-pane" id="headertab">
+		<ul class="nav nav-tabs subnavigation">
+			<li class="active">
+				<a data-toggle="tab" href="#headercontent">
+					Navbar
+								</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#headersearch">
+					Search
+								</a>
+			</li>
+		</ul>
+
+		<div class="tab-content options">
+			<div class="tab-pane active" id="headercontent">
+				<h4>Header: Content</h4>
+				<ul>
+					<li>
+						<xp:label value="Background" id="navbarbackgroundlabel"
+							for="navbarbackground">
+						</xp:label>
+						<xp:inputText value="#{document1.navbarbackground}"
+							id="navbarbackground" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@navbar-background">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Border Bottom" id="navbarborderbottomlabel"
+							for="navbarborderbottom">
+						</xp:label>
+						<xp:inputText value="#{document1.navbarborderbottom}"
+							id="navbarborderbottom" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@navbar-border-bottom">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("navbarborderbottom")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Title Text Shadow" id="navbartitletextshadowlabel"
+							for="navbartitletextshadow">
+						</xp:label>
+						<xp:inputText value="#{document1.navbartitletextshadow}"
+							id="navbartitletextshadow" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@navbar-title-text-shadow">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+
+					<li>
+						<xp:label value="Title Color" id="navbartitlecolorlabel"
+							for="navbartitlecolor">
+						</xp:label>
+						<xp:inputText value="#{document1.navbartitlecolor}"
+							id="navbartitlecolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@navbar-title-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("navbartitlecolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Title Font Size" id="navbartitlefontsizelabel"
+							for="navbartitlefontsize">
+						</xp:label>
+						<xp:inputText value="#{document1.navbartitlefontsize}"
+							id="navbartitlefontsize" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@navbar-title-font-size">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Title Font Weight" id="navbartitlefontweightlabel"
+							for="navbartitlefontweight">
+						</xp:label>
+						<xp:inputText value="#{document1.navbartitlefontweight}"
+							id="navbartitlefontweight" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@navbar-title-font-weight">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-pane options" id="headersearch">
+				<h4>Header: Search</h4>
+				<ul>
+					<li>
+						<xp:label value="Input border" id="inputsearchframeinputborderlabel"
+							for="inputsearchframeinputborder">
+						</xp:label>
+						<xp:inputText value="#{document1.inputsearchframeinputborder}"
+							id="inputsearchframeinputborder" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@input-search-frame-input-border">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Input Background" id="inputsearchframeinputbackgroundlabel"
+							for="inputsearchframeinputbackground">
+						</xp:label>
+						<xp:inputText value="#{document1.inputsearchframeinputbackground}"
+							id="inputsearchframeinputbackground" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@input-search-frame-input-background">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("inputsearchframeinputbackground")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Input Box Shadow" id="inputsearchframeinputboxshadowlabel"
+							for="inputsearchframeinputboxshadow">
+						</xp:label>
+						<xp:inputText value="#{document1.inputsearchframeinputboxshadow}"
+							id="inputsearchframeinputboxshadow" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@input-search-frame-input-box-shadow">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Input Color" id="inputsearchframeinputcolorlabel"
+							for="inputsearchframeinputcolor">
+						</xp:label>
+						<xp:inputText value="#{document1.inputsearchframeinputcolor}"
+							id="inputsearchframeinputcolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@input-search-frame-input-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("inputsearchframeinputcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</xp:view>

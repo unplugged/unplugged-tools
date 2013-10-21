@@ -14,6 +14,15 @@ ul {
 	box-shadow: none;
 	border: 0;
 	-webkit-transition: background 0.3s, color 0.3s;
+	border-radius: 4px;
+	font-size: 16px;
+	line-height: 40px;
+	padding: 0 18px;	
+}
+
+.btn.active,
+.btn:active {
+	box-shadow: none;
 }
 
 .btn:hover {
@@ -83,6 +92,20 @@ a:hover {
 	font-size: 16px;
 	line-height: 40px;
 	padding: 0 18px;	
+	
+	background: #D7D7D7;
+	color: #666;	
+}
+
+.header ul.buttons a:hover {
+	background: #C7C7C7;
+	color: #666;
+}
+
+.header ul.buttons .active a {
+	color: #EEE;
+	background: #666;	
+	cursor: default;
 }
 
 /* NAVIGATION */
@@ -356,14 +379,118 @@ body.homepage {
 
 /* LOGIN/REGISTER */
 
+.well {
+	border: 0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	background: #EEE;
+	padding-bottom: 10px;
+}
+
+.well .btn {
+	display: block;
+}
+
+.panel label {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: bold;
+	color: #CCC;
+	margin-bottom: 8px;
+}
+
 .panel input[type=text],
 .panel input[type=email],
 .panel input[type=password] {
 	border-radius: 3px;
 	border: 0;
 	box-shadow: 0 1px rgba(0,0,0,0.2);
+	width: 400px;
+}
+
+.panel .form-group .btn {
+	background: #52c255;
+	color: white;
+	width: 400px;
+	font-size: 18px;
+	line-height: 45px;
+}
+
+.panel .form-group .btn:hover {
+	background: #32a235;
 }
 
 
-/* FOOTER */
 
+/* SAVED THEMES */
+
+.panel {
+	background: transparent;
+}
+
+.table-striped > thead > tr > th {
+	border: 0;
+	color: #AAA;
+	line-height: 30px;
+	text-transform: uppercase;
+}
+
+.table-striped > tbody > tr > td {
+	line-height: 30px;
+	cursor: pointer;
+	background: #EEE;
+	border: 0;
+	border-bottom: 1px solid #DDD;
+}
+
+.table-striped > tbody > tr:first-child > td:first-child {
+	border-top-left-radius: 5px;
+}
+
+.table-striped > tbody > tr:first-child > td:last-child {
+	border-top-right-radius: 5px;
+}
+
+.table-striped > tbody > tr:last-child > td:first-child {
+	border-bottom-left-radius: 5px;
+}
+
+.table-striped > tbody > tr:last-child > td:last-child {
+	border-bottom-right-radius: 5px;
+}
+
+.table-striped > tbody > tr:last-child > td {
+	border-bottom: 0;
+}
+
+/* Title */
+.table-striped td:nth-child(2) {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+/* Date */
+.table-striped td:nth-child(3) {
+	color: #999;
+}
+
+/* Active */
+.table-striped td:first-child .btn.active {
+	background: #52c255;
+	color: white;
+	padding-left: 35px;
+	position: relative;
+}
+
+.table-striped td:first-child .btn.active:before {
+	content: "\2714 ";
+	position: absolute;
+	left: 15px;
+	top: 0;
+}
+
+
+/* Download */
+.table-striped td:last-child .btn {
+	float: right;
+}

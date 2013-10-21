@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div class="tab-pane" id="footertab">
+		<ul class="nav nav-tabs subnavigation">
+			<li class="active">
+				<a data-toggle="tab" href="#footergeneral">
+					General
+								</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#footertabs">
+					Tabs
+								</a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<div class="tab-pane active options" id="footergeneral">
+				<h4>Footer: General</h4>
+				<ul>
+					<li>
+						<xp:label value="Border Top" id="footerbordertoplabel"
+							for="footerbordertop">
+						</xp:label>
+						<xp:inputText value="#{document1.footerbordertop}"
+							id="footerbordertop" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@footer-border-top">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("footerbordertop")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Background" id="footerbackgroundlabel"
+							for="footerbackground">
+						</xp:label>
+						<xp:inputText value="#{document1.footerbackground}"
+							id="footerbackground" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@footer-background">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Color" id="footerspancolorlabel"
+							for="footerspancolor">
+						</xp:label>
+						<xp:inputText value="#{document1.footerspancolor}"
+							id="footerspancolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@footer-span-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("footerspancolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-pane options" id="footertabs">
+				<h4>Footer: Tabs</h4>
+				<ul class="options">
+					<li>
+						<xp:label value="Color" id="footertabtextcolorlabel"
+							for="footertabtextcolor">
+						</xp:label>
+						<xp:inputText value="#{document1.footertabtextcolor}"
+							id="footertabtextcolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@footerTabtext-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("footertabtextcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Font Size" id="footertabtextfontsizelabel"
+							for="footertabtextfontsize">
+						</xp:label>
+						<xp:inputText value="#{document1.footertabtextfontsize}"
+							id="footertabtextfontsize" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@footerTabtext-font-size">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Font Weight" id="footertabtextfontweightlabel"
+							for="footertabtextfontweight">
+						</xp:label>
+						<xp:inputText value="#{document1.footertabtextfontweight}"
+							id="footertabtextfontweight" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@footerTabtext-font-weight">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Selected Color" id="tabselectedfootertabtextcolorlabel"
+							for="tabselectedfootertabtextcolor">
+						</xp:label>
+						<xp:inputText value="#{document1.tabselectedfootertabtextcolor}"
+							id="tabselectedfootertabtextcolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@tabSelected-footerTabtext-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("tabselectedfootertabtextcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</xp:view>

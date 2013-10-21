@@ -18,7 +18,7 @@ function saveCSS(doc){
 	}
 	item.appendText(less);
 	var filename = doc.getItemValue("filename").elementAt(0);
-	filename = LessToCssBean.createCSSFileFromLessText(less, filename);
+	filename = LessToCssBean.createCSSFileFromLessText(docLess, less, filename);
 	doc.replaceItemValue("CSSFilePath", filename);
 	//Set readers fields on the document in this database
 	var item:NotesItem = doc.replaceItemValue("Owner", @UserName());
@@ -45,7 +45,7 @@ function saveCSS(doc){
 	cssdoc.save();
 	
 	//Remove the CSS file from the disk
-	LessToCssBean.cleanupfiles(filename);
-	
+	//LessToCssBean.cleanupfiles(filename);
+	LessToCssBean.cleanupDir();
 	doc.replaceItemValue("LastSaved", session.createDateTime(new Date()));
 }

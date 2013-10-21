@@ -47,7 +47,7 @@ return out;}]]></xp:this.styleClass>
 									<xp:this.value><![CDATA[#{javascript:var out = "";
 if (typeof menuItem.page != "undefined" && menuItem.page != "" && menuItem.page != null){
 	if (menuItem.ajaxloadid != null && menuItem.ajaxloadid != ""){
-		out = "loadPage('" + getDbPath() + menuItem.page + " #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + ");";
+		out = "loadPage('" + getDbPath() + menuItem.page + "?rnd=' + Date.now() + ' #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + ");";
 	}else{
 		out = "openPage('" + getDbPath() + menuItem.page + "', '" + menuItem.ajaxtargetid + "');";
 	}

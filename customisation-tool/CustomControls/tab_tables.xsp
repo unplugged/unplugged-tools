@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div class="tab-pane" id="tablestab">
+		<ul class="nav nav-tabs subnavigation">
+			<li class="active">
+				<a data-toggle="tab" href="#tablesheading">
+					Heading
+								</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#tablessubheading">
+					Sub Heading
+								</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#tablesrows">
+					Rows
+								</a>
+			</li>
+		</ul>
+
+		<div class="tab-content options">
+			<div class="tab-pane active" id="tablesheading">
+				<h4>Tables: Heading</h4>
+				<ul>
+					<li>
+						<xp:label value="Border Color" id="tableheadingbordercolorlabel"
+							for="tableheadingbordercolor">
+						</xp:label>
+						<xp:inputText value="#{document1.tableheadingbordercolor}"
+							id="tableheadingbordercolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-heading-border-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("tableheadingbordercolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Color" id="tableheadingcolorlabel"
+							for="tableheadingcolor">
+						</xp:label>
+						<xp:inputText value="#{document1.tableheadingcolor}"
+							id="tableheadingcolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-heading-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("tableheadingcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Font Size" id="tableheadingfontsizelabel"
+							for="tableheadingfontsize">
+						</xp:label>
+						<xp:inputText value="#{document1.tableheadingfontsize}"
+							id="tableheadingfontsize" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-heading-font-size">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Background" id="tableheadingbackgroundlabel"
+							for="tableheadingbackground">
+						</xp:label>
+						<xp:inputText value="#{document1.tableheadingbackground}"
+							id="tableheadingbackground" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-heading-background">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("tableheadingbackground")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Font Weight" id="tableheadingfontweightlabel"
+							for="tableheadingfontweight">
+						</xp:label>
+						<xp:inputText value="#{document1.tableheadingfontweight}"
+							id="tableheadingfontweight" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-heading-font-weight">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Text Transform" id="tableheadingtexttransformlabel"
+							for="tableheadingtexttransform">
+						</xp:label>
+						<xp:inputText value="#{document1.tableheadingtexttransform}"
+							id="tableheadingtexttransform" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-heading-text-transform">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Text Shadow" id="tableheadingtextshadowlabel"
+							for="tableheadingtextshadow">
+						</xp:label>
+						<xp:inputText value="#{document1.tableheadingtextshadow}"
+							id="tableheadingtextshadow" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-heading-text-shadow">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Box Shadow" id="tableheadingboxshadowlabel"
+							for="tableheadingboxshadow">
+						</xp:label>
+						<xp:inputText value="#{document1.tableheadingboxshadow}"
+							id="tableheadingboxshadow" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-heading-box-shadow">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-pane" id="tablessubheading">
+				<h4>Tables: Sub Heading</h4>
+				<ul>
+					<li>
+						<xp:label value="Border Color" id="tablesubheadingbordercolorlabel"
+							for="tablesubheadingbordercolor">
+						</xp:label>
+						<xp:inputText value="#{document1.tablesubheadingbordercolor}"
+							id="tablesubheadingbordercolor" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-subheading-border-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Color" id="tablesubheadingcolorlabel"
+							for="tablesubheadingcolor">
+						</xp:label>
+						<xp:inputText value="#{document1.tablesubheadingcolor}"
+							id="tablesubheadingcolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-subheading-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("tablesubheadingcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Font Size" id="tablesubheadingfontsizelabel"
+							for="tablesubheadingfontsize">
+						</xp:label>
+						<xp:inputText value="#{document1.tablesubheadingfontsize}"
+							id="tablesubheadingfontsize" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-subheading-font-size">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Background" id="tablesubheadingbackgroundlabel"
+							for="tablesubheadingbackground">
+						</xp:label>
+						<xp:inputText value="#{document1.tablesubheadingbackground}"
+							id="tablesubheadingbackground" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-subheading-background">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("tablesubheadingbackground")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Font Weight" id="tablesubheadingfontweightlabel"
+							for="tablesubheadingfontweight">
+						</xp:label>
+						<xp:inputText value="#{document1.tablesubheadingfontweight}"
+							id="tablesubheadingfontweight" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-subheading-font-weight">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Text Transform" id="tablesubheadingtexttransformlabel"
+							for="tablesubheadingtexttransform">
+						</xp:label>
+						<xp:inputText value="#{document1.tablesubheadingtexttransform}"
+							id="tablesubheadingtexttransform" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-subheading-text-transform">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Text Shadow" id="tablesubheadingtextshadowlabel"
+							for="tablesubheadingtextshadow">
+						</xp:label>
+						<xp:inputText value="#{document1.tablesubheadingtextshadow}"
+							id="tablesubheadingtextshadow" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-subheading-text-shadow">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Box Shadow" id="tablesubheadingboxshadowlabel"
+							for="tablesubheadingboxshadow">
+						</xp:label>
+						<xp:inputText value="#{document1.tablesubheadingboxshadow}"
+							id="tablesubheadingboxshadow" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-subheading-box-shadow">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-pane" id="tablesrows">
+				<h4>Tables: Rows</h4>
+				<ul>
+					<li>
+						<xp:label value="Background" id="tablerowbackgroundlabel"
+							for="tablerowbackground">
+						</xp:label>
+						<xp:inputText value="#{document1.tablerowbackground}"
+							id="tablerowbackground" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-row-background">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("tablerowbackground")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Border Color" id="tablerowbordercolorlabel"
+							for="tablerowbordercolor">
+						</xp:label>
+						<xp:inputText value="#{document1.tablerowbordercolor}"
+							id="tablerowbordercolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-row-border-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("tablerowbordercolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Title Font Color" id="tablerowtitlefontcolorlabel"
+							for="tablerowtitlefontcolor">
+						</xp:label>
+						<xp:inputText value="#{document1.tablerowtitlefontcolor}"
+							id="tablerowtitlefontcolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-row-title-font-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("tablerowtitlefontcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Title Font Size" id="tablerowtitlefontsizelabel"
+							for="tablerowtitlefontsize">
+						</xp:label>
+						<xp:inputText value="#{document1.tablerowtitlefontsize}"
+							id="tablerowtitlefontsize" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-row-title-font-size">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Title Font Weight" id="tablerowtitlefontweightlabel"
+							for="tablerowtitlefontweight">
+						</xp:label>
+						<xp:inputText value="#{document1.tablerowtitlefontweight}"
+							id="tablerowtitlefontweight" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-row-title-font-weight">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Image Border Radius" id="tablerowimgborderradiuslabel"
+							for="tablerowimgborderradius">
+						</xp:label>
+						<xp:inputText value="#{document1.tablerowimgborderradius}"
+							id="tablerowimgborderradius" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-row-img-border-radius">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Font Color" id="tablerowdetailfontcolorlabel"
+							for="tablerowdetailfontcolor">
+						</xp:label>
+						<xp:inputText value="#{document1.tablerowdetailfontcolor}"
+							id="tablerowdetailfontcolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-row-detail-font-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("tablerowdetailfontcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Font Size" id="tablerowdetailfontsizelabel"
+							for="tablerowdetailfontsize">
+						</xp:label>
+						<xp:inputText value="#{document1.tablerowdetailfontsize}"
+							id="tablerowdetailfontsize" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-row-detail-font-size">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Font Weight" id="tablerowdetailfontweightlabel"
+							for="tablerowdetailfontweight">
+						</xp:label>
+						<xp:inputText value="#{document1.tablerowdetailfontweight}"
+							id="tablerowdetailfontweight" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@table-row-detail-font-weight">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</xp:view>

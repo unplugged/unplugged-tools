@@ -11,17 +11,19 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.Serializable;
+import java.util.Vector;
 
 import javax.faces.context.FacesContext;
 
-import lotus.domino.NotesException;
-import lotus.domino.Session;
+import lotus.domino.*;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 
 public class LessToCss implements Serializable {
 	public static final String BEAN_NAME = "LessToCssBean";
 	private static final long serialVersionUID = 5801795019973564444L;
+	public String generatedFilePath;
 
 	public LessToCss() {
 
@@ -31,7 +33,8 @@ public class LessToCss implements Serializable {
 		return (LessToCss) context.getApplication().getVariableResolver().resolveVariable(context, LessToCss.BEAN_NAME);
 	}
 
-	public String createCSSFileFromLessText(String Less, String CSSfileName) {
+	@SuppressWarnings("unchecked")
+	public String createCSSFileFromLessText(Document doc, String Less, String CSSfileName) {
 		String cSSFileLocation = "";
 
 		String lessFile = "temp.less";
@@ -40,9 +43,9 @@ public class LessToCss implements Serializable {
 
 		Session session = JSFUtil.getSessionAsSigner();
 		String delim = System.getProperty("file.separator");
-		String generatedFilePath = "";
+		generatedFilePath = "";
 		try {
-			generatedFilePath = getGeneratedFilePath(session, "tempcss");
+			generatedFilePath = getGeneratedFilePath(session, "templess");
 		} catch (SecurityException e) {
 			e.printStackTrace();
 		} catch (NotesException e) {
@@ -71,7 +74,18 @@ public class LessToCss implements Serializable {
 		if (!inputLessFile.exists()) {
 			System.out.println("not got file:" + FulllessFile);
 		} else {
-
+			try{
+				//Now output other LESS files out to dir
+				RichTextItem rtitem = (RichTextItem)doc.getFirstItem("lessfiles");
+				Vector objects = rtitem.getEmbeddedObjects();
+				for (int i=0; i<objects.size(); i++){
+					EmbeddedObject object = (EmbeddedObject)objects.elementAt(i);
+					object.extractFile(generatedFilePath + delim + object.getName());
+				}
+			}catch(NotesException ne){
+				ne.printStackTrace();
+			}
+			
 			String commandline = "";
 			commandline = commandline + "\"" + getJavaDirectory(session) + "/java\"";
 			commandline = commandline + " -jar \"" + FulljarFile + "\"";
@@ -104,6 +118,16 @@ public class LessToCss implements Serializable {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		return true;
+	}
+	
+	public boolean cleanupDir(){
+		try {
+			FileUtils.deleteDirectory(new File(generatedFilePath));
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
 		}
 		return true;
 	}

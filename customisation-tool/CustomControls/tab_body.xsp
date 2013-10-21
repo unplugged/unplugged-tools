@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div class="tab-pane" id="bodytab">
+
+		<ul class="nav nav-tabs subnavigation">
+			<li class="active">
+				<a data-toggle="tab" href="#bodyform">
+					Form
+								</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#bodyworkspace">
+					Workspace
+								</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#bodyswiper">
+					Swiper
+								</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#bodyhorizontalview">
+					Horizontal View
+								</a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<div class="tab-pane active options" id="bodyform">
+				<h4>Body: Form</h4>
+				<ul>
+					<li>
+						<xp:label value="Label Color" id="formlabelcolorlabel"
+							for="formlabelcolor">
+						</xp:label>
+						<xp:inputText value="#{document1.formlabelcolor}"
+							id="formlabelcolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@form-label-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("formlabelcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Label Background" id="formlabelbackgroundlabel"
+							for="formlabelbackground">
+						</xp:label>
+						<xp:inputText value="#{document1.formlabelbackground}"
+							id="formlabelbackground" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@form-label-background">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("formlabelbackground")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Font Weight" id="formlabelfontweightlabel"
+							for="formlabelfontweight">
+						</xp:label>
+						<xp:inputText value="#{document1.formlabelfontweight}"
+							id="formlabelfontweight" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@form-label-font-weight">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Font Size" id="formlabelfontsizelabel"
+							for="formlabelfontsize">
+						</xp:label>
+						<xp:inputText value="#{document1.formlabelfontsize}"
+							id="formlabelfontsize" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@form-label-font-size">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Input Color" id="forminputcolorlabel"
+							for="forminputcolor">
+						</xp:label>
+						<xp:inputText value="#{document1.forminputcolor}"
+							id="forminputcolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@form-input-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("forminputcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Input Font Weight" id="forminputfontweightlabel"
+							for="forminputfontweight">
+						</xp:label>
+						<xp:inputText value="#{document1.forminputfontweight}"
+							id="forminputfontweight" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@form-input-font-weight">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Input Font Size" id="forminputfontsizelabel"
+							for="forminputfontsize">
+						</xp:label>
+						<xp:inputText value="#{document1.forminputfontsize}"
+							id="forminputfontsize" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@form-input-font-size">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-pane options" id="bodyworkspace">
+				<h4>Body: Workspace</h4>
+				<ul>
+					<li>
+						<xp:label value="Text Color" id="workspaceitemtextcolorlabel"
+							for="workspaceitemtextcolor">
+						</xp:label>
+						<xp:inputText value="#{document1.workspaceitemtextcolor}"
+							id="workspaceitemtextcolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@workspace-item-text-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("workspaceitemtextcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Font Weight" id="workspaceitemfontweightlabel"
+							for="workspaceitemfontweight">
+						</xp:label>
+						<xp:inputText value="#{document1.workspaceitemfontweight}"
+							id="workspaceitemfontweight" themeId="MediumEditBox">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@workspace-item-font-weight">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-pane options" id="bodyswiper">
+				<h4>Body: Swiper</h4>
+				<ul>
+					<li>
+						<xp:label value="Background Color" id="swiperscrollcontainerbackgroundcolorlabel"
+							for="swiperscrollcontainerbackgroundcolor">
+						</xp:label>
+						<xp:inputText value="#{document1.swiperscrollcontainerbackgroundc}"
+							id="swiperscrollcontainerbackgroundcolor" themeId="MediumEditBox"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@swiper-scroll-container-background-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("swiperscrollcontainerbackgroundc")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-pane options" id="bodyhorizontalview">
+				<h4>Body: Horizontal View</h4>
+				<ul>
+					<li>
+						<xp:label value="H1 Color:" id="h1hviewh1color_Label1"
+							for="h1hviewh1color1">
+						</xp:label>
+						<xp:inputText value="#{document1.h1hviewh1color}" id="h1hviewh1color1"
+							themeId="MediumEditBox" defaultValue="#FFFFFF" styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@h1-hview-h1-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("h1hviewh1color")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Category Color:" id="hviewcategorycolor_Label1"
+							for="hviewcategorycolor1">
+						</xp:label>
+						<xp:inputText value="#{document1.hviewcategorycolor}"
+							id="hviewcategorycolor1" themeId="MediumEditBox" defaultValue="#E5E5E5"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@hviewcategory-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("hviewcategorycolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Category Border Top:" id="hviewcategorybordertop_Label1"
+							for="hviewcategorybordertop1">
+						</xp:label>
+						<xp:inputText value="#{document1.hviewcategorybordertop}"
+							id="hviewcategorybordertop1" themeId="MediumEditBox"
+							defaultValue="1px solid #2D2D2D">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@hviewcategory-border-top">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Category Border Left:" id="hviewcategoryborderleft_Label1"
+							for="hviewcategoryborderleft">
+						</xp:label>
+						<xp:inputText value="#{document1.hviewcategoryborderleft}"
+							id="hviewcategoryborderleft" themeId="MediumEditBox"
+							defaultValue="1px solid #2D2D2D">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@hviewcategory-border-left">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Category Border Right:" id="hviewcategoryborderright_Label1"
+							for="hviewcategoryborderright">
+						</xp:label>
+						<xp:inputText value="#{document1.hviewcategoryborderright}"
+							id="hviewcategoryborderright" themeId="MediumEditBox"
+							defaultValue="1px solid #2D2D2D">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@hviewcategory-border-right">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Category BG Color:" id="hviewcategorybackgroundcolor_Label1"
+							for="hviewcategorybackgroundcolor1">
+						</xp:label>
+						<xp:inputText value="#{document1.hviewcategorybackgroundcolor}"
+							id="hviewcategorybackgroundcolor1" themeId="MediumEditBox"
+							defaultValue="#3C3C3C" styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@hviewcategory-background-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("hviewcategorybackgroundcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Title Color:" id="hviewtitlecolor_Label1"
+							for="hviewtitlecolor1">
+						</xp:label>
+						<xp:inputText value="#{document1.hviewtitlecolor}"
+							id="hviewtitlecolor1" themeId="MediumEditBox" defaultValue="#E5E5E5"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@hviewtitle-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("hviewtitlecolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Title Border Top:" id="hviewtitlebordertop_Label1"
+							for="hviewtitlebordertop1">
+						</xp:label>
+						<xp:inputText value="#{document1.hviewtitlebordertop}"
+							id="hviewtitlebordertop1" themeId="MediumEditBox" defaultValue="#2D2D2D"
+							styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@hviewtitle-border-top">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("hviewtitlebordertop")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+					<li>
+						<xp:label value="Title BG:" id="hviewtitlebackgroundcolor_Label1"
+							for="hviewtitlebackgroundcolor1">
+						</xp:label>
+						<xp:inputText value="#{document1.hviewtitlebackgroundcolor}"
+							id="hviewtitlebackgroundcolor1" themeId="MediumEditBox"
+							defaultValue="#3C3C3C" styleClass="pick-a-color">
+							<xp:this.attrs>
+								<xp:attr name="unp-less" value="@hviewtitle-background-color">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:inputText>
+						<xp:panel tagName="a"
+							styleClass="color-picker">
+							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("hviewtitlebackgroundcolor")}]]></xp:this.style>
+						</xp:panel>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</xp:view>

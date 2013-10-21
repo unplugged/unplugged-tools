@@ -5,9 +5,8 @@
 	<xp:this.acl>
 		<xp:acl>
 			<xp:this.entries>
-				<xp:aclEntry right="NOACCESS" name="Anonymous"
-					fullName="Anonymous" type="USER">
-				</xp:aclEntry>
+				<xp:aclEntry right="NOACCESS" type="ANONYMOUS"></xp:aclEntry>
+				<xp:aclEntry type="DEFAULT" right="EDITOR"></xp:aclEntry>
 			</xp:this.entries>
 		</xp:acl>
 	</xp:this.acl>
