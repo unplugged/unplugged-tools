@@ -789,6 +789,10 @@ if (!unp) {
 			if (url.indexOf("#") > -1) {
 				url = url.substring(0, url.indexOf(" #"));
 			}
+			if (url.indexOf("?") > -1){
+				url += "?";
+			}
+			url += "&history=true";
 			history.pushState(null, "", url);
 			console.log("pushed " + url);
 
@@ -805,4 +809,21 @@ if (!unp) {
 				}
 			});
 
+}
+
+function increaseFontSize(button){
+	$( ".typographyreadcontent" ).find( "*" ).each(function(){
+		$(this).css("font-size", (parseInt($(this).css("font-size"), 10) + 2) + "px");
+		if (parseInt($(this).css("line-height"), 10) <= parseInt($(this).css("font-size"), 10)){
+			$(this).css("line-height", (parseInt($(this).css("line-height"), 10) + 2) + "px");
+		}
+	});
+}
+function decreaseFontSize(button){
+	$( ".typographyreadcontent" ).find( "*" ).each(function(){
+		$(this).css("font-size", (parseInt($(this).css("font-size"), 10) - 2) + "px");
+		if (parseInt($(this).css("line-height"), 10) > 24){
+			$(this).css("line-height", (parseInt($(this).css("line-height"), 10) - 2) + "px");
+		}
+	});
 }
