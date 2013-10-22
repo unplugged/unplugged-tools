@@ -789,7 +789,7 @@ if (!unp) {
 			if (url.indexOf("#") > -1) {
 				url = url.substring(0, url.indexOf(" #"));
 			}
-			if (url.indexOf("?") > -1){
+			if (url.indexOf("?") == -1){
 				url += "?";
 			}
 			url += "&history=true";

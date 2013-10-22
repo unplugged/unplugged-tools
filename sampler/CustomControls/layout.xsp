@@ -5,8 +5,7 @@
 		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
 		<xp:script src="/custom.js" clientSide="true"></xp:script>
 	</xp:this.resources>
-	<xp:panel tagName="link">
-		<unp:this.rendered><![CDATA[#{javascript:!isAjax()}]]></unp:this.rendered>
+	<xp:panel tagName="link" rendered="#{javascript:!isAjax()}">
 		<xp:this.attrs>
 			<xp:attr name="type" value="text/css"></xp:attr>
 			<xp:attr name="rel" value="stylesheet"></xp:attr>
@@ -88,19 +87,16 @@
 				submenu="sub" disabled="no" label="Contacts" page="/Contacts.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="yes" label="Activities" icon="cogwheels">
+				submenu="sub" disabled="no" label="My Activities" page="/MyActivities.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="yes" label="My Activities">
+				submenu="sub" disabled="no" label="Activities By Company" page="/ActivitiesByCompany.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="yes" label="Activities By Company">
+				submenu="sub" disabled="no" label="Activities By Contact" page="/ActivitiesByContact.xsp">
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="yes" label="Activities By Contact">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="Media" icon="file">
+				submenu="no" disabled="no" label="Media" icon="file" >
 			</unp:menuItem>
 			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
 				submenu="sub" disabled="no" label="Library" page="/MediaLibrary.xsp">
