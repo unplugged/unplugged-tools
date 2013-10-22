@@ -93,3 +93,10 @@
 		width: 100%;
 	}
 }
+
+.fontsizebuttons {
+	position: absolute;
+	top: -3px;
+	right: 110px;
+	z-index: 999;
+}
