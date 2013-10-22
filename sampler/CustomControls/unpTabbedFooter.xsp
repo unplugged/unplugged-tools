@@ -29,7 +29,7 @@
 		}
 		}
 	</style>
-	<xp:panel styleClass="footer black">
+	<xp:panel styleClass="footer black" rendered="#{javascript:!isAjax()}">
 
 		<div id='tabfooter'>
 			<ul id="footerTabBar">

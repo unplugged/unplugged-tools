@@ -98,6 +98,23 @@ function getiOSVersion(){
 	return parseInt(useragent, 10) - 4;
 }
 
+function isAjax(){
+	if (requestScope.isajax == null){
+		var rnd = context.getUrlParameter("rnd");
+		var history = context.getUrlParameter("history");
+		if (history == "true"){
+			requestScope.isajax = false;	
+		}else{
+			if (rnd == "" || rnd == null || rnd == "undefined"){
+				requestScope.isajax = false;
+			}else{
+				requestScope.isajax = true;
+			}
+		}
+	}
+	return requestScope.isajax;
+}
+
 function $A( object ){
 	if( typeof object === 'undefined' || object === null ){ return []; }
 	if( typeof object === 'string' ){ return [ object ]; }

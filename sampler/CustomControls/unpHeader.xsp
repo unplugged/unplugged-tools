@@ -11,20 +11,21 @@
 		License
 	-->
 
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:unp="http://unplugged.teamstudio.com">
 	<style>
 		body { padding-top: 0px !important; } @media screen and
 		(min-width: 701px) { body { padding-top: 60px !important; } }
-		@media
-		screen and (max-width: 700px) { body { padding-top: 45px
-		!important; }
-		}
+		@media screen and (max-width: 700px) { body { padding-top: 45px
+		!important; } }
 	</style>
 	<xp:this.resources>
 		<xp:script src="/unp/jquery-2.0.3.min.js" clientSide="true"></xp:script>
 		<xp:script src="/unp/fastclick.js" clientSide="true"></xp:script>
 		<xp:script src="/unp/jquery.blockUI.min.js" clientSide="true"></xp:script>
-		<xp:script src="/unp/jquery.autocomplete.js" clientSide="true"></xp:script>
+		<xp:script src="/unp/jquery.autocomplete.js"
+			clientSide="true">
+		</xp:script>
 		<xp:script src="/unp/tinymce.js" clientSide="true"></xp:script>
 		<xp:script src="/unp/jquery.tinymce.min.js" clientSide="true"></xp:script>
 		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
@@ -32,7 +33,8 @@
 		<xp:metaData name="apple-mobile-web-app-status-bar-style"
 			content="black-translucent">
 		</xp:metaData>
-		<xp:metaData name="apple-mobile-web-app-capable" content="yes">
+		<xp:metaData name="apple-mobile-web-app-capable"
+			content="yes">
 		</xp:metaData>
 		<xp:metaData name="viewport">
 			<xp:this.content><![CDATA[#{javascript:if (getiOSVersion() > 6){
@@ -44,7 +46,8 @@
 		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 
-	<xp:text tagName="script" id="inlinescript">
+	<xp:text tagName="script" id="inlinescript"
+		rendered="#{javascript:!isAjax()}">
 
 		<xp:this.value><![CDATA[#{javascript:if(isUnpluggedServer()){
 	return "var unpluggedserver = true;";
@@ -54,12 +57,13 @@
 }]]></xp:this.value>
 	</xp:text>
 
-	<xp:panel styleClass="iHeader black">
+	<xp:panel styleClass="iHeader black" rendered="#{javascript:!isAjax()}">
 		<xp:image styleClass="companyLogo" url="/unp/unplugged_logo.png"
 			id="companyLogo">
 		</xp:image>
 		<div class="backButtonHolder">
-			<xp:panel tagName="div" id="backlink" styleClass="backButton">
+			<xp:panel tagName="div" id="backlink"
+				styleClass="backButton">
 				<xp:this.rendered><![CDATA[#{javascript:if(isEmpty(compositeData.backButtonText)){
 	return false;
 }
@@ -92,7 +96,8 @@ else{ return true;
 		<xp:label id="title" value="#{javascript:compositeData.title}"
 			styleClass="title">
 		</xp:label>
-		<xp:panel id="searchbutton" rendered="#{javascript:compositeData.search != 'none'}"
+		<xp:panel id="searchbutton"
+			rendered="#{javascript:compositeData.search != 'none'}"
 			styleClass="searchButton">
 			<span class="icon"></span>
 			<span class="label">Search</span>
@@ -113,9 +118,10 @@ else{ return true;
 		</xp:panel>
 
 	</xp:panel>
-	<xp:div id="input-search-frame" styleClass="input-search-frame"
-		rendered="#{javascript:compositeData.search != 'none'}">
-		<input placeholder="Search..." id="input-search" class="hiddensearch">
+	<xp:div id="input-search-frame" styleClass="input-search-frame">
+		<xp:this.rendered><![CDATA[#{javascript:compositeData.search != 'none' && !isAjax();}]]></xp:this.rendered>
+		<input placeholder="Search..." id="input-search"
+			class="hiddensearch">
 		</input>
 	</xp:div>
 	<xp:panel id="searchscript" tagName="script">
@@ -129,12 +135,13 @@ else{ return true;
 }}]]></xp:this.value>
 			</xp:attr>
 		</xp:this.attrs>
-		<xp:this.rendered><![CDATA[#{javascript:compositeData.search != "none"}]]></xp:this.rendered>
+		<xp:this.rendered><![CDATA[#{javascript:compositeData.search != "none" && !isAjax()}]]></xp:this.rendered>
 	</xp:panel>
 	<xp:text id="searchvars" tagName="script" escape="false">
-		<xp:this.rendered><![CDATA[#{javascript:compositeData.search == "database"}]]></xp:this.rendered>
+		<xp:this.rendered><![CDATA[#{javascript:compositeData.search == "database" && !isAjax()}]]></xp:this.rendered>
 		<xp:this.attrs>
 			<xp:attr name="type" value="text/javascript"></xp:attr>
 		</xp:this.attrs>
 		<xp:this.value><![CDATA[#{javascript:"var searchPage = \"" + compositeData.searchPage + "\";"}]]></xp:this.value>
-	</xp:text></xp:view>
+	</xp:text>
+</xp:view>

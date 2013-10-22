@@ -35,7 +35,7 @@
 		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 
-	<xp:panel styleClass="footer black">
+	<xp:panel styleClass="footer black" rendered="#{javascript:!isAjax()}">
 		<xp:link id="link1" styleClass="syncButton" value="#">
 			<xp:this.rendered><![CDATA[#{javascript:isUnpluggedServer() && compositeData.synctype == "currentdb";}]]></xp:this.rendered>
 			<xp:eventHandler event="onclick" submit="true"
