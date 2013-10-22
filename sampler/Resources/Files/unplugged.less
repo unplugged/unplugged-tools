@@ -37,6 +37,11 @@ body {
 	}
 }
 
+button, 
+input {
+	font-family: @body-font;
+}
+
 .hidden {
 	display: none !important;
 }
@@ -65,6 +70,12 @@ a:hover {
 
 /* WORKSPACE */ 
 @import 'unplugged-workspace.less';
+
+/* SWIPE VIEW */ 
+@import 'unplugged-swipeview.less';
+
+/* MEDIA VIEW */ 
+@import 'unplugged-media.less';
 
 
 
@@ -185,6 +196,16 @@ fieldset {
 			font-weight: @content-subheading-font-weight;				
 		}
 	}
+	
+	h3 {
+		line-height: 1.2;	
+		text-decoration: none;
+		text-overflow: ellipsis;
+		color: @content-subheading-color;
+		font-size: @content-subheading-font-size;
+		font-weight: @content-subheading-font-weight;
+		margin-bottom: 15px;		
+	}
 }
 
 legend {
@@ -203,6 +224,31 @@ legend {
 
 
 
+/* SAMPLER APP: Dashboard */
+
+.piechartpanel {
+	.legendColorBox {
+		padding: 5px 0;
+	
+		> div[style] {
+			border: 0 !important;
+			
+			> div[style] {
+				border-width: 6px !important;
+				width: 0 !important;
+			}
+		}
+	}
+	.legendLabel {
+		padding: 5px;
+	}
+	.pieLabel {
+		> div {
+			font-size: 11px !important;
+			line-height: 15px !important;
+		}
+	}
+}
 
 
 
@@ -247,6 +293,26 @@ legend {
 #bodycopy p {
 	margin-bottom: 20px;
 }
+
+/* SAMPLER APP: Typography */
+
+.typographyeditmode {
+	.mce-panel {
+		border-color: transparent;
+		background: transparent;
+	}
+	
+	.mce-flow-layout-item {
+		float: right;
+	}
+	
+	iframe body#tinymce {
+		font-family: @body-font;
+	}
+}
+
+
+
 
 
 
@@ -313,31 +379,65 @@ legend {
 	
 	.dialogbuttons {
 		padding: 10px;
+		overflow: hidden;
 	
-		.button {
-			border-radius: @button-border-radius;
-			width: 48%;
-			margin-right: 6px;
-			height: 36px;
-			cursor: pointer;
-			box-shadow: @button-box-shadow;
-			padding: 0;
-			text-shadow: @button-text-shadow;
-			font-weight: @button-font-weight;
-			line-height: 36px;
-			font-size: 16px;
-			text-align: center;
-			display: block;
-			color: @button-default-label-color;
-			background: @button-default-background;
-			border: 1px solid @button-default-border-color;
+		> div {
+			width: 50%;
+			float: left;
+
+			.button {
+				border-radius: @button-border-radius;
+				box-shadow: @button-box-shadow;
+				text-shadow: @button-text-shadow;
+				font-weight: @button-font-weight;
+				color: @button-default-label-color;
+				background: @button-default-background;
+				border: 1px solid @button-default-border-color;
+				display: block;
+				width: auto;
+				height: 36px;
+				cursor: pointer;
+				padding: 0;
+				line-height: 36px;
+				font-size: 16px;
+				text-align: center;
+
+				&.cancelbutton {
+					color: @button-danger-label-color;
+					background: @button-danger-background;
+					border: 1px solid @button-danger-border-color;					
+				}
+				
+				&.savebutton {
+					color: @button-success-label-color;
+					background: @button-success-background;
+					border: 1px solid @button-success-border-color;					
+				}			
+			
+			}
+
+			&:first-child .button {
+				margin-right: 5px;
+			}
+			
+			&:last-child .button {
+				margin-left: 5px;
+			}
 		}
 	}
-	
 }
 
 
 
+
+
+/*********************
+
+OLD CSS STARTS HERE
+
+Not sure what any of it does, but I don't want to move/change it in case I break anything!
+
+**********************/
 
 
 
@@ -559,331 +659,8 @@ and (orientation : portrait) {
 	}
 }
 
-/* Swiper Styles */
-.swiper-container {
-	margin: 0 auto;
-	position: relative;
-	overflow: hidden;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	-ms-backface-visibility: hidden;
-	-o-backface-visibility: hidden;
-	backface-visibility: hidden;
-	/* Fix of Webkit flickering */
-	z-index: 1;
-}
-
-.swiper-wrapper {
-	position: relative;
-	width: 100%;
-	-webkit-transition-property: -webkit-transform, left, top;
-	-webkit-transition-duration: 0s;
-	-webkit-transform: translate3d(0px, 0, 0);
-	-webkit-transition-timing-function: ease;
-	-moz-transition-property: -moz-transform, left, top;
-	-moz-transition-duration: 0s;
-	-moz-transform: translate3d(0px, 0, 0);
-	-moz-transition-timing-function: ease;
-	-o-transition-property: -o-transform, left, top;
-	-o-transition-duration: 0s;
-	-o-transform: translate3d(0px, 0, 0);
-	-o-transition-timing-function: ease;
-	-o-transform: translate(0px, 0px);
-	-ms-transition-property: -ms-transform, left, top;
-	-ms-transition-duration: 0s;
-	-ms-transform: translate3d(0px, 0, 0);
-	-ms-transition-timing-function: ease;
-	transition-property: transform, left, top;
-	transition-duration: 0s;
-	transform: translate3d(0px, 0, 0);
-	transition-timing-function: ease;
-}
-
-.swiper-slide {
-	float: left;
-}
-
-/* IE10 Windows Phone 8 Fixes */
-.swiper-wp8-horizontal {
-	-ms-touch-action: pan-y;
-}
-
-.swiper-wp8-vertical {
-	-ms-touch-action: pan-x;
-}
-
-.swiper-scroll-container {
-	background-color: @swiper-scroll-container-background-color;
-	-webkit-border-bottom-left-radius: 8px;
-	width: 100%;
-	height: 100px;
-	-webkit-mask-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 1) 80%,
-		rgba(0, 0, 0, 0) );
-	-webkit-mask-position: 0px 30px;
-}
-
-.swiper-scroll-container .swiper-slide {
-	/*width: 10000px !important;*/
-	height: 100px;
-	padding-left: 5px;
-	padding-top: 5px;
-}
-
-.hviewresults {
-	padding-left: 30px; 
-	padding-top: 10px;	
-}
-
-@media screen and (max-width: 1000px) {
-	.hviewresults {
-		padding-left: 10px; 
-		padding-top: 10px;	
-	}
-}
-@media screen and (max-width: 999px) {
-	  .tabfootertext {
-	    display: none !important;
-	  }
-}
-@media screen and (max-width: 700px) {
-	.hviewresults {
-		padding-left: 10px; 
-		padding-top: 10px;	
-	}
-}
-
-@media screen and (max-width: 400px) {
-  .tabfootertext {
-    display: none !important;
-  }
-	.hviewresults {
-		padding-left: 5px; 
-		padding-top: 10px;	
-	}
-}
-
-.hviewitem {
-	width: 140px;
-	height: 100px;
-	float: left;
-}
-
-.hviewtitle {
-	display: block;
-	color: @hviewtitle-color;
-	font-size: 1.2em;
-	width: 100%;
-	text-align: center;
-}
-
-.hviewcategory {
-	display: block;
-	color: @hviewcategory-color;
-	font-weight: bold;
-	font-size: 1.4em;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 3px;
-	border-top: @hviewcategory-border-top;
-	border-left: @hviewcategory-border-left;
-	border-right: @hviewcategory-border-right;
-	margin-top: 5px;
-	background-color: @hviewcategory-background-color;
-	-webkit-border-top-left-radius: 8px;
-
-}
-
-.hviewfilters {
-	padding-top: 5px;
-	float: right;
-}
-
-.hviewcombo {
-	margin-right: 3px
-}
-
-#hviewPopup {
-	position: absolute;
-	top: 40px;
-	left: 100px;
-	right: 100px;
-	z-index: 1000;
-	background-color: #ffffff;
-}
-
-#hviewitembody {
-	padding-bottom: 40px;
-}
 
 
-.tabfootertext {
-	position: absolute;
-	top: 0px;
-	left: 100px;
-	width: 150px;
-	color: #999999;
-}
 
-#tabfooter {
-	position: absolute;
-	top: 0px;
-	width: 100%;
-	text-align: center;
-}
-
-.hviewicon {
-	width: 52px;
-	height: 62px;
-	background-repeat: no-repeat;
-	background-image: url('unp/mediasync-documents.png');
-	margin-left: 44px;
-}
-
-.hviewicon.icon-docx {
-	background-position: 0px 0px;
-}
-
-.hviewicon.icon-pdf {
-	background-position: -52px 0px;
-}
-
-.hviewicon.icon-xlsx {
-	background-position: -104px 0px;
-}
-
-.hviewicon.icon-pptx {
-	background-position: -156px 0px;
-}
-
-.hviewicon.icon-mov {
-	background-position: -208px 0px;
-}
-
-.hviewicon.icon-jpg {
-	background-position: -260px 0px;
-}
-
-.hviewicon .badge {
-	float: right;
-	display: inline;
-	padding: 2px 4px;
-	font-size: 11.844px;
-	font-weight: bold;
-	line-height: 14px;
-	white-space: nowrap;
-	vertical-align: baseline;
-	padding-right: 9px;
-	padding-left: 9px;
-	-webkit-border-radius: 9px;
-	-moz-border-radius: 9px;
-	border-radius: 9px;
-	height: 22px;
-	width: 22px;
-	background-repeat: no-repeat;
-}
-
-.hviewicon .badge-favorite {
-	float: left;
-	background-image: url('unp/icon-favorite.png');
-}
-
-.hviewicon .badge-downloaded {
-	float: right;
-	background-image: url('unp/icon-plane.png');
-}
-
-.hviewicon .badge-downloading {
-	float: right;
-	background-image: url('unp/icon-loading.png');
-}
-
-h1.hview-h1 {
-	color: @h1-hview-h1-color;
-	font-size: 1.6em;
-	font-weight: bold;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-h2.hview-h2 {
-	font-size: 1.0em;
-	font-weight: normal;
-	color: #999999;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-.hviewloadmorebutton {
-	width: 60px;
-	height: 62px;
-	border: 1px solid #E2E2E3;
-	background-color: #FFFFFF;
-	text-align: center;
-}
-
-a.dropdown-toggle,a.dropdown-toggle:hover {
-	float: right;
-	border-radius: 3px;
-	box-shadow: 0 1px rgba(0, 0, 0, 0.2);
-	color: #333;
-	font-weight: bold;
-	font-size: 12px;
-	position: relative;
-	padding: 8px;
-	margin-right: 3px;
-	text-decoration: none;
-	cursor: pointer;
-	background-color: #FFFFFF;
-}
-
-.btn-group {
-	position: relative;
-	display: inline-block;
-	white-space: nowrap;
-	vertical-align: middle;
-	padding-right: 7px;
-}
-
-a.dropdown-toggle span {
-	color: #0078C8;
-	padding-left: 3px;
-	padding-right: 8px;
-}
-
-ul.dropdown-menu {
-	position: absolute;
-	top: 100%;
-	right: 10px;
-	z-index: 1000;
-	display: none;
-	float: left;
-	min-width: 160px;
-	padding: 5px 0;
-	margin: 2px 0 0;
-	list-style: none;
-	background-color: #ffffff;
-	border: 1px solid #ccc;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-webkit-background-clip: padding-box;
-	-moz-background-clip: padding;
-	background-clip: padding-box;
-}
-
-ul.dropdown-menu li {
-	display: list-item;
-	text-align: -webkit-match-parent;
-	padding: 3px 20px;
-	clear: both;
-	font-weight: normal;
-	line-height: 20px;
-	color: #333333;
-	white-space: nowrap;
-}
 
 
