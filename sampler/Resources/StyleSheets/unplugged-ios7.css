@@ -2033,8 +2033,7 @@ body.swipe-view #swipenextbutton:after {
 #hviewPopup {
   background-color: #EEE;
   width: 400px;
-  top: 50%;
-  margin-top: -100px;
+  margin: 100px auto;
   /* Smartphones (portrait) */
 
   /* Header */
@@ -2074,13 +2073,19 @@ body.swipe-view #swipenextbutton:after {
   color: #999999;
   margin-bottom: 5px;
 }
-#hviewPopup #hviewitemheader #hviewmetadata div {
-  padding-top: 6px;
-}
 #hviewPopup #hviewitemheader #hviewmetadata .hviewmetatitle {
   font-size: 18px;
   font-weight: bold;
   color: #333333;
+  display: block;
+}
+#hviewPopup #hviewitemheader #hviewmetadata > div {
+  padding-top: 6px;
+}
+#hviewPopup #hviewitemheader #hviewmetadata > div:nth-child(2),
+#hviewPopup #hviewitemheader #hviewmetadata > div:nth-child(4) {
+  float: right;
+  clear: right;
 }
 #hviewPopup #hviewitembody {
   padding-top: 10px;
@@ -2104,6 +2109,7 @@ body.swipe-view #swipenextbutton:after {
   width: 60%;
   float: left;
   filter: none;
+  font-size: 15px;
 }
 #hviewPopup #hviewitembody .togglefavorite img {
   display: none;
@@ -2116,6 +2122,7 @@ body.swipe-view #swipenextbutton:after {
   margin-top: 10px;
   width: 37%;
   filter: none;
+  font-size: 15px;
 }
 #hviewPopup #hviewitembody .emailfilebutton img {
   display: none;
