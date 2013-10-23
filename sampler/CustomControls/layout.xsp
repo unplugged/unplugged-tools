@@ -4,6 +4,7 @@
 	<xp:this.resources>
 		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
 		<xp:script src="/custom.js" clientSide="true"></xp:script>
+		<xp:styleSheet href="unp/glyphicons.css"></xp:styleSheet>
 	</xp:this.resources>
 	<xp:panel tagName="link" rendered="#{javascript:!isAjax()}">
 		<xp:this.attrs>
@@ -22,93 +23,42 @@
 	<unp:unpHeader viewsButton="true" title="Sampler" search="database"
 		searchPage="DatabaseSearchResults.xsp">
 	</unp:unpHeader>
-	<unp:unpNavigator>
-		<unp:this.menuItem>
-			<unp:menuItem submenu="no" disabled="no" label="Dashboard"
-				icon="dashboard" page="/UnpMain.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="Typography" icon="text_underline">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Read Mode" page="/TypographyReadMode.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Edit Mode" page="/TypographyEditMode.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="UI Elements" icon="hand_up">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Accordion" page="/Accordion.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="CSS Controls" page="/CSSControls.xsp">
-			</unp:menuItem>
-			<unp:menuItem submenu="sub" disabled="no" label="Debug Toolbar"
-				page="/DebugToolbar.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Dialog" page="/Dialog.xsp"
-				callback="initDialog();">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Flat View" page="/FlatView.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Flat View (Categorized)" page="/FlatViewCategorized.xsp">
-			</unp:menuItem>
-			<unp:menuItem submenu="sub" disabled="no" label="Swipe View"
-				page="/SwipeView.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" page="/Glyphicons.xsp"
-				ajaxtargetid="content" submenu="no" disabled="no" label="Glyphicons"
-				icon="leaf">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="Forms" icon="edit">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Read Mode" page="/FormsReadMode.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Edit Mode" page="/FormsEditMode.xsp">
-			</unp:menuItem>
-			<unp:menuItem submenu="no" disabled="no" label="Workspace"
-				icon="show_thumbnails" page="/Workspace.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="Contacts" icon="group">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Companies" page="/Companies.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Contacts" page="/Contacts.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="My Activities" page="/MyActivities.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Activities By Company" page="/ActivitiesByCompany.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Activities By Contact" page="/ActivitiesByContact.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="Media" icon="file" >
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Library" page="/MediaLibrary.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="sub" disabled="no" label="Favorites" page="/MediaLibraryFavorites.xsp">
-			</unp:menuItem>
-			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
-				submenu="no" disabled="no" label="Performance" icon="settings" page="/UPMark.xsp">
-			</unp:menuItem>
-		</unp:this.menuItem>
-	</unp:unpNavigator>
+	<unp:unpNavigatorComputed>
+		<unp:this.computedmenuitems><![CDATA[#{javascript:[
+        {label: "Dashboard", hasSubMenu: false, page: "/UnpMain.xsp"}, 
+        {label: "Typography", hasSubMenu: true, subMenu: [
+        	{label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyReadMode.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/TypographyEditMode.xsp", disabled: false, hasSubMenu: false}
+        ]}, 
+        {label: "UI Elements", hasSubMenu: true, subMenu: [
+        	{label: "Accordion", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Accordion.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "CSS Controls", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/CSSControls.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Debug Toolbar", page: "/DebugToolbar.xsp", hasSubMenu: false},
+        	{label: "Dialog", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/Dialog.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Flat View", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/FlatView.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Flat View (Categorized)", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/FlatViewCategorized.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Swipe View", page: "/SwipeView.xsp", hasSubMenu: false}
+        ]}, 
+        {label: "Glyphicons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/Glyphicons.xsp", disabled: false},
+        {label: "Forms", hasSubMenu: true, subMenu: [
+        	{label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsReadMode.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/FormsEditMode.xsp", disabled: false, hasSubMenu: false}
+        ]}, 
+        {label: "Workspace", hasSubMenu: false, page: "/Workspace.xsp"},
+        {label: "Contacts", hasSubMenu: true, subMenu: [
+        	{label: "Companies", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Companies.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Contacts", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Contacts.xsp", disabled: false, hasSubMenu: false},
+        	{label: "My Activities", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/MyActivities.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Activities By Company", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/ActivitiesByCompany.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Activities By Contact", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/ActivitiesByContact.xsp", disabled: false, hasSubMenu: false}
+        ]},
+        {label: "Media", hasSubMenu: true, subMenu: [
+        	{label: "Library", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/MediaLibrary.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Favorites", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/MediaLibraryFavorites.xsp", disabled: false, hasSubMenu: false}
+        ]},
+        {label: "UPMark", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/UPMark.xsp"}
+]}]]></unp:this.computedmenuitems>
+	</unp:unpNavigatorComputed>
 	<div id="content">
 		<xp:callback facetName="facet_1" id="callback1"></xp:callback>
 	</div>

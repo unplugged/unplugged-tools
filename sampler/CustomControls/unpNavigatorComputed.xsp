@@ -19,27 +19,37 @@
 }else{
 	return "";
 }}]]></xp:this.styleClass>
-						<xp:link escape="true"
-							text="#{javascript:menuItem.label}" id="link1" value="#"
-							disableTheme="true">
+						<xp:link escape="true" text="#{javascript:menuItem.label}"
+							id="link5" value="#" disableTheme="true">
+							<xp:this.rendered><![CDATA[#{javascript:!menuItem.hasSubMenu}]]></xp:this.rendered>
 							<span class="chevron" />
 							<xp:this.attrs>
-								<xp:attr name="onClick">
-									<xp:this.value><![CDATA[#{javascript:if (menuItem.hasSubMenu){
-	"return false;"
+								<xp:attr name="onclick"
+									rendered="#{javascript:!menuItem.disabled}">
+									<xp:this.value><![CDATA[#{javascript:if (menuItem.ajaxloadid != null && menuItem.ajaxloadid != ""){
+	return "loadPage('" + getDbPath() + menuItem.page + "?rnd=' + Date.now()+ ' #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
 }else{
-	return "loadPage('" + getDbPath() + menuItem.page + " #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";;
-}}]]></xp:this.value>
+	return  "openPage('" + getDbPath() + menuItem.page + "', '" + menuItem.ajaxtargetid + "');";
+}
+}]]></xp:this.value>
 								</xp:attr>
 							</xp:this.attrs>
 						</xp:link>
-
+						<xp:link escape="true" text="#{javascript:menuItem.label}"
+							id="link6" value="#" disableTheme="true">
+							<xp:this.rendered><![CDATA[#{javascript:menuItem.hasSubMenu}]]></xp:this.rendered>
+							<span class="chevron" />
+							<xp:this.attrs>
+								<xp:attr name="onClick" value="return false">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:link>
 						<!-- submenu - level 1 -->
 						<xp:panel tagName="ul">
 							<xp:this.rendered><![CDATA[#{javascript:menuItem.hasSubMenu}]]></xp:this.rendered>
 
-							<xp:repeat id="repeat2" rows="30"
-								var="subMenu1" repeatControls="false" disableOutputTag="true"
+							<xp:repeat id="repeat2" rows="30" var="subMenu1"
+								repeatControls="false" disableOutputTag="true"
 								value="#{javascript:menuItem.subMenu}">
 								<xp:panel tagName="li">
 									<xp:this.styleClass><![CDATA[#{javascript:if (subMenu1.disabled){
@@ -47,13 +57,27 @@
 }else{
 	return "";
 }}]]></xp:this.styleClass>
-									<xp:link escape="true"
-										text="#{javascript:subMenu1.label}" id="link2" value="#"
-										disableTheme="true">
+									<xp:link escape="true" text="#{javascript:subMenu1.label}"
+										id="link4" value="#" disableTheme="true">
+										<xp:this.rendered><![CDATA[#{javascript:!subMenu1.hasSubMenu}]]></xp:this.rendered>
 										<span class="chevron" />
 										<xp:this.attrs>
-											<xp:attr name="onClick"
-												value="return false">
+											<xp:attr name="onclick"
+												rendered="#{javascript:!subMenu1.disabled}">
+												<xp:this.value><![CDATA[#{javascript:if (subMenu1.ajaxloadid != null && subMenu1.ajaxloadid != ""){
+	return "loadPage('" + getDbPath() + subMenu1.page + "?rnd=' + Date.now()+ ' #" + subMenu1.ajaxloadid + "', '" + subMenu1.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
+}else{
+	return  "openPage('" + getDbPath() + subMenu1.page + "', '" + subMenu1.ajaxtargetid + "');";
+}}]]></xp:this.value>
+											</xp:attr>
+										</xp:this.attrs>
+									</xp:link>
+									<xp:link escape="true" text="#{javascript:subMenu1.label}"
+										id="link2" value="#" disableTheme="true">
+										<xp:this.rendered><![CDATA[#{javascript:subMenu1.hasSubMenu}]]></xp:this.rendered>
+										<span class="chevron" />
+										<xp:this.attrs>
+											<xp:attr name="onClick" value="return false">
 											</xp:attr>
 										</xp:this.attrs>
 									</xp:link>
@@ -62,9 +86,8 @@
 									<xp:panel tagName="ul">
 										<xp:this.rendered><![CDATA[#{javascript:subMenu1.hasSubMenu}]]></xp:this.rendered>
 
-										<xp:repeat id="repeat3"
-											rows="30" var="subMenu2" repeatControls="false"
-											disableOutputTag="true"
+										<xp:repeat id="repeat3" rows="30" var="subMenu2"
+											repeatControls="false" disableOutputTag="true"
 											value="#{javascript:subMenu1.subMenu}">
 											<xp:panel tagName="li">
 												<xp:this.styleClass><![CDATA[#{javascript:if (subMenu2.disabled){
@@ -72,16 +95,18 @@
 }else{
 	return "";
 }}]]></xp:this.styleClass>
-												<xp:link escape="true"
-													text="#{javascript:subMenu2.label}" id="link3" value="#"
-													disableTheme="true">
-													<span
-														class="chevron" />
+												<xp:link escape="true" text="#{javascript:subMenu2.label}"
+													id="link3" value="#" disableTheme="true">
+													<span class="chevron" />
 													<xp:this.attrs>
 														<xp:attr
 															name="onclick"
 															rendered="#{javascript:!subMenu2.disabled}">
-															<xp:this.value><![CDATA[#{javascript:return "loadPage('" + getDbPath() + subMenu2.page + " #" + subMenu2.ajaxloadid + "', '" + subMenu2.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";}]]></xp:this.value>
+															<xp:this.value><![CDATA[#{javascript:if (subMenu2.ajaxloadid != null && subMenu2.ajaxloadid != ""){
+	return "loadPage('" + getDbPath() + subMenu2.page + "?rnd=' + Date.now()+ ' #" + subMenu2.ajaxloadid + "', '" + subMenu2.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
+}else{
+	return  "openPage('" + getDbPath() + subMenu2.page + "', '" + subMenu2.ajaxtargetid + "');";
+}}]]></xp:this.value>
 														</xp:attr>
 													</xp:this.attrs>
 												</xp:link>
@@ -105,32 +130,34 @@
 
 
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#menuitems ul').hide();
-			$('#menuitems li a').click(
-				function() {
-					var openMe = $(this).next();
-					var liSiblings = $(this).parent().siblings();
-					liSiblings.children("a").removeClass("open");
-					liSiblings.children("a").removeClass("topopen");
-					var mySiblings = liSiblings.find('ul');
-					if (mySiblings.length == 0){
-						$(this).addClass("topopen");
-					}
-					if (openMe.is(':visible')) {
-						$(this).removeClass('open');
-						openMe.slideUp('normal');
-					} else {
-						$(this).addClass('open');
-						mySiblings.slideUp('normal');
-						openMe.slideDown('normal');
-					}
-					fixNavigatorBottomCorners();
-				}
-			);
-			
+		$(document).ready(function () {
+		    $('#menuitems ul').hide();
+		    $('#menuitems li a').click(function () {
+		        var openMe =
+		            $(this).next();
+		        var liSiblings = $(this).parent().siblings();
+		        liSiblings.children("a").removeClass("open");
+		        liSiblings.children("a").removeClass("topopen");
+		        var mySiblings =
+		            liSiblings.find('ul');
+		        if (mySiblings.length == 0) {
+		            $(this).addClass("topopen");
+		        }
+		        if (openMe.is(':visible')) {
+		            $(this).removeClass('open');
+		            openMe.slideUp('normal');
+		        } else {
+		            $(this).addClass('open');
+		            mySiblings.slideUp('normal');
+		            openMe.slideDown('normal');
+		        }
+		        $("#menuitems li a").removeClass("active");
+		        if ($(this).attr("onclick") != "return false"){
+		        	$(this).addClass("active");
+		        }
+		        fixNavigatorBottomCorners();
+		    });
 		});
-
-</script>
+	</script>
 
 </xp:view>
