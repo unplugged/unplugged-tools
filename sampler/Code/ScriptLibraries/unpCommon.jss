@@ -88,6 +88,16 @@ function isIOS(){
 	}
 }
 
+function isPhone(){
+	var useragent = context.getUserAgent().getUserAgent();
+	if ((useragent.indexOf("iPhone") > -1 && useragent.indexOf("Mobile") > -1) || 
+			(useragent.indexOf("Android") > -1 && useragent.indexOf("Mobile") > -1)){
+		return true;
+	}else{
+		return false;
+	}
+}
+
 function getiOSVersion(){
 	if (!isIOS()){
 		return 0;

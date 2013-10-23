@@ -104,8 +104,7 @@ db.replicate("someserver");}]]></xp:this.script>
 			</xp:eventHandler>
 		</xp:link>
 
-		<xp:text rendered="#{javascript:isUnpluggedServer()}"
-			styleClass="tabfootertext">
+		<xp:text styleClass="tabfootertext">
 			<xp:this.value><![CDATA[#{javascript:var dbrep = session.getEnvironmentString("ro.last.sync." + @LowerCase(@ReplaceSubstring(database.getFilePath(), "\\", "/")), true);
 var rep = session.getEnvironmentString("ro.last.sync", true); 
 if ("" == rep) {
@@ -139,6 +138,7 @@ if (rep == "01/01/70"){
 	rep = timeSince(new Date(rep));
 }
 return "Updated " + rep;}]]></xp:this.value>
+			<xp:this.rendered><![CDATA[#{javascript:return isUnpluggedServer() && !isPhone();}]]></xp:this.rendered>
 		</xp:text>
 	</xp:panel>
 </xp:view>
