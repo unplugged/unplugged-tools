@@ -59,7 +59,7 @@ function buildCharts() {
 			}
 		},
 		legend : {
-			show : true
+			show : !isPhone()
 		}
 	});
 	var stackdata = [
@@ -93,8 +93,8 @@ function buildCharts() {
 			}
 		},
 		xaxis : {
-			ticks : [ [ 2, 2012 ], [ 3, 2013 ], [ 4, 2014 ], [ 5, 2015 ],
-					[ 6, 2016 ] ]
+			ticks : [ [ 2, 2013 ], [ 3, 2014 ], [ 4, 2015 ], [ 5, 2016 ],
+					[ 6, 2017 ] ]
 		},
 		legend : {
 			show : true
@@ -163,6 +163,7 @@ function buildCharts() {
 			tickFormatter : function(v, axis) {
 				return v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			}, 
+			tickSize: (isPhone() ? 100000 : 25000),
 			max: 100000
 		},
 		yaxis : {
@@ -201,7 +202,8 @@ function buildCharts() {
 			axisLabelUseCanvas : true,
 			tickFormatter : function(v, axis) {
 				return v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			}, 
+			},
+			tickSize: (isPhone() ? 200000 : 50000), 
 			max: 250000
 		},
 		yaxis : {
@@ -219,6 +221,11 @@ function buildCharts() {
 	
 	
 	$(window).bind('orientationchange', buildCharts);
+}
+
+function isPhone(){
+	var isPhone = document.width <= 480;
+    return isPhone;
 }
 
 function getRnd(max) {
