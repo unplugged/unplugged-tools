@@ -22,17 +22,17 @@ $(window).load( function() {
 	});
 	test("open typography read", 1, function(){
 		stop();
-		$("#menuitems li:nth-child(3)").first().click();
+		$("#menuitems a").eq(2).click();
 		ok(true);
 	});
 	test("open typography edit", 1, function(){
 		stop();
-		$("#menuitems li:nth-child(4)").first().click();
+		$("#menuitems a").eq(3).click();
 		ok(true);
 	});
 	test("open flat view", 1, function(){
 		stop();
-		$("#menuitems li:nth-child(10)").first().click();
+		$("#menuitems a").eq(9).click();
 		ok(true);
 	});
 	test("open first document in view", 1, function(){
@@ -47,12 +47,12 @@ $(window).load( function() {
 	});
 	test("open filtered view", 1, function(){
 		stop();
-		$("#menuitems li:nth-child(11)").first().click();
+		$("#menuitems a").eq(10).click();
 		ok(true);
 	});
 	test("open first document in view", 1, function(){
 		stop();
-		$("#flatViewRowSet li.data-row").first().click();
+		$("#flatViewRowSet li.data-row").eq(1).click();
 		ok(true);
 	});
 	test("edit document", 1, function(){
@@ -62,27 +62,27 @@ $(window).load( function() {
 	});
 	test("open form read", 1, function(){
 		stop();
-		$("#menuitems li:nth-child(15)").first().click();
+		$("#menuitems a").eq(14).click();
 		ok(true);
 	});
 	test("open form edit", 1, function(){
 		stop();
-		$("#menuitems li:nth-child(16)").first().click();
+		$("#menuitems a").eq(15).click();
 		ok(true);
 	});
 	test("open contacts by company", 1, function(){
 		stop();
-		$("#menuitems li:nth-child(19)").first().click();
+		$("#menuitems a").eq(18).click();
 		ok(true);
 	});
 	test("open contacts", 1, function(){
 		stop();
-		$("#menuitems li:nth-child(20)").first().click();
+		$("#menuitems a").eq(19).click();
 		ok(true);
 	});
 	test("open media library", 1, function(){
 		stop();
-		$("#menuitems li:nth-child(25)").first().click();
+		$("#menuitems a").eq(24).click();
 		ok(true);
 	});
 

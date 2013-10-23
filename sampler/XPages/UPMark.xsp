@@ -22,7 +22,7 @@
 								</div>
 								<div id="qunit" class="panel" style="display: none;"></div>
 
-								<iframe id="upmarkiframe" src="" style="width: 0px; height: 0px;"></iframe>
+								<iframe id="upmarkiframe" src="" style="width: 0px; height: 0px; display: none;"></iframe>
 
 
 							</xp:panel>
