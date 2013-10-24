@@ -75,11 +75,21 @@ $(window)
 					initAutoComplete();
 					initHideFooter();
 					initRichText();
+					initReaderButtons();
 					$(document).ajaxStop( function() {
 						initHideFooter();
 						initRichText();
+						initReaderButtons();
 					});
 				});
+
+function initReaderButtons(){
+	if ($(".fontsizebuttons").length > 0){
+		$(".input-search-frame").hide();
+	}else{
+		$(".input-search-frame").show();
+	}
+}
 
 var oldiscrollbottom = "";
 function initHideFooter() {
