@@ -219,6 +219,9 @@ a:hover {
   border: 1px solid transparent;
   padding: 0 15px;
 }
+.button i:before {
+  color: #2087fc;
+}
 /* DIALOG */
 .savebutton {
   color: #00b31e;
@@ -482,7 +485,6 @@ a:hover {
   bottom: 60px;
   height: 100%;
   width: auto;
-  padding: 36px 0;
   background: #f0eff4;
 }
 @media screen and (max-width: 700px) {
@@ -493,46 +495,39 @@ a:hover {
     width: 100%;
   }
 }
-.navScrollArea ul#menuitems {
+ul#menuitems {
   padding: 0;
   margin: 0;
   list-style: none;
+  margin: 36px 0;
 }
-.navScrollArea ul#menuitems li {
+ul#menuitems li {
+  min-width: 250px;
+}
+ul#menuitems a,
+ul#menuitems .menulink {
+  position: relative;
   text-align: left;
   background: #ffffff;
   display: block;
-  font-size: 17px;
-  font-weight: normal;
   line-height: 24px;
   padding: 10px 15px;
-  text-decoration: none;
   border-bottom: 1px solid #d8d8d8;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
   cursor: pointer;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   color: #000000;
   text-shadow: none;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-  min-width: 250px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: normal;
 }
-.navScrollArea ul#menuitems li:first-child {
-  -webkit-border-top-left-radius: 0;
-  -webkit-border-top-right-radius: 0;
-  border-top: 1px solid transparent;
-}
-.navScrollArea ul#menuitems li:last-child {
-  -webkit-border-bottom-left-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
-  border-bottom: 1px solid transparent;
-}
-.navScrollArea ul#menuitems li .menulink {
-  position: relative;
-}
-.navScrollArea ul#menuitems li .menulink:after {
+ul#menuitems a:after,
+ul#menuitems .menulink:after {
   content: '\E224';
   position: absolute;
-  right: 0;
+  right: 12px;
   top: 50%;
   margin-top: -8px;
   display: inline-block;
@@ -548,45 +543,65 @@ a:hover {
   text-transform: none;
   -webkit-font-smoothing: antialiased;
 }
-.navScrollArea ul#menuitems li .menulink i:before {
+ul#menuitems a i:before,
+ul#menuitems .menulink i:before {
   color: #000000;
 }
-.navScrollArea ul#menuitems li.viewMenuItem.expanded .menulink:after {
-  -webkit-transform: rotate(90deg);
+ul#menuitems > li:first-child a,
+ul#menuitems > li:first-child .menulink {
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top: 1px solid transparent;
 }
-.navScrollArea ul#menuitems li.viewMenuItemSub {
-  display: none;
-  background-color: #f0eff4;
+ul#menuitems > li:last-child a,
+ul#menuitems > li:last-child .menulink {
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
   border-bottom: 1px solid transparent;
 }
-.navScrollArea ul#menuitems li.viewMenuItemSub .menulink {
+ul#menuitems ul {
+  list-style: none;
+  padding: 0;
+}
+ul#menuitems a.open:after,
+ul#menuitems.viewMenuItem.expanded .menulink:after {
+  -webkit-transform: rotate(90deg);
+}
+ul#menuitems > li > ul > li > a,
+ul#menuitems.viewMenuItemSub .menulink {
+  background-color: #f0eff4;
+  border-bottom: 1px solid transparent;
   padding-left: 38px;
 }
-.navScrollArea ul#menuitems li.viewMenuItemSubSub {
+ul#menuitems.viewMenuItemSub {
   display: none;
+}
+ul#menuitems > li > ul > li > ul > li > a,
+ul#menuitems.viewMenuItemSubSub .menulink {
   background-color: #f0eff4;
   border: 1px solid transparent;
-}
-.navScrollArea ul#menuitems li.viewMenuItemSubSub .menulink {
   padding-left: 76px;
   font-weight: normal;
 }
-.navScrollArea ul#menuitems li.viewMenuItemSubSub .menutext {
-  font-weight: normal;
+ul#menuitems.viewMenuItemSubSub {
+  display: none;
 }
-.navScrollArea ul#menuitems li.viewMenuItemSelected {
+ul#menuitems a.active,
+ul#menuitems.viewMenuItemSelected {
   border-bottom: 1px solid transparent;
   background: #4ca1fe;
   color: #ffffff;
 }
-.navScrollArea ul#menuitems li.viewMenuItemSelected i:before {
+ul#menuitems a.active i:before,
+ul#menuitems.viewMenuItemSelected i:before {
   color: #ffffff;
 }
-.navScrollArea ul#menuitems li.viewMenuItemSelected .menulink:after {
+ul#menuitems a.active:after,
+ul#menuitems.viewMenuItemSelected .menulink:after {
   color: #ffffff;
   opacity: 1;
 }
-.navScrollArea ul#menuitems li.viewMenuItemDisabled .menulink {
+ul#menuitems.viewMenuItemDisabled .menulink {
   opacity: 0.2;
 }
 /* FOOTER */
@@ -2342,6 +2357,41 @@ legend {
 }
 #bodycopy p {
   margin-bottom: 20px;
+}
+.fontsizebuttons {
+  position: absolute;
+  right: 117px;
+  top: 10px;
+  z-index: 999;
+  margin: 0;
+}
+.fontsizebuttons .button {
+  min-width: 36px;
+  padding: 0;
+  margin-left: 10px;
+  height: 36px;
+  border: none;
+}
+.fontsizebuttons .button:first-child {
+  margin-left: 0;
+}
+.fontsizebuttons .button label {
+  display: none;
+}
+.fontsizebuttons .button i {
+  top: 6px;
+  left: 6px;
+  margin: 0;
+}
+@media screen and (max-width: 700px) {
+  .fontsizebuttons {
+    right: 45px;
+    top: 5px;
+  }
+  .fontsizebuttons .button {
+    height: 34px;
+    margin-left: 5px;
+  }
 }
 /* SAMPLER APP: Typography */
 .typographyeditmode .mce-panel {
