@@ -1,3 +1,15 @@
+$(document).ready(function() {
+	var css = $("[unp-id='primarycss']").attr("href");
+	$("#footerTabBar li").removeClass("tabSelected");
+	if (css == "unplugged-dark.css"){
+		$("#footerTabBar li").eq(0).addClass("tabSelected");
+	}else if (css == "unplugged-light.css"){
+		$("#footerTabBar li").eq(1).addClass("tabSelected");
+	}else if (css == "unplugged-ios7.css"){
+		$("#footerTabBar li").eq(2).addClass("tabSelected");
+	}
+})
+
 function myCallBackFunction() {
 	alert("This is custom code called by the OK	button using the callback custom property");
 }
@@ -6,6 +18,7 @@ function switchCSS(obj, newcss) {
 	$("#footerTabBar li").removeClass("tabSelected");
 	$(obj).addClass("tabSelected");
 	$("[unp-id='primarycss']").attr("href", newcss);
+	jQuery.get("SwitchCSS.xsp?css=" + newcss);
 }
 
 function initDialog() {
@@ -159,12 +172,12 @@ function buildCharts() {
 			}
 		},
 		xaxis : {
-			axisLabelUseCanvas : true, 
+			axisLabelUseCanvas : true,
 			tickFormatter : function(v, axis) {
 				return v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			}, 
-			tickSize: (isPhone() ? 100000 : 25000),
-			max: 100000
+			},
+			tickSize : (isPhone() ? 100000 : 25000),
+			max : 100000
 		},
 		yaxis : {
 			axisLabelUseCanvas : true,
@@ -203,8 +216,8 @@ function buildCharts() {
 			tickFormatter : function(v, axis) {
 				return v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			},
-			tickSize: (isPhone() ? 200000 : 50000), 
-			max: 250000
+			tickSize : (isPhone() ? 200000 : 50000),
+			max : 250000
 		},
 		yaxis : {
 			axisLabelUseCanvas : true,
@@ -218,14 +231,13 @@ function buildCharts() {
 			show : false
 		}
 	});
-	
-	
+
 	$(window).bind('orientationchange', buildCharts);
 }
 
-function isPhone(){
+function isPhone() {
 	var isPhone = document.width <= 480;
-    return isPhone;
+	return isPhone;
 }
 
 function getRnd(max) {
@@ -240,9 +252,13 @@ function labelFormatter(label, series) {
 			+ label + "<br/>" + Math.round(series.percent) + "%</div>";
 }
 
-function startTest(){
-	$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', './unp/qunit-1.12.css?open&rnd=' + getRnd(10000)) );
-	$("#qunit").html("<p><i class=\"glyphicons stopwatch\" /> Running test, this can take up to 30 seconds...</p>");
+function startTest() {
+	$('head').append(
+			$('<link rel="stylesheet" type="text/css" />').attr('href',
+					'./unp/qunit-1.12.css?open&rnd=' + getRnd(10000)));
+	$("#qunit")
+			.html(
+					"<p><i class=\"glyphicons stopwatch\" /> Running test, this can take up to 30 seconds...</p>");
 	$("#qunit").show();
 	$("#upmarkiframe").attr("src", "UPMarkStart.xsp?starttime=" + Date.now());
 }
