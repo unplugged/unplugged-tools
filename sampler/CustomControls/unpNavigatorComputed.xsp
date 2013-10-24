@@ -22,10 +22,12 @@
 						<xp:link escape="true" text="#{javascript:menuItem.label}"
 							id="link5" value="#" disableTheme="true">
 							<xp:this.rendered><![CDATA[#{javascript:!menuItem.hasSubMenu}]]></xp:this.rendered>
+							<xp:this.styleClass><![CDATA[#{javascript:if (("/" + getCurrentXPage()) == menuItem.page){
+	return "topopen active";
+}}]]></xp:this.styleClass>
 							<span class="chevron" />
 							<xp:this.attrs>
-								<xp:attr name="onclick"
-									rendered="#{javascript:!menuItem.disabled}">
+								<xp:attr name="onclick" rendered="#{javascript:!menuItem.disabled}">
 									<xp:this.value><![CDATA[#{javascript:if (menuItem.ajaxloadid != null && menuItem.ajaxloadid != ""){
 	return "loadPage('" + getDbPath() + menuItem.page + "?rnd=' + Date.now()+ ' #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
 }else{
@@ -59,11 +61,13 @@
 }}]]></xp:this.styleClass>
 									<xp:link escape="true" text="#{javascript:subMenu1.label}"
 										id="link4" value="#" disableTheme="true">
+										<xp:this.styleClass><![CDATA[#{javascript:if (("/" + getCurrentXPage()) == subMenu1.page){
+	return "topopen active";
+}}]]></xp:this.styleClass>
 										<xp:this.rendered><![CDATA[#{javascript:!subMenu1.hasSubMenu}]]></xp:this.rendered>
 										<span class="chevron" />
 										<xp:this.attrs>
-											<xp:attr name="onclick"
-												rendered="#{javascript:!subMenu1.disabled}">
+											<xp:attr name="onclick" rendered="#{javascript:!subMenu1.disabled}">
 												<xp:this.value><![CDATA[#{javascript:if (subMenu1.ajaxloadid != null && subMenu1.ajaxloadid != ""){
 	return "loadPage('" + getDbPath() + subMenu1.page + "?rnd=' + Date.now()+ ' #" + subMenu1.ajaxloadid + "', '" + subMenu1.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
 }else{
@@ -97,11 +101,12 @@
 }}]]></xp:this.styleClass>
 												<xp:link escape="true" text="#{javascript:subMenu2.label}"
 													id="link3" value="#" disableTheme="true">
+													<xp:this.styleClass><![CDATA[#{javascript:if (("/" + getCurrentXPage()) == subMenu2.page){
+	return "topopen active";
+}}]]></xp:this.styleClass>
 													<span class="chevron" />
 													<xp:this.attrs>
-														<xp:attr
-															name="onclick"
-															rendered="#{javascript:!subMenu2.disabled}">
+														<xp:attr name="onclick" rendered="#{javascript:!subMenu2.disabled}">
 															<xp:this.value><![CDATA[#{javascript:if (subMenu2.ajaxloadid != null && subMenu2.ajaxloadid != ""){
 	return "loadPage('" + getDbPath() + subMenu2.page + "?rnd=' + Date.now()+ ' #" + subMenu2.ajaxloadid + "', '" + subMenu2.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
 }else{
@@ -131,32 +136,32 @@
 
 	<script type="text/javascript">
 		$(document).ready(function () {
-		    $('#menuitems ul').hide();
-		    $('#menuitems li a').click(function () {
-		        var openMe =
-		            $(this).next();
-		        var liSiblings = $(this).parent().siblings();
-		        liSiblings.children("a").removeClass("open");
-		        liSiblings.children("a").removeClass("topopen");
-		        var mySiblings =
-		            liSiblings.find('ul');
-		        if (mySiblings.length == 0) {
-		            $(this).addClass("topopen");
-		        }
-		        if (openMe.is(':visible')) {
-		            $(this).removeClass('open');
-		            openMe.slideUp('normal');
-		        } else {
-		            $(this).addClass('open');
-		            mySiblings.slideUp('normal');
-		            openMe.slideDown('normal');
-		        }
-		        $("#menuitems li a").removeClass("active");
-		        if ($(this).attr("onclick") != "return false"){
-		        	$(this).addClass("active");
-		        }
-		        fixNavigatorBottomCorners();
-		    });
+			$('#menuitems ul').hide();
+			$('#menuitems li a').click(function () {
+			    var openMe = $(this).next();
+			    var liSiblings = $(this).parent().siblings();
+			    liSiblings.children("a").removeClass("open");
+			    liSiblings.children("a").removeClass("topopen");
+			    var mySiblings = liSiblings.find('ul');
+			    if (mySiblings.length == 0) {
+			        $(this).addClass("topopen");
+			    }
+			    if (openMe.is(':visible')) {
+			        $(this).removeClass('open');
+			        openMe.slideUp('normal');
+			    } else {
+			        $(this).addClass('open');
+			        mySiblings.slideUp('normal');
+			        openMe.slideDown('normal');
+			    }
+			    $("#menuitems li a").removeClass("active");
+			    if ($(this).attr("onclick") != "return false") {
+			        $(this).addClass("active");
+			        $(this).removeClass("open");
+			    }
+			    fixNavigatorBottomCorners();
+			});
+			$("#menuitems ul li a.active").parent().parent().show();
 		});
 	</script>
 
