@@ -144,7 +144,7 @@ function changeSetting(thefield){
 					thefield.next().css("background-color", newvalue);
 					break;
 				case "@button-danger-border-color":
-					$("#previewframe").contents().find(".cancelbutton").css("corder-color", newvalue);
+					$("#previewframe").contents().find(".cancelbutton").css("border-color", newvalue);
 					$("#previewframe").contents().find(".cancelButton .label").css("border-color", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
@@ -177,20 +177,26 @@ function changeSetting(thefield){
 					thefield.next().css("background-color", newvalue);
 					break
 				case "@menuPane-border-color":
-					$("#previewframe").contents().find("#menuPage").css("border-color", newvalue);
+					$("#previewframe").contents().find("#menuPane").css("border-right-color", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
 				case "@menuPane-padding":
 					$("#previewframe").contents().find(".navScrollArea").css("padding", newvalue);
+					$("#previewframe").contents().find("#menuitems ul").css("margin", newvalue);
 					break;
 				case "@menuitems-border-radius":
 					$("#previewframe").contents().find(".navScrollArea li:first").css("-webkit-border-top-left-radius", newvalue);
 					$("#previewframe").contents().find(".navScrollArea li:first").css("-webkit-border-top-right-radius", newvalue);
 					$("#previewframe").contents().find(".navScrollArea li:last").css("-webkit-border-bottom-left-radius", newvalue);
 					$("#previewframe").contents().find(".navScrollArea li:last").css("-webkit-border-bottom-right-radius", newvalue);
+					$("#previewframe").contents().find("#menuitems a:first").css("-webkit-border-top-left-radius", newvalue);
+					$("#previewframe").contents().find("#menuitems a:first").css("-webkit-border-top-right-radius", newvalue);
+					$("#previewframe").contents().find("#menuitems a:last").css("-webkit-border-bottom-left-radius", newvalue);
+					$("#previewframe").contents().find("#menuitems a:last").css("-webkit-border-bottom-right-radius", newvalue);
 					break;
 				case "@menuitems-padding":
 					$("#previewframe").contents().find(".navScrollArea li").css("background", newvalue);
+					$("#previewframe").contents().find("#menuitems li").css("background", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
 				case "@menuitems-border-outer":
@@ -198,56 +204,76 @@ function changeSetting(thefield){
 					$("#previewframe").contents().find(".navScrollArea li").css("border-right", newvalue);
 					$("#previewframe").contents().find(".navScrollArea li:first").css("border-top", newvalue);
 					$("#previewframe").contents().find(".navScrollArea li:last").css("border-bottom", newvalue);
+					$("#previewframe").contents().find("#menuitems li").css("border-left", newvalue);
+					$("#previewframe").contents().find("#menuitems li").css("border-right", newvalue);
+					$("#previewframe").contents().find("#menuitems li:first").css("border-top", newvalue);
+					$("#previewframe").contents().find("#menuitems li:last").css("border-bottom", newvalue);
 					break;
 				case "@menuitems-border-divider":
 					$("#previewframe").contents().find(".navScrollArea li").css("border-bottom", newvalue);
+					$("#previewframe").contents().find("#menuitems li").css("border-bottom", newvalue);
 					break;
 				case "@menuitems-box-shadow":
 					$("#previewframe").contents().find(".navScrollArea li").css("box-shadow", newvalue);
+					$("#previewframe").contents().find("#menuitems li").css("box-shadow", newvalue);
 					break;
 				case "@menuitems-color":
 					$("#previewframe").contents().find(".navScrollArea li").css("color", newvalue);
 					$("#previewframe").contents().find(".navScrollArea li .menulink").css("color", newvalue);
+					$("#previewframe").contents().find("#menuitems li").css("color", newvalue);
+					$("#previewframe").contents().find("#menuitems li a").css("color", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
 				case "@menuitems-font-size":
 					$("#previewframe").contents().find(".navScrollArea li").css("font-size", newvalue);
+					$("#previewframe").contents().find("#menuitems li").css("font-size", newvalue);
 					break;
 				case "@menuitems-font-weight":
 					$("#previewframe").contents().find(".navScrollArea li").css("font-weight", newvalue);
+					$("#previewframe").contents().find("#menuitems li").css("font-weight", newvalue);
 					break;
 				case "@menuitems-text-shadow":
 					$("#previewframe").contents().find(".navScrollArea li").css("text-shadow", newvalue);
 					$("#previewframe").contents().find(".navScrollArea li .menulink").css("text-shadow", newvalue);
+					$("#previewframe").contents().find("#menuitems li").css("text-shadow", newvalue);
+					$("#previewframe").contents().find("#menuitems li a").css("text-shadow", newvalue);
 					break;
 				case "@menuitems-selected-color":
 					$("#previewframe").contents().find(".navScrollArea li.viewMenuItemSelected").css("color", newvalue);
 					$("#previewframe").contents().find(".navScrollArea li.viewMenuItemSelected .menulink").css("color", newvalue);
 					$("#previewframe").contents().find(".navScrollArea li.viewMenuItemSelected i").css("color", newvalue);
+					$("#previewframe").contents().find("#menuitems a.active").css("color", newvalue);
+					$("#previewframe").contents().find("#menuitems a.active i").css("color", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
 				case "@menuitems-selected-background":
 					$("#previewframe").contents().find(".navScrollArea li.viewMenuItemSelected").css("background", newvalue);
+					$("#previewframe").contents().find("#menuitems .active").css("background", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
 				case "@menuitems-selected-border":
 					$("#previewframe").contents().find(".navScrollArea li.viewMenuItemSelected").css("border-color", newvalue);
+					$("#previewframe").contents().find("#menuitems .active").css("border-color", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
 				case "@menuitems-sub-background":
 					$("#previewframe").contents().find(".navScrollArea li.viewMenuItemSub").css("background", newvalue);
+					$("#previewframe").contents().find("#menuitems .viewMenuItemSub").css("background", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
 				case "@menuitems-sub-border":
 					$("#previewframe").contents().find(".navScrollArea li.viewMenuItemSub").css("border-color", newvalue);
+					$("#previewframe").contents().find("#menuitems .viewMenuItemSub").css("border-color", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
 				case "@menuitems-subsub-background":
 					$("#previewframe").contents().find(".navScrollArea li.viewMenuItemSubSub").css("background", newvalue);
+					$("#previewframe").contents().find("#menuitems .viewMenuItemSubSub").css("background", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
 				case "@menuitems-subsub-border":
 					$("#previewframe").contents().find(".navScrollArea li.viewMenuItemSubSub").css("border-color", newvalue);
+					$("#previewframe").contents().find("#menuitems .viewMenuItemSubSub").css("border-color", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
 				case "@content-padding":
@@ -287,10 +313,10 @@ function changeSetting(thefield){
 					$("#previewframe").contents().find(".panel h2, fieldset h2, .panel h2.xspTextComputedField, fieldset h2.xspTextComputedField").css("color", newvalue);
 					thefield.next().css("background-color", newvalue);
 					break;
-				case "@content-heading-font-size":
+				case "@content-subheading-font-size":
 					$("#previewframe").contents().find(".panel h2, fieldset h2, .panel h2.xspTextComputedField, fieldset h2.xspTextComputedField").css("font-size", newvalue);
 					break;
-				case "@content-heading-font-weight":
+				case "@content-subheading-font-weight":
 					$("#previewframe").contents().find(".panel h2, fieldset h2, .panel h2.xspTextComputedField, fieldset h2.xspTextComputedField").css("font-weight", newvalue);
 					break;
 				case "@table-heading-border-color":

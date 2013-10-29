@@ -1,0 +1,704 @@
+/**
+ * Copyright 2013 Teamstudio Inc 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed 
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
+ * the specific language governing permissions and limitations under the License
+ */
+
+@font-face {
+	font-family:'Glyphicons Regular';
+	src: url('glyphicons-regular.eot');
+	src: url('glyphicons-regular.eot?#iefix') format('embedded-opentype'), 
+		 url('glyphicons-regular.woff') format('woff'), 
+		 url('glyphicons-regular.ttf') format('truetype'), 
+		 url('glyphicons-regular.svg#glyphiconsregular') format('svg');
+	font-weight:400;
+	font-style:normal;
+}
+
+body {
+	background-color: @body-background-color;
+	font-family: @body-font;
+	padding-top: 0px;
+	padding-bottom: 45px;
+	-webkit-text-size-adjust: none !important;
+	
+	@media screen and (min-width: 701px) {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	
+	@media screen and (max-width: 700px) {
+		padding-top: 45px;
+		padding-bottom: 45px;
+	}
+}
+
+button, 
+input {
+	font-family: @body-font;
+}
+
+.hidden {
+	display: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* HEADER */
+@import 'unplugged-header.less';
+
+/* BUTTONS */
+@import 'unplugged-buttons.less';
+
+/* MENU */
+@import 'unplugged-menu.less';
+
+/* FOOTER */
+@import 'unplugged-footer.less';
+
+/* TABLE VIEW */
+@import 'unplugged-table.less';
+
+/* DOCUMENT VIEW/EDIT */
+@import 'unplugged-form.less';
+
+/* WORKSPACE */ 
+@import 'unplugged-workspace.less';
+
+/* SWIPE VIEW */ 
+@import 'unplugged-swipeview.less';
+
+/* MEDIA VIEW */ 
+@import 'unplugged-media.less';
+
+
+
+
+
+
+.ajax_loader {
+	position: relative;
+	background: url("unp/spinner_squares_circle.gif") no-repeat center center transparent;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+}
+
+
+
+
+/** PULL DOWN **/
+
+#pullDown,
+#pullUp {
+	height: 40px;
+	line-height: 40px;
+	padding: 5px 10px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #DDD;
+}
+
+#pullDown .pullDownIcon,
+#pullUp .pullUpIcon {
+	display: block;
+	float: left;
+	width: 40px;
+	height: 40px;
+	background: url(unp/pull-icon@2x.png) 0 0 no-repeat;
+	-webkit-background-size: 40px 80px;
+	background-size: 40px 80px;
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 250ms;
+}
+
+#pullDown .pullDownIcon {
+	-webkit-transform: rotate(0deg) translateZ(0);
+}
+
+#pullUp .pullUpIcon {
+	-webkit-transform: rotate(-180deg) translateZ(0);
+}
+
+#pullDown.flip .pullDownIcon {
+	-webkit-transform: rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+	-webkit-transform: rotate(0deg) translateZ(0);
+}
+
+#pullDown.loading .pullDownIcon,
+#pullUp.loading .pullUpIcon {
+	background-position: 0 100%;
+	-webkit-transform: rotate(0deg) translateZ(0);
+	-webkit-transition-duration: 0ms;
+	-webkit-animation-name: loading;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+
+
+
+
+
+
+
+
+
+/* CONTENT AREA */
+
+.panel,
+fieldset {
+	background: #fff;
+	color: #333;
+	font-size: 16px;
+	line-height: 24px;
+	text-overflow: ellipsis;
+	display: block;
+	border-radius: @content-border-radius;
+	margin: @content-padding;
+	padding: 15px 20px;
+	overflow: hidden;
+	border: 0;
+
+	h1 {
+		line-height: 1.2;	
+		text-decoration: none;
+		text-overflow: ellipsis;
+		color: @content-heading-color;
+		font-size: @content-heading-font-size;
+		font-weight: @content-heading-font-weight;
+		margin-bottom: 15px;		
+	}
+
+
+	h2 {
+		line-height: 1.2;	
+		text-decoration: none;
+		text-overflow: ellipsis;
+		color: @content-subheading-color;
+		font-size: @content-subheading-font-size;
+		font-weight: @content-subheading-font-weight;
+		margin-bottom: 15px;
+		
+		.xspTextComputedField {
+			color: @content-subheading-color;
+			font-size: @content-subheading-font-size;
+			font-weight: @content-subheading-font-weight;				
+		}
+	}
+	
+	h3 {
+		line-height: 1.2;	
+		text-decoration: none;
+		text-overflow: ellipsis;
+		color: @content-subheading-color;
+		font-size: @content-subheading-font-size;
+		font-weight: @content-subheading-font-weight;
+		margin-bottom: 15px;		
+	}
+}
+
+legend {
+	background: #fff;
+	color: #333;
+	border: 1px solid #EEE;
+	padding: 2px;
+	font-size: 12px;
+	text-overflow: ellipsis;
+	display: block;
+	white-space: nowrap;
+	border-radius: @content-border-radius;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+
+
+/* SAMPLER APP: Dashboard */
+
+.piechartpanel {
+	.legendColorBox {
+		padding: 5px 0;
+	
+		> div[style] {
+			border: 0 !important;
+			
+			> div[style] {
+				border-width: 6px !important;
+				width: 0 !important;
+			}
+		}
+	}
+	.legendLabel {
+		padding: 5px;
+	}
+	.pieLabel {
+		> div {
+			font-size: 11px !important;
+			line-height: 15px !important;
+		}
+	}
+}
+
+
+
+/* SAMPLER APP: Typography */
+
+#typography {	
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: bold;
+		margin-bottom: 20px;
+		background: transparent;
+		border: 0;
+		padding: 0;
+		box-shadow: none;
+		text-shadow: none;
+		color: #333;
+	}		
+	h1 {
+		font-size: 40px;
+		line-height: 1.2;
+	}		
+	h2 {
+		font-size: 36px;
+		line-height: 1.2;
+	}		
+	h3 {
+		font-size: 30px;
+		line-height: 1.2;
+	}		
+	h4 {
+		font-size: 24px;
+		line-height: 1.2;
+	}		
+	h5 {
+		font-size: 20px;
+		line-height: 1.2;
+	}		
+	h6 {
+		font-size: 16px;
+		line-height: 1.2;
+	}
+}
+
+#bodycopy p {
+	margin-bottom: 20px;
+}
+
+.fontsizebuttons {
+	position: absolute;
+	right: 117px;
+	top: 10px;
+	z-index: 999;
+	margin: 0;
+
+	.button {
+		min-width: 36px;
+		padding: 0;
+		margin-left: 10px;
+		height: 36px;
+		border: none;
+		&:first-child { margin-left: 0; }
+
+		label {
+			display: none;
+		}	
+		i {
+			top: 6px;
+			left: 6px;
+			margin: 0;
+		}	 
+	}
+
+	@media screen and (max-width: 700px) { 
+		right: 45px;
+		top: 5px;
+		
+		.button {
+			height: 34px; 	
+			margin-left: 5px;		
+		}
+	}
+	
+}
+
+/* SAMPLER APP: Typography */
+
+.typographyeditmode {
+	.mce-panel {
+		border-color: transparent;
+		background: transparent;
+	}
+	
+	.mce-flow-layout-item {
+		float: right;
+	}
+	
+	iframe body#tinymce {
+		font-family: @body-font;
+	}
+}
+
+
+
+
+
+
+/* SAMPLER APP: Glyphicons */
+
+.list-fonts {
+	margin: 0 !important;
+	padding: 0 !important;
+	border-top: 1px solid #EEE;
+	border-left: 1px solid #EEE;
+	
+	a {
+		width: 20% !important;
+		@media screen and (max-width: 700px) { width: 25%; }
+		@media screen and (max-width: 400px) { width: 33%; }
+		margin: 0 0 0 -1px !important;
+		top:0;
+		text-align: center;
+		float: left;
+		padding: 42px 0 12px 0 !important;
+		border-bottom: 1px solid #EEE;
+		border-right: 1px solid #EEE;		
+		
+		&:before {
+			width: 100%;
+			text-align: center;
+			top: 12px;
+		}
+		
+		strong {
+			display: block;
+			text-align: center;
+			white-space: nowrap;
+			font-size: 13px;
+			font-weight: normal;
+			overflow: visible !important;
+		}
+		
+		span {
+			display: none !important;
+		}
+	}
+}
+
+
+/* DIALOG */
+
+#dialogPopup {
+	border-radius: @content-border-radius;
+	box-shadow: none;
+	max-width: 600px;
+	padding: 0;
+	margin: 0 auto;
+	
+	h2 {
+		margin-top: 20px;
+		margin-bottom: 0;
+	}
+
+	#dialogContent {
+		font-size: 16px;
+		padding: 15px 20px;
+	}
+	
+	.dialogbuttons {
+		padding: 10px;
+		overflow: hidden;
+	
+		> div {
+			width: 50%;
+			float: left;
+
+			.button {
+				border-radius: @button-border-radius;
+				box-shadow: @button-box-shadow;
+				text-shadow: @button-text-shadow;
+				font-weight: @button-font-weight;
+				color: @button-default-label-color;
+				background: @button-default-background;
+				border: 1px solid @button-default-border-color;
+				display: block;
+				width: auto;
+				height: 36px;
+				cursor: pointer;
+				padding: 0;
+				line-height: 36px;
+				font-size: 16px;
+				text-align: center;
+
+				&.cancelbutton {
+					color: @button-danger-label-color;
+					background: @button-danger-background;
+					border: 1px solid @button-danger-border-color;					
+				}
+				
+				&.savebutton {
+					color: @button-success-label-color;
+					background: @button-success-background;
+					border: 1px solid @button-success-border-color;					
+				}			
+			
+			}
+
+			&:first-child .button {
+				margin-right: 5px;
+			}
+			
+			&:last-child .button {
+				margin-left: 5px;
+			}
+		}
+	}
+}
+
+
+
+
+
+/*********************
+
+OLD CSS STARTS HERE
+
+Not sure what any of it does, but I don't want to move/change it in case I break anything!
+
+**********************/
+
+
+
+/**Autocomplete**/
+.acResults {
+	padding: 0px;
+	border: 1px solid silver;
+	background-color: Window;
+	overflow: hidden;
+ box-shadow: 10px 10px 5px #888888;
+}
+
+.ac-ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-position: outside;
+	list-style: none;
+}
+
+.ac-li {
+	color: #0051bb;
+	display: block;
+	font-size: 16px;
+	padding-left: 2%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	right: 7%;
+	line-height: 24px;
+	background: #fff;
+	border: 1px solid #e5e5e5 #e5e5e5;
+	margin: 0;
+	box-sizing: border-box;
+	width: 100%;
+	cursor: pointer;
+	text-align: left;
+	background: transparent;
+	float: left;
+	background: white;
+}
+
+.ac-li:hover {
+	background-color: #f5f5f5;
+}
+
+.acLoading {
+	background: url('unp/indicator.gif') right center no-repeat;
+}
+
+.acSelect {
+	background-color: Highlight;
+	color: HighlightText;
+}
+
+/**End Autocomplete**/
+#loading {
+	background: url('unp/spinner_squares_circle.gif') center center
+		no-repeat;
+	background-color: #000000;
+	opacity: 0.4;
+	width: 140px;
+	height: 30px;
+	display: none;
+}
+
+.two-lines {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	/*num lines*/
+	-webkit-box-orient: vertical;
+	white-space: normal;
+	line-height: 22px;
+}
+
+.titleicon {
+	display: inline;
+	max-height: 44px;
+	margin-right: 13px;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+}
+
+.formtitle {
+	display: inline !important;
+}
+
+#swipepreviousbutton {
+	position: absolute;
+	top: 50%;
+	font-size: 4em;
+	font-weight: bold;
+	left: 1%;
+	cursor: pointer;
+}
+
+#swipenextbutton {
+	position: absolute;
+	top: 50%;
+	font-size: 4em;
+	font-weight: bold;
+	right: 1%;
+	cursor: pointer;
+}
+
+.formpullleft {
+	margin-left: 0% !important;
+}
+
+.atozpicker, .numberpicker {
+	display: none;
+	position: fixed;
+	top: 81px;
+	right: 0px;
+	opacity: 0.6;
+	z-index: 100;
+	width: 5px;
+	text-align: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.atozletter,.atozletter-divider {
+	list-style-image: none;
+	list-style-type: none;
+	padding: 3px;
+	padding-left: 15px;
+	margin-left: -35px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+@media screen and (min-height: 701px) {
+	.atozletter {
+		display: block;
+		font-size: 12px;
+	}
+	.fourthletter {
+		display: block;
+	}
+	.otherletter {
+		display: block;
+	}
+	.atozletter-divider {
+		display: none;
+	}
+}
+
+@media screen and (min-height: 401px) and (max-height: 700px) and (orientation : portrait) {
+	.atozpicker, .numberpicker {
+		top: 40px;
+	}
+	.atozletter {
+		display: block;
+		font-size: 12px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.fourthletter {
+		display: block;
+	}
+	.otherletter {
+		display: block;
+	}
+	.atozletter-divider {
+		display: none;
+	}
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : portrait) {
+	.atozpicker, .numberpicker {
+		top: 35px;
+	}
+	.atozletter {
+		display: block;
+		font-size: 10px;
+		font-weight: normal;
+		padding-top: 0px;
+		padding-bottom: 2px;
+	}
+	.fourthletter {
+	  display: block;
+	}
+	.otherletter {
+	  display: block;
+	}
+	.atozletter-divider {
+    display: none;
+	}
+}
+
+@media screen and (max-height: 400px) {
+	.atozpicker, .numberpicker {
+		top: 35px;
+	}
+	.atozletter {
+		display: block;
+		font-size: 10px;
+		font-weight: normal;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.fourthletter {
+		display: block;
+	}
+	.otherletter {
+		display: none;
+	}
+	.atozletter-divider {
+		display: block;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		height: 9px;
+	}
+}
+
+
+
+
+
+
