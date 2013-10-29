@@ -61,16 +61,18 @@ try {
 				<unp:unpScrollableArea>
 					<xp:this.facets>
 						<xp:panel xp:key="facet_1">
-							<xp:panel styleClass="panel"
-								rendered="#{javascript:!isUnpluggedServer()}">
-								<p>
-									This page is a demonstration of the Debug
-									Toolbar. The toolbar is only active when running
-									Teamstudio Unplugged, this is what it would look
-									like, but the buttons will not work.
+							<div id="contentwrapper">
+								<xp:panel styleClass="panel"
+									rendered="#{javascript:!isUnpluggedServer()}">
+									<p>
+										This page is a demonstration of the Debug
+										Toolbar. The toolbar is only active when running
+										Teamstudio Unplugged, this is what it would look
+										like, but the buttons will not work.
 								</p>
-							</xp:panel>
-							<unp:unpDebugToolbar defaultCollapsed="false"></unp:unpDebugToolbar>
+								</xp:panel>
+								<unp:unpDebugToolbar defaultCollapsed="false"></unp:unpDebugToolbar>
+							</div>
 						</xp:panel>
 					</xp:this.facets>
 				</unp:unpScrollableArea>
