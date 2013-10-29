@@ -21,10 +21,9 @@
 	</xp:this.data>
 	<xp:this.resources>
 		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
-		<xp:script src="/custom.js" clientSide="true"></xp:script>
 		<xp:styleSheet href="/unp/glyphicons.css"></xp:styleSheet>
 	</xp:this.resources>
-	<xp:panel tagName="link">
+	<xp:panel tagName="link" rendered="#{javascript:!isAjax()}">
 		<xp:this.attrs>
 			<xp:attr name="type" value="text/css"></xp:attr>
 			<xp:attr name="rel" value="stylesheet"></xp:attr>
@@ -32,12 +31,17 @@
 				<xp:this.value><![CDATA[#{javascript:if (context.getUrlParameter("css")!= null && context.getUrlParameter("css")!=""){
 	return context.getUrlParameter("css");
 }else{
-	return "unplugged-dark.css";
+	if (sessionScope.containsKey("csstheme")){
+		return sessionScope.csstheme;
+	}else{
+		return "unplugged-dark.css";
+	}
 }}]]></xp:this.value>
 			</xp:attr>
 			<xp:attr name="unp-id" value="primarycss"></xp:attr>
 		</xp:this.attrs>
 	</xp:panel>
+	<script type="text/javascript" src="custom.js"></script>
 	<unp:unpHeader search="none" searchPage="UnpSearch.xsp"
 		viewsButton="false" backButtonText="Back" backButtonURL="UnpMain.xsp"
 		headerHomeLink="/UnpMain.xsp" title="Workspace">
@@ -49,11 +53,7 @@
 		<unp:this.disabledbadges><![CDATA[#{javascript:var out = ["DisabledChiclet"];
 return out;}]]></unp:this.disabledbadges>
 		<unp:this.headerinfo>
-			<xp:value>
-				#{javascript:&quot;&lt;strong&gt;&quot; +
-				@Name(&quot;[CN]&quot;, @UserName()) +
-				&quot;&lt;/strong&gt;&quot;}
-			</xp:value>
+			<xp:value>#{javascript:&quot;&lt;strong&gt;&quot; + @Name(&quot;[CN]&quot;, @UserName()) + &quot;&lt;/strong&gt;&quot;}</xp:value>
 			<xp:value>BCM Local Coordinator</xp:value>
 			<xp:value>
 				&lt;strong&gt;Org Unit:&lt;/strong&gt; Zetafire

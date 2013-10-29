@@ -19,8 +19,10 @@
 }else{
 	return "";
 }}]]></xp:this.styleClass>
-						<xp:link escape="true" text="#{javascript:menuItem.label}"
-							id="link5" value="#" disableTheme="true">
+						<xp:link escape="true"
+							text="#{javascript:menuItem.label}" id="link5"
+							value="#{javascript:getDbPath() + menuItem.page}"
+							disableTheme="true">
 							<xp:this.rendered><![CDATA[#{javascript:!menuItem.hasSubMenu}]]></xp:this.rendered>
 							<xp:this.styleClass><![CDATA[#{javascript:if (("/" + getCurrentXPage()) == menuItem.page){
 	return "topopen active";
@@ -31,11 +33,10 @@
 							</xp:panel>
 							<span class="chevron" />
 							<xp:this.attrs>
-								<xp:attr name="onclick" rendered="#{javascript:!menuItem.disabled}">
+								<xp:attr name="onclick"
+									rendered="#{javascript:!menuItem.disabled}">
 									<xp:this.value><![CDATA[#{javascript:if (menuItem.ajaxloadid != null && menuItem.ajaxloadid != ""){
 	return "loadPage('" + getDbPath() + menuItem.page + "?rnd=' + Date.now()+ ' #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
-}else{
-	return  "openPage('" + getDbPath() + menuItem.page + "', '" + menuItem.ajaxtargetid + "');";
 }
 }]]></xp:this.value>
 								</xp:attr>
@@ -67,19 +68,20 @@
 }else{
 	return "";
 }}]]></xp:this.styleClass>
-									<xp:link escape="true" text="#{javascript:subMenu1.label}"
-										id="link4" value="#" disableTheme="true">
+									<xp:link escape="true"
+										text="#{javascript:subMenu1.label}" id="link4"
+										value="#{javascript:getDbPath() + subMenu1.page}"
+										disableTheme="true">
 										<xp:this.styleClass><![CDATA[#{javascript:if (("/" + getCurrentXPage()) == subMenu1.page){
 	return "topopen active";
 }}]]></xp:this.styleClass>
 										<xp:this.rendered><![CDATA[#{javascript:!subMenu1.hasSubMenu}]]></xp:this.rendered>
 										<span class="chevron" />
 										<xp:this.attrs>
-											<xp:attr name="onclick" rendered="#{javascript:!subMenu1.disabled}">
+											<xp:attr name="onclick"
+												rendered="#{javascript:!subMenu1.disabled}">
 												<xp:this.value><![CDATA[#{javascript:if (subMenu1.ajaxloadid != null && subMenu1.ajaxloadid != ""){
 	return "loadPage('" + getDbPath() + subMenu1.page + "?rnd=' + Date.now()+ ' #" + subMenu1.ajaxloadid + "', '" + subMenu1.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
-}else{
-	return  "openPage('" + getDbPath() + subMenu1.page + "', '" + subMenu1.ajaxtargetid + "');";
 }}]]></xp:this.value>
 											</xp:attr>
 										</xp:this.attrs>
@@ -107,18 +109,21 @@
 }else{
 	return "";
 }}]]></xp:this.styleClass>
-												<xp:link escape="true" text="#{javascript:subMenu2.label}"
-													id="link3" value="#" disableTheme="true">
+												<xp:link escape="true"
+													text="#{javascript:subMenu2.label}" id="link3"
+													value="#{javascript:getDbPath() + subMenu2.page}"
+													disableTheme="true">
 													<xp:this.styleClass><![CDATA[#{javascript:if (("/" + getCurrentXPage()) == subMenu2.page){
 	return "topopen active";
 }}]]></xp:this.styleClass>
-													<span class="chevron" />
+													<span
+														class="chevron" />
 													<xp:this.attrs>
-														<xp:attr name="onclick" rendered="#{javascript:!subMenu2.disabled}">
+														<xp:attr
+															name="onclick"
+															rendered="#{javascript:!subMenu2.disabled}">
 															<xp:this.value><![CDATA[#{javascript:if (subMenu2.ajaxloadid != null && subMenu2.ajaxloadid != ""){
 	return "loadPage('" + getDbPath() + subMenu2.page + "?rnd=' + Date.now()+ ' #" + subMenu2.ajaxloadid + "', '" + subMenu2.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
-}else{
-	return  "openPage('" + getDbPath() + subMenu2.page + "', '" + subMenu2.ajaxtargetid + "');";
 }}]]></xp:this.value>
 														</xp:attr>
 													</xp:this.attrs>

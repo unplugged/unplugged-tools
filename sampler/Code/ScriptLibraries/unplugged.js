@@ -373,7 +373,7 @@ function loadPage(url, target, menuitem, pushState) {
 
 function openPage(url, target) {
 	$.blockUI();
-	document.location.href = url;
+	window.location.href = url;
 }
 
 function initDeleteable() {
