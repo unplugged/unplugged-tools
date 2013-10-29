@@ -362,9 +362,11 @@ function loadPage(url, target, menuitem, pushState) {
 	if (_pushState) {
 		var menuitems = $("#menuitems li");
 		menuitems.removeClass("viewMenuItemSelected");
+		menuitems.removeClass("active");
 		menuitems.addClass("viewMenuItem");
 		$(".menuitem" + menuitem).removeClass("viewMenuItem");
 		$(".menuitem" + menuitem).addClass("viewMenuItemSelected");
+		$(".menuitem" + menuitem).addClass("active");
 		hideViewsMenu();
 	}
 }

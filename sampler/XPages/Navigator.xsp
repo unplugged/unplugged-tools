@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+	<xp:this.resources>
+		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
+		<xp:styleSheet href="unp/glyphicons.css"></xp:styleSheet>
+	</xp:this.resources>
+	<xp:panel tagName="link" rendered="#{javascript:!isAjax()}">
+		<xp:this.attrs>
+			<xp:attr name="type" value="text/css"></xp:attr>
+			<xp:attr name="rel" value="stylesheet"></xp:attr>
+			<xp:attr name="href">
+				<xp:this.value><![CDATA[#{javascript:if (context.getUrlParameter("css")!= null && context.getUrlParameter("css")!=""){
+	return context.getUrlParameter("css");
+}else{
+	if (sessionScope.containsKey("csstheme")){
+		return sessionScope.csstheme;
+	}else{
+		return "unplugged-dark.css";
+	}
+}}]]></xp:this.value>
+			</xp:attr>
+			<xp:attr name="unp-id" value="primarycss"></xp:attr>
+		</xp:this.attrs>
+	</xp:panel>
+	<script type="text/javascript" src="custom.js"></script>
+	<unp:unpHeader search="none" searchPage="UnpSearch.xsp"
+		viewsButton="false" title="Static Navigator" headerHomeLink="UnpMain.xsp">
+	</unp:unpHeader>
+	<unp:unpNavigator>
+		<unp:this.menuItem>
+			<unp:menuItem submenu="no" disabled="no" label="Dashboard"
+				icon="dashboard" page="/UnpMain.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Typography" icon="text_underline">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Read Mode" page="/TypographyReadMode.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Edit Mode" page="/TypographyEditMode.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="UI Elements" icon="hand_up">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Accordion" page="/Accordion.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="CSS Controls" page="/CSSControls.xsp">
+			</unp:menuItem>
+			<unp:menuItem submenu="sub" disabled="no" label="Debug Toolbar"
+				page="/DebugToolbar.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Dialog" page="/Dialog.xsp"
+				callback="initDialog();">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Flat View" page="/FlatView.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Flat View (Categorized)" page="/FlatViewCategorized.xsp">
+			</unp:menuItem>
+			<unp:menuItem submenu="sub" disabled="no" label="Swipe View"
+				page="/SwipeView.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" page="/Glyphicons.xsp"
+				ajaxtargetid="content" submenu="no" disabled="no" label="Glyphicons"
+				icon="leaf">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Forms" icon="edit">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Read Mode" page="/FormsReadMode.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Edit Mode" page="/FormsEditMode.xsp">
+			</unp:menuItem>
+			<unp:menuItem submenu="no" disabled="no" label="Workspace"
+				icon="show_thumbnails" page="/Workspace.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Contacts" icon="group">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Companies" page="/Companies.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Contacts" page="/Contacts.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="My Activities" page="/MyActivities.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Activities By Company" page="/ActivitiesByCompany.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Activities By Contact" page="/ActivitiesByContact.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Media" icon="file">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Library" page="/MediaLibrary.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="sub" disabled="no" label="Favorites" page="/MediaLibraryFavorites.xsp">
+			</unp:menuItem>
+			<unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content"
+				submenu="no" disabled="no" label="Performance" icon="settings" page="/UPMark.xsp">
+			</unp:menuItem>
+		</unp:this.menuItem>
+	</unp:unpNavigator>
+	<div id="content">
+		
+	</div>
+	<unp:unpTabbedFooter synctype="currentdb">
+		<unp:this.tab>
+			<unp:tab label="Dark" icon="moon"
+				callback="switchCSS(this, 'unplugged-dark.css')">
+			</unp:tab>
+			<unp:tab callback="switchCSS(this, 'unplugged-light.css')"
+				label="Light" icon="sun">
+			</unp:tab>
+			<unp:tab callback="switchCSS(this, 'unplugged-ios7.css')"
+				label="iOS7" icon="iphone">
+			</unp:tab>
+		</unp:this.tab>
+	</unp:unpTabbedFooter>
+	<script type="text/javascript" src="unp/jquery.flot.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.pie.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.stack.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.categories.js"></script>
+</xp:view>

@@ -61,6 +61,9 @@ return out;}]]></xp:this.value>
 									<xp:this.rendered><![CDATA[#{javascript:menuItem.disabled != "yes"}]]></xp:this.rendered>
 								</xp:attr>
 							</xp:this.attrs>
+							<xp:this.style><![CDATA[#{javascript:if (menuItem.submenu == "sub" || menuItem.submenu == "sub-sub"){
+	"display: none;"
+}}]]></xp:this.style>
 							<xp:panel id="menulink" tagName="div"
 								styleClass="menulink">
 								<xp:panel tagName="i" id="icon">
