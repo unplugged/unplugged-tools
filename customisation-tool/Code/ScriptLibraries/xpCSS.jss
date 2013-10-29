@@ -41,6 +41,7 @@ function saveCSS(doc){
 	item.setReaders(true);
 	var rtitem:NotesRichTextItem = cssdoc.createRichTextItem("attachment");
 	rtitem.embedObject(1454, "", filename, null);
+	cssdoc.replaceItemValue("sampledatabasefilename", docLess.getItemValueString("sampledatabasefilename"));
 	cssdoc.computeWithForm(false, false);
 	cssdoc.save();
 	
