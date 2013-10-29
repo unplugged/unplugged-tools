@@ -25,6 +25,10 @@
 							<xp:this.styleClass><![CDATA[#{javascript:if (("/" + getCurrentXPage()) == menuItem.page){
 	return "topopen active";
 }}]]></xp:this.styleClass>
+							<xp:panel tagName="i" id="icon">
+								<xp:this.rendered><![CDATA[#{javascript:menuItem.icon != null && menuItem.icon != ""}]]></xp:this.rendered>
+								<xp:this.styleClass><![CDATA[#{javascript:"glyphicons white " + menuItem.icon}]]></xp:this.styleClass>
+							</xp:panel>
 							<span class="chevron" />
 							<xp:this.attrs>
 								<xp:attr name="onclick" rendered="#{javascript:!menuItem.disabled}">
@@ -40,6 +44,10 @@
 						<xp:link escape="true" text="#{javascript:menuItem.label}"
 							id="link6" value="#" disableTheme="true">
 							<xp:this.rendered><![CDATA[#{javascript:menuItem.hasSubMenu}]]></xp:this.rendered>
+							<xp:panel tagName="i" id="panel1">
+								<xp:this.rendered><![CDATA[#{javascript:menuItem.icon != null && menuItem.icon != ""}]]></xp:this.rendered>
+								<xp:this.styleClass><![CDATA[#{javascript:"glyphicons white " + menuItem.icon}]]></xp:this.styleClass>
+							</xp:panel>
 							<span class="chevron" />
 							<xp:this.attrs>
 								<xp:attr name="onClick" value="return false">
