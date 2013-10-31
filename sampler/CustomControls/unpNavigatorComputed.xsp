@@ -33,12 +33,9 @@
 							</xp:panel>
 							<span class="chevron" />
 							<xp:this.attrs>
-								<xp:attr name="onclick"
-									rendered="#{javascript:!menuItem.disabled}">
-									<xp:this.value><![CDATA[#{javascript:if (menuItem.ajaxloadid != null && menuItem.ajaxloadid != ""){
-	return "loadPage('" + getDbPath() + menuItem.page + "?rnd=' + Date.now()+ ' #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
-}
-}]]></xp:this.value>
+								<xp:attr name="onclick">
+									<xp:this.value><![CDATA[#{javascript:return "loadPage('" + getDbPath() + menuItem.page + "?rnd=' + Date.now()+ ' #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";}]]></xp:this.value>
+									<xp:this.rendered><![CDATA[#{javascript:!menuItem.disabled && menuItem.ajaxloadid != null && menuItem.ajaxloadid != ""}]]></xp:this.rendered>
 								</xp:attr>
 							</xp:this.attrs>
 						</xp:link>
@@ -78,11 +75,9 @@
 										<xp:this.rendered><![CDATA[#{javascript:!subMenu1.hasSubMenu}]]></xp:this.rendered>
 										<span class="chevron" />
 										<xp:this.attrs>
-											<xp:attr name="onclick"
-												rendered="#{javascript:!subMenu1.disabled}">
-												<xp:this.value><![CDATA[#{javascript:if (subMenu1.ajaxloadid != null && subMenu1.ajaxloadid != ""){
-	return "loadPage('" + getDbPath() + subMenu1.page + "?rnd=' + Date.now()+ ' #" + subMenu1.ajaxloadid + "', '" + subMenu1.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
-}}]]></xp:this.value>
+											<xp:attr name="onclick">
+												<xp:this.value><![CDATA[#{javascript:return "loadPage('" + getDbPath() + subMenu1.page + "?rnd=' + Date.now()+ ' #" + subMenu1.ajaxloadid + "', '" + subMenu1.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";}]]></xp:this.value>
+												<xp:this.rendered><![CDATA[#{javascript:!subMenu1.disabled && subMenu1.ajaxloadid != null && subMenu1.ajaxloadid != ""}]]></xp:this.rendered>
 											</xp:attr>
 										</xp:this.attrs>
 									</xp:link>
@@ -120,29 +115,21 @@
 														class="chevron" />
 													<xp:this.attrs>
 														<xp:attr
-															name="onclick"
-															rendered="#{javascript:!subMenu2.disabled}">
-															<xp:this.value><![CDATA[#{javascript:if (subMenu2.ajaxloadid != null && subMenu2.ajaxloadid != ""){
-	return "loadPage('" + getDbPath() + subMenu2.page + "?rnd=' + Date.now()+ ' #" + subMenu2.ajaxloadid + "', '" + subMenu2.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";
-}}]]></xp:this.value>
+															name="onclick">
+															<xp:this.value><![CDATA[#{javascript:return "loadPage('" + getDbPath() + subMenu2.page + "?rnd=' + Date.now()+ ' #" + subMenu2.ajaxloadid + "', '" + subMenu2.ajaxtargetid + "', " + viewScope.menuItemIndex + "); return false;";}]]></xp:this.value>
+															<xp:this.rendered><![CDATA[#{javascript:!subMenu2.disabled && subMenu2.ajaxloadid != null && subMenu2.ajaxloadid != ""}]]></xp:this.rendered>
 														</xp:attr>
 													</xp:this.attrs>
 												</xp:link>
 											</xp:panel>
 										</xp:repeat>
-
 									</xp:panel>
-
 								</xp:panel>
 							</xp:repeat>
-
 						</xp:panel>
-
 					</xp:panel>
 				</xp:repeat>
-
 			</ul>
-
 		</div>
 	</div>
 
