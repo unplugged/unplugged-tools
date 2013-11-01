@@ -916,6 +916,22 @@ li.data-row .singleLineIcon {
   border-color: transparent;
   border-top-color: #4f4f4f;
 }
+#summaryList .accLoadMoreLink button {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transform: translate3d(0, 0, 0);
+  padding: 8px 15px;
+  line-height: 24px;
+  min-height: 40px;
+  border: 0;
+  width: 100%;
+  margin: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #dddddd;
+  font-size: 16px;
+  font-weight: normal;
+}
 @media screen and (min-width: 1001px) and (orientation: landscape) {
   .pullleft,
   .left-aligned {
@@ -1149,6 +1165,17 @@ li.data-row .singleLineIcon {
 /* WORKSPACE */.wsscroll {
   height: 100%;
   left: 0px;
+  width: 100%;
+}
+@media screen and (max-width: 700px) {
+  .wsscroll {
+    top: 93px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .wsscroll {
+    top: 135px;
+  }
 }
 @media screen and (min-width: 701px) {
   .workspace .title {
@@ -1462,7 +1489,7 @@ body.swipe-view #wrapper {
 body.swipe-view #nav {
   position: absolute;
   z-index: 100;
-  top: 8px;
+  top: 20px;
   width: 200px;
   height: 20px;
   left: 50%;
@@ -1477,6 +1504,12 @@ body.swipe-view #nav {
   /* Jack */
 
   padding: 0 3px;
+}
+@media screen and (max-width: 400px) {
+  body.swipe-view #nav {
+    left: 20px;
+    margin: 0;
+  }
 }
 body.swipe-view #nav li {
   display: block;
@@ -1668,6 +1701,7 @@ body.swipe-view .display {
 body.swipe-view #closeButton {
   position: absolute;
   display: block;
+  z-index: 101;
   /* Jack */
 
   top: 13px;
@@ -2315,14 +2349,21 @@ legend {
   font-size: 11px !important;
   line-height: 15px !important;
 }
-/* SAMPLER APP: Typography */
+/* SAMPLER APP: Typography Read view */
 #typography h1,
+body#unpluggedmce h1,
 #typography h2,
+body#unpluggedmce h2,
 #typography h3,
+body#unpluggedmce h3,
 #typography h4,
+body#unpluggedmce h4,
 #typography h5,
-#typography h6 {
+body#unpluggedmce h5,
+#typography h6,
+body#unpluggedmce h6 {
   font-weight: bold;
+  margin-top: 0;
   margin-bottom: 20px;
   background: transparent;
   border: 0;
@@ -2331,32 +2372,42 @@ legend {
   text-shadow: none;
   color: #333;
 }
-#typography h1 {
+#typography h1,
+body#unpluggedmce h1 {
   font-size: 40px;
   line-height: 1.2;
 }
-#typography h2 {
+#typography h2,
+body#unpluggedmce h2 {
   font-size: 36px;
   line-height: 1.2;
 }
-#typography h3 {
+#typography h3,
+body#unpluggedmce h3 {
   font-size: 30px;
   line-height: 1.2;
 }
-#typography h4 {
+#typography h4,
+body#unpluggedmce h4 {
   font-size: 24px;
   line-height: 1.2;
 }
-#typography h5 {
+#typography h5,
+body#unpluggedmce h5 {
   font-size: 20px;
   line-height: 1.2;
 }
-#typography h6 {
+#typography h6,
+body#unpluggedmce h6 {
   font-size: 16px;
   line-height: 1.2;
 }
+body#unpluggedmce p,
 #bodycopy p {
+  font-size: 16px;
+  line-height: 24px;
   margin-bottom: 20px;
+  color: #333;
 }
 .fontsizebuttons {
   position: absolute;
@@ -2393,7 +2444,12 @@ legend {
     margin-left: 5px;
   }
 }
-/* SAMPLER APP: Typography */
+/* SAMPLER APP: Typography Edit View */
+body#unpluggedmce {
+  background: white;
+  padding: 0;
+  margin: 0;
+}
 .typographyeditmode .mce-panel {
   border-color: transparent;
   background: transparent;
@@ -2423,12 +2479,12 @@ legend {
 }
 @media screen and (max-width: 700px) {
   .list-fonts a {
-    width: 25%;
+    width: 25% !important;
   }
 }
 @media screen and (max-width: 400px) {
   .list-fonts a {
-    width: 33%;
+    width: 33% !important;
   }
 }
 .list-fonts a:before {
@@ -2462,6 +2518,12 @@ legend {
 #dialogPopup #dialogContent {
   font-size: 16px;
   padding: 15px 20px;
+  max-height: 350px;
+}
+@media screen and (max-width: 400px) {
+  #dialogPopup #dialogContent {
+    max-height: 200px;
+  }
 }
 #dialogPopup .dialogbuttons {
   padding: 10px;

@@ -44,7 +44,7 @@ body.swipe-view {
 	#nav {
 		position:absolute;
 		z-index:100;
-		top:8px;
+		top:20px;
 		width:200px;
 		height:20px;
 		left:50%;
@@ -59,6 +59,11 @@ body.swipe-view {
 		
 		/* Jack */
 		padding: 0 3px;
+		
+		@media screen and (max-width: 400px) { 
+			left: 20px;
+			margin: 0;
+		}
 	}
 	
 	#nav li {
@@ -263,6 +268,7 @@ body.swipe-view {
 	#closeButton {
 		position:absolute;
 		display:block;
+		z-index: 101;
 		//top: 34px;
 		//right: 12px;
 		//width: 70px;

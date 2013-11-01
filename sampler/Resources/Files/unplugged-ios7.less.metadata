@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="3702" sequence="1" unid="5037DBAF69890B7380257C0C0056E9DC">
-<created><datetime dst="true">20131022T164919,64+01</datetime></created>
-<modified><datetime dst="true">20131022T164919,73+01</datetime></modified>
-<revised><datetime dst="true">20131022T164919,72+01</datetime></revised>
-<lastaccessed><datetime dst="true">20131022T164919,73+01</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131022T164919,73+01</datetime></addedtofile></noteinfo>
-<updatedby><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="37e6" sequence="1" unid="D4E12BFB1E74CCBB80257C15005CCF45">
+<created><datetime>20131031T165343,73+00</datetime></created>
+<modified><datetime>20131031T165343,81+00</datetime></modified>
+<revised><datetime>20131031T165343,80+00</datetime></revised>
+<lastaccessed><datetime>20131031T165343,81+00</datetime></lastaccessed>
+<addedtofile><datetime>20131031T165343,81+00</datetime></addedtofile></noteinfo>
+<updatedby><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <item name="$TITLE"><textlist><text>unplugged-ios7.less</text></textlist></item>
 <item name="$Flags"><text>345CgQ</text></item>
 <item name="$DesignerVersion"><text>6</text></item>
 <item name="$FileNames"><textlist><text>unplugged-ios7.less</text></textlist></item>
 
 
-<item name="$FileModDT"><datetime dst="true">20131021T141827,67+01</datetime></item></note>
+<item name="$FileModDT"><datetime>20131031T160834,93+00</datetime></item></note>

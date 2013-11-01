@@ -252,11 +252,13 @@ legend {
 
 
 
-/* SAMPLER APP: Typography */
+/* SAMPLER APP: Typography Read view */
 
-#typography {	
+#typography,
+body#unpluggedmce  {	
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: bold;
+		margin-top: 0;
 		margin-bottom: 20px;
 		background: transparent;
 		border: 0;
@@ -290,13 +292,62 @@ legend {
 		line-height: 1.2;
 	}
 }
+
+body#unpluggedmce p,
 #bodycopy p {
+	font-size: 16px;
+	line-height: 24px;
 	margin-bottom: 20px;
+	color: #333;
 }
 
-/* SAMPLER APP: Typography */
+.fontsizebuttons {
+	position: absolute;
+	right: 117px;
+	top: 10px;
+	z-index: 999;
+	margin: 0;
+
+	.button {
+		min-width: 36px;
+		padding: 0;
+		margin-left: 10px;
+		height: 36px;
+		border: none;
+		&:first-child { margin-left: 0; }
+
+		label {
+			display: none;
+		}	
+		i {
+			top: 6px;
+			left: 6px;
+			margin: 0;
+		}	 
+	}
+
+	@media screen and (max-width: 700px) { 
+		right: 45px;
+		top: 5px;
+		
+		.button {
+			height: 34px; 	
+			margin-left: 5px;		
+		}
+	}
+	
+}
+
+/* SAMPLER APP: Typography Edit View */
+
+body#unpluggedmce {
+	background: white;	
+	padding: 0;
+	margin: 0;
+}
 
 .typographyeditmode {
+
 	.mce-panel {
 		border-color: transparent;
 		background: transparent;
@@ -326,8 +377,8 @@ legend {
 	
 	a {
 		width: 20% !important;
-		@media screen and (max-width: 700px) { width: 25%; }
-		@media screen and (max-width: 400px) { width: 33%; }
+		@media screen and (max-width: 700px) { width: 25% !important; }
+		@media screen and (max-width: 400px) { width: 33% !important; }
 		margin: 0 0 0 -1px !important;
 		top:0;
 		text-align: center;
@@ -375,6 +426,8 @@ legend {
 	#dialogContent {
 		font-size: 16px;
 		padding: 15px 20px;
+		max-height: 350px;
+		@media screen and (max-width: 400px) { max-height: 200px; }
 	}
 	
 	.dialogbuttons {

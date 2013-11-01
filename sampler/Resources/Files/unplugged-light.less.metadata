@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="3706" sequence="1" unid="74D4EEACF53EC86680257C0C0056E9DD">
-<created><datetime dst="true">20131022T164919,65+01</datetime></created>
-<modified><datetime dst="true">20131022T164919,75+01</datetime></modified>
-<revised><datetime dst="true">20131022T164919,74+01</datetime></revised>
-<lastaccessed><datetime dst="true">20131022T164919,75+01</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131022T164919,75+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="37ea" sequence="1" unid="3268CC379C23665280257C15005CCF46">
+<created><datetime>20131031T165343,74+00</datetime></created>
+<modified><datetime>20131031T165343,83+00</datetime></modified>
+<revised><datetime>20131031T165343,82+00</datetime></revised>
+<lastaccessed><datetime>20131031T165343,83+00</datetime></lastaccessed>
+<addedtofile><datetime>20131031T165343,83+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <item name="$TITLE"><text>unplugged-light.less</text></item>
 <item name="$FlagsExt"><text>D</text></item>
 <item name="$Flags"><text>345CgQ</text></item>
@@ -13,4 +13,4 @@
 <item name="$FileNames"><textlist><text>unplugged-light.less</text></textlist></item>
 
 
-<item name="$FileModDT"><datetime dst="true">20131021T141828,14+01</datetime></item></note>
+<item name="$FileModDT"><datetime>20131031T160835,22+00</datetime></item></note>
