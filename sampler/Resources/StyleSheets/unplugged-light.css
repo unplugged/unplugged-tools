@@ -2566,6 +2566,168 @@ body#unpluggedmce {
 #dialogPopup .dialogbuttons > div:last-child .button {
   margin-left: 5px;
 }
+/* A to Z PICKER */
+.atozpicker,
+.numberpicker {
+  display: none;
+  right: 10px;
+  opacity: 0.6;
+  z-index: 100;
+  width: 5px;
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 10px;
+  font-weight: bold;
+  position: fixed;
+  /* Tablet */
+
+  /* Phone */
+
+}
+@media screen and (min-width: 701px) {
+  .atozpicker,
+  .numberpicker {
+    top: 70px;
+    bottom: 60px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .atozpicker,
+  .numberpicker {
+    top: 44px;
+    bottom: 34px;
+  }
+}
+.atozletter,
+.atozletter-divider {
+  list-style-image: none;
+  list-style-type: none;
+  padding-left: 15px;
+  margin-left: -35px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 3.7037037%;
+  /* 100%/27 */
+
+  /* Tablet */
+
+  /* Phone */
+
+  /* Phone Landscape */
+
+}
+@media screen and (min-width: 701px) {
+  .atozletter,
+  .atozletter-divider {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .atozletter,
+  .atozletter-divider {
+    font-size: 10px;
+  }
+}
+@media screen and (max-height: 400px) {
+  .atozletter,
+  .atozletter-divider {
+    height: 5.26315789%;
+    /* 100%/19 */
+  
+  }
+}
+.atozletter-divider {
+  display: none;
+  /* Phone Landscape */
+
+}
+@media screen and (max-height: 400px) {
+  .atozletter-divider {
+    display: block;
+  }
+}
+.otherletter {
+  display: block;
+  /* Phone Landscape */
+
+}
+@media screen and (max-height: 400px) {
+  .otherletter {
+    display: none;
+  }
+}
+/*
+@media screen and (min-height: 401px) and (max-height: 700px) and (orientation : portrait) {
+	.atozpicker, .numberpicker {
+		top: 40px;
+	}
+	.atozletter {
+		display: block;
+		font-size: 12px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.fourthletter {
+		display: block;
+	}
+	.otherletter {
+		display: block;
+	}
+	.atozletter-divider {
+		display: none;
+	}
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : portrait) {
+	.atozpicker, .numberpicker {
+		top: 35px;
+	}
+	.atozletter {
+		display: block;
+		font-size: 10px;
+		//font-weight: normal;
+		padding-top: 0px;
+		padding-bottom: 2px;
+	}
+	.fourthletter {
+	  display: block;
+	}
+	.otherletter {
+	  display: block;
+	}
+	.atozletter-divider {
+    display: none;
+	}
+}
+
+@media screen and (max-height: 400px) {
+	.atozpicker, .numberpicker {
+		top: 35px;
+	}
+	.atozletter {
+		display: block;
+		font-size: 10px;
+		//font-weight: normal;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.fourthletter {
+		display: block;
+	}
+	.otherletter {
+		display: none;
+	}
+	.atozletter-divider {
+		display: block;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		height: 9px;
+	}
+}*/
 /*********************
 
 OLD CSS STARTS HERE
@@ -2665,112 +2827,4 @@ Not sure what any of it does, but I don't want to move/change it in case I break
 }
 .formpullleft {
   margin-left: 0% !important;
-}
-.atozpicker,
-.numberpicker {
-  display: none;
-  position: fixed;
-  top: 81px;
-  right: 0px;
-  opacity: 0.6;
-  z-index: 100;
-  width: 5px;
-  text-align: left;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: 10px;
-  font-weight: bold;
-}
-.atozletter,
-.atozletter-divider {
-  list-style-image: none;
-  list-style-type: none;
-  padding: 3px;
-  padding-left: 15px;
-  margin-left: -35px;
-  font-weight: bold;
-  cursor: pointer;
-}
-@media screen and (min-height: 701px) {
-  .atozletter {
-    display: block;
-    font-size: 12px;
-  }
-  .fourthletter {
-    display: block;
-  }
-  .otherletter {
-    display: block;
-  }
-  .atozletter-divider {
-    display: none;
-  }
-}
-@media screen and (min-height: 401px) and (max-height: 700px) and (orientation: portrait) {
-  .atozpicker,
-  .numberpicker {
-    top: 40px;
-  }
-  .atozletter {
-    display: block;
-    font-size: 12px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-  .fourthletter {
-    display: block;
-  }
-  .otherletter {
-    display: block;
-  }
-  .atozletter-divider {
-    display: none;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  .atozpicker,
-  .numberpicker {
-    top: 35px;
-  }
-  .atozletter {
-    display: block;
-    font-size: 10px;
-    font-weight: normal;
-    padding-top: 0px;
-    padding-bottom: 2px;
-  }
-  .fourthletter {
-    display: block;
-  }
-  .otherletter {
-    display: block;
-  }
-  .atozletter-divider {
-    display: none;
-  }
-}
-@media screen and (max-height: 400px) {
-  .atozpicker,
-  .numberpicker {
-    top: 35px;
-  }
-  .atozletter {
-    display: block;
-    font-size: 10px;
-    font-weight: normal;
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-  .fourthletter {
-    display: block;
-  }
-  .otherletter {
-    display: none;
-  }
-  .atozletter-divider {
-    display: block;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    height: 9px;
-  }
 }
