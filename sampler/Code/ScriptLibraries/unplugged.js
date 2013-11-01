@@ -473,15 +473,27 @@ function initiscroll() {
 }
 
 function jumpToLetter(letterelement, event) {
+	$('.iscrollcontent').animate( {
+		scrollTop : 0
+	}, 0);
 	var letter = letterelement.text();
-	var list = $("#flatViewRowSet li").each( function() {
-		var summary = $(this).find(".viewlistsummary").text();
+	var list = $("li.categoryRowFixed").each( function() {
+		var summary = $(this).find("span").text();
 		var firstletter = summary.substring(0, 1);
-		if (firstletter >= letter) {
+		if (firstletter == letter) {
+			console.log("we need to jump to " + firstletter + " because it's equal to " + letter);
 			$('.iscrollcontent').animate( {
 				scrollTop : $(this).offset().top - 60
 			}, 500);
 			return false;
+		}else if (firstletter > letter) {
+			console.log("we need to jump to " + firstletter + " because it's greater than " + letter);
+			$('.iscrollcontent').animate( {
+				scrollTop : $(this).offset().top - 120
+			}, 500);
+			return false;
+		}else{
+			console.log("we don't need to jump to " + firstletter + " because it's less than " + letter);
 		}
 	});
 }
