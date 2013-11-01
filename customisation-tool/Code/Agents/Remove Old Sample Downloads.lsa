@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='80257BDE004F6073'>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='80257BDE004F6073'>
 <noteinfo noteid='23f2' unid='46351296F40CB3AA80257C0F002CF94B' sequence='5'>
 <created><datetime dst='true'>20131025T091114,03+01</datetime></created>
 <modified><datetime dst='true'>20131025T092249,58+01</datetime></modified>
@@ -34,12 +35,12 @@ gQYAAAAA
 <item name='$AssistRunInfo' summary='true'>
 <rawitemdata type='3'>
 BgABAAAACAACJAAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAADwEAAAAAAAAAAAAAAAAAABAAAAAA
-AAAAKJIFABN8JYAAAAAA/gguAA98JYBzYE8A3nslgAAAAAAAAAAAAAAAAAAAAAAAAAAAU3RhcnRl
-ZCBydW5uaW5nIGFnZW50ICdSZW1vdmUgT2xkIFNhbXBsZSBEb3dubG9hZHMnIG9uIDI5LzEwLzIw
-MTMgMDE6MDA6NTANClJ1bm5pbmcgb24gYWxsIGRvY3VtZW50cyBpbiBkYXRhYmFzZTogMTUgdG90
+AAAAQI4FABZ8JYAAAAAA/gguAA98JYBzYE8A3nslgAAAAAAAAAAAAAAAAAAAAAAAAAAAU3RhcnRl
+ZCBydW5uaW5nIGFnZW50ICdSZW1vdmUgT2xkIFNhbXBsZSBEb3dubG9hZHMnIG9uIDAxLzExLzIw
+MTMgMDE6MDA6NDANClJ1bm5pbmcgb24gYWxsIGRvY3VtZW50cyBpbiBkYXRhYmFzZTogMTUgdG90
 YWwNCkZvdW5kIDE1IGRvY3VtZW50KHMpIHRoYXQgbWF0Y2ggc2VhcmNoIGNyaXRlcmlhDQpSYW4g
 TG90dXNTY3JpcHQgY29kZQ0KRG9uZSBydW5uaW5nIGFnZW50ICdSZW1vdmUgT2xkIFNhbXBsZSBE
-b3dubG9hZHMnIG9uIDI5LzEwLzIwMTMgMDE6MDA6NTANCgANCgsOIj8JTESP8R4uAA98JYCqqqqq
+b3dubG9hZHMnIG9uIDAxLzExLzIwMTMgMDE6MDA6NDANCgANCgsOIj8JTESP8R4uAA98JYCqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
