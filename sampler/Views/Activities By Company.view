@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
  replicaid='80257BF10050ED2F'>
-<noteinfo noteid='36a2' unid='6275A5A83F89223580257C0C00415330' sequence='11'>
+<noteinfo noteid='36a2' unid='6275A5A83F89223580257C0C00415330' sequence='13'>
 <created><datetime dst='true'>20131022T125331,36+01</datetime></created>
-<modified><datetime>20131029T113349,45+00</datetime></modified>
-<revised><datetime>20131029T113349,44+00</datetime></revised>
-<lastaccessed><datetime>20131029T113349,45+00</datetime></lastaccessed>
+<modified><datetime>20131031T151433,98+00</datetime></modified>
+<revised><datetime>20131031T151433,97+00</datetime></revised>
+<lastaccessed><datetime>20131031T151433,98+00</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131022T125331,37+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
@@ -48,7 +48,6 @@ AABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAD//wAAAAAAAAAAAAAAAAAAQgAQAAAAAQD/
 CAAAAAAAAQA=
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
-<item name='$Flags'><text>PY</text></item>
 <item name='$DesignerVersion'><text>8.5.3</text></item>
 <item name='$SelQuery' sign='true'>
 <rawitemdata type='f'>
@@ -72,5 +71,6 @@ AABDX3V0DQC+fL7/IAAAAAUAAACdAQAABQAAAAAAAABfQ29weS8OAM58vv8wAAAABQAAAJ0BAAAW
 AAAAAAAAAENvcHkgYXMgRG9jdW1lbnQgX0xpbmsPAN58vv8oAAAABQAAAJ0BAAAOAAAAAAAAAENv
 cHkgYXMgX1RhYmxlEADufL7/IAAAAAUAAACdAQAABgAAAAAAAABQX2FzdGURAP58vv8gAAAABQAA
 AJ0BAAAFAAAAAAAAAF9PcGVuABIADn2+/yIAAAAFAAAAnQEAAAgAAAAAAAAAQm9va21hcmsTAB59
-</rawitemdata></item></note>
+</rawitemdata></item>
+<item name='$Flags'><text>Y</text></item></note>
 

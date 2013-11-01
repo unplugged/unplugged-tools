@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
  replicaid='80257BF10050ED2F'>
-<noteinfo noteid='35da' unid='B0A7DF225939FF1E80257C06004E9C94' sequence='3'>
+<noteinfo noteid='35da' unid='B0A7DF225939FF1E80257C06004E9C94' sequence='5'>
 <created><datetime dst='true'>20131016T151838,92+01</datetime></created>
-<modified><datetime>20131029T113349,37+00</datetime></modified>
-<revised><datetime>20131029T113349,36+00</datetime></revised>
-<lastaccessed><datetime>20131029T113349,37+00</datetime></lastaccessed>
+<modified><datetime>20131031T151434,04+00</datetime></modified>
+<revised><datetime>20131031T151434,03+00</datetime></revised>
+<lastaccessed><datetime>20131031T151434,04+00</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131016T151838,95+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
@@ -39,6 +39,6 @@ AAAAQgAAAAAAAQD///8ABQD///8AAQAAAAAAAAAAAAAAAAABAP///wABAP///wAAAAEAAAAAAAEA
 AAAAAAEAAAAAAAAACAAAAAAAAQA=
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
-<item name='$Flags'><text>Y</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$Flags'><text>Y</text></item></note>
 
