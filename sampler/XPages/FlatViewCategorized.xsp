@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com" xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xc:layout>
 		<xp:this.facets>
 			<xp:panel xp:key="facet_1">
 				<div id="contentwrapper">
+
 					<unp:unpScrollableArea>
 						<xp:this.facets>
 							<unp:unpFlatView insetData="true" detailColumn="Company"
-								summaryColumn="FullName" title="People from Belgium" viewName="People By Country"
-								xpageDoc="FormsReadMode.xsp" xp:key="facet_1" numberofrows="20"
+								summaryColumn="FullName" title="People from Italy" viewName="People By Country Filter"
+								xpageDoc="FormsReadMode.xsp" xp:key="facet_1" numberofrows="200"
 								refreshmethod="pull" position="menu-aligned" photoColumn="Photo"
-								wrapsummarytext="yes" categoryfilter="Belgium">
+								wrapsummarytext="yes" categoryfilter="Italy" categoryindex="1" enableAZPicker="yes">
 							</unp:unpFlatView>
 						</xp:this.facets>
 					</unp:unpScrollableArea>
+					<unp:unpAZPicker></unp:unpAZPicker>
 				</div>
 			</xp:panel>
 		</xp:this.facets>
