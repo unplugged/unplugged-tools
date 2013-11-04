@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="3872" sequence="12" unid="A3CCE194843DC71180257C190041CD0B">
+<created><datetime>20131104T115843,31+00</datetime></created>
+<modified><datetime>20131104T154318,37+00</datetime></modified>
+<revised><datetime>20131104T154318,36+00</datetime></revised>
+<lastaccessed><datetime>20131104T154318,37+00</datetime></lastaccessed>
+<addedtofile><datetime>20131104T115843,32+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$MimeType" sign="true"><text>text/css</text></item>
+<item name="$Flags"><text>34C=Q</text></item>
+<item name="$MimeCharSet" sign="true"><text>UTF-8</text></item>
+<item name="$TITLE" sign="true"><text>unp/ckeditor.js</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>unp_2fckeditor.js.css</text></item></note>

@@ -83,10 +83,10 @@ $(window)
 					});
 				});
 
-function initReaderButtons(){
-	if ($(".fontsizebuttons").length > 0){
+function initReaderButtons() {
+	if ($(".fontsizebuttons").length > 0) {
 		$(".input-search-frame").hide();
-	}else{
+	} else {
 		$(".input-search-frame").show();
 	}
 }
@@ -110,17 +110,41 @@ function initHideFooter() {
 }
 
 var editor = null;
+var rtfield;
 function initRichText() {
-	tinymce.init({
-	    selector: "textarea", 
-	    menubar: false, 
-	    toolbar: "bold", 
-	    statusbar: false, 
-	    cleanup: false, 
-	    content_css: $("[unp-id='primarycss']").attr('href'), 
-	    body_id: "unpluggedmce", 
-	    body_class: "unpluggedmce"
-	 });
+	var isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+
+	if (!isAndroid){
+		for ( var instanceName in CKEDITOR.instances) {
+			try {
+				CKEDITOR.instances[instanceName].destroy();
+			} catch (e) {
+			}
+		}
+		$("textarea").each(
+				function() {
+					try {
+						var html = htmlDecode($(this).html());
+						rtfield = $(this).attr("id");
+						
+						CKEDITOR.config.contentsCss = $("[unp-id='primarycss']").attr('href');
+						CKEDITOR.config.bodyId='unpluggedmce';
+						CKEDITOR.config.bodyClass='unpluggedmce';
+						CKEDITOR.appendTo('richtexteditorholder', CKEDITOR.config, html);
+						$(this).hide();
+	
+					} catch (e) {
+						alert(e.message);
+						$(this).show();
+					}
+				});
+	}
+}
+
+function htmlDecode(input) {
+	var e = document.createElement('div');
+	e.innerHTML = input;
+	return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
 }
 
 function getURLParameter(name) {
@@ -254,9 +278,12 @@ function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname)
 		scrollContent.scrollTo(0, -60, 0);
 	} catch (e) {
 	}
-	$('textarea').each(function(){
-		$(this).tinymce().save();
-	});
+	for ( var instanceName in CKEDITOR.instances) {
+		var html = CKEDITOR.instances[instanceName].getData();
+		document.getElementById(rtfield).value = html;//$('<div/>').text(html).html();
+		// Destroy the editor.
+		CKEDITOR.instances[instanceName].destroy();
+	}
 	var data = $(".customform :input").serialize();
 	var url = 'UnpSaveDocument.xsp?unid=' + unid + "&formname=" + formname
 			+ "&rnd=" + Math.floor(Math.random() * 1001);
@@ -392,9 +419,9 @@ function initHorizontalView() {
 	try {
 		if (swipers != null) {
 			// We need to destroy the existing swipers and re-init
-			//for ( var i = 0; i < swipers.length; i++) {
-			//	swipers[i].destroy();
-			//}
+			// for ( var i = 0; i < swipers.length; i++) {
+			// swipers[i].destroy();
+			// }
 		}
 		swipers = new Array();
 		$(".swiper-container").each( function() {
@@ -402,14 +429,14 @@ function initHorizontalView() {
 				var items = $(this).find(".hviewitem").length;
 				$(this).find(".swiper-slide").width((items * 140));
 				// Now init the swiper
-				//var mySwiper = $(this).swiper( {
-				//	scrollContainer : true,
-				//	freeMode : true,
-				//	freeModeFluid : true,
-				//	momentumBounce : true
-				//});
+				// var mySwiper = $(this).swiper( {
+				// scrollContainer : true,
+				// freeMode : true,
+				// freeModeFluid : true,
+				// momentumBounce : true
+				// });
 
-				//swipers.push(mySwiper);
+				// swipers.push(mySwiper);
 			})
 	} catch (e) {
 
@@ -477,25 +504,29 @@ function jumpToLetter(letterelement, event) {
 		scrollTop : 0
 	}, 0);
 	var letter = letterelement.text();
-	var list = $("li.categoryRowFixed").each( function() {
-		var summary = $(this).find("span").text();
-		var firstletter = summary.substring(0, 1);
-		if (firstletter == letter) {
-			console.log("we need to jump to " + firstletter + " because it's equal to " + letter);
-			$('.iscrollcontent').animate( {
-				scrollTop : $(this).offset().top - 60
-			}, 500);
-			return false;
-		}else if (firstletter > letter) {
-			console.log("we need to jump to " + firstletter + " because it's greater than " + letter);
-			$('.iscrollcontent').animate( {
-				scrollTop : $(this).offset().top - 120
-			}, 500);
-			return false;
-		}else{
-			console.log("we don't need to jump to " + firstletter + " because it's less than " + letter);
-		}
-	});
+	var list = $("li.categoryRowFixed").each(
+			function() {
+				var summary = $(this).find("span").text();
+				var firstletter = summary.substring(0, 1);
+				if (firstletter == letter) {
+					console.log("we need to jump to " + firstletter
+							+ " because it's equal to " + letter);
+					$('.iscrollcontent').animate( {
+						scrollTop : $(this).offset().top - 60
+					}, 500);
+					return false;
+				} else if (firstletter > letter) {
+					console.log("we need to jump to " + firstletter
+							+ " because it's greater than " + letter);
+					$('.iscrollcontent').animate( {
+						scrollTop : $(this).offset().top - 120
+					}, 500);
+					return false;
+				} else {
+					console.log("we don't need to jump to " + firstletter
+							+ " because it's less than " + letter);
+				}
+			});
 }
 
 function openDialog(id) {
@@ -769,11 +800,11 @@ function hviewFavourite(xpage, unid) {
 	closeDialog("hviewPopup");
 }
 
-function hviewDownloadNow(){
+function hviewDownloadNow() {
 	alert("This feature has not been enabled");
 }
 
-function hviewDownloadLater(){
+function hviewDownloadLater() {
 	alert("This feature has not been enabled");
 }
 
@@ -813,7 +844,7 @@ if (!unp) {
 			if (url.indexOf("#") > -1) {
 				url = url.substring(0, url.indexOf(" #"));
 			}
-			if (url.indexOf("?") == -1){
+			if (url.indexOf("?") == -1) {
 				url += "?";
 			}
 			url += "&history=true";
@@ -835,19 +866,30 @@ if (!unp) {
 
 }
 
-function increaseFontSize(button){
-	$( ".typographyreadcontent" ).find( "*" ).each(function(){
-		$(this).css("font-size", (parseInt($(this).css("font-size"), 10) + 2) + "px");
-		if (parseInt($(this).css("line-height"), 10) <= parseInt($(this).css("font-size"), 10)){
-			$(this).css("line-height", (parseInt($(this).css("line-height"), 10) + 2) + "px");
-		}
-	});
+function increaseFontSize(button) {
+	$(".typographyreadcontent").find("*").each(
+			function() {
+				$(this).css("font-size",
+						(parseInt($(this).css("font-size"), 10) + 2) + "px");
+				if (parseInt($(this).css("line-height"), 10) <= parseInt(
+						$(this).css("font-size"), 10)) {
+					$(this).css(
+							"line-height",
+							(parseInt($(this).css("line-height"), 10) + 2)
+									+ "px");
+				}
+			});
 }
-function decreaseFontSize(button){
-	$( ".typographyreadcontent" ).find( "*" ).each(function(){
-		$(this).css("font-size", (parseInt($(this).css("font-size"), 10) - 2) + "px");
-		if (parseInt($(this).css("line-height"), 10) > 24){
-			$(this).css("line-height", (parseInt($(this).css("line-height"), 10) - 2) + "px");
-		}
-	});
+function decreaseFontSize(button) {
+	$(".typographyreadcontent").find("*").each(
+			function() {
+				$(this).css("font-size",
+						(parseInt($(this).css("font-size"), 10) - 2) + "px");
+				if (parseInt($(this).css("line-height"), 10) > 24) {
+					$(this).css(
+							"line-height",
+							(parseInt($(this).css("line-height"), 10) - 2)
+									+ "px");
+				}
+			});
 }

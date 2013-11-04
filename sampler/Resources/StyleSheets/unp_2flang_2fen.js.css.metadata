@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="3876" sequence="6" unid="D450B63C39144CB680257C190041EC55">
+<created><datetime>20131104T120003,41+00</datetime></created>
+<modified><datetime>20131104T152824,59+00</datetime></modified>
+<revised><datetime>20131104T152824,58+00</datetime></revised>
+<lastaccessed><datetime>20131104T152824,59+00</datetime></lastaccessed>
+<addedtofile><datetime>20131104T120003,43+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$Flags"><text>34C=Q</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+
+<item name="$FileModDT" sign="true"><datetime dst="true">20131014T172928,00+01</datetime></item>
+
+<item name="$FileNames" sign="true"><text>en.js</text></item>
+<item name="$MimeCharSet" sign="true"><text>UTF-8</text></item>
+<item name="$TITLE" sign="true"><text>unp/lang/en.js</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>

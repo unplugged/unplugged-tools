@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="3726" sequence="1" unid="601F66A19CF11A8780257C0D0056A025">
-<created><datetime dst="true">20131023T164610,93+01</datetime></created>
-<modified><datetime dst="true">20131023T164610,94+01</datetime></modified>
-<revised><datetime dst="true">20131023T164610,93+01</datetime></revised>
-<lastaccessed><datetime dst="true">20131023T164610,94+01</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131023T164610,94+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="373a" sequence="6" unid="6C41FEB9DC47647280257C0E00420592">
+<created><datetime dst="true">20131024T130108,02+01</datetime></created>
+<modified><datetime>20131104T124003,27+00</datetime></modified>
+<revised><datetime>20131104T124003,26+00</datetime></revised>
+<lastaccessed><datetime>20131104T124003,27+00</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20131024T130108,03+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
 <item name="$TITLE"><text>iscroll.css</text></item>
 <item name="$MimeType"><text>text/css</text></item>
 <item name="$Flags"><text>34C=Q</text></item>
 <item name="$MimeCharSet"><text>UTF-8</text></item>
+<item name="$FileModDT"><datetime dst="true">20131023T162600,46+01</datetime></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
-<item name="$FileNames"><textlist><text>iscroll.css</text></textlist></item>
 
 
-<item name="$FileModDT"><datetime dst="true">20131023T162600,46+01</datetime></item></note>
+<item name="$FileNames" sign="true"><text>iscroll.css</text></item></note>

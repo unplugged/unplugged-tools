@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="3866" sequence="10" unid="2EF6F14F55750A9680257C1900413F01">
+<created><datetime>20131104T115239,69+00</datetime></created>
+<modified><datetime>20131104T153111,02+00</datetime></modified>
+<revised><datetime>20131104T153111,01+00</datetime></revised>
+<lastaccessed><datetime>20131104T153111,02+00</datetime></lastaccessed>
+<addedtofile><datetime>20131104T115239,70+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$MimeType" sign="true"><text>text/css</text></item>
+<item name="$Flags"><text>34C=Q</text></item>
+<item name="$MimeCharSet" sign="true"><text>UTF-8</text></item>
+
+
+
+<item name="$FileNames" sign="true"><text>skins_2fmoono_2feditor.css</text></item>
+<item name="$TITLE" sign="true"><text>unp/unp/editor.css</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>

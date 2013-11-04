@@ -4,5 +4,6 @@
 	</xp:this.resources>
 	<div class="richtexteditor">
 		<xp:callback facetName="insertfieldhere" id="callback1"></xp:callback>
+		<div id="richtexteditorholder"></div>
 	</div>
 </xp:view>
