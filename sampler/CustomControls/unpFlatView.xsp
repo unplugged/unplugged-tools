@@ -90,7 +90,7 @@ return thisRowData.getColumnValues().elementAt(index);}]]></xp:this.value>
 							<xp:this.attrs>
 								<xp:attr name="onClick">
 									<xp:this.value><![CDATA[#{javascript:
-	var url = getDbPath() + "/" + compositeData.xpageDoc + "?action=openDocument&documentId=" + thisRowData.getDocument().getUniversalID();
+	var url = getDbPath() + "/" + compositeData.xpageDoc + "?action=openDocument&documentId=" + thisRowData.getUniversalID();
 	if (compositeData.ajaxload != "No"){
 		return "openDocument('" + url + "', 'content');"
 	}else{
