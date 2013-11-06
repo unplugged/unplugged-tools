@@ -9,7 +9,7 @@
 					<unp:unpScrollableArea>
 						<xp:this.facets>
 							<xp:panel xp:key="facet_1">
-								<div class="panel">
+								<div class="panel" id="intro">
 									<h2>UPMark</h2>
 									<p>This page runs a suite of tests which involve opening
 										various pages in this application and timing each event.</p>
@@ -17,7 +17,7 @@
 										it's finished the results will be displayed. The results are
 										very dependent on the device being used, so your phone might
 										be faster than your iPad for example.</p>
-									<input type="button" class="button" value="Start Test..."
+									<input id="startbutton" type="button" class="button" value="Start Test..."
 										onclick="startTest()" />
 								</div>
 								<div id="qunit" class="panel" style="display: none;"></div>

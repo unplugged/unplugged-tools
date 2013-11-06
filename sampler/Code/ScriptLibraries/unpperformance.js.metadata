@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="filter" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="362" sequence="1" unid="37ECF37901FFA58D80257BF0005155C7">
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="filter" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="362" sequence="25" unid="37ECF37901FFA58D80257BF0005155C7">
 <created><datetime dst="true">20130924T154823,75+01</datetime></created>
-<modified><datetime dst="true">20130925T154358,97+01</datetime></modified>
-<revised><datetime dst="true">20130924T154823,88+01</datetime></revised>
-<lastaccessed><datetime dst="true">20130925T154358,97+01</datetime></lastaccessed>
+<modified><datetime>20131106T145719,41+00</datetime></modified>
+<revised><datetime>20131106T145719,40+00</datetime></revised>
+<lastaccessed><datetime>20131106T145719,41+00</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130925T154358,97+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>

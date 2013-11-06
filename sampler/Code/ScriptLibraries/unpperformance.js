@@ -4,7 +4,8 @@ $(window).load( function() {
 	});
 	QUnit.done(function( details ) {
 		try{
-			$('#qunit', window.parent.document).html($("#qunit").html());
+			$('#qunit', window.parent.document).html("<h2>UPMark</h2><p>The results below describe how long a series of tests took to run on your device. The time the tests take are very hardware dependent, so different devices will see different results.</p>" + $("#qunit").html());
+			$("#intro", window.parent.document).hide();
 		}catch(e){
 			
 		}
