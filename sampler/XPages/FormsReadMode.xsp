@@ -35,6 +35,12 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												</xp:text>
 											</li>
 											<li>
+												<xp:label value="Title" id="titlelabel" for="title">
+												</xp:label>
+												<xp:text id="title" value="#{document2.Title}">
+												</xp:text>
+											</li>
+											<li>
 												<xp:label value="Date" id="doblabel" for="birthday">
 												</xp:label>
 												<xp:text id="birthday" value="#{document2.InitialContactDate}">
@@ -48,7 +54,7 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												</xp:link>
 											</li>
 											<li>
-												<xp:label value="Company" id="Company" for="company">
+												<xp:label value="Department" id="Company" for="company">
 												</xp:label>
 												<xp:text id="company" value="#{document2.Company}">
 												</xp:text>
@@ -59,8 +65,6 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												<xp:text id="address" value="#{document2.StreetAddress}">
 												</xp:text>
 												<xp:text id="city" value="#{document2.City}">
-												</xp:text>
-												<xp:text id="zipcode" value="#{document2.ZipCode}">
 												</xp:text>
 												<xp:text id="country" value="#{document2.country}">
 												</xp:text>

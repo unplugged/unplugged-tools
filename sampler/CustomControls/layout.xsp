@@ -51,10 +51,10 @@
         ]}, 
         {label: "Workspace", hasSubMenu: false, page: "/Workspace.xsp", icon: "show_thumbnails"},
         {label: "Contacts", hasSubMenu: true, icon: "group", subMenu: [
-        	{label: "Companies", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Companies.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Departments", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Companies.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "Contacts", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Contacts.xsp", disabled: false, hasSubMenu: false},
         	{label: "My Activities", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/MyActivities.xsp", disabled: false, hasSubMenu: false},
-        	{label: "Activities By Company", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/ActivitiesByCompany.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Activities By Department", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/ActivitiesByCompany.xsp", disabled: false, hasSubMenu: false},
         	{label: "Activities By Contact", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/ActivitiesByContact.xsp", disabled: false, hasSubMenu: false}
         ]},
         {label: "Media", hasSubMenu: true, icon: "file", subMenu: [

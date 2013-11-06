@@ -44,8 +44,8 @@ function adjustIFrameSize() {
 }
 
 function buildCharts() {
-	var names = [ 'Case Assignment', 'Grant Norman', 'John Coolidge',
-			'Larry Barker', 'Lindsey Thomson', 'Richard Sharpe', 'Other' ];
+	var names = [ 'Allan Long', 'Darcy Raffield', 'Darren Eno',
+			'Erik Leavell', 'Jack Floyd', 'Kurt Lobo', 'Tan Ser' ];
 	var piedata = [];
 	for ( var i = 0; i < names.length; i++) {
 		piedata.push( {

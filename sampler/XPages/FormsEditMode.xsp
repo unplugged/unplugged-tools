@@ -49,6 +49,14 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												</xp:inputText>
 											</li>
 											<li>
+												<xp:label value="Title" id="titlelabel"
+													for="title">
+												</xp:label>
+												<xp:inputText id="title" value="#{document2.Title}"
+													styleClass="xspInputFieldEditBox deletable">
+												</xp:inputText>
+											</li>
+											<li>
 												<xp:label value="Date" id="datelabel" for="date">
 												</xp:label>
 												<xp:inputText id="date"
@@ -73,7 +81,7 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												</xp:inputText>
 											</li>
 											<li>
-												<xp:label value="Company" id="companylabel" for="company">
+												<xp:label value="Department" id="companylabel" for="company">
 												</xp:label>
 												<xp:inputText id="company" value="#{document2.Company}"
 													styleClass="required xspInputFieldEditBox deletable autocomplete">
@@ -95,13 +103,6 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												<xp:label value="City" id="citylabel" for="city">
 												</xp:label>
 												<xp:inputText id="city" value="#{document2.City}"
-													styleClass="xspInputFieldEditBox deletable">
-												</xp:inputText>
-											</li>
-											<li>
-												<xp:label value="Zip Code" id="zipcodelabel" for="zipcode">
-												</xp:label>
-												<xp:inputText id="zipcode" value="#{document2.ZipCode}"
 													styleClass="xspInputFieldEditBox deletable">
 												</xp:inputText>
 											</li>
