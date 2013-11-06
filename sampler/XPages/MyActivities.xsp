@@ -11,7 +11,7 @@
 								title="My Activities" viewName="Activities By Assignee"
 								xpageDoc="ActivityReadMode.xsp" xp:key="facet_1"
 								numberofrows="20" refreshmethod="pull" position="menu-aligned"
-								wrapsummarytext="yes" categoryfilter="#{javascript:@UserName()}"
+								wrapsummarytext="yes" categoryfilter="Current User"
 								ajaxload="Yes">
 							</unp:unpFlatView>
 						</xp:this.facets>
