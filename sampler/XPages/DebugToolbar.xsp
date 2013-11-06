@@ -54,6 +54,8 @@ try {
 	<xp:this.resources>
 		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
 		<xp:styleSheet href="/unplugged-dark.css"></xp:styleSheet>
+		<xp:script src="/custom.jss" clientSide="false"></xp:script>
+		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 	<xc:layout>
 		<xp:this.facets>

@@ -13,6 +13,11 @@
 
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:unp="http://unplugged.teamstudio.com">
+	<xp:this.resources>
+		<xp:script src="/custom.jss" clientSide="false"></xp:script>
+		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:populateFavorites()}]]></xp:this.afterRenderResponse>
 	<xc:layout>
 		<xp:this.facets>
 			<xc:form_dashboard xp:key="facet_1"></xc:form_dashboard>

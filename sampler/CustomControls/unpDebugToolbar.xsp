@@ -209,6 +209,13 @@
 							}]]></xp:this.action>
 						</xp:eventHandler>
 					</xp:button>
+					
+					<xp:button value="clear favorites" styleClass="button debugbutton" id="button8">
+
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:setFavorites(new Array())}]]></xp:this.action>
+					</xp:eventHandler></xp:button>
 
 				</div>
 			</div>

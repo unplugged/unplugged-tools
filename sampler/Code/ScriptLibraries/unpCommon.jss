@@ -179,7 +179,7 @@ function timeSince(datetime){
 
 function getFavorites(){
 	var favorites = session.getEnvironmentString("ro.favorites." + @LowerCase(@ReplaceSubstring(database.getFilePath(), "\\", "")), true) + ",";
-	if (favorites == null || favorites == ""){
+	if (favorites == null || favorites == "" || favorites == ","){
 		return new Array();
 	}else if(favorites.indexOf(",") > -1){
 		return $A(favorites.split(","));
@@ -188,6 +188,7 @@ function getFavorites(){
 	}
 }
 function setFavorites(favoritesarray){
+	//print("Setting favorites: " + @Implode(favoritesarray));
 	session.setEnvironmentVar("ro.favorites." + @LowerCase(@ReplaceSubstring(database.getFilePath(), "\\", "")), @Implode(@Trim(favoritesarray), ","), true);
 	sessionScope.favorites = null;
 }
