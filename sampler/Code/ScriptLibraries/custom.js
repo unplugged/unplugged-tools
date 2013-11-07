@@ -70,7 +70,7 @@ function buildCharts() {
 				radius : 1,
 				label : {
 					show : true,
-					radius : 3 / 4,
+					radius : 2/3,
 					formatter : labelFormatter,
 					background : {
 						opacity : 0
@@ -160,6 +160,12 @@ function buildCharts() {
 		}
 	});
 
+	var xticks = null;
+	if (isPhone()){
+		xticks = [[50000,'$50k'],[100000,'$100k']]
+	}else{
+		xticks = [[25000,'$25k'],[50000,'$50k'],[75000,'$75k'],[100000,'$100k']]
+	}
 	assigneddata = [];
 	ticks = [];
 	for ( var i = 0; i < names.length; i++) {
@@ -185,6 +191,7 @@ function buildCharts() {
 				return v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			},
 			tickSize : (isPhone() ? 100000 : 25000),
+			ticks: xticks,
 			max : 100000
 		},
 		yaxis : {
@@ -210,6 +217,12 @@ function buildCharts() {
 		label : "Assigned",
 		data : assigneddata
 	} ];
+	
+	if (isPhone()){
+		xticks = [[100000,'$100k'],[200000,'$200k']]
+	}else{
+		xticks = [[50000,'$50k'],[100000,'$100k'],[150000,'$150k'],[200000,'$200k'],[250000,'$250k']]
+	}
 	$.plot("#barchart3", assigneddataSet, {
 		series : {
 			bars : {
@@ -225,6 +238,7 @@ function buildCharts() {
 				return v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			},
 			tickSize : (isPhone() ? 200000 : 50000),
+			ticks: xticks, 
 			max : 250000
 		},
 		yaxis : {
