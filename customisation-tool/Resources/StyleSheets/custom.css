@@ -162,12 +162,12 @@ a:hover {
 	border: 1px transparent;
 }
 
-.navigation a.save {
+.navigation a.save, .modal-footer a.save {
 	background: #52c255;
 	color: white;
 }
 
-.navigation a.save:hover {
+.navigation a.save:hover, .modal-footer a.save:hover {
 	background: #32a235;
 }
 
@@ -360,26 +360,12 @@ body.homepage {
 	font-weight: bold;
 }
 
-/*.panel, 
-.well {
-	background: #EEE;
-	border-radius: 5px;
-	box-shadow: none;
-	border: 0;
-	padding: 20px;
-	font-size: 16px;
-	line-height: 24px;
-}
-
-.panel p,
-.well p {
-	margin-bottom: 20px; 
-}*/
 
 
-/* LOGIN/REGISTER */
 
-.well {
+/* REGISTER */
+
+#registration .well {
 	border: 0;
 	box-shadow: none;
 	-webkit-box-shadow: none;
@@ -387,11 +373,11 @@ body.homepage {
 	padding-bottom: 10px;
 }
 
-.well .btn {
+#registration .btn {
 	display: block;
 }
 
-.panel label {
+#registration label {
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: bold;
@@ -399,16 +385,16 @@ body.homepage {
 	margin-bottom: 8px;
 }
 
-.panel input[type=text],
-.panel input[type=email],
-.panel input[type=password] {
+#registration input[type=text],
+#registration input[type=email],
+#registration input[type=password] {
 	border-radius: 3px;
 	border: 0;
 	box-shadow: 0 1px rgba(0,0,0,0.2);
 	width: 400px;
 }
 
-.panel .form-group .btn {
+#registration .form-group .btn {
 	background: #52c255;
 	color: white;
 	width: 400px;
@@ -416,7 +402,44 @@ body.homepage {
 	line-height: 45px;
 }
 
-.panel .form-group .btn:hover {
+#registration .form-group .btn:hover {
+	background: #32a235;
+}
+
+
+
+
+/* LOGIN */
+
+#loginform {
+	background: transparent;
+}
+
+#loginform label {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: bold;
+	color: #CCC;
+	margin-bottom: 8px;
+}
+
+#loginform input[type=text],
+#loginform input[type=email],
+#loginform input[type=password] {
+	border-radius: 3px;
+	border: 0;
+	box-shadow: 0 1px rgba(0,0,0,0.2);
+	width: 400px;
+	height: auto !important;
+}
+
+#loginform input[type=submit] {
+	background: #52c255;
+	color: white;	
+	margin-right: 10px;	
+}
+
+#loginform input[type=submit]:hover {
 	background: #32a235;
 }
 
@@ -494,22 +517,3 @@ body.homepage {
 .table-striped td:last-child .btn {
 	float: right;
 }
-
-/* Progress Bar */
-.progress-bar.animate {
-   width: 100%;
-}
-
-.modal-backdrop {
-   opacity: 0.5;
-}
-
-.modal-dialog {
-   -webkit-transform: translate(0px, 50%);
-   transform: translate(0px, 50%);
-}
-
-.progress-popup {
-   margin-bottom: 0;
-}
-/* End Progress Bar */
