@@ -8,6 +8,14 @@ $(document).ready(function() {
 	}else if (css == "unplugged-ios7.css"){
 		$("#footerTabBar li").eq(2).addClass("tabSelected");
 	}
+	
+	/*
+	 * If we're running inside an iFrame we might be in the Restyler, so go and see if we need to do anything
+	 */
+	var isInIframe = (window.location != window.parent.location) ? true : false;
+	if (isInIframe){
+		window.parent.processAllSettings();
+	}
 })
 
 function myCallBackFunction() {

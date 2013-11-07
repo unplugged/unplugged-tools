@@ -4,6 +4,7 @@ body {
 	width: 100%;
 	position: fixed;
 }
+
 .iscrollcontent {
 	position: fixed;
 	right: 0px;
@@ -17,11 +18,11 @@ body {
 
 #menuitems {
 	position: fixed;
-	width: 300px;
-	top: 60px;
+	width: 29%; top : 60px;
 	bottom: 60px;
 	overflow: scroll;
-	-webkit-overflow-scrolling: touch;	
+	-webkit-overflow-scrolling: touch;
+	top: 60px;
 }
 
 .swiper-container {
@@ -64,14 +65,30 @@ body {
 }
 
 @media screen and (min-width: 701px) {
-	.iscrollcontent, #menuitems {
+	.iscrollcontent,#menuitems {
+		top: 60px;
+		bottom: 60px;
+	}
+}
+
+
+
+/*iPad Portrait*/
+@media only screen and (min-width : 768px) and (max-width	: 1023px) {
+	#menuitems {
+		width: 50%;
 		top: 60px;
 		bottom: 60px;
 	}
 }
 
 @media screen and (max-width: 700px) {
-	.iscrollcontent, #menuitems {
+	.iscrollcontent {
+		top: 45px;
+		bottom: 45px;
+	}
+	#menuitems {
+		width: 95%;
 		top: 45px;
 		bottom: 45px;
 	}
@@ -81,13 +98,12 @@ body {
 	}
 }
 
-.richtextfield {
-	/*width: 100%;*/
-	/*height: 400px;*/
+.richtextfield { /*width: 100%;*/ /*height: 400px;*/
+	
 }
 
 /*Charts*/
-#pie1, #stackchart, .barchart {
+#pie1,#stackchart,.barchart {
 	height: 300px;
 }
 
