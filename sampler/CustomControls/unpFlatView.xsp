@@ -111,6 +111,11 @@ if (viewScope.rowcount == 1 && isEmpty(compositeData.title)){
 if (compositeData.collapseRows == "Yes"){
 	out += " collapse-row";
 }
+if (compositeData.enableAZPicker == "yes"){
+	out += " picker";
+}else{
+	out += " no-picker";
+}
 return out;}]]></xp:this.styleClass>
 							<xp:image
 								url="#{javascript:thisRowData.getColumnValue(compositeData.photoColumn)}">
@@ -131,18 +136,7 @@ return out;}]]></xp:this.styleClass>
 	return "rowphoto";
 }}]]></xp:this.styleClass>
 							</xp:image>
-							<xp:image id="image1">
-								<xp:this.styleClass><![CDATA[#{javascript:if(isEmpty(compositeData.detailColumn) || compositeData.collapseRows == "Yes"){ 
-	return 'singleLineIcon';
-} else {
-	return 'multiLineIcon';
-}}]]></xp:this.styleClass>
-								<xp:this.url><![CDATA[#{javascript:if (compositeData.collapseRows == "Yes"){
-	return "/unp/arrow-down.png";
-}else{
-	return "/unp/right-arrow-circle.png";
-}}]]></xp:this.url>
-							</xp:image>
+
 							<xp:label id="label2"
 								value="#{javascript:thisRowData.getColumnValue(compositeData.summaryColumn);}">
 								<xp:this.styleClass><![CDATA[#{javascript:var out = "viewlistsummary";
