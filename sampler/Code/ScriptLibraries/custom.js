@@ -15,9 +15,13 @@ $(document).ready(function() {
 	/*
 	 * If we're running inside an iFrame we might be in the Restyler, so go and see if we need to do anything
 	 */
-	var isInIframe = (window.location != window.parent.location) ? true : false;
-	if (isInIframe){
-		window.parent.processAllSettings();
+	try{
+		var isInIframe = (window.location != window.parent.location) ? true : false;
+		if (isInIframe){
+			window.parent.processAllSettings();
+		}
+	}catch(e){
+		
 	}
 })
 
