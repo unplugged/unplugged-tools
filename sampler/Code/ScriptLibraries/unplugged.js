@@ -28,6 +28,9 @@ $(window)
 
 					$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
 					allowFormsInIscroll();
+					if (isAndroid()){
+						$("#menuitems").css("position", "relative");
+					}
 
 					initiscroll();
 					$("#menupane").addClass("offScreen");
@@ -110,12 +113,16 @@ function initHideFooter() {
 	}
 }
 
+function isAndroid(){
+	return /android/i.test(navigator.userAgent.toLowerCase());
+}
+
 var editor = null;
 var rtfield;
 function initRichText() {
-	var isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+	
 	var isInIframe = (window.location != window.parent.location) ? true : false;
-	if (!isAndroid && !isInIframe){
+	if (!isAndroid() && !isInIframe){
 		for ( var instanceName in CKEDITOR.instances) {
 			try {
 				CKEDITOR.instances[instanceName].destroy();
@@ -341,23 +348,34 @@ function toggleViewsMenu() {
 		$("#menuPane").removeClass("offScreen").addClass("onScreen");
 		$("#menuPane").animate( {
 			"left" : "+=700px"
-		}, "fast");
-		// $("#content").fadeOut();
+		}, "fast", function(){
+			if (isAndroid()){
+				$("#menuitems").css("position", "fixed");
+			}
+		});
 	} else {
 		$("#menuPane").removeClass("onScreen").addClass("offScreen");
 		$("#menuPane").animate( {
 			"left" : "-=700px"
-		}, "fast");
-		// $("#content").fadeIn();
+		}, "fast", function(){
+			if (isAndroid()){
+				$("#menuitems").css("position", "relative");
+			}			
+		});
 	}
 }
 
 function hideViewsMenu() {
 	if (!$("#menuPane").hasClass("offScreen")) {
 		$("#menuPane").removeClass("onScreen").addClass("offScreen");
+
 		$("#menuPane").animate( {
 			"left" : "-=700px"
-		}, "fast");
+		}, "fast", function(){
+			if (isAndroid()){
+				$("#menuitems").css("position", "relative");
+			}
+		});
 	}
 	// $("#content").fadeIn();
 }

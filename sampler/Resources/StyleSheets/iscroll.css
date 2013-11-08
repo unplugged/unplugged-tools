@@ -18,11 +18,11 @@ body {
 
 #menuitems {
 	position: fixed;
-	width: 29%; top : 60px;
+	width: 29%; 
+	top: 60px;
 	bottom: 60px;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
-	top: 60px;
 }
 
 .swiper-container {
@@ -74,7 +74,7 @@ body {
 
 
 /*iPad Portrait*/
-@media only screen and (min-width : 768px) and (max-width	: 1023px) {
+@media only screen and (min-width : 768px) and (max-width	: 768px) {
 	#menuitems {
 		width: 50%;
 		top: 60px;
@@ -116,4 +116,25 @@ body {
 	.chartpanelelement {
 		width: 100%;
 	}
+}
+
+#glyphicondetails .glyphicons strong {
+	display: block;	
+	top: 50px;
+	font-size: 14px;
+	position: absolute;
+	right: 0px;
+}
+#glyphicondetails span {
+	display: block;	
+	top: 100px;
+	font-size: 14px;
+	position: absolute;
+	right: 0px;
+}
+#glyphicondetails a {
+	width: 100%;	
+}
+#glyphicondetails a.glyphicons:before{
+	font-size: 300px;
 }
