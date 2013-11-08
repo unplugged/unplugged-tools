@@ -948,6 +948,12 @@ li.data-row .singleLineIcon {
 .customform > div {
   overflow: hidden;
 }
+.titleicon {
+  display: inline;
+  max-height: 44px;
+  margin-right: 13px;
+  border-radius: 6px;
+}
 #formholder {
   -webkit-box-sizing: border-box;
   position: relative;
@@ -988,7 +994,7 @@ li.data-row .singleLineIcon {
   margin: 0;
   background: white;
   border-bottom: 1px solid #DDD;
-  padding: 12px;
+  padding: 15px;
   overflow: hidden;
 }
 #formholder ul.buttons:last-child {
@@ -1011,12 +1017,12 @@ li.data-row .singleLineIcon {
   width: 50%;
 }
 #formholder ul.buttons li.cancelButton .label {
-  margin-left: 6px;
+  margin-left: 7px;
 }
 #formholder ul.buttons li.editButton .label,
 #formholder ul.buttons li.proceedButton .label,
 #formholder ul.buttons li.saveButton .label {
-  margin-right: 6px;
+  margin-right: 7px;
 }
 #formholder ul.buttons li.proceedButton {
   padding-left: 25% !important;
@@ -1031,9 +1037,9 @@ li.data-row .singleLineIcon {
   border-bottom: 1px solid #DDD;
   overflow: hidden;
   background: white;
+  position: relative;
 }
 #formholder ul.fieldlist li:last-child {
-  border-bottom: 0;
   border-radius: 0 0 10px 10px;
 }
 #formholder .customform ul.fieldlist li:last-child {
@@ -1052,7 +1058,7 @@ li.data-row .singleLineIcon {
 #formholder .body_richtext {
   clear: both;
   background: white;
-  padding: 15px;
+  padding: 30px;
   font-size: 16px;
   line-height: 24px;
   width: auto;
@@ -1161,6 +1167,71 @@ li.data-row .singleLineIcon {
   vertical-align: middle;
   text-transform: none;
   -webkit-font-smoothing: antialiased;
+}
+/* Typography Edit View */
+.typographyeditmode {
+  padding: 0 !important;
+}
+.cke_chrome {
+  border: 0;
+  box-shadow: none;
+}
+.cke_chrome .cke_inner {
+  background: transparent;
+}
+.cke_chrome .cke_top {
+  border: 0;
+  box-shadow: none;
+  padding: 8px;
+  border-bottom: 1px solid #dddddd;
+  background: #f3f5fa;
+}
+.cke_chrome .cke_top .cke_toolbar {
+  float: right;
+}
+.cke_chrome .cke_top .cke_toolbar .cke_toolgroup {
+  margin: 0;
+}
+.cke_chrome .cke_top .cke_toolbar .cke_toolgroup .cke_button {
+  /*border-radius: @button-border-radius;
+					box-shadow: @button-box-shadow;
+					text-shadow: @button-text-shadow;
+					font-weight: @button-font-weight;
+					color: @button-default-label-color;
+					background: @button-default-background;
+					border: 1px solid @button-default-border-color;
+					//display: block;
+					//width: auto;
+					height: 24px;
+					cursor: pointer;
+					padding: 0;
+					line-height: 24px;
+					font-size: 16px;
+					text-align: center;*/
+
+}
+.cke_chrome .cke_contents {
+  border-color: 1px solid #DDD;
+}
+body.cke_editable {
+  font-family: "Helvetica Neue", sans-serif;
+  background: white;
+  margin: 0;
+  color: #000000;
+  padding: 30px;
+}
+body.cke_editable p {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.fieldlist .cke_top {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  background: transparent;
 }
 /* WORKSPACE */.wsscroll {
   height: 100%;
@@ -1984,7 +2055,8 @@ body.swipe-view #swipenextbutton:after {
 }
 .hviewresults .hviewfilters {
   float: right;
-  margin-right: 10px;
+  margin-right: 6px;
+  margin-top: -5px;
 }
 .hviewresults .hviewfilters .btn-group {
   position: relative;
@@ -1998,7 +2070,8 @@ body.swipe-view #swipenextbutton:after {
   float: right;
   font-size: 12px;
   position: relative;
-  padding: 8px 12px;
+  padding: 0 12px;
+  line-height: 32px;
   margin-right: 3px;
   text-decoration: none;
   cursor: pointer;
@@ -2010,6 +2083,7 @@ body.swipe-view #swipenextbutton:after {
   background: #959eb2;
   border: 1px solid transparent;
   text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
 }
 .hviewresults .hviewfilters .btn-group a.dropdown-toggle span,
 .hviewresults .hviewfilters .btn-group a.dropdown-toggle:hover span {
@@ -2045,32 +2119,34 @@ body.swipe-view #swipenextbutton:after {
   display: none;
   float: left;
   min-width: 160px;
-  padding: 5px 0;
+  padding: 0;
   margin: 2px 0 0;
   list-style: none;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
+  background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
   border-radius: 6px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
   background-clip: padding-box;
+  overflow: hidden;
 }
 .hviewresults .hviewfilters .btn-group ul.dropdown-menu li {
-  display: list-item;
-  text-align: -webkit-match-parent;
-  padding: 3px 20px;
+  padding: 0 15px;
   clear: both;
-  font-weight: normal;
-  line-height: 20px;
+  font-weight: bold;
+  line-height: 44px;
   color: #333333;
   white-space: nowrap;
   cursor: pointer;
+  border-bottom: 1px solid #EEE;
+  font-size: 12px;
+}
+.hviewresults .hviewfilters .btn-group ul.dropdown-menu li:last-child {
+  border-bottom: 0;
+}
+.hviewresults .hviewfilters .btn-group ul.dropdown-menu li:hover,
+.hviewresults .hviewfilters .btn-group ul.dropdown-menu li:active {
+  background-color: #0078f4;
+  color: white;
 }
 /* MODAL */
 #underlayhviewPopup {
@@ -2350,18 +2426,21 @@ legend {
   line-height: 15px !important;
 }
 /* SAMPLER APP: Typography Read view */
+#typography {
+  padding: 15px;
+  padding-bottom: 0;
+}
+@media screen and (max-width: 400px) {
+  #typography {
+    padding: 0;
+  }
+}
 #typography h1,
-body#unpluggedmce h1,
 #typography h2,
-body#unpluggedmce h2,
 #typography h3,
-body#unpluggedmce h3,
 #typography h4,
-body#unpluggedmce h4,
 #typography h5,
-body#unpluggedmce h5,
-#typography h6,
-body#unpluggedmce h6 {
+#typography h6 {
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 20px;
@@ -2372,37 +2451,39 @@ body#unpluggedmce h6 {
   text-shadow: none;
   color: #333;
 }
-#typography h1,
-body#unpluggedmce h1 {
+#typography h1 {
   font-size: 40px;
   line-height: 1.2;
 }
-#typography h2,
-body#unpluggedmce h2 {
+#typography h2 {
   font-size: 36px;
   line-height: 1.2;
 }
-#typography h3,
-body#unpluggedmce h3 {
+#typography h3 {
   font-size: 30px;
   line-height: 1.2;
 }
-#typography h4,
-body#unpluggedmce h4 {
+#typography h4 {
   font-size: 24px;
   line-height: 1.2;
 }
-#typography h5,
-body#unpluggedmce h5 {
+#typography h5 {
   font-size: 20px;
   line-height: 1.2;
 }
-#typography h6,
-body#unpluggedmce h6 {
+#typography h6 {
   font-size: 16px;
   line-height: 1.2;
 }
-body#unpluggedmce p,
+#bodycopy {
+  padding: 15px 10px;
+  padding-top: 0;
+}
+@media screen and (max-width: 400px) {
+  #bodycopy {
+    padding: 0;
+  }
+}
 #bodycopy p {
   font-size: 16px;
   line-height: 24px;
@@ -2443,22 +2524,6 @@ body#unpluggedmce p,
     height: 34px;
     margin-left: 5px;
   }
-}
-/* SAMPLER APP: Typography Edit View */
-body#unpluggedmce {
-  background: white;
-  padding: 0;
-  margin: 0;
-}
-.typographyeditmode .mce-panel {
-  border-color: transparent;
-  background: transparent;
-}
-.typographyeditmode .mce-flow-layout-item {
-  float: right;
-}
-.typographyeditmode iframe body#tinymce {
-  font-family: "Helvetica Neue", sans-serif;
 }
 /* SAMPLER APP: Glyphicons */
 .list-fonts {
@@ -2566,6 +2631,20 @@ body#unpluggedmce {
 #dialogPopup .dialogbuttons > div:last-child .button {
   margin-left: 5px;
 }
+/*
+::-webkit-scrollbar {
+    height: 12px;
+	width: 12px;
+	background: #000;
+    }
+::-webkit-scrollbar-thumb {
+    background: #393812;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+::-webkit-scrollbar-corner {
+    background: #000;
+}*/
 /* A to Z PICKER */
 .atozpicker,
 .numberpicker {
@@ -2796,15 +2875,6 @@ Not sure what any of it does, but I don't want to move/change it in case I break
   -webkit-box-orient: vertical;
   white-space: normal;
   line-height: 22px;
-}
-.titleicon {
-  display: inline;
-  max-height: 44px;
-  margin-right: 13px;
-  -webkit-border-top-left-radius: 8px;
-  -webkit-border-top-right-radius: 8px;
-  -webkit-border-bottom-left-radius: 8px;
-  -webkit-border-bottom-right-radius: 8px;
 }
 .formtitle {
   display: inline !important;

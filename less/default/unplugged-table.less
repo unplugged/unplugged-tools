@@ -91,7 +91,7 @@ li#title,
 		font-size: @table-subheading-font-size;
 		font-weight: @table-subheading-font-weight !important;	
 		text-transform: @table-subheading-text-transform;
-		text-shadow: @table-heading-text-shadow;
+		text-shadow: @table-subheading-text-shadow;
 	}
 }
 
@@ -233,6 +233,24 @@ li.data-row {
 			border-color: transparent;
 			border-top-color: @table-heading-color;
 		}	
+	}
+	
+	// Load More
+	.accLoadMoreLink button {
+		display: block;
+		text-decoration: none;
+		cursor: pointer;
+		-webkit-transform: translate3d(0, 0, 0);
+		padding: 8px 15px;
+		line-height: 24px;
+		min-height: 40px;		
+		border: 0;
+		width: 100%;
+		margin: 0;
+		background: @table-row-background;
+		border-bottom: 1px solid @table-row-border-color;
+		font-size: @table-row-title-font-size;
+		font-weight: @table-row-title-font-weight;
 	}
 }
 

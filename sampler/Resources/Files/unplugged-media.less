@@ -242,7 +242,8 @@
 	.hviewfilters {
 		//padding-top: 5px;
 		float: right;
-		margin-right: 10px;
+		margin-right: 6px;
+		margin-top: -5px;
 
 		.btn-group {
 			position: relative;
@@ -254,25 +255,22 @@
 			a.dropdown-toggle,
 			a.dropdown-toggle:hover {
 				float: right;
-				//border-radius: 3px;
-				//box-shadow: 0 1px rgba(0, 0, 0, 0.2);
-				//color: #333;
-				//font-weight: bold;
 				font-size: 12px;
 				position: relative;
-				padding: 8px 12px;
+				padding: 0 12px;
+				line-height: 32px;
 				margin-right: 3px;
 				text-decoration: none;
 				cursor: pointer;
-				padding-right: 30px;
-				//background-color: #FFFFFF;
+				padding-right: 30px;				
 				border-radius: @button-border-radius;
 				box-shadow: @button-box-shadow;
 				color: @button-default-label-color;
 				font-weight: @button-font-weight;
 				background: @button-default-background;
 				border: 1px solid @button-default-border-color;
-				text-shadow: @button-text-shadow;
+				text-shadow: @button-text-shadow;				
+				background-image: -webkit-linear-gradient(bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,.2) 100%);
 		
 				span {
 					//color: #0078C8;
@@ -309,32 +307,36 @@
 				display: none;
 				float: left;
 				min-width: 160px;
-				padding: 5px 0;
+				padding: 0;
 				margin: 2px 0 0;
 				list-style: none;
-				background-color: #ffffff;
-				border: 1px solid #ccc;
+				background-color: white;
 				border: 1px solid rgba(0, 0, 0, 0.2);
-				-webkit-border-radius: @button-border-radius;
-				-moz-border-radius: @button-border-radius;
 				border-radius: @button-border-radius;
-				-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-				-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 				box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-				-webkit-background-clip: padding-box;
-				-moz-background-clip: padding;
 				background-clip: padding-box;
-		
+				overflow: hidden;
+				
 				li {
-					display: list-item;
-					text-align: -webkit-match-parent;
-					padding: 3px 20px;
+					padding: 0 15px;
 					clear: both;
-					font-weight: normal;
-					line-height: 20px;
+					font-weight: bold;
+					line-height: 44px;
 					color: #333333;
 					white-space: nowrap;
 					cursor: pointer;
+					border-bottom: 1px solid #EEE;
+					font-size: 12px;
+					
+					&:last-child {
+						border-bottom: 0;
+					}
+					
+					&:hover,
+					&:active {
+						background-color: #0078f4;
+						color: white;
+					}
 				}	
 			}
 		}		

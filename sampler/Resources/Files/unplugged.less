@@ -254,8 +254,13 @@ legend {
 
 /* SAMPLER APP: Typography Read view */
 
-#typography,
-body#unpluggedmce  {	
+#typography {
+	padding: 15px;
+	padding-bottom: 0;
+	@media screen and (max-width: 400px) { padding: 0; }
+}
+
+#typography  {	
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: bold;
 		margin-top: 0;
@@ -293,13 +298,19 @@ body#unpluggedmce  {
 	}
 }
 
-body#unpluggedmce p,
-#bodycopy p {
-	font-size: 16px;
-	line-height: 24px;
-	margin-bottom: 20px;
-	color: #333;
-}
+#bodycopy {
+	padding: 15px 10px;
+	padding-top: 0;
+	@media screen and (max-width: 400px) { padding: 0; }
+
+	p {
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 20px;
+		color: #333;
+	}
+
+} 
 
 .fontsizebuttons {
 	position: absolute;
@@ -337,32 +348,6 @@ body#unpluggedmce p,
 	}
 	
 }
-
-/* SAMPLER APP: Typography Edit View */
-
-body#unpluggedmce {
-	background: white;	
-	padding: 0;
-	margin: 0;
-}
-
-.typographyeditmode {
-
-	.mce-panel {
-		border-color: transparent;
-		background: transparent;
-	}
-	
-	.mce-flow-layout-item {
-		float: right;
-	}
-	
-	iframe body#tinymce {
-		font-family: @body-font;
-	}
-}
-
-
 
 
 
@@ -466,7 +451,6 @@ body#unpluggedmce {
 					background: @button-success-background;
 					border: 1px solid @button-success-border-color;					
 				}			
-			
 			}
 
 			&:first-child .button {
@@ -480,6 +464,20 @@ body#unpluggedmce {
 	}
 }
 
+/*
+::-webkit-scrollbar {
+    height: 12px;
+	width: 12px;
+	background: #000;
+    }
+::-webkit-scrollbar-thumb {
+    background: #393812;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+::-webkit-scrollbar-corner {
+    background: #000;
+}*/
 
 
 /* A to Z PICKER */
@@ -630,6 +628,78 @@ and (orientation : portrait) {
 
 
 
+/* DEBUG TOOLBAR */
+
+/*div.dBar {
+margin-top: 10px;
+border-bottom: 3px solid #444444;
+background: #dddddd;
+text-shadow:none;
+}
+
+div.dBar .header {
+background:#444444;
+padding: 5px;
+color: #ffffff;
+text-align: middle;
+}
+div.dBar span.title {
+font-weight: bold;
+font-size: 14px;
+}
+div.dBar table {
+width: 100%;
+border-collapse: collapse;
+}
+div.dBar table.grid th {
+font-weight:bold;
+border: 0;
+padding: 1px 2px;
+background: #bbbbbb;
+}
+div.dBar table.grid td {
+border: 1px solid #CECECE;
+padding: 1px 2px;
+}
+div.dBar table.grid td.error {
+color: red;
+}
+div.dBar table.grid td.warning {
+color: #E0AD06;
+}
+div.dBar table.grid td.debug {
+font-style: italic;
+}
+div.dBar div.section {
+padding: 0;
+clear: both;
+}
+div.dBar div.title {
+background:#bbbbbb;
+padding:5px;
+font-weight: bold;
+border-bottom: 1px solid #000000;
+}
+div.dBar .content {
+margin: 7px 5px;
+}
+div.dBar button {
+margin: 4px;
+}
+.debugbutton {
+width: auto !important;
+display: inline;
+padding-left: 6px;
+padding-right: 6px;
+}
+.debugbuttonsmall {
+width: auto !important;
+display: inline;
+padding-left: 12px;
+padding-right: 12px;
+}*/
+
+
 
 
 /*********************
@@ -694,8 +764,7 @@ Not sure what any of it does, but I don't want to move/change it in case I break
 
 /**End Autocomplete**/
 #loading {
-	background: url('unp/spinner_squares_circle.gif') center center
-		no-repeat;
+	background: url('unp/spinner_squares_circle.gif') center center no-repeat;
 	background-color: #000000;
 	opacity: 0.4;
 	width: 140px;
@@ -710,16 +779,6 @@ Not sure what any of it does, but I don't want to move/change it in case I break
 	-webkit-box-orient: vertical;
 	white-space: normal;
 	line-height: 22px;
-}
-
-.titleicon {
-	display: inline;
-	max-height: 44px;
-	margin-right: 13px;
-	-webkit-border-top-left-radius: 8px;
-	-webkit-border-top-right-radius: 8px;
-	-webkit-border-bottom-left-radius: 8px;
-	-webkit-border-bottom-right-radius: 8px;
 }
 
 .formtitle {
