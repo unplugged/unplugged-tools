@@ -846,6 +846,11 @@ function hviewEmailCancel(xpage, unid) {
 }
 
 function dropdownToggle(element) {
+	if (element.text.indexOf("Language") > -1){
+		$("#yeardropdownlink").next().hide();
+	}else if(element.text.indexOf("Year") > -1){
+		$("#dropdownlink").next().hide();
+	}
 	if (element != null) {
 		$(element).next().toggle();
 	} else {
