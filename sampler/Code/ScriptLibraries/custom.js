@@ -8,6 +8,9 @@ $(document).ready(function() {
 	}else if (css == "unplugged-ios7.css"){
 		$("#footerTabBar li").eq(2).addClass("tabSelected");
 	}
+	$(".list-fonts .glyphicons").click(function(){
+		showGlyphiconDetails(this);
+	})
 	
 	/*
 	 * If we're running inside an iFrame we might be in the Restyler, so go and see if we need to do anything
@@ -16,6 +19,12 @@ $(document).ready(function() {
 	if (isInIframe){
 		window.parent.processAllSettings();
 	}
+})
+
+$(document).ajaxComplete(function(){
+	$(".list-fonts .glyphicons").click(function(){
+		showGlyphiconDetails(this);
+	})
 })
 
 function myCallBackFunction() {
@@ -284,4 +293,9 @@ function startTest() {
 	$("#qunit").show();
 	$("#startbutton").hide();
 	$("#upmarkiframe").attr("src", "UPMarkStart.xsp?starttime=" + Date.now());
+}
+
+function showGlyphiconDetails(element){
+	$("#glyphicondetails").html(element.outerHTML);
+	openDialog("dialogPopup");
 }
