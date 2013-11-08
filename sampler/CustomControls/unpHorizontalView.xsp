@@ -39,11 +39,11 @@ sessionScope.urllanguagefilter = context.getUrlParameter("languagefilter");
 sessionScope.urlyearfilter = context.getUrlParameter("yearfilter");}]]></xp:this.beforePageLoad>
         <xp:this.data>
                 <xp:dominoView var="hview">
-                        <xp:this.viewName><![CDATA[#{javascript:var filter = "";
+                	<xp:this.viewName><![CDATA[#{javascript:var filter = "";
 if (sessionScope.urllanguagefilter != null && sessionScope.urllanguagefilter != "" && sessionScope.urllanguagefilter != "All"){
         filter = sessionScope.urllanguagefilter;
 }
-if (sessionScope.urlyearfilter != null && sessionScope.urlyearfilter != "" && sessionScope.urlyearfilter){
+if (sessionScope.urlyearfilter != null && sessionScope.urlyearfilter != "" && sessionScope.urlyearfilter != "All"){
         if (filter != ""){
                 filter += "~";
         }
