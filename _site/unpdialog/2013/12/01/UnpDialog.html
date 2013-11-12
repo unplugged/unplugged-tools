@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>UnpDialog</title>
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/unplugged-tools/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/glyphicons.css">
+  </head>
+  <body class="homepage">
+    <div class="row header">
+      <div class="container">
+        <h1><a id="view:_id2:homelink" href="/index.html" title="Unplugged Controls">Unplugged Controls</a></h1>
+        <ul class="buttons">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/documentation.html">Documentation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row footer">
+    <div class="container">
+		<h2>UnpDialog</h2>
+
+		<div class="post">
+			<h1 id='function'>Function</h1>
+
+<p>The Dialog control allows you to add a Dialog box to a page. It will display &#8220;over&#8221; the rest of the content of the page and will show 2 buttons: OK and Cancel.</p>
+
+<p><img alt='Dialog' src='http://teamstudio.s3.amazonaws.com/dialog.png' /></p>
+
+<p>If the user clicks cancel the dialog will be hidden.</p>
+
+<p>If the user clicks the OK button the dialog will be hidden and you can run a Client Side JavaScript function as well.</p>
+
+<p>The content of the dialog box is populated by adding the text or fields into the editable area on the XPage that you create.</p>
+
+<p>If the content of the dialog box is too tall for the page then make sure to use the <span><span>unpScrollableArea</span></span> control inside the editable area.</p>
+
+<p>For an example of the Dialog in action download the samples database and open the XPage called UnpDemoDialog</p>
+
+<h1 id='usage'>Usage</h1>
+<pre class='CICodeFormatter'><code class='CICodeFormatter'> &lt;xc:unpDialog callback="myFunction" title="Dialog Demo"&gt;  
+      &lt;xp:this.facets&gt;  
+           &lt;xp:panel xp:key="facet_1"&gt;  
+                Content goes here  
+           &lt;/xp:panel&gt;  
+      &lt;/xp:this.facets&gt;  
+ &lt;/xc:unpDialog&gt;  
+</code></pre>
+<p>In this example the Dialog will show with the words &#8220;Content goes here&#8221; in the body. Below that will be the OK and Cancel buttons. When the OK button is pressed a JavaScript function call &#8220;myFunction()&#8221; will be executed, remember to write that function.</p>
+
+<p>To show the dialog add HTML in the following format:</p>
+<pre class='CICodeFormatter'><code class='CICodeFormatter'> &lt;a href="#dialogPopup" class="opendialoglink"&gt;  
+      Open Dialog  
+ &lt;/a&gt;  
+</code></pre>
+<p>The href is the ID of the Dialog box div tag. The class name is the way the link is made to open a Dialog when it is clicked.</p>
+
+<h1 id='required_resources'>Required Resources</h1>
+
+<p>When you use the Dialog custom control make sure that you have the following resources in your application:</p>
+
+<ul>
+<li>unp/jquery-1.7.2.min.js</li>
+
+<li>unp/jquery.blockUI.min.js</li>
+
+<li>unp/iScroll.min.js</li>
+
+<li>unplugged.js</li>
+
+<li>unpCommon.jss</li>
+
+<li>unplugged.css</li>
+</ul>
+	  	</div>
+	</div>
+</div>
+
+  </body>
+</html>

@@ -22,7 +22,7 @@ This will create the documents required to populate the home page with icons.</p
 <hr><p>Detailed usage instructions for each control are available below.</p>
 
 <ul>
-  {% for post in site.posts %}
+  {% for post in site.posts order:ascending %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>

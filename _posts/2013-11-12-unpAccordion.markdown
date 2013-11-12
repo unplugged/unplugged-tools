@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "unpAccordion"
+title:  "UnpAccordion"
 date:   2013-12-01 17:00
-categories: unpAccordion
+categories: UnpAccordion
 ---
 
 To display a categorized view use the Accordion Control.
