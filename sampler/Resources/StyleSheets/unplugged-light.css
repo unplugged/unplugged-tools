@@ -2807,6 +2807,75 @@ and (orientation : portrait) {
 		height: 9px;
 	}
 }*/
+/* DEBUG TOOLBAR */
+/*div.dBar {
+margin-top: 10px;
+border-bottom: 3px solid #444444;
+background: #dddddd;
+text-shadow:none;
+}
+
+div.dBar .header {
+background:#444444;
+padding: 5px;
+color: #ffffff;
+text-align: middle;
+}
+div.dBar span.title {
+font-weight: bold;
+font-size: 14px;
+}
+div.dBar table {
+width: 100%;
+border-collapse: collapse;
+}
+div.dBar table.grid th {
+font-weight:bold;
+border: 0;
+padding: 1px 2px;
+background: #bbbbbb;
+}
+div.dBar table.grid td {
+border: 1px solid #CECECE;
+padding: 1px 2px;
+}
+div.dBar table.grid td.error {
+color: red;
+}
+div.dBar table.grid td.warning {
+color: #E0AD06;
+}
+div.dBar table.grid td.debug {
+font-style: italic;
+}
+div.dBar div.section {
+padding: 0;
+clear: both;
+}
+div.dBar div.title {
+background:#bbbbbb;
+padding:5px;
+font-weight: bold;
+border-bottom: 1px solid #000000;
+}
+div.dBar .content {
+margin: 7px 5px;
+}
+div.dBar button {
+margin: 4px;
+}
+.debugbutton {
+width: auto !important;
+display: inline;
+padding-left: 6px;
+padding-right: 6px;
+}
+.debugbuttonsmall {
+width: auto !important;
+display: inline;
+padding-left: 12px;
+padding-right: 12px;
+}*/
 /*********************
 
 OLD CSS STARTS HERE
