@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Unplugged Controls</title>
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/unplugged-tools/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/glyphicons.css">
+  </head>
+  <body class="homepage">
+    <div class="row header">
+      <div class="container">
+        <h1><a id="view:_id2:homelink" href="/index.html" title="Unplugged Controls">Unplugged Controls</a></h1>
+        <ul class="buttons">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+        </ul>
+      </div>
+    </div>
+    **V1.6.0 - 30th July 2013**
+
+#Introduction
+These pages contain documentation about each of the custom controls which are provided for use with Teamstudio Unplugged
+
+The aim of the controls is that you will be able to quickly build a mobile application to deploy onto Teamstudio Unplugged, which runs on iOS and Android devices. We assume that you have used XPages before, but the actual use of the controls is not difficult, so you shouldn't need to have massive experience of mobile or web development to be able to create an application.
+
+These controls should work for "normal" [[mobile web development]] as well, so they could be accessed via the web browsers on your iPhone, iPad, or Android device. 
+
+**IMPORTANT:** When running the sample application on your server, open the 'HomeLinks' view and ensure it is empty. Then open the 'Databases' view, select all documents and run the agent "Generate Home Workspace". 
+This will create the documents required to populate the home page with icons.
+
+***
+Detailed usage instructions for each control are available below.
+
+* [[unpAccordion]] - a view control for displaying categorized data
+* [[unpDebugToolbar]] - a developer toolbar similar to the full XPages Debug Toolbar available from OpenNTF
+* [[unpDialog]] - a simple control to display a modal dialog box
+* [[unpFlatView]] - a view control to display non categorized data
+* [[unpFooter]] - a simple control which displays the footer of the page
+* [[unpTabbedFooter]] - a control that displays navigation options in the footer of the page
+* [[unpFormEditor]] - a control which handles the layout and saving of data when in edit mode
+* [[unpFormViewer]] - a control which handles the layout of data in read mode and the buttons to switch into edit mode or create a response
+* [[unpHeader]] - a simple control which displays the header of the page, including a search box
+* [[unpScrollableArea]] - a control with no UI which makes anything inside it scrollable
+* [[unpSearchResults]] - a simple control to display search results
+* [[unpSwipeView]] - a control for viewing file attachments stored in documents, especially useful for images
+* [[unpNavigator]] - a menu control which will appear on the left of the screen
+* [[unpWorkspace]]- a standalone control for creating a workspace style layout of actions. Useful for large applications with lots of functions and areas
+
+***
+[[Upgrading your application]] from a previous version of the controls library can be made easier by following some of our guidelines.
+***
+
+You will be building two types of XPage, firstly the "Main" page which will handle the application layout. All of the other pages are going to be requested via Ajax so we only need to include the content section for those.
+
+#Building the UnpMain XPage
+The main XPage is going to control the display of the page including the header, views list and footer. The XML below show an example of the main page you'll want to create:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+  xmlns:unp="http://unplugged.teamstudio.com">
+  <xp:this.resources>
+    <xp:styleSheet href="/unplugged.css"></xp:styleSheet>
+  </xp:this.resources>
+  <unp:unpHeader search="database" viewsButton="true"
+    title="Teamroom" searchPage="UnpSearch.xsp">
+  </unp:unpHeader>
+  <unp:unpNavigator>
+    <unp:this.menuItem>
+      <unp:menuItem label="By Date" page="/UnpDate.xsp"
+        ajaxtargetid="content" ajaxloadid="contentwrapper">
+      </unp:menuItem>
+      <unp:menuItem label="By Type" page="/UnpType.xsp"
+        ajaxtargetid="content" ajaxloadid="contentwrapper">
+      </unp:menuItem>
+    </unp:this.menuItem>
+  </unp:unpNavigator>
+  <div id="content">
+    <unp:unpScrollableArea>
+      <xp:this.facets>
+        <unp:unpFlatView insetData="true" detailColumn="Categories"
+          summaryColumn="Topic" title="By Date"
+          viewName="(UnpDocumentsByDate)" xpageDoc="Document.xsp"
+          xp:key="facet_1" numberofrows="20" refreshmethod="pull">
+        </unp:unpFlatView>
+      </xp:this.facets>
+    </unp:unpScrollableArea>
+  </div>
+  <unp:unpFooter newDocTarget="DocumentEdit.xsp" synctype="currentdb"></unp:unpFooter>
+</xp:view>
+```
+
+As well as including [[unpHeader]] [[unpNavigator]] [[unpScrollableArea]] [[unpFlatView]] and [[unpFooter]] controls you will always want to include the unplugged.css file.
+
+You'll notice the &lt;div&gt; called "content" which is used as a placeholder into which we can load the sub XPages using Ajax.
+
+
+#Building a sub XPage
+Continuing the example above, when the user clicks the By Date link we want to load a new Sub XPage and insert the contents of it into the "content" container. This sub page is simply going to use the [[unpScrollableArea]] and [[unpFlatView]] controls and doesn't need the header or footer as they have already been loaded on the UnpMain XPage.
+
+This is the XML required for the UnpDate XPage:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+  xmlns:unp="http://unplugged.teamstudio.com">
+  <div id="content">
+    <unp:unpScrollableArea>
+      <xp:this.facets>
+        <unp:unpFlatView insetData="true"
+          detailColumn="Categories" summaryColumn="Topic" title="By Date"
+          viewName="(UnpDocumentsByDate)" xpageDoc="Document.xsp"
+          xp:key="facet_1" numberofrows="20" refreshmethod="pull">
+        </unp:unpFlatView>
+      </xp:this.facets>
+    </unp:unpScrollableArea>
+  </div>
+</xp:view>
+```
+  </body>
+</html>
