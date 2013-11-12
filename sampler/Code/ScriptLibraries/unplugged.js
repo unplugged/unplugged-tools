@@ -757,7 +757,7 @@ function expandMenuItem(menuitem) {
 							&& !$(this).hasClass("viewMenuItemSub")) {
 						return false;
 					} else if ($(this).hasClass("viewMenuItemSub")) {
-						$(this).toggle();
+						//$(this).toggle();
 						bFinishedCategory = true;
 					} else {
 						if ($(this).hasClass("viewMenuItemSubSub")
@@ -780,19 +780,23 @@ function expandMenuItem(menuitem) {
 				})
 	} else {
 		// We need to toggle a sub menu
-		var bClickedFirst = false;
+		var bClickedFirst = true;
+		var bFoundSubSub = false;
 		$(menuitem).nextAll().each(
 				function(i) {
 					if (!$(this).hasClass("viewMenuItemSub")
 							&& !$(this).hasClass("viewMenuItemSubSub")) {
+						bFoundSubSub = true;
 						return false;
 					} else {
 						if ($(this).hasClass("viewMenuItemSub")) {
-							if (!bClickedFirst) {
-								$(this).click();
-								bClickedFirst = true;
+							if (!bFoundSubSub){
+								if (!bClickedFirst) {
+									$(this).click();
+									bClickedFirst = true;
+								}
+								$(this).toggle();
 							}
-							$(this).toggle();
 						}
 					}
 				});
