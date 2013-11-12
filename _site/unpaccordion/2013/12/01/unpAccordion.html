@@ -56,18 +56,15 @@
 <p>The &#8216;Load More&#8217; function is defaulted to 12 rows before it is rendered. This is editable within the required UnpAccordionViewList.xsp XPage. This uses AJAX requests to retrieve chunks of data to be inserted into each category to display more info.</p>
 
 <p>This control requires that the view have the first, and only the first, column categorized and up to 2 additional columns of flat data that will be displayed in the row data presented to the user. Column 2 in the view will be in blue text while column 3 will be in black underneath the data presented from column 2.</p>
-
-<p><code>xml 
-&lt;div id=&quot;content&quot;&gt;
-	&lt;xc:unpScrollableArea&gt;&lt;xp:this.facets&gt;
-	    &lt;xc:unpAccordion xp:key=&quot;facet_1&quot;
-		viewName=&quot;EmployessCatByDept&quot; xpage=&quot;Employee.xsp&quot;
-		position=&quot;left-aligned&quot; insetData=&quot;true&quot;&gt;
-	    &lt;/xc:unpAccordion&gt;&lt;/xp:this.facets&gt;
-        &lt;/xc:unpScrollableArea&gt;
-&lt;/div&gt;
-</code></p>
-
+<pre class='CICodeFormatter'><code class='CICodeFormatter'> &lt;div id="content"&gt;  
+      &lt;xc:unpScrollableArea&gt;&lt;xp:this.facets&gt;  
+        &lt;xc:unpAccordion xp:key="facet_1"  
+           viewName="EmployessCatByDept" xpage="Employee.xsp"  
+           position="left-aligned" insetData="true"&gt;  
+        &lt;/xc:unpAccordion&gt;&lt;/xp:this.facets&gt;  
+     &lt;/xc:unpScrollableArea&gt;  
+ &lt;/div&gt;  
+</code></pre>
 <h1 id='required_resources'>Required Resources</h1>
 
 <p>When you use the Accordion custom control make sure you have the following resources in your application:</p>

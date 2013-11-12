@@ -28,16 +28,16 @@ The 'Load More' function is defaulted to 12 rows before it is rendered. This is 
 
 This control requires that the view have the first, and only the first, column categorized and up to 2 additional columns of flat data that will be displayed in the row data presented to the user. Column 2 in the view will be in blue text while column 3 will be in black underneath the data presented from column 2.
 
-```xml 
-<div id="content">
-	<xc:unpScrollableArea><xp:this.facets>
-	    <xc:unpAccordion xp:key="facet_1"
-		viewName="EmployessCatByDept" xpage="Employee.xsp"
-		position="left-aligned" insetData="true">
-	    </xc:unpAccordion></xp:this.facets>
-        </xc:unpScrollableArea>
-</div>
-```
+
+<pre class="CICodeFormatter" ><code class="CICodeFormatter"> &lt;div id="content"&gt;  
+      &lt;xc:unpScrollableArea&gt;&lt;xp:this.facets&gt;  
+        &lt;xc:unpAccordion xp:key="facet_1"  
+           viewName="EmployessCatByDept" xpage="Employee.xsp"  
+           position="left-aligned" insetData="true"&gt;  
+        &lt;/xc:unpAccordion&gt;&lt;/xp:this.facets&gt;  
+     &lt;/xc:unpScrollableArea&gt;  
+ &lt;/div&gt;  
+</code></pre>
 
 # Required Resources
 When you use the Accordion custom control make sure you have the following resources in your application:
