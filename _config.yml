@@ -2,5 +2,3 @@ safe: true
 lsi: false
 pygments: true
 *source: unplugged-tools
-baseurl: /unplugged-tools
-urlprefix: /unplugged-tools/
