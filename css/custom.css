@@ -517,3 +517,37 @@ body.homepage {
 .table-striped td:last-child .btn {
 	float: right;
 }
+
+#controlslist {
+	display: block;
+	padding-bottom: 150px;
+}
+#controlslist li {
+	float: left;
+	width: 20%;
+	padding: 5px;
+	border: 1 px solid black;
+}
+
+.post p img {
+	max-width: 500px;
+	max-height: 500px;
+	padding: 4px;
+    line-height: 1.428571429;
+    background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	display: inline-block;
+	height: auto;
+}
+
+.post ul {
+	list-style-type: disc;
+	padding-left: 20px;
+	padding-bottom: 5px;
+}
+.post ul li {
+	padding-top: 5px;
+}

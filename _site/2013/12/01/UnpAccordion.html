@@ -22,14 +22,17 @@
         </ul>
       </div>
     </div>
-    <div class="row footer">
+    <ol class="breadcrumb">
+  <li><a href="/unplugged-tools/documentation.html">Documentation</a></li>
+  <li class="active">UnpAccordion</li>
+</ol>
+<div class="row footer">
     <div class="container">
-		<h2>UnpAccordion</h2>
 
 		<div class="post">
-			<p>To display a categorized view use the Accordion Control.</p>
+			<p>The Accordion control is used to display a categorised view of data. A category can be exapnded by tapping it and the documents will be revealed. This is a great way of showing data in a more organised way.</p>
 
-<p><img alt='Accordion' src='http://teamstudio.s3.amazonaws.com/accordion.png' /></p>
+<p><img alt='Accordion iPad' src='/unplugged-tools/images/accordion-ipad.png' /> <img alt='Accordion iPhone' src='/unplugged-tools/images/accordion-iphone.png' /></p>
 
 <p>This control is required to be wrapped in a <span><span>unpScrollableArea</span></span> control and you must include the unplugged.css as a resource on your XPage.</p>
 
@@ -38,7 +41,7 @@
 <p>Drag the control onto your XPage and complete the following Custom Properties:</p>
 
 <ul>
-<li>ajaxload: option to load pages via ajax for smoother transition or full page load - default is to load by ajax</li>
+<li>ajaxload: option to load pages via ajax for smoother transition or full page load - default (blank or Yes) is to load by ajax</li>
 
 <li>dbName: optional parameter to specify which database the view you want to open is located in. The database path should be delimited with forward slashes (e.g. mydir/mydb.nsf). Leave blank for the same db</li>
 
@@ -50,42 +53,25 @@
 
 <li>insetData: gives a rounded look and feel with padding. Default is true.</li>
 
-<li>postion: whether the view will position itself to work in conjunction with the <span><span>UnpViewsList</span></span> control (Landscape mode on tablet). By default it will choose left-aligned as if you are not using the UnpViewsList control and will fill the width of the screen. <strong>Note:</strong> For wider tablets this can render the contents overflowing the left of the screen. Current workaround is to add class=&#8221;left-aligned&#8221; to the div id=&#8221;content element&#8221;.</li>
+<li>postion: whether the view will position itself to work in conjunction with the UnpViewsList control (Landscape mode on tablet). By default it will choose left-aligned as if you are not using the UnpViewsList control and will fill the width of the screen.</li>
 </ul>
 
 <p>The &#8216;Load More&#8217; function is defaulted to 12 rows before it is rendered. This is editable within the required UnpAccordionViewList.xsp XPage. This uses AJAX requests to retrieve chunks of data to be inserted into each category to display more info.</p>
 
 <p>This control requires that the view have the first, and only the first, column categorized and up to 2 additional columns of flat data that will be displayed in the row data presented to the user. Column 2 in the view will be in blue text while column 3 will be in black underneath the data presented from column 2.</p>
-<pre class='CICodeFormatter'><code class='CICodeFormatter'> &lt;div id="content"&gt;  
-      &lt;xc:unpScrollableArea&gt;&lt;xp:this.facets&gt;  
-        &lt;xc:unpAccordion xp:key="facet_1"  
-           viewName="EmployessCatByDept" xpage="Employee.xsp"  
-           position="left-aligned" insetData="true"&gt;  
-        &lt;/xc:unpAccordion&gt;&lt;/xp:this.facets&gt;  
-     &lt;/xc:unpScrollableArea&gt;  
- &lt;/div&gt;  
-</code></pre>
+<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;unp:unpScrollableArea&gt;</span>
+	<span class='nt'>&lt;xp:this.facets&gt;</span>
+		<span class='nt'>&lt;unp:unpAccordion</span> <span class='na'>xp:key=</span><span class='s'>&quot;facet_1&quot;</span> <span class='na'>viewName=</span><span class='s'>&quot;People By Country&quot;</span>
+			<span class='na'>insetData=</span><span class='s'>&quot;true&quot;</span> <span class='na'>expandfirstcategory=</span><span class='s'>&quot;yes&quot;</span> <span class='na'>xpage=</span><span class='s'>&quot;/FormsReadMode.xsp&quot;</span><span class='nt'>&gt;</span>
+		<span class='nt'>&lt;/unp:unpAccordion&gt;</span>
+	<span class='nt'>&lt;/xp:this.facets&gt;</span>
+<span class='nt'>&lt;/unp:unpScrollableArea&gt;</span>
+</code></pre></div>
 <h1 id='required_resources'>Required Resources</h1>
 
-<p>When you use the Accordion custom control make sure you have the following resources in your application:</p>
+<p>On the assumption you are using UnpHeader in your application then no extra resources are required.</p>
 
-<ul>
-<li>unp/jquery-1.7.2.min.js</li>
-
-<li>unp/jquery.blockUI.min.js</li>
-
-<li>unp/iScroll.min.js</li>
-
-<li>unplugged.js</li>
-
-<li>unpCommon.jss</li>
-
-<li>unplugged.css</li>
-
-<li>unp/right-arrow-circle.png</li>
-
-<li>UnpAccordionViewList (XPage)</li>
-</ul>
+<p>If you are not using UnpHeader, then make sure you add all of the resources included in UnpHeader to your UnpMain XPage.</p>
 	  	</div>
 	</div>
 </div>
