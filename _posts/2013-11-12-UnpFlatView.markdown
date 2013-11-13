@@ -2,7 +2,6 @@
 layout: post
 title:  "UnpFlatView"
 date:   2013-12-01 17:00
-categories: UnpFlatView
 ---
 
 # Function

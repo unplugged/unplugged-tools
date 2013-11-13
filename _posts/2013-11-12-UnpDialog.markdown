@@ -2,7 +2,6 @@
 layout: post
 title:  "UnpDialog"
 date:   2013-12-01 17:00
-categories: UnpDialog
 ---
 
 # Function

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Generic Classes</title>
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/unplugged-tools/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/glyphicons.css">
+  </head>
+  <body class="homepage">
+    <div class="row header">
+      <div class="container">
+        <h1><a id="view:_id2:homelink" href="index.html" title="Unplugged Controls">Unplugged Controls</a></h1>
+        <ul class="buttons">
+          <li><a href="/unplugged-tools/index.html">Home</a></li>
+          <li><a href="/unplugged-tools/documentation.html">Documentation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row footer">
+    <div class="container">
+		<h2>Generic Classes</h2>
+
+		<div class="post">
+			<p>When using the unpFormViewer and unpFormEditor controls you can make use of the following CSS classes for buttons, fieldsets and panels;</p>
+
+<ol>
+<li>panel - adds a curved corner surround to a div</li>
+
+<li>fieldset - a definition is created to layout fieldsets, no class name required</li>
+
+<li>left-aligned - will always left align a panel or container regardless of device orientation</li>
+
+<li>button - a class which creates a generic button, can be used in conjunction with&#8230;</li>
+
+<li>savebutton - a save button to be used in conjunction with .button</li>
+
+<li>editbutton - an edit button to be used in conjunction with .button</li>
+
+<li>cancelbutton - a cancel button to be used in conjunction with .button</li>
+</ol>
+<style type='text/css'>
+pre.CICodeFormatter{
+	font-family:arial;
+	font-size:12px;
+	border:1px dashed #CCCCCC;
+	width:99%;
+	height:auto;
+	overflow:auto;
+	background:#f0f0f0;
+	line-height:20px;
+	
+	padding:0px;
+	color:#000000;
+	text-align:left;
+}
+pre.CICodeFormatter code{
+	color:#000000;
+	word-wrap:normal;
+}
+</style><pre class='CICodeFormatter'><code class='CICodeFormatter'>      &lt;div class="panel"&gt;  
+           This is a panel (or div) with &amp;#160;  
+           &lt;strong&gt; .panel &lt;/strong&gt;  
+           &amp;#160; class assigned  
+      &lt;/div&gt;  
+      &lt;fieldset&gt;  
+           &lt;legend&gt;This is a fieldset&lt;/legend&gt;  
+           The contents are treated the same as the panel above  
+      &lt;/fieldset&gt;  
+      &lt;div class="panel left-aligned"&gt;  
+           This panel will always be left-aligned  
+      &lt;/div&gt;  
+      &lt;div style="padding-top:5px;"&gt;  
+           &lt;input type="button" class="button" value="Generic Button (.button)" /&gt;  
+      &lt;/div&gt;  
+      &lt;div style="padding-top:5px;"&gt;  
+           &lt;input type="button" class="button savebutton"  
+                value="Save Button (.button .savebutton)" /&gt;  
+      &lt;/div&gt;  
+      &lt;div style="padding-top:5px;"&gt;  
+           &lt;input type="button" class="button editbutton"  
+                value="Edit Button (.button .editbutton)" /&gt;  
+      &lt;/div&gt;  
+      &lt;div style="padding-top:5px;"&gt;  
+           &lt;input type="button" class="button cancelbutton"  
+                value="Cancel Button (.button .cancelbutton)" /&gt;  
+      &lt;/div&gt;  
+</code></pre>
+	  	</div>
+	</div>
+</div>
+
+  </body>
+</html>

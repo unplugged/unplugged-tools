@@ -2,7 +2,6 @@
 layout: post
 title:  "UnpWorkspace"
 date:   2013-12-01 17:00
-categories: UnpWorkspace
 ---
 
 To display a Workspace similar to the home page of Unplugged

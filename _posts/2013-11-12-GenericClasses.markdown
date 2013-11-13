@@ -2,7 +2,6 @@
 layout: post
 title:  "Generic Classes"
 date:   2013-12-01 17:00
-categories: GenericClasses
 ---
 
 When using the unpFormViewer and unpFormEditor controls you can make use of the following CSS classes for buttons, fieldsets and panels;

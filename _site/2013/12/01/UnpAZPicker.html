@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>UnpAZPicker</title>
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/unplugged-tools/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/unplugged-tools/css/glyphicons.css">
+  </head>
+  <body class="homepage">
+    <div class="row header">
+      <div class="container">
+        <h1><a id="view:_id2:homelink" href="index.html" title="Unplugged Controls">Unplugged Controls</a></h1>
+        <ul class="buttons">
+          <li><a href="/unplugged-tools/index.html">Home</a></li>
+          <li><a href="/unplugged-tools/documentation.html">Documentation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row footer">
+    <div class="container">
+		<h2>UnpAZPicker</h2>
+
+		<div class="post">
+			<h1 id='function'>Function</h1>
+
+<p>This control displays single letters down the right side of a View for searching. The results are displayed in a similar way to the <span><span>unpFlatView</span></span> control.</p>
+
+<p><img alt='Alphabet Bar' src='http://teamstudio.s3.amazonaws.com/atozcontrol.png' /></p>
+
+<p>The control will work when integrated with <span><span>unpFlatView</span></span></p>
+
+<h1 id='usage'>Usage</h1>
+
+<p>The search facility will display results from a view (given in the Custom Property &#8216;viewName&#8217;) matching the letter selected with the first letter of the contents in the first column (sorted Ascending).</p>
+
+<p>The results will be displayed in the same XPage as this picker will work on the contents rendered in the HTML DOM (within the UnpFlatView). Because of this; it is not recommended to use the UnpAZPicker when displaying 500+ line items. The current devices and webkit internal browsers do not perform well enough to traverse and re-render this much data populated in the HTML DOM at one time (obviously we expect this to improve over time with updates to devices). In the case where 500+ line items are required use either the dbSearch in <span><span>UnpHeader</span></span> and <span><span>UnpSearchResults</span></span> or use the <span><span>UnpAccordion</span></span> with a categorized view.</p>
+
+<p>Drag the control onto your XPage, outside the <span><span>UnpScrollableArea</span></span> control but within the div id=content element.</p>
+
+<p>In the <span><span>UnpFlatView</span></span> control set the Custom Property enableAZPicker to yes</p>
+<pre class='CICodeFormatter'><code class='CICodeFormatter'>      &lt;div id="content"&gt;  
+           &lt;unp:unpScrollableArea&gt;  
+                &lt;xp:this.facets&gt;  
+                     &lt;unp:unpFlatView insetData="true" detailColumn="Dept"  
+                          summaryColumn="Name" title="Employees in Finances"  
+                          numberofrows="20" categoryfilter="Finances"  
+                          viewName="EmployeesCatByDept" refreshmethod="pull"  
+                          xpageDoc="Employee.xsp" xp:key="facet_1" enableAZPicker="yes"&gt;  
+                     &lt;/unp:unpFlatView&gt;  
+                &lt;/xp:this.facets&gt;  
+           &lt;/unp:unpScrollableArea&gt;  
+           &lt;unp:unpAZPicker&gt;&lt;/unp:unpAZPicker&gt;  
+      &lt;/div&gt;  
+</code></pre>
+<h1 id='required_resources'>Required Resources</h1>
+
+<p>When you use the custom control make sure that you have the following resources in your application:</p>
+
+<ul>
+<li>unp/jquery-1.7.2.min.js</li>
+
+<li>unplugged.js</li>
+
+<li>unpluggedSearchDatabase.js</li>
+
+<li>unpCommon.jss</li>
+
+<li>unplugged.css</li>
+</ul>
+	  	</div>
+	</div>
+</div>
+
+  </body>
+</html>
