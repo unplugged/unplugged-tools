@@ -35,7 +35,7 @@
 
 <p>The Dialog control allows you to add a Dialog box to a page. It will display &#8220;over&#8221; the rest of the content of the page and will show 2 buttons: OK and Cancel.</p>
 
-<p><img alt='Dialog' src='http://teamstudio.s3.amazonaws.com/dialog.png' /></p>
+<p><img alt='Accordion iPad' src='/images/dialog-ipad.png' /> <img alt='Accordion iPhone' src='/images/dialog-iphone.png' /></p>
 
 <p>If the user clicks cancel the dialog will be hidden.</p>
 
@@ -43,7 +43,7 @@
 
 <p>The content of the dialog box is populated by adding the text or fields into the editable area on the XPage that you create.</p>
 
-<p>If the content of the dialog box is too tall for the page then make sure to use the <span><span>unpScrollableArea</span></span> control inside the editable area.</p>
+<p>If the content of the dialog box is too tall for the page then make sure to use the unpScrollableArea control inside the editable area.</p>
 
 <p>For an example of the Dialog in action download the samples database and open the XPage called UnpDemoDialog</p>
 
@@ -56,7 +56,7 @@
       &lt;/xp:this.facets&gt;  
  &lt;/xc:unpDialog&gt;  
 </code></pre>
-<p>In this example the Dialog will show with the words &#8220;Content goes here&#8221; in the body. Below that will be the OK and Cancel buttons. When the OK button is pressed a JavaScript function call &#8220;myFunction()&#8221; will be executed, remember to write that function.</p>
+<p>In this example the Dialog will show with the words &#8220;Content goes here&#8221; in the body. Below that will be the OK and Cancel buttons. When the OK button is pressed a JavaScript function call &#8220;myFunction()&#8221; will be executed, remember to write that function in client side script and have it available on the main page of your application.</p>
 
 <p>To show the dialog add HTML in the following format:</p>
 <pre class='CICodeFormatter'><code class='CICodeFormatter'> &lt;a href="#dialogPopup" class="opendialoglink"&gt;  
@@ -67,21 +67,9 @@
 
 <h1 id='required_resources'>Required Resources</h1>
 
-<p>When you use the Dialog custom control make sure that you have the following resources in your application:</p>
+<p>On the assumption you are using UnpHeader in your application then no extra resources are required.</p>
 
-<ul>
-<li>unp/jquery-1.7.2.min.js</li>
-
-<li>unp/jquery.blockUI.min.js</li>
-
-<li>unp/iScroll.min.js</li>
-
-<li>unplugged.js</li>
-
-<li>unpCommon.jss</li>
-
-<li>unplugged.css</li>
-</ul>
+<p>If you are not using UnpHeader, then make sure you add all of the resources included in UnpHeader to your UnpMain XPage.</p>
 </div>
 
       </div>

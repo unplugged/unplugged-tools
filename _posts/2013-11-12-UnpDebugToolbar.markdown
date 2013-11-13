@@ -12,7 +12,9 @@ To display developer information such as logs and error messages use this contro
 
 Drag the control onto your XPage, add the unpDebugToolbar Script Library to resources and complete the following Custom Properties:
 
-* defaultCollapsed: boolean which decides whether the toolbar is expanded or collapsed when the page opens
+<dl class="dl-horizontal">
+	<dt>defaultCollapsed</dt><dd>boolean which decides whether the toolbar is expanded or collapsed when the page opens</dd>
+</dl>
 
 The toolbar offers several extra tools:
 
