@@ -32,52 +32,36 @@
     <div class="container">
 
 		<div class="post">
-			<h1 id='function'>Function</h1>
+			<p>This control displays single letters down the right side of a View for quick searching, it integrates as an add on when using the UnpFlatView control.</p>
 
-<p>This control displays single letters down the right side of a View for searching. The results are displayed in a similar way to the <span><span>unpFlatView</span></span> control.</p>
-
-<p><img alt='Alphabet Bar' src='http://teamstudio.s3.amazonaws.com/atozcontrol.png' /></p>
-
-<p>The control will work when integrated with <span><span>unpFlatView</span></span></p>
+<p><img alt='A-Z Picker iPad' src='/unplugged-tools/images/azpicker-ipad.png' /> <img alt='A-Z Picker iPhone' src='/unplugged-tools/images/azpicker-iphone.png' /></p>
 
 <h1 id='usage'>Usage</h1>
 
-<p>The search facility will display results from a view (given in the Custom Property &#8216;viewName&#8217;) matching the letter selected with the first letter of the contents in the first column (sorted Ascending).</p>
+<p>The search facility will display results from a view (given in the Custom Property &#8216;viewName&#8217;) matching the letter selected with the first letter of the contents in the first column (sorted Ascending). For the best results we recommend that you output a categorized view to the FlatView control, and have the category be the first letter, as per the screenshots above.</p>
 
-<p>The results will be displayed in the same XPage as this picker will work on the contents rendered in the HTML DOM (within the UnpFlatView). Because of this; it is not recommended to use the UnpAZPicker when displaying 500+ line items. The current devices and webkit internal browsers do not perform well enough to traverse and re-render this much data populated in the HTML DOM at one time (obviously we expect this to improve over time with updates to devices). In the case where 500+ line items are required use either the dbSearch in <span><span>UnpHeader</span></span> and <span><span>UnpSearchResults</span></span> or use the <span><span>UnpAccordion</span></span> with a categorized view.</p>
+<p>The results will be displayed in the same XPage as this picker will work on the contents rendered in the HTML DOM (within the UnpFlatView). Because of this; it is not recommended to use the UnpAZPicker when displaying 500+ line items. The current devices and webkit internal browsers do not perform well enough to traverse and re-render this much data populated in the HTML DOM at one time (obviously we expect this to improve over time with updates to devices). In the case where 500+ line items are required use either the dbSearch in UnpHeader and UnpSearchResults or use the UnpAccordion with a categorized view.</p>
 
-<p>Drag the control onto your XPage, outside the <span><span>UnpScrollableArea</span></span> control but within the div id=content element.</p>
+<p>Drag the control onto your XPage, outside the UnpScrollableArea control but within the div id=content element.</p>
 
-<p>In the <span><span>UnpFlatView</span></span> control set the Custom Property enableAZPicker to yes</p>
-<pre class='CICodeFormatter'><code class='CICodeFormatter'>      &lt;div id="content"&gt;  
-           &lt;unp:unpScrollableArea&gt;  
-                &lt;xp:this.facets&gt;  
-                     &lt;unp:unpFlatView insetData="true" detailColumn="Dept"  
-                          summaryColumn="Name" title="Employees in Finances"  
-                          numberofrows="20" categoryfilter="Finances"  
-                          viewName="EmployeesCatByDept" refreshmethod="pull"  
-                          xpageDoc="Employee.xsp" xp:key="facet_1" enableAZPicker="yes"&gt;  
-                     &lt;/unp:unpFlatView&gt;  
-                &lt;/xp:this.facets&gt;  
-           &lt;/unp:unpScrollableArea&gt;  
-           &lt;unp:unpAZPicker&gt;&lt;/unp:unpAZPicker&gt;  
-      &lt;/div&gt;  
-</code></pre>
+<p>In the UnpFlatView control set the Custom Property enableAZPicker to &#8220;yes&#8221;</p>
+<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;unp:unpScrollableArea&gt;</span>
+  <span class='nt'>&lt;xp:this.facets&gt;</span>
+    <span class='nt'>&lt;unp:unpFlatView</span> <span class='na'>insetData=</span><span class='s'>&quot;true&quot;</span> <span class='na'>detailColumn=</span><span class='s'>&quot;Company&quot;</span>
+      <span class='na'>summaryColumn=</span><span class='s'>&quot;FullName&quot;</span> <span class='na'>title=</span><span class='s'>&quot;People from Singapore&quot;</span> <span class='na'>viewName=</span><span class='s'>&quot;People By Country Filter&quot;</span>
+      <span class='na'>xpageDoc=</span><span class='s'>&quot;FormsReadMode.xsp&quot;</span> <span class='na'>xp:key=</span><span class='s'>&quot;facet_1&quot;</span> <span class='na'>numberofrows=</span><span class='s'>&quot;200&quot;</span>
+      <span class='na'>refreshmethod=</span><span class='s'>&quot;pull&quot;</span> <span class='na'>position=</span><span class='s'>&quot;menu-aligned&quot;</span> <span class='na'>photoColumn=</span><span class='s'>&quot;Photo&quot;</span>
+      <span class='na'>wrapsummarytext=</span><span class='s'>&quot;yes&quot;</span> <span class='na'>categoryfilter=</span><span class='s'>&quot;Singapore&quot;</span> <span class='na'>categoryindex=</span><span class='s'>&quot;1&quot;</span> <span class='na'>enableAZPicker=</span><span class='s'>&quot;yes&quot;</span><span class='nt'>&gt;</span>
+    <span class='nt'>&lt;/unp:unpFlatView&gt;</span>
+  <span class='nt'>&lt;/xp:this.facets&gt;</span>
+<span class='nt'>&lt;/unp:unpScrollableArea&gt;</span>
+<span class='nt'>&lt;unp:unpAZPicker&gt;&lt;/unp:unpAZPicker&gt;</span>
+</code></pre></div>
 <h1 id='required_resources'>Required Resources</h1>
 
-<p>When you use the custom control make sure that you have the following resources in your application:</p>
+<p>On the assumption you are using UnpHeader in your application then no extra resources are required.</p>
 
-<ul>
-<li>unp/jquery-1.7.2.min.js</li>
-
-<li>unplugged.js</li>
-
-<li>unpluggedSearchDatabase.js</li>
-
-<li>unpCommon.jss</li>
-
-<li>unplugged.css</li>
-</ul>
+<p>If you are not using UnpHeader, then make sure you add all of the resources included in UnpHeader to your UnpMain XPage.</p>
 	  	</div>
 	</div>
 </div>

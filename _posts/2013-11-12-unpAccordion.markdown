@@ -28,7 +28,15 @@ The 'Load More' function is defaulted to 12 rows before it is rendered. This is 
 
 This control requires that the view have the first, and only the first, column categorized and up to 2 additional columns of flat data that will be displayed in the row data presented to the user. Column 2 in the view will be in blue text while column 3 will be in black underneath the data presented from column 2.
 
-
+{% highlight xml %}
+<unp:unpScrollableArea>
+	<xp:this.facets>
+		<unp:unpAccordion xp:key="facet_1" viewName="People By Country"
+			insetData="true" expandfirstcategory="yes" xpage="/FormsReadMode.xsp">
+		</unp:unpAccordion>
+	</xp:this.facets>
+</unp:unpScrollableArea>
+{% endhighlight %}
 
 # Required Resources
 On the assumption you are using UnpHeader in your application then no extra resources are required.

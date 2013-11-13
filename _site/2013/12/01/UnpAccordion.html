@@ -53,7 +53,14 @@
 <p>The &#8216;Load More&#8217; function is defaulted to 12 rows before it is rendered. This is editable within the required UnpAccordionViewList.xsp XPage. This uses AJAX requests to retrieve chunks of data to be inserted into each category to display more info.</p>
 
 <p>This control requires that the view have the first, and only the first, column categorized and up to 2 additional columns of flat data that will be displayed in the row data presented to the user. Column 2 in the view will be in blue text while column 3 will be in black underneath the data presented from column 2.</p>
-
+<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;unp:unpScrollableArea&gt;</span>
+	<span class='nt'>&lt;xp:this.facets&gt;</span>
+		<span class='nt'>&lt;unp:unpAccordion</span> <span class='na'>xp:key=</span><span class='s'>&quot;facet_1&quot;</span> <span class='na'>viewName=</span><span class='s'>&quot;People By Country&quot;</span>
+			<span class='na'>insetData=</span><span class='s'>&quot;true&quot;</span> <span class='na'>expandfirstcategory=</span><span class='s'>&quot;yes&quot;</span> <span class='na'>xpage=</span><span class='s'>&quot;/FormsReadMode.xsp&quot;</span><span class='nt'>&gt;</span>
+		<span class='nt'>&lt;/unp:unpAccordion&gt;</span>
+	<span class='nt'>&lt;/xp:this.facets&gt;</span>
+<span class='nt'>&lt;/unp:unpScrollableArea&gt;</span>
+</code></pre></div>
 <h1 id='required_resources'>Required Resources</h1>
 
 <p>On the assumption you are using UnpHeader in your application then no extra resources are required.</p>
