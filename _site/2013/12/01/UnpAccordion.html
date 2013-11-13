@@ -14,11 +14,13 @@
   </head>
   <body class="homepage">
     <div class="row header">
+      <div class="text-right text-muted"><strong>V3.0 - 1st December 2013</strong></div>
       <div class="container">
         <h1><a id="view:_id2:homelink" href="index.html" title="Unplugged Controls">Unplugged Controls</a></h1>
         <ul class="buttons">
           <li><a href="/unplugged-tools/index.html">Home</a></li>
           <li><a href="/unplugged-tools/documentation.html">Documentation</a></li>
+
         </ul>
       </div>
     </div>
@@ -39,34 +41,19 @@
 <h1 id='usage'>Usage</h1>
 
 <p>Drag the control onto your XPage and complete the following Custom Properties:</p>
-
-<ul>
-<li>ajaxload: option to load pages via ajax for smoother transition or full page load - default (blank or Yes) is to load by ajax</li>
-
-<li>dbName: optional parameter to specify which database the view you want to open is located in. The database path should be delimited with forward slashes (e.g. mydir/mydb.nsf). Leave blank for the same db</li>
-
-<li>viewName: the name of the view to get data from</li>
-
-<li>expandfirstcategory: boolean - the first category&#8217;s contents can be displayed &#8216;open&#8217;</li>
-
-<li>xpage: the name of the XPage to open documents in the view with</li>
-
-<li>insetData: gives a rounded look and feel with padding. Default is true.</li>
-
-<li>postion: whether the view will position itself to work in conjunction with the UnpViewsList control (Landscape mode on tablet). By default it will choose left-aligned as if you are not using the UnpViewsList control and will fill the width of the screen.</li>
-</ul>
-
+<dl class='dl-horizontal'>
+	<dt>ajaxload</dt><dd>option to load pages via ajax for smoother transition or full page load - default (blank or Yes) is to load by ajax</dd>
+	<dt>dbName</dt><dd>optional parameter to specify which database the view you want to open is located in. The database path should be delimited with forward slashes (e.g. mydir/mydb.nsf). Leave blank for the same db </dd>
+	<dt>viewName</dt><dd>the name of the view to get data from</dd>
+	<dt>expandfirstcategory</dt><dd>boolean - the first category's contents can be displayed 'open'</dd>
+	<dt>xpage</dt><dd>the name of the XPage to open documents in the view with</dd>
+	<dt>insetData</dt><dd>gives a rounded look and feel with padding. Default is true.</dd>
+	<dt>postion</dt><dd>whether the view will position itself to work in conjunction with the UnpViewsList control (Landscape mode on tablet). By default it will choose left-aligned as if you are not using the UnpViewsList control and will fill the width of the screen. </dd>
+</dl>
 <p>The &#8216;Load More&#8217; function is defaulted to 12 rows before it is rendered. This is editable within the required UnpAccordionViewList.xsp XPage. This uses AJAX requests to retrieve chunks of data to be inserted into each category to display more info.</p>
 
 <p>This control requires that the view have the first, and only the first, column categorized and up to 2 additional columns of flat data that will be displayed in the row data presented to the user. Column 2 in the view will be in blue text while column 3 will be in black underneath the data presented from column 2.</p>
-<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;unp:unpScrollableArea&gt;</span>
-	<span class='nt'>&lt;xp:this.facets&gt;</span>
-		<span class='nt'>&lt;unp:unpAccordion</span> <span class='na'>xp:key=</span><span class='s'>&quot;facet_1&quot;</span> <span class='na'>viewName=</span><span class='s'>&quot;People By Country&quot;</span>
-			<span class='na'>insetData=</span><span class='s'>&quot;true&quot;</span> <span class='na'>expandfirstcategory=</span><span class='s'>&quot;yes&quot;</span> <span class='na'>xpage=</span><span class='s'>&quot;/FormsReadMode.xsp&quot;</span><span class='nt'>&gt;</span>
-		<span class='nt'>&lt;/unp:unpAccordion&gt;</span>
-	<span class='nt'>&lt;/xp:this.facets&gt;</span>
-<span class='nt'>&lt;/unp:unpScrollableArea&gt;</span>
-</code></pre></div>
+
 <h1 id='required_resources'>Required Resources</h1>
 
 <p>On the assumption you are using UnpHeader in your application then no extra resources are required.</p>

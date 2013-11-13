@@ -551,3 +551,7 @@ body.homepage {
 .post ul li {
 	padding-top: 5px;
 }
+
+.text-right {
+	padding-right: 30px;
+}
