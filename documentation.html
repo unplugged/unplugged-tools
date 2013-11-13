@@ -24,7 +24,7 @@ This will create the documents required to populate the home page with icons.</p
 <ul>
   {% for post in site.posts order:ascending %}
     <li>
-      <a href="{{ site.url }}/{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ site.urlprefix }}{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
