@@ -6,8 +6,8 @@ date:   2013-12-01 17:00
 
 The Accordion control is used to display a categorised view of data. A category can be exapnded by tapping it and the documents will be revealed. This is a great way of showing data in a more organised way.
 
-![Accordion iPad](/unplugged-tools/images/accordion-ipad.png)
-![Accordion iPhone](/unplugged-tools/images/accordion-iphone.png)
+![Accordion iPad]({{ site.baseurl}}/images/accordion-ipad.png)
+![Accordion iPhone]({{ site.baseurl}}/images/accordion-iphone.png)
 
 This control is required to be wrapped in a [[unpScrollableArea]] control and you must include the unplugged.css as a resource on your XPage.
 
