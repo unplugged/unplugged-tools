@@ -18,7 +18,7 @@ Drag the control onto your XPage, outside the UnpScrollableArea control but with
 
 In the UnpFlatView control set the Custom Property enableAZPicker to "yes"
 
-{% highlight xml %}
+```xml
 <unp:unpScrollableArea>
   <xp:this.facets>
     <unp:unpFlatView insetData="true" detailColumn="Company"
@@ -30,7 +30,7 @@ In the UnpFlatView control set the Custom Property enableAZPicker to "yes"
   </xp:this.facets>
 </unp:unpScrollableArea>
 <unp:unpAZPicker></unp:unpAZPicker>
-{% endhighlight %}
+```
 
 # Required Resources
 On the assumption you are using UnpHeader in your application then no extra resources are required.

@@ -44,18 +44,21 @@
 <p>Drag the control onto your XPage, outside the UnpScrollableArea control but within the div id=content element.</p>
 
 <p>In the UnpFlatView control set the Custom Property enableAZPicker to &#8220;yes&#8221;</p>
-<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;unp:unpScrollableArea&gt;</span>
-  <span class='nt'>&lt;xp:this.facets&gt;</span>
-    <span class='nt'>&lt;unp:unpFlatView</span> <span class='na'>insetData=</span><span class='s'>&quot;true&quot;</span> <span class='na'>detailColumn=</span><span class='s'>&quot;Company&quot;</span>
-      <span class='na'>summaryColumn=</span><span class='s'>&quot;FullName&quot;</span> <span class='na'>title=</span><span class='s'>&quot;People from Singapore&quot;</span> <span class='na'>viewName=</span><span class='s'>&quot;People By Country Filter&quot;</span>
-      <span class='na'>xpageDoc=</span><span class='s'>&quot;FormsReadMode.xsp&quot;</span> <span class='na'>xp:key=</span><span class='s'>&quot;facet_1&quot;</span> <span class='na'>numberofrows=</span><span class='s'>&quot;200&quot;</span>
-      <span class='na'>refreshmethod=</span><span class='s'>&quot;pull&quot;</span> <span class='na'>position=</span><span class='s'>&quot;menu-aligned&quot;</span> <span class='na'>photoColumn=</span><span class='s'>&quot;Photo&quot;</span>
-      <span class='na'>wrapsummarytext=</span><span class='s'>&quot;yes&quot;</span> <span class='na'>categoryfilter=</span><span class='s'>&quot;Singapore&quot;</span> <span class='na'>categoryindex=</span><span class='s'>&quot;1&quot;</span> <span class='na'>enableAZPicker=</span><span class='s'>&quot;yes&quot;</span><span class='nt'>&gt;</span>
-    <span class='nt'>&lt;/unp:unpFlatView&gt;</span>
-  <span class='nt'>&lt;/xp:this.facets&gt;</span>
-<span class='nt'>&lt;/unp:unpScrollableArea&gt;</span>
-<span class='nt'>&lt;unp:unpAZPicker&gt;&lt;/unp:unpAZPicker&gt;</span>
-</code></pre></div>
+
+<p><code>xml
+&lt;unp:unpScrollableArea&gt;
+  &lt;xp:this.facets&gt;
+    &lt;unp:unpFlatView insetData=&quot;true&quot; detailColumn=&quot;Company&quot;
+      summaryColumn=&quot;FullName&quot; title=&quot;People from Singapore&quot; viewName=&quot;People By Country Filter&quot;
+      xpageDoc=&quot;FormsReadMode.xsp&quot; xp:key=&quot;facet_1&quot; numberofrows=&quot;200&quot;
+      refreshmethod=&quot;pull&quot; position=&quot;menu-aligned&quot; photoColumn=&quot;Photo&quot;
+      wrapsummarytext=&quot;yes&quot; categoryfilter=&quot;Singapore&quot; categoryindex=&quot;1&quot; enableAZPicker=&quot;yes&quot;&gt;
+    &lt;/unp:unpFlatView&gt;
+  &lt;/xp:this.facets&gt;
+&lt;/unp:unpScrollableArea&gt;
+&lt;unp:unpAZPicker&gt;&lt;/unp:unpAZPicker&gt;
+</code></p>
+
 <h1 id='required_resources'>Required Resources</h1>
 
 <p>On the assumption you are using UnpHeader in your application then no extra resources are required.</p>

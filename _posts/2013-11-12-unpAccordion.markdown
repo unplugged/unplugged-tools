@@ -24,11 +24,12 @@ Drag the control onto your XPage and complete the following Custom Properties:
 	<dt>insetData</dt><dd>gives a rounded look and feel with padding. Default is true.</dd>
 	<dt>postion</dt><dd>whether the view will position itself to work in conjunction with the UnpViewsList control (Landscape mode on tablet). By default it will choose left-aligned as if you are not using the UnpViewsList control and will fill the width of the screen. </dd>
 </dl>
+
 The 'Load More' function is defaulted to 12 rows before it is rendered. This is editable within the required UnpAccordionViewList.xsp XPage. This uses AJAX requests to retrieve chunks of data to be inserted into each category to display more info.
 
 This control requires that the view have the first, and only the first, column categorized and up to 2 additional columns of flat data that will be displayed in the row data presented to the user. Column 2 in the view will be in blue text while column 3 will be in black underneath the data presented from column 2.
 
-{% highlight xml %}
+```xml
 <unp:unpScrollableArea>
 	<xp:this.facets>
 		<unp:unpAccordion xp:key="facet_1" viewName="People By Country"
@@ -36,7 +37,7 @@ This control requires that the view have the first, and only the first, column c
 		</unp:unpAccordion>
 	</xp:this.facets>
 </unp:unpScrollableArea>
-{% endhighlight %}
+```
 
 # Required Resources
 On the assumption you are using UnpHeader in your application then no extra resources are required.
