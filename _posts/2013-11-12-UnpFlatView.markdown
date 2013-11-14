@@ -4,7 +4,6 @@ title:  "UnpFlatView"
 date:   2013-12-01 17:00
 ---
 
-# Function
 If you want to display a flat (or non categorized) view then this is the control you will need to use. 
 
 ![Accordion iPad](http://teamstudio.s3.amazonaws.com/images/flatview-ipad.png)
