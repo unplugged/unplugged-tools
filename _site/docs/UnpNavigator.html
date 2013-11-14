@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>UnpNavigator</title>
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/glyphicons.css">
+  </head>
+  <body class="homepage">
+    <div class="row header">
+      <div class="text-right text-muted"><strong>V3.0 - 1st December 2013 07:42</strong></div>
+      <div class="container">
+        <h1><a id="view:_id2:homelink" href="index.html" title="Unplugged Controls">Unplugged Controls</a></h1>
+        <ul class="buttons">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/documentation.html">Documentation</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container col-md-10">
+        <ol class="breadcrumb">
+  <li><a href="/documentation.html">Documentation</a></li>
+  <li class="active">UnpNavigator</li>
+</ol>
+<div class="post">
+	<h1>Function</h1>
+
+<p>This control provides the menu system for your application and works best when used with the related controls [[unpHeader]] [[unpFooter]] and [[unpFlatView]]</p>
+
+<p><img src="http://teamstudio.s3.amazonaws.com/viewslist.png" alt="Views List" /></p>
+
+<p>The panel will show automatically if you are viewing the page with an iPad in landscape mode. For smaller devices, you will need to provide a button to show the panel. This is handled for you by the [[unpHeader]] control if you enable the views button.</p>
+
+<p>The control can be passed in a number of menu items with details for the label and the URL to open and also whether to open the URL via Ajax or as a full page load request.
+The menu system can included collapsable sections that show sub menus to two levels.</p>
+
+<h1>Usage</h1>
+
+<p>Drag the control onto your page and then complete the menu items custom properties.</p>
+
+<p>You can add as many menu items as required for you application, each menu item has seven properties:
+* ajaxloadid: the element id on the page being loaded containing the HTML which you want to display to the user.
+<strong>Note:</strong> 'contentwrapper' in this example is the name of the auto-generated div tag created when using the unpScrollArea control. Therefore, if using other view or form control types from the Unplugged Controls Project use 'contentwrapper' otherwise use your own custom div wrapper in your target XPage.
+* ajaxtargetid: the element id in the current page into which you want to insert the contents from the page being loaded
+* disabled: Used as a marker and disables execution
+* icon: adds an image to the left of the line item
+* label: the text label for the item
+* page: the URL to open when the menu item is clicked
+* submenu: (default none) allows the menu-item to be tapped and sub-menus shown. Select 'sub' for the first level category and 'sub-sub' for second level categories. If a menu-item is a top level category that contains submenus then only the properties disabled='no', label='my label' and submenu='sub' (or 'sub-sub') should be used. If a higher level menu-item contains a page property then the sub menu-items will not be displayed and the top level menu-item will navigate to the page defined (see code example below).</p>
+
+<p>In the example below there are two menu items. The first will load a page via Ajax and insert the contents of the div called contentwrapper and insert it into a div on the current page called content. The second menu item will load a completely new page.</p>
+
+<p>The most performant approach is to use the Ajax approach to loading pages.</p>
+
+<pre class="CICodeFormatter" ><code class="CICodeFormatter"> &lt;xc:unpViewsList&gt;  
+      &lt;xc:this.menuItem&gt;  
+           &lt;xc:menuItem label="All Documents" page="/UnpDemoWidgets.xsp"  
+                ajaxtargetid="content" ajaxloadid="contentwrapper"&gt;  
+           &lt;/xc:menuItem&gt;  
+           &lt;xc:menuItem label="By Department" page="/UnpDemoWidgetsByDept.xsp"&gt;&lt;/xc:menuItem&gt;  
+      &lt;/xc:this.menuItem&gt;  
+ &lt;/xc:unpViewsList&gt;  
+</code></pre>
+
+
+<p>This example shows how the code is structured for sub-menus:</p>
+
+<pre class="CICodeFormatter" ><code class="CICodeFormatter"> &lt;unp:unpNavigator&gt;  
+      &lt;unp:this.menuItem&gt;  
+           &lt;unp:menuItem ajaxloadid="contentwrapper"  
+                ajaxtargetid="content" submenu="no" disabled="no" label="By Address"  
+                page="/UnpByAddress.xsp"&gt;  
+           &lt;/unp:menuItem&gt;  
+           &lt;unp:menuItem submenu="no" disabled="no" label="By Name"&gt;  
+           &lt;/unp:menuItem&gt;  
+           &lt;unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content" submenu="sub" disabled="no" label="First Name" page="/UnpByFirstName.xsp"&gt;  
+           &lt;/unp:menuItem&gt;  
+           &lt;unp:menuItem ajaxloadid="contentwrapper" ajaxtargetid="content" submenu="sub-sub" disabled="no" label="Last Name" page="/UnpByLastName.xsp"&gt;  
+           &lt;/unp:menuItem&gt;  
+      &lt;/unp:this.menuItem&gt;  
+ &lt;/unp:unpNavigator&gt;  
+</code></pre>
+
+
+<h1>Required Resources</h1>
+
+<p>When you use the custom control make sure that you have the following resources in your application:
+* unp/jquery-1.7.2.min.js
+* unp/jquery.blockUI.min.js
+* unp/iScroll.min.js
+* unplugged.js
+* unpCommon.jss
+* unplugged.css
+* unp/right-arrow-trans-white-large.png</p>
+
+</div>
+
+      </div>
+      <div class="navigator col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+          <li>
+              <a href="/docs/UnpAccordion.html">Accordion</a>
+          </li>
+          <li>
+              <a href="/docs/UnpAZPicker.html">A to Z Picker</a>
+          </li>
+          <li>
+              <a href="/docs/UnpDebugToolbar.html">Debug Toolbar</a>
+          </li>
+          <li>
+              <a href="/docs/UnpDialog.html">Dialog</a>
+          </li>
+          <li>
+              <a href="/docs/UnpFlatView.html">Flat View</a>
+          </li>
+          <li>
+              <a href="/docs/UnpFooter.html">Footer</a>
+          </li>
+          <li>
+              <a href="/docs/UnpFormEditor.html">Form Editor</a>
+          </li>
+          <li>
+              <a href="/docs/UnpFormViewer.html">Form Viewer</a>
+          </li>
+          <li>
+              <a href="/docs/UnpHeader.html">Header</a>
+          </li>
+          <li>
+              <a href="/docs/UnpHorizontalView.html">Horizontal View</a>
+          </li>
+          <li>
+              <a href="/docs/UnpNavigator.html">Navigator</a>
+          </li>
+          <li>
+              <a href="/docs/UnpComputedNavigator.html">Computed Navigator</a>
+          </li>
+          <li>
+              <a href="/docs/UnpRichTextEditor.html">Rich Text Editor</a>
+          </li>
+          <li>
+              <a href="/docs/UnpScrollableArea.html">Scrollable Area</a>
+          </li>
+          <li>
+              <a href="/docs/UnpSearchResults.html">Search Results</a>
+          </li>
+          <li>
+              <a href="/docs/UnpSwipeView.html">Swipe View</a>
+          </li>
+          <li>
+              <a href="/docs/UnpTabbedFooter.html">Tabbed Footer</a>
+          </li>
+          <li>
+              <a href="/docs/UnpTypographyRead.html">Typography Read</a>
+          </li>
+          <li>
+              <a href="/docs/UnpWorkspace.html">Workspace</a>
+          </li>
+      </ul>
+      </div>
+    </div>
+  </body>
+</html>

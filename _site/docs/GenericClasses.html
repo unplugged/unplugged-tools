@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Generic Classes</title>
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/glyphicons.css">
+  </head>
+  <body class="homepage">
+    <div class="row header">
+      <div class="text-right text-muted"><strong>V3.0 - 1st December 2013 07:42</strong></div>
+      <div class="container">
+        <h1><a id="view:_id2:homelink" href="index.html" title="Unplugged Controls">Unplugged Controls</a></h1>
+        <ul class="buttons">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/documentation.html">Documentation</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container col-md-10">
+        <ol class="breadcrumb">
+  <li><a href="/documentation.html">Documentation</a></li>
+  <li class="active">Generic Classes</li>
+</ol>
+<div class="post">
+	<p>When using the unpFormViewer and unpFormEditor controls you can make use of the following CSS classes for buttons, fieldsets and panels;</p>
+
+<ol>
+<li>panel - adds a curved corner surround to a div</li>
+<li>fieldset - a definition is created to layout fieldsets, no class name required</li>
+<li>left-aligned - will always left align a panel or container regardless of device orientation</li>
+<li>button - a class which creates a generic button, can be used in conjunction with...</li>
+<li>savebutton - a save button to be used in conjunction with .button</li>
+<li>editbutton - an edit button to be used in conjunction with .button</li>
+<li>cancelbutton - a cancel button to be used in conjunction with .button</li>
+</ol>
+
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel&quot;</span><span class="nt">&gt;</span>
+  This is a panel (or div) with <span class="ni">&amp;#160;</span>
+  <span class="nt">&lt;strong&gt;</span> .panel <span class="nt">&lt;/strong&gt;</span>
+  <span class="ni">&amp;#160;</span> class assigned
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;fieldset&gt;</span>
+  <span class="nt">&lt;legend&gt;</span>This is a fieldset<span class="nt">&lt;/legend&gt;</span>
+  The contents are treated the same as the panel above
+<span class="nt">&lt;/fieldset&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel left-aligned&quot;</span><span class="nt">&gt;</span>
+  This panel will always be left-aligned
+<span class="nt">&lt;/div&gt;</span>
+
+
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;padding-top:5px;&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;Generic Button (.button)&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;padding-top:5px;&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;button savebutton&quot;</span>
+    <span class="na">value=</span><span class="s">&quot;Save Button (.button .savebutton)&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;padding-top:5px;&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;button editbutton&quot;</span>
+    <span class="na">value=</span><span class="s">&quot;Edit Button (.button .editbutton)&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;padding-top:5px;&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;button cancelbutton&quot;</span>
+    <span class="na">value=</span><span class="s">&quot;Cancel Button (.button .cancelbutton)&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+
+
+</div>
+
+      </div>
+      <div class="navigator col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+          <li>
+              <a href="/docs/UnpAccordion.html">Accordion</a>
+          </li>
+          <li>
+              <a href="/docs/UnpAZPicker.html">A to Z Picker</a>
+          </li>
+          <li>
+              <a href="/docs/UnpDebugToolbar.html">Debug Toolbar</a>
+          </li>
+          <li>
+              <a href="/docs/UnpDialog.html">Dialog</a>
+          </li>
+          <li>
+              <a href="/docs/UnpFlatView.html">Flat View</a>
+          </li>
+          <li>
+              <a href="/docs/UnpFooter.html">Footer</a>
+          </li>
+          <li>
+              <a href="/docs/UnpFormEditor.html">Form Editor</a>
+          </li>
+          <li>
+              <a href="/docs/UnpFormViewer.html">Form Viewer</a>
+          </li>
+          <li>
+              <a href="/docs/UnpHeader.html">Header</a>
+          </li>
+          <li>
+              <a href="/docs/UnpHorizontalView.html">Horizontal View</a>
+          </li>
+          <li>
+              <a href="/docs/UnpNavigator.html">Navigator</a>
+          </li>
+          <li>
+              <a href="/docs/UnpComputedNavigator.html">Computed Navigator</a>
+          </li>
+          <li>
+              <a href="/docs/UnpRichTextEditor.html">Rich Text Editor</a>
+          </li>
+          <li>
+              <a href="/docs/UnpScrollableArea.html">Scrollable Area</a>
+          </li>
+          <li>
+              <a href="/docs/UnpSearchResults.html">Search Results</a>
+          </li>
+          <li>
+              <a href="/docs/UnpSwipeView.html">Swipe View</a>
+          </li>
+          <li>
+              <a href="/docs/UnpTabbedFooter.html">Tabbed Footer</a>
+          </li>
+          <li>
+              <a href="/docs/UnpTypographyRead.html">Typography Read</a>
+          </li>
+          <li>
+              <a href="/docs/UnpWorkspace.html">Workspace</a>
+          </li>
+      </ul>
+      </div>
+    </div>
+  </body>
+</html>
