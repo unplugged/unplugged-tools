@@ -76,6 +76,7 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												</xp:text>
 											</li>
 											<li>
+												<xp:label value="Details" id="detailslabel" for="description"></xp:label>
 												<xp:text id="description" tagName="div" value="#{document2.Bio}"
 													escape="false" styleClass="body_richtext">
 												</xp:text>
