@@ -53,6 +53,17 @@ input {
 a:hover {
   text-decoration: none;
 }
+/* Disable text/object selection except where we need it */
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+input,
+textarea,
+.cke_editable *,
+.richtexteditor * {
+  -webkit-user-select: auto;
+}
 /* HEADER */
 .iHeader {
   z-index: 12;
@@ -849,27 +860,11 @@ li.data-row:after {
   text-transform: none;
   -webkit-font-smoothing: antialiased;
 }
-li.data-row .icon {
-  /*float: right;
-		padding-right: 30px;
-		padding-top: 30px;*/
-
+li.data-row.picker:after {
   display: none;
 }
+li.data-row .icon,
 li.data-row .multiLineIcon {
-  /*float: right;
-		margin-top: 11px;
-		padding-right: 0px;
-		opacity: 0.2;*/
-
-  display: none;
-}
-li.data-row .singleLineIcon {
-  /*float: right;
-		margin-top: 5px;
-		padding-right: 0px;
-		opacity: 0.2;*/
-
   display: none;
 }
 #summaryList {
@@ -2357,6 +2352,7 @@ fieldset {
   padding: 15px 20px;
   overflow: hidden;
   border: 0;
+  position: relative;
 }
 .panel h1,
 fieldset h1 {
@@ -2567,6 +2563,46 @@ legend {
 }
 .list-fonts a span {
   display: none !important;
+}
+.list-fonts ~ #dialogPopup {
+  width: 280px;
+  left: 50%;
+  right: auto;
+  margin-left: -140px;
+}
+.list-fonts ~ #dialogPopup #dialogContent {
+  height: auto;
+  overflow: visible;
+}
+.list-fonts ~ #dialogPopup #glyphicondetails a.glyphicons {
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding-top: 190px;
+  top: 0;
+}
+.list-fonts ~ #dialogPopup #glyphicondetails a.glyphicons strong {
+  position: static;
+}
+.list-fonts ~ #dialogPopup #glyphicondetails a.glyphicons span {
+  position: static;
+  color: #999;
+}
+.list-fonts ~ #dialogPopup #glyphicondetails a.glyphicons::before {
+  font-size: 160px;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+.list-fonts ~ #dialogPopup .dialogbuttons > div:first-child {
+  display: none;
+}
+.list-fonts ~ #dialogPopup .dialogbuttons > div:last-child {
+  width: 100%;
+}
+.list-fonts ~ #dialogPopup .dialogbuttons > div:last-child .button {
+  margin-left: 0;
 }
 /* DIALOG */
 #dialogPopup {

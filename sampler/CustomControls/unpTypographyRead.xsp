@@ -4,11 +4,11 @@
 	<div class="fontsizebuttonspanel">
 		<ul class="fontsizebuttons buttons">
 			<li class="button increasetext" onclick="increaseFontSize(this)">
-				<i class="glyphicons text_bigger" />
+				<i class="fa text_bigger" />
 				<label>Larger Text</label>
 			</li>
 			<li class="button decreasetext" onclick="decreaseFontSize(this)">
-				<i class="glyphicons text_smaller" />
+				<i class="fa text_smaller" />
 				<label>Smaller Text</label>
 			</li>
 		</ul>

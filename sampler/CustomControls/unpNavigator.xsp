@@ -16,7 +16,7 @@
 		<xp:script src="/unp/jquery.blockUI.min.js" clientSide="true"></xp:script>
 		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
 		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
-		<xp:styleSheet href="/unp/glyphicons.css"></xp:styleSheet>
+		<xp:styleSheet href="/unp/font-awesome.css"></xp:styleSheet>
 	</xp:this.resources>
 	<div id="menu" class="iscrollmenu">
 		<div id="menuPane" class="offScreen">
@@ -73,7 +73,7 @@ return out;}]]></xp:this.value>
 	viewScope.menuItemIndex = viewScope.menuItemIndex + 1;
 }
 menuItem.icon != null && menuItem.icon != ""}]]></xp:this.rendered>
-									<xp:this.styleClass><![CDATA[#{javascript:"glyphicons white " + menuItem.icon}]]></xp:this.styleClass>
+									<xp:this.styleClass><![CDATA[#{javascript:"fa fa-fw " + menuItem.icon}]]></xp:this.styleClass>
 								</xp:panel>
 								<xp:text id="menutext"
 									styleClass="menutext" value="#{javascript:menuItem.label;}">

@@ -28,7 +28,7 @@
 	}}]]></xp:this.styleClass>
 								<xp:panel tagName="i" id="icon">
 									<xp:this.rendered><![CDATA[#{javascript:menuItem.icon != null && menuItem.icon != ""}]]></xp:this.rendered>
-									<xp:this.styleClass><![CDATA[#{javascript:"glyphicons white " + menuItem.icon}]]></xp:this.styleClass>
+									<xp:this.styleClass><![CDATA[#{javascript:"fa fa-fw " + menuItem.icon}]]></xp:this.styleClass>
 								</xp:panel>
 								<xp:text
 									value="#{javascript:menuItem.label}">
@@ -49,7 +49,7 @@
 								<xp:this.rendered><![CDATA[#{javascript:menuItem.hasSubMenu}]]></xp:this.rendered>
 								<xp:panel tagName="i" id="panel1">
 									<xp:this.rendered><![CDATA[#{javascript:menuItem.icon != null && menuItem.icon != ""}]]></xp:this.rendered>
-									<xp:this.styleClass><![CDATA[#{javascript:"glyphicons white " + menuItem.icon}]]></xp:this.styleClass>
+									<xp:this.styleClass><![CDATA[#{javascript:"fa fa-fw " + menuItem.icon}]]></xp:this.styleClass>
 								</xp:panel>
 								<xp:text value="#{javascript:menuItem.label}"></xp:text>
 								<span class="chevron" />

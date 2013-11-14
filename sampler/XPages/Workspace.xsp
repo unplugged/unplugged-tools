@@ -21,7 +21,7 @@
 	</xp:this.data>
 	<xp:this.resources>
 		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
-		<xp:styleSheet href="/unp/glyphicons.css"></xp:styleSheet>
+		<xp:styleSheet href="unp/font-awesome.css"></xp:styleSheet>
 	</xp:this.resources>
 	<xp:panel tagName="link" rendered="#{javascript:!isAjax()}">
 		<xp:this.attrs>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:unp="http://unplugged.teamstudio.com">
+	<xc:layout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<div id="contentwrapper">
+					<unp:unpScrollableArea>
+						<xp:this.facets>
+							<xp:panel xp:key="facet_1">
+								<div class="panel">
+									<h1>Font Awesome</h1>
+									<section class="hidden-print">
+										<div class="stripe-ad">
+											<p class="lead">
+												Font Awesome gives you scalable vector
+												icons that can instantly be customized —
+												size, color, drop shadow, and anything
+												that can be done with the power of CSS. 
+												They are used throughout the Unplugged Controls, and you can use them in your applications.
+											</p>
+										</div>
+									</section>
+
+									<section id="why" class="feature-list">
+										<ul class="fontawesomefeatures">
+											<li>
+												<h4>
+													<i class="fa fa-flag"></i>
+													&#160;
+													One Font, 369 Icons
+												</h4>
+												In a single collection, Font Awesome is
+												a pictographic language of web-related
+												actions.
+											</li>
+											<li>
+												<h4>
+													<i class="fa fa-ban"></i>&#160;
+													No JavaScript Required
+												</h4>
+												Fewer compatibility concerns because
+												Font Awesome doesn't require JavaScript.
+											</li>
+											<li>
+												<h4>
+													<i class="fa fa-arrows-alt"></i>&#160;
+													Infinite Scalability
+												</h4>
+												Scalable vector graphics means every
+												icon looks awesome at any size.
+											</li>
+											<li>
+												<h4>
+													<i class="fa fa-microphone"></i>&#160;
+													Free, as in Speech
+												</h4>
+												Font Awesome is completely free for
+												commercial use. Check out the&#160;
+												<a href="http://fontawesome.io/license/">license</a>
+												.
+											</li>
+											<li>
+												<h4>
+													<i class="fa fa-pencil"></i>&#160;
+													CSS Control
+												</h4>
+												Easily style icon color, size, shadow,
+												and anything that's possible with CSS.
+											</li>
+											<li>
+												<h4>
+													<i class="fa fa-eye"></i>&#160;
+													Perfect on Retina Displays
+												</h4>
+												Font Awesome icons are vectors, which
+												mean they're gorgeous on high-resolution
+												displays.
+											</li>
+											<li>
+												<h4>
+													<i class="fa fa-file-text"></i>&#160;
+													Full Documentation Available
+												</h4>
+												The&#160;<a href="http://fontawesome.io">Font Awesome website</a>&#160;provides full documentation.
+											</li>
+										</ul>
+									</section>
+
+
+								</div>
+							</xp:panel>
+						</xp:this.facets>
+					</unp:unpScrollableArea>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:layout>
+</xp:view>

@@ -40,7 +40,7 @@
         	{label: "Flat View (Categorized)", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/FlatViewCategorized.xsp", disabled: false},
         	{label: "Swipe View", page: "/SwipeView.xsp"}     
         ]}, 
-        {label: "Glyphicons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/Glyphicons.xsp", disabled: false},
+        {label: "Font Awesome", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/FontAwesome.xsp", disabled: false},
         {label: "Forms", hasSubMenu: true, subMenu: [
         	{label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsReadMode.xsp", disabled: false}, 
         	{label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/FormsEditMode.xsp", disabled: false}
