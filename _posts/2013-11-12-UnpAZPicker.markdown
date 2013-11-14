@@ -6,8 +6,8 @@ date:   2013-12-01 17:00
 
 This control displays single letters down the right side of a View for quick searching, it integrates as an add on when using the UnpFlatView control.
 
-![A-Z Picker iPad]({{ site.baseurl}}/images/azpicker-ipad.png)
-![A-Z Picker iPhone]({{ site.baseurl}}/images/azpicker-iphone.png)
+![A-Z Picker iPad]({{ site.baseurl}}/css/images/azpicker-ipad.png)
+![A-Z Picker iPhone]({{ site.baseurl}}/css/images/azpicker-iphone.png)
 
 # Usage
 The search facility will display results from a view (given in the Custom Property 'viewName') matching the letter selected with the first letter of the contents in the first column (sorted Ascending). For the best results we recommend that you output a categorized view to the FlatView control, and have the category be the first letter, as per the screenshots above.
