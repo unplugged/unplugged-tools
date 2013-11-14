@@ -7,8 +7,8 @@ date:   2013-12-01 17:00
 # Function
 The Dialog control allows you to add a Dialog box to a page. It will display "over" the rest of the content of the page and will show 2 buttons: OK and Cancel.
 
-![Accordion iPad]({{ site.baseurl}}/images/dialog-ipad.png)
-![Accordion iPhone]({{ site.baseurl}}/images/dialog-iphone.png)
+![Accordion iPad](http://teamstudio.s3.amazonaws.com/images/dialog-ipad.png)
+![Accordion iPhone](http://teamstudio.s3.amazonaws.com/images/dialog-iphone.png)
 
 If the user clicks cancel the dialog will be hidden.
 

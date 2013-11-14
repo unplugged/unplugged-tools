@@ -7,8 +7,8 @@ date:   2013-12-01 17:00
 # Function
 If you want to display a flat (or non categorized) view then this is the control you will need to use. 
 
-![Accordion iPad]({{ site.baseurl}}/images/flatview-ipad.png)
-![Accordion iPhone]({{ site.baseurl}}/images/flatview-iphone.png)
+![Accordion iPad](http://teamstudio.s3.amazonaws.com/images/flatview-ipad.png)
+![Accordion iPhone](http://teamstudio.s3.amazonaws.com/images/flatview-iphone.png)
 
 The control will work when integrated with unpScrollableArea
 
