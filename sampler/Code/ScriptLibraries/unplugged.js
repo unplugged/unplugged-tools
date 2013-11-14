@@ -120,33 +120,7 @@ function isAndroid(){
 var editor = null;
 var rtfield;
 function initRichText() {
-	
-	var isInIframe = (window.location != window.parent.location) ? true : false;
-	if (!isAndroid() && !isInIframe){
-		for ( var instanceName in CKEDITOR.instances) {
-			try {
-				CKEDITOR.instances[instanceName].destroy();
-			} catch (e) {
-			}
-		}
-		$("textarea").each(
-				function() {
-					try {
-						var html = htmlDecode($(this).html());
-						rtfield = $(this).attr("id");
-						
-						CKEDITOR.config.contentsCss = $("[unp-id='primarycss']").attr('href');
-						CKEDITOR.config.bodyId='unpluggedmce';
-						CKEDITOR.config.bodyClass='unpluggedmce';
-						CKEDITOR.appendTo('richtexteditorholder', CKEDITOR.config, html);
-						$(this).hide();
-	
-					} catch (e) {
-						alert(e.message);
-						$(this).show();
-					}
-				});
-	}
+	//Placeholder for future improvements
 }
 
 function htmlDecode(input) {
@@ -285,14 +259,6 @@ function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname)
 	try {
 		scrollContent.scrollTo(0, -60, 0);
 	} catch (e) {
-	}
-	for ( var instanceName in CKEDITOR.instances) {
-		var html = CKEDITOR.instances[instanceName].getData();
-		document.getElementById(rtfield).value = html;//$('<div/>').text(html).html();
-		// Destroy the editor.
-		try{
-			CKEDITOR.instances[instanceName].destroy();
-		}catch(e){}
 	}
 	var data = $(".customform :input").serialize();
 	var url = 'UnpSaveDocument.xsp?unid=' + unid + "&formname=" + formname

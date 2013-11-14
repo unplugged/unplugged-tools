@@ -26,8 +26,6 @@
 		<xp:script src="/unp/jquery.autocomplete.js"
 			clientSide="true">
 		</xp:script>
-		<xp:script src="/unp/ckeditor.js" clientSide="true"></xp:script>
-		
 		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
 		<xp:styleSheet href="/unpDialog.css"></xp:styleSheet>
 		<xp:metaData name="apple-mobile-web-app-status-bar-style"

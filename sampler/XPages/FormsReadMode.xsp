@@ -77,8 +77,11 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 											</li>
 											<li>
 												<xp:label value="Details" id="detailslabel" for="description"></xp:label>
-												<xp:text id="description" tagName="div" value="#{document2.Bio}"
-													escape="false" styleClass="body_richtext">
+												<xp:text
+													id="description" tagName="div" escape="false"
+													styleClass="body_richtext">
+													<xp:this.value><![CDATA[#{javascript:var text = document2.getItemValueString("Bio");
+return @ReplaceSubstring(text, '\n', "<br />");}]]></xp:this.value>
 												</xp:text>
 											</li>
 										</ul>

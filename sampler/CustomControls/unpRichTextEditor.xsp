@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
-	<xp:this.resources>
-	</xp:this.resources>
-	<div class="richtexteditor">
-		<xp:callback facetName="insertfieldhere" id="callback1"></xp:callback>
-		<div id="richtexteditorholder"></div>
-	</div>
-</xp:view>

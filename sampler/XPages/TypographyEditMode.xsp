@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com" xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xc:layout>
 		<xp:this.facets>
 			<xp:panel xp:key="facet_1">
 
 				<xp:this.data>
-					<xp:dominoDocument var="document1" formName="RefData"
+					<xp:dominoDocument var="document2" formName="RefData"
 						action="editDocument">
 						<xp:this.documentId><![CDATA[#{javascript:var vw:NotesView = database.getView("Reference Data");
 var doc:NotesDocument = vw.getDocumentByKey("SamplerEditHTML");
@@ -18,19 +19,26 @@ if (doc != null){
 					<unp:unpScrollableArea>
 						<xp:this.facets>
 							<xp:panel xp:key="facet_1">
-								<div class="panel typographyeditmode">
-									<unp:unpRichTextEditor>
-										<xp:this.facets>
-											<xp:inputTextarea id="description" xp:key="insertfieldhere"
-												styleClass="richtextfield" value="#{document1.Value}">
-												<xp:this.attrs>
-													<xp:attr name="placeholder" value="Insert Text...">
-													</xp:attr>
-												</xp:this.attrs>
-											</xp:inputTextarea>
-										</xp:this.facets>
-									</unp:unpRichTextEditor>
-								</div>
+								<unp:unpFormEditor showbuttons="no" position="menu-aligned"
+									title="Typography Edit Mode" formname="Contact">
+									<xp:this.facets>
+										<xp:panel xp:key="facet_1">
+											
+												<ul class="fieldlist">
+													<li>
+														<xp:inputTextarea id="description"
+															styleClass="richtextfield" value="#{document2.Value}">
+															<xp:this.attrs>
+																<xp:attr name="placeholder" value="Insert Text...">
+																</xp:attr>
+															</xp:this.attrs>
+														</xp:inputTextarea>
+													</li>
+												</ul>
+											
+										</xp:panel>
+									</xp:this.facets>
+								</unp:unpFormEditor>
 							</xp:panel>
 						</xp:this.facets>
 					</unp:unpScrollableArea>

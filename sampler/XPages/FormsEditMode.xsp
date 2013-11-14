@@ -49,8 +49,7 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												</xp:inputText>
 											</li>
 											<li>
-												<xp:label value="Title" id="titlelabel"
-													for="title">
+												<xp:label value="Title" id="titlelabel" for="title">
 												</xp:label>
 												<xp:inputText id="title" value="#{document2.Title}"
 													styleClass="xspInputFieldEditBox deletable">
@@ -127,21 +126,13 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												<xp:label value="Details" id="detailslabel" for="bio"
 													styleClass="widelabel">
 												</xp:label>
-												<unp:unpRichTextEditor>
-													<xp:this.facets>
-														<xp:inputTextarea
-															id="bio" xp:key="insertfieldhere"
-															styleClass="richtextfield" value="#{document2.Bio}"
-															style="height: auto;">
-															<xp:this.attrs>
-																<xp:attr
-																	name="placeholder" value="Insert Text...">
-																</xp:attr>
-															</xp:this.attrs>
-														</xp:inputTextarea>
-													</xp:this.facets>
-												</unp:unpRichTextEditor>
-
+												<xp:inputTextarea id="bio" styleClass="richtextfield"
+													value="#{document2.Bio}">
+													<xp:this.attrs>
+														<xp:attr name="placeholder" value="Insert Text...">
+														</xp:attr>
+													</xp:this.attrs>
+												</xp:inputTextarea>
 											</li>
 										</ul>
 									</xp:panel>

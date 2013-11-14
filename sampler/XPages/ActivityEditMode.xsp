@@ -26,8 +26,7 @@
 									<xp:panel xp:key="facet_1">
 										<ul class="fieldlist">
 											<li>
-												<xp:label value="Contact" id="contactlabel"
-													for="contact">
+												<xp:label value="Contact" id="contactlabel" for="contact">
 												</xp:label>
 												<xp:inputText id="contact" value="#{document1.Contact}"
 													styleClass="required xspInputFieldEditBox deletable">
@@ -43,9 +42,8 @@
 											<li>
 												<xp:label value="Date" id="datelabel" for="date">
 												</xp:label>
-												<xp:inputText id="date"
-													value="#{document1.Date}" styleClass="xspInputFieldEditBox"
-													type="date">
+												<xp:inputText id="date" value="#{document1.Date}"
+													styleClass="xspInputFieldEditBox" type="date">
 													<xp:this.converter>
 														<xp:convertDateTime>
 															<xp:this.pattern><![CDATA[${javascript:if (document1.isEditable()){
@@ -68,7 +66,8 @@
 												</xp:comboBox>
 											</li>
 											<li>
-												<xp:label value="Assigned To" id="assignedtolabel" for="assignedto">
+												<xp:label value="Assigned To" id="assignedtolabel"
+													for="assignedto">
 												</xp:label>
 												<xp:comboBox id="assignedto" value="#{document1.AssignedTo}"
 													styleClass="xspListBox">
@@ -88,20 +87,13 @@
 												<xp:label value="Details" id="bodylabel" for="body"
 													styleClass="widelabel">
 												</xp:label>
-												<unp:unpRichTextEditor>
-													<xp:this.facets>
-														<xp:inputTextarea
-															id="body" xp:key="insertfieldhere"
-															styleClass="richtextfield" value="#{document1.Body}"
-															style="height: auto;">
-															<xp:this.attrs>
-																<xp:attr
-																	name="placeholder" value="Insert Text...">
-																</xp:attr>
-															</xp:this.attrs>
-														</xp:inputTextarea>
-													</xp:this.facets>
-												</unp:unpRichTextEditor>
+												<xp:inputTextarea id="body"
+													styleClass="richtextfield" value="#{document1.Body}">
+													<xp:this.attrs>
+														<xp:attr name="placeholder" value="Insert Text...">
+														</xp:attr>
+													</xp:this.attrs>
+												</xp:inputTextarea>
 											</li>
 										</ul>
 									</xp:panel>
