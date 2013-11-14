@@ -224,34 +224,30 @@ function openDocument(url, target) {
 	// document.location.href = url;
 	var thisArea = $("#" + target);
 	thisArea.load(url.replace(" ", "%20") + " #contentwrapper",
-			function() {
-
-				if (firedrequests != null) {
-					firedrequests = new Array();
-				}
-
-				unp.storePageRequest(url);
-
-				initiscroll();
-				if (url.indexOf("editDocument") > -1
-						|| url.indexOf("newDocument") > -1) {
-					allowFormsInIscroll();
-					try {
-						if ($('.richtextfield').val().indexOf("<") > -1) {
-							var val = $($('.richtextfield').val()).text();
-							$('.richtextfield').val(val);
-						}
-					} catch (e) {
+			function(data, status, xhr) {
+				if (status=="error") {
+					alert("An error occurred:\n\n" + xhr.status + " " + xhr.statusText + "\n\n" + $(data).text());
+					return false;
+				}else{
+					if (firedrequests != null) {
+						firedrequests = new Array();
 					}
-
+	
+					unp.storePageRequest(url);
+	
+					initiscroll();
+					if (url.indexOf("editDocument") > -1
+							|| url.indexOf("newDocument") > -1) {
+						allowFormsInIscroll();
+					}
+					initDeleteable();
+					initAutoComplete();
+					initHorizontalView();
+					if ($("#input-search").hasClass("input-search")) {
+						$(".iscrollcontent").css("top", "90px");
+					}
+					return false;
 				}
-				initDeleteable();
-				initAutoComplete();
-				initHorizontalView();
-				if ($("#input-search").hasClass("input-search")) {
-					$(".iscrollcontent").css("top", "90px");
-				}
-				return false;
 			});
 }
 
@@ -357,21 +353,26 @@ function loadPage(url, target, menuitem, pushState) {
 	}
 
 	var thisArea = $("#" + target);
-	thisArea.load(url, function() {
-
-		if (firedrequests != null) {
-			firedrequests = new Array();
+	thisArea.load(url, function(data, status, xhr) {
+		if (status=="error") {
+			alert("An error occurred:\n\n" + xhr.status + " " + xhr.statusText + "\n\n" + $(data).text());
+			return false;
+		}else{
+	
+			if (firedrequests != null) {
+				firedrequests = new Array();
+			}
+	
+			if (_pushState) {
+				unp.storePageRequest(url);
+			}
+	
+			initiscroll();
+			initHorizontalView();
+			initDeleteable();
+			initAutoComplete();
+			return false;
 		}
-
-		if (_pushState) {
-			unp.storePageRequest(url);
-		}
-
-		initiscroll();
-		initHorizontalView();
-		initDeleteable();
-		initAutoComplete();
-		return false;
 	});
 	if (_pushState) {
 		var menuitems = $("#menuitems li");
