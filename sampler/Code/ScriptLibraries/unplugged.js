@@ -290,7 +290,9 @@ function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname)
 		var html = CKEDITOR.instances[instanceName].getData();
 		document.getElementById(rtfield).value = html;//$('<div/>').text(html).html();
 		// Destroy the editor.
-		CKEDITOR.instances[instanceName].destroy();
+		try{
+			CKEDITOR.instances[instanceName].destroy();
+		}catch(e){}
 	}
 	var data = $(".customform :input").serialize();
 	var url = 'UnpSaveDocument.xsp?unid=' + unid + "&formname=" + formname
