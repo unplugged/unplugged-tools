@@ -3,4 +3,4 @@ lsi: false
 pygments: true
 baseurl: /unplugged-tools
 markdown: rdiscount
-permalink: /docs/:title.html
+permalink: none
