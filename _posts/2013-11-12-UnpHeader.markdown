@@ -23,6 +23,7 @@ Drag the custom control onto your XPage and then complete the Custom Properties:
 </dl>
 
 Below is an example of a standard header used in our Sampler application
+
 ```xml
 <unp:unpHeader viewsButton="true" title="Sampler" search="database"
 	searchPage="DatabaseSearchResults.xsp">
