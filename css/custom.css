@@ -51,9 +51,10 @@ a:hover {
 	-webkit-transition: background 0.3s, color 0.3s;
 }
 
+/* don't need it to line up with Sampler preview screen any more
 .container {
 	max-width: 1054px;
-}
+}*/
 
 /* HEADER */
 
@@ -106,6 +107,13 @@ a:hover {
 	color: #EEE;
 	background: #666;	
 	cursor: default;
+}
+
+.header .version {
+	padding: 10px 0;
+	display: block;
+	color: #999;
+	font-weight: bold;
 }
 
 /* NAVIGATION */
@@ -294,55 +302,63 @@ body.homepage {
 
 .homepage .content {
 	text-align: center;
-	padding: 90px 0;
+	padding: 40px 0;
 }
 
 .homepage h2 {
 	color: #62d952;
-	font-size: 66px;
+	font-size: 36px;
 	font-weight: bold;
-	letter-spacing: -2px;
+	letter-spacing: -1px;
+	margin: 0;
+	margin-bottom: 10px;
 }
 
 .homepage h3 {
 	color: #999;
-	font-size: 36px;
+	font-size: 24px;
 	font-weight: normal;
-	margin-bottom: 70px;
+	margin: 0;
 }
 
 .homepage .feature {
 	position: relative;
+	text-align: left;
 }
 
 .homepage .feature i {
 	display: block;
-	height: 100px;
+	float: left;
 }
 
 .homepage .feature i:before {
 	color: #ededed;
-	font-size: 80px;
+	font-size: 40px;
 	left: 0;
 	right: 0;
-	text-align: center;
 }
 
 .homepage .feature h4 {
 	color: #ededed;
-	font-size: 24px;
-	line-height: 30px;
+	font-size: 18px;
+	line-height: 22px;
 	font-weight: bold;
+	text-align: left;
+	margin: 0;
+	margin-left: 60px;
+	margin-bottom: 5px
 }
 
 .homepage .feature p {
 	color: #AAA;
-	font-size: 16px;
+	font-size: 14px;
+	line-height: 22px;
+	margin-left: 60px;
 }
 
 .homepage .footer {
-	background: #DDD;
-	padding: 60px 0;
+	background: #ddd;
+	padding: 40px 0;
 	font-size: 16px;
 	line-height: 24px;
 }
@@ -352,13 +368,6 @@ body.homepage {
 	margin-bottom: 24px;
 }
 
-.homepage .footer ol {
-	font-weight: bold;
-}
-
-.homepage .footer a {
-	font-weight: bold;
-}
 
 
 
@@ -529,9 +538,22 @@ body.homepage {
 	border: 1 px solid black;
 }
 
+
+
+.post h1 {
+	margin: 0;
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.post pre {
+	margin-bottom: 25px;
+}
+
 .post p img {
 	max-width: 500px;
-	max-height: 500px;
+	max-height: 360px;
 	padding: 4px;
     line-height: 1.428571429;
     background-color: #ffffff;
@@ -548,10 +570,21 @@ body.homepage {
 	padding-left: 20px;
 	padding-bottom: 5px;
 }
+
 .post ul li {
 	padding-top: 5px;
 }
 
 .text-right {
 	padding-right: 30px;
+}
+
+.footer .breadcrumb {
+	font-size: 14px;
+}
+
+.footer .nav>li>a {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 8px 15px;
 }
