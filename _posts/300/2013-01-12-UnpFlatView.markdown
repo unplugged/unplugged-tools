@@ -34,12 +34,7 @@ Drag the control onto your XPage and complete the following Custom Properties:
 	<dt>xpageDoc</dt><dd>the name of the XPage to open documents in the view with</dd>
 </dl>
 
-<pre class="CICodeFormatter" ><code class="CICodeFormatter"> &lt;unp:unpFlatView insetData="true" title="Employees"  
-   summaryColumn="Name" viewName="Employees" xp:key="facet_1"  
-   numberofrows="20" refreshmethod="pull" position="left-aligned"  
-   ajaxload="Yes" detailColumn="DOB" xpageDoc="EmployeeFlatView.xsp"&gt;  
- &lt;/unp:unpFlatView&gt;  
-</code></pre>
+<script src="https://gist.github.com/whitemx/7527828.js"></script>
 
 The "Load More" function requires the presence of the XPage called UnpFlatViewList, it is this which is used by the control to perform Ajax requests to get each chunk of data to display to the user.
 

@@ -27,7 +27,7 @@ categories: "300"
 
   <p>
     These controls should work for "normal"
-    <a href="{{ site.baseurl}}/2013/12/01/MobileWebDevelopment.html">Mobile
+    <a href="{{ site.baseurl}}/300/MobileWebDevelopment.html">Mobile
       Web Development</a>
     as well, so they could be accessed via the web browsers
     on your iPhone,
@@ -35,86 +35,12 @@ categories: "300"
   </p>
 
   <hr />
-  <p>Detailed usage instructions for each control are available
-    below.</p>
-  <p>
-    <ul id="controlslist">
-      <li>
-        <a href="/2013/12/01/UnpAccordion.html">Accordion</a>
-      </li>
-      <li>
-        <a href="/2013/12/01/UnpAZPicker.html">A to Z Picker</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpDebugToolbar.html">Debug
-          Toolbar</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpDialog.html">Dialog</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpFlatView.html">Flat
-          View</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpFooter.html">Footer</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpFormEditor.html">Form
-          Editor</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpFormViewer.html">Form
-          Viewer</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpHeader.html">Header</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpHorizontalView.html">Horizontal
-          View (or Media Library)</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpNavigator.html">Navigator</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpComputedNavigator.html">Computed
-          Navigator</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpRichTextEditor.html">Rich
-          Text Editor</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpScrollableArea.html">Scrollable
-          Area</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpSearchResults.html">Search
-          Results</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpSwipeView.html">Swipe
-          View</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpTabbedFooter.html">Tabbed
-          Footer</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpTypographyRead.html">Typography
-          Read</a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl}}/2013/12/01/UnpWorkspace.html">Workspace</a>
-      </li>
-    </ul>
-  </p>
+  <p>Detailed usage instructions for each control are available from the menu on each page.</p>
 
   <hr />
   <p>
     <a
-      href="{{ site.baseurl}}/2013/12/01/UpgradingYourApplication.html">Upgrading
+      href="{{ site.baseurl}}/300/UpgradingYourApplication.html">Upgrading
       your application</a>
     from a previous version of the controls library can be
     made easier by following some of our guidelines.
@@ -123,7 +49,7 @@ categories: "300"
   <hr />
   <p>
     We also provide some
-    <a href="{{ site.baseurl}}/2013/12/01/GenericClasses.html">generic
+    <a href="{{ site.baseurl}}/300/GenericClasses.html">generic
       classes which you can use in static HTML</a>
     .
   </p>
@@ -148,112 +74,7 @@ categories: "300"
     including the header, views list and footer. The XML below show an
     example of the main page you'll want to create:</p>
 
-  <div class="highlight">
-    <pre>
-      <span class="cp">&lt;?xml version="1.0"
-        encoding="UTF-8"?&gt;</span>
-      <span class="nt">&lt;xp:view</span>
-      <span class="na">xmlns:xp=</span>
-      <span class="s">"http://www.ibm.com/xsp/core"
-      </span>
-      <span class="na">xmlns:unp=</span>
-      <span class="s">"http://unplugged.teamstudio.com"
-      </span>
-      <span class="nt">&gt;</span>
-      <span class="nt">&lt;xp:this.resources&gt;
-      </span>
-      <span class="nt">&lt;xp:styleSheet</span>
-      <span class="na">href=</span>
-      <span class="s">"/unplugged.css"</span>
-      <span class="nt">&gt;&lt;/xp:styleSheet&gt;
-      </span>
-      <span class="nt">&lt;/xp:this.resources&gt;
-      </span>
-      <span class="nt">&lt;unp:unpHeader</span>
-      <span class="na">search=</span>
-      <span class="s">"database"</span>
-      <span class="na">viewsButton=</span>
-      <span class="s">"true"</span>
-      <span class="na">title=</span>
-      <span class="s">"Teamroom"</span>
-      <span class="na">searchPage=</span>
-      <span class="s">"UnpSearch.xsp"</span>
-      <span class="nt">&gt;</span>
-      <span class="nt">&lt;/unp:unpHeader&gt;</span>
-      <span class="nt">&lt;unp:unpNavigator&gt;
-      </span>
-      <span class="nt">&lt;unp:this.menuItem&gt;
-      </span>
-      <span class="nt">&lt;unp:menuItem</span>
-      <span class="na">label=</span>
-      <span class="s">"By Date"</span>
-      <span class="na">page=</span>
-      <span class="s">"/UnpDate.xsp"</span>
-      <span class="na">ajaxtargetid=</span>
-      <span class="s">"content"</span>
-      <span class="na">ajaxloadid=</span>
-      <span class="s">"contentwrapper"</span>
-      <span class="nt">&gt;</span>
-      <span class="nt">&lt;/unp:menuItem&gt;</span>
-      <span class="nt">&lt;unp:menuItem</span>
-      <span class="na">label=</span>
-      <span class="s">"By Type"</span>
-      <span class="na">page=</span>
-      <span class="s">"/UnpType.xsp"</span>
-      <span class="na">ajaxtargetid=</span>
-      <span class="s">"content"</span>
-      <span class="na">ajaxloadid=</span>
-      <span class="s">"contentwrapper"</span>
-      <span class="nt">&gt;</span>
-      <span class="nt">&lt;/unp:menuItem&gt;</span>
-      <span class="nt">&lt;/unp:this.menuItem&gt;
-      </span>
-      <span class="nt">&lt;/unp:unpNavigator&gt;
-      </span>
-      <span class="nt">&lt;div</span>
-      <span class="na">id=</span>
-      <span class="s">"content"</span>
-      <span class="nt">&gt;</span>
-      <span class="nt">&lt;unp:unpScrollableArea&gt;
-      </span>
-      <span class="nt">&lt;xp:this.facets&gt;</span>
-      <span class="nt">&lt;unp:unpFlatView</span>
-      <span class="na">insetData=</span>
-      <span class="s">"true"</span>
-      <span class="na">detailColumn=</span>
-      <span class="s">"Categories"</span>
-      <span class="na">summaryColumn=</span>
-      <span class="s">"Topic"</span>
-      <span class="na">title=</span>
-      <span class="s">"By Date"</span>
-      <span class="na">viewName=</span>
-      <span class="s">"(UnpDocumentsByDate)"</span>
-      <span class="na">xpageDoc=</span>
-      <span class="s">"Document.xsp"</span>
-      <span class="na">xp:key=</span>
-      <span class="s">"facet_1"</span>
-      <span class="na">numberofrows=</span>
-      <span class="s">"20"</span>
-      <span class="na">refreshmethod=</span>
-      <span class="s">"pull"</span>
-      <span class="nt">&gt;</span>
-      <span class="nt">&lt;/unp:unpFlatView&gt;
-      </span>
-      <span class="nt">&lt;/xp:this.facets&gt;
-      </span>
-      <span class="nt">&lt;/unp:unpScrollableArea&gt;
-      </span>
-      <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;unp:unpFooter</span>
-      <span class="na">newDocTarget=</span>
-      <span class="s">"DocumentEdit.xsp"</span>
-      <span class="na">synctype=</span>
-      <span class="s">"currentdb"</span>
-      <span class="nt">&gt;&lt;/unp:unpFooter&gt;
-      </span>
-      <span class="nt">&lt;/xp:view&gt;</span>
-    </pre>
-  </div>
+<script src="https://gist.github.com/whitemx/7527732.js"></script>
 
   <p>As well as including Unpheader, UnpNavigator, UnpScrollableArea,
     UnpFlatView, and UnpFooter controls you will always want to include
@@ -281,52 +102,4 @@ categories: "300"
     or footer as they have already been loaded on the UnpMain XPage.</p>
 
   <p>This is the XML required for the UnpDate XPage:</p>
-  <div class="highlight">
-    <pre>
-      <span class="cp">&lt;?xml version="1.0"
-        encoding="UTF-8"?&gt;</span>
-      <span class="nt">&lt;xp:view</span>
-      <span class="na">xmlns:xp=</span>
-      <span class="s">"http://www.ibm.com/xsp/core"
-      </span>
-      <span class="na">xmlns:unp=</span>
-      <span class="s">"http://unplugged.teamstudio.com"
-      </span>
-      <span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span>
-      <span class="na">id=</span>
-      <span class="s">"content"</span>
-      <span class="nt">&gt;</span>
-      <span class="nt">&lt;unp:unpScrollableArea&gt;
-      </span>
-      <span class="nt">&lt;xp:this.facets&gt;</span>
-      <span class="nt">&lt;unp:unpFlatView</span>
-      <span class="na">insetData=</span>
-      <span class="s">"true"</span>
-      <span class="na">detailColumn=</span>
-      <span class="s">"Categories"</span>
-      <span class="na">summaryColumn=</span>
-      <span class="s">"Topic"</span>
-      <span class="na">title=</span>
-      <span class="s">"By Date"</span>
-      <span class="na">viewName=</span>
-      <span class="s">"(UnpDocumentsByDate)"</span>
-      <span class="na">xpageDoc=</span>
-      <span class="s">"Document.xsp"</span>
-      <span class="na">xp:key=</span>
-      <span class="s">"facet_1"</span>
-      <span class="na">numberofrows=</span>
-      <span class="s">"20"</span>
-      <span class="na">refreshmethod=</span>
-      <span class="s">"pull"</span>
-      <span class="nt">&gt;</span>
-      <span class="nt">&lt;/unp:unpFlatView&gt;
-      </span>
-      <span class="nt">&lt;/xp:this.facets&gt;
-      </span>
-      <span class="nt">&lt;/unp:unpScrollableArea&gt;
-      </span>
-      <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;/xp:view&gt;</span>
-    </pre>
-  </div>
+<script src="https://gist.github.com/whitemx/7527744.js"></script>

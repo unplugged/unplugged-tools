@@ -34,26 +34,7 @@ Once these are completed, drag a panel into the editable area and add the fields
 
 The XML below shows an example where we're displaying the Name field for the document.
 
-```xml
-<unp:unpFormViewer showbuttons="true"
-  editxpagewithajax="yes" position="menu-aligned" xp:key="facet_1"
-  editxpagename="FormsEditMode.xsp" title="Person" titleiconfield="thumbnail"
-  formname="Person">
-  <xp:this.facets>
-    <xp:panel xp:key="facet_1">
-      <ul class="fieldlist">
-        <li>
-          <xp:label value="First Name" id="firstnamelabel"
-            for="firstname">
-          </xp:label>
-          <xp:text id="firstname" value="#{document2.FirstName}">
-          </xp:text>
-        </li>
-      </ul>
-    </xp:panel>
-  </xp:this.facets>
-</unp:unpFormViewer>
-```
+<script src="https://gist.github.com/whitemx/7527935.js"></script>
 
 You can use [[Generic Classes]] to layout the content of your pages.
 

@@ -27,12 +27,7 @@ Drag the control onto your XPage and complete the following Custom Properties:
 * viewsearch: the query which will be passed to the view to search with
 * xpageDoc: the name of the XPage to open documents in the view with
 
-<pre class="CICodeFormatter" ><code class="CICodeFormatter"> &lt;xc:unpSearchResults insetData="true"  
-      detailColumn="DOB" summaryColumn="Name" viewName="Search" xpageDoc="Employee.xsp"&gt;  
-      &lt;xc:this.viewsearch&gt;&lt;![CDATA[#{javascript:param.get("query")}]]&gt;&lt;/xc:this.viewsearch&gt;  
-      &lt;xc:this.title&gt;&lt;![CDATA[#{javascript:"Search results for \"" + param.get("query") + "\""}]]&gt;&lt;/xc:this.title&gt;  
- &lt;/xc:unpSearchResults&gt;  
-</code></pre>
+<script src="https://gist.github.com/whitemx/7528000.js"></script>
 
 # Troubleshooting
 If you use this control and enter text into the search input field and either; the screen flashes and all data is returned, or; the results page contains no entries when it should check the following:

@@ -26,19 +26,8 @@ Drag the control onto your XPage and complete the following Custom Properties:
 </dl>
 
 This XML shows an example of the configuration of the main page.
-```xml
-<unp:unpScrollableArea>
-	<xp:this.facets>
-		<unp:unpHorizontalView xp:key="facet_1"
-			dialogxpage="MediaLibraryDialog" sourcediv="results"
-			primaryview="Documents" filterview="Documents Filter"
-			toplevelcategory="All" title="Media Library"
-			subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu tellus, ullamcorper et tortor commodo, volutpat facilisis arcu. Donec eleifend nisl sed erat scelerisque sollicitudin."
-			favoritesonly="yes">
-		</unp:unpHorizontalView>
-	</xp:this.facets>
-</unp:unpScrollableArea>
-```
+
+<script src="https://gist.github.com/whitemx/7527954.js"></script>
 
 If you also want to support filtering, then you'll also want to include the UnpHorizontalViewFilter XPage in your application.
 

@@ -16,13 +16,7 @@ Drag the control onto your XPage and then add your content into the editable are
 
 In the example below we have a Scrollable Area and inside that there is a panel into which we will insert our content.
 
-```xml
-<unp:unpScrollableArea>
-	<xp:this.facets>
-		<xp:panel xp:key="facet_1"></xp:panel>
-	</xp:this.facets>
-</unp:unpScrollableArea>
-```
+<script src="https://gist.github.com/whitemx/7527993.js"></script>
 
 The div which gets generated will be called "contentwrapper", this div ID is used by various functions in the standard CSS so should only be changed with caution!
 

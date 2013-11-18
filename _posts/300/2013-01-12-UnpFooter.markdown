@@ -26,11 +26,7 @@ Custom Properties:
 	<dt>synctype</dt><dd>you can specify whether sync should be enabled, just for the current database or for all databases</dd>
 </dl>
 
-```xml
-<unp:unpFooter newDocTarget="EmployeeEdit.xsp" synctype="currentdb"
-	newDocLoadType="ajax">
-</unp:unpFooter>
-```
+<script src="https://gist.github.com/whitemx/7527839.js"></script>
 
 # Required Resources
 On the assumption you are using UnpHeader in your application then no extra resources are required.

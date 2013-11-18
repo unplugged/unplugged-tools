@@ -32,23 +32,6 @@ The final menu item "Font Awesome" is a top level menu item which loads a page v
 
 The most performant approach is to use the Ajax approach to loading pages but there are situations where a full page load is required such as when interacting with the camera.
 
-```xml
-<unp:unpNavigatorComputed>
-  <unp:this.computedmenuitems><![CDATA[#{javascript:[
-      {label: "Dashboard", hasSubMenu: false, page: "/UnpMain.xsp", icon: "fa-dashboard"}, 
-      {label: "Typography", hasSubMenu: true, icon: "fa-underline", subMenu: [
-        {label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyReadMode.xsp", disabled: false, hasSubMenu: false}, 
-        {label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyEditMode.xsp", disabled: false, hasSubMenu: false}
-      ]}, 
-      {label: "UI Elements", hasSubMenu: true, icon: "fa-hand-o-up", subMenu: [
-        {label: "Accordion", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Accordion.xsp", disabled: false, hasSubMenu: false}, 
-        {label: "CSS Controls", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/CSSControls.xsp", disabled: false, hasSubMenu: false},
-        {label: "Debug Toolbar", page: "/DebugToolbar.xsp", hasSubMenu: false}
-      ]}, 
-      {label: "Font Awesome", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/FontAwesome.xsp", disabled: false, icon: "fa-leaf"}
-    ]}]]></unp:this.computedmenuitems>
-</unp:unpNavigatorComputed>
-
-```
+<script src="https://gist.github.com/whitemx/7527979.js"></script>
 
 # Required Resources

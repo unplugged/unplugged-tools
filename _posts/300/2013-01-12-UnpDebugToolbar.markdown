@@ -24,19 +24,7 @@ The toolbar offers several extra tools:
 * Environment section containing environment variables
 * List of the contents of the four scopes
 
-<pre class="CICodeFormatter" ><code class="CICodeFormatter"> &lt;?xml version="1.0" encoding="UTF-8"?&gt;  
- &lt;xp:view xmlns:xp="http://www.ibm.com/xsp/core"  
-  xmlns:xc="http://www.ibm.com/xsp/custom"&gt;  
-  &lt;xp:this.resources&gt;  
-   &lt;xp:script src="/unpDebugToolbar.jss" clientSide="false"&gt;&lt;/xp:script&gt;  
-  &lt;/xp:this.resources&gt;  
-  &lt;xc:unpDebugToolbar defaultCollapsed="false"&gt;&lt;/xc:unpDebugToolbar&gt;  
-  &lt;xp:this.afterPageLoad&gt;&lt;![CDATA[#{javascript:dBar.debug("afterPageLoad");}]]  
-  &lt;/xp:this.afterPageLoad&gt;  
-  &lt;xp:this.beforeRenderResponse&gt;&lt;![CDATA[#{javascript:dBar.debug("beforeRenderResponse");}]]  
-  &lt;/xp:this.beforeRenderResponse&gt;  
- &lt;/xp:view&gt;  
-</code></pre>
+<script src="https://gist.github.com/whitemx/7527784.js"></script>
 
 # Required Resources
 When you use the custom control make sure you have the following resources in your application:

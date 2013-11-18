@@ -25,11 +25,7 @@ Drag the custom control onto your XPage and then complete the Custom Properties:
 
 Below is an example of a standard header used in our Sampler application
 
-```xml
-<unp:unpHeader viewsButton="true" title="Sampler" search="database"
-	searchPage="DatabaseSearchResults.xsp">
-</unp:unpHeader>
-```
+<script src="https://gist.github.com/whitemx/7527945.js"></script>
 
 # Required Resources
 When you use the Header custom control make sure that you have the following resources in your application:

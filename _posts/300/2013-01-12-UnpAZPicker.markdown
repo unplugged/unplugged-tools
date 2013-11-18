@@ -19,19 +19,7 @@ Drag the control onto your XPage, outside the UnpScrollableArea control but with
 
 In the UnpFlatView control set the Custom Property enableAZPicker to "yes"
 
-```xml
-<unp:unpScrollableArea>
-  <xp:this.facets>
-    <unp:unpFlatView insetData="true" detailColumn="Company"
-      summaryColumn="FullName" title="People from Singapore" viewName="People By Country Filter"
-      xpageDoc="FormsReadMode.xsp" xp:key="facet_1" numberofrows="200"
-      refreshmethod="pull" position="menu-aligned" photoColumn="Photo"
-      wrapsummarytext="yes" categoryfilter="Singapore" categoryindex="1" enableAZPicker="yes">
-    </unp:unpFlatView>
-  </xp:this.facets>
-</unp:unpScrollableArea>
-<unp:unpAZPicker></unp:unpAZPicker>
-```
+<script src="https://gist.github.com/whitemx/7527770.js"></script>
 
 # Required Resources
 On the assumption you are using UnpHeader in your application then no extra resources are required.

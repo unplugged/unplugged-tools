@@ -23,23 +23,13 @@ For an example of the Dialog in action download the samples database and open th
 
 # Usage
 
-<pre class="CICodeFormatter" ><code class="CICodeFormatter"> &lt;xc:unpDialog callback="myFunction" title="Dialog Demo"&gt;  
-      &lt;xp:this.facets&gt;  
-           &lt;xp:panel xp:key="facet_1"&gt;  
-                Content goes here  
-           &lt;/xp:panel&gt;  
-      &lt;/xp:this.facets&gt;  
- &lt;/xc:unpDialog&gt;  
-</code></pre>
+<script src="https://gist.github.com/whitemx/7527814.js"></script>
 
 In this example the Dialog will show with the words "Content goes here" in the body. Below that will be the OK and Cancel buttons. When the OK button is pressed a JavaScript function call "myFunction()" will be executed, remember to write that function in client side script and have it available on the main page of your application.
 
 To show the dialog add HTML in the following format:
 
-<pre class="CICodeFormatter" ><code class="CICodeFormatter"> &lt;a href="#dialogPopup" class="opendialoglink"&gt;  
-      Open Dialog  
- &lt;/a&gt;  
-</code></pre>
+<script src="https://gist.github.com/whitemx/7527820.js"></script>
 
 The href is the ID of the Dialog box div tag. The class name is the way the link is made to open a Dialog when it is clicked.
 

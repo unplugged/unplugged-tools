@@ -37,27 +37,10 @@ In the example below there are two menu items. The first will load a page via Aj
 
 The most performant approach is to use the Ajax approach to loading pages.
 
-```xml
-<unp:unpNavigator>
-  <unp:this.menuItem>
-    <unp:menuItem label="Employees" page="/UnpDemoWidgets.xsp"
-      ajaxtargetid="content" ajaxloadid="contentwrapper">
-    </unp:menuItem>
-  </unp:this.menuItem>
-</unp:unpNavigator>
-```
+<script src="https://gist.github.com/whitemx/7527966.js"></script>
 
 This example shows how the code is structured for sub-menus:
 
-```xml
-<unp:menuItem ajaxloadid="contentwrapper"
-  ajaxtargetid="content" submenu="no" disabled="no"
-  label="Marketing">
-</unp:menuItem>
-<unp:menuItem ajaxloadid="contentwrapper"
-  ajaxtargetid="content" submenu="sub" disabled="no"
-  label="Datasheets" page="/UnpDocsByCat.xsp">
-</unp:menuItem>
-```
+<script src="https://gist.github.com/whitemx/7527971.js"></script>
 
 # Required Resources

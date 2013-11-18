@@ -15,10 +15,7 @@ Drag the control onto your XPage and complete the following Custom Properties:
 * DocUNID: the UNID of the doc to display
 * formName: the name of the form containing the RTF's with image attachments 
 
-<pre class="CICodeFormatter" ><code class="CICodeFormatter"> &lt;xc:unpSwipeView formName="Employee"&gt;  
-      &lt;xc:this.DocUNID&gt;&lt;![CDATA[#{javascript:param.get("documentId");}]]&gt;&lt;/xc:this.DocUNID&gt;  
- &lt;/xc:unpSwipeView&gt;  
-</code></pre>
+<script src="https://gist.github.com/whitemx/7528007.js"></script>
 
 The UNID can be passed in via a scoped var, manually or from a URL param (as shown above).
 The user can either use left-right swipe gestures or tap the plus and minus icons at the top to loop through images. Currently images are displayed at the size they are stored on the Notes Document.

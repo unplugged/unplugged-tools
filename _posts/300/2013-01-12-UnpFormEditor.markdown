@@ -29,43 +29,14 @@ Once the control is added, drag a panel into the editable area which will contai
 
 The example XML below shows an example of a simple text field. It is important that the ID of the control matches the name of the field to be stored on the document.
 
-```xml
-<unp:unpFormEditor showbuttons="yes"
-  viewxpagename="FormsReadMode.xsp" formname="Person" title="Person"
-  xp:key="facet_1">
-  <xp:this.facets>
-    <xp:panel xp:key="facet_1">
-      <ul class="fieldlist">
-        <li>
-          <xp:label value="First Name" id="firstnamelabel"
-            for="firstname">
-          </xp:label>
-          <xp:inputText id="firstname" value="#{document1.FirstName}"
-            styleClass="required xspInputFieldEditBox deletable">
-          </xp:inputText>
-        </li>
-      </ul>
-    </xp:panel>
-  </xp:this.facets>
-</unp:unpFormEditor>
-```
+<script src="https://gist.github.com/whitemx/7527852.js"></script>
 
 If you want the field to be mandatory, add a styleClass property of "required".
 If you want the field to include an 'x' so the contents can be deleted, add a styleClass property of "deletable".
 
 If you want to store a multi value field (for example using a List Box control), the name of the field will need to be prefixed "multi__" (that is two underscores acting as a delimiter) so an example field might look like:
 
-```xml
-<xp:listBox id="multi__categories" multiple="true"
-  value="#{document1.Categories}" styleClass="xspListBox">
-  <xp:selectItem itemLabel=" " itemValue=""></xp:selectItem>
-  <xp:selectItems>
-    <xp:this.value><![CDATA[#{javascript:var doc:NotesDocument = database.getView("MissionLookup").getFirstDocument();
-var out = doc.getItemValue("Categories");
-return out;}]]></xp:this.value>
-  </xp:selectItems>
-</xp:listBox>
-```
+<script src="https://gist.github.com/whitemx/7527868.js"></script>
 
 You can use the Generic Classes to layout the content of your pages.
 
@@ -76,40 +47,11 @@ Secondly, add an attribute to the field called "auto-src" with a value which is 
 
 Normally you would return this list from another XPage using the "headless XPages technique" (sometimes known and XAgents). So as an example the following XML uses an XPage called EmployeeEditDeptAuto.xsp
 
-```xml
-<xp:inputText id="dept" value="#{document1.Dept}"
-  styleClass="required xspInputFieldEditBox deletable autocomplete">
-  <xp:this.attrs>
-    <xp:attr name="auto-src" value="EmployeeEditDeptAuto.xsp">
-    </xp:attr>
-  </xp:this.attrs>
-</xp:inputText>
-```
+<script src="https://gist.github.com/whitemx/7527896.js"></script>
 
 The XPage simply returns a list of options:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
-  <xp:this.afterRenderResponse><![CDATA[#{javascript:var exCon = facesContext.getExternalContext(); 
-var writer = facesContext.getResponseWriter();
-var response = exCon.getResponse();
-response.setContentType("text/plain");
-response.setHeader("Cache-Control", "no-cache");
-
-var list = $A(@Unique(@DbLookup(@DbName(), "Employees by dept", context.getUrlParameter("q"), 1, "[PARTIALMATCH]"))).sort();
-var out = "";
-for (var i=0; i<list.length; i++){
-  out += list[i] + "\n";  
-}
-writer.write(out);
-writer.endDocument();
-facesContext.responseComplete();}]]></xp:this.afterRenderResponse>
-  <xp:this.resources>
-    <xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
-  </xp:this.resources>
-</xp:view>
-```
+<script src="https://gist.github.com/whitemx/7527927.js"></script>
 
 # Required Resources
 On the assumption you are using UnpHeader in your application then no extra resources are required.

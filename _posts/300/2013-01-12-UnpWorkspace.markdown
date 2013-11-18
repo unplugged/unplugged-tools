@@ -23,34 +23,11 @@ Drag the control onto your XPage and complete the following Custom Properties:
 * alertlevel: the alert level which will be display in the top right of the workspace (options are normal, elevated and highalert
 * headerinfo: a multi value property which allows you to place text headings in the top left of the workspace. In the example below there are three entries. HTML markup is allowed in the text.
 
-<pre class="CICodeFormatter" ><code class="CICodeFormatter"> &lt;xp:this.data&gt;  
-  &lt;xp:dominoView var="dbs" viewName="Databases"&gt;&lt;/xp:dominoView&gt;  
- &lt;/xp:this.data&gt;  
- &lt;xc:unpWorkspace imgurlcol="ImgUrl" labelcol="Title"  
-  linkurlcol="UnpUrl" alertlevel="elevated" badgeidcol="BadgeID"&gt;  
-  &lt;xc:this.headerinfo&gt;  
-   &lt;xp:value&gt;  
-    #{javascript:&amp;quot;&amp;lt;strong&amp;gt;&amp;quot; +  
-    @Name(&amp;quot;[CN]&amp;quot;, @UserName()) +  
-    &amp;quot;&amp;lt;/strong&amp;gt;&amp;quot;}  
-     &lt;/xp:value&gt;  
-   &lt;xp:value&gt;BCM Local Coordinator&lt;/xp:value&gt;  
-   &lt;xp:value&gt;  
-    &amp;lt;strong&amp;gt;Org Unit:&amp;lt;/strong&amp;gt; Zetafire  
-     &lt;/xp:value&gt;  
-  &lt;/xc:this.headerinfo&gt;  
- &lt;/xc:unpWorkspace&gt;  
-</code></pre>
+<script src="https://gist.github.com/whitemx/7528028.js"></script>
 
 To use the badges there are two steps. First provide the BadgeID for each individual chiclet on the workspace. Then you will need to use this ID when you want to populate the badge like so:
 
-<pre class="CICodeFormatter" ><code class="CICodeFormatter"> &lt;script&gt;  
-  $(window).load( function() {  
-   setBadge("MyRole", "999");  
-   setBadge("CommsGuide", "21");  
-  });  
- &lt;/script&gt;  
-</code></pre>
+<script src="https://gist.github.com/whitemx/7528042.js"></script>
 
 The above example assumes that you have two chiclets on your workspace which you want to display badges for, MyRole and CommsGuide. The setBadge function locates the badge, populates the value you send to it and then shows the badge in the top right of the chiclet.
 
