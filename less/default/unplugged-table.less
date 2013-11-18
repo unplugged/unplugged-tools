@@ -140,13 +140,15 @@ li.data-row {
 	
 	// Arrow
 	&:after {
-		content:'\E224';
+		//content:'\E224';
+		content: '';
 		position:absolute;
 		right: 12px;
 		top: 50%;
 		margin-top: -8px;
 		display:inline-block;
-		font:16px/1 'Glyphicons Regular';
+		//font:16px/1 'Glyphicons Regular';
+		font:16px/1 'FontAwesome';
 		font-style:normal;
 		font-weight:400;
 		color: @table-row-title-font-color;
@@ -157,29 +159,16 @@ li.data-row {
 		text-transform:none;
 		-webkit-font-smoothing:antialiased;					
 	}
-
-	.icon {
-		/*float: right;
-		padding-right: 30px;
-		padding-top: 30px;*/
-		display:none;
-	}
 	
-	.multiLineIcon {
-		/*float: right;
-		margin-top: 11px;
-		padding-right: 0px;
-		opacity: 0.2;*/
-		display:none;
-	}
+	// Hide arrow when A-Z picker present
+	&.picker:after {
+		display: none;
+	}			
 	
-	.singleLineIcon {
-		/*float: right;
-		margin-top: 5px;
-		padding-right: 0px;
-		opacity: 0.2;*/
-		display:none;
-	}				
+	// Old icons
+	.icon, .multiLineIcon {
+		display: none;
+	}
 }
 
 // Accordion

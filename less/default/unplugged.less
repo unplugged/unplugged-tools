@@ -8,6 +8,7 @@
  * the specific language governing permissions and limitations under the License
  */
 
+/*
 @font-face {
 	font-family:'Glyphicons Regular';
 	src: url('glyphicons-regular.eot');
@@ -17,7 +18,7 @@
 		 url('glyphicons-regular.svg#glyphiconsregular') format('svg');
 	font-weight:400;
 	font-style:normal;
-}
+}*/
 
 body {
 	background-color: @body-background-color;
@@ -49,6 +50,21 @@ input {
 a:hover {
 	text-decoration: none;
 }
+
+/* Disable text/object selection except where we need it */
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+}
+
+input, 
+textarea,
+.cke_editable *,
+.richtexteditor * {
+	-webkit-user-select: auto;
+}
+
+
 
 /* HEADER */
 @import 'unplugged-header.less';
@@ -169,6 +185,7 @@ fieldset {
 	padding: 15px 20px;
 	overflow: hidden;
 	border: 0;
+	position: relative;
 
 	h1 {
 		line-height: 1.2;	
@@ -393,6 +410,54 @@ legend {
 	}
 }
 
+.list-fonts ~ #dialogPopup {
+	width: 280px;
+	left: 50%;
+	right: auto;
+	margin-left: -140px;
+	
+	#dialogContent {
+		height: auto;
+		overflow: visible;
+	}
+	
+	#glyphicondetails a.glyphicons {		
+		width: 200px;
+		margin: 0 auto;
+		display: block;
+		text-align: center;
+		padding-top: 190px;
+		top: 0;
+		
+		strong {
+			position: static;
+		}
+		
+		span {
+			position: static;
+			color: #999;
+		}
+	}
+	
+	#glyphicondetails a.glyphicons::before {
+		font-size: 160px;
+		text-align: center;
+		display: block;
+		width: 100%;
+		
+	}
+	
+	.dialogbuttons {
+		// Hide Cancel Button
+		> div:first-child {display: none;}
+		// Make OK Button full width
+		> div:last-child {
+			width: 100%;
+			.button { margin-left: 0; }
+		}
+	}	
+}
+
 
 /* DIALOG */
 
@@ -552,6 +617,85 @@ legend {
 		display: none;
 	}	
 }
+
+
+
+/* UPMark */
+
+.panel#intro {
+	padding: 20px;
+	
+	p {
+		margin-bottom: 15px;
+	}
+}
+
+#qunit {
+	padding: 20px;
+	font-family: @body-font;
+	
+	p {
+		margin-bottom: 15px;
+	}
+}
+
+#qunit-header {
+	display: none;
+}
+
+#qunit-banner {
+	display: none;
+}
+
+#qunit-testrunner-toolbar {
+	display: none;
+}
+
+#qunit-userAgent {
+	background-color: transparent;
+	font-size: 14px;
+	text-shadow: none;
+	padding: 0;
+	color: #333;
+	line-height: 24px;
+	font-weight: bold;
+	color: #333;
+	font-family: @body-font;
+	margin-bottom: 15px;
+}
+
+#qunit-testresult {
+	font-family: @body-font;
+	font-size: 18px;
+	background-color: transparent;
+	padding: 0;
+	font-weight: bold;
+}
+
+#qunit-tests {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: @body-font;
+	
+	> li {
+		background-color: transparent;
+		border: 0;
+		list-style-position: inside;
+		margin-bottom: 1px;
+		padding: 5px 10px;
+		border-radius: 0;
+		
+		&.pass {
+			background: #eee;
+		}
+		
+		a {
+			color: #aaa;
+			font-weight: normal;
+		}
+	}
+}
+
 
 
 /*
