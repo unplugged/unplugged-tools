@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
  replicaid='80257BDE004F6073'>
-<noteinfo noteid='1f6a' unid='A56633B04233629A80257BE9005896E8' sequence='39'>
+<noteinfo noteid='1f6a' unid='A56633B04233629A80257BE9005896E8' sequence='43'>
 <created><datetime dst='true'>20130917T170738,00+01</datetime></created>
-<modified><datetime>20131107T090328,87+00</datetime></modified>
-<revised><datetime>20131107T090328,86+00</datetime></revised>
-<lastaccessed><datetime>20131107T090328,87+00</datetime></lastaccessed>
+<modified><datetime>20131108T121115,19+00</datetime></modified>
+<revised><datetime>20131108T121115,18+00</datetime></revised>
+<lastaccessed><datetime>20131108T121115,19+00</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130926T134552,97+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
@@ -27,11 +27,7 @@ hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
 <item name='$HTMLHeadTag' sign='true'><formula>"&lt;link rel=\"stylesheet\" type=\"text/css\" href=\"/" + @WebDbName + "/bootstrap.min.css\"&gt;" + @NewLine +
 "&lt;link rel=\"stylesheet\" type=\"text/css\" href=\"/" + @WebDbName + "/custom.css\"&gt;" + @NewLine +
 "&lt;script type=\"text/javascript\" src=\"/" + @WebDbName + "/jquery-2.0.3.min.js\"&gt;&lt;/script&gt;" + @NewLine +
-"&lt;script type=\"text/javascript\" src=\"/" + @WebDbName + "/bootstrap.min.js\"&gt;&lt;/script&gt;" + @NewLine +
-"&lt;style&gt;" + @NewLine +
-"input, textarea, select, .uneditable-input {height: 25px !important;}" + @NewLine +
-"input[type=\"submit\"]{height: 40px !important;}" + @NewLine +
-"&lt;/style&gt;"</formula></item>
+"&lt;script type=\"text/javascript\" src=\"/" + @WebDbName + "/bootstrap.min.js\"&gt;&lt;/script&gt;"</formula></item>
 <item name='$Flags'><text/></item>
 <item name='$DesignerVersion'><text>8.5.3</text></item>
 <item name='$$ScriptName' summary='false' sign='true'><text>login</text></item>
@@ -114,8 +110,8 @@ AIX/LwABAAAJPGxhYmVsIGZvcj0idXNlci1pZCI+VXNlciBuYW1lOjwvbGFiZWw+AIECgwQBAIX/
 CAABAAAJ3QYAAPf/9/8kAAEAAIAAAKAFaAEAAAAAAAAAAGQAAAAAAAAAAAAAAAAA/v9QAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAACw/xQAAAAQAIAAAAAAAAAAAAAAAIr/LACKAAAFADACAAgAAAAAAgEAAAkA
-AAAAAAAAAAgAAAAAAFVzZXJuYW1lev9CAAcAFQAAAAAADAAAAAAAAAAAAAAAAAB1c2VyLWlkZm9y
-bS1jb250cm9sIGlucHV0LWxndHlwZT0iZW1haWwi0ggBAAAAAADSCAkA////AN4GAAD3/4X/CAAB
+AAAAAAAAAAgAAAAAAFVzZXJuYW1lev9CAAcAFQAAAAAACwAAAAAAAAAAAAAAAAB1c2VyLWlkZm9y
+bS1jb250cm9sIGlucHV0LWxndHlwZT0idGV4dCIA0ggBAAAAAADSCAkA////AN4GAAD3/4X/CAAB
 AAAJgQKDBAIAhf8OAAEAAAk8L2Rpdj6BAoMEAgCF/yAAAQAACTxkaXYgY2xhc3M9ImZvcm0tZ3Jv
 dXAiPoECgwQCAIX/LAABAAAJPGxhYmVsIGZvcj0icHctaWQiPlBhc3N3b3JkOjwvbGFiZWw+gQKD
 BAIAhf8IAAEAAAndBgAA9//3/yQAAQAAgAAAoAVoAQAAAAAAAAAAZAAAAAAAAAAAAAAAAAD+/1AA

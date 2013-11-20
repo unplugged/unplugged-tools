@@ -301,9 +301,7 @@ function changeSetting(thefield) {
 				thefield.next().css("background-color", newvalue);
 				break;
 			case "@menuPane-padding":
-				$("#previewframe").contents().find(".navScrollArea").css(
-						"padding", newvalue);
-				$("#previewframe").contents().find("#menuitems ul").css(
+				$("#previewframe").contents().find("#menuitems").css(
 						"margin", newvalue);
 				break;
 			case "@menuitems-border-radius":
@@ -323,6 +321,10 @@ function changeSetting(thefield) {
 						"-webkit-border-bottom-left-radius", newvalue);
 				$("#previewframe").contents().find("#menuitems a:last").css(
 						"-webkit-border-bottom-right-radius", newvalue);
+				break;
+			case "@menuitems-background":
+				$("#previewframe").contents().find("a.menulink").css("background", newvalue);
+				thefield.next().css("background-color", newvalue);
 				break;
 			case "@menuitems-padding":
 				$("#previewframe").contents().find(".navScrollArea li").css(

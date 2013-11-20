@@ -187,11 +187,13 @@ public class LessToCss implements Serializable {
 				e.printStackTrace();
 			}
 			fullPath = fullPath.replaceAll("Program Files", "Progra~1");
+			fullPath = fullPath.replaceAll("data", "jvm/bin");
 		} else {
-			fullPath = userDir;
+			//fullPath = userDir;
+			//fullPath = fullPath.replaceAll("data", "linux/jvm/bin");
+			fullPath = "/opt/ibm/lotus/notes/latest/linux";
 		}
 
-		fullPath = fullPath.replaceAll("data", "jvm/bin");
 		return fullPath;
 
 	}
