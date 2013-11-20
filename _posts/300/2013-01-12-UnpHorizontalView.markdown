@@ -8,7 +8,7 @@ categories: "300"
 This mimics the iTunes Store style of horizontal data display. We created the control to display an icon with a title which can then be clicked to load a dialog which shows more information about the document.
 
 ![Horizontal View iPad](http://teamstudio.s3.amazonaws.com/images/horizontalview-ipad.png)
-![Horizontal View iPhone](http://teamstudio.s3.amazonaws.com/images/horiontalview-iphone.png)
+![Horizontal View iPhone](http://teamstudio.s3.amazonaws.com/images/horizontalview-iphone.png)
 
 The control will work when integrated with unpScrollableArea
 
