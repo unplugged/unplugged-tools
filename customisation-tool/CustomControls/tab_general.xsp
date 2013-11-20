@@ -412,7 +412,11 @@
 						<xp:panel tagName="a"
 							styleClass="color-picker">
 							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("menuitemsbackground")}]]></xp:this.style>
-						</xp:panel>
+							<xp:this.attrs>
+								<xp:attr name="data-color"
+									value="transparent">
+								</xp:attr>
+							</xp:this.attrs></xp:panel>
 					</li>
 					<li>
 						<xp:label value="Menu Items Border Outer" id="menuitemsborderouterlabel"

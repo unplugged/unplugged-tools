@@ -24,6 +24,7 @@ $("iframe").ready( function() {
 		setTimeout(processAllSettings, 1500);
 	});
 
+
 function processAllSettings() {
 	$(".container input").each( function() {
 		changeSetting($(this));
@@ -323,7 +324,7 @@ function changeSetting(thefield) {
 						"-webkit-border-bottom-right-radius", newvalue);
 				break;
 			case "@menuitems-background":
-				$("#previewframe").contents().find("a.menulink").css("background", newvalue);
+				$("#previewframe").contents().find("#menuitems a").css("background", newvalue);
 				thefield.next().css("background-color", newvalue);
 				break;
 			case "@menuitems-padding":
@@ -350,11 +351,21 @@ function changeSetting(thefield) {
 						"border-top", newvalue);
 				$("#previewframe").contents().find("#menuitems li:last").css(
 						"border-bottom", newvalue);
+				$("#previewframe").contents().find("#menuitems a").css(
+						"border-left", newvalue);
+				$("#previewframe").contents().find("#menuitems a").css(
+						"border-right", newvalue);
+				$("#previewframe").contents().find("#menuitems a:first").css(
+						"border-top", newvalue);
+				$("#previewframe").contents().find("#menuitems a:last").css(
+						"border-bottom", newvalue);
 				break;
 			case "@menuitems-border-divider":
 				$("#previewframe").contents().find(".navScrollArea li").css(
 						"border-bottom", newvalue);
 				$("#previewframe").contents().find("#menuitems li").css(
+						"border-bottom", newvalue);
+				$("#previewframe").contents().find("#menuitems a").css(
 						"border-bottom", newvalue);
 				break;
 			case "@menuitems-box-shadow":
@@ -545,7 +556,7 @@ function changeSetting(thefield) {
 				break;
 			case "@table-heading-border-color":
 				$("#previewframe").contents().find(
-						"li.title, li#title, .categoryRow").css(
+						"li.title span, li.title, .categoryRow").css(
 						"border-bottom-color", newvalue);
 				thefield.next().css("background-color", newvalue);
 				break;
@@ -576,6 +587,13 @@ function changeSetting(thefield) {
 				$("#previewframe").contents().find("#formholder h2").css(
 						"background", newvalue);
 				thefield.next().css("background-color", newvalue);
+				break;
+			case "@table-heading-font-size":
+				$("#previewframe").contents().find(
+						"li.title span, li#title span, .categoryRow span").css(
+						"font-size", newvalue);
+				$("#previewframe").contents().find("#formholder h2 span").css(
+						"font-size", newvalue);
 				break;
 			case "@table-heading-font-weight":
 				$("#previewframe").contents().find(
@@ -662,11 +680,11 @@ function changeSetting(thefield) {
 				thefield.next().css("background-color", newvalue);
 				break;
 			case "@table-row-title-font-size":
-				$("#previewframe").contents().find("li.data-row").css(
+				$("#previewframe").contents().find("li.data-row .viewlistsummary").css(
 						"font-size", newvalue);
 				break;
 			case "@table-row-title-font-weight":
-				$("#previewframe").contents().find("li.data-row").css(
+				$("#previewframe").contents().find("li.data-row .viewlistsummary").css(
 						"font-weight", newvalue);
 				break;
 			case "@table-row-img-border-radius":
@@ -776,7 +794,7 @@ function changeSetting(thefield) {
 						"border-right", newvalue);
 				break;
 			case "@hviewcategory-background-color":
-				$("#previewframe").contents().find(".hviewcategory").css(
+				$("#previewframe").contents().find(".hviewcategory, .swiper-container").css(
 						"background-color", newvalue);
 				thefield.next().css("background-color", newvalue);
 				break;
