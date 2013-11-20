@@ -10,7 +10,7 @@
 						<xp:this.facets>
 							<xp:panel xp:key="facet_1">
 								<div class="panel" id="intro">
-									<h2>UPMark</h2>
+									<h1>UPMark</h1>
 									<p>This page runs a suite of tests which involve opening
 										various pages in this application and timing each event.</p>
 									<p>When you press the button below, the test runs and when

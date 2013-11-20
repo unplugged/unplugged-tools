@@ -89,13 +89,15 @@ ul#menuitems {
 		// Arrow
 		
 		&:after {
-			content:'\E224';
+			//content:'\E224';
+			content: '';
 			position:absolute;
 			right: 12px;
 			top: 50%;
 			margin-top: -8px;
 			display:inline-block;
-			font:16px/1 'Glyphicons Regular';
+			//font:16px/1 'Glyphicons Regular';
+			font:16px/1 'FontAwesome';
 			font-style:normal;
 			font-weight:400;
 			color:@menuitems-color;
@@ -110,8 +112,11 @@ ul#menuitems {
 
 		// Icon
 		
-		i:before {
+		i {
+			float: left;
+			margin-right: 12px;
 			color: @menuitems-color;
+			font-size: 24px;
 		}
 	}
 
@@ -141,6 +146,7 @@ ul#menuitems {
 	a.open:after,
 	&.viewMenuItem.expanded .menulink:after {
 		-webkit-transform: rotate(90deg);
+		right: 15px;
 	}
 	
 	> li > ul > li > a,

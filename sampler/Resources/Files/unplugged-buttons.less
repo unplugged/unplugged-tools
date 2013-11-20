@@ -120,9 +120,11 @@
 	.icon:before {
 		position:absolute;
 		left:8px;
-		top:8px;
+		//top:8px;
+		top: 6px;
 		display:inline-block;
-		font:20px/1em 'Glyphicons Regular';
+		//font:20px/1em 'Glyphicons Regular';
+		font: 24px/1em 'FontAwesome';
 		font-style:normal;
 		font-weight:400;
 		vertical-align:middle;
@@ -130,7 +132,7 @@
 		-webkit-font-smoothing:antialiased;			
 		
 		@media screen and (max-width: 700px) {
-			top: 7px;
+			top: 5px;
 		}				
 	}
 }
@@ -154,11 +156,17 @@
 }
 
 .viewsButton {	
-	.icon:before {	content: "\E159"; }
+	.icon:before {	
+		//content: "\E159"; 
+		content: '';
+	}
 }
 
 .homeButton {
-	.icon:before { content: "\E021"; }
+	.icon:before { 
+		//content: "\E021"; 
+		content: '';
+	}
 	@media screen and (max-width: 700px) {
 		width: 36px;
 	}	
@@ -166,7 +174,10 @@
 
 .searchButton {
 	right: 56px;
-	.icon:before { content: "\E028"; }	
+	.icon:before { 
+		//content: "\E028"; 
+		content: '';
+	}	
 
 	@media screen and (min-width: 701px) {
 		display: none;
@@ -179,19 +190,31 @@
 .syncButton {
 	background-color: @button-success-background;
 	color: @button-success-label-color;
-	.icon:before { content: "\E082"; }	
+	.icon:before { 
+		//content: "\E082"; 
+		content: '';
+	}	
 }
 
 .newButton {	
-	.icon:before { content: "\E236"; }	
+	.icon:before { 
+		//content: "\E236"; 
+		content: '';
+	}	
 }
 
 .settingsButton {
-	.icon:before { content: "\E137"; }	
+	.icon:before { 
+		//content: "\E137"; 
+		content: '';
+	}	
 }
 
 .backButton {
-	.icon:before { content: "\E225"; }	
+	.icon:before { 
+		//content: "\E225";
+		content: ''; 
+	}	
 }
 
 .viewsButton,

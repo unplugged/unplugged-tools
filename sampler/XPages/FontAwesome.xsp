@@ -8,87 +8,2232 @@
 					<unp:unpScrollableArea>
 						<xp:this.facets>
 							<xp:panel xp:key="facet_1">
-								<div class="panel">
+								<div class="panel fontawesome">
 									<h1>Font Awesome</h1>
-									<section class="hidden-print">
-										<div class="stripe-ad">
-											<p class="lead">
-												Font Awesome gives you scalable vector
-												icons that can instantly be customized —
-												size, color, drop shadow, and anything
-												that can be done with the power of CSS. 
-												They are used throughout the Unplugged Controls, and you can use them in your applications.
-											</p>
-										</div>
-									</section>
 
-									<section id="why" class="feature-list">
-										<ul class="fontawesomefeatures">
-											<li>
-												<h4>
-													<i class="fa fa-flag"></i>
-													&#160;
-													One Font, 369 Icons
-												</h4>
-												In a single collection, Font Awesome is
-												a pictographic language of web-related
-												actions.
-											</li>
-											<li>
-												<h4>
-													<i class="fa fa-ban"></i>&#160;
-													No JavaScript Required
-												</h4>
-												Fewer compatibility concerns because
-												Font Awesome doesn't require JavaScript.
-											</li>
-											<li>
-												<h4>
-													<i class="fa fa-arrows-alt"></i>&#160;
-													Infinite Scalability
-												</h4>
-												Scalable vector graphics means every
-												icon looks awesome at any size.
-											</li>
-											<li>
-												<h4>
-													<i class="fa fa-microphone"></i>&#160;
-													Free, as in Speech
-												</h4>
-												Font Awesome is completely free for
-												commercial use. Check out the&#160;
-												<a href="http://fontawesome.io/license/">license</a>
-												.
-											</li>
-											<li>
-												<h4>
-													<i class="fa fa-pencil"></i>&#160;
-													CSS Control
-												</h4>
-												Easily style icon color, size, shadow,
-												and anything that's possible with CSS.
-											</li>
-											<li>
-												<h4>
-													<i class="fa fa-eye"></i>&#160;
-													Perfect on Retina Displays
-												</h4>
-												Font Awesome icons are vectors, which
-												mean they're gorgeous on high-resolution
-												displays.
-											</li>
-											<li>
-												<h4>
-													<i class="fa fa-file-text"></i>&#160;
-													Full Documentation Available
-												</h4>
-												The&#160;<a href="http://fontawesome.io">Font Awesome website</a>&#160;provides full documentation.
-											</li>
-										</ul>
-									</section>
+									<div>
+										<i class="fa fa-fw">&#xf000;</i>
+										fa-glass
+										<span>(&amp;#xf000;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf001;</i>
+										fa-music
+										<span>(&amp;#xf001;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf002;</i>
+										fa-search
+										<span>(&amp;#xf002;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf003;</i>
+										fa-envelope-o
+										<span>(&amp;#xf003;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf004;</i>
+										fa-heart
+										<span>(&amp;#xf004;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf005;</i>
+										fa-star
+										<span>(&amp;#xf005;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf006;</i>
+										fa-star-o
+										<span>(&amp;#xf006;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf007;</i>
+										fa-user
+										<span>(&amp;#xf007;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf008;</i>
+										fa-film
+										<span>(&amp;#xf008;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf009;</i>
+										fa-th-large
+										<span>(&amp;#xf009;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf00a;</i>
+										fa-th
+										<span>(&amp;#xf00a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf00b;</i>
+										fa-th-list
+										<span>(&amp;#xf00b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf00c;</i>
+										fa-check
+										<span>(&amp;#xf00c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf00d;</i>
+										fa-times
+										<span>(&amp;#xf00d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf00e;</i>
+										fa-search-plus
+										<span>(&amp;#xf00e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf010;</i>
+										fa-search-minus
+										<span>(&amp;#xf010;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf011;</i>
+										fa-power-off
+										<span>(&amp;#xf011;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf012;</i>
+										fa-signal
+										<span>(&amp;#xf012;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf013;</i>
+										fa-cog
+										<span>(&amp;#xf013;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf014;</i>
+										fa-trash-o
+										<span>(&amp;#xf014;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf015;</i>
+										fa-home
+										<span>(&amp;#xf015;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf016;</i>
+										fa-file-o
+										<span>(&amp;#xf016;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf017;</i>
+										fa-clock-o
+										<span>(&amp;#xf017;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf018;</i>
+										fa-road
+										<span>(&amp;#xf018;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf019;</i>
+										fa-download
+										<span>(&amp;#xf019;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf01a;</i>
+										fa-arrow-circle-o-down
+										<span>(&amp;#xf01a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf01b;</i>
+										fa-arrow-circle-o-up
+										<span>(&amp;#xf01b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf01c;</i>
+										fa-inbox
+										<span>(&amp;#xf01c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf01d;</i>
+										fa-play-circle-o
+										<span>(&amp;#xf01d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf01e;</i>
+										fa-repeat
+										<span>(&amp;#xf01e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf021;</i>
+										fa-refresh
+										<span>(&amp;#xf021;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf022;</i>
+										fa-list-alt
+										<span>(&amp;#xf022;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf023;</i>
+										fa-lock
+										<span>(&amp;#xf023;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf024;</i>
+										fa-flag
+										<span>(&amp;#xf024;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf025;</i>
+										fa-headphones
+										<span>(&amp;#xf025;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf026;</i>
+										fa-volume-off
+										<span>(&amp;#xf026;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf027;</i>
+										fa-volume-down
+										<span>(&amp;#xf027;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf028;</i>
+										fa-volume-up
+										<span>(&amp;#xf028;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf029;</i>
+										fa-qrcode
+										<span>(&amp;#xf029;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf02a;</i>
+										fa-barcode
+										<span>(&amp;#xf02a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf02b;</i>
+										fa-tag
+										<span>(&amp;#xf02b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf02c;</i>
+										fa-tags
+										<span>(&amp;#xf02c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf02d;</i>
+										fa-book
+										<span>(&amp;#xf02d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf02e;</i>
+										fa-bookmark
+										<span>(&amp;#xf02e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf02f;</i>
+										fa-print
+										<span>(&amp;#xf02f;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf030;</i>
+										fa-camera
+										<span>(&amp;#xf030;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf031;</i>
+										fa-font
+										<span>(&amp;#xf031;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf032;</i>
+										fa-bold
+										<span>(&amp;#xf032;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf033;</i>
+										fa-italic
+										<span>(&amp;#xf033;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf034;</i>
+										fa-text-height
+										<span>(&amp;#xf034;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf035;</i>
+										fa-text-width
+										<span>(&amp;#xf035;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf036;</i>
+										fa-align-left
+										<span>(&amp;#xf036;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf037;</i>
+										fa-align-center
+										<span>(&amp;#xf037;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf038;</i>
+										fa-align-right
+										<span>(&amp;#xf038;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf039;</i>
+										fa-align-justify
+										<span>(&amp;#xf039;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf03a;</i>
+										fa-list
+										<span>(&amp;#xf03a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf03b;</i>
+										fa-outdent
+										<span>(&amp;#xf03b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf03c;</i>
+										fa-indent
+										<span>(&amp;#xf03c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf03d;</i>
+										fa-video-camera
+										<span>(&amp;#xf03d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf03e;</i>
+										fa-picture-o
+										<span>(&amp;#xf03e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf040;</i>
+										fa-pencil
+										<span>(&amp;#xf040;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf041;</i>
+										fa-map-marker
+										<span>(&amp;#xf041;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf042;</i>
+										fa-adjust
+										<span>(&amp;#xf042;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf043;</i>
+										fa-tint
+										<span>(&amp;#xf043;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf044;</i>
+										fa-pencil-square-o
+										<span>(&amp;#xf044;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf045;</i>
+										fa-share-square-o
+										<span>(&amp;#xf045;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf046;</i>
+										fa-check-square-o
+										<span>(&amp;#xf046;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf047;</i>
+										fa-arrows
+										<span>(&amp;#xf047;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf048;</i>
+										fa-step-backward
+										<span>(&amp;#xf048;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf049;</i>
+										fa-fast-backward
+										<span>(&amp;#xf049;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf04a;</i>
+										fa-backward
+										<span>(&amp;#xf04a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf04b;</i>
+										fa-play
+										<span>(&amp;#xf04b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf04c;</i>
+										fa-pause
+										<span>(&amp;#xf04c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf04d;</i>
+										fa-stop
+										<span>(&amp;#xf04d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf04e;</i>
+										fa-forward
+										<span>(&amp;#xf04e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf050;</i>
+										fa-fast-forward
+										<span>(&amp;#xf050;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf051;</i>
+										fa-step-forward
+										<span>(&amp;#xf051;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf052;</i>
+										fa-eject
+										<span>(&amp;#xf052;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf053;</i>
+										fa-chevron-left
+										<span>(&amp;#xf053;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf054;</i>
+										fa-chevron-right
+										<span>(&amp;#xf054;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf055;</i>
+										fa-plus-circle
+										<span>(&amp;#xf055;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf056;</i>
+										fa-minus-circle
+										<span>(&amp;#xf056;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf057;</i>
+										fa-times-circle
+										<span>(&amp;#xf057;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf058;</i>
+										fa-check-circle
+										<span>(&amp;#xf058;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf059;</i>
+										fa-question-circle
+										<span>(&amp;#xf059;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf05a;</i>
+										fa-info-circle
+										<span>(&amp;#xf05a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf05b;</i>
+										fa-crosshairs
+										<span>(&amp;#xf05b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf05c;</i>
+										fa-times-circle-o
+										<span>(&amp;#xf05c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf05d;</i>
+										fa-check-circle-o
+										<span>(&amp;#xf05d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf05e;</i>
+										fa-ban
+										<span>(&amp;#xf05e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf060;</i>
+										fa-arrow-left
+										<span>(&amp;#xf060;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf061;</i>
+										fa-arrow-right
+										<span>(&amp;#xf061;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf062;</i>
+										fa-arrow-up
+										<span>(&amp;#xf062;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf063;</i>
+										fa-arrow-down
+										<span>(&amp;#xf063;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf064;</i>
+										fa-share
+										<span>(&amp;#xf064;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf065;</i>
+										fa-expand
+										<span>(&amp;#xf065;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf066;</i>
+										fa-compress
+										<span>(&amp;#xf066;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf067;</i>
+										fa-plus
+										<span>(&amp;#xf067;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf068;</i>
+										fa-minus
+										<span>(&amp;#xf068;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf069;</i>
+										fa-asterisk
+										<span>(&amp;#xf069;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf06a;</i>
+										fa-exclamation-circle
+										<span>(&amp;#xf06a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf06b;</i>
+										fa-gift
+										<span>(&amp;#xf06b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf06c;</i>
+										fa-leaf
+										<span>(&amp;#xf06c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf06d;</i>
+										fa-fire
+										<span>(&amp;#xf06d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf06e;</i>
+										fa-eye
+										<span>(&amp;#xf06e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf070;</i>
+										fa-eye-slash
+										<span>(&amp;#xf070;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf071;</i>
+										fa-exclamation-triangle
+										<span>(&amp;#xf071;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf072;</i>
+										fa-plane
+										<span>(&amp;#xf072;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf073;</i>
+										fa-calendar
+										<span>(&amp;#xf073;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf074;</i>
+										fa-random
+										<span>(&amp;#xf074;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf075;</i>
+										fa-comment
+										<span>(&amp;#xf075;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf076;</i>
+										fa-magnet
+										<span>(&amp;#xf076;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf077;</i>
+										fa-chevron-up
+										<span>(&amp;#xf077;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf078;</i>
+										fa-chevron-down
+										<span>(&amp;#xf078;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf079;</i>
+										fa-retweet
+										<span>(&amp;#xf079;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf07a;</i>
+										fa-shopping-cart
+										<span>(&amp;#xf07a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf07b;</i>
+										fa-folder
+										<span>(&amp;#xf07b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf07c;</i>
+										fa-folder-open
+										<span>(&amp;#xf07c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf07d;</i>
+										fa-arrows-v
+										<span>(&amp;#xf07d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf07e;</i>
+										fa-arrows-h
+										<span>(&amp;#xf07e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf080;</i>
+										fa-bar-chart-o
+										<span>(&amp;#xf080;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf081;</i>
+										fa-twitter-square
+										<span>(&amp;#xf081;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf082;</i>
+										fa-facebook-square
+										<span>(&amp;#xf082;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf083;</i>
+										fa-camera-retro
+										<span>(&amp;#xf083;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf084;</i>
+										fa-key
+										<span>(&amp;#xf084;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf085;</i>
+										fa-cogs
+										<span>(&amp;#xf085;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf086;</i>
+										fa-comments
+										<span>(&amp;#xf086;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf087;</i>
+										fa-thumbs-o-up
+										<span>(&amp;#xf087;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf088;</i>
+										fa-thumbs-o-down
+										<span>(&amp;#xf088;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf089;</i>
+										fa-star-half
+										<span>(&amp;#xf089;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf08a;</i>
+										fa-heart-o
+										<span>(&amp;#xf08a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf08b;</i>
+										fa-sign-out
+										<span>(&amp;#xf08b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf08c;</i>
+										fa-linkedin-square
+										<span>(&amp;#xf08c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf08d;</i>
+										fa-thumb-tack
+										<span>(&amp;#xf08d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf08e;</i>
+										fa-external-link
+										<span>(&amp;#xf08e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf090;</i>
+										fa-sign-in
+										<span>(&amp;#xf090;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf091;</i>
+										fa-trophy
+										<span>(&amp;#xf091;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf092;</i>
+										fa-github-square
+										<span>(&amp;#xf092;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf093;</i>
+										fa-upload
+										<span>(&amp;#xf093;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf094;</i>
+										fa-lemon-o
+										<span>(&amp;#xf094;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf095;</i>
+										fa-phone
+										<span>(&amp;#xf095;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf096;</i>
+										fa-square-o
+										<span>(&amp;#xf096;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf097;</i>
+										fa-bookmark-o
+										<span>(&amp;#xf097;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf098;</i>
+										fa-phone-square
+										<span>(&amp;#xf098;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf099;</i>
+										fa-twitter
+										<span>(&amp;#xf099;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf09a;</i>
+										fa-facebook
+										<span>(&amp;#xf09a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf09b;</i>
+										fa-github
+										<span>(&amp;#xf09b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf09c;</i>
+										fa-unlock
+										<span>(&amp;#xf09c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf09d;</i>
+										fa-credit-card
+										<span>(&amp;#xf09d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf09e;</i>
+										fa-rss
+										<span>(&amp;#xf09e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0a0;</i>
+										fa-hdd-o
+										<span>(&amp;#xf0a0;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0a1;</i>
+										fa-bullhorn
+										<span>(&amp;#xf0a1;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0f3;</i>
+										fa-bell
+										<span>(&amp;#xf0f3;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0a3;</i>
+										fa-certificate
+										<span>(&amp;#xf0a3;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0a4;</i>
+										fa-hand-o-right
+										<span>(&amp;#xf0a4;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0a5;</i>
+										fa-hand-o-left
+										<span>(&amp;#xf0a5;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0a6;</i>
+										fa-hand-o-up
+										<span>(&amp;#xf0a6;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0a7;</i>
+										fa-hand-o-down
+										<span>(&amp;#xf0a7;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0a8;</i>
+										fa-arrow-circle-left
+										<span>(&amp;#xf0a8;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0a9;</i>
+										fa-arrow-circle-right
+										<span>(&amp;#xf0a9;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0aa;</i>
+										fa-arrow-circle-up
+										<span>(&amp;#xf0aa;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0ab;</i>
+										fa-arrow-circle-down
+										<span>(&amp;#xf0ab;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0ac;</i>
+										fa-globe
+										<span>(&amp;#xf0ac;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0ad;</i>
+										fa-wrench
+										<span>(&amp;#xf0ad;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0ae;</i>
+										fa-tasks
+										<span>(&amp;#xf0ae;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0b0;</i>
+										fa-filter
+										<span>(&amp;#xf0b0;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0b1;</i>
+										fa-briefcase
+										<span>(&amp;#xf0b1;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0b2;</i>
+										fa-arrows-alt
+										<span>(&amp;#xf0b2;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0c0;</i>
+										fa-users
+										<span>(&amp;#xf0c0;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0c1;</i>
+										fa-link
+										<span>(&amp;#xf0c1;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0c2;</i>
+										fa-cloud
+										<span>(&amp;#xf0c2;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0c3;</i>
+										fa-flask
+										<span>(&amp;#xf0c3;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0c4;</i>
+										fa-scissors
+										<span>(&amp;#xf0c4;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0c5;</i>
+										fa-files-o
+										<span>(&amp;#xf0c5;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0c6;</i>
+										fa-paperclip
+										<span>(&amp;#xf0c6;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0c7;</i>
+										fa-floppy-o
+										<span>(&amp;#xf0c7;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0c8;</i>
+										fa-square
+										<span>(&amp;#xf0c8;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0c9;</i>
+										fa-bars
+										<span>(&amp;#xf0c9;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0ca;</i>
+										fa-list-ul
+										<span>(&amp;#xf0ca;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0cb;</i>
+										fa-list-ol
+										<span>(&amp;#xf0cb;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0cc;</i>
+										fa-strikethrough
+										<span>(&amp;#xf0cc;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0cd;</i>
+										fa-underline
+										<span>(&amp;#xf0cd;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0ce;</i>
+										fa-table
+										<span>(&amp;#xf0ce;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0d0;</i>
+										fa-magic
+										<span>(&amp;#xf0d0;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0d1;</i>
+										fa-truck
+										<span>(&amp;#xf0d1;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0d2;</i>
+										fa-pinterest
+										<span>(&amp;#xf0d2;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0d3;</i>
+										fa-pinterest-square
+										<span>(&amp;#xf0d3;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0d4;</i>
+										fa-google-plus-square
+										<span>(&amp;#xf0d4;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0d5;</i>
+										fa-google-plus
+										<span>(&amp;#xf0d5;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0d6;</i>
+										fa-money
+										<span>(&amp;#xf0d6;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0d7;</i>
+										fa-caret-down
+										<span>(&amp;#xf0d7;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0d8;</i>
+										fa-caret-up
+										<span>(&amp;#xf0d8;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0d9;</i>
+										fa-caret-left
+										<span>(&amp;#xf0d9;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0da;</i>
+										fa-caret-right
+										<span>(&amp;#xf0da;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0db;</i>
+										fa-columns
+										<span>(&amp;#xf0db;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0dc;</i>
+										fa-sort
+										<span>(&amp;#xf0dc;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0dd;</i>
+										fa-sort-asc
+										<span>(&amp;#xf0dd;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0de;</i>
+										fa-sort-desc
+										<span>(&amp;#xf0de;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0e0;</i>
+										fa-envelope
+										<span>(&amp;#xf0e0;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0e1;</i>
+										fa-linkedin
+										<span>(&amp;#xf0e1;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0e2;</i>
+										fa-undo
+										<span>(&amp;#xf0e2;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0e3;</i>
+										fa-gavel
+										<span>(&amp;#xf0e3;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0e4;</i>
+										fa-tachometer
+										<span>(&amp;#xf0e4;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0e5;</i>
+										fa-comment-o
+										<span>(&amp;#xf0e5;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0e6;</i>
+										fa-comments-o
+										<span>(&amp;#xf0e6;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0e7;</i>
+										fa-bolt
+										<span>(&amp;#xf0e7;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0e8;</i>
+										fa-sitemap
+										<span>(&amp;#xf0e8;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0e9;</i>
+										fa-umbrella
+										<span>(&amp;#xf0e9;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0ea;</i>
+										fa-clipboard
+										<span>(&amp;#xf0ea;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0eb;</i>
+										fa-lightbulb-o
+										<span>(&amp;#xf0eb;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0ec;</i>
+										fa-exchange
+										<span>(&amp;#xf0ec;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0ed;</i>
+										fa-cloud-download
+										<span>(&amp;#xf0ed;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0ee;</i>
+										fa-cloud-upload
+										<span>(&amp;#xf0ee;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0f0;</i>
+										fa-user-md
+										<span>(&amp;#xf0f0;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0f1;</i>
+										fa-stethoscope
+										<span>(&amp;#xf0f1;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0f2;</i>
+										fa-suitcase
+										<span>(&amp;#xf0f2;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0a2;</i>
+										fa-bell-o
+										<span>(&amp;#xf0a2;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0f4;</i>
+										fa-coffee
+										<span>(&amp;#xf0f4;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0f5;</i>
+										fa-cutlery
+										<span>(&amp;#xf0f5;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0f6;</i>
+										fa-file-text-o
+										<span>(&amp;#xf0f6;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0f7;</i>
+										fa-building-o
+										<span>(&amp;#xf0f7;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0f8;</i>
+										fa-hospital-o
+										<span>(&amp;#xf0f8;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0f9;</i>
+										fa-ambulance
+										<span>(&amp;#xf0f9;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0fa;</i>
+										fa-medkit
+										<span>(&amp;#xf0fa;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0fb;</i>
+										fa-fighter-jet
+										<span>(&amp;#xf0fb;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0fc;</i>
+										fa-beer
+										<span>(&amp;#xf0fc;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0fd;</i>
+										fa-h-square
+										<span>(&amp;#xf0fd;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf0fe;</i>
+										fa-plus-square
+										<span>(&amp;#xf0fe;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf100;</i>
+										fa-angle-double-left
+										<span>(&amp;#xf100;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf101;</i>
+										fa-angle-double-right
+										<span>(&amp;#xf101;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf102;</i>
+										fa-angle-double-up
+										<span>(&amp;#xf102;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf103;</i>
+										fa-angle-double-down
+										<span>(&amp;#xf103;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf104;</i>
+										fa-angle-left
+										<span>(&amp;#xf104;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf105;</i>
+										fa-angle-right
+										<span>(&amp;#xf105;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf106;</i>
+										fa-angle-up
+										<span>(&amp;#xf106;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf107;</i>
+										fa-angle-down
+										<span>(&amp;#xf107;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf108;</i>
+										fa-desktop
+										<span>(&amp;#xf108;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf109;</i>
+										fa-laptop
+										<span>(&amp;#xf109;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf10a;</i>
+										fa-tablet
+										<span>(&amp;#xf10a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf10b;</i>
+										fa-mobile
+										<span>(&amp;#xf10b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf10c;</i>
+										fa-circle-o
+										<span>(&amp;#xf10c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf10d;</i>
+										fa-quote-left
+										<span>(&amp;#xf10d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf10e;</i>
+										fa-quote-right
+										<span>(&amp;#xf10e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf110;</i>
+										fa-spinner
+										<span>(&amp;#xf110;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf111;</i>
+										fa-circle
+										<span>(&amp;#xf111;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf112;</i>
+										fa-reply
+										<span>(&amp;#xf112;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf113;</i>
+										fa-github-alt
+										<span>(&amp;#xf113;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf114;</i>
+										fa-folder-o
+										<span>(&amp;#xf114;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf115;</i>
+										fa-folder-open-o
+										<span>(&amp;#xf115;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf118;</i>
+										fa-smile-o
+										<span>(&amp;#xf118;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf119;</i>
+										fa-frown-o
+										<span>(&amp;#xf119;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf11a;</i>
+										fa-meh-o
+										<span>(&amp;#xf11a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf11b;</i>
+										fa-gamepad
+										<span>(&amp;#xf11b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf11c;</i>
+										fa-keyboard-o
+										<span>(&amp;#xf11c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf11d;</i>
+										fa-flag-o
+										<span>(&amp;#xf11d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf11e;</i>
+										fa-flag-checkered
+										<span>(&amp;#xf11e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf120;</i>
+										fa-terminal
+										<span>(&amp;#xf120;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf121;</i>
+										fa-code
+										<span>(&amp;#xf121;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf122;</i>
+										fa-reply-all
+										<span>(&amp;#xf122;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf122;</i>
+										fa-mail-reply-all
+										<span>(&amp;#xf122;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf123;</i>
+										fa-star-half-o
+										<span>(&amp;#xf123;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf124;</i>
+										fa-location-arrow
+										<span>(&amp;#xf124;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf125;</i>
+										fa-crop
+										<span>(&amp;#xf125;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf126;</i>
+										fa-code-fork
+										<span>(&amp;#xf126;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf127;</i>
+										fa-chain-broken
+										<span>(&amp;#xf127;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf128;</i>
+										fa-question
+										<span>(&amp;#xf128;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf129;</i>
+										fa-info
+										<span>(&amp;#xf129;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf12a;</i>
+										fa-exclamation
+										<span>(&amp;#xf12a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf12b;</i>
+										fa-superscript
+										<span>(&amp;#xf12b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf12c;</i>
+										fa-subscript
+										<span>(&amp;#xf12c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf12d;</i>
+										fa-eraser
+										<span>(&amp;#xf12d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf12e;</i>
+										fa-puzzle-piece
+										<span>(&amp;#xf12e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf130;</i>
+										fa-microphone
+										<span>(&amp;#xf130;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf131;</i>
+										fa-microphone-slash
+										<span>(&amp;#xf131;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf132;</i>
+										fa-shield
+										<span>(&amp;#xf132;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf133;</i>
+										fa-calendar-o
+										<span>(&amp;#xf133;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf134;</i>
+										fa-fire-extinguisher
+										<span>(&amp;#xf134;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf135;</i>
+										fa-rocket
+										<span>(&amp;#xf135;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf136;</i>
+										fa-maxcdn
+										<span>(&amp;#xf136;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf137;</i>
+										fa-chevron-circle-left
+										<span>(&amp;#xf137;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf138;</i>
+										fa-chevron-circle-right
+										<span>(&amp;#xf138;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf139;</i>
+										fa-chevron-circle-up
+										<span>(&amp;#xf139;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf13a;</i>
+										fa-chevron-circle-down
+										<span>(&amp;#xf13a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf13b;</i>
+										fa-html5
+										<span>(&amp;#xf13b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf13c;</i>
+										fa-css3
+										<span>(&amp;#xf13c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf13d;</i>
+										fa-anchor
+										<span>(&amp;#xf13d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf13e;</i>
+										fa-unlock-alt
+										<span>(&amp;#xf13e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf140;</i>
+										fa-bullseye
+										<span>(&amp;#xf140;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf141;</i>
+										fa-ellipsis-h
+										<span>(&amp;#xf141;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf142;</i>
+										fa-ellipsis-v
+										<span>(&amp;#xf142;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf143;</i>
+										fa-rss-square
+										<span>(&amp;#xf143;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf144;</i>
+										fa-play-circle
+										<span>(&amp;#xf144;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf145;</i>
+										fa-ticket
+										<span>(&amp;#xf145;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf146;</i>
+										fa-minus-square
+										<span>(&amp;#xf146;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf147;</i>
+										fa-minus-square-o
+										<span>(&amp;#xf147;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf148;</i>
+										fa-level-up
+										<span>(&amp;#xf148;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf149;</i>
+										fa-level-down
+										<span>(&amp;#xf149;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf14a;</i>
+										fa-check-square
+										<span>(&amp;#xf14a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf14b;</i>
+										fa-pencil-square
+										<span>(&amp;#xf14b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf14c;</i>
+										fa-external-link-square
+										<span>(&amp;#xf14c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf14d;</i>
+										fa-share-square
+										<span>(&amp;#xf14d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf14e;</i>
+										fa-compass
+										<span>(&amp;#xf14e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf150;</i>
+										fa-caret-square-o-down
+										<span>(&amp;#xf150;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf151;</i>
+										fa-caret-square-o-up
+										<span>(&amp;#xf151;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf152;</i>
+										fa-caret-square-o-right
+										<span>(&amp;#xf152;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf153;</i>
+										fa-eur
+										<span>(&amp;#xf153;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf154;</i>
+										fa-gbp
+										<span>(&amp;#xf154;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf155;</i>
+										fa-usd
+										<span>(&amp;#xf155;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf156;</i>
+										fa-inr
+										<span>(&amp;#xf156;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf157;</i>
+										fa-jpy
+										<span>(&amp;#xf157;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf158;</i>
+										fa-rub
+										<span>(&amp;#xf158;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf159;</i>
+										fa-krw
+										<span>(&amp;#xf159;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf15a;</i>
+										fa-btc
+										<span>(&amp;#xf15a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf15b;</i>
+										fa-file
+										<span>(&amp;#xf15b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf15c;</i>
+										fa-file-text
+										<span>(&amp;#xf15c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf15d;</i>
+										fa-sort-alpha-asc
+										<span>(&amp;#xf15d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf15e;</i>
+										fa-sort-alpha-desc
+										<span>(&amp;#xf15e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf160;</i>
+										fa-sort-amount-asc
+										<span>(&amp;#xf160;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf161;</i>
+										fa-sort-amount-desc
+										<span>(&amp;#xf161;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf162;</i>
+										fa-sort-numeric-asc
+										<span>(&amp;#xf162;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf163;</i>
+										fa-sort-numeric-desc
+										<span>(&amp;#xf163;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf164;</i>
+										fa-thumbs-up
+										<span>(&amp;#xf164;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf165;</i>
+										fa-thumbs-down
+										<span>(&amp;#xf165;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf166;</i>
+										fa-youtube-square
+										<span>(&amp;#xf166;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf167;</i>
+										fa-youtube
+										<span>(&amp;#xf167;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf168;</i>
+										fa-xing
+										<span>(&amp;#xf168;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf169;</i>
+										fa-xing-square
+										<span>(&amp;#xf169;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf16a;</i>
+										fa-youtube-play
+										<span>(&amp;#xf16a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf16b;</i>
+										fa-dropbox
+										<span>(&amp;#xf16b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf16c;</i>
+										fa-stack-overflow
+										<span>(&amp;#xf16c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf16d;</i>
+										fa-instagram
+										<span>(&amp;#xf16d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf16e;</i>
+										fa-flickr
+										<span>(&amp;#xf16e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf170;</i>
+										fa-adn
+										<span>(&amp;#xf170;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf171;</i>
+										fa-bitbucket
+										<span>(&amp;#xf171;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf172;</i>
+										fa-bitbucket-square
+										<span>(&amp;#xf172;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf173;</i>
+										fa-tumblr
+										<span>(&amp;#xf173;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf174;</i>
+										fa-tumblr-square
+										<span>(&amp;#xf174;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf175;</i>
+										fa-long-arrow-down
+										<span>(&amp;#xf175;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf176;</i>
+										fa-long-arrow-up
+										<span>(&amp;#xf176;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf177;</i>
+										fa-long-arrow-left
+										<span>(&amp;#xf177;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf178;</i>
+										fa-long-arrow-right
+										<span>(&amp;#xf178;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf179;</i>
+										fa-apple
+										<span>(&amp;#xf179;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf17a;</i>
+										fa-windows
+										<span>(&amp;#xf17a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf17b;</i>
+										fa-android
+										<span>(&amp;#xf17b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf17c;</i>
+										fa-linux
+										<span>(&amp;#xf17c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf17d;</i>
+										fa-dribbble
+										<span>(&amp;#xf17d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf17e;</i>
+										fa-skype
+										<span>(&amp;#xf17e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf180;</i>
+										fa-foursquare
+										<span>(&amp;#xf180;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf181;</i>
+										fa-trello
+										<span>(&amp;#xf181;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf182;</i>
+										fa-female
+										<span>(&amp;#xf182;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf183;</i>
+										fa-male
+										<span>(&amp;#xf183;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf184;</i>
+										fa-gittip
+										<span>(&amp;#xf184;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf185;</i>
+										fa-sun-o
+										<span>(&amp;#xf185;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf186;</i>
+										fa-moon-o
+										<span>(&amp;#xf186;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf187;</i>
+										fa-archive
+										<span>(&amp;#xf187;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf188;</i>
+										fa-bug
+										<span>(&amp;#xf188;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf189;</i>
+										fa-vk
+										<span>(&amp;#xf189;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf18a;</i>
+										fa-weibo
+										<span>(&amp;#xf18a;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf18b;</i>
+										fa-renren
+										<span>(&amp;#xf18b;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf18c;</i>
+										fa-pagelines
+										<span>(&amp;#xf18c;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf18d;</i>
+										fa-stack-exchange
+										<span>(&amp;#xf18d;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf18e;</i>
+										fa-arrow-circle-o-right
+										<span>(&amp;#xf18e;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf190;</i>
+										fa-arrow-circle-o-left
+										<span>(&amp;#xf190;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf191;</i>
+										fa-caret-square-o-left
+										<span>(&amp;#xf191;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf192;</i>
+										fa-dot-circle-o
+										<span>(&amp;#xf192;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf193;</i>
+										fa-wheelchair
+										<span>(&amp;#xf193;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf194;</i>
+										fa-vimeo-square
+										<span>(&amp;#xf194;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf195;</i>
+										fa-try
+										<span>(&amp;#xf195;)</span>
+									</div>
+
+									<div>
+										<i class="fa fa-fw">&#xf196;</i>
+										fa-plus-square-o
+										<span>(&amp;#xf196;)</span>
+									</div>
 
 
 								</div>
+								<unp:unpDialog>
+									<xp:this.facets>
+										<xp:panel xp:key="facet_1">
+											<div id="fontawesomedetails"></div>
+										</xp:panel>
+									</xp:this.facets>
+								</unp:unpDialog>
 							</xp:panel>
 						</xp:this.facets>
 					</unp:unpScrollableArea>

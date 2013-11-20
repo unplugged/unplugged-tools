@@ -17,13 +17,17 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
  * the specific language governing permissions and limitations under the License
  */
+/*
 @font-face {
-  font-family: 'Glyphicons Regular';
-  src: url('glyphicons-regular.eot');
-  src: url('glyphicons-regular.eot?#iefix') format('embedded-opentype'), url('glyphicons-regular.woff') format('woff'), url('glyphicons-regular.ttf') format('truetype'), url('glyphicons-regular.svg#glyphiconsregular') format('svg');
-  font-weight: 400;
-  font-style: normal;
-}
+	font-family:'Glyphicons Regular';
+	src: url('glyphicons-regular.eot');
+	src: url('glyphicons-regular.eot?#iefix') format('embedded-opentype'), 
+		 url('glyphicons-regular.woff') format('woff'), 
+		 url('glyphicons-regular.ttf') format('truetype'), 
+		 url('glyphicons-regular.svg#glyphiconsregular') format('svg');
+	font-weight:400;
+	font-style:normal;
+}*/
 body {
   background-color: #f0eff4;
   font-family: "Helvetica Neue", sans-serif;
@@ -165,13 +169,13 @@ textarea,
   overflow: hidden;
 }
 .input-search-frame:before {
-  content: "\E028";
+  content: '';
   color: #999999;
   position: absolute;
   left: 8px;
   top: 8px;
   display: inline-block;
-  font: 18px/1em 'Glyphicons Regular';
+  font: 19px/1em 'FontAwesome';
   font-style: normal;
   font-weight: 400;
   vertical-align: middle;
@@ -345,9 +349,9 @@ textarea,
 .backButton .icon:before {
   position: absolute;
   left: 8px;
-  top: 8px;
+  top: 6px;
   display: inline-block;
-  font: 20px/1em 'Glyphicons Regular';
+  font: 24px/1em 'FontAwesome';
   font-style: normal;
   font-weight: 400;
   vertical-align: middle;
@@ -362,7 +366,7 @@ textarea,
   .newButton .icon:before,
   .settingsButton .icon:before,
   .backButton .icon:before {
-    top: 7px;
+    top: 5px;
   }
 }
 .homeButton,
@@ -390,10 +394,10 @@ textarea,
   }
 }
 .viewsButton .icon:before {
-  content: "\E159";
+  content: '';
 }
 .homeButton .icon:before {
-  content: "\E021";
+  content: '';
 }
 @media screen and (max-width: 700px) {
   .homeButton {
@@ -404,7 +408,7 @@ textarea,
   right: 56px;
 }
 .searchButton .icon:before {
-  content: "\E028";
+  content: '';
 }
 @media screen and (min-width: 701px) {
   .searchButton {
@@ -421,16 +425,16 @@ textarea,
   color: #00b31e;
 }
 .syncButton .icon:before {
-  content: "\E082";
+  content: '';
 }
 .newButton .icon:before {
-  content: "\E236";
+  content: '';
 }
 .settingsButton .icon:before {
-  content: "\E137";
+  content: '';
 }
 .backButton .icon:before {
-  content: "\E225";
+  content: '';
 }
 @media screen and (min-width: 1001px) {
   .viewsButton,
@@ -536,13 +540,13 @@ ul#menuitems .menulink {
 }
 ul#menuitems a:after,
 ul#menuitems .menulink:after {
-  content: '\E224';
+  content: '';
   position: absolute;
   right: 12px;
   top: 50%;
   margin-top: -8px;
   display: inline-block;
-  font: 16px/1 'Glyphicons Regular';
+  font: 16px/1 'FontAwesome';
   font-style: normal;
   font-weight: 400;
   color: #000000;
@@ -554,9 +558,12 @@ ul#menuitems .menulink:after {
   text-transform: none;
   -webkit-font-smoothing: antialiased;
 }
-ul#menuitems a i:before,
-ul#menuitems .menulink i:before {
+ul#menuitems a i,
+ul#menuitems .menulink i {
+  float: left;
+  margin-right: 12px;
   color: #000000;
+  font-size: 24px;
 }
 ul#menuitems > li:first-child a,
 ul#menuitems > li:first-child .menulink {
@@ -577,6 +584,7 @@ ul#menuitems ul {
 ul#menuitems a.open:after,
 ul#menuitems.viewMenuItem.expanded .menulink:after {
   -webkit-transform: rotate(90deg);
+  right: 15px;
 }
 ul#menuitems > li > ul > li > a,
 ul#menuitems.viewMenuItemSub .menulink {
@@ -714,6 +722,7 @@ ul#menuitems.viewMenuItemDisabled .menulink {
   display: block;
   width: 100%;
   text-align: center;
+  font-size: 28px;
 }
 @media screen and (max-width: 700px) {
   #footerTabBar li i:before {
@@ -843,13 +852,13 @@ li.data-row .viewlistdetail {
   line-height: 16px;
 }
 li.data-row:after {
-  content: '\E224';
+  content: '';
   position: absolute;
   right: 12px;
   top: 50%;
   margin-top: -8px;
   display: inline-block;
-  font: 16px/1 'Glyphicons Regular';
+  font: 16px/1 'FontAwesome';
   font-style: normal;
   font-weight: 400;
   color: #000000;
@@ -1035,9 +1044,10 @@ li.data-row .multiLineIcon {
   position: relative;
 }
 #formholder ul.fieldlist li:last-child {
+  border-bottom: 0;
   border-radius: 0 0 0 0;
 }
-#formholder .customform ul.fieldlist li:last-child {
+#formholder.editmode .fieldlist li:last-child {
   border-radius: 0;
 }
 #formholder .xspTextComputedField,
@@ -1051,13 +1061,13 @@ li.data-row .multiLineIcon {
   background: #fff;
 }
 #formholder .body_richtext {
-  clear: both;
   background: white;
-  padding: 30px;
   font-size: 16px;
   line-height: 24px;
   width: auto;
   height: auto;
+  padding: 10px 0;
+  padding-left: 30%;
 }
 #formholder .xspInputFieldEditBox,
 #formholder .xspListBox,
@@ -1086,12 +1096,13 @@ li.data-row .multiLineIcon {
 }
 #formholder textarea {
   overflow: visible;
-  width: 93%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  display: block;
+  width: auto;
+  padding: 30px;
   float: none;
-  height: 100px;
+  min-height: 150px;
   font-family: "Helvetica Neue", sans-serif;
+  width: 100%;
 }
 #formholder label {
   width: 25%;
@@ -1147,7 +1158,7 @@ li.data-row .multiLineIcon {
   cursor: pointer;
 }
 #formholder span.deleteicon span:after {
-  content: "\E193";
+  content: '';
   color: #000000;
   opacity: 0.2;
   position: absolute;
@@ -1156,7 +1167,7 @@ li.data-row .multiLineIcon {
   margin-top: -9px;
   margin-left: -9px;
   display: inline-block;
-  font: 18px/1 'Glyphicons Regular';
+  font: 18px/1 'FontAwesome';
   font-style: normal;
   font-weight: 400;
   vertical-align: middle;
@@ -2090,13 +2101,13 @@ body.swipe-view #swipenextbutton:after {
 }
 .hviewresults .hviewfilters .btn-group a.dropdown-toggle:after,
 .hviewresults .hviewfilters .btn-group a.dropdown-toggle:hover:after {
-  content: '\E224';
+  content: '';
   position: absolute;
-  right: 8px;
+  right: 11px;
   top: 50%;
   margin-top: -6px;
   display: inline-block;
-  font: 12px/1 'Glyphicons Regular';
+  font: 12px/1 'FontAwesome';
   font-style: normal;
   font-weight: normal;
   color: #2087fc;
@@ -2507,9 +2518,20 @@ legend {
   display: none;
 }
 .fontsizebuttons .button i {
-  top: 6px;
-  left: 6px;
   margin: 0;
+  font-size: 24px;
+  position: relative;
+}
+.fontsizebuttons .button i:before {
+  position: absolute;
+  left: 6px;
+  top: 5px;
+}
+.fontsizebuttons .button.increasetext i:before {
+  content: '';
+}
+.fontsizebuttons .button.decreasetext i:before {
+  content: '';
 }
 @media screen and (max-width: 700px) {
   .fontsizebuttons {
@@ -2521,89 +2543,185 @@ legend {
     margin-left: 5px;
   }
 }
-/* SAMPLER APP: Glyphicons */
-.list-fonts {
-  margin: 0 !important;
-  padding: 0 !important;
-  border-top: 1px solid #EEE;
-  border-left: 1px solid #EEE;
-}
-.list-fonts a {
-  width: 20% !important;
-  margin: 0 0 0 -1px !important;
-  top: 0;
-  text-align: center;
+/* SAMPLER APP: FontAwesome */
+.fontawesome.panel div {
+  width: 20%;
   float: left;
-  padding: 42px 0 12px 0 !important;
-  border-bottom: 1px solid #EEE;
-  border-right: 1px solid #EEE;
+  text-align: center;
+  border: 1px solid #EEE;
+  box-sizing: border-box;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 5px;
+  cursor: pointer;
 }
 @media screen and (max-width: 700px) {
-  .list-fonts a {
-    width: 25% !important;
+  .fontawesome.panel div {
+    width: 25%;
   }
 }
 @media screen and (max-width: 400px) {
-  .list-fonts a {
-    width: 33% !important;
+  .fontawesome.panel div {
+    width: 33.3333333%;
   }
 }
-.list-fonts a:before {
-  width: 100%;
-  text-align: center;
-  top: 12px;
-}
-.list-fonts a strong {
+.fontawesome.panel div i {
   display: block;
-  text-align: center;
-  white-space: nowrap;
-  font-size: 13px;
-  font-weight: normal;
-  overflow: visible !important;
+  font-size: 36px;
+  position: absolute;
+  left: 50%;
+  margin-left: -23px;
+  top: 10px;
 }
-.list-fonts a span {
-  display: none !important;
+.fontawesome.panel div span {
+  display: none;
 }
-.list-fonts ~ #dialogPopup {
+.fontawesome.panel div:hover {
+  border-color: #666;
+  z-index: 9;
+}
+.fontawesome.panel ~ #dialogPopup {
   width: 280px;
   left: 50%;
   right: auto;
   margin-left: -140px;
+  top: 100px;
 }
-.list-fonts ~ #dialogPopup #dialogContent {
+.fontawesome.panel ~ #dialogPopup #dialogContent {
   height: auto;
   overflow: visible;
 }
-.list-fonts ~ #dialogPopup #glyphicondetails a.glyphicons {
-  width: 200px;
+.fontawesome.panel ~ #dialogPopup #dialogContent #fontawesomedetails > div {
+  text-align: center;
+  padding-top: 100px;
+  font-weight: bold;
+}
+.fontawesome.panel ~ #dialogPopup #dialogContent #fontawesomedetails > div i {
   margin: 0 auto;
   display: block;
   text-align: center;
-  padding-top: 190px;
-  top: 0;
+  top: 25px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  font-size: 100px;
 }
-.list-fonts ~ #dialogPopup #glyphicondetails a.glyphicons strong {
-  position: static;
-}
-.list-fonts ~ #dialogPopup #glyphicondetails a.glyphicons span {
-  position: static;
-  color: #999;
-}
-.list-fonts ~ #dialogPopup #glyphicondetails a.glyphicons::before {
+.fontawesome.panel ~ #dialogPopup #dialogContent #fontawesomedetails > div i:before {
   font-size: 160px;
   text-align: center;
   display: block;
   width: 100%;
 }
-.list-fonts ~ #dialogPopup .dialogbuttons > div:first-child {
+.fontawesome.panel ~ #dialogPopup #dialogContent #fontawesomedetails > div span {
+  font-weight: normal;
+  display: block;
+  color: #999;
+  margin-top: 5px;
+  line-height: 20px;
+  font-size: 13px;
+}
+.fontawesome.panel ~ #dialogPopup .dialogbuttons > div:first-child {
   display: none;
 }
-.list-fonts ~ #dialogPopup .dialogbuttons > div:last-child {
+.fontawesome.panel ~ #dialogPopup .dialogbuttons > div:last-child {
   width: 100%;
 }
-.list-fonts ~ #dialogPopup .dialogbuttons > div:last-child .button {
+.fontawesome.panel ~ #dialogPopup .dialogbuttons > div:last-child .button {
   margin-left: 0;
 }
+/* SAMPLER APP: Glyphicons */
+/*
+.list-fonts {
+	margin: 0 !important;
+	padding: 0 !important;
+	border-top: 1px solid #EEE;
+	border-left: 1px solid #EEE;
+	
+	a {
+		width: 20% !important;
+		@media screen and (max-width: 700px) { width: 25% !important; }
+		@media screen and (max-width: 400px) { width: 33% !important; }
+		margin: 0 0 0 -1px !important;
+		top:0;
+		text-align: center;
+		float: left;
+		padding: 42px 0 12px 0 !important;
+		border-bottom: 1px solid #EEE;
+		border-right: 1px solid #EEE;		
+		
+		&:before {
+			width: 100%;
+			text-align: center;
+			top: 12px;
+		}
+		
+		strong {
+			display: block;
+			text-align: center;
+			white-space: nowrap;
+			font-size: 13px;
+			font-weight: normal;
+			overflow: visible !important;
+		}
+		
+		span {
+			display: none !important;
+		}
+	}
+}
+
+.list-fonts ~ #dialogPopup {
+	width: 280px;
+	left: 50%;
+	right: auto;
+	margin-left: -140px;
+	
+	#dialogContent {
+		height: auto;
+		overflow: visible;
+	}
+	
+	#glyphicondetails a.glyphicons {		
+		width: 200px;
+		margin: 0 auto;
+		display: block;
+		text-align: center;
+		padding-top: 190px;
+		top: 0;
+		
+		strong {
+			position: static;
+		}
+		
+		span {
+			position: static;
+			color: #999;
+		}
+	}
+	
+	#glyphicondetails a.glyphicons::before {
+		font-size: 160px;
+		text-align: center;
+		display: block;
+		width: 100%;
+		
+	}
+	
+	.dialogbuttons {
+		// Hide Cancel Button
+		> div:first-child {display: none;}
+		// Make OK Button full width
+		> div:last-child {
+			width: 100%;
+			.button { margin-left: 0; }
+		}
+	}	
+}*/
 /* DIALOG */
 #dialogPopup {
   border-radius: 0;
@@ -2771,6 +2889,67 @@ legend {
   .otherletter {
     display: none;
   }
+}
+/* UPMark */
+.panel#intro {
+  padding: 20px;
+}
+.panel#intro p {
+  margin-bottom: 15px;
+}
+#qunit {
+  padding: 20px;
+  font-family: "Helvetica Neue", sans-serif;
+}
+#qunit p {
+  margin-bottom: 15px;
+}
+#qunit-header {
+  display: none;
+}
+#qunit-banner {
+  display: none;
+}
+#qunit-testrunner-toolbar {
+  display: none;
+}
+#qunit-userAgent {
+  background-color: transparent;
+  font-size: 14px;
+  text-shadow: none;
+  padding: 0;
+  line-height: 24px;
+  font-weight: bold;
+  color: #333;
+  font-family: "Helvetica Neue", sans-serif;
+  margin-bottom: 15px;
+}
+#qunit-testresult {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  background-color: transparent;
+  padding: 0;
+  font-weight: bold;
+}
+#qunit-tests {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", sans-serif;
+}
+#qunit-tests > li {
+  background-color: transparent;
+  border: 0;
+  list-style-position: inside;
+  margin-bottom: 1px;
+  padding: 5px 10px;
+  border-radius: 0;
+}
+#qunit-tests > li.pass {
+  background: #eee;
+}
+#qunit-tests > li a {
+  color: #aaa;
+  font-weight: normal;
 }
 /*
 @media screen and (min-height: 401px) and (max-height: 700px) and (orientation : portrait) {

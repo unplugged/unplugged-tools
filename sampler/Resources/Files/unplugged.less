@@ -8,6 +8,7 @@
  * the specific language governing permissions and limitations under the License
  */
 
+/*
 @font-face {
 	font-family:'Glyphicons Regular';
 	src: url('glyphicons-regular.eot');
@@ -17,7 +18,7 @@
 		 url('glyphicons-regular.svg#glyphiconsregular') format('svg');
 	font-weight:400;
 	font-style:normal;
-}
+}*/
 
 body {
 	background-color: @body-background-color;
@@ -347,10 +348,21 @@ legend {
 			display: none;
 		}	
 		i {
-			top: 6px;
-			left: 6px;
 			margin: 0;
+			font-size: 24px;
+			position: relative;
+			&:before {
+				position: absolute;
+				left: 6px;
+				top: 5px;
+			}
 		}	 
+		&.increasetext i:before {
+			content: '';
+		}
+		&.decreasetext i:before {
+			content: '';
+		}		
 	}
 
 	@media screen and (max-width: 700px) { 
@@ -367,9 +379,108 @@ legend {
 
 
 
+/* SAMPLER APP: FontAwesome */
+
+
+.fontawesome.panel {
+	div {
+		width: 20%;
+		@media screen and (max-width: 700px) { width: 25%; }
+		@media screen and (max-width: 400px) { width: 33.3333333%; }	
+		float: left;
+		text-align: center;
+		border: 1px solid #EEE;
+		box-sizing: border-box;
+		margin-right: -1px;
+		margin-bottom: -1px;
+		font-size: 13px;
+		white-space: nowrap;
+		overflow: hidden;
+		position: relative;
+		padding-top: 50px;
+		padding-bottom: 5px;
+		cursor: pointer;
+		
+		i {
+			display: block;
+			font-size: 36px;
+			position: absolute;
+			left: 50%;
+			margin-left: -23px;
+			top: 10px;
+		}
+		
+		span {
+			display: none;
+		}
+		
+		&:hover {
+			border-color: #666;
+			z-index: 9;
+		}
+	}
+}
+
+.fontawesome.panel ~ #dialogPopup {
+	width: 280px;
+	left: 50%;
+	right: auto;
+	margin-left: -140px;
+	top: 100px;
+	
+	#dialogContent {
+		height: auto;
+		overflow: visible;
+
+		#fontawesomedetails > div {
+			text-align: center;
+			padding-top: 100px;
+			font-weight: bold;
+	
+			i {		
+				margin: 0 auto;
+				display: block;
+				text-align: center;
+				top: 25px;
+				position: absolute;
+				left: 0;
+				width: 100%;
+				font-size: 100px;
+			}
+			
+			i:before {
+				font-size: 160px;
+				text-align: center;
+				display: block;
+				width: 100%;
+				
+			}
+			
+			span {
+				font-weight: normal;
+				display: block;
+				color: #999;
+				margin-top: 5px;
+				line-height: 20px;
+				font-size: 13px;
+			}
+		}
+	}
+	
+	.dialogbuttons {
+		// Hide Cancel Button
+		> div:first-child {display: none;}
+		// Make OK Button full width
+		> div:last-child {
+			width: 100%;
+			.button { margin-left: 0; }
+		}
+	}	
+}
+
 
 /* SAMPLER APP: Glyphicons */
-
+/*
 .list-fonts {
 	margin: 0 !important;
 	padding: 0 !important;
@@ -455,7 +566,7 @@ legend {
 			.button { margin-left: 0; }
 		}
 	}	
-}
+}*/
 
 
 /* DIALOG */
@@ -616,6 +727,85 @@ legend {
 		display: none;
 	}	
 }
+
+
+
+/* UPMark */
+
+.panel#intro {
+	padding: 20px;
+	
+	p {
+		margin-bottom: 15px;
+	}
+}
+
+#qunit {
+	padding: 20px;
+	font-family: @body-font;
+	
+	p {
+		margin-bottom: 15px;
+	}
+}
+
+#qunit-header {
+	display: none;
+}
+
+#qunit-banner {
+	display: none;
+}
+
+#qunit-testrunner-toolbar {
+	display: none;
+}
+
+#qunit-userAgent {
+	background-color: transparent;
+	font-size: 14px;
+	text-shadow: none;
+	padding: 0;
+	color: #333;
+	line-height: 24px;
+	font-weight: bold;
+	color: #333;
+	font-family: @body-font;
+	margin-bottom: 15px;
+}
+
+#qunit-testresult {
+	font-family: @body-font;
+	font-size: 18px;
+	background-color: transparent;
+	padding: 0;
+	font-weight: bold;
+}
+
+#qunit-tests {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: @body-font;
+	
+	> li {
+		background-color: transparent;
+		border: 0;
+		list-style-position: inside;
+		margin-bottom: 1px;
+		padding: 5px 10px;
+		border-radius: 0;
+		
+		&.pass {
+			background: #eee;
+		}
+		
+		a {
+			color: #aaa;
+			font-weight: normal;
+		}
+	}
+}
+
 
 
 /*

@@ -8,8 +8,8 @@ $(document).ready(function() {
 	}else if (css == "unplugged-ios7.css"){
 		$("#footerTabBar li").eq(2).addClass("tabSelected");
 	}
-	$(".list-fonts .glyphicons").click(function(){
-		showGlyphiconDetails(this);
+	$(".fontawesome div").click(function(){
+		showFontAwesomeDetails(this);
 	})
 	
 	/*
@@ -26,9 +26,20 @@ $(document).ready(function() {
 })
 
 $(document).ajaxComplete(function(){
-	$(".list-fonts .glyphicons").click(function(){
-		showGlyphiconDetails(this);
-	})
+	$(".fontawesome div").click(function(){
+		showFontAwesomeDetails(this);
+	})	
+	/*
+	 * If we're running inside an iFrame we might be in the Restyler, so go and see if we need to do anything
+	 */
+	try{
+		var isInIframe = (window.location != window.parent.location) ? true : false;
+		if (isInIframe){
+			window.parent.processAllSettings();
+		}
+	}catch(e){
+		
+	}
 })
 
 function myCallBackFunction() {
@@ -299,7 +310,10 @@ function startTest() {
 	$("#upmarkiframe").attr("src", "UPMarkStart.xsp?starttime=" + Date.now());
 }
 
-function showGlyphiconDetails(element){
-	$("#glyphicondetails").html(element.outerHTML);
+function showFontAwesomeDetails(element){
+	$("#fontawesomedetails").html(element.outerHTML);
+	$("#fontawesomedetails i").addClass("fa-5x");
+	$("#fontawesomedetails div").attr("style", "text-align: center; padding-top: 100px;")
+	$("#fontawesomedetails span").attr("style", "display: block;");
 	openDialog("dialogPopup");
 }
