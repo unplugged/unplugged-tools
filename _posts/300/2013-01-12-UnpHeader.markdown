@@ -8,7 +8,8 @@ categories: "300"
 # Function
 A simple control which displays a fixed header at the top of your pages. We generally assume that you will use this control on your pages, and because of this, we include most resources which are required by other controls in here.
 
-*Insert Images here
+![Header iPad](http://teamstudio.s3.amazonaws.com/images/header-ipad.png)
+![Header iPhone](http://teamstudio.s3.amazonaws.com/images/header-iphone.png)
 
 # Usage
 Drag the custom control onto your XPage and then complete the Custom Properties:

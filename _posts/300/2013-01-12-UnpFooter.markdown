@@ -7,7 +7,8 @@ categories: "300"
 
 A simple footer bar which will display three things. Bottom left is a Sync button which will replicate the current application. In the center is the last date / time the application was replicated. The button on the bottom right will create a new document using the name of the XPage specified in the Custom Properties.
 
-*Need to insert images here*
+![Footer iPad](http://teamstudio.s3.amazonaws.com/images/footer-ipad.png)
+![Footer iPhone](http://teamstudio.s3.amazonaws.com/images/footer-iphone.png)
 
 For mobile web applications the sync button and the 'updated' timestamp will not display.
 

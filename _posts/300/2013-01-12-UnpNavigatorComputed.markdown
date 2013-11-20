@@ -7,7 +7,8 @@ categories: "300"
 
 This control provides the menu system for your application and works best when used with the related controls [[UnpHeader]] [[UnpFooter]] and [[UnpFlatView]]. It allows you to build a menu dynamically from configuration data or at development time by building a JSON object.
 
-**Insert Images here**
+![Navigator Computed iPad](http://teamstudio.s3.amazonaws.com/images/navigatorcomputed-ipad.png)
+![Navigator Computed iPhone](http://teamstudio.s3.amazonaws.com/images/navigatorcomputed-iphone.png)
 
 The panel will show automatically if you are viewing the page with an iPad in landscape mode. For smaller devices, you will need to provide a button to show the panel. This is handled for you by the [[unpHeader]] control if you enable the views button.
 

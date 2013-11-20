@@ -8,7 +8,8 @@ categories: "300"
 # Function
 This control displays search results by looking up key values from a view. The results are displayed in a similar way to the [[unpFlatView]] control. The XPage UnpFlatViewList.xsp must be copied from the Controls pack into your application (no editing of this XPage is required)
 
-![Search results](http://teamstudio.s3.amazonaws.com/Searchresults.png)
+![Search Results iPad](http://teamstudio.s3.amazonaws.com/images/searchresults-ipad.png)
+![Search Results iPhone](http://teamstudio.s3.amazonaws.com/images/searchresults-iphone.png)
 
 The control will work when integrated with [[unpScrollableArea]]
 

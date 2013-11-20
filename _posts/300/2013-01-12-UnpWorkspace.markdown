@@ -7,8 +7,8 @@ categories: "300"
 
 To display a Workspace similar to the home page of Unplugged
 
-![Workspace (tablet)](http://teamstudio.s3.amazonaws.com/workspace1.png)
-![Workspace (phone)](http://teamstudio.s3.amazonaws.com/workspace2.png)
+![Workspace iPad](http://teamstudio.s3.amazonaws.com/images/workspace-ipad.png)
+![Workspace iPhone](http://teamstudio.s3.amazonaws.com/images/workspace-iphone.png)
 
 This controls requires a view data source to be defined on the containing XPage, and the data source name must be "dbs". The view columns which are used by the control are defined in the Custom Properties.
 

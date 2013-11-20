@@ -7,7 +7,8 @@ categories: "300"
 
 This control is a wrapper to handle the validation and saving of your document which is in edit mode.
 
-*Insert images here*
+![Form Editor iPad](http://teamstudio.s3.amazonaws.com/images/formeditor-ipad.png)
+![Form Editor iPhone](http://teamstudio.s3.amazonaws.com/images/formeditor-iphone.png)
 
 # Usage
 

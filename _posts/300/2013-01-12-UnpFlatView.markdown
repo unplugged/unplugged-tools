@@ -7,8 +7,8 @@ categories: "300"
 
 If you want to display a flat (or non categorized) view then this is the control you will need to use. 
 
-![Accordion iPad](http://teamstudio.s3.amazonaws.com/images/flatview-ipad.png)
-![Accordion iPhone](http://teamstudio.s3.amazonaws.com/images/flatview-iphone.png)
+![Flat View iPad](http://teamstudio.s3.amazonaws.com/images/flatview-ipad.png)
+![Flat View iPhone](http://teamstudio.s3.amazonaws.com/images/flatview-iphone.png)
 
 The control will work when integrated with unpScrollableArea
 

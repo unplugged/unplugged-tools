@@ -7,7 +7,9 @@ categories: "300"
 
 A control to display an seamless image carousel. Internally this control uses the SwipeView JS lib from [cubiq.org](http://cubiq.org/swipeview) (Matteo Spinelli).
 
-![Image gallery](http://teamstudio.s3.amazonaws.com/swipeview.png )
+![Swipe View iPad](http://teamstudio.s3.amazonaws.com/images/swipeview-ipad.png)
+![Swipe View iPhone](http://teamstudio.s3.amazonaws.com/images/swipeview-iphone.png)
+
 # Usage
 This control is designed to be the only control on the page. The control is based on displaying images from a single Notes Document that are stored as attachments in Rich Text Fields.
 

@@ -7,6 +7,8 @@ categories: "300"
 
 (Created By Mark Leusink of [XPages Debug Toolbar](http://www.openntf.org/internal/home.nsf/project.xsp?action=openDocument&name=XPage%20Debug%20Toolbar) fame)
 
+![Debug Toolbar](http://teamstudio.s3.amazonaws.com/images/debugtoolbar-ipad.png)
+
 To display developer information such as logs and error messages use this control.
 
 # Usage

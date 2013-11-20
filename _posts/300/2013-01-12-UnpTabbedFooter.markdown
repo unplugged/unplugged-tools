@@ -9,7 +9,8 @@ categories: "300"
 A tabbed footer bar which can display icons for user navigation. Bottom left is a Sync button which will replicate the current application or all applications depending on the 'synctype' setting. 
 The remaining space on the footer displays custom text and/or icons that will navigate to different screens.
 
-![Footer (Phone)](http://teamstudio.s3.amazonaws.com/tabbedfooter.png)
+![Tabbed Footer iPad](http://teamstudio.s3.amazonaws.com/images/tabbedfooter-ipad.png)
+![Tabbed Footer iPhone](http://teamstudio.s3.amazonaws.com/images/tabbedfooter-iphone.png)
 
 # Usage
 Drag the custom control onto your XPage and set the synctype property to point to either 'none', 'currentDB' or 'alldbs' to allow syncing the current db only (default) or all dbs on device. If set to 'none' then the sync button will not appear. 
