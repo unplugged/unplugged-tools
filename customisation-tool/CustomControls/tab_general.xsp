@@ -403,7 +403,7 @@
 							for="menuitemsbackground">
 						</xp:label>
 						<xp:inputText value="#{document1.menuitemsbackground}"
-							id="menuitemsbackground" themeId="MediumEditBox">
+							id="menuitemsbackground" themeId="MediumEditBox" styleClass="pick-a-color">
 							<xp:this.attrs>
 								<xp:attr name="unp-less" value="@menuitems-background">
 								</xp:attr>
@@ -412,18 +412,14 @@
 						<xp:panel tagName="a"
 							styleClass="color-picker">
 							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("menuitemsbackground")}]]></xp:this.style>
-							<xp:this.attrs>
-								<xp:attr name="data-color"
-									value="transparent">
-								</xp:attr>
-							</xp:this.attrs></xp:panel>
+						</xp:panel>
 					</li>
 					<li>
 						<xp:label value="Menu Items Border Outer" id="menuitemsborderouterlabel"
 							for="menuitemsborderouter">
 						</xp:label>
 						<xp:inputText value="#{document1.menuitemsborderouter}"
-							id="menuitemsborderouter" themeId="MediumEditBox">
+							id="menuitemsborderouter" themeId="MediumEditBox" styleClass="pick-a-color">
 							<xp:this.attrs>
 								<xp:attr name="unp-less" value="@menuitems-border-outer">
 								</xp:attr>
