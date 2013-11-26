@@ -244,6 +244,10 @@ legend {
 /* SAMPLER APP: Dashboard */
 
 .piechartpanel {
+	padding-bottom: 25px;
+	border-bottom:1px solid #eee;
+	margin-bottom: 20px;
+
 	.legendColorBox {
 		padding: 5px 0;
 	
@@ -263,6 +267,18 @@ legend {
 		> div {
 			font-size: 11px !important;
 			line-height: 15px !important;
+		}
+	}
+}
+
+.barchartspanel {
+	.chartpanelelement {
+		margin-bottom: 20px;
+		border-bottom:1px solid #eee;
+		padding-bottom: 20px;
+		
+		h3 {
+			font-weight: normal;
 		}
 	}
 }
@@ -316,7 +332,7 @@ legend {
 }
 
 #bodycopy {
-	padding: 15px 10px;
+	padding: 15px;
 	padding-top: 0;
 	@media screen and (max-width: 400px) { padding: 0; }
 
@@ -355,6 +371,7 @@ legend {
 				position: absolute;
 				left: 6px;
 				top: 5px;
+				@media screen and (max-width: 700px) { top: 4px; }
 			}
 		}	 
 		&.increasetext i:before {

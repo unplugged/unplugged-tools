@@ -71,11 +71,9 @@ textarea,
 /* HEADER */
 .iHeader {
   z-index: 12;
-  -webkit-box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
-  height: 45px;
   width: 100%;
   overflow: hidden;
   background: #fdfdfd;
@@ -83,12 +81,12 @@ textarea,
 }
 @media screen and (min-width: 701px) {
   .iHeader {
-    height: 60px;
+    height: 56px;
   }
 }
 @media screen and (max-width: 700px) {
   .iHeader {
-    height: 45px;
+    height: 44px;
   }
 }
 @media screen and (min-width: 1001px) {
@@ -167,6 +165,7 @@ textarea,
 .input-search-frame {
   position: relative;
   overflow: hidden;
+  padding-bottom: 1px;
 }
 .input-search-frame:before {
   content: '';
@@ -187,7 +186,7 @@ textarea,
     z-index: 15;
     position: fixed;
     top: 10px;
-    right: 115px;
+    right: 116px;
     width: 150px;
   }
 }
@@ -378,7 +377,7 @@ textarea,
   .homeButton,
   .newButton,
   .settingsButton {
-    right: 4px;
+    right: 5px;
   }
 }
 .viewsButton,
@@ -390,7 +389,7 @@ textarea,
   .viewsButton,
   .syncButton,
   .backButton {
-    left: 4px;
+    left: 5px;
   }
 }
 .viewsButton .icon:before {
@@ -400,15 +399,17 @@ textarea,
   content: '';
 }
 @media screen and (max-width: 700px) {
+  .homeButton .icon:before {
+    left: 7px;
+  }
+}
+@media screen and (max-width: 700px) {
   .homeButton {
     width: 36px;
   }
 }
 .searchButton {
   right: 56px;
-}
-.searchButton .icon:before {
-  content: '';
 }
 @media screen and (min-width: 701px) {
   .searchButton {
@@ -417,7 +418,16 @@ textarea,
 }
 @media screen and (max-width: 700px) {
   .searchButton {
-    right: 45px;
+    right: 46px;
+  }
+}
+.searchButton .icon:before {
+  content: '';
+}
+@media screen and (max-width: 700px) {
+  .searchButton .icon:before {
+    left: 7px;
+    top: 4px;
   }
 }
 .syncButton {
@@ -552,8 +562,6 @@ ul#menuitems .menulink:after {
   color: #ffffff;
   text-shadow: 0 1px rgba(0, 0, 0, 0.2);
   opacity: 0.2;
-  *display: inline;
-  *zoom: 1;
   vertical-align: middle;
   text-transform: none;
   -webkit-font-smoothing: antialiased;
@@ -726,7 +734,7 @@ ul#menuitems.viewMenuItemDisabled .menulink {
 }
 @media screen and (max-width: 700px) {
   #footerTabBar li i:before {
-    top: 5px;
+    top: 3px;
   }
 }
 #footerTabBar li.tabSelected {
@@ -863,8 +871,6 @@ li.data-row:after {
   font-weight: 400;
   color: #000000;
   opacity: 0.2;
-  *display: inline;
-  *zoom: 1;
   vertical-align: middle;
   text-transform: none;
   -webkit-font-smoothing: antialiased;
@@ -1177,6 +1183,9 @@ li.data-row .multiLineIcon {
 /* Typography Edit View */
 .typographyeditmode {
   padding: 0 !important;
+}
+.editmode#formholder textarea {
+  min-height: 300px;
 }
 .cke_chrome {
   border: 0;
@@ -2415,6 +2424,11 @@ legend {
   margin-top: 20px;
 }
 /* SAMPLER APP: Dashboard */
+.piechartpanel {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
 .piechartpanel .legendColorBox {
   padding: 5px 0;
 }
@@ -2431,6 +2445,14 @@ legend {
 .piechartpanel .pieLabel > div {
   font-size: 11px !important;
   line-height: 15px !important;
+}
+.barchartspanel .chartpanelelement {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+.barchartspanel .chartpanelelement h3 {
+  font-weight: normal;
 }
 /* SAMPLER APP: Typography Read view */
 #typography {
@@ -2483,7 +2505,7 @@ legend {
   line-height: 1.2;
 }
 #bodycopy {
-  padding: 15px 10px;
+  padding: 15px;
   padding-top: 0;
 }
 @media screen and (max-width: 400px) {
@@ -2526,6 +2548,11 @@ legend {
   position: absolute;
   left: 6px;
   top: 5px;
+}
+@media screen and (max-width: 700px) {
+  .fontsizebuttons .button i:before {
+    top: 4px;
+  }
 }
 .fontsizebuttons .button.increasetext i:before {
   content: '';
