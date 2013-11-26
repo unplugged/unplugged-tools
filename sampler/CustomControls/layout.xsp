@@ -44,7 +44,17 @@
         	{label: "Flat View (Categorized)", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FlatViewCategorized.xsp", disabled: false, hasSubMenu: false},
         	{label: "Swipe View", page: "/SwipeView.xsp", hasSubMenu: false}
         ]}, 
-        {label: "Font Awesome", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/FontAwesome.xsp", disabled: false, icon: "fa-leaf"},
+        {label: "Font Awesome", hasSubMenu: true, icon: "fa-leaf", subMenu: [
+        	{label: "Brand Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeBrand.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Currency Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeCurrency.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Directional Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeDirectional.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Form Control Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeForm.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Medical Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeMedical.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Text Editor Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeText.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Video Player Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeVideo.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Web App Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeWeb.xsp", disabled: false, hasSubMenu: false},
+        	{label: "New Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeNew.xsp", disabled: false, hasSubMenu: false}
+        ]},
         {label: "Forms", hasSubMenu: true, icon: "fa-edit", subMenu: [
         	{label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsReadMode.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsEditMode.xsp", disabled: false, hasSubMenu: false}

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:unp="http://unplugged.teamstudio.com">
+	<xc:layout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<div id="contentwrapper">
+					<unp:unpScrollableArea>
+						<xp:this.facets>
+							<xp:panel xp:key="facet_1">
+								<div class="panel fontawesome">
+									<h1>Font Awesome</h1>
+								</div>
+								<div class="panel fontawesome">
+									<h2>Video Player Icons</h2>
+									<div>
+										<i class="fa fa-fw">&#xf0b2;</i>
+										fa-arrows-alt
+										<span>(&amp;#xf0b2;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf04a;</i>
+										fa-backward
+										<span>(&amp;#xf04a;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf066;</i>
+										fa-compress
+										<span>(&amp;#xf066;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf052;</i>
+										fa-eject
+										<span>(&amp;#xf052;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf065;</i>
+										fa-expand
+										<span>(&amp;#xf065;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf049;</i>
+										fa-fast-backward
+										<span>(&amp;#xf049;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf050;</i>
+										fa-fast-forward
+										<span>(&amp;#xf050;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf04e;</i>
+										fa-forward
+										<span>(&amp;#xf04e;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf04c;</i>
+										fa-pause
+										<span>(&amp;#xf04c;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf04b;</i>
+										fa-play
+										<span>(&amp;#xf04b;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf144;</i>
+										fa-play-circle
+										<span>(&amp;#xf144;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf01d;</i>
+										fa-play-circle-o
+										<span>(&amp;#xf01d;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf048;</i>
+										fa-step-backward
+										<span>(&amp;#xf048;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf051;</i>
+										fa-step-forward
+										<span>(&amp;#xf051;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf04d;</i>
+										fa-stop
+										<span>(&amp;#xf04d;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf16a;</i>
+										fa-youtube-play
+										<span>(&amp;#xf16a;)</span>
+									</div>
+								</div>
+								<unp:unpDialog>
+									<xp:this.facets>
+										<xp:panel xp:key="facet_1">
+											<div id="fontawesomedetails"></div>
+										</xp:panel>
+									</xp:this.facets>
+								</unp:unpDialog>
+							</xp:panel>
+						</xp:this.facets>
+					</unp:unpScrollableArea>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:layout>
+</xp:view>

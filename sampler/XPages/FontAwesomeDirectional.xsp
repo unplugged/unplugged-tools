@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:unp="http://unplugged.teamstudio.com">
+	<xc:layout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<div id="contentwrapper">
+					<unp:unpScrollableArea>
+						<xp:this.facets>
+							<xp:panel xp:key="facet_1">
+								<div class="panel fontawesome">
+									<h1>Font Awesome</h1>
+								</div>
+								<div class="panel fontawesome">
+									<h2>Directional Icons</h2>
+									<div>
+										<i class="fa fa-fw">&#xf103;</i>
+										fa-angle-double-down
+										<span>(&amp;#xf103;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf100;</i>
+										fa-angle-double-left
+										<span>(&amp;#xf100;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf101;</i>
+										fa-angle-double-right
+										<span>(&amp;#xf101;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf102;</i>
+										fa-angle-double-up
+										<span>(&amp;#xf102;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf107;</i>
+										fa-angle-down
+										<span>(&amp;#xf107;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf104;</i>
+										fa-angle-left
+										<span>(&amp;#xf104;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf105;</i>
+										fa-angle-right
+										<span>(&amp;#xf105;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf106;</i>
+										fa-angle-up
+										<span>(&amp;#xf106;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0ab;</i>
+										fa-arrow-circle-down
+										<span>(&amp;#xf0ab;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0a8;</i>
+										fa-arrow-circle-left
+										<span>(&amp;#xf0a8;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf01a;</i>
+										fa-arrow-circle-o-down
+										<span>(&amp;#xf01a;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf190;</i>
+										fa-arrow-circle-o-left
+										<span>(&amp;#xf190;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf18e;</i>
+										fa-arrow-circle-o-right
+										<span>(&amp;#xf18e;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf01b;</i>
+										fa-arrow-circle-o-up
+										<span>(&amp;#xf01b;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0a9;</i>
+										fa-arrow-circle-right
+										<span>(&amp;#xf0a9;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0aa;</i>
+										fa-arrow-circle-up
+										<span>(&amp;#xf0aa;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf063;</i>
+										fa-arrow-down
+										<span>(&amp;#xf063;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf060;</i>
+										fa-arrow-left
+										<span>(&amp;#xf060;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf061;</i>
+										fa-arrow-right
+										<span>(&amp;#xf061;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf062;</i>
+										fa-arrow-up
+										<span>(&amp;#xf062;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf047;</i>
+										fa-arrows
+										<span>(&amp;#xf047;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0b2;</i>
+										fa-arrows-alt
+										<span>(&amp;#xf0b2;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf07e;</i>
+										fa-arrows-h
+										<span>(&amp;#xf07e;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf07d;</i>
+										fa-arrows-v
+										<span>(&amp;#xf07d;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0d7;</i>
+										fa-caret-down
+										<span>(&amp;#xf0d7;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0d9;</i>
+										fa-caret-left
+										<span>(&amp;#xf0d9;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0da;</i>
+										fa-caret-right
+										<span>(&amp;#xf0da;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf150;</i>
+										fa-caret-square-o-down
+										<span>(&amp;#xf150;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf191;</i>
+										fa-caret-square-o-left
+										<span>(&amp;#xf191;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf152;</i>
+										fa-caret-square-o-right
+										<span>(&amp;#xf152;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf151;</i>
+										fa-caret-square-o-up
+										<span>(&amp;#xf151;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0d8;</i>
+										fa-caret-up
+										<span>(&amp;#xf0d8;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf13a;</i>
+										fa-chevron-circle-down
+										<span>(&amp;#xf13a;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf137;</i>
+										fa-chevron-circle-left
+										<span>(&amp;#xf137;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf138;</i>
+										fa-chevron-circle-right
+										<span>(&amp;#xf138;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf139;</i>
+										fa-chevron-circle-up
+										<span>(&amp;#xf139;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf078;</i>
+										fa-chevron-down
+										<span>(&amp;#xf078;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf053;</i>
+										fa-chevron-left
+										<span>(&amp;#xf053;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf054;</i>
+										fa-chevron-right
+										<span>(&amp;#xf054;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf077;</i>
+										fa-chevron-up
+										<span>(&amp;#xf077;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0a7;</i>
+										fa-hand-o-down
+										<span>(&amp;#xf0a7;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0a5;</i>
+										fa-hand-o-left
+										<span>(&amp;#xf0a5;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0a4;</i>
+										fa-hand-o-right
+										<span>(&amp;#xf0a4;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0a6;</i>
+										fa-hand-o-up
+										<span>(&amp;#xf0a6;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf175;</i>
+										fa-long-arrow-down
+										<span>(&amp;#xf175;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf177;</i>
+										fa-long-arrow-left
+										<span>(&amp;#xf177;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf178;</i>
+										fa-long-arrow-right
+										<span>(&amp;#xf178;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf176;</i>
+										fa-long-arrow-up
+										<span>(&amp;#xf176;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf043;</i>
+										fa-toggle-down (alias)
+										<span>(&amp;#xf043;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf043;</i>
+										fa-toggle-left (alias)
+										<span>(&amp;#xf043;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf043;</i>
+										fa-toggle-right (alias)
+										<span>(&amp;#xf043;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf043;</i>
+										fa-toggle-up (alias)
+										<span>(&amp;#xf043;)</span>
+									</div>
+								</div>
+								<unp:unpDialog>
+									<xp:this.facets>
+										<xp:panel xp:key="facet_1">
+											<div id="fontawesomedetails"></div>
+										</xp:panel>
+									</xp:this.facets>
+								</unp:unpDialog>
+							</xp:panel>
+						</xp:this.facets>
+					</unp:unpScrollableArea>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:layout>
+</xp:view>

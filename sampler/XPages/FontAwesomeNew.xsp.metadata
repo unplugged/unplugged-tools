@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="51fa" sequence="38" unid="48B583ADFC19721180257C23003FD433">
+<noteinfo noteid="51fa" sequence="65" unid="48B583ADFC19721180257C23003FD433">
 <created><datetime>20131114T113710,91+00</datetime></created>
-<modified><datetime>20131114T150415,01+00</datetime></modified>
-<revised><datetime>20131114T150415,00+00</datetime></revised>
-<lastaccessed><datetime>20131114T150415,01+00</datetime></lastaccessed>
+<modified><datetime>20131126T164539,68+00</datetime></modified>
+<revised><datetime>20131126T164539,67+00</datetime></revised>
+<lastaccessed><datetime>20131126T164539,68+00</datetime></lastaccessed>
 <addedtofile><datetime>20131114T113710,92+00</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
-<item name="$TITLE"><text>FontAwesome.xsp</text></item>
-
-
-
-
-
-<item name="$FileNames" sign="true"><text>FontAwesome.xsp</text></item>
+<item name="$TITLE" sign="true"><text>FontAwesomeNew.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>FontAwesomeNew.xsp</text></item>
 
 </note>
