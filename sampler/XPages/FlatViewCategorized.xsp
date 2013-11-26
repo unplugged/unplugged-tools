@@ -9,10 +9,10 @@
 					<unp:unpScrollableArea>
 						<xp:this.facets>
 							<unp:unpFlatView insetData="true" detailColumn="Company"
-								summaryColumn="FullName" title="People from Singapore" viewName="People By Country Filter"
+								summaryColumn="FullName" title="People from UK" viewName="People By Country Filter"
 								xpageDoc="FormsReadMode.xsp" xp:key="facet_1" numberofrows="200"
 								refreshmethod="pull" position="menu-aligned" photoColumn="Photo"
-								wrapsummarytext="yes" categoryfilter="Singapore" categoryindex="1" enableAZPicker="yes">
+								wrapsummarytext="yes" categoryfilter="UK" categoryindex="1" enableAZPicker="yes">
 							</unp:unpFlatView>
 						</xp:this.facets>
 					</unp:unpScrollableArea>
