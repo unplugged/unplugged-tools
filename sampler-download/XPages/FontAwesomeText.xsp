@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:unp="http://unplugged.teamstudio.com">
+	<xc:layout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<div id="contentwrapper">
+					<unp:unpScrollableArea>
+						<xp:this.facets>
+							<xp:panel xp:key="facet_1">
+								<div class="panel fontawesome">
+									<h1>Font Awesome</h1>
+								</div>
+								<div class="panel fontawesome">
+									<h2>Text Editor Icons</h2>
+									<div>
+										<i class="fa fa-fw">&#xf037;</i>
+										fa-align-center
+										<span>(&amp;#xf037;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf039;</i>
+										fa-align-justify
+										<span>(&amp;#xf039;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf036;</i>
+										fa-align-left
+										<span>(&amp;#xf036;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf038;</i>
+										fa-align-right
+										<span>(&amp;#xf038;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf032;</i>
+										fa-bold
+										<span>(&amp;#xf032;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0a3;</i>
+										fa-chain (alias)
+										<span>(&amp;#xf0a3;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf127;</i>
+										fa-chain-broken
+										<span>(&amp;#xf127;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0ea;</i>
+										fa-clipboard
+										<span>(&amp;#xf0ea;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0db;</i>
+										fa-columns
+										<span>(&amp;#xf0db;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf066;</i>
+										fa-copy (alias)
+										<span>(&amp;#xf066;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf13c;</i>
+										fa-cut (alias)
+										<span>(&amp;#xf13c;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0f5;</i>
+										fa-dedent (alias)
+										<span>(&amp;#xf0f5;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf12d;</i>
+										fa-eraser
+										<span>(&amp;#xf12d;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf15b;</i>
+										fa-file
+										<span>(&amp;#xf15b;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf016;</i>
+										fa-file-o
+										<span>(&amp;#xf016;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf15c;</i>
+										fa-file-text
+										<span>(&amp;#xf15c;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0f6;</i>
+										fa-file-text-o
+										<span>(&amp;#xf0f6;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0c5;</i>
+										fa-files-o
+										<span>(&amp;#xf0c5;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0c7;</i>
+										fa-floppy-o
+										<span>(&amp;#xf0c7;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf031;</i>
+										fa-font
+										<span>(&amp;#xf031;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf03c;</i>
+										fa-indent
+										<span>(&amp;#xf03c;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf033;</i>
+										fa-italic
+										<span>(&amp;#xf033;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0c1;</i>
+										fa-link
+										<span>(&amp;#xf0c1;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf03a;</i>
+										fa-list
+										<span>(&amp;#xf03a;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf022;</i>
+										fa-list-alt
+										<span>(&amp;#xf022;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0cb;</i>
+										fa-list-ol
+										<span>(&amp;#xf0cb;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0ca;</i>
+										fa-list-ul
+										<span>(&amp;#xf0ca;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf03b;</i>
+										fa-outdent
+										<span>(&amp;#xf03b;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0c6;</i>
+										fa-paperclip
+										<span>(&amp;#xf0c6;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0c6;</i>
+										fa-paste (alias)
+										<span>(&amp;#xf0c6;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf01e;</i>
+										fa-repeat
+										<span>(&amp;#xf01e;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf135;</i>
+										fa-rotate-left (alias)
+										<span>(&amp;#xf135;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf135;</i>
+										fa-rotate-right (alias)
+										<span>(&amp;#xf135;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf158;</i>
+										fa-save (alias)
+										<span>(&amp;#xf158;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0c4;</i>
+										fa-scissors
+										<span>(&amp;#xf0c4;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0cc;</i>
+										fa-strikethrough
+										<span>(&amp;#xf0cc;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0ce;</i>
+										fa-table
+										<span>(&amp;#xf0ce;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf034;</i>
+										fa-text-height
+										<span>(&amp;#xf034;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf035;</i>
+										fa-text-width
+										<span>(&amp;#xf035;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf00a;</i>
+										fa-th
+										<span>(&amp;#xf00a;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf009;</i>
+										fa-th-large
+										<span>(&amp;#xf009;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf00b;</i>
+										fa-th-list
+										<span>(&amp;#xf00b;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0cd;</i>
+										fa-underline
+										<span>(&amp;#xf0cd;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0e2;</i>
+										fa-undo
+										<span>(&amp;#xf0e2;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0e2;</i>
+										fa-unlink (alias)
+										<span>(&amp;#xf0e2;)</span>
+									</div>
+								</div>
+								<unp:unpDialog>
+									<xp:this.facets>
+										<xp:panel xp:key="facet_1">
+											<div id="fontawesomedetails"></div>
+										</xp:panel>
+									</xp:this.facets>
+								</unp:unpDialog>
+							</xp:panel>
+						</xp:this.facets>
+					</unp:unpScrollableArea>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:layout>
+</xp:view>

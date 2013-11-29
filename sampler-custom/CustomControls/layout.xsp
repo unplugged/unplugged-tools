@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:unp="http://unplugged.teamstudio.com">
+
+
+	<xp:this.resources>
+		<xp:styleSheet href="unp/font-awesome.css"></xp:styleSheet>
+	</xp:this.resources>
+	<xp:this.data>
+		<xp:dominoView var="customcss"
+			databaseName="UnpDemoWorkspace.nsf" viewName="cssbyowner"
+			categoryFilter="#{javascript:@UserName()}">
+		</xp:dominoView>
+	</xp:this.data>
+	<xp:repeat value="#{customcss}" rows="1" var="cssdoc">
+		<xp:panel tagName="link" rendered="#{javascript:!isAjax()}">
+			<xp:this.attrs>
+				<xp:attr name="type" value="text/css"></xp:attr>
+				<xp:attr name="rel" value="stylesheet"></xp:attr>
+				<xp:attr name="href"
+					value="#{javascript:cssdoc.getColumnValue('URL')}">
+				</xp:attr>
+				<xp:attr name="unp-id" value="primarycss"></xp:attr>
+			</xp:this.attrs>
+		</xp:panel>
+	</xp:repeat>
+	<script type="text/javascript" src="custom.js"></script>
+	
+	<unp:unpHeader viewsButton="true" title="Sampler" search="database"
+		searchPage="DatabaseSearchResults.xsp">
+	</unp:unpHeader>
+	<unp:unpNavigatorComputed>
+		<unp:this.computedmenuitems><![CDATA[#{javascript:[
+        {label: "Dashboard", hasSubMenu: false, page: "/UnpMain.xsp", icon: "fa-dashboard"}, 
+        {label: "Typography", hasSubMenu: true, icon: "fa-underline", subMenu: [
+        	{label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyReadMode.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyEditMode.xsp", disabled: false, hasSubMenu: false}
+        ]}, 
+        {label: "UI Elements", hasSubMenu: true, icon: "fa-hand-o-up", subMenu: [
+        	{label: "Accordion", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Accordion.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "CSS Controls", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/CSSControls.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Debug Toolbar", page: "/DebugToolbar.xsp", hasSubMenu: false},
+        	{label: "Dialog", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Dialog.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Flat View", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FlatView.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Flat View (Categorized)", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FlatViewCategorized.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Swipe View", page: "/SwipeView.xsp", hasSubMenu: false}
+        ]}, 
+        {label: "Font Awesome", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/FontAwesome.xsp", disabled: false, icon: "fa-leaf"},
+        {label: "Forms", hasSubMenu: true, icon: "fa-edit", subMenu: [
+        	{label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsReadMode.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsEditMode.xsp", disabled: false, hasSubMenu: false}
+        ]}, 
+        {label: "Workspace", hasSubMenu: false, page: "/Workspace.xsp", icon: "fa-th"},
+        {label: "Contacts", hasSubMenu: true, icon: "fa-group", subMenu: [
+        	{label: "Departments", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Companies.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Contacts", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Contacts.xsp", disabled: false, hasSubMenu: false},
+        	{label: "My Activities", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/MyActivities.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Activities By Department", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/ActivitiesByCompany.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Activities By Contact", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/ActivitiesByContact.xsp", disabled: false, hasSubMenu: false}
+        ]},
+        {label: "Media", hasSubMenu: true, icon: "fa-file-o", subMenu: [
+        	{label: "Library", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/MediaLibrary.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Favorites", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/MediaLibraryFavorites.xsp", disabled: false, hasSubMenu: false}
+        ]},
+        {label: "UPMark", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/UPMark.xsp", icon: "fa-cogs"}
+]}]]></unp:this.computedmenuitems>
+	</unp:unpNavigatorComputed>
+	<div id="content">
+		<xp:callback facetName="facet_1" id="callback1"></xp:callback>
+	</div>
+	<unp:unpFooter newDocLoadType="ajax" synctype="alldbs"></unp:unpFooter>
+	<script type="text/javascript" src="unp/jquery.flot.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.pie.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.stack.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.categories.js"></script>
+</xp:view>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:layout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<div id="contentwrapper" class="left-aligned">
+					<unp:unpScrollableArea>
+						<xp:this.facets>
+							<xp:panel xp:key="facet_1">
+								<div class="panel" id="intro">
+									<h1>UPMark</h1>
+									<p>This page runs a standardised suite of tests which
+										involve opening
+										various pages in this application and timing
+										each event.</p>
+									<p>When you press the button below, the test runs and when
+										it's finished the results will be displayed. The results are
+										very dependent on the device being used, so your phone might
+										be faster than your iPad for example.</p>
+									<p>
+										For more information on UPMark, refer to the relevant section
+										of the Unplugged Controls documentation:&#160;
+										<a
+											href="http://unplugged.github.io/unplugged-tools/300/UPMark.html">
+											http://unplugged.github.io/unplugged-tools/300/UPMark.html
+										</a>
+									</p>
+										<input id="startbutton" type="button" class="button"
+											value="Start Test..." onclick="startTest()" />
+								</div>
+								<div id="qunit" class="panel" style="display: none;"></div>
+
+								<iframe id="upmarkiframe" src=""
+									style="width: 0px; height: 0px; display: none;"></iframe>
+
+
+							</xp:panel>
+						</xp:this.facets>
+					</unp:unpScrollableArea>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:layout>
+
+</xp:view>

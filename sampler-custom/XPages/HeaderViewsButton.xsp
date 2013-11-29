@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+	<xp:this.data>
+		<xp:dominoView var="cssview" databaseName="UnpDemoWorkspace.nsf"
+			viewName="CSS By Owner" categoryFilter="#{javascript:@UserName()}">
+		</xp:dominoView>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:styleSheet href="/unp/font-awesome.css"></xp:styleSheet>
+		<xp:script src="/custom.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<xp:panel tagName="link">
+		<xp:this.attrs>
+			<xp:attr name="type" value="text/css"></xp:attr>
+			<xp:attr name="rel" value="stylesheet"></xp:attr>
+			<xp:attr name="href">
+				<xp:this.value><![CDATA[#{javascript:if (context.getUrlParameter("css")!= null && context.getUrlParameter("css")!=""){
+	return context.getUrlParameter("css");
+}else{
+	return "unplugged-dark.css";
+}}]]></xp:this.value>
+			</xp:attr>
+			<xp:attr name="unp-id" value="primarycss"></xp:attr>
+		</xp:this.attrs>
+	</xp:panel>
+	<unp:unpHeader search="none" searchPage="UnpSearch.xsp"
+		viewsButton="true" title="Views Button" headerHomeLink="/HeaderViewsButton.xsp">
+	</unp:unpHeader>
+	<unp:unpNavigator>
+		<unp:this.menuItem>
+			<unp:menuItem submenu="no" disabled="no" label="Menu Item">
+			</unp:menuItem>
+		</unp:this.menuItem>
+	</unp:unpNavigator>
+	<div id="content">
+		<xp:panel styleClass="panel nobottompadscroll">
+			<p>This is the demo of the header bar views button</p>
+			<p>This control allows us to display a header bar with different
+				buttons. In this case we're showing the Views Button which will show
+				and hide the navigator control. The button is only visible when the
+				screen is not wide enough to show the navigator and content
+				together.</p>
+		</xp:panel>
+	</div>
+
+</xp:view>

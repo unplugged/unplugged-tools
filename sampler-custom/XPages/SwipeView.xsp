@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.data>
+		<xp:dominoView var="cssview" databaseName="UnpDemoWorkspace.nsf"
+			viewName="CSS By Owner" categoryFilter="#{javascript:@UserName()}">
+		</xp:dominoView>
+	</xp:this.data>
+
+	<xp:panel tagName="link">
+		<xp:this.attrs>
+			<xp:attr name="type" value="text/css"></xp:attr>
+			<xp:attr name="rel" value="stylesheet"></xp:attr>
+			<xp:attr name="href">
+				<xp:this.value><![CDATA[#{javascript:if (context.getUrlParameter("css")!= null && context.getUrlParameter("css")!=""){
+	return context.getUrlParameter("css");
+}else{
+	return "unplugged-dark.css";
+}}]]></xp:this.value>
+			</xp:attr>
+			<xp:attr name="unp-id" value="primarycss"></xp:attr>
+		</xp:this.attrs>
+	</xp:panel>
+
+	<unp:unpSwipeView formName="RefData" closeXPage="UnpMain.xsp">
+		<unp:this.DocUNID><![CDATA[#{javascript:var vw:NotesView = database.getView("Reference Data");
+var doc:NotesDocument = vw.getDocumentByKey("SamplerSwipeView");
+if (doc != null){
+	return doc.getUniversalID();
+}}]]></unp:this.DocUNID>
+	</unp:unpSwipeView>
+
+
+</xp:view>

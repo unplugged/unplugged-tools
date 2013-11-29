@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.resources>
+		<xp:script src="/custom.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<xp:panel tagName="link" rendered="#{javascript:!isAjax()}">
+		<xp:this.attrs>
+			<xp:attr name="type" value="text/css"></xp:attr>
+			<xp:attr name="rel" value="stylesheet"></xp:attr>
+			<xp:attr name="href">
+				<xp:this.value><![CDATA[#{javascript:if (context.getUrlParameter("css")!= null && context.getUrlParameter("css")!=""){
+	return context.getUrlParameter("css");
+}else{
+	return "unplugged-dark.css";
+}}]]></xp:this.value>
+			</xp:attr>
+			<xp:attr name="unp-id" value="primarycss"></xp:attr>
+		</xp:this.attrs>
+	</xp:panel>
+
+	<unp:unpHeader search="none" searchPage="UnpSearch.xsp"
+		viewsButton="false">
+	</unp:unpHeader>
+	<unp:unpNavigatorComputed>
+		<unp:this.computedmenuitems><![CDATA[#{javascript:[
+        {label: "Dashboard", hasSubMenu: false, page: "/UnpMain.xsp"}, 
+        {label: "Typography", hasSubMenu: true, subMenu: [
+        	{label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyReadMode.xsp", disabled: false}, 
+        	{label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/TypographyEditMode.xsp", disabled: false}
+        ]}, 
+        {label: "UI Elements", hasSubMenu: true, subMenu: [
+        	{label: "Accordion", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Accordion.xsp", disabled: false}, 
+        	{label: "CSS Controls", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/CSSControls.xsp", disabled: false},
+        	{label: "Debug Toolbar", page: "/DebugToolbar.xsp"},
+        	{label: "Dialog", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/Dialog.xsp", disabled: false}, 
+        	{label: "Flat View", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/FlatView.xsp", disabled: false},
+        	{label: "Flat View (Categorized)", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/FlatViewCategorized.xsp", disabled: false},
+        	{label: "Swipe View", page: "/SwipeView.xsp"}     
+        ]}, 
+        {label: "Font Awesome", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/FontAwesome.xsp", disabled: false},
+        {label: "Forms", hasSubMenu: true, subMenu: [
+        	{label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsReadMode.xsp", disabled: false}, 
+        	{label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/FormsEditMode.xsp", disabled: false}
+        ]}, 
+        {label: "Workspace", hasSubMenu: false, page: "/Workspace.xsp"},
+        {label: "Contacts", hasSubMenu: true, subMenu: [
+        	{label: "Companies", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Companies.xsp", disabled: false}, 
+        	{label: "Contacts", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Contacts.xsp", disabled: false},
+        	{label: "My Activities", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/MyActivities.xsp", disabled: false},
+        	{label: "Activities By Company", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/ActivitiesByCompany.xsp", disabled: false},
+        	{label: "Activities By Contact", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/ActivitiesByContact.xsp", disabled: false}
+        ]},
+        {label: "Media", hasSubMenu: true, subMenu: [
+        	{label: "Library", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/MediaLibrary.xsp", disabled: false}, 
+        	{label: "Favorites", ajaxloadid: "contentwrapper", ajaxtargetid: "contentwrapper", page: "/MediaLibraryFavorites.xsp", disabled: false}
+        ]},
+        {label: "UPMark", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/UPMark.xsp"}
+]}]]></unp:this.computedmenuitems>
+	</unp:unpNavigatorComputed>
+	<div id="content">
+
+		<xc:form_dashboard></xc:form_dashboard>
+	</div>
+
+	<unp:unpTabbedFooter synctype="currentdb">
+		<unp:this.tab>
+			<unp:tab label="Dark" icon="moon"
+				callback="switchCSS(this, 'unplugged-dark.css')">
+			</unp:tab>
+			<unp:tab callback="switchCSS(this, 'unplugged-light.css')"
+				label="Light" icon="sun">
+			</unp:tab>
+			<unp:tab callback="switchCSS(this, 'unplugged-ios7.css')"
+				label="iOS7" icon="iphone">
+			</unp:tab>
+		</unp:this.tab>
+	</unp:unpTabbedFooter>
+	<script type="text/javascript" src="unp/jquery.flot.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.pie.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.stack.js"></script>
+	<script type="text/javascript" src="unp/jquery.flot.categories.js"></script>
+</xp:view>

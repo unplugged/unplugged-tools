@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
+<noteinfo noteid="17a" sequence="5" unid="BFB05C863D9FACC680257BF0005147A0">
+<created><datetime dst="true">20130924T154747,52+01</datetime></created>
+<modified><datetime>20131129T141255,86+00</datetime></modified>
+<revised><datetime>20131126T165156,52+00</datetime></revised>
+<lastaccessed><datetime>20131129T141255,86+00</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20131021T141127,54+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$FileModDT" sign="true"><datetime>20130223T212334,00+00</datetime></item>
+<item name="$TITLE" sign="true"><text>unp/jquery.autocomplete.js</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+
+<item name="$FileNames" sign="true"><text>unp_2fjquery.autocomplete.js</text></item></note>

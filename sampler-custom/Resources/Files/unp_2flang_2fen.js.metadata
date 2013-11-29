@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0046618C" version="9.0">
+<noteinfo noteid="26e2" sequence="10" unid="50988A24BA46335B80257C1D003D2672">
+<created><datetime>20131108T110755,38+00</datetime></created>
+<modified><datetime>20131129T121826,23+00</datetime></modified>
+<revised><datetime>20131126T165156,16+00</datetime></revised>
+<lastaccessed><datetime>20131129T121826,23+00</datetime></lastaccessed>
+<addedtofile><datetime>20131118T085527,54+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$TITLE"><text>unp/lang/en.js</text></item>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$MimeCharSet"><text>UTF-8</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>unp_2flang_2fen.js</text></item></note>

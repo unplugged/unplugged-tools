@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:unp="http://unplugged.teamstudio.com">
+	<xc:layout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<div id="contentwrapper">
+					<unp:unpScrollableArea>
+						<xp:this.facets>
+							<xp:panel xp:key="facet_1">
+								<div class="panel fontawesome">
+									<h1>Font Awesome</h1>
+								</div>
+
+
+								<div class="panel fontawesome">
+									<h2>Brand Icons</h2>
+									<div>
+										<i class="fa fa-fw">&#xf170;</i>
+										fa-adn
+										<span>(&amp;#xf170;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf17b;</i>
+										fa-android
+										<span>(&amp;#xf17b;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf179;</i>
+										fa-apple
+										<span>(&amp;#xf179;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf171;</i>
+										fa-bitbucket
+										<span>(&amp;#xf171;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf172;</i>
+										fa-bitbucket-square
+										<span>(&amp;#xf172;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf172;</i>
+										fa-bitcoin (alias)
+										<span>(&amp;#xf172;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf15a;</i>
+										fa-btc
+										<span>(&amp;#xf15a;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf13c;</i>
+										fa-css3
+										<span>(&amp;#xf13c;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf17d;</i>
+										fa-dribbble
+										<span>(&amp;#xf17d;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf16b;</i>
+										fa-dropbox
+										<span>(&amp;#xf16b;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf09a;</i>
+										fa-facebook
+										<span>(&amp;#xf09a;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf082;</i>
+										fa-facebook-square
+										<span>(&amp;#xf082;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf16e;</i>
+										fa-flickr
+										<span>(&amp;#xf16e;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf180;</i>
+										fa-foursquare
+										<span>(&amp;#xf180;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf09b;</i>
+										fa-github
+										<span>(&amp;#xf09b;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf113;</i>
+										fa-github-alt
+										<span>(&amp;#xf113;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf092;</i>
+										fa-github-square
+										<span>(&amp;#xf092;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf184;</i>
+										fa-gittip
+										<span>(&amp;#xf184;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0d5;</i>
+										fa-google-plus
+										<span>(&amp;#xf0d5;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0d4;</i>
+										fa-google-plus-square
+										<span>(&amp;#xf0d4;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf13b;</i>
+										fa-html5
+										<span>(&amp;#xf13b;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf16d;</i>
+										fa-instagram
+										<span>(&amp;#xf16d;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0e1;</i>
+										fa-linkedin
+										<span>(&amp;#xf0e1;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf08c;</i>
+										fa-linkedin-square
+										<span>(&amp;#xf08c;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf17c;</i>
+										fa-linux
+										<span>(&amp;#xf17c;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf136;</i>
+										fa-maxcdn
+										<span>(&amp;#xf136;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf18c;</i>
+										fa-pagelines
+										<span>(&amp;#xf18c;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0d2;</i>
+										fa-pinterest
+										<span>(&amp;#xf0d2;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf0d3;</i>
+										fa-pinterest-square
+										<span>(&amp;#xf0d3;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf18b;</i>
+										fa-renren
+										<span>(&amp;#xf18b;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf17e;</i>
+										fa-skype
+										<span>(&amp;#xf17e;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf18d;</i>
+										fa-stack-exchange
+										<span>(&amp;#xf18d;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf16c;</i>
+										fa-stack-overflow
+										<span>(&amp;#xf16c;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf181;</i>
+										fa-trello
+										<span>(&amp;#xf181;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf173;</i>
+										fa-tumblr
+										<span>(&amp;#xf173;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf174;</i>
+										fa-tumblr-square
+										<span>(&amp;#xf174;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf099;</i>
+										fa-twitter
+										<span>(&amp;#xf099;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf081;</i>
+										fa-twitter-square
+										<span>(&amp;#xf081;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf194;</i>
+										fa-vimeo-square
+										<span>(&amp;#xf194;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf189;</i>
+										fa-vk
+										<span>(&amp;#xf189;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf18a;</i>
+										fa-weibo
+										<span>(&amp;#xf18a;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf17a;</i>
+										fa-windows
+										<span>(&amp;#xf17a;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf168;</i>
+										fa-xing
+										<span>(&amp;#xf168;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf169;</i>
+										fa-xing-square
+										<span>(&amp;#xf169;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf167;</i>
+										fa-youtube
+										<span>(&amp;#xf167;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf16a;</i>
+										fa-youtube-play
+										<span>(&amp;#xf16a;)</span>
+									</div>
+									<div>
+										<i class="fa fa-fw">&#xf166;</i>
+										fa-youtube-square
+										<span>(&amp;#xf166;)</span>
+									</div>
+								</div>
+
+								<unp:unpDialog>
+									<xp:this.facets>
+										<xp:panel xp:key="facet_1">
+											<div id="fontawesomedetails"></div>
+										</xp:panel>
+									</xp:this.facets>
+								</unp:unpDialog>
+							</xp:panel>
+						</xp:this.facets>
+					</unp:unpScrollableArea>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:layout>
+</xp:view>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:unp="http://unplugged.teamstudio.com">
+	<xc:layout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<div id="contentwrapper">
+					<unp:unpScrollableArea>
+						<xp:this.facets>
+							<xp:panel xp:key="facet_1">
+								<div class="panel fontawesome">
+	<h1>Font Awesome</h1>
+	</div>
+<div class="panel fontawesome">
+	<h2>New Icons</h2>
+		<div><i class="fa fa-fw">&#xf158;</i>fa-rub<span>(&amp;#xf158;)</span></div>
+		<div><i class="fa fa-fw">&#xf158;</i>fa-ruble (alias)<span>(&amp;#xf158;)</span></div>
+		<div><i class="fa fa-fw">&#xf135;</i>fa-rouble (alias)<span>(&amp;#xf135;)</span></div>
+		<div><i class="fa fa-fw">&#xf18c;</i>fa-pagelines<span>(&amp;#xf18c;)</span></div>
+		<div><i class="fa fa-fw">&#xf18d;</i>fa-stack-exchange<span>(&amp;#xf18d;)</span></div>
+		<div><i class="fa fa-fw">&#xf18e;</i>fa-arrow-circle-o-right<span>(&amp;#xf18e;)</span></div>
+		<div><i class="fa fa-fw">&#xf190;</i>fa-arrow-circle-o-left<span>(&amp;#xf190;)</span></div>
+		<div><i class="fa fa-fw">&#xf191;</i>fa-caret-square-o-left<span>(&amp;#xf191;)</span></div>
+		<div><i class="fa fa-fw">&#xf043;</i>fa-toggle-left (alias)<span>(&amp;#xf043;)</span></div>
+		<div><i class="fa fa-fw">&#xf192;</i>fa-dot-circle-o<span>(&amp;#xf192;)</span></div>
+		<div><i class="fa fa-fw">&#xf193;</i>fa-wheelchair<span>(&amp;#xf193;)</span></div>
+		<div><i class="fa fa-fw">&#xf194;</i>fa-vimeo-square<span>(&amp;#xf194;)</span></div>
+		<div><i class="fa fa-fw">&#xf195;</i>fa-try<span>(&amp;#xf195;)</span></div>
+		<div><i class="fa fa-fw">&#xf174;</i>fa-turkish-lira (alias)<span>(&amp;#xf174;)</span></div>
+		<div><i class="fa fa-fw">&#xf196;</i>fa-plus-square-o<span>(&amp;#xf196;)</span></div>
+</div>
+
+								<unp:unpDialog>
+									<xp:this.facets>
+										<xp:panel xp:key="facet_1">
+											<div id="fontawesomedetails"></div>
+										</xp:panel>
+									</xp:this.facets>
+								</unp:unpDialog>
+							</xp:panel>
+						</xp:this.facets>
+					</unp:unpScrollableArea>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:layout>
+</xp:view>

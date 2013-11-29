@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+	<div id="contentwrapper">
+		<unp:unpScrollableArea>
+			<xp:this.facets>
+				<unp:unpSearchResults insetData="true" xp:key="facet_1"
+					detailColumn="Company" summaryColumn="FullName" viewName="Search" xpageDoc="FormsReadMode.xsp"
+					numberofrows="40">
+					<unp:this.viewsearch><![CDATA[#{javascript:unescape(param.get("query"))}]]></unp:this.viewsearch>
+					<unp:this.title><![CDATA[#{javascript:"Search results for \"" + unescape(param.get("query")) + "\""}]]></unp:this.title>
+				</unp:unpSearchResults>
+			</xp:this.facets>
+		</unp:unpScrollableArea>
+	</div>
+</xp:view>

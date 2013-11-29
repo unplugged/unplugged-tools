@@ -142,7 +142,7 @@
 .settingsButton {
 	right: 10px;
 	@media screen and (max-width: 700px) {
-		right: 4px;
+		right: 5px;
 	}
 }
 
@@ -151,7 +151,7 @@
 .backButton {
 	left: 10px;
 	@media screen and (max-width: 700px) {
-		left: 4px;
+		left: 5px;
 	}
 }
 
@@ -166,6 +166,9 @@
 	.icon:before { 
 		//content: "\E021"; 
 		content: '';
+		@media screen and (max-width: 700px) {
+			left: 7px;
+		}		
 	}
 	@media screen and (max-width: 700px) {
 		width: 36px;
@@ -174,16 +177,20 @@
 
 .searchButton {
 	right: 56px;
-	.icon:before { 
-		//content: "\E028"; 
-		content: '';
-	}	
-
 	@media screen and (min-width: 701px) {
 		display: none;
 	}		
 	@media screen and (max-width: 700px) {
-		right: 45px;
+		right: 46px;
+	}	
+	
+	.icon:before { 
+		//content: "\E028"; 
+		content: '';
+		@media screen and (max-width: 700px) {
+			left: 7px;
+			top: 4px;
+		}
 	}
 }
 

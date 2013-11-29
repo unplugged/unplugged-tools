@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		Copyright 2013 Teamstudio Inc Licensed under the Apache License,
+		Version 2.0 (the "License"); you may not use this file except in
+		compliance with the License. You may obtain a copy of the License at
+		http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+		applicable law or agreed to in writing, software distributed under the
+		License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+		CONDITIONS OF ANY KIND, either express or implied. See the License for
+		the specific language governing permissions and limitations under the
+		License
+	-->
+
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:unp="http://unplugged.teamstudio.com">
+	<xp:this.data>
+		<xp:dominoDocument var="document2" formName="Person"
+			action="editDocument">
+			<xp:this.documentId><![CDATA[#{javascript:var vw:NotesView = database.getView("People By Last Name");
+var doc = vw.getFirstDocument();
+return doc.getUniversalID();}]]></xp:this.documentId>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xc:layout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<div id="contentwrapper">
+					<unp:unpScrollableArea>
+						<xp:this.facets>
+							<unp:unpFormEditor showbuttons="yes"
+								viewxpagename="FormsReadMode.xsp" formname="Person" title="Person"
+								xp:key="facet_1">
+								<xp:this.facets>
+									<xp:panel xp:key="facet_1">
+										<ul class="fieldlist">
+											<li>
+												<xp:label value="First Name" id="firstnamelabel"
+													for="firstname">
+												</xp:label>
+												<xp:inputText id="firstname" value="#{document2.FirstName}"
+													styleClass="required xspInputFieldEditBox deletable">
+												</xp:inputText>
+											</li>
+											<li>
+												<xp:label value="Last Name" id="lastnamelabel" for="lastname">
+												</xp:label>
+												<xp:inputText id="lastname" value="#{document2.LastName}"
+													styleClass="required xspInputFieldEditBox deletable">
+												</xp:inputText>
+											</li>
+											<li>
+												<xp:label value="Title" id="titlelabel" for="title">
+												</xp:label>
+												<xp:inputText id="title" value="#{document2.Title}"
+													styleClass="xspInputFieldEditBox deletable">
+												</xp:inputText>
+											</li>
+											<li>
+												<xp:label value="Date" id="datelabel" for="date">
+												</xp:label>
+												<xp:inputText id="date"
+													value="#{document2.Date}" styleClass="xspInputFieldEditBox"
+													type="date">
+													<xp:this.converter>
+														<xp:convertDateTime>
+															<xp:this.pattern><![CDATA[${javascript:if (document2.isEditable()){
+	return "yyyy-MM-dd";
+}else{
+	return "dd MMM yyyy";
+}}]]></xp:this.pattern>
+														</xp:convertDateTime>
+													</xp:this.converter>
+												</xp:inputText>
+											</li>
+											<li>
+												<xp:label value="Email" id="emaillabel" for="email">
+												</xp:label>
+												<xp:inputText id="email" value="#{document2.Email}"
+													type="email" styleClass="xspInputFieldEditBox deletable">
+												</xp:inputText>
+											</li>
+											<li>
+												<xp:label value="Department" id="companylabel" for="company">
+												</xp:label>
+												<xp:inputText id="company" value="#{document2.Company}"
+													styleClass="required xspInputFieldEditBox deletable autocomplete">
+													<xp:this.attrs>
+														<xp:attr name="auto-src" value="CompanyAuto.xsp">
+														</xp:attr>
+													</xp:this.attrs>
+												</xp:inputText>
+											</li>
+											<li>
+												<xp:label value="Street Address" id="streetaddresslabel"
+													for="streetaddress">
+												</xp:label>
+												<xp:inputText id="streetaddress" value="#{document2.StreetAddress}"
+													styleClass="xspInputFieldEditBox deletable">
+												</xp:inputText>
+											</li>
+											<li>
+												<xp:label value="City" id="citylabel" for="city">
+												</xp:label>
+												<xp:inputText id="city" value="#{document2.City}"
+													styleClass="xspInputFieldEditBox deletable">
+												</xp:inputText>
+											</li>
+											<li>
+												<xp:label value="Country" id="countrylabel" for="country">
+												</xp:label>
+												<xp:comboBox id="country" value="#{document2.Country}"
+													styleClass="xspListBox">
+													<xp:selectItems>
+														<xp:this.value><![CDATA[#{javascript:@Unique(@DbColumn(@DbName(), "People By Country", 1))}]]></xp:this.value>
+													</xp:selectItems>
+												</xp:comboBox>
+											</li>
+											<li>
+												<xp:label value="Phone" id="phonelabel" for="phone">
+												</xp:label>
+												<xp:inputText id="phone" value="#{document2.Phone}"
+													styleClass="xspInputFieldEditBox deletable" type="tel">
+												</xp:inputText>
+											</li>
+											<li>
+												<xp:label value="Details" id="detailslabel" for="bio"
+													styleClass="widelabel">
+												</xp:label>
+												<xp:inputTextarea id="bio" styleClass="richtextfield"
+													value="#{document2.Bio}">
+													<xp:this.attrs>
+														<xp:attr name="placeholder" value="Insert Text...">
+														</xp:attr>
+													</xp:this.attrs>
+												</xp:inputTextarea>
+											</li>
+										</ul>
+									</xp:panel>
+								</xp:this.facets>
+							</unp:unpFormEditor>
+						</xp:this.facets>
+					</unp:unpScrollableArea>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:layout>
+</xp:view>

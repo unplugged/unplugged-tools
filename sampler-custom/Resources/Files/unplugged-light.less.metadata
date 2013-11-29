@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0046618C" version="9.0">
+<noteinfo noteid="377a" sequence="6" unid="4BC0F7D47E817F8080257C32003D9EC2">
+<created><datetime>20131129T111303,38+00</datetime></created>
+<modified><datetime>20131129T121828,11+00</datetime></modified>
+<revised><datetime>20131129T111303,48+00</datetime></revised>
+<lastaccessed><datetime>20131129T121828,11+00</datetime></lastaccessed>
+<addedtofile><datetime>20131129T121828,11+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<item name="$TITLE"><text>unplugged-light.less</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$FileNames"><textlist><text>unplugged-light.less</text></textlist></item>
+
+
+<item name="$FileModDT"><datetime>20131128T150203,44+00</datetime></item></note>

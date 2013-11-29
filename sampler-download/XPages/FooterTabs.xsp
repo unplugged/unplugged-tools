@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+	<xp:this.data>
+		<xp:dominoView var="cssview" databaseName="UnpDemoWorkspace.nsf"
+			viewName="CSS By Owner" categoryFilter="#{javascript:@UserName()}">
+		</xp:dominoView>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:script src="/unp/jquery-2.0.3.min.js" clientSide="true"></xp:script>
+		<xp:script src="/unp/fastclick.js" clientSide="true"></xp:script>
+		<xp:script src="/unp/jquery.blockUI.min.js" clientSide="true"></xp:script>
+		<xp:script src="/unp/jquery.autocomplete.js" clientSide="true"></xp:script>
+		<xp:styleSheet href="unp/font-awesome.css"></xp:styleSheet>
+		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
+		<xp:metaData name="apple-mobile-web-app-status-bar-style"
+			content="black-translucent">
+		</xp:metaData>
+		<xp:metaData name="apple-mobile-web-app-capable" content="yes">
+		</xp:metaData>
+		<xp:metaData name="viewport"
+			content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi">
+		</xp:metaData>
+		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
+		<xp:styleSheet href="unp/jquery.jqplot.min.css"></xp:styleSheet>
+		<xp:script src="/custom.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<xp:text tagName="script" id="inlinescript">
+
+		<xp:this.value><![CDATA[#{javascript:if(isUnpluggedServer()){
+	return "var unpluggedserver = true;";
+}else{
+	return "var unpluggedserver = false;";
+}
+}]]></xp:this.value>
+	</xp:text>
+	<xp:panel tagName="link">
+		<xp:this.attrs>
+			<xp:attr name="type" value="text/css"></xp:attr>
+			<xp:attr name="rel" value="stylesheet"></xp:attr>
+			<xp:attr name="href">
+				<xp:this.value><![CDATA[#{javascript:if (context.getUrlParameter("css")!= null && context.getUrlParameter("css")!=""){
+	return context.getUrlParameter("css");
+}else{
+	return "unplugged-dark.css";
+}}]]></xp:this.value>
+			</xp:attr>
+			<xp:attr name="unp-id" value="primarycss"></xp:attr>
+		</xp:this.attrs>
+	</xp:panel>
+	<div id="content">
+		<xp:panel styleClass="panel notoppadscroll">
+			<p>This is the demo of the footer tabs</p>
+			<p>This control allows us to display a footer with up to three
+				tabs which can be switched between. The tabs can either perform a
+				task (such as switching the theme in this case) or load a new
+				page.</p>
+			<p>The control also offers the choice to display a Sync button
+				if you're running on an Unplugged device.</p>
+		</xp:panel>
+	</div>
+
+	<unp:unpTabbedFooter synctype="alldbs">
+		<unp:this.tab>
+			<unp:tab label="Dark" icon="moon"
+				callback="switchCSS(this, 'unplugged-dark.css')">
+			</unp:tab>
+			<unp:tab callback="switchCSS(this, 'unplugged-light.css')"
+				label="Light" icon="sun"></unp:tab>
+			<unp:tab callback="switchCSS(this, 'unplugged-ios7.css')"
+				label="iOS7" icon="iphone"></unp:tab>
+		</unp:this.tab>
+	</unp:unpTabbedFooter>
+</xp:view>
