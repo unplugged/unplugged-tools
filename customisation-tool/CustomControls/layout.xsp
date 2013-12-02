@@ -63,12 +63,26 @@ return "My Saved Themes (" + list.length + ")";}]]></xp:this.text>
 					</xp:link>
 				</li>
 			</ul>
-
+		
 			<xp:callback facetName="facet_1" id="callback1"></xp:callback>
 
 
 		</div>
 	</div>
+	
+	<xp:panel id="warning" styleClass="alert alert-warning">
+		This site works best if you use a Webkit based browser:&#160;
+		<xp:this.rendered><![CDATA[#{javascript:var browser=context.getUserAgent().getBrowser();
+if (browser != "Chrome" && browser != "Safari"){
+	return true;
+}else{
+	return false;
+}}]]></xp:this.rendered>
+		<a href="http://www.apple.com/safari/">Safari</a>
+		&#160;or&#160;
+		<a href="https://www.google.com/chrome/">Chrome</a>
+		.
+	</xp:panel>
 
 	<xp:callback facetName="facet_2" id="callback2"></xp:callback>
 
