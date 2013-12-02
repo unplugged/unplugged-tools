@@ -12,7 +12,6 @@
 		<xp:script src="/unp/jquery.autocomplete.js" clientSide="true"></xp:script>
 		<xp:styleSheet href="unp/font-awesome.css"></xp:styleSheet>
 		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
-		<xp:styleSheet href="/unpDialog.css"></xp:styleSheet>
 		<xp:metaData name="apple-mobile-web-app-status-bar-style"
 			content="black-translucent">
 		</xp:metaData>
@@ -23,7 +22,6 @@
 		</xp:metaData>
 		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
 		<xp:styleSheet href="unp/jquery.jqplot.min.css"></xp:styleSheet>
-		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
 		<xp:script src="/custom.js" clientSide="true"></xp:script>
 	</xp:this.resources>
 	<xp:text tagName="script" id="inlinescript">

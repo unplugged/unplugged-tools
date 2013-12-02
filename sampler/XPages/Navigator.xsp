@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
 	<xp:this.resources>
-		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
 		<xp:styleSheet href="unp/font-awesome.css"></xp:styleSheet>
 	</xp:this.resources>
 	<xp:panel tagName="link" rendered="#{javascript:!isAjax()}">

@@ -7,7 +7,6 @@
 	</xp:this.data>
 	<xp:this.resources>
 		<xp:styleSheet href="unp/font-awesome.css"></xp:styleSheet>
-		<xp:styleSheet href="/iscroll.css"></xp:styleSheet>
 		<xp:script src="/custom.js" clientSide="true"></xp:script>
 	</xp:this.resources>
 	<xp:panel tagName="link">

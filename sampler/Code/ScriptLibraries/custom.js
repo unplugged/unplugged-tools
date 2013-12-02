@@ -279,6 +279,7 @@ function buildCharts() {
 	});
 
 	$(window).bind('orientationchange', buildCharts);
+	$(window).bind('resize', buildCharts);
 }
 
 function isPhone() {

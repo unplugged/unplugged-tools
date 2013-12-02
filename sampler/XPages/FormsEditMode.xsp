@@ -59,7 +59,7 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												<xp:label value="Date" id="datelabel" for="date">
 												</xp:label>
 												<xp:inputText id="date"
-													value="#{document2.InitialContactDate}" styleClass="xspInputFieldEditBox"
+													value="#{document2.Date}" styleClass="xspInputFieldEditBox"
 													type="date">
 													<xp:this.converter>
 														<xp:convertDateTime>

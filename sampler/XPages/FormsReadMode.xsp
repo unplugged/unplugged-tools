@@ -43,7 +43,7 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 											<li>
 												<xp:label value="Date" id="doblabel" for="birthday">
 												</xp:label>
-												<xp:text id="birthday" value="#{document2.InitialContactDate}">
+												<xp:text id="birthday" value="#{document2.Date}">
 												</xp:text>
 											</li>
 											<li>
