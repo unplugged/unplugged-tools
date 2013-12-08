@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="filter" maintenanceversion="1.0" replicaid="80257BF10050CE70" version="9.0">
+<noteinfo noteid="134a" sequence="1" unid="6C1B60F465E4646080257C32004360BC">
+<created><datetime>20131129T121556,76+00</datetime></created>
+<modified><datetime>20131129T121556,85+00</datetime></modified>
+<revised><datetime>20131129T121556,84+00</datetime></revised>
+<lastaccessed><datetime>20131129T121556,85+00</datetime></lastaccessed>
+<addedtofile><datetime>20131129T121556,85+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$TITLE" sign="true"><text>unpSearchDatabase.js</text></item>
+<item name="$Flags"><text>h534Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+</note>

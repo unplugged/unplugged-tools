@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="filter" maintenanceversion="1.0" replicaid="80257BF10050CE70" version="9.0">
+<noteinfo noteid="1336" sequence="1" unid="BDF35AF00B0846AE80257C32004360B7">
+<created><datetime>20131129T121556,71+00</datetime></created>
+<modified><datetime>20131129T121556,75+00</datetime></modified>
+<revised><datetime>20131129T121556,74+00</datetime></revised>
+<lastaccessed><datetime>20131129T121556,75+00</datetime></lastaccessed>
+<addedtofile><datetime>20131129T121556,75+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$TITLE" sign="true"><text>OpenLogFunctions</text></item>
+<item name="$Flags"><text>s34Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+
+</note>

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="37aa" sequence="3" unid="83E7E336D3D0ABA880257C32004E3748">
-<created><datetime>20131129T141419,60+00</datetime></created>
-<modified><datetime>20131129T141424,74+00</datetime></modified>
-<revised><datetime>20131129T141424,73+00</datetime></revised>
-<lastaccessed><datetime>20131129T141424,74+00</datetime></lastaccessed>
-<addedtofile><datetime>20131129T141419,62+00</datetime></addedtofile></noteinfo>
+<noteinfo noteid="37ba" sequence="3" unid="A1C5F8663237B2AA80257C350039EDE1">
+<created><datetime>20131202T103244,49+00</datetime></created>
+<modified><datetime>20131202T103250,71+00</datetime></modified>
+<revised><datetime>20131202T103250,70+00</datetime></revised>
+<lastaccessed><datetime>20131202T103250,71+00</datetime></lastaccessed>
+<addedtofile><datetime>20131202T103244,49+00</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
 <item name="$Flags"><text>34C=Q</text></item>
-<item name="$FileModDT" sign="true"><datetime>20131128T150203,64+00</datetime></item>
-<item name="$MimeCharSet" sign="true"><text>UTF-8</text></item>
-
-
-
-
-
 <item name="$FileNames" sign="true"><text>unplugged-dark.css</text></item>
+
+
+
+
+
+<item name="$FileModDT" sign="true"><datetime>20131129T173826,61+00</datetime></item>
 <item name="$TITLE" sign="true"><text>unplugged.css</text></item>
 <item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>

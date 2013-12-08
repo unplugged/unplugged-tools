@@ -23,7 +23,6 @@
 			<xc:form_dashboard xp:key="facet_1"></xc:form_dashboard>
 		</xp:this.facets>
 	</xc:layout>
-		
 	
 
 </xp:view>

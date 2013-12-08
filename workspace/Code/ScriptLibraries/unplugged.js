@@ -28,6 +28,9 @@ $(window)
 
 					$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
 					allowFormsInIscroll();
+					if (isAndroid()){
+						$("#menuitems").css("position", "relative");
+					}
 
 					initiscroll();
 					$("#menupane").addClass("offScreen");
@@ -52,44 +55,91 @@ $(window)
 					} catch (e) {
 
 					}
-					try{
+					try {
 						fixNavigatorBottomCorners();
-					}catch(e){
-						
+					} catch (e) {
+
 					}
-					try{
+					try {
 						FastClick.attach(document.body);
-					}catch(e){
-						
+					} catch (e) {
+
 					}
-					
-					$(".footerTabtext").each(function(){
-						if ($(this).height() > 15){
+
+					$(".footerTabtext").each( function() {
+						if ($(this).height() > 15) {
 							$(this).parent().css("position", "relative");
 							$(this).parent().css("top", "-7px");
 						}
 					});
-					
+
 					initHorizontalView();
 					initDeleteable();
 					initAutoComplete();
-					
+					initHideFooter();
+					initRichText();
+					initReaderButtons();
+					$(document).ajaxStop( function() {
+						initHideFooter();
+						initRichText();
+						initReaderButtons();
+					});
 				});
 
-function getURLParameter(name) {
-    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+
+function initReaderButtons() {
+	if ($(".fontsizebuttons").length > 0) {
+		$(".input-search-frame").hide();
+	} else {
+		$(".input-search-frame").show();
+	}
 }
 
-$(window).scroll( function() {
-	if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-		$(".loadmorebutton").click();
+var oldiscrollbottom = "";
+function initHideFooter() {
+	try {
+		$(':input, textarea, select').on('focus', function() {
+			$(".footer").hide();
+			oldiscrollbottom = $(".iscrollcontent").css("bottom");
+			$(".iscrollcontent").css("bottom", "0px");
+		});
+		$(':input, textarea, select').on('blur', function() {
+			$(".footer").show();
+			$("iscrollbottom").css("bottom", oldiscrollbottom);
+			window.scrollTo(0, 1);
+		});
+	} catch (e) {
+
 	}
-});
+}
 
-window.addEventListener("orientationchange", setTimeout("changeorientation", 100), false);
+function isAndroid(){
+	return /android/i.test(navigator.userAgent.toLowerCase());
+}
 
-function changeorientation(){
-	alert("Orientation change");
+var editor = null;
+var rtfield;
+function initRichText() {
+	//Placeholder for future improvements
+}
+
+function htmlDecode(input) {
+	var e = document.createElement('div');
+	e.innerHTML = input;
+	return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+}
+
+function getURLParameter(name) {
+	return decodeURIComponent((new RegExp(
+			'[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [
+			, "" ])[1].replace(/\+/g, '%20'))
+			|| null;
+}
+
+window.addEventListener("orientationchange", setTimeout("changeorientation",
+		100), false);
+
+function changeorientation() {
 	hideViewsMenu();
 	initiscroll();
 	initHorizontalView();
@@ -156,6 +206,12 @@ function loadmore(dbName, viewName, summarycol, detailcol, category, xpage,
 				scrollContent.refresh();
 			} catch (e) {
 			}
+
+			if ($("#pullUp").hasClass('loading')) {
+				$("#pullUp").removeClass("loading");
+				$(".pullUpLabel").text("Pull up to load more...");
+			}
+
 			return false;
 		});
 	} catch (e) {
@@ -168,28 +224,30 @@ function openDocument(url, target) {
 	// document.location.href = url;
 	var thisArea = $("#" + target);
 	thisArea.load(url.replace(" ", "%20") + " #contentwrapper",
-			function() {
-
-				if (firedrequests != null) {
-					firedrequests = new Array();
-				}
-				initiscroll();
-				if (url.indexOf("editDocument") > -1
-						|| url.indexOf("newDocument") > -1) {
-					allowFormsInIscroll();
-					try {
-						if ($('.richtextfield').val().indexOf("<") > -1) {
-							var val = $($('.richtextfield').val()).text();
-							$('.richtextfield').val(val);
-						}
-					} catch (e) {
+			function(data, status, xhr) {
+				if (status=="error") {
+					alert("An error occurred:\n\n" + xhr.status + " " + xhr.statusText + "\n\n" + $(data).text());
+					return false;
+				}else{
+					if (firedrequests != null) {
+						firedrequests = new Array();
 					}
-
+	
+					unp.storePageRequest(url);
+	
+					initiscroll();
+					if (url.indexOf("editDocument") > -1
+							|| url.indexOf("newDocument") > -1) {
+						allowFormsInIscroll();
+					}
+					initDeleteable();
+					initAutoComplete();
+					initHorizontalView();
+					if ($("#input-search").hasClass("input-search")) {
+						$(".iscrollcontent").css("top", "90px");
+					}
+					return false;
 				}
-				initDeleteable();
-				initAutoComplete();
-				initHorizontalView();
-				return false;
 			});
 }
 
@@ -214,24 +272,23 @@ function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname)
 			url : url,
 			data : data,
 			cache : false,
-			encoding:"UTF-8",
+			encoding : "UTF-8",
 			beforeSend : function() {
 				console.log("About to open URL");
 			}
-		}).done( function(response) {
-			console.log(response.length);
-			if (response.length == 32) {
-				// openDocument(
-				// viewxpagename
-				// + "?action=openDocument&documentId="
-				// + response, "content");
-				// initiscroll();
-				$.blockUI();
-				window.location.href = "UnpMain.xsp";
-			} else {
-				alert(response);
-			}
-		});
+		}).done(
+				function(response) {
+					console.log(response.length);
+					if (response.length == 32) {
+						openDocument(
+								viewxpagename
+										+ "?action=openDocument&documentId="
+										+ response, "content");
+						initiscroll();
+					} else {
+						alert(response);
+					}
+				});
 	} else {
 		return false;
 	}
@@ -255,52 +312,83 @@ function toggleViewsMenu() {
 		$("#menuPane").removeClass("offScreen").addClass("onScreen");
 		$("#menuPane").animate( {
 			"left" : "+=700px"
-		}, "fast");
-		// $("#content").fadeOut();
+		}, "fast", function(){
+			if (isAndroid()){
+				$("#menuitems").css("position", "fixed");
+			}
+		});
 	} else {
 		$("#menuPane").removeClass("onScreen").addClass("offScreen");
 		$("#menuPane").animate( {
 			"left" : "-=700px"
-		}, "fast");
-		// $("#content").fadeIn();
+		}, "fast", function(){
+			if (isAndroid()){
+				$("#menuitems").css("position", "relative");
+			}			
+		});
 	}
 }
 
 function hideViewsMenu() {
 	if (!$("#menuPane").hasClass("offScreen")) {
 		$("#menuPane").removeClass("onScreen").addClass("offScreen");
+
 		$("#menuPane").animate( {
 			"left" : "-=700px"
-		}, "fast");
+		}, "fast", function(){
+			if (isAndroid()){
+				$("#menuitems").css("position", "relative");
+			}
+		});
 	}
 	// $("#content").fadeIn();
 }
 
 var firedrequests;
-function loadPage(url, target, menuitem) {
-	var thisArea = $("#" + target);
-	thisArea.load(url, function() {
+function loadPage(url, target, menuitem, pushState) {
 
-		if (firedrequests != null) {
-			firedrequests = new Array();
+	var _pushState = true;
+	if (arguments.length >= 4) {
+		_pushState = pushState;
+	}
+
+	var thisArea = $("#" + target);
+	thisArea.load(url, function(data, status, xhr) {
+		if (status=="error") {
+			alert("An error occurred:\n\n" + xhr.status + " " + xhr.statusText + "\n\n" + $(data).text());
+			return false;
+		}else{
+	
+			if (firedrequests != null) {
+				firedrequests = new Array();
+			}
+	
+			if (_pushState) {
+				unp.storePageRequest(url);
+			}
+	
+			initiscroll();
+			initHorizontalView();
+			initDeleteable();
+			initAutoComplete();
+			return false;
 		}
-		initiscroll();
-		initHorizontalView();
-		initDeleteable();
-		initAutoComplete();
-		return false;
 	});
-	var menuitems = $("#menuitems li");
-	menuitems.removeClass("viewMenuItemSelected");
-	menuitems.addClass("viewMenuItem");
-	$(".menuitem" + menuitem).removeClass("viewMenuItem");
-	$(".menuitem" + menuitem).addClass("viewMenuItemSelected");
-	hideViewsMenu();
+	if (_pushState) {
+		var menuitems = $("#menuitems li");
+		menuitems.removeClass("viewMenuItemSelected");
+		menuitems.removeClass("active");
+		menuitems.addClass("viewMenuItem");
+		$(".menuitem" + menuitem).removeClass("viewMenuItem");
+		$(".menuitem" + menuitem).addClass("viewMenuItemSelected");
+		$(".menuitem" + menuitem).addClass("active");
+		hideViewsMenu();
+	}
 }
 
 function openPage(url, target) {
 	$.blockUI();
-	document.location.href = url;
+	window.location.href = url;
 }
 
 function initDeleteable() {
@@ -315,31 +403,31 @@ function initDeleteable() {
 }
 
 var swipers = null;
-function initHorizontalView(){
-	try{
-		if (swipers != null){
-			//We need to destroy the existing swipers and re-init
-			for (var i=0; i<swipers.length; i++){
-				swipers[i].destroy();
-			}
+function initHorizontalView() {
+	try {
+		if (swipers != null) {
+			// We need to destroy the existing swipers and re-init
+			// for ( var i = 0; i < swipers.length; i++) {
+			// swipers[i].destroy();
+			// }
 		}
 		swipers = new Array();
-		$(".swiper-container").each(function(){
-			//First we need to re-size the swipe area
-			var items = $(this).find(".hviewitem").length;
-			$(this).find(".swiper-slide").width((items * 140));
-			//Now init the swiper
-			var mySwiper = $(this).swiper({
-				scrollContainer:true, 
-				freeMode: true,
-				freeModeFluid: true,
-				momentumBounce: true
-			});
+		$(".swiper-container").each( function() {
+			// First we need to re-size the swipe area
+				var items = $(this).find(".hviewitem").length;
+				$(this).find(".swiper-slide").width((items * 140));
+				// Now init the swiper
+				// var mySwiper = $(this).swiper( {
+				// scrollContainer : true,
+				// freeMode : true,
+				// freeModeFluid : true,
+				// momentumBounce : true
+				// });
 
-			swipers.push(mySwiper);
-		})
-	}catch(e){
-		
+				// swipers.push(mySwiper);
+			})
+	} catch (e) {
+
 	}
 }
 
@@ -358,7 +446,7 @@ function initAutoComplete() {
 }
 
 var touchmovehandler = function(e) {
-	e.preventDefault()
+	e.preventDefault();
 }
 
 var scrollContent;
@@ -367,123 +455,74 @@ function initiscroll() {
 	// Register the letter click events
 	$(".atozletter").click( function(event) {
 		event.stopPropagation();
-		if ($(this).hasClass("switchletterlist")){
+		if ($(this).hasClass("switchletterlist")) {
 			$(".atozpicker").toggle();
 			$(".numberpicker").toggle();
-		}else{
+		} else {
 			jumpToLetter($(this), event);
 		}
 		return false;
 	});
-	if (unpluggedserver) {
-		if (!getURLParameter("starttime")){
-			document.addEventListener('touchmove', touchmovehandler);
-		}
-		// Initialise any iScroll that needs it
-		try {
-			pullUpEl = document.getElementById('pullUp');
-			pullUpOffset = pullUpEl.offsetHeight;
-		} catch (e) {
-		}
-		try {
-			scrollContent.destroy();
-			delete scrollContent;
-		} catch (e) {
-		}
-
-		try {
-			scrollMenu.destroy();
-			delete scrollMenu;
-		} catch (e) {
-		}
-		try {
-			scrollMenu = new iScroll('menu', {
-				bounce : true,
-				momentum : false
-			});
-		} catch (e) {
-		}
-		
-		$(".iscrollcontent")
-				.each(
-						function() {
-							scrollContent = new iScroll(
-									$(this).attr("id"),
-									{
-										useTransition : true,
-										onRefresh : function() {
-											if (pullUpEl) {
-												if (pullUpEl.className
-														.match('loading')) {
-													pullUpEl.className = '';
-													pullUpEl
-															.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
-												}
-											}
-										},
-										onScrollMove : function() {
-											if (pullUpEl) {
-												if (this.y < (this.maxScrollY - 5)
-														&& !pullUpEl.className
-																.match('flip')) {
-													pullUpEl.className = 'flip';
-													pullUpEl
-															.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
-													this.maxScrollY = this.maxScrollY;
-												} else if (this.y > (this.maxScrollY + 5)
-														&& pullUpEl.className
-																.match('flip')) {
-													pullUpEl.className = '';
-													pullUpEl
-															.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
-													this.maxScrollY = pullUpOffset;
-												}
-											}
-											$(".acResults").hide();
-										},
-										onScrollEnd : function() {
-											if (pullUpEl) {
-												if (pullUpEl.className
-														.match('flip')) {
-													pullUpEl.className = 'loading';
-													pullUpEl
-															.querySelector('.pullUpLabel').innerHTML = 'Loading...';
-													$(".loadmorebutton")
-															.click();
-												}
-											}
-										}
-									});
-							$(".atozpicker").show();
-							return false;
-						});
-		$(".atozpicker").show();
-	} else {
-		$(".atozpicker").show();
+	
+	bouncefix.add(document.getElementById("menuitems"));
+	bouncefix.add(document.querySelector('.iscrollcontent'));
+	
+	try {
+		pullUpEl = document.getElementById('pullUp');
+		pullUpOffset = pullUpEl.offsetHeight;
+	} catch (e) {
 	}
+	$('.iscrollcontent')
+			.bind(
+					'scroll',
+					function() {
+						if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+							if (pullUpEl) {
+								pullUpEl.className = 'flip';
+								pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
+								if (pullUpEl.className.match('flip')) {
+									pullUpEl.className = 'loading';
+									pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';
+									$(".loadmorebutton").click();
+								}
+							}
+						}
+					})
+	$(".atozpicker").show();
 }
 
 function jumpToLetter(letterelement, event) {
+	$('.iscrollcontent').animate( {
+		scrollTop : 0
+	}, 0);
 	var letter = letterelement.text();
-	var list = $("#flatViewRowSet li").each( function() {
-		var summary = $(this).find(".viewlistsummary").text();
-		var firstletter = summary.substring(0, 1);
-		if (firstletter >= letter) {
-			if (unpluggedserver) {
-				var el = $(this).attr("id").replace(/:/gi, "\\:");
-				scrollContent.scrollToElement("#" + el, "0s");
-			} else {
-				$('html, body').animate( {
-					scrollTop : $(this).offset().top - 60
-				}, 500);
-			}
-			return false;
-		}
-	});
+	var list = $("li.categoryRowFixed").each(
+			function() {
+				var summary = $(this).find("span").text();
+				var firstletter = summary.substring(0, 1);
+				if (firstletter == letter) {
+					console.log("we need to jump to " + firstletter
+							+ " because it's equal to " + letter);
+					$('.iscrollcontent').animate( {
+						scrollTop : $(this).offset().top - 60
+					}, 500);
+					return false;
+				} else if (firstletter > letter) {
+					console.log("we need to jump to " + firstletter
+							+ " because it's greater than " + letter);
+					$('.iscrollcontent').animate( {
+						scrollTop : $(this).offset().top - 120
+					}, 500);
+					return false;
+				} else {
+					console.log("we don't need to jump to " + firstletter
+							+ " because it's less than " + letter);
+				}
+			});
 }
 
 function openDialog(id) {
-	if (id != null && id != "#"){
+	if (id != null && id != "#") {
 		$("#underlay" + id).css('display', 'block');
 		$("#" + id).css('display', 'block');
 		var boxes = $("div");
@@ -544,9 +583,11 @@ function accordionLoadMore(obj, viewName, catName, xpage, dbname) {
 	$(obj).nextAll(".summaryDataRow:first").children(".accLoadMoreLink").show();
 	$(thisArea).append($(".summaryDataRow li"));
 
-	//check if there's only 1 expanded category and set a class to create a rounded bottom border
-	if ( $("#summaryList .categoryrow").length == 1 ) {
-		$("#summaryList div.summaryDataRow ul.accordionRowSet li:last-child").addClass("roundedBottom");
+	// check if there's only 1 expanded category and set a class to create a
+	// rounded bottom border
+	if ($("#summaryList .categoryrow").length == 1) {
+		$("#summaryList div.summaryDataRow ul.accordionRowSet li:last-child")
+				.addClass("roundedBottom");
 	}
 }
 
@@ -595,65 +636,71 @@ function x$(idTag, param) { // Updated 18 Feb 2012
 	return ($("#" + idTag));
 }
 
-function doHViewFilter(language, year, primaryview, filterview, xpage, source, toplevelcategory){
-	if (language == null){
+function doHViewFilter(language, year, primaryview, filterview, xpage, source,
+		toplevelcategory) {
+	if (language == null) {
 		language = $(".languagelabel").text();
 	}
-	if (year == null){
+	if (year == null) {
 		year = $(".yearlabel").text();
 	}
 	var thisArea = $("#repeatholder");
-	var url = ("UnpHorizontalViewFilter.xsp?languagefilter=" + language + 
-											"&yearfilter=" + year).replace(" ", "%20") + 
-											"&primaryview=" + primaryview.replace(" ", "%20") + 
-											"&filterview=" + filterview.replace(" ", "%20") + 
-											"&xpage=" + xpage + 
-											"&source=" + source + 
-											"&toplevelcategory=" + toplevelcategory;
-	thisArea.load(url.replace(" ", "%20") + " #repeatholder",
-			function() {
-				initiscroll();
-				initHorizontalView();
-				closeDialog('hviewPopup');
-				return false;
-			});
+	var url = ("UnpHorizontalViewFilter.xsp?languagefilter=" + language
+			+ "&yearfilter=" + year).replace(" ", "%20")
+			+ "&primaryview="
+			+ primaryview.replace(" ", "%20")
+			+ "&filterview="
+			+ filterview.replace(" ", "%20")
+			+ "&xpage="
+			+ xpage
+			+ "&source="
+			+ source
+			+ "&toplevelcategory="
+			+ toplevelcategory;
+	thisArea.load(url.replace(" ", "%20") + " #repeatholder", function() {
+		initiscroll();
+		initHorizontalView();
+		closeDialog('hviewPopup');
+		return false;
+	});
 	$(".dropdown-menu").hide();
 	$(".languagelabel").text(language);
 	$(".yearlabel").text(year);
 }
 
-function loadMoreHorizontal(button, category, primaryview, filterview, xpage, source){
+function loadMoreHorizontal(button, category, primaryview, filterview, xpage,
+		source) {
 	var language = $(".languagelabel").text().replace(" ", "%20");
 	var year = $(".yearlabel").text().replace(" ", "%20");
 	var categoryrep = category.replace(" ", "-");
 	categoryrep = categoryrep.replace("~", "-");
 	var thisArea = $(".swiper-" + categoryrep);
 	var itemcount = $(".swiper-slide-" + categoryrep + " .hviewitem").length;
-	var url = "UnpHorizontalViewList.xsp?category=" + category.replace(" ", "%20") + 
-										"&languagefilter=" + language + 
-										"&yearfilter=" + year + 
-										"&start=" + (itemcount - 1) + 
-										"&primaryview=" + primaryview.replace(" ", "%20") + 
-										"&filterview=" + filterview.replace(" ", "%20") + 
-										"&xpage=" + xpage + 
-										"&source=" + source;
-	$.ajax({
-	    url: url,
-	    dataType: 'html',
-	    success: function(html) {
-	        $('.swiper-slide-' + categoryrep).append($('#loadmoreresults .hviewitem', $(html)));
-	        if (html.indexOf("NOMORERECORDS") > -1){
-	        	$(".loadmorebutton-" + categoryrep).hide();
-	        }else{
-	        	$(".loadmorebutton-" + categoryrep).appendTo($('.swiper-slide-' + categoryrep));
-	        }
-	        initHorizontalView();
-	    }
+	var url = "UnpHorizontalViewList.xsp?category="
+			+ category.replace(" ", "%20") + "&languagefilter=" + language
+			+ "&yearfilter=" + year + "&start=" + (itemcount - 1)
+			+ "&primaryview=" + primaryview.replace(" ", "%20")
+			+ "&filterview=" + filterview.replace(" ", "%20") + "&xpage="
+			+ xpage + "&source=" + source;
+	$.ajax( {
+		url : url,
+		dataType : 'html',
+		success : function(html) {
+			$('.swiper-slide-' + categoryrep).append(
+					$('#loadmoreresults .hviewitem', $(html)));
+			if (html.indexOf("NOMORERECORDS") > -1) {
+				$(".loadmorebutton-" + categoryrep).hide();
+			} else {
+				$(".loadmorebutton-" + categoryrep).appendTo(
+						$('.swiper-slide-' + categoryrep));
+			}
+			initHorizontalView();
+		}
 	});
 }
 
-function openHViewDialog(xpage, source, unid){
-	if (xpage.indexOf(".xsp") == -1){
+function openHViewDialog(xpage, source, unid) {
+	if (xpage.indexOf(".xsp") == -1) {
 		xpage += ".xsp";
 	}
 	var url = xpage + "?action=openDocument&documentId=" + unid;
@@ -664,115 +711,362 @@ function openHViewDialog(xpage, source, unid){
 			});
 }
 
-function expandMenuItem(menuitem){
+function expandMenuItem(menuitem) {
 	$(".viewMenuItemSub").hide();
 	$(".viewMenuItemSubSub").hide();
-	//$(".navScrollArea .viewMenuItem img").prop("src", "unp/right-arrow-trans-white-large.png");
-	if ($(menuitem).hasClass("viewMenuItemSub")){
-		//We need to toggle a sub-sub menu
+	if ($(menuitem).hasClass("expanded")) {
+		// We need to leave everything collapsed
+	} else if ($(menuitem).hasClass("viewMenuItemSub")) {
+		// We need to toggle a sub-sub menu
 		var bFinishedCategory = false;
 		$(menuitem).show();
-		$(menuitem).nextAll().each(function(i){
-			if (!$(this).hasClass("viewMenuItemSubSub") && !$(this).hasClass("viewMenuItemSub")){
-				return false;
-			}else if($(this).hasClass("viewMenuItemSub")){
-				if ($(this).is(':visible')){
-					//$(menuitem).find("img").prop("src", "unp/right-arrow-trans-white-large.png");
-					bimg = true;
-				}else{
-					//$(menuitem).find("img").prop("src", "unp/down-arrow-trans-white-large.png");
-					bimg = true;
-				}
-				$(this).toggle();
-				bFinishedCategory = true;
-			}else{
-				if ($(this).hasClass("viewMenuItemSubSub") && !bFinishedCategory){
-					if (i==0){
-						if ($(this).is(':visible')){
-							//$(menuitem).find("img").prop("src", "unp/right-arrow-trans-white-large.png");
-							bimg = true;
-						}else{
-							//$(menuitem).find("img").prop("src", "unp/down-arrow-trans-white-large.png");
-							bimg = true;
+		$(menuitem).nextAll().each(
+				function(i) {
+					if (!$(this).hasClass("viewMenuItemSubSub")
+							&& !$(this).hasClass("viewMenuItemSub")) {
+						return false;
+					} else if ($(this).hasClass("viewMenuItemSub")) {
+						//$(this).toggle();
+						bFinishedCategory = true;
+					} else {
+						if ($(this).hasClass("viewMenuItemSubSub")
+								&& !bFinishedCategory) {
+							$(this).toggle();
 						}
 					}
-					$(this).toggle();
-				}
-			}
-		});
-		//Now we need to make sure that any previous sub categories are shown as well
-		$(menuitem).prevAll().each(function(i){
-			if (!$(this).hasClass("viewMenuItemSub") && !$(this).hasClass("viewMenuItemSubSub")){
-				return false;
-			}
-			if($(this).hasClass("viewMenuItemSub")){
-				if ($(this).is(':visible')){
-					//$(menuitem).find("img").prop("src", "unp/right-arrow-trans-white-large.png");
-					bimg = true;
-				}else{
-					//$(menuitem).find("img").prop("src", "unp/down-arrow-trans-white-large.png");
-					bimg = true;
-				}
-				$(this).toggle();
-			}
-		})
-	}else{
-		//We need to toggle a sub menu
-		$(menuitem).nextAll().each(function(i){
-			if (!$(this).hasClass("viewMenuItemSub") && !$(this).hasClass("viewMenuItemSubSub")){
-				return false;
-			}else{
-				if ($(this).hasClass("viewMenuItemSub")){
-					if (i==0){
-						if ($(this).is(':visible')){
-							//$(menuitem).find("img").prop("src", "unp/right-arrow-trans-white-large.png");
-							bimg = true;
-						}else{
-							//$(menuitem).find("img").prop("src", "unp/down-arrow-trans-white-large.png");
-							bimg = true;
+				});
+		// Now we need to make sure that any previous sub categories are shown
+		// as well
+		$(menuitem).prevAll().each(
+				function(i) {
+					if (!$(this).hasClass("viewMenuItemSub")
+							&& !$(this).hasClass("viewMenuItemSubSub")) {
+						return false;
+					}
+					if ($(this).hasClass("viewMenuItemSub")) {
+						$(this).toggle();
+					}
+				})
+	} else {
+		// We need to toggle a sub menu
+		var bClickedFirst = true;
+		var bFoundSubSub = false;
+		$(menuitem).nextAll().each(
+				function(i) {
+					if (!$(this).hasClass("viewMenuItemSub")
+							&& !$(this).hasClass("viewMenuItemSubSub")) {
+						bFoundSubSub = true;
+						return false;
+					} else {
+						if ($(this).hasClass("viewMenuItemSub")) {
+							if (!bFoundSubSub){
+								if (!bClickedFirst) {
+									$(this).click();
+									bClickedFirst = true;
+								}
+								$(this).toggle();
+							}
 						}
 					}
-					$(this).toggle();
-				}
-			}
-		});
+				});
+	}
+	if ($(menuitem).hasClass("expanded")) {
+		$(".viewMenuItem").removeClass("expanded");
+	} else {
+		$(".viewMenuItem").removeClass("expanded");
+		$(menuitem).addClass("expanded");
 	}
 	fixNavigatorBottomCorners();
 }
-function fixNavigatorBottomCorners(){
+function fixNavigatorBottomCorners() {
 	$(".navroundedbottom").removeClass("navroundedbottom");
-	$(".navScrollArea .viewMenuItem").not(':hidden').last().addClass("navroundedbottom");
+	$(".navScrollArea .viewMenuItem").not(':hidden').last().addClass(
+			"navroundedbottom");
 	$("#menuitems li a").removeClass("navroundedbottom");
 	$("#menuitems li a").not(':hidden').last().addClass("navroundedbottom");
 }
 
-function hviewFavourite(xpage, unid){
-	if (xpage.indexOf(".xsp") == -1){
+function hviewFavourite(xpage, unid) {
+	if (xpage.indexOf(".xsp") == -1) {
 		xpage += ".xsp";
 	}
 	var url = xpage + "?favorite=toggle&action=openDocument&documentId=" + unid;
 	$("#hviewitemcontent").load(url.replace(" ", "%20") + " #results");
 	$("[unid='" + unid + "'] .badge-favorite").toggle();
+	closeDialog("hviewPopup");
 }
 
-function hviewEmail(xpage, unid){
+function hviewDownloadNow() {
+	alert("This feature has not been enabled");
+}
+
+function hviewDownloadLater() {
+	alert("This feature has not been enabled");
+}
+
+function hviewEmail(xpage, unid) {
 	$("#hviewdialogbuttons").toggle();
-	$("#emailholder").toggle();	
+	$("#emailholder").toggle();
 }
 
-function hviewEmailSend(xpage, unid){
-	alert("This needs to be implemented");	
+function hviewEmailSend(xpage, unid) {
+	alert("This needs to be implemented");
 }
 
-function hviewEmailCancel(xpage, unid){
+function hviewEmailCancel(xpage, unid) {
 	$("#hviewdialogbuttons").toggle();
-	$("#emailholder").toggle();	
+	$("#emailholder").toggle();
 }
 
-function dropdownToggle(element){
-	if (element != null){
+function dropdownToggle(element) {
+	if (element.text.indexOf("Language") > -1){
+		$("#yeardropdownlink").next().hide();
+	}else if(element.text.indexOf("Year") > -1){
+		$("#dropdownlink").next().hide();
+	}
+	if (element != null) {
 		$(element).next().toggle();
-	}else{
+	} else {
 		$(".dropdown-menu").toggle();
 	}
 }
+
+// create unp namespace object (if not created before)
+if (!unp) {
+
+	var unp = {
+
+		_firstLoad : true,
+
+		storePageRequest : function(url) {
+
+			this._firstLoad = false;
+
+			if (url.indexOf("#") > -1) {
+				url = url.substring(0, url.indexOf(" #"));
+			}
+			if (url.indexOf("?") == -1) {
+				url += "?";
+			}
+			url += "&history=true";
+			history.pushState(null, "", url);
+			console.log("pushed " + url);
+
+		}
+
+	}
+
+	$(window).bind(
+			"popstate",
+			function() {
+				if (!unp._firstLoad) {
+					loadPage(location.href + " #contentwrapper", 'content',
+							null, false, false);
+				}
+			});
+
+}
+
+function increaseFontSize(button) {
+	$(".typographyreadcontent").find("*").each(
+			function() {
+				$(this).css("font-size",
+						(parseInt($(this).css("font-size"), 10) + 2) + "px");
+				if (parseInt($(this).css("line-height"), 10) <= parseInt(
+						$(this).css("font-size"), 10)) {
+					$(this).css(
+							"line-height",
+							(parseInt($(this).css("line-height"), 10) + 2)
+									+ "px");
+				}
+			});
+}
+function decreaseFontSize(button) {
+	$(".typographyreadcontent").find("*").each(
+			function() {
+				$(this).css("font-size",
+						(parseInt($(this).css("font-size"), 10) - 2) + "px");
+				if (parseInt($(this).css("line-height"), 10) > 24) {
+					$(this).css(
+							"line-height",
+							(parseInt($(this).css("line-height"), 10) - 2)
+									+ "px");
+				}
+			});
+}
+
+/*!
+ * v0.0.3
+ * Copyright (c) 2013 Jarid Margolin
+ * bouncefix.js is open sourced under the MIT license.
+ */ 
+
+;(function (window, document) {
+
+// Define module
+var bouncefix = {
+  Fix: Fix,
+  cache: {}
+};  
+
+//
+// Add/Create new instance
+//
+bouncefix.add = function (className) {
+  if (!this.cache[className]) {
+    this.cache[className] = new this.Fix(className);
+  }
+};
+
+//
+// Delete/Remove instance
+//
+bouncefix.remove = function (className) {
+  if (this.cache[className]) {
+    this.cache[className].remove();
+    delete this.cache[className];
+  }
+};
+//
+// Class Constructor - Called with new BounceFix(el)
+// Responsible for setting up required instance
+// variables, and listeners.
+//
+function Fix(className) {
+  // If there is no element, then do nothing  
+  if(!className) { return false; }
+  this.className = className;
+
+  // The engine
+  this.startListener = new EventListener(document, {
+    evt: 'touchstart',
+    handler: this.touchStart,
+    context: this
+  }).add();
+
+  // Cleanup
+  this.endListener = new EventListener(document, {
+    evt: 'touchend',
+    handler: this.touchEnd,
+    context: this
+  }).add();
+}
+
+//
+// touchstart handler
+//
+Fix.prototype.touchStart = function (evt) {
+  this.target = utils.getTargetedEl(evt.target, this.className);
+  if (this.target) {
+    // If scrollable, adjust
+    if (utils.isScrollable(this.target)) { return utils.scrollToEnd(this.target); }
+    // Else block touchmove
+    this.endListener = new EventListener(this.target, {
+      evt: 'touchmove',
+      handler: this.touchMove,
+      context: this
+    }).add();
+  }
+};
+
+//
+// If this event is called, we block scrolling
+// by preventing default behavior.
+//
+Fix.prototype.touchMove = function (evt) {
+  evt.preventDefault(); 
+};
+
+//
+// On touchend we need to remove and listeners
+// we may have added.
+//
+Fix.prototype.touchEnd = function (evt) {
+  if (this.moveListener) {
+    this.moveListener.remove();
+  }
+};
+
+//
+// touchend handler
+//
+Fix.prototype.remove = function () {
+  this.startListener.remove();
+  this.endListener.remove();
+};
+// Define module
+var utils = {};
+
+//
+// Search nodes to find target el. Return if exists
+//
+utils.getTargetedEl = function (el, className) {
+  while (true) {
+    if (el.classList.contains(className)) { break; }
+    if ((el = el.parentElement)) { continue; }
+    break;
+  }
+  return el;
+};
+
+//
+// Return true or false depending on if content
+// is scrollable
+//
+utils.isScrollable = function (el) {
+  return (el.scrollHeight > el.offsetHeight);
+};
+
+//
+// Keep scrool from hitting end bounds
+//
+utils.scrollToEnd = function (el) {
+  var curPos = el.scrollTop,
+      height = el.offsetHeight,
+      scroll = el.scrollHeight;
+  
+  // If at top, bump down 1px
+  if(curPos <= 0) { el.scrollTop = 1; }
+
+  // If at bottom, bump up 1px
+  if(curPos + height >= scroll) {
+    el.scrollTop = scroll - height - 1;
+  }
+};
+//
+// Class used to work with addEventListener. Allows
+// context to be specified on handler, and provides
+// a method for easy removal.
+//
+function EventListener(el, opts) {
+  // Make args available to instance
+  this.evt = opts.evt;
+  this.el = el;
+  // Default
+  this.handler = opts.handler;
+  // If context passed call with context
+  if (opts.context) {
+    this.handler = function (evt) {
+      opts.handler.call(opts.context, evt);
+    };
+  }
+}
+
+//
+// Add EventListener on instance el
+//
+EventListener.prototype.add = function () {
+  this.el.addEventListener(this.evt, this.handler, false);
+};
+
+//
+// Removes EventListener on instance el
+//
+EventListener.prototype.remove = function () {
+  this.el.removeEventListener(this.evt, this.handler);
+};
+
+// Expose to window
+if (typeof window !== 'undefined') { window.bouncefix = bouncefix; }
+
+})(window, document);

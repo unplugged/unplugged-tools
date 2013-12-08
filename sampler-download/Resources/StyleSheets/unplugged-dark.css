@@ -28,6 +28,85 @@
 	font-weight:400;
 	font-style:normal;
 }*/
+/*********************
+
+iscroll.css
+
+**********************/
+body {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+}
+.iscrollcontent {
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  top: 60px;
+  bottom: 60px;
+  overflow-x: none;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+@media screen and (min-width: 701px) {
+  .iscrollcontent {
+    top: 57px;
+    bottom: 60px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .iscrollcontent {
+    top: 45px;
+    bottom: 45px;
+  }
+}
+.swiper-container {
+  overflow-x: scroll !important;
+  overflow-y: none !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+.notoppadscroll {
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  bottom: 60px;
+  overflow-x: none;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.bottompadscroll {
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  top: 60px;
+  bottom: 0px;
+  overflow-x: none;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.nopadscroll {
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  overflow-x: none;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+@media screen and (max-width: 700px) {
+  .wsscroll {
+    top: 45px;
+    bottom: 45px;
+  }
+}
+/*********************
+
+Jack's Styles from here
+
+**********************/
 body {
   background-color: #464646;
   font-family: "Helvetica Neue", sans-serif;
@@ -53,6 +132,11 @@ input {
 }
 .hidden {
   display: none !important;
+}
+a {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /* Disable Android's default active link styling */
+
 }
 a:hover {
   text-decoration: none;
@@ -232,6 +316,9 @@ textarea,
   display: inline-block;
   border: 1px solid #535353;
   padding: 0 15px;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /* Disable Android's default active link styling */
+
 }
 .button i:before {
   color: #eeeeee;
@@ -248,6 +335,14 @@ textarea,
   border: 1px solid #920404;
 }
 /* FORMS */
+.editButton,
+.cancelButton,
+.proceedButton,
+.saveButton {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /* Disable Android's default active link styling */
+
+}
 .editButton .label,
 .cancelButton .label,
 .proceedButton .label,
@@ -305,6 +400,9 @@ textarea,
   text-shadow: 0 1px rgba(0, 0, 0, 0.4);
   font-weight: bold;
   background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /* Disable Android's default active link styling */
+
 }
 @media screen and (max-width: 700px) {
   .viewsButton,
@@ -468,6 +566,9 @@ textarea,
     margin-left: 30%;
   }
 }
+#menu {
+  width: 100%;
+}
 #menuPane {
   z-index: 11;
   padding-top: 24px;
@@ -475,14 +576,9 @@ textarea,
   position: absolute;
   left: -700px;
   display: block;
-  border-right: 1px solid transparent;
   padding: 0;
-}
-@media screen and (max-width: 400px) {
-  #menuPane {
-    top: 40px;
-    bottom: 45px;
-  }
+  -webkit-box-sizing: border-box;
+  width: 100%;
 }
 @media screen and (max-width: 700px) {
   #menuPane {
@@ -492,7 +588,7 @@ textarea,
 }
 @media screen and (min-width: 701px) {
   #menuPane {
-    top: 60px;
+    top: 57px;
     bottom: 60px;
   }
 }
@@ -520,23 +616,50 @@ textarea,
     width: 100%;
   }
 }
-ul#menuitems {
+#menuitems {
+  position: fixed;
+  width: 30%;
+  min-width: 250px;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  overflow-y: scroll;
   padding: 0;
   margin: 0;
   list-style: none;
-  margin: 10px;
+  padding: 10px;
+  padding-right: 0;
+  -webkit-box-sizing: border-box;
+  border-right: 1px solid transparent;
 }
-ul#menuitems li {
-  min-width: 250px;
+@media screen and (max-width: 700px) {
+  #menuitems {
+    top: 45px;
+    bottom: 45px;
+    width: 95%;
+  }
 }
-ul#menuitems a,
-ul#menuitems .menulink {
+@media screen and (min-width: 701px) {
+  #menuitems {
+    top: 57px;
+    bottom: 60px;
+  }
+}
+#menuitems li {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#menuitems a,
+#menuitems .menulink {
   position: relative;
   text-align: left;
   background: #222222;
   display: block;
   line-height: 24px;
   padding: 10px 15px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
   border-bottom: 1px solid #111111;
   border-left: 1px solid #111111;
   border-right: 1px solid #111111;
@@ -548,8 +671,8 @@ ul#menuitems .menulink {
   font-size: 16px;
   font-weight: bold;
 }
-ul#menuitems a:after,
-ul#menuitems .menulink:after {
+#menuitems a:after,
+#menuitems .menulink:after {
   content: '';
   position: absolute;
   right: 12px;
@@ -566,69 +689,69 @@ ul#menuitems .menulink:after {
   text-transform: none;
   -webkit-font-smoothing: antialiased;
 }
-ul#menuitems a i,
-ul#menuitems .menulink i {
+#menuitems a i,
+#menuitems .menulink i {
   float: left;
   margin-right: 12px;
   color: #dddddd;
   font-size: 24px;
 }
-ul#menuitems > li:first-child a,
-ul#menuitems > li:first-child .menulink {
+#menuitems > li:first-child a,
+#menuitems > li:first-child .menulink {
   -webkit-border-top-left-radius: 10px;
   -webkit-border-top-right-radius: 10px;
   border-top: 1px solid #111111;
 }
-ul#menuitems > li:last-child a,
-ul#menuitems > li:last-child .menulink {
+#menuitems > li:last-child a,
+#menuitems > li:last-child .menulink {
   -webkit-border-bottom-left-radius: 10px;
   -webkit-border-bottom-right-radius: 10px;
   border-bottom: 1px solid #111111;
 }
-ul#menuitems ul {
+#menuitems ul {
   list-style: none;
   padding: 0;
 }
-ul#menuitems a.open:after,
-ul#menuitems.viewMenuItem.expanded .menulink:after {
+#menuitems a.open:after,
+#menuitems.viewMenuItem.expanded .menulink:after {
   -webkit-transform: rotate(90deg);
   right: 15px;
 }
-ul#menuitems > li > ul > li > a,
-ul#menuitems.viewMenuItemSub .menulink {
+#menuitems > li > ul > li > a,
+#menuitems.viewMenuItemSub .menulink {
   background-color: #000000;
   border-bottom: 1px solid #000000;
   padding-left: 38px;
 }
-ul#menuitems.viewMenuItemSub {
+#menuitems.viewMenuItemSub {
   display: none;
 }
-ul#menuitems > li > ul > li > ul > li > a,
-ul#menuitems.viewMenuItemSubSub .menulink {
+#menuitems > li > ul > li > ul > li > a,
+#menuitems.viewMenuItemSubSub .menulink {
   background-color: #000000;
   border: 1px solid #000000;
   padding-left: 76px;
   font-weight: normal;
 }
-ul#menuitems.viewMenuItemSubSub {
+#menuitems.viewMenuItemSubSub {
   display: none;
 }
-ul#menuitems a.active,
-ul#menuitems.viewMenuItemSelected {
+#menuitems a.active,
+#menuitems.viewMenuItemSelected {
   border-bottom: 1px solid #000000;
   background: #0078f4;
   color: #ffffff;
 }
-ul#menuitems a.active i:before,
-ul#menuitems.viewMenuItemSelected i:before {
+#menuitems a.active i:before,
+#menuitems.viewMenuItemSelected i:before {
   color: #ffffff;
 }
-ul#menuitems a.active:after,
-ul#menuitems.viewMenuItemSelected .menulink:after {
+#menuitems a.active:after,
+#menuitems.viewMenuItemSelected .menulink:after {
   color: #ffffff;
   opacity: 1;
 }
-ul#menuitems.viewMenuItemDisabled .menulink {
+#menuitems.viewMenuItemDisabled .menulink {
   opacity: 0.2;
 }
 /* FOOTER */
@@ -3405,96 +3528,4 @@ Not sure what any of it does, but I don't want to move/change it in case I break
 }
 .formpullleft {
   margin-left: 0% !important;
-}
-/*********************
-
-iscroll.css
-
-**********************/
-body {
-  height: 100%;
-  overflow: hidden;
-  width: 100%;
-  position: fixed;
-}
-.iscrollcontent {
-  position: fixed;
-  right: 0px;
-  left: 0px;
-  top: 60px;
-  bottom: 60px;
-  overflow-x: none;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-#menuitems {
-  position: fixed;
-  width: 29%;
-  top: 60px;
-  bottom: 60px;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-.swiper-container {
-  overflow-x: scroll !important;
-  overflow-y: none !important;
-  -webkit-overflow-scrolling: touch !important;
-}
-.notoppadscroll {
-  position: fixed;
-  right: 0px;
-  left: 0px;
-  top: 0px;
-  bottom: 60px;
-  overflow-x: none;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-.bottompadscroll {
-  position: fixed;
-  right: 0px;
-  left: 0px;
-  top: 60px;
-  bottom: 0px;
-  overflow-x: none;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-.nopadscroll {
-  position: fixed;
-  right: 0px;
-  left: 0px;
-  top: 0px;
-  bottom: 0px;
-  overflow-x: none;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-@media screen and (min-width: 701px) {
-  .iscrollcontent,
-  #menuitems {
-    top: 60px;
-    bottom: 60px;
-  }
-}
-/*iPad Portrait*/
-@media only screen and (min-width: 768px) and (max-width: 768px) {
-  #menuitems {
-    width: 50%;
-    top: 60px;
-    bottom: 60px;
-  }
-}
-@media screen and (max-width: 700px) {
-  .iscrollcontent {
-    top: 45px;
-    bottom: 45px;
-  }
-  #menuitems {
-    width: 95%;
-  }
-  .wsscroll {
-    top: 45px;
-    bottom: 45px;
-  }
 }

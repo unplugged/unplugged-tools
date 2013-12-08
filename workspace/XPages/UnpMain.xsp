@@ -13,6 +13,9 @@
 
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:unp="http://unplugged.teamstudio.com">
+	<xp:this.resources>
+		<xp:styleSheet href="unp/font-awesome.css"></xp:styleSheet>
+	</xp:this.resources>
 
 	<xp:this.data>
 		<xp:dominoView var="dbs" viewName="HomeLinks"></xp:dominoView>
@@ -27,12 +30,24 @@
 				<xp:attr name="rel" value="stylesheet"></xp:attr>
 				<xp:attr name="type" value="text/css"></xp:attr>
 				<xp:attr name="href">
-					<xp:this.value><![CDATA[#{javascript:var url = cssdoc.getColumnValue("URL");
+					<xp:this.value><![CDATA[#{javascript:viewScope.foundcustomcss = true;var url = cssdoc.getColumnValue("URL");
 return url;}]]></xp:this.value>
 				</xp:attr>
 			</xp:this.attrs>
 		</xp:panel>
 	</xp:repeat>
+		<xp:panel tagName="link">
+		<xp:this.attrs>
+			<xp:attr name="type" value="text/css"></xp:attr>
+			<xp:attr name="rel" value="stylesheet"></xp:attr>
+			<xp:attr name="href"
+				value="unplugged.css">
+			</xp:attr>
+			<xp:attr name="unp-id" value="primarycss"></xp:attr>
+		</xp:this.attrs>
+		<xp:this.rendered><![CDATA[#{javascript:!isAjax() && !viewScope.containsKey("foundcustomcss")}]]></xp:this.rendered>
+	</xp:panel>
+	
 	<unp:unpHeader search="none" viewsButton="false" title="Unplugged">
 	</unp:unpHeader>
 

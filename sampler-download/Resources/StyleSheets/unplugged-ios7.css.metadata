@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="3782" sequence="6" unid="751BF675ABE195F880257C32003D960E">
-<created><datetime>20131129T111241,10+00</datetime></created>
-<modified><datetime>20131129T141257,76+00</datetime></modified>
-<revised><datetime>20131129T111241,12+00</datetime></revised>
-<lastaccessed><datetime>20131129T141257,76+00</datetime></lastaccessed>
-<addedtofile><datetime>20131129T141257,76+00</datetime></addedtofile></noteinfo>
+<noteinfo noteid="37b2" sequence="1" unid="548D160E7653E0A780257C350039ED51">
+<created><datetime>20131202T103243,05+00</datetime></created>
+<modified><datetime>20131202T103243,09+00</datetime></modified>
+<revised><datetime>20131202T103243,08+00</datetime></revised>
+<lastaccessed><datetime>20131202T103243,09+00</datetime></lastaccessed>
+<addedtofile><datetime>20131202T103243,09+00</datetime></addedtofile></noteinfo>
 <updatedby><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Unplugged User/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>CN=Unplugged User/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <item name="$TITLE"><textlist><text>unplugged-ios7.css</text></textlist></item>
 <item name="$Flags"><text>34C=Q</text></item>
@@ -15,4 +15,4 @@
 
 
 
-<item name="$FileModDT"><datetime>20131128T150203,77+00</datetime></item></note>
+<item name="$FileModDT"><datetime>20131129T173826,75+00</datetime></item></note>

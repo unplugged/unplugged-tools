@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- replicaid='80257BF10050CE70'>
-<noteinfo noteid='11e' unid='EF90145302C8EA5780257BE90037B6D8' sequence='4'>
+ maintenanceversion='1.0' replicaid='80257BF10050CE70'>
+<noteinfo noteid='11e' unid='EF90145302C8EA5780257BE90037B6D8' sequence='5'>
 <created><datetime dst='true'>20130917T110832,88+01</datetime></created>
-<modified><datetime dst='true'>20130925T154240,59+01</datetime></modified>
-<revised><datetime dst='true'>20130925T154240,58+01</datetime></revised>
-<lastaccessed><datetime dst='true'>20130925T154240,59+01</datetime></lastaccessed>
+<modified><datetime>20131129T080224,70+00</datetime></modified>
+<revised><datetime>20131129T080224,69+00</datetime></revised>
+<lastaccessed><datetime>20131129T080224,70+00</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130925T154237,35+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <item name='IconBitmap' summary='true'>
@@ -25,5 +25,6 @@ AAAAUEECICABAAD/////+A4DgA==
 </rawitemdata></item>
 <item name='$Flags'><text>J</text></item>
 <item name='$Daos'><text>0</text></item>
-<item name='$TITLE'><text>Demo Workspace</text></item></note>
+<item name='$TITLE'><text>Restyler Workspace
+</text></item></note>
 

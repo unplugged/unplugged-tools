@@ -12,18 +12,30 @@
 			categoryFilter="#{javascript:@UserName()}">
 		</xp:dominoView>
 	</xp:this.data>
-	<xp:repeat value="#{customcss}" rows="1" var="cssdoc">
+	<xp:repeat value="#{customcss}" rows="1" var="cssdoc"
+		indexVar="cssindex">
 		<xp:panel tagName="link" rendered="#{javascript:!isAjax()}">
 			<xp:this.attrs>
 				<xp:attr name="type" value="text/css"></xp:attr>
 				<xp:attr name="rel" value="stylesheet"></xp:attr>
 				<xp:attr name="href"
-					value="#{javascript:cssdoc.getColumnValue('URL')}">
+					value="#{javascript:viewScope.foundcustomcss = true; cssdoc.getColumnValue('URL')}">
 				</xp:attr>
 				<xp:attr name="unp-id" value="primarycss"></xp:attr>
 			</xp:this.attrs>
 		</xp:panel>
 	</xp:repeat>
+	<xp:panel tagName="link">
+		<xp:this.attrs>
+			<xp:attr name="type" value="text/css"></xp:attr>
+			<xp:attr name="rel" value="stylesheet"></xp:attr>
+			<xp:attr name="href"
+				value="unplugged.css">
+			</xp:attr>
+			<xp:attr name="unp-id" value="primarycss"></xp:attr>
+		</xp:this.attrs>
+		<xp:this.rendered><![CDATA[#{javascript:!isAjax() && !viewScope.containsKey("foundcustomcss")}]]></xp:this.rendered>
+	</xp:panel>
 	<script type="text/javascript" src="custom.js"></script>
 	
 	<unp:unpHeader viewsButton="true" title="Sampler" search="database"

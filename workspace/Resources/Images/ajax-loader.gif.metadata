@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050CE70" version="9.0">
+<noteinfo noteid="1182" sequence="1" unid="B45937919EC04D1880257C3200435741">
+<created><datetime>20131129T121532,49+00</datetime></created>
+<modified><datetime>20131129T121532,95+00</datetime></modified>
+<revised><datetime>20131129T121532,94+00</datetime></revised>
+<lastaccessed><datetime>20131129T121532,95+00</datetime></lastaccessed>
+<addedtofile><datetime>20131129T121532,95+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$TITLE"><text>ajax-loader.gif</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20131106T144503,00+00</datetime></item>
+<item name="$ImageNames" sign="true"><text>ajax-loader.gif</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

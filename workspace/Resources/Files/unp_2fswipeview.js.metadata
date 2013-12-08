@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050CE70" version="9.0">
-<noteinfo noteid="346" sequence="1" unid="A795AC67274BC9F680257BE90038D83E">
-<created><datetime dst="true">20130917T112053,74+01</datetime></created>
-<modified><datetime dst="true">20130925T154240,11+01</datetime></modified>
-<revised><datetime dst="true">20130917T112053,95+01</datetime></revised>
-<lastaccessed><datetime dst="true">20130925T154240,11+01</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130925T154240,11+01</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050CE70" version="9.0">
+<noteinfo noteid="1142" sequence="1" unid="AF155FF1E9D2987280257C3200434882">
+<created><datetime>20131129T121454,74+00</datetime></created>
+<modified><datetime>20131129T121455,04+00</datetime></modified>
+<revised><datetime>20131129T121455,03+00</datetime></revised>
+<lastaccessed><datetime>20131129T121455,04+00</datetime></lastaccessed>
+<addedtofile><datetime>20131129T121455,04+00</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
 <item name="$TITLE" sign="true"><text>unp/swipeview.js</text></item>

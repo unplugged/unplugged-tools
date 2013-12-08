@@ -20,6 +20,96 @@
 	font-style:normal;
 }*/
 
+
+/*********************
+
+iscroll.css
+
+**********************/
+
+
+
+body {
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+	position: fixed;
+}
+
+.iscrollcontent {
+	position: fixed;
+	right: 0px;
+	left: 0px;
+	top: 60px;
+	bottom: 60px;
+	overflow-x: none;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+
+	@media screen and (min-width: 701px) {
+		top: 57px;
+		bottom: 60px;
+	}	
+
+	@media screen and (max-width: 700px) {
+		top: 45px;
+		bottom: 45px;
+	}	
+}
+
+.swiper-container {
+	overflow-x: scroll !important;
+	overflow-y: none !important;
+	-webkit-overflow-scrolling: touch !important;
+}
+
+.notoppadscroll {
+	position: fixed;
+	right: 0px;
+	left: 0px;
+	top: 0px;
+	bottom: 60px;
+	overflow-x: none;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.bottompadscroll {
+	position: fixed;
+	right: 0px;
+	left: 0px;
+	top: 60px;
+	bottom: 0px;
+	overflow-x: none;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.nopadscroll {
+	position: fixed;
+	right: 0px;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	overflow-x: none;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+@media screen and (max-width: 700px) {
+	.wsscroll {
+		top: 45px;
+		bottom: 45px;
+	}
+}
+
+/*********************
+
+Jack's Styles from here
+
+**********************/
+
+
 body {
 	background-color: @body-background-color;
 	font-family: @body-font;
@@ -38,6 +128,7 @@ body {
 	}
 }
 
+
 button, 
 input {
 	font-family: @body-font;
@@ -45,6 +136,10 @@ input {
 
 .hidden {
 	display: none !important;
+}
+
+a {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* Disable Android's default active link styling */
 }
 
 a:hover {
@@ -1279,110 +1374,4 @@ Not sure what any of it does, but I don't want to move/change it in case I break
 
 .formpullleft {
 	margin-left: 0% !important;
-}
-
-
-
-/*********************
-
-iscroll.css
-
-**********************/
-
-
-
-body {
-	height: 100%;
-	overflow: hidden;
-	width: 100%;
-	position: fixed;
-}
-
-.iscrollcontent {
-	position: fixed;
-	right: 0px;
-	left: 0px;
-	top: 60px;
-	bottom: 60px;
-	overflow-x: none;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
-}
-
-#menuitems {
-	position: fixed;
-	width: 29%; 
-	top: 60px;
-	bottom: 60px;
-	overflow: scroll;
-	-webkit-overflow-scrolling: touch;
-}
-
-.swiper-container {
-	overflow-x: scroll !important;
-	overflow-y: none !important;
-	-webkit-overflow-scrolling: touch !important;
-}
-
-.notoppadscroll {
-	position: fixed;
-	right: 0px;
-	left: 0px;
-	top: 0px;
-	bottom: 60px;
-	overflow-x: none;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
-}
-
-.bottompadscroll {
-	position: fixed;
-	right: 0px;
-	left: 0px;
-	top: 60px;
-	bottom: 0px;
-	overflow-x: none;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
-}
-
-.nopadscroll {
-	position: fixed;
-	right: 0px;
-	left: 0px;
-	top: 0px;
-	bottom: 0px;
-	overflow-x: none;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
-}
-
-@media screen and (min-width: 701px) {
-	.iscrollcontent,#menuitems {
-		top: 60px;
-		bottom: 60px;
-	}
-}
-
-/*iPad Portrait*/
-@media only screen and (min-width : 768px) and (max-width	: 768px) {
-	#menuitems {
-		width: 50%;
-		top: 60px;
-		bottom: 60px;
-	}
-}
-
-@media screen and (max-width: 700px) {
-	.iscrollcontent {
-		top: 45px;
-		bottom: 45px;
-	}
-	#menuitems {
-		width: 95%;
-	}
-	.wsscroll {
-		top: 45px;
-		bottom: 45px;
-	}
 }
