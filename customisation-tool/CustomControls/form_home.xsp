@@ -67,17 +67,9 @@
 				<p>
 					<strong>
 						Update: All documentation is on the&#160;
-						<a href="https://github.com/unplugged/unplugged-controls/wiki">Unplugged Controls Wiki</a>
+						<a href="http://unplugged.github.io/unplugged-controls/index.html">Unplugged Controls Documentation Site</a>
 						.
 					</strong>
-				</p>
-				<p>
-					<strong>IMPORTANT:</strong>
-					When running the sample application on your server, open the
-					'HomeLinks' view and ensure it is empty. Then open the 'Databases'
-					view, select all documents and run the agent "Generate Home
-					Workspace". This will create the documents required to populate the
-					home page with icons.
 				</p>
 			</div>
 		</div>
