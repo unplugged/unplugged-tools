@@ -4,15 +4,10 @@
 	<div class="row content">
 		<div class="container">
 
-			<h2>The Unplugged Controls Project</h2>
-			<h3>Highly optimized XPages mobile controls</h3>
+			<h2>The Unplugged Controls Restyler</h2>
+			<h3>Quick and easy styling of the Unplugged Controls</h3>
 
-			<div class="feature col-sm-4">
-				<i class="glyphicons cogwheels"></i>
-				<h4>Close-to-native performance</h4>
-				<p>Lightweight HTML5, Javascript, CSS</p>
-			</div>
-
+			<div class="col-sm-2"></div>
 			<div class="feature col-sm-4">
 				<i class="glyphicons eye_open"></i>
 				<h4>Attractive Aesthetics</h4>
@@ -24,52 +19,68 @@
 				<h4>Compatible with Teamstudio Unplugged</h4>
 				<p>XPages web server for iOS and Android</p>
 			</div>
-
+			<div class="col-sm-2"></div>
 		</div>
 	</div>
 
 	<div class="row footer">
 		<div class="container">
 			<div class="col-sm-6">
-				<p>Our goal with this project is to create a highly-optimised set
-					of XPages mobile controls with:</p>
-				<ol>
-					<li>close-to-native performance</li>
-					<li>attractive aesthetics and </li>
-					<li>compatible with the Teamstudio Unplugged mobile
-						offline XPages engine running on iOS and Android devices.</li>
-				</ol>
-				<p>We wanted to make it as easy as possible for (reasonably
-					experienced) XPage developers to create attractive Unplugged mobile
-					apps. Unplugged Controls can be styled to match a customer's
-					preferred branding using the new Unplugged Re-Styler.</p>
-				<p>
-					We're also providing several app templates (Teamroom, Doc Library,
-					Journal, Contacts, Activities, Media, Approvals) built from the
-					controls to give you a faster start with your development projects.
-					These controls target both tablet and smartphone users, for iOS
-					(iOS 6.0 and higher) and Android devices (Android 4.0 and higher).
-					We also publish periodic updates of to these controls to&#160;
-					<a href="#">OpenNTF</a>
-					.
-				</p>
+				<p>More and more organizations wish to develop mobile
+					apps that
+					reflect their own branding, rather than just using
+					off-the-shelf
+					user interface controls.</p>
+					<p>The purpose of the Restyler is to make this
+					easy. A developer can now
+					bring a UI specialist in at the outset of
+					an Unplugged project,
+					create an organization-specific branded
+					version of the Unplugged
+					Controls, and use these Controls to create
+					the required mobile apps
+					for that organization.</p> 
+					<p>A new release of the
+					Unplugged Controls -
+					Controls 3.0 - is being introduced at the same
+					time as the
+					Restyler.</p>
+					<p>
+					All subsequent releases of the Controls after
+					3.0 will support this
+					new restyling capability. A key goal for the
+					Restyler is to permit
+					UI designers to contribute to an Unplugged
+					project with no need for
+					them to understand XPages.</p>
+
+
 			</div>
 			<div class="col-sm-6">
+				<p>Additional goals include the following:</p>
+				<ul>
+					<li>Allow designers and developers to quickly change the
+						styling of their
+						Unplugged Controls</li>
+					<li>Allow designers and developers to preview their new chosen
+						styles in the
+						browser</li>
+					<li>Allow rapid downloading of a new Controls style to preview
+						on a real
+						mobile device</li>
+					<li>Allow newly-styled Controls to be easily imported into the
+						Domino Designer</li>
+				</ul>
 				<p>
-					These controls are primarily designed to work with the Unplugged
-					platform from Teamstudio. However they have been extended and
-					tested to work on Webkit-based browsers for standard mobile web
-					development using XPages. To find out more about Teamstudio
-					Unplugged,&#160;
-					<a href="http://www.teamstudio.com/solutions/unplugged/">click here</a>
+					Internally, the Restyler uses the LESS dynamic stylesheet
+					language.
+					Developers can use just the Restyling tool or they can edit the
+					Restyler LESS files directly.
+					Documentation on how to use the
+					Restyler&#160;
+					<a
+						href="http://unplugged.github.io/unplugged-controls/300/Customizer.html">is provided here</a>
 					.
-				</p>
-				<p>
-					<strong>
-						Update: All documentation is on the&#160;
-						<a href="http://unplugged.github.io/unplugged-controls/index.html">Unplugged Controls Documentation Site</a>
-						.
-					</strong>
 				</p>
 			</div>
 		</div>
