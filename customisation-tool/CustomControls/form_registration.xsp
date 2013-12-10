@@ -24,7 +24,7 @@
 										</xp:validateRequired>
 									</xp:this.validators>
 									<xp:this.attrs>
-										<xp:attr name="placeholder" value="Fred">
+										<xp:attr name="placeholder" value="John">
 										</xp:attr>
 									</xp:this.attrs>
 								</xp:inputText>
@@ -41,7 +41,7 @@
 										</xp:validateRequired>
 									</xp:this.validators>
 									<xp:this.attrs>
-										<xp:attr name="placeholder" value="Bloggs">
+										<xp:attr name="placeholder" value="Smith">
 										</xp:attr>
 									</xp:this.attrs>
 								</xp:inputText>
@@ -72,7 +72,7 @@ return true;}]]></xp:this.expression>
 										</xp:validateExpression>
 									</xp:this.validators>
 									<xp:this.attrs>
-										<xp:attr name="placeholder" value="fred@company.com">
+										<xp:attr name="placeholder" value="john@acme.com">
 										</xp:attr>
 									</xp:this.attrs>
 								</xp:inputText>
@@ -120,8 +120,10 @@ return true;}]]></xp:this.expression>
 	);
 document1.replaceItemValue("CreatedBy", session.createName(getComponent("inputFirstName").getValue() + " " + getComponent("inputLastName").getValue() + "/" + makeOrganization(getComponent("inputEmail").getValue())).getCanonical());}]]></xp:this.script>
 												</xp:executeScript>
-												<xp:saveDocument var="document1"></xp:saveDocument>
-												<xp:openPage name="/home.xsp"></xp:openPage>
+												<xp:saveDocument var="document1">
+												</xp:saveDocument>
+												<xp:openPage name="/home.xsp?newuserregistered=true">
+												</xp:openPage>
 											</xp:actionGroup>
 										</xp:this.action>
 									</xp:eventHandler>

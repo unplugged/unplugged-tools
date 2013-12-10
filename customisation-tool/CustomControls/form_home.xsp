@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 
+	<xp:panel styleClass="jumbotron">
+		<xp:this.rendered><![CDATA[#{javascript:context.getUrlParameter("newuserregistered") == "true"}]]></xp:this.rendered>
+		<p>You're registered!</p>
+		<p>
+			<xp:link id="loginlink" text="Login"
+				styleClass="btn btn-primary btn-lg">
+				<xp:this.value><![CDATA[#{javascript:getDbPath() + "?opendatabase&login=true"}]]></xp:this.value>
+				<xp:this.rendered><![CDATA[#{javascript:@UserName() == "Anonymous"}]]></xp:this.rendered>
+			</xp:link>
+		</p>
+	</xp:panel>
+
 	<div class="row content">
 		<div class="container">
 
@@ -31,34 +43,42 @@
 					reflect their own branding, rather than just using
 					off-the-shelf
 					user interface controls.</p>
-					<p>The purpose of the Restyler is to make this
-					easy. A developer can now
+				<p>The purpose of the Restyler is to make this
+					easy. A developer
+					can now
 					bring a UI specialist in at the outset of
-					an Unplugged project,
+					an Unplugged
+					project,
 					create an organization-specific branded
-					version of the Unplugged
+					version of the
+					Unplugged
 					Controls, and use these Controls to create
-					the required mobile apps
-					for that organization.</p> 
-					<p>A new release of the
+					the required
+					mobile apps
+					for that organization.</p>
+				<p>A new release of the
 					Unplugged Controls -
-					Controls 3.0 - is being introduced at the same
+					Controls 3.0 - is being
+					introduced at the same
 					time as the
 					Restyler.</p>
-					<p>
+				<p>
 					All subsequent releases of the Controls after
-					3.0 will support this
+					3.0 will support
+					this
 					new restyling capability. A key goal for the
-					Restyler is to permit
+					Restyler is to
+					permit
 					UI designers to contribute to an Unplugged
-					project with no need for
+					project with no
+					need for
 					them to understand XPages.</p>
 
 
 			</div>
 			<div class="col-sm-6">
 				<p>Additional goals include the following:</p>
-				<ul>
+				<ul class="text-list">
 					<li>Allow designers and developers to quickly change the
 						styling of their
 						Unplugged Controls</li>

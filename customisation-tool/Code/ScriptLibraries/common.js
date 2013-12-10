@@ -811,9 +811,8 @@ function x$(idTag, param, jd) {
 }
 
 function makeActive(unid) {
-	$.blockUI( {
-		message : '<h1><img src="ajax-loader.gif" /> Just a moment...</h1>'
-	});
+	$('#myModal').modal('show');
+	setTimeout(incrementProgress, 333);
 	$.ajax( {
 		url : "makeActive.xsp?unid=" + unid,
 		cache : false,
@@ -828,16 +827,15 @@ function makeActive(unid) {
 		alert("There has been an error.");
 	}).always( function() {
 		// unblock when ajax activity stops
-			$.unblockUI();
-		});
+		$('#myModal').modal('hide');
+	});
 	var event = window.event;
 	event.stopPropagation();
 }
 
 function downloadSourceCode(unid) {
-	$.blockUI( {
-		message : '<h1><img src="ajax-loader.gif" /> Just a moment...</h1>'
-	});
+	$('#myModal').modal('show');
+	setTimeout(incrementProgress, 333);
 	$.ajax( {
 		url : "downloadDatabase?openagent&unid=" + unid,
 		cache : false,
@@ -848,12 +846,14 @@ function downloadSourceCode(unid) {
 		} else {
 			downloadURL(data);
 		}
+		$('#myModal').modal('hide');
 	}).fail( function(error) {
 		alert("There has been an error.");
+		$('#myModal').modal('hide');
 	}).always( function() {
 		// unblock when ajax activity stops
-			$.unblockUI();
-		});
+		$('#myModal').modal('hide');
+	});
 	var event = window.event;
 	event.stopPropagation();
 }
