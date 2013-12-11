@@ -1,12 +1,14 @@
 $(document).ready(function() {
 	var css = $("[unp-id='primarycss']").attr("href");
-	$("#footerTabBar li").removeClass("tabSelected");
-	if (css == "unplugged-dark.css"){
-		$("#footerTabBar li").eq(0).addClass("tabSelected");
-	}else if (css == "unplugged-light.css"){
-		$("#footerTabBar li").eq(1).addClass("tabSelected");
-	}else if (css == "unplugged-ios7.css"){
-		$("#footerTabBar li").eq(2).addClass("tabSelected");
+	if (css){
+		$("#footerTabBar li").removeClass("tabSelected");
+		if (css == "unplugged-dark.css"){
+			$("#footerTabBar li").eq(0).addClass("tabSelected");
+		}else if (css == "unplugged-light.css"){
+			$("#footerTabBar li").eq(1).addClass("tabSelected");
+		}else if (css == "unplugged-ios7.css"){
+			$("#footerTabBar li").eq(2).addClass("tabSelected");
+		}
 	}
 	$(".fontawesome div").click(function(){
 		showFontAwesomeDetails(this);
