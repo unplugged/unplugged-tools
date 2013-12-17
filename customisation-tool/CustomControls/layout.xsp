@@ -26,7 +26,7 @@
 			<h1>
 				<xp:link id="homelink" value="/home.xsp"
 					title="#{javascript: database.getTitle()}">
-					Unplugged Customiser
+					Unplugged Restyler
 				</xp:link>
 			</h1>
 			<ul class="buttons">
@@ -34,7 +34,7 @@
 						<xp:this.styleClass><![CDATA[#{javascript:if (getCurrentXPage() == "/customise.xsp"){
 	return "active";
 }}]]></xp:this.styleClass>
-					<xp:link text="Customise..." id="customiselink" value="/customise.xsp">
+					<xp:link text="Customize..." id="customiselink" value="/customise.xsp">
 						<xp:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous"}]]></xp:this.rendered>
 					</xp:link>
 				</xp:panel>
@@ -52,6 +52,9 @@ return "My Saved Themes (" + list.length + ")";}]]></xp:this.text>
 						<xp:this.rendered><![CDATA[#{javascript:@UserName() == "Anonymous"}]]></xp:this.rendered>
 					</xp:link>
 				</xp:panel>
+				<li>
+					<a href="http://unplugged.github.io/unplugged-controls/300/Customizer.html" target="newwindow">Help</a>
+				</li>
 				<li>
 					<xp:link id="loginlink" text="Login">
 						<xp:this.value><![CDATA[#{javascript:getDbPath() + "?opendatabase&login=true"}]]></xp:this.value>

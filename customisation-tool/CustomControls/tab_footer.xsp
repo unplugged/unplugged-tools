@@ -35,7 +35,7 @@
 							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("footerbordertop")}]]></xp:this.style>
 						</xp:panel>
 					</li>
-					<li>
+					<li class="long">
 						<xp:label value="Background" id="footerbackgroundlabel"
 							for="footerbackground">
 						</xp:label>

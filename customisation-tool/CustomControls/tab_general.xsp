@@ -6,7 +6,7 @@
 				<a data-toggle="tab" href="#generalbody">Body</a>
 			</li>
 			<li>
-				<a data-toggle="tab" href="#generalbuttons">Buttons</a>
+				<a data-toggle="tab" href="#generalbuttons" onclick="openPage('/UnpSamplerDownload.nsf/CSSControls.xsp')">Buttons</a>
 			</li>
 			<li>
 				<a data-toggle="tab" href="#generalnavigator">Navigator</a>
@@ -37,6 +37,7 @@
 						<xp:label value="Font:" id="bodyfontlabel"
 							for="bodyfont">
 						</xp:label>
+						<!-- 
 						<xp:inputText value="#{document1.bodyfont}"
 							id="bodyfont" themeId="MediumEditBox">
 							<xp:this.attrs>
@@ -44,6 +45,39 @@
 								</xp:attr>
 							</xp:this.attrs>
 						</xp:inputText>
+						-->
+						<xp:comboBox value="#{document1.bodyfont}"
+							id="bodyfont" themeId="MediumEditBox"
+							defaultValue='Helvetica Neue'>
+							<xp:this.attrs>
+								<xp:attr name="unp-less"
+									value="@body-font">
+								</xp:attr>
+							</xp:this.attrs>
+							<xp:selectItem itemLabel='Helvetica Neue'>
+							</xp:selectItem>
+							<xp:selectItem
+								itemLabel="AmericanTypewriter">
+							</xp:selectItem>
+							<xp:selectItem itemLabel="Arial"></xp:selectItem>
+							<xp:selectItem itemLabel="Avenir"></xp:selectItem>
+							<xp:selectItem itemLabel="Baskerville"></xp:selectItem>
+							<xp:selectItem itemLabel="Cochin"></xp:selectItem>
+							<xp:selectItem itemLabel="Didot"></xp:selectItem>
+							<xp:selectItem itemLabel="Gill Sans"></xp:selectItem>
+							<xp:selectItem itemLabel="Helvetica"></xp:selectItem>
+							<xp:selectItem
+								itemLabel="Iowan Old Style">
+							</xp:selectItem>
+							<xp:selectItem itemLabel="Optima"></xp:selectItem>
+							<xp:selectItem itemLabel="Palatino"></xp:selectItem>
+							<xp:selectItem itemLabel="Superclarendon"></xp:selectItem>
+							<xp:selectItem
+								itemLabel="Times New Roman">
+							</xp:selectItem>
+							<xp:selectItem itemLabel="Trebuchet"></xp:selectItem>
+							<xp:selectItem itemLabel="Verdana"></xp:selectItem>
+						</xp:comboBox>
 					</li>
 					<li>
 						<xp:label value="Content Padding:" id="contentpaddinglabel"
@@ -128,7 +162,7 @@
 						</xp:panel>
 					</li>
 					<li>
-						<xp:label value="Content Sub Heading Font Size:" id="contentsubheadingfontsizelabel"
+						<xp:label value="Content Sub Heading Size:" id="contentsubheadingfontsizelabel"
 							for="contentsubheadingfontsize">
 						</xp:label>
 						<xp:inputText value="#{document1.contentsubheadingfontsize}"
@@ -140,7 +174,7 @@
 						</xp:inputText>
 					</li>
 					<li>
-						<xp:label value="Content Sub Heading Font Weight:" id="contentsubheadingfontweightlabel"
+						<xp:label value="Content Sub Heading Weight:" id="contentsubheadingfontweightlabel"
 							for="contentsubheadingfontweight">
 						</xp:label>
 						<xp:inputText value="#{document1.contentsubheadingfontweight}"
@@ -168,7 +202,7 @@
 							</xp:this.attrs>
 						</xp:inputText>
 					</li>
-					<li>
+					<li class="long">
 						<xp:label value="Box Shadow" id="buttonboxshadowlabel"
 							for="buttonboxshadow">
 						</xp:label>
@@ -192,7 +226,7 @@
 							</xp:this.attrs>
 						</xp:inputText>
 					</li>
-					<li>
+					<li class="long">
 						<xp:label value="Text Shadow" id="buttontextshadowlabel"
 							for="buttontextshadow">
 						</xp:label>
@@ -447,7 +481,7 @@
 							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("menuitemsborderdivider")}]]></xp:this.style>
 						</xp:panel>
 					</li>
-					<li>
+					<li class="long">
 						<xp:label value="Menu Items Box Shadow" id="menuitemsboxshadowlabel"
 							for="menuitemsboxshadow">
 						</xp:label>
@@ -500,7 +534,7 @@
 							</xp:this.attrs>
 						</xp:inputText>
 					</li>
-					<li>
+					<li class="long">
 						<xp:label value="Menu Items Text Shadow" id="menuitemstextshadowlabel"
 							for="menuitemstextshadow">
 						</xp:label>
@@ -530,7 +564,7 @@
 						</xp:panel>
 					</li>
 					<li>
-						<xp:label value="Menu Items Selected Background" id="menuitemsselectedbackgroundlabel"
+						<xp:label value="Menu Items Selected BG" id="menuitemsselectedbackgroundlabel"
 							for="menuitemsselectedbackground">
 						</xp:label>
 						<xp:inputText value="#{document1.menuitemsselectedbackground}"

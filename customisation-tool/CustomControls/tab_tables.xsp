@@ -110,7 +110,7 @@
 							</xp:this.attrs>
 						</xp:inputText>
 					</li>
-					<li>
+					<li class="long">
 						<xp:label value="Text Shadow" id="tableheadingtextshadowlabel"
 							for="tableheadingtextshadow">
 						</xp:label>
@@ -122,7 +122,7 @@
 							</xp:this.attrs>
 						</xp:inputText>
 					</li>
-					<li>
+					<li class="long">
 						<xp:label value="Box Shadow" id="tableheadingboxshadowlabel"
 							for="tableheadingboxshadow">
 						</xp:label>
@@ -221,7 +221,7 @@
 							</xp:this.attrs>
 						</xp:inputText>
 					</li>
-					<li>
+					<li class="long">
 						<xp:label value="Text Shadow" id="tablesubheadingtextshadowlabel"
 							for="tablesubheadingtextshadow">
 						</xp:label>
@@ -233,7 +233,7 @@
 							</xp:this.attrs>
 						</xp:inputText>
 					</li>
-					<li>
+					<li class="long">
 						<xp:label value="Box Shadow" id="tablesubheadingboxshadowlabel"
 							for="tablesubheadingboxshadow">
 						</xp:label>

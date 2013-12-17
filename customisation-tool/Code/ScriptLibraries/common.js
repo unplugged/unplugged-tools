@@ -9,6 +9,9 @@ $(document).ready( function() {
 		$(".form-control").blur( function() {
 			changeSetting($(this));
 		});
+		$("select.form-control").change( function() {
+			changeSetting($(this));
+		});
 	}	
 	XSP.submitLatency = 40000;
 })
@@ -29,6 +32,11 @@ function processAllSettings() {
 	$(".container input").each( function() {
 		changeSetting($(this));
 	})
+}
+
+function openPage(url){
+	//$("#previewframe").contents().find("#menuitems a").eq(menuindex).click();
+	$("#previewframe").attr("src", url);
 }
 
 function changeSetting(thefield) {
@@ -263,18 +271,13 @@ function changeSetting(thefield) {
 						newvalue);
 				break;
 			case "@footer-span-color":
-				$("#previewframe").contents().find(".footer span").css("color",
-						newvalue);
+				//$("#previewframe").contents().find(".footer span").css("color",
+				//		newvalue);
 				thefield.next().css("background-color", newvalue);
 				break;
 			case "@footerTabtext-color":
 				$("#previewframe").contents().find(
-						"#footerTabBar li .footerTabtext").css("color",
-						newvalue);
-				$("#previewframe").contents().find("#footerTabBar li i").css(
-						"color", newvalue);
-				$("#previewframe").contents().find(
-						"#footerTabBar li .tabSelected").css("color", newvalue);
+				"#footerTabBar li .footerTabtext").css("color", newvalue);
 				thefield.next().css("background-color", newvalue);
 				break;
 			case "@footerTabtext-font-size":
@@ -289,13 +292,9 @@ function changeSetting(thefield) {
 				break;
 			case "@tabSelected-footerTabtext-color":
 				$("#previewframe").contents().find(
-						"#footerTabBar li .tabSelected .footerTabtext").css(
-						"color", newvalue);
-				$("#previewframe").contents().find(
-						"#footerTabBar li .tabSelected i").css("color",
-						newvalue);
+				"#footerTabBar li.tabSelected .footerTabtext").css("color", newvalue);
 				thefield.next().css("background-color", newvalue);
-				break
+				break;
 			case "@menuPane-border-color":
 				$("#previewframe").contents().find("#menuPane").css(
 						"border-right-color", newvalue);
@@ -303,7 +302,7 @@ function changeSetting(thefield) {
 				break;
 			case "@menuPane-padding":
 				$("#previewframe").contents().find("#menuitems").css(
-						"margin", newvalue);
+						"padding", newvalue);
 				break;
 			case "@menuitems-border-radius":
 				$("#previewframe").contents().find(".navScrollArea li:first")

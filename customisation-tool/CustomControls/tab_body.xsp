@@ -4,22 +4,22 @@
 
 		<ul class="nav nav-tabs subnavigation">
 			<li class="active">
-				<a data-toggle="tab" href="#bodyform">
+				<a data-toggle="tab" href="#bodyform" onclick="openPage('/UnpSamplerDownload.nsf/FormsEditMode.xsp')">
 					Form
 								</a>
 			</li>
 			<li>
-				<a data-toggle="tab" href="#bodyworkspace">
+				<a data-toggle="tab" href="#bodyworkspace" onclick="openPage('/UnpSamplerDownload.nsf/Workspace.xsp')">
 					Workspace
 								</a>
 			</li>
 			<li>
-				<a data-toggle="tab" href="#bodyswiper">
+				<a data-toggle="tab" href="#bodyswiper" onclick="openPage('/UnpSamplerDownload.nsf/SwipeView.xsp')">
 					Swiper
 								</a>
 			</li>
 			<li>
-				<a data-toggle="tab" href="#bodyhorizontalview">
+				<a data-toggle="tab" href="#bodyhorizontalview" onclick="openPage('/UnpSamplerDownload.nsf/MediaLibrary.xsp')">
 					Horizontal View
 								</a>
 			</li>

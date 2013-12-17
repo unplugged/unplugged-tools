@@ -18,7 +18,7 @@
 			<div class="tab-pane active" id="headercontent">
 				<h4>Header: Content</h4>
 				<ul>
-					<li>
+					<li class="long">
 						<xp:label value="Background" id="navbarbackgroundlabel"
 							for="navbarbackground">
 						</xp:label>
@@ -47,7 +47,7 @@
 							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("navbarborderbottom")}]]></xp:this.style>
 						</xp:panel>
 					</li>
-					<li>
+					<li class="long">
 						<xp:label value="Title Text Shadow" id="navbartitletextshadowlabel"
 							for="navbartitletextshadow">
 						</xp:label>
@@ -135,7 +135,7 @@
 							<xp:this.style><![CDATA[#{javascript:"background-color: " + document1.getItemValueString("inputsearchframeinputbackground")}]]></xp:this.style>
 						</xp:panel>
 					</li>
-					<li>
+					<li class="long">
 						<xp:label value="Input Box Shadow" id="inputsearchframeinputboxshadowlabel"
 							for="inputsearchframeinputboxshadow">
 						</xp:label>

@@ -49,25 +49,25 @@ saveCSS(doc);}]]></xp:this.querySaveDocument>
 						</a>
 					</li>
 					<li>
-						<a data-toggle="tab" href="#generaltab">
+						<a data-toggle="tab" href="#generaltab" onclick="openPage('/UnpSamplerDownload.nsf/UnpMain.xsp')">
 							General
 						</a>
 					</li>
 					<li>
-						<a data-toggle="tab" href="#headertab">
+						<a data-toggle="tab" href="#headertab" onclick="openPage('/UnpSamplerDownload.nsf/UnpMain.xsp')">
 							Header
 						</a>
 					</li>
 					<li>
-						<a data-toggle="tab" href="#tablestab">
+						<a data-toggle="tab" href="#tablestab" onclick="openPage('/UnpSamplerDownload.nsf/FlatView.xsp')">
 							Tables
 						</a>
 					</li>
 					<li>
-						<a href="#bodytab" data-toggle="tab">Body</a>
+						<a href="#bodytab" data-toggle="tab" onclick="openPage('/UnpSamplerDownload.nsf/FormsEditMode.xsp')">Body</a>
 					</li>
 					<li>
-						<a href="#footertab" data-toggle="tab">
+						<a href="#footertab" data-toggle="tab" onclick="openPage('/UnpSamplerDownload.nsf/UnpMain.xsp')">
 							Footer
 						</a>
 					</li>
