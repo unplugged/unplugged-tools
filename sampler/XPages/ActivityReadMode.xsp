@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.data>
+		<xp:dominoDocument var="document2" formName="Activity"
+			action="openDocument">
+		</xp:dominoDocument>
+	</xp:this.data>
 	<xc:layout>
 		<xp:this.facets>
 			<xp:panel xp:key="facet_1">
@@ -8,38 +13,48 @@
 						<xp:this.facets>
 							<unp:unpFormViewer showbuttons="true"
 								editxpagewithajax="yes" position="menu-aligned" xp:key="facet_1"
-								editxpagename="ActivityEditMode.xsp" title="Activity" titleiconfield="thumbnail"
+								editxpagename="ActivityEditMode.xsp" titleiconfield="thumbnail"
 								formname="Activity">
+								<unp:this.title><![CDATA[#{javascript:document2.getItemValueString("Title")}]]></unp:this.title>
 								<xp:this.facets>
 									<xp:panel xp:key="facet_1">
 										<ul class="fieldlist">
 											<li>
-												<xp:label value="Contact" id="contactlabel"
-													for="contact">
+												<xp:label
+													value="Contact" id="contactlabel" for="contact">
 												</xp:label>
-												<xp:text id="contact" value="#{document1.Contact}">
+												<xp:text id="contact"
+													value="#{document1.Contact}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Company" id="companylabel" for="company">
+												<xp:label
+													value="Company" id="companylabel" for="company">
 												</xp:label>
-												<xp:text id="company" value="#{document1.Company}">
+												<xp:text id="company"
+													value="#{document1.Company}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Date" id="datelabel" for="date">
+												<xp:label value="Date"
+													id="datelabel" for="date">
 												</xp:label>
-												<xp:text id="date" value="#{document1.Date}">
+												<xp:text id="date"
+													value="#{document1.Date}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Type" id="typelabel" for="type">
+												<xp:label value="Type"
+													id="typelabel" for="type">
 												</xp:label>
-												<xp:text id="type" value="#{document1.Type}">
+												<xp:text id="type"
+													value="#{document1.Type}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Assigned To" id="assignedtolabel" for="assignedto">
+												<xp:label
+													value="Assigned To" id="assignedtolabel"
+													for="assignedto">
 												</xp:label>
 												<xp:text
 													id="assignedto">
@@ -47,18 +62,22 @@
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Title" id="titlelabel" for="title">
+												<xp:label value="Title"
+													id="titlelabel" for="title">
 												</xp:label>
-												<xp:text id="title" value="#{document1.Title}">
+												<xp:text id="title"
+													value="#{document1.Title}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:text id="description" tagName="div" value="#{document1.Body}"
+												<xp:text
+													id="description" tagName="div" value="#{document1.Body}"
 													escape="false" styleClass="body_richtext">
 												</xp:text>
-												<xp:text id="attachments" value="#{document1.Attachments}" escape="false"
-												styleClass="body_richtext">
-											</xp:text>
+												<xp:text
+													id="attachments" value="#{document1.Attachments}"
+													escape="false" styleClass="body_richtext">
+												</xp:text>
 											</li>
 										</ul>
 									</xp:panel>

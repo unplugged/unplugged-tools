@@ -61,14 +61,14 @@ return out;}]]></unp:this.disabledbadges>
 	</unp:unpWorkspace>
 	<unp:unpTabbedFooter synctype="currentdb">
 		<unp:this.tab>
-			<unp:tab label="Dark" icon="moon"
+			<unp:tab label="Dark" icon="fa-moon-o"
 				callback="switchCSS(this, 'unplugged-dark.css')">
 			</unp:tab>
 			<unp:tab callback="switchCSS(this, 'unplugged-light.css')"
-				label="Light" icon="sun">
+				label="Light" icon="fa-sun-o">
 			</unp:tab>
 			<unp:tab callback="switchCSS(this, 'unplugged-ios7.css')"
-				label="iOS7" icon="iphone">
+				label="iOS 7" icon="fa-apple">
 			</unp:tab>
 		</unp:this.tab>
 	</unp:unpTabbedFooter>

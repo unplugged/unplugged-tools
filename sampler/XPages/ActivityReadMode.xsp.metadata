@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="36da" sequence="18" unid="09969C7CB737FAB980257C0C00431BBB">
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="36da" sequence="64" unid="09969C7CB737FAB980257C0C00431BBB">
 <created><datetime dst="true">20131022T131300,11+01</datetime></created>
-<modified><datetime dst="true">20131022T131813,92+01</datetime></modified>
-<revised><datetime dst="true">20131022T131813,91+01</datetime></revised>
-<lastaccessed><datetime dst="true">20131022T131813,92+01</datetime></lastaccessed>
+<modified><datetime>20131212T154741,01+00</datetime></modified>
+<revised><datetime>20131212T154741,00+00</datetime></revised>
+<lastaccessed><datetime>20131212T154741,01+00</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20131022T131300,12+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
@@ -12,9 +12,9 @@
 
 
 
-
-
 <item name="$FileNames" sign="true"><text>ActivityReadMode.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.2</text></item>
+
+
 
 </note>

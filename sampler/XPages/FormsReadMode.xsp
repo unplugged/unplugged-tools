@@ -16,67 +16,87 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 						<xp:this.facets>
 							<unp:unpFormViewer showbuttons="true"
 								editxpagewithajax="yes" position="menu-aligned" xp:key="facet_1"
-								editxpagename="FormsEditMode.xsp" title="Person" titleiconfield="thumbnail"
+								editxpagename="FormsEditMode.xsp" titleiconfield="thumbnail"
 								formname="Person">
+								<unp:this.title><![CDATA[#{javascript:document2.getItemValueString("FirstName") + " " + document2.getItemValueString("LastName")}]]></unp:this.title>
 								<xp:this.facets>
 									<xp:panel xp:key="facet_1">
 										<ul class="fieldlist">
 											<li>
-												<xp:label value="First Name" id="firstnamelabel"
-													for="firstname">
+												<xp:label
+													value="First Name" id="firstnamelabel" for="firstname">
 												</xp:label>
-												<xp:text id="firstname" value="#{document2.FirstName}">
+												<xp:text id="firstname"
+													value="#{document2.FirstName}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Last Name" id="lastnamelabel" for="lastname">
+												<xp:label
+													value="Last Name" id="lastnamelabel" for="lastname">
 												</xp:label>
-												<xp:text id="lastname" value="#{document2.LastName}">
+												<xp:text id="lastname"
+													value="#{document2.LastName}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Title" id="titlelabel" for="title">
+												<xp:label value="Title"
+													id="titlelabel" for="title">
 												</xp:label>
-												<xp:text id="title" value="#{document2.Title}">
+												<xp:text id="title"
+													value="#{document2.Title}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Date" id="doblabel" for="birthday">
+												<xp:label value="Date"
+													id="doblabel" for="birthday">
 												</xp:label>
-												<xp:text id="birthday" value="#{document2.Date}">
+												<xp:text id="birthday"
+													value="#{document2.Date}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Email" id="emaillabel" for="email">
+												<xp:label value="Email"
+													id="emaillabel" for="email">
 												</xp:label>
-												<xp:link escape="true" text="#{document2.Email}" id="email">
+												<xp:link escape="true"
+													text="#{document2.Email}" id="email">
 													<xp:this.value><![CDATA[#{javascript:"mailto:" + document2.getItemValueString("Email")}]]></xp:this.value>
 												</xp:link>
 											</li>
 											<li>
-												<xp:label value="Department" id="Company" for="company">
+												<xp:label
+													value="Department" id="Company" for="company">
 												</xp:label>
-												<xp:text id="company" value="#{document2.Company}">
+												<xp:text id="company"
+													value="#{document2.Company}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Address" id="addresslabel" for="address">
+												<xp:label
+													value="Address" id="addresslabel" for="address">
 												</xp:label>
-												<xp:text id="address" value="#{document2.StreetAddress}">
+												<xp:text id="address"
+													value="#{document2.StreetAddress}">
 												</xp:text>
-												<xp:text id="city" value="#{document2.City}">
+												<xp:text id="city"
+													value="#{document2.City}">
 												</xp:text>
-												<xp:text id="country" value="#{document2.country}">
+												<xp:text id="country"
+													value="#{document2.country}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Phone" id="phonelabel" for="phone">
+												<xp:label value="Phone"
+													id="phonelabel" for="phone">
 												</xp:label>
-												<xp:text id="dept" value="#{document2.Phone}">
+												<xp:text id="dept"
+													value="#{document2.Phone}">
 												</xp:text>
 											</li>
 											<li>
-												<xp:label value="Details" id="detailslabel" for="description"></xp:label>
+												<xp:label
+													value="Details" id="detailslabel" for="description">
+												</xp:label>
 												<xp:text
 													id="description" tagName="div" escape="false"
 													styleClass="body_richtext">

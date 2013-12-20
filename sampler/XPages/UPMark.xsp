@@ -10,7 +10,7 @@
 						<xp:this.facets>
 							<xp:panel xp:key="facet_1">
 								<div class="panel" id="intro">
-									<h1>UPMark</h1>
+									<h1>UPMark 2.0</h1>
 									<p>This page runs a standardised suite of tests which
 										involve opening
 										various pages in this application and timing
@@ -23,8 +23,8 @@
 										For more information on UPMark, refer to the relevant section
 										of the Unplugged Controls documentation:&#160;
 										<a
-											href="http://unplugged.github.io/unplugged-tools/300/UPMark.html">
-											http://unplugged.github.io/unplugged-tools/300/UPMark.html
+											href="http://unplugged.github.io/unplugged-controls/300/UPMark.html">
+											http://unplugged.github.io/unplugged-controls/300/UPMark.html
 										</a>
 									</p>
 										<input id="startbutton" type="button" class="button"
