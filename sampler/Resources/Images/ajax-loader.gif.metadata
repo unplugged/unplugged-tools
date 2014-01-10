@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="513a" sequence="1" unid="82EBBA669BCD85A980257C1B005129F7">
-<created><datetime>20131106T144631,59+00</datetime></created>
-<modified><datetime>20131106T144631,60+00</datetime></modified>
-<revised><datetime>20131106T144631,59+00</datetime></revised>
-<lastaccessed><datetime>20131106T144631,60+00</datetime></lastaccessed>
-<addedtofile><datetime>20131106T144631,60+00</datetime></addedtofile></noteinfo>
+<noteinfo noteid="544e" sequence="1" unid="6B9DA3AF32B6260880257C5C0043718D">
+<created><datetime>20140110T121639,81+00</datetime></created>
+<modified><datetime>20140110T121640,10+00</datetime></modified>
+<revised><datetime>20140110T121640,09+00</datetime></revised>
+<lastaccessed><datetime>20140110T121640,10+00</datetime></lastaccessed>
+<addedtofile><datetime>20140110T121640,10+00</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
 <item name="$TITLE"><text>ajax-loader.gif</text></item>
@@ -13,9 +13,8 @@
 <item name="$ImagesWide" sign="true"><number>1</number></item>
 <item name="$ImagesHigh" sign="true"><number>1</number></item>
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
-
-
-<item name="$MimeType" sign="true"><text>image/gif</text></item>
 <item name="$FileModDT" sign="true"><datetime>20131106T144503,00+00</datetime></item>
 <item name="$ImageNames" sign="true"><text>ajax-loader.gif</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item></note>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>
