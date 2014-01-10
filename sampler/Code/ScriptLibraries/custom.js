@@ -28,6 +28,10 @@ $(document).ready(function() {
 })
 
 $(document).ajaxComplete(function(){
+	if (window.location.href.indexOf("UnpMain.xsp") > -1){
+		//We need to re-init the charts
+		buildCharts();
+	}
 	$(".fontawesome div").click(function(){
 		showFontAwesomeDetails(this);
 	})	

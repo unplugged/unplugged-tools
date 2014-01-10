@@ -20,10 +20,13 @@
 	<xp:this.afterRenderResponse><![CDATA[#{javascript:populateFavorites()}]]></xp:this.afterRenderResponse>
 	<xc:layout>
 		<xp:this.facets>
-			<xc:form_dashboard xp:key="facet_1"></xc:form_dashboard>
+			<xp:panel xp:key="facet_1">
+				<div id="contentwrapper" class="left-aligned">
+					<xc:form_dashboard></xc:form_dashboard>
+				</div>
+			</xp:panel>
 		</xp:this.facets>
 	</xc:layout>
-		
-	
+
 
 </xp:view>
