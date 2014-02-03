@@ -30,18 +30,19 @@
 	<unp:unpNavigatorComputed>
 		<unp:this.computedmenuitems><![CDATA[#{javascript:[
         {label: "Dashboard", hasSubMenu: false, page: "/UnpMain.xsp", icon: "fa-dashboard"}, 
-        {label: "Typography", hasSubMenu: true, icon: "fa-underline", subMenu: [
-        	{label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyReadMode.xsp", disabled: false, hasSubMenu: false}, 
-        	{label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyEditMode.xsp", disabled: false, hasSubMenu: false}
-        ]}, 
         {label: "UI Elements", hasSubMenu: true, icon: "fa-hand-o-up", subMenu: [
+            {label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsReadMode.xsp", disabled: false, hasSubMenu: false}, 
+            {label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsEditMode.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "Accordion", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Accordion.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "CSS Controls", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/CSSControls.xsp", disabled: false, hasSubMenu: false},
-        	{label: "Debug Toolbar", page: "/DebugToolbar.xsp", hasSubMenu: false},
         	{label: "Dialog", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Dialog.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "Flat View", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FlatView.xsp", disabled: false, hasSubMenu: false},
         	{label: "Flat View (Categorized)", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FlatViewCategorized.xsp", disabled: false, hasSubMenu: false},
         	{label: "Swipe View", page: "/SwipeView.xsp", hasSubMenu: false}
+        ]}, 
+        {label: "Typography", hasSubMenu: true, icon: "fa-underline", subMenu: [
+            {label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyReadMode.xsp", disabled: false, hasSubMenu: false}, 
+            {label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyEditMode.xsp", disabled: false, hasSubMenu: false}
         ]}, 
         {label: "Font Awesome", hasSubMenu: true, icon: "fa-leaf", subMenu: [
         	{label: "Brand Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeBrand.xsp", disabled: false, hasSubMenu: false},
@@ -54,10 +55,6 @@
         	{label: "Web App Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeWeb.xsp", disabled: false, hasSubMenu: false},
         	{label: "New Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeNew.xsp", disabled: false, hasSubMenu: false}
         ]},
-        {label: "Forms", hasSubMenu: true, icon: "fa-edit", subMenu: [
-        	{label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsReadMode.xsp", disabled: false, hasSubMenu: false}, 
-        	{label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsEditMode.xsp", disabled: false, hasSubMenu: false}
-        ]}, 
         {label: "Workspace", hasSubMenu: false, page: "/Workspace.xsp", icon: "fa-th"},
         {label: "Contacts", hasSubMenu: true, icon: "fa-group", subMenu: [
         	{label: "Contacts", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Contacts.xsp", disabled: false, hasSubMenu: false},
@@ -70,7 +67,10 @@
         	{label: "Library", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/MediaLibrary.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "Favorites", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/MediaLibraryFavorites.xsp", disabled: false, hasSubMenu: false}
         ]},
-        {label: "UPMark", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/UPMark.xsp", icon: "fa-cogs"}
+        {label: "Tools", hasSubMenu: true, icon: "fa-cogs", subMenu: [
+            {label: "Debug Toolbar", page: "/DebugToolbar.xsp", hasSubMenu: false},
+            {label: "UPMark", ajaxloadid: "contentwrapper", ajaxtargetid: "content", hasSubMenu: false, page: "/UPMark.xsp"}
+        ]}
 ]}]]></unp:this.computedmenuitems>
 	</unp:unpNavigatorComputed>
 	<div id="content">

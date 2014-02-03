@@ -21,69 +21,82 @@ $(window).load( function() {
 	test("Initial Page Load Time took " + (endtime - starttime) + "ms", 1, function(){
 		ok(true);
 	});
-	test("open typography read", 1, function(){
+	test("open forms read", 1, function(){
 		stop();
+		//console.log("open forms read");
 		$("#menuitems a").eq(2).click();
 		ok(true);
 	});
-	test("open typography edit", 1, function(){
+	test("open forms edit", 1, function(){
 		stop();
+		//console.log("open forms edit");
 		$("#menuitems a").eq(3).click();
 		ok(true);
 	});
 	test("open flat view", 1, function(){
 		stop();
-		$("#menuitems a").eq(9).click();
+		//console.log("open flat view");
+		$("#menuitems a").eq(8).click();
 		ok(true);
 	});
 	test("open first document in view", 1, function(){
 		stop();
+		//console.log("open first document");
 		$("#flatViewRowSet li.data-row").first().click();
 		ok(true);
 	});
 	test("edit document", 1, function(){
 		stop();
+		//console.log("edit document");
 		$(".editButton").first().click();
 		ok(true);
 	});
 	test("open filtered view", 1, function(){
 		stop();
-		$("#menuitems a").eq(10).click();
+		//console.log("open filtered view");
+		$("#menuitems a").eq(8).click();
 		ok(true);
 	});
 	test("open first document in view", 1, function(){
 		stop();
+		//console.log("open first document");
 		$("#flatViewRowSet li.data-row").eq(1).click();
 		ok(true);
 	});
 	test("edit document", 1, function(){
 		stop();
+		//console.log("edit document");
 		$(".editButton").first().click();
 		ok(true);
 	});
-	test("open form read", 1, function(){
+	test("open typography read", 1, function(){
 		stop();
-		$("#menuitems a").eq(14).click();
+		//console.log("open typography read");
+		$("#menuitems a").eq(11).click();
 		ok(true);
 	});
-	test("open form edit", 1, function(){
+	test("open typography edit", 1, function(){
 		stop();
-		$("#menuitems a").eq(15).click();
+		//console.log("open typography edit")
+		$("#menuitems a").eq(12).click();
 		ok(true);
 	});
 	test("open contacts by company", 1, function(){
 		stop();
-		$("#menuitems a").eq(18).click();
+		//console.log("open contacts by company");
+		$("#menuitems a").eq(25).click();
 		ok(true);
 	});
 	test("open contacts", 1, function(){
 		stop();
-		$("#menuitems a").eq(19).click();
+		//console.log("open contacts")
+		$("#menuitems a").eq(27).click();
 		ok(true);
 	});
 	test("open media library", 1, function(){
 		stop();
-		$("#menuitems a").eq(24).click();
+		//console.log("open media");
+		$("#menuitems a").eq(31).click();
 		ok(true);
 	});
 
