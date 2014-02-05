@@ -81,14 +81,12 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 											<li>
 												<xp:label value="Mobile Enabled" for="mobileenabled"></xp:label>
 												<div class="switch">
-													<xp:checkBox
-														text="Label" id="mobileenabled"
-														value="#{document2.mobileenabled}" checkedValue="YES"
-														uncheckedValue="NO">
+													<xp:checkBox text="" id="mobileenabled"
+														checkedValue="on" uncheckedValue="off"
+														value="#{document2.mobileenabled}" required="false">
 													</xp:checkBox>
-													<xp:label value="YES" for="mobileenabled"></xp:label>
-													<xp:label value="NO" for="mobileenabled"></xp:label>
 												</div>
+
 											</li>
 											<li>
 												<xp:label value="Department" id="companylabel" for="company">

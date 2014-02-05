@@ -64,6 +64,17 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												</xp:link>
 											</li>
 											<li>
+												<xp:label value="Mobile Enabled" id="mobileenabledlabel" for="mobileenabled"></xp:label>
+												<xp:text
+													id="mobileenabled">
+													<xp:this.value><![CDATA[#{javascript:if (document2.getItemValueString("mobileenabled") == "on"){
+	return "Yes";
+}else{
+	return "No";
+}}]]></xp:this.value>
+												</xp:text>
+											</li>
+											<li>
 												<xp:label
 													value="Department" id="Company" for="company">
 												</xp:label>
