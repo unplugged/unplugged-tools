@@ -73,7 +73,9 @@ try {
 										like, but the buttons will not work.
 								</p>
 								</xp:panel>
-								<unp:unpDebugToolbar defaultCollapsed="false"></unp:unpDebugToolbar>
+								<unp:unpDebugToolbar
+									defaultCollapsed="true">
+								</unp:unpDebugToolbar>
 							</div>
 						</xp:panel>
 					</xp:this.facets>

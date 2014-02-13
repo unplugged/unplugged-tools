@@ -24,19 +24,19 @@ $(window).load( function() {
 	test("open forms read", 1, function(){
 		stop();
 		//console.log("open forms read");
-		$("#menuitems a").eq(2).click();
+		$("#menuitems a").eq(7).click();
 		ok(true);
 	});
 	test("open forms edit", 1, function(){
 		stop();
 		//console.log("open forms edit");
-		$("#menuitems a").eq(3).click();
+		$("#menuitems a").eq(8).click();
 		ok(true);
 	});
 	test("open flat view", 1, function(){
 		stop();
 		//console.log("open flat view");
-		$("#menuitems a").eq(8).click();
+		$("#menuitems a").eq(5).click();
 		ok(true);
 	});
 	test("open first document in view", 1, function(){
@@ -54,7 +54,7 @@ $(window).load( function() {
 	test("open filtered view", 1, function(){
 		stop();
 		//console.log("open filtered view");
-		$("#menuitems a").eq(8).click();
+		$("#menuitems a").eq(6).click();
 		ok(true);
 	});
 	test("open first document in view", 1, function(){

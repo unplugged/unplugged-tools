@@ -31,18 +31,18 @@
 		<unp:this.computedmenuitems><![CDATA[#{javascript:[
         {label: "Dashboard", hasSubMenu: false, page: "/UnpMain.xsp", icon: "fa-dashboard"}, 
         {label: "UI Elements", hasSubMenu: true, icon: "fa-hand-o-up", subMenu: [
-            {label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsReadMode.xsp", disabled: false, hasSubMenu: false}, 
-            {label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsEditMode.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "Accordion", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Accordion.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "CSS Controls", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/CSSControls.xsp", disabled: false, hasSubMenu: false},
         	{label: "Dialog", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Dialog.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "Flat View", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FlatView.xsp", disabled: false, hasSubMenu: false},
         	{label: "Flat View (Categorized)", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FlatViewCategorized.xsp", disabled: false, hasSubMenu: false},
+            {label: "Form (Edit Mode)", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsEditMode.xsp", disabled: false, hasSubMenu: false}, 
+            {label: "Form (Read Mode)", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FormsReadMode.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "Swipe View", page: "/SwipeView.xsp", hasSubMenu: false}
         ]}, 
         {label: "Typography", hasSubMenu: true, icon: "fa-underline", subMenu: [
-            {label: "Read Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyReadMode.xsp", disabled: false, hasSubMenu: false}, 
-            {label: "Edit Mode", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyEditMode.xsp", disabled: false, hasSubMenu: false}
+            {label: "Text Reading Panel", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyReadMode.xsp", disabled: false, hasSubMenu: false}, 
+            {label: "Text Editing Panel", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/TypographyEditMode.xsp", disabled: false, hasSubMenu: false}
         ]}, 
         {label: "Font Awesome", hasSubMenu: true, icon: "fa-leaf", subMenu: [
         	{label: "Brand Icons", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FontAwesomeBrand.xsp", disabled: false, hasSubMenu: false},

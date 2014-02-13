@@ -25,6 +25,12 @@ $(document).ready(function() {
 	}catch(e){
 		
 	}
+	
+	//Test To See if we need to remove a second buttons div
+	if ($(".buttons").length > 1){
+		$(".buttons").eq(1).hide();
+	}
+
 })
 
 $(document).ajaxComplete(function(){
@@ -45,6 +51,11 @@ $(document).ajaxComplete(function(){
 		}
 	}catch(e){
 		
+	}
+	
+	//Test To See if we need to remove a second buttons div
+	if ($(".buttons").length > 1){
+		$(".buttons").eq(1).hide();
 	}
 })
 
