@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="555e" sequence="1" unid="071C1894DF5286BB80257C78005ED7CC">
-<created><datetime>20140207T171556,28+00</datetime></created>
-<modified><datetime>20140207T171556,32+00</datetime></modified>
-<revised><datetime>20140207T171556,31+00</datetime></revised>
-<lastaccessed><datetime>20140207T171556,32+00</datetime></lastaccessed>
-<addedtofile><datetime>20140207T171556,32+00</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<noteinfo noteid="55fa" sequence="1" unid="B87753EA9AB5EFBF80257C850052F8FB">
+<created><datetime>20140220T150616,91+00</datetime></created>
+<modified><datetime>20140220T150616,93+00</datetime></modified>
+<revised><datetime>20140220T150616,92+00</datetime></revised>
+<lastaccessed><datetime>20140220T150616,93+00</datetime></lastaccessed>
+<addedtofile><datetime>20140220T150616,93+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <item name="$TITLE"><text>unplugged-ios7.css</text></item>
 <item name="$Flags"><text>D34C=Q</text></item>
 <item name="$FlagsExt"><text>D</text></item>
-
-<item name="$FileModDT" sign="true"><datetime>20140207T171544,00+00</datetime></item>
-
-
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$FileNames"><textlist><text>unplugged-ios7.css</text></textlist></item>
 
 
-<item name="$FileNames" sign="true"><text>unplugged-ios7.css</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item></note>
+
+
+
+<item name="$FileModDT"><datetime>20140220T150315,53+00</datetime></item></note>

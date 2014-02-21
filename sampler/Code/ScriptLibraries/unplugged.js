@@ -537,6 +537,7 @@ function openDialog(id) {
 	if (id != null && id != "#") {
 		$("#underlay" + id).css('display', 'block');
 		$("#" + id).css('display', 'block');
+		$(".iscrollcontent").addClass("dialogactive");
 		var boxes = $("div");
 		boxes.click( function() {
 			var el = $(id);
@@ -554,6 +555,7 @@ function openDialog(id) {
 
 function closeDialog(id) {
 	$("#" + id).css('display', 'none');
+	$(".iscrollcontent").removeClass("dialogactive");
 	$("#underlay" + id).css('display', 'none');
 	initiscroll();
 	initHorizontalView();
