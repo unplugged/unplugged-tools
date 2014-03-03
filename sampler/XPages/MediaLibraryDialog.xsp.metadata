@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="360e" sequence="8" unid="9C76DFB171CF298B80257C06004FBDAD">
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257BF10050ED2F" version="9.0">
+<noteinfo noteid="360e" sequence="64" unid="9C76DFB171CF298B80257C06004FBDAD">
 <created><datetime dst="true">20131016T153059,01+01</datetime></created>
-<modified><datetime dst="true">20131016T153137,26+01</datetime></modified>
-<revised><datetime dst="true">20131016T153137,25+01</datetime></revised>
-<lastaccessed><datetime dst="true">20131016T153137,26+01</datetime></lastaccessed>
+<modified><datetime>20140303T140156,99+00</datetime></modified>
+<revised><datetime>20140303T140156,98+00</datetime></revised>
+<lastaccessed><datetime>20140303T140156,99+00</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20131016T153059,02+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
@@ -11,10 +11,10 @@
 <item name="$TITLE"><text>MediaLibraryDialog.xsp</text></item>
 
 
+
+
+
 <item name="$FileNames" sign="true"><text>MediaLibraryDialog.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-
 
 </note>

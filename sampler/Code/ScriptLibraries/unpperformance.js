@@ -12,8 +12,8 @@ $(window).load( function() {
 	});
 	var message;
 	var starttime = Date.now();
-	if (getURLParameter("starttime") != ""){
-		starttime = parseInt(getURLParameter("starttime"), 10);
+	if (unp.getURLParameter("starttime") != ""){
+		starttime = parseInt(unp.getURLParameter("starttime"), 10);
 	}
 	var endtime = Date.now();
 	bLoaded = true;

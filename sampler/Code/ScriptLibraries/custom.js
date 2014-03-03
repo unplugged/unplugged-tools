@@ -333,5 +333,5 @@ function showFontAwesomeDetails(element){
 	$("#fontawesomedetails i").addClass("fa-5x");
 	$("#fontawesomedetails div").attr("style", "text-align: center; padding-top: 100px;")
 	$("#fontawesomedetails span").attr("style", "display: block;");
-	openDialog("dialogPopup");
+	unp.openDialog("dialogPopup");
 }

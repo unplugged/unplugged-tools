@@ -30,7 +30,7 @@
 
         <div id="results">
                 <div id="hviewitemheader">
-                        <div class="hviewclosebutton" onclick="closeDialog('hviewPopup')">
+                        <div class="hviewclosebutton" onclick="unp.closeDialog('hviewPopup')">
                                 &#160; </div>
                         <xp:panel id="hviewicon">
                                 <xp:this.styleClass><![CDATA[#{javascript:"hviewicon icon-" + @Right(document1.getItemValueString("attachmentname"), ".")}]]></xp:this.styleClass>
@@ -86,7 +86,7 @@
                                         <xp:this.attrs>
                                                 <xp:attr name="type" value="button"></xp:attr>
                                                 <xp:attr name="onclick">
-                                                        <xp:this.value><![CDATA[#{javascript:"hviewDownloadNow('" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
+                                                        <xp:this.value><![CDATA[#{javascript:"unp.hviewDownloadNow('" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
                                                 </xp:attr>
                                         </xp:this.attrs>
                                         <xp:this.value><![CDATA[#{javascript:"<img src=\"unp/icon-button-download.png\" /> Download Now"}]]></xp:this.value>
@@ -109,7 +109,7 @@ if (size < 7000000){
                                         <xp:this.attrs>
                                                 <xp:attr name="type" value="button"></xp:attr>
                                                 <xp:attr name="onclick">
-                                                        <xp:this.value><![CDATA[#{javascript:"hviewDownloadLater('" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
+                                                        <xp:this.value><![CDATA[#{javascript:"unp.hviewDownloadLater('" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
                                                 </xp:attr>
                                         </xp:this.attrs>
                                         <xp:this.value><![CDATA[#{javascript:"<img src=\"unp/icon-button-sync.png\" /> Download during next Sync"}]]></xp:this.value>
@@ -120,7 +120,7 @@ if (size < 7000000){
                                         <xp:this.attrs>
                                                 <xp:attr name="type" value="button"></xp:attr>
                                                 <xp:attr name="onclick">
-                                                        <xp:this.value><![CDATA[#{javascript:"hviewEmail('" + getCurrentXPage() + "', '" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
+                                                        <xp:this.value><![CDATA[#{javascript:"unp.hviewEmail('" + getCurrentXPage() + "', '" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
                                                 </xp:attr>
                                         </xp:this.attrs>
                                         <xp:this.value><![CDATA[#{javascript:"<img src=\"unp/icon-button-mail.png\" /> Email"}]]></xp:this.value>
@@ -133,7 +133,7 @@ if (size < 7000000){
                                 			value="button">
                                 		</xp:attr>
                                 		<xp:attr name="onclick">
-                                			<xp:this.value><![CDATA[#{javascript:"hviewFavourite('" + getCurrentXPage() + "', '" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
+                                			<xp:this.value><![CDATA[#{javascript:"unp.hviewFavourite('" + getCurrentXPage() + "', '" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
                                 		</xp:attr>
                                 	</xp:this.attrs>
                                 	<xp:this.value><![CDATA[#{javascript:var unid = context.getUrlParameter("documentId");
@@ -161,7 +161,7 @@ if (@IsMember(unid, favorites)){
                                         <xp:this.attrs>
                                                 <xp:attr name="type" value="button"></xp:attr>
                                                 <xp:attr name="onclick">
-                                                        <xp:this.value><![CDATA[#{javascript:"hviewEmailSend('" + getCurrentXPage() + "', '" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
+                                                        <xp:this.value><![CDATA[#{javascript:"unp.hviewEmailSend('" + getCurrentXPage() + "', '" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
                                                 </xp:attr>
                                         </xp:this.attrs>
                                         <xp:this.value><![CDATA[#{javascript:"<img src=\"unp/icon-button-mail.png\" /> Send"}]]></xp:this.value>
@@ -171,7 +171,7 @@ if (@IsMember(unid, favorites)){
                                         <xp:this.attrs>
                                                 <xp:attr name="type" value="button"></xp:attr>
                                                 <xp:attr name="onclick">
-                                                        <xp:this.value><![CDATA[#{javascript:"hviewEmailCancel('" + getCurrentXPage() + "', '" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
+                                                        <xp:this.value><![CDATA[#{javascript:"unp.hviewEmailCancel('" + getCurrentXPage() + "', '" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
                                                 </xp:attr>
                                         </xp:this.attrs>
                                         <xp:this.value><![CDATA[#{javascript:"Cancel"}]]></xp:this.value>
