@@ -64,7 +64,9 @@ $(window)
 					}
 
 					unp.initiscroll();
-					$("#menupane").addClass("offScreen");
+					$("#menuPane").removeClass("onScreen").addClass("offScreen");
+					$("#menuPane").width("0px");
+					
 					$('.viewsButton').unbind('click');
 					$('.viewsButton').click( function(event) {
 						unp.toggleViewsMenu();
@@ -338,8 +340,9 @@ unp.validate = function() {
 	return valid;
 }
 
-unp.toggleViewsMenu = function() {
-	if ($("#menuPane").hasClass("offScreen")) {
+unp.toggleViewsMenu = function(forcehide) {
+	console.log($("#menuPane").width());
+	if ($("#menuPane").hasClass("offScreen") && !forcehide) {
 		$("#menuPane").removeClass("offScreen").addClass("onScreen");
 		$("#menuPane").animate( {
 			"left" : "+=700px"
@@ -348,31 +351,20 @@ unp.toggleViewsMenu = function() {
 				$("#menuitems").css("position", "fixed");
 			}
 		});
+		$("#menuPane").width("100%");
 	} else {
 		$("#menuPane").removeClass("onScreen").addClass("offScreen");
-		$("#menuPane").animate( {
-			"left" : "-=700px"
-		}, "fast", function(){
-			if (unp.isAndroid()){
-				$("#menuitems").css("position", "relative");
-			}			
-		});
+		$("#menuPane").animate( {"left" : "-=700px"});
+		$("#menuPane").width("0px");
 	}
 }
 
 unp.hideViewsMenu = function() {
 	if (!$("#menuPane").hasClass("offScreen")) {
 		$("#menuPane").removeClass("onScreen").addClass("offScreen");
-
-		$("#menuPane").animate( {
-			"left" : "-=700px"
-		}, "fast", function(){
-			if (unp.isAndroid()){
-				$("#menuitems").css("position", "relative");
-			}
-		});
+		$("#menuPane").animate( {"left" : "-=700px"}, "fast");
+		$("#menuPane").width("0px");
 	}
-	// $("#content").fadeIn();
 }
 
 var firedrequests;
@@ -867,13 +859,25 @@ unp.increaseFontSize = function(button) {
 unp.decreaseFontSize = function(button) {
 	$(".typographyreadcontent").find("*").each(
 		function() {
-			$(this).css("font-size",
-					(parseInt($(this).css("font-size"), 10) - 2) + "px");
-			if (parseInt($(this).css("line-height"), 10) > 24) {
-				$(this).css(
-						"line-height",
-						(parseInt($(this).css("line-height"), 10) - 2)
-								+ "px");
+			var tagName = $(this).prop("tagName");
+			var fontSize = parseInt($(this).css("font-size"), 10);
+			var minFontSize = 4;
+			if (tagName == "H1"){
+				minFontSize = 28;
+			}else if(tagName == "H2"){
+				minFontSize = 24;
+			}else if(tagName == "H3"){
+				minFontSize = 18;
+			}else if(tagName == "H4"){
+				minFontSize = 12;
+			}else if(tagName == "H5"){
+				minFontSize = 8;
+			}
+			if (fontSize - 2 >= minFontSize){
+				$(this).css("font-size", (fontSize - 2) + "px");
+				if (parseInt($(this).css("line-height"), 10) > 24) {
+					$(this).css("line-height", (parseInt($(this).css("line-height"), 10) - 2) + "px");
+				}
 			}
 		}
 	);
