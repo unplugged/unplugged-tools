@@ -38,7 +38,7 @@ if (doc != null){
 												<xp:panel tagName="li" id="saveButton" styleClass="saveButton">
 													<xp:this.attrs>
 														<xp:attr name="onclick">
-															<xp:this.value><![CDATA[#{javascript:var out = "saveDocument('" + getClientId("customform") + "', '" + document2.getDocument().getUniversalID() + 
+															<xp:this.value><![CDATA[#{javascript:var out = "unp.saveDocument('" + getClientId("customform") + "', '" + document2.getDocument().getUniversalID() + 
 "', 'UnpMain.xsp', 'RefData', 'null');"
 return out;}]]></xp:this.value>
 														</xp:attr>
