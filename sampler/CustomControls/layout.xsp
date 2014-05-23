@@ -15,7 +15,11 @@
 	if (sessionScope.containsKey("csstheme")){
 		return sessionScope.csstheme;
 	}else{
-		return "unplugged-dark.css";
+		if (isIOS()){
+			return "unplugged-ios7.css";
+		}else{
+			return "unplugged-dark.css";
+		}
 	}
 }}]]></xp:this.value>
 			</xp:attr>

@@ -1,15 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="186" sequence="1" unid="E8641C1C2B0FA37E80257BF00051479F">
-<created><datetime dst="true">20130924T154747,51+01</datetime></created>
-<modified><datetime dst="true">20130925T154356,59+01</datetime></modified>
-<revised><datetime dst="true">20130924T154747,65+01</datetime></revised>
-<lastaccessed><datetime dst="true">20130925T154356,59+01</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130925T154356,59+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name="$Flags"><text>345CgQ</text></item>
-
-
-<item name="$FileNames" sign="true"><text>jquery-2.0.3.min.map</text></item>
-<item name="$TITLE" sign="true"><text>unp/jquery-2.0.3.min.map</text></item>
-<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?><fileresource designerversion="8.5.3" maintenanceversion="1.0" name="unp/jquery-2.0.3.min.map" publicaccess="false" replicaid="80257CD8002C2999" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1522" sequence="1" unid="B0AE6C71BC1E8D7080257CE10029E52D">
+<created><datetime dst="true">20140523T083736,45+01</datetime></created>
+<modified><datetime dst="true">20140523T083736,73+01</datetime></modified>
+<revised><datetime dst="true">20140523T083736,72+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140523T083736,73+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140523T083736,73+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby></fileresource>
