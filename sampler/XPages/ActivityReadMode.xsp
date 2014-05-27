@@ -25,7 +25,7 @@
 												tagName="li">
 												<xp:this.attrs>
 													<xp:attr name="onclick">
-														<xp:this.value><![CDATA[#{javascript:var url = "ActivityEditMode?action=editDocument&documentId=" + document2.getDocument().getUniversalID();
+														<xp:this.value><![CDATA[#{javascript:var url = "ActivityEditMode.xsp?action=editDocument&documentId=" + document2.getDocument().getUniversalID();
 if (compositeData.editxpagewithajax != "no"){
 	return "unp.openDocument('" + url + "', 'content');";
 }else{
