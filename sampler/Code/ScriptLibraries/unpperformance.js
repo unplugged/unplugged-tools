@@ -24,19 +24,19 @@ $(window).load( function() {
 	test("open forms read", 1, function(){
 		stop();
 		//console.log("open forms read");
-		$("#menuitems a").eq(7).click();
+		$("#menuitems a").eq(8).click();
 		ok(true);
 	});
 	test("open forms edit", 1, function(){
 		stop();
 		//console.log("open forms edit");
-		$("#menuitems a").eq(8).click();
+		$("#menuitems a").eq(9).click();
 		ok(true);
 	});
 	test("open flat view", 1, function(){
 		stop();
 		//console.log("open flat view");
-		$("#menuitems a").eq(5).click();
+		$("#menuitems a").eq(6).click();
 		ok(true);
 	});
 	test("open first document in view", 1, function(){
@@ -54,7 +54,7 @@ $(window).load( function() {
 	test("open filtered view", 1, function(){
 		stop();
 		//console.log("open filtered view");
-		$("#menuitems a").eq(6).click();
+		$("#menuitems a").eq(7).click();
 		ok(true);
 	});
 	test("open first document in view", 1, function(){
@@ -72,31 +72,31 @@ $(window).load( function() {
 	test("open typography read", 1, function(){
 		stop();
 		//console.log("open typography read");
-		$("#menuitems a").eq(11).click();
+		$("#menuitems a").eq(12).click();
 		ok(true);
 	});
 	test("open typography edit", 1, function(){
 		stop();
 		//console.log("open typography edit")
-		$("#menuitems a").eq(12).click();
+		$("#menuitems a").eq(13).click();
 		ok(true);
 	});
 	test("open contacts by company", 1, function(){
 		stop();
 		//console.log("open contacts by company");
-		$("#menuitems a").eq(25).click();
+		$("#menuitems a").eq(26).click();
 		ok(true);
 	});
 	test("open contacts", 1, function(){
 		stop();
 		//console.log("open contacts")
-		$("#menuitems a").eq(27).click();
+		$("#menuitems a").eq(28).click();
 		ok(true);
 	});
 	test("open media library", 1, function(){
 		stop();
 		//console.log("open media");
-		$("#menuitems a").eq(31).click();
+		$("#menuitems a").eq(32).click();
 		ok(true);
 	});
 

@@ -11,7 +11,13 @@
 									<input type="button" href='#' onclick="unp.openDialog('dialogPopup')"
 										class="button" value="Open Dialog">
 									</input>
+									<input type="button" href='#' onclick="unp.openDialog('alertPopup')"
+										class="button" value="Open Alert">
+									</input>
 								</p>
+								<unp:unpAlert content="This is an alert"
+									title="Alert">
+								</unp:unpAlert>
 								<unp:unpDialog callback="myCallBackFunction"
 									title="Demo Dialog">
 									<xp:this.facets>

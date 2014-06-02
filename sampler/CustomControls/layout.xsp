@@ -35,7 +35,8 @@
 		<unp:this.computedmenuitems><![CDATA[#{javascript:[
         {label: "Dashboard", hasSubMenu: false, page: "/UnpMain.xsp", icon: "fa-dashboard"}, 
         {label: "UI Elements", hasSubMenu: true, icon: "fa-hand-o-up", subMenu: [
-        	{label: "Accordion", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Accordion.xsp", disabled: false, hasSubMenu: false}, 
+        	{label: "Accordion", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Accordion.xsp", disabled: false, hasSubMenu: false},
+        	{label: "Calendar", page: "/Calendar.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "CSS Controls", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/CSSControls.xsp", disabled: false, hasSubMenu: false},
         	{label: "Dialog", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/Dialog.xsp", disabled: false, hasSubMenu: false}, 
         	{label: "Flat View", ajaxloadid: "contentwrapper", ajaxtargetid: "content", page: "/FlatView.xsp", disabled: false, hasSubMenu: false},

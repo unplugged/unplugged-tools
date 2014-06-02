@@ -24,7 +24,7 @@ $(window).bind(
 		});
 
 unp.storePageRequest = function(url) {
-	//if (url.indexOf('action=editDocument') == -1){
+	if (url.indexOf('action=editDocument') == -1){
 		this._firstLoad = false;
 	
 		if (url.indexOf("#") > -1) {
@@ -36,7 +36,7 @@ unp.storePageRequest = function(url) {
 		url += "&history=true";
 		history.pushState(null, "", url);
 		console.log("pushed " + url);
-	//}
+	}
 }
 
 $(window)
@@ -171,6 +171,7 @@ unp.changeorientation = function() {
 	unp.hideViewsMenu();
 	unp.initiscroll();
 	unp.initHorizontalView();
+	unp.initCalendar();
 }
 
 unp.allowFormsInIscroll = function() {
@@ -1108,13 +1109,30 @@ unp.decreaseFontSize = function(button) {
 
 unp.initCalendar = function() {
 	try {
+		var buttons = 'month,basicWeek,basicDay';
+		var defaultView = 'month';
+		if ($(window).width() < 400){
+			buttons = '';
+			defaultView = 'basicWeek';
+		}
+		var url = 'UnpCalendarData.xsp?viewname=' + calendaroptions.viewname;
+		url += '&startdatefield=' + calendaroptions.startdatefield;
+		url += '&enddatefield=' + calendaroptions.enddatefield;
+		url += '&titlefield=' + calendaroptions.titlefield;
+		url += '&viewxpage=' + calendaroptions.viewxpage;
+		url += '&highlightfield=' + calendaroptions.highlightfield;
+		url += '&highlighttest=' + calendaroptions.highlighttest;
 		$('#calendar').fullCalendar( {
 			header : {
-				left : 'prev,next today',
+				left : 'prev,next',
 				center : 'title',
-				right : 'month,basicWeek,basicDay'
-			}
+				right : buttons
+			}, 
+			defaultView: defaultView, 
+			events: url,
+			timezone: 'local'
 		});
+				
 	} catch (e) {
 
 	}
