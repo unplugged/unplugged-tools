@@ -16,7 +16,15 @@
 				<xp:this.value><![CDATA[#{javascript:if (context.getUrlParameter("css")!= null && context.getUrlParameter("css")!=""){
 	return context.getUrlParameter("css");
 }else{
-	return "unplugged-dark.css";
+	if (sessionScope.containsKey("csstheme")){
+		return sessionScope.csstheme;
+	}else{
+		if (isIOS()){
+			return "unplugged-ios7.css";
+		}else{
+			return "unplugged-dark.css";
+		}
+	}
 }}]]></xp:this.value>
 			</xp:attr>
 			<xp:attr name="unp-id" value="primarycss"></xp:attr>
