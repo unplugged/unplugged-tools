@@ -46,23 +46,32 @@
 	</xp:panel>
 	<script type="text/javascript" src="custom.js"></script>
 	<unp:unpHeader search="none" searchPage="UnpSearch.xsp"
-		viewsButton="false" backButtonText="Back" backButtonURL="UnpMain.xsp"
+		viewsButton="false"
 		headerHomeLink="/UnpMain.xsp" title="Workspace">
 	</unp:unpHeader>
-	<unp:unpWorkspace imgurlcol="ImgUrl" labelcol="Title"
-		linkurlcol="UnpUrl" badgeidcol="BadgeID" alertlevel="elevated"
-		alertlevelelevatedlabel="Elevated" alertlevelhighlabel="High"
-		alertlevelnormallabel="Normal">
-		<unp:this.disabledbadges><![CDATA[#{javascript:var out = ["DisabledChiclet"];
+	<unp:unpScrollableArea>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" styleClass="left-aligned">
+				<unp:unpWorkspace imgurlcol="ImgUrl" labelcol="Title"
+					linkurlcol="UnpUrl" badgeidcol="BadgeID" alertlevel="elevated"
+					alertlevelelevatedlabel="Elevated" alertlevelhighlabel="High"
+					alertlevelnormallabel="Normal">
+					<unp:this.disabledbadges><![CDATA[#{javascript:var out = ["DisabledChiclet"];
 return out;}]]></unp:this.disabledbadges>
-		<unp:this.headerinfo>
-			<xp:value>#{javascript:&quot;&lt;strong&gt;&quot; + @Name(&quot;[CN]&quot;, @UserName()) + &quot;&lt;/strong&gt;&quot;}</xp:value>
-			<xp:value>BCM Local Coordinator</xp:value>
-			<xp:value>
-				&lt;strong&gt;Org Unit:&lt;/strong&gt; Zetafire
+					<unp:this.headerinfo>
+						<xp:value>#{javascript:&quot;&lt;strong&gt;&quot;
+							+ @Name(&quot;[CN]&quot;, @UserName()) +
+							&quot;&lt;/strong&gt;&quot;}</xp:value>
+						<xp:value>BCM Local Coordinator</xp:value>
+						<xp:value>
+							&lt;strong&gt;Org Unit:&lt;/strong&gt; Zetafire
 					</xp:value>
-		</unp:this.headerinfo>
-	</unp:unpWorkspace>
+					</unp:this.headerinfo>
+				</unp:unpWorkspace>
+			</xp:panel>
+		</xp:this.facets>
+	</unp:unpScrollableArea>
+
 	<unp:unpTabbedFooter synctype="currentdb">
 		<unp:this.tab>
 			<unp:tab label="Dark" icon="fa-moon-o"
