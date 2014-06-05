@@ -1,17 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257BF10050ED2F" version="9.0">
-<noteinfo noteid="19e" sequence="1" unid="8D80B3E42C059E1280257BF0005147A5">
-<created><datetime dst="true">20130924T154747,57+01</datetime></created>
-<modified><datetime dst="true">20130925T154356,71+01</datetime></modified>
-<revised><datetime dst="true">20130924T154747,77+01</datetime></revised>
-<lastaccessed><datetime dst="true">20130925T154356,71+01</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130925T154356,71+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name="$Flags"><text>345CgQ</text></item>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$FileModDT" sign="true"><datetime dst="true">20130808T113442,00+01</datetime></item>
-<item name="$TITLE" sign="true"><text>unp/qunit-1.12.css</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>unp_2fqunit-1.12.css</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?><fileresource designerversion="8.5.3" maintenanceversion="1.0" name="unp/qunit-1.12.css" publicaccess="false" replicaid="80257CD8002C2999" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="36a" sequence="4" unid="95A86E12A30D02E680257CD8002C328C">
+<created><datetime dst="true">20140514T090245,24+01</datetime></created>
+<modified><datetime dst="true">20140605T074059,02+01</datetime></modified>
+<revised><datetime dst="true">20140604T154644,71+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140605T074059,02+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140514T090246,80+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby></fileresource>

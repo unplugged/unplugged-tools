@@ -323,6 +323,7 @@ function startTest() {
 	$("#qunit")
 			.html(
 					"<p><i class=\"glyphicons stopwatch\" /> Running test, this can take up to 30 seconds...</p><p style=\"width: 100%; text-align: center; padding-top: 30px;\"><img src=\"ajax-loader.gif\" /></p>");
+	$('#intro').hide();
 	$("#qunit").show();
 	$("#startbutton").hide();
 	$("#upmarkiframe").attr("src", "UPMarkStart.xsp?starttime=" + Date.now());

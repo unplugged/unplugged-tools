@@ -1,10 +1,11 @@
 $(window).load( function() {
+	$("#intro", window.parent.document).hide();
 	$( document ).ajaxComplete(function() {
 		start();
 	});
 	QUnit.done(function( details ) {
 		try{
-			$('#qunit', window.parent.document).html("<h2>UPMark</h2><p>The results below describe how long a series of tests took to run on your device. The time the tests take are very hardware dependent, so different devices will see different results.</p>" + $("#qunit").html());
+			$('#qunit', window.parent.document).html("<h1>UPMark</h1><p>The results below describe how long a series of tests took to run on your device. The time the tests take are very hardware dependent, so different devices will see different results.</p>" + $("#qunit").html());
 			$("#intro", window.parent.document).hide();
 		}catch(e){
 			
