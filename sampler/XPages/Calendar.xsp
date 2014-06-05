@@ -11,8 +11,7 @@
 		License
 	-->
 
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom"
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:unp="http://unplugged.teamstudio.com">
 
 	<xp:this.resources>
@@ -24,11 +23,12 @@
 				<div id="contentwrapper">
 					<unp:unpScrollableArea>
 						<xp:this.facets>
-							<unp:unpCalendar xp:key="facet_1"
-								enddatefield="EndDate" highlightfield="HighLight"
-								highlighttest="Yes" startdatefield="StartDate"
-								titlefield="Title" viewname="CalendarEntries"
-								viewxpage="CalendarEntry.xsp">
+							<unp:unpCalendar xp:key="facet_1" enddatefield="EndDate"
+								highlightfield="HighLight" highlighttest="Yes" startdatefield="StartDate"
+								titlefield="Title" viewname="CalendarEntries" viewxpage="CalendarEntry.xsp"
+								headerbuttonsleft="prev,today,next" defaultviewtablet="month"
+								defaultviewphone="basicWeek" headerbuttonsrighttablet="agendaDay,agendaWeek,month"
+								headerbuttonsrightphone="">
 							</unp:unpCalendar>
 						</xp:this.facets>
 					</unp:unpScrollableArea>

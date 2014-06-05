@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><stylesheetresource designerversion="8.5.3" maintenanceversion="1.0" name="unplugged-dark.css" publicaccess="false" replicaid="80257CD8002C2999" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1532" sequence="1" unid="ED02CA66D32477DB80257CE1002A1620">
+<?xml version="1.0" encoding="UTF-8"?><stylesheetresource charset="UTF-8" designerversion="8.5.3" maintenanceversion="1.0" name="unplugged-dark.css" publicaccess="false" replicaid="80257CD8002C2999" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1532" sequence="6" unid="ED02CA66D32477DB80257CE1002A1620">
 <created><datetime dst="true">20140523T083941,76+01</datetime></created>
-<modified><datetime dst="true">20140523T083941,81+01</datetime></modified>
-<revised><datetime dst="true">20140523T083941,80+01</datetime></revised>
-<lastaccessed><datetime dst="true">20140523T083941,81+01</datetime></lastaccessed>
+<modified><datetime dst="true">20140605T082827,29+01</datetime></modified>
+<revised><datetime dst="true">20140605T082827,28+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140605T082827,29+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20140523T083941,81+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby></stylesheetresource>
