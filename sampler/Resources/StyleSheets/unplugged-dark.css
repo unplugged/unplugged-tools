@@ -2140,6 +2140,7 @@ body.swipe-view #swipenextbutton:after {
 .hviewresults {
   padding-left: 30px;
   padding-top: 10px;
+  padding-right: 10px;
   /* Heading */
 
   /* Row Heading */
@@ -2912,6 +2913,17 @@ legend {
 }
 .fontawesome.panel ~ #dialogPopup .dialogbuttons > div:last-child .button {
   margin-left: 0;
+}
+@media only screen and (max-width: 700px) {
+  .fontawesome.panel ~ #dialogPopup {
+    top: 50px;
+  }
+  #fontawesomedetails > div {
+    padding-top: 20px;
+  }
+  #fontawesomedetails > div i {
+    font-size: 40px;
+  }
 }
 /* SAMPLER APP: Glyphicons */
 /*#glyphicondetails .glyphicons strong {

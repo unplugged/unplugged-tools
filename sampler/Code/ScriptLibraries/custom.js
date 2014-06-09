@@ -331,8 +331,11 @@ function startTest() {
 
 function showFontAwesomeDetails(element){
 	$("#fontawesomedetails").html(element.outerHTML);
-	$("#fontawesomedetails i").addClass("fa-5x");
-	$("#fontawesomedetails div").attr("style", "text-align: center; padding-top: 100px;")
+	if (window.innerHeight > window.innerWidth && window.innerHeight < 700){
+		$("#fontawesomedetails i").addClass("fa-5x");
+		$("#fontawesomedetails div").attr("style", "text-align: center; padding-top: 100px;")
+	}else{
+	}
 	$("#fontawesomedetails span").attr("style", "display: block;");
 	unp.openDialog("dialogPopup");
 }
