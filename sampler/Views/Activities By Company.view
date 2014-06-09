@@ -8,11 +8,11 @@
  totalscolor='black' headerbgcolor='white' boldunreadrows='false' evaluateactions='false'
  allownewdocuments='false' allowcustomizations='false' hidemarginborder='false'
  marginwidth='0px' marginbgcolor='white' uniquekeys='false' formatnoteid='3C2CCBF24F26120780257BF000512843'>
-<noteinfo noteid='25e' unid='E77F0465BCF8322180257CD8002C314D' sequence='2'>
+<noteinfo noteid='25e' unid='E77F0465BCF8322180257CD8002C314D' sequence='4'>
 <created><datetime dst='true'>20140514T090242,05+01</datetime></created>
-<modified><datetime dst='true'>20140514T090242,80+01</datetime></modified>
-<revised><datetime dst='true'>20140514T090242,79+01</datetime></revised>
-<lastaccessed><datetime dst='true'>20140519T074231,15+01</datetime></lastaccessed>
+<modified><datetime dst='true'>20140609T143818,15+01</datetime></modified>
+<revised><datetime dst='true'>20140609T143818,14+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20140609T143818,15+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20140514T090242,78+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby><code event='selection'><formula
@@ -39,10 +39,10 @@
 <action title='P_aste' showinbar='false' systemcommand='paste'/>
 <action title='_Open' showinbar='false' systemcommand='open'/>
 <action title='Bookmark' showinbar='false' systemcommand='bookmark'/></actionbar>
-<column sort='ascending' hidedetailrows='false' itemname='COMPANY' width='10'
+<column sort='ascending' hidedetailrows='false' itemname='$14' width='10'
  resizable='true' separatemultiplevalues='true' sortnoaccent='true' sortnocase='true'
  showaslinks='false' categorized='true'><columnheader title='Company'><font
- size='9pt' style='bold'/></columnheader></column>
+ size='9pt' style='bold'/></columnheader><code event='value'><formula>@UpperCase(COMPANY)</formula></code></column>
 <column hidedetailrows='false' itemname='Title' width='10' resizable='true'
  separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
  title='Title'><font size='9pt' style='bold'/></columnheader></column>

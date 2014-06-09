@@ -8,11 +8,11 @@
  totalscolor='black' headerbgcolor='white' boldunreadrows='false' evaluateactions='false'
  allownewdocuments='false' allowcustomizations='false' hidemarginborder='false'
  marginwidth='0px' marginbgcolor='white' uniquekeys='false'>
-<noteinfo noteid='24a' unid='7B675533F7559E9680257CD8002C3139' sequence='2'>
+<noteinfo noteid='24a' unid='7B675533F7559E9680257CD8002C3139' sequence='3'>
 <created><datetime dst='true'>20140514T090241,85+01</datetime></created>
-<modified><datetime dst='true'>20140514T090242,60+01</datetime></modified>
-<revised><datetime dst='true'>20140514T090242,59+01</datetime></revised>
-<lastaccessed><datetime dst='true'>20140519T074201,42+01</datetime></lastaccessed>
+<modified><datetime dst='true'>20140609T143936,72+01</datetime></modified>
+<revised><datetime dst='true'>20140609T143936,71+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20140609T143936,72+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20140514T090242,58+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby><code event='selection'><formula
@@ -39,9 +39,10 @@
 <action title='P_aste' showinbar='false' systemcommand='paste'/>
 <action title='_Open' showinbar='false' systemcommand='open'/>
 <action title='Bookmark' showinbar='false' systemcommand='bookmark'/></actionbar>
-<column sort='ascending' hidedetailrows='false' itemname='COMPANY' width='10'
+<column sort='ascending' hidedetailrows='false' itemname='$14' width='10'
  resizable='true' separatemultiplevalues='true' sortnoaccent='false' sortnocase='true'
- showaslinks='false' categorized='true'><columnheader><font size='9pt' style='bold'/></columnheader></column>
+ showaslinks='false' categorized='true'><columnheader><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@UpperCase(COMPANY)</formula></code></column>
 <column sort='ascending' hidedetailrows='false' itemname='$13' width='10'
  resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='true'
  showaslinks='false'><columnheader title='FullName'><font size='9pt' style='bold'/></columnheader><code
