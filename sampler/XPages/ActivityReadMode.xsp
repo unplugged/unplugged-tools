@@ -12,7 +12,7 @@
 				<div id="contentwrapper">
 					<unp:unpScrollableArea>
 						<xp:this.facets>
-							<unp:unpFormViewer showbuttons="false"
+							<unp:unpFormViewer showbuttons="true"
 								editxpagewithajax="yes" position="menu-aligned" xp:key="facet_1"
 								editxpagename="ActivityEditMode.xsp" titleiconfield="thumbnail"
 								formname="Activity">
