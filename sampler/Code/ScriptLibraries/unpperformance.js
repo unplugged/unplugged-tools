@@ -19,7 +19,7 @@ $(window).load( function() {
 	var endtime = Date.now();
 	bLoaded = true;
 	endtime = Date.now();
-	test("Initial Page Load Time took " + (endtime - starttime) + "ms", 1, function(){
+	test("Initial Page Load " + (endtime - starttime) + "ms", 1, function(){
 		ok(true);
 	});
 	test("open forms read", 1, function(){
@@ -40,7 +40,7 @@ $(window).load( function() {
 		$("#menuitems a").eq(6).click();
 		ok(true);
 	});
-	test("open first document in view", 1, function(){
+	test("open first doc", 1, function(){
 		stop();
 		//console.log("open first document");
 		$("#flatViewRowSet li.data-row").first().click();
@@ -58,7 +58,7 @@ $(window).load( function() {
 		$("#menuitems a").eq(7).click();
 		ok(true);
 	});
-	test("open first document in view", 1, function(){
+	test("open first doc", 1, function(){
 		stop();
 		//console.log("open first document");
 		$("#flatViewRowSet li.data-row").eq(1).click();
@@ -82,13 +82,13 @@ $(window).load( function() {
 		$("#menuitems a").eq(13).click();
 		ok(true);
 	});
-	test("open contacts by company", 1, function(){
+	test("open contacts 1", 1, function(){
 		stop();
 		//console.log("open contacts by company");
 		$("#menuitems a").eq(26).click();
 		ok(true);
 	});
-	test("open contacts", 1, function(){
+	test("open contacts 2", 1, function(){
 		stop();
 		//console.log("open contacts")
 		$("#menuitems a").eq(28).click();

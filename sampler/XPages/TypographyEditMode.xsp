@@ -20,7 +20,7 @@ if (doc != null){
 						<xp:this.facets>
 							<xp:panel xp:key="facet_1">
 								<unp:unpFormEditor showbuttons="no" position="menu-aligned"
-									title="Edit" formname="Contact">
+									title="Tap on Text to Edit" formname="Contact">
 									<xp:this.facets>
 										<xp:panel xp:key="facet_1">
 											<ul class="fieldlist">
