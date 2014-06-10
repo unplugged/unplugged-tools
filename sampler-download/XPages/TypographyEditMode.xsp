@@ -20,22 +20,43 @@ if (doc != null){
 						<xp:this.facets>
 							<xp:panel xp:key="facet_1">
 								<unp:unpFormEditor showbuttons="no" position="menu-aligned"
-									title="Edit" formname="Contact">
+									title="Tap on Text to Edit" formname="Contact">
 									<xp:this.facets>
 										<xp:panel xp:key="facet_1">
-											
-												<ul class="fieldlist">
-													<li>
-														<xp:inputTextarea id="description"
-															styleClass="richtextfield" value="#{document2.Value}">
-															<xp:this.attrs>
-																<xp:attr name="placeholder" value="Insert Text...">
-																</xp:attr>
-															</xp:this.attrs>
-														</xp:inputTextarea>
-													</li>
-												</ul>
-											
+											<ul class="fieldlist">
+												<li>
+													<xp:inputTextarea id="value" styleClass="richtextfield"
+														value="#{document2.Value}">
+														<xp:this.attrs>
+															<xp:attr name="placeholder" value="Insert Text...">
+															</xp:attr>
+														</xp:this.attrs>
+													</xp:inputTextarea>
+												</li>
+											</ul>
+											<xp:panel id="buttons" styleClass="buttons" tagName="ul">
+												<xp:panel tagName="li" id="saveButton" styleClass="saveButton">
+													<xp:this.attrs>
+														<xp:attr name="onclick">
+															<xp:this.value><![CDATA[#{javascript:var out = "unp.saveDocument('" + getClientId("customform") + "', '" + document2.getDocument().getUniversalID() + 
+"', 'UnpMain.xsp', 'RefData', 'null');"
+return out;}]]></xp:this.value>
+														</xp:attr>
+													</xp:this.attrs>
+													<span class="icon"></span>
+													<span class="label">Save</span>
+												</xp:panel>
+												<xp:panel id="panel1" styleClass="cancelButton"
+													tagName="li">
+													<xp:this.attrs>
+														<xp:attr name="onclick">
+															<xp:this.value><![CDATA[#{javascript:return "history.back()";}]]></xp:this.value>
+														</xp:attr>
+													</xp:this.attrs>
+													<span class="icon"></span>
+													<span class="label">Cancel</span>
+												</xp:panel>
+											</xp:panel>
 										</xp:panel>
 									</xp:this.facets>
 								</unp:unpFormEditor>

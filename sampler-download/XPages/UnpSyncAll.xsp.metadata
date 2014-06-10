@@ -1,20 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="39e" sequence="10" unid="4F64AB12409A2B6580257BF00051750D">
-<created><datetime dst="true">20130924T154943,81+01</datetime></created>
-<modified><datetime>20131129T141254,58+00</datetime></modified>
-<revised><datetime>20131126T165224,15+00</datetime></revised>
-<lastaccessed><datetime>20131129T141254,58+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131021T141130,28+01</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="17ea" sequence="2" unid="564D5B00675ADD2980257CF3004A480F">
+<created><datetime dst="true">20140610T143121,11+01</datetime></created>
+<modified><datetime dst="true">20140610T143121,12+01</datetime></modified>
+<revised><datetime dst="true">20140610T143121,11+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T143121,12+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T143121,10+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
 <item name="$TITLE"><text>UnpSyncAll.xsp</text></item>
 <item name="$Flags"><text>gC~4K</text></item>
 
 
-<item name="$FileNames" sign="true"><text>UnpSyncAll.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5</text></item>
-
-
-
-
-</note>
+<item name="$FileNames" sign="true"><text>UnpSyncAll.xsp</text></item></note>

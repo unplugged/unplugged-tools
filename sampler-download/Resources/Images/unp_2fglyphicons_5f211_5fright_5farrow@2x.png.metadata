@@ -1,20 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="212" sequence="5" unid="500823E2C6E9824280257BF000514AE8">
-<created><datetime dst="true">20130924T154755,92+01</datetime></created>
-<modified><datetime>20131129T141255,14+00</datetime></modified>
-<revised><datetime>20131126T165153,10+00</datetime></revised>
-<lastaccessed><datetime>20131129T141255,14+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131021T141128,30+01</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" imagename="glyphicons_211_right_arrow@2x.png" maintenanceversion="1.0" name="unp/glyphicons_211_right_arrow@2x.png" noquery="true" publicaccess="false" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="15a2" sequence="1" unid="1FF627A8BC96239080257CF3004A17B9">
+<created><datetime dst="true">20140610T142917,37+01</datetime></created>
+<modified><datetime dst="true">20140610T142917,54+01</datetime></modified>
+<revised><datetime dst="true">20140610T142917,53+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T142917,54+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T142917,54+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$ImagesWide" sign="true"><number>1</number></item>
-<item name="$ImagesHigh" sign="true"><number>1</number></item>
-<item name="$ImagesColorize" sign="true"><number>0</number></item>
-<item name="$TITLE" sign="true"><text>unp/glyphicons_211_right_arrow@2x.png</text></item>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby><jpeg>
+iVBORw0KGgoAAAANSUhEUgAAACgAAAAiCAYAAAAtZZsLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF
+RmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczpt
+ZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS4xLjIiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0
+dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRl
+c2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5h
+ZG9iZS5jb20veGFwLzEuMC8iPgogICAgICAgICA8eG1wOk1vZGlmeURhdGU+MjAxMy0wOS0wNVQw
+OTowOTowNDwveG1wOk1vZGlmeURhdGU+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+QWRvYmUg
+UGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKTwveG1wOkNyZWF0b3JUb29sPgogICAgICA8L3JkZjpE
+ZXNjcmlwdGlvbj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAg
+ICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4KICAgICAgICAg
+PGRjOnRpdGxlPgogICAgICAgICAgICA8cmRmOkFsdD4KICAgICAgICAgICAgICAgPHJkZjpsaSB4
+bWw6bGFuZz0ieC1kZWZhdWx0Ij5nbHlwaGljb25zQDJ4PC9yZGY6bGk+CiAgICAgICAgICAgIDwv
+cmRmOkFsdD4KICAgICAgICAgPC9kYzp0aXRsZT4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAg
+ICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOnRpZmY9
+Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIj4KICAgICAgICAgPHRpZmY6T3JpZW50YXRp
+b24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHRpZmY6Q29tcHJlc3Npb24+NTwvdGlm
+ZjpDb21wcmVzc2lvbj4KICAgICAgICAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MTwvdGlmZjpSZXNv
+bHV0aW9uVW5pdD4KICAgICAgICAgPHRpZmY6WVJlc29sdXRpb24+NzI8L3RpZmY6WVJlc29sdXRp
+b24+CiAgICAgICAgIDx0aWZmOlhSZXNvbHV0aW9uPjcyPC90aWZmOlhSZXNvbHV0aW9uPgogICAg
+ICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIK
+ICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iPgog
+ICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+NDA8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgog
+ICAgICAgICA8ZXhpZjpDb2xvclNwYWNlPjY1NTM1PC9leGlmOkNvbG9yU3BhY2U+CiAgICAgICAg
+IDxleGlmOlBpeGVsWURpbWVuc2lvbj4zNDwvZXhpZjpQaXhlbFlEaW1lbnNpb24+CiAgICAgIDwv
+cmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgqL98KyAAADlklEQVRY
+Cc1Y7UtTURi/d1tsOoy9SNQYVDSwFpuom05GIFj+AX0Q+yCJGvRpQYiQ/4BEEiiC0csIIoTVN8lP
+BUZzvjBxajmllR8inLA1zSlzzq3fGVy56b0Xd+/F7cDlnPs85zzP7/zOuc95zqVzuRwlRxkeHv7V
+0NBwIZPJnGtsbPwjh01iQyGXoaqqKrNCoVBOTU35BwcH7XLZpeVgcHZ29vL+/v5PjUZDEXvr6+t7
+S0tLnr6+vudSgcrCIJhzMUBomqZMJpPaZrONDAwMjC4uLmoZnZhaJWbQ0TEAdYWwxy4AqcDTNjk5
+aUun020Oh+MrW3/StiwMwlkln8P6+vrr4XB4emxs7A5fHyG5LACx784KObFardqysrK3Xq93ZG5u
+rlyo71Gd5CWORCJqGOVlkHGo1+tpPPcB0Ikt0VZbWxthdEK1ZAY3NzcdcHhNyAlbV4eysLDwxefz
+3WTL+dqiAU5MTGhCoZAb4Dpg3MLngEtut9vPI6B/GBoaesilZ8vycTAQCFxUq9VuKIgjI/aUGo4J
+eJrdmbShQ1RRnEGtx+tVPAWBIzaYsrW1lQOb72pqarqampqSjJxd0+Pj4wmDwaBTqVRs+am2cfp8
+d7lct7lCER0MBuU5jCVOaXl5eQen0YPOzs5XbFOi9yDbiBxtEorMZvML7MuXsHe4tUoGIJmk0Wik
+3W53V39//ydm0iWzxAwgUm9vb1OIr/FoNHqjJAEyYBGKMiW1xAwwpkZkKWJsYVBw1MlkkkokEjsV
+FRWPS5LBmZmZz/iiPUql8knxojMHc/F4PLeysuLt7e29B3U+Pqt2d3ep8vKCMiAO09JFTKD2eDz/
+BWoVMuEszBd1qYWOOgKwMpVKmbDeTgC9RJKAYiQLOIe5kwWAEbU+JN3S6XR1BwcHHTDQXaiR1dXV
+dCwWe4QlfSo0VvK1E8kGyQlfw4lFyBFbh5teVKvVtre2tn5ky7nakr9isBhEVh0GyBMBBLhAdXX1
+3VNL+S0Wyx5mHuOaPVuGwEuS02fIpm+dFBwZL5lBYgTs/SU1XyEhBEzfQ643yteHTy4LQBjnZRC/
+Rb45nU7RF3dZACIS/MD9ggJLh0Tg/0wWp4KvpaWlG8u6c6gosCELwGw2Ow1AeYAbGxsUUvcUlv19
+T09Pe4F4jnWX5QTB74013PTyxufn50N+v9+Kj6frmDcRAlkYJH7xlf7GTyJDc3PzG9zQ1kRg4Rzy
+D/SKX8GU9x/SAAAAAElFTkSuQmCC
+</jpeg>
 <item name="$FileModDT" sign="true"><datetime dst="true">20130905T090556,00+01</datetime></item>
-<item name="$Flags"><text>D34CiQ</text></item>
-<item name="$ImageNames" sign="true"><text>glyphicons_211_right_arrow@2x.png</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-</note>
+</imageresource>

@@ -1,78 +1,69 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
- replicaid='80257C0B0048759B'>
-<noteinfo noteid='53e' unid='A2AB81ACF0E4168180257C06004E9FC7' sequence='5'>
-<created><datetime dst='true'>20131016T151847,11+01</datetime></created>
-<modified><datetime>20131129T141253,24+00</datetime></modified>
-<revised><datetime>20131126T165157,58+00</datetime></revised>
-<lastaccessed><datetime>20131129T141253,24+00</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20131021T141132,34+01</datetime></addedtofile></noteinfo>
+<form name='Document' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='80257C0B0048759B' publicaccess='false' designerversion='8.5.3'
+ renderpassthrough='true'>
+<noteinfo noteid='183a' unid='EBC12DB3DD537C5E80257CF3004A5ADF' sequence='1'>
+<created><datetime dst='true'>20140610T143209,27+01</datetime></created>
+<modified><datetime dst='true'>20140610T143209,38+01</datetime></modified>
+<revised><datetime dst='true'>20140610T143209,37+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20140610T143209,38+01</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20140610T143209,38+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name='$Comment' sign='true'><text/></item>
-<item name='$HTMLCode' sign='true'>
-<rawitemdata type='1'>
-X/8QAAIADwAHAAAAAAAAAA==
-</rawitemdata></item>
-<item name='$TITLE'><text>Document</text></item>
-<item name='$Info' sign='true'>
-<rawitemdata type='1'>
-hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
-</rawitemdata></item>
-<item name='$Flags'><text/></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
-<item name='$$ScriptName' summary='false' sign='true'><text>Document</text></item>
-<item name='Title' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='CATEGORY' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='TAGS' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='Attachment' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='filtercategories' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='$Fields'><textlist><text>filtercategories</text><text>attachment</text><text
->tags</text><text>category</text><text>title</text></textlist></item>
-<item name='$Body' sign='true'>
-<rawitemdata type='1'>
-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
-</rawitemdata></item></note>
+<body><richtext>
+<pardef id='1'/>
+<par def='1'/>
+<table widthtype='fixedleft' refwidth='17.9361in'><tablecolumn width='8.9681in'/><tablecolumn
+ width='8.9681in'/>
+<tablerow>
+<tablecell>
+<pardef id='3' keepwithnext='true' keeptogether='true'/>
+<par def='3'>Title</par></tablecell>
+<tablecell>
+<pardef id='4' keepwithnext='true' keeptogether='true'/>
+<par def='4'><field type='text' kind='editable' name='title'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>Category</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='category'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>Filter Category</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' allowmultivalues='true' kind='computed' name='filtercategories'
+ listinputseparators='comma semicolon' listdisplayseparator='semicolon'><code
+ event='defaultvalue'><formula>year : language : (language + "~" + year) *+ "~" *+ (("All" : tags) + "~" + Category)</formula></code></field><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>Tags</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='tags'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>Attachment</par></tablecell>
+<tablecell>
+<par def='4'><field type='richtext' kind='editable' name='attachment'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAEAAAA=
+</compositedata></par></tablecell></tablerow></table>
+<par def='1'/></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>Document</text></item></form>
 

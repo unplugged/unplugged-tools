@@ -25,9 +25,19 @@ $(document).ready(function() {
 	}catch(e){
 		
 	}
+	
+	//Test To See if we need to remove a second buttons div
+	if ($(".buttons").length > 1){
+		$(".buttons").eq(1).hide();
+	}
+
 })
 
 $(document).ajaxComplete(function(){
+	if (window.location.href.indexOf("UnpMain.xsp") > -1){
+		//We need to re-init the charts
+		buildCharts();
+	}
 	$(".fontawesome div").click(function(){
 		showFontAwesomeDetails(this);
 	})	
@@ -41,6 +51,11 @@ $(document).ajaxComplete(function(){
 		}
 	}catch(e){
 		
+	}
+	
+	//Test To See if we need to remove a second buttons div
+	if ($(".buttons").length > 1){
+		$(".buttons").eq(1).hide();
 	}
 })
 
@@ -308,6 +323,7 @@ function startTest() {
 	$("#qunit")
 			.html(
 					"<p><i class=\"glyphicons stopwatch\" /> Running test, this can take up to 30 seconds...</p><p style=\"width: 100%; text-align: center; padding-top: 30px;\"><img src=\"ajax-loader.gif\" /></p>");
+	$('#intro').hide();
 	$("#qunit").show();
 	$("#startbutton").hide();
 	$("#upmarkiframe").attr("src", "UPMarkStart.xsp?starttime=" + Date.now());
@@ -315,8 +331,11 @@ function startTest() {
 
 function showFontAwesomeDetails(element){
 	$("#fontawesomedetails").html(element.outerHTML);
-	$("#fontawesomedetails i").addClass("fa-5x");
-	$("#fontawesomedetails div").attr("style", "text-align: center; padding-top: 100px;")
+	if (window.innerHeight > window.innerWidth && window.innerHeight < 700){
+		$("#fontawesomedetails i").addClass("fa-5x");
+		$("#fontawesomedetails div").attr("style", "text-align: center; padding-top: 100px;")
+	}else{
+	}
 	$("#fontawesomedetails span").attr("style", "display: block;");
-	openDialog("dialogPopup");
+	unp.openDialog("dialogPopup");
 }

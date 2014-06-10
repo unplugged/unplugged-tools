@@ -1,18 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="37ae" sequence="1" unid="D94763A631E9E19880257C350039ED50">
-<created><datetime>20131202T103243,04+00</datetime></created>
-<modified><datetime>20131202T103243,07+00</datetime></modified>
-<revised><datetime>20131202T103243,06+00</datetime></revised>
-<lastaccessed><datetime>20131202T103243,07+00</datetime></lastaccessed>
-<addedtofile><datetime>20131202T103243,07+00</datetime></addedtofile></noteinfo>
-<updatedby><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Unplugged User/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>CN=Unplugged User/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<item name="$TITLE"><textlist><text>unplugged-dark.css</text></textlist></item>
-<item name="$Flags"><text>34C=Q</text></item>
-<item name="$DesignerVersion"><text>6</text></item>
-<item name="$FileNames"><textlist><text>unplugged-dark.css</text></textlist></item>
-
-
-
-
-
-<item name="$FileModDT"><datetime>20131129T173826,61+00</datetime></item></note>
+<?xml version="1.0" encoding="UTF-8"?><stylesheetresource charset="UTF-8" designerversion="8.5.3" maintenanceversion="1.0" name="unplugged-dark.css" publicaccess="false" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1706" sequence="1" unid="519F6B308EB05DCA80257CF3004A2A48">
+<created><datetime dst="true">20140610T143004,88+01</datetime></created>
+<modified><datetime dst="true">20140610T143004,96+01</datetime></modified>
+<revised><datetime dst="true">20140610T143004,95+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T143004,96+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T143004,96+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby></stylesheetresource>

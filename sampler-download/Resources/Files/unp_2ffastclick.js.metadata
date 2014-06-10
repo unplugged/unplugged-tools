@@ -1,17 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="152" sequence="5" unid="9CC144263BD8A50780257BF000514796">
-<created><datetime dst="true">20130924T154747,42+01</datetime></created>
-<modified><datetime>20131129T141254,92+00</datetime></modified>
-<revised><datetime>20131126T165157,30+00</datetime></revised>
-<lastaccessed><datetime>20131129T141254,92+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131021T141127,34+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name="$Flags"><text>345CgQ</text></item>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$FileModDT" sign="true"><datetime dst="true">20130523T201538,00+01</datetime></item>
-<item name="$TITLE" sign="true"><text>unp/fastclick.js</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>unp_2ffastclick.js</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?><fileresource designerversion="8.5.3" maintenanceversion="1.0" name="unp/fastclick.js" publicaccess="false" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1636" sequence="1" unid="3A11911A3CC70C5F80257CF3004A22CC">
+<created><datetime dst="true">20140610T142945,72+01</datetime></created>
+<modified><datetime dst="true">20140610T142945,81+01</datetime></modified>
+<revised><datetime dst="true">20140610T142945,80+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T142945,81+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T142945,81+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby></fileresource>

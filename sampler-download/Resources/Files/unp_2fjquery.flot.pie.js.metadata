@@ -1,17 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="51e" sequence="6" unid="2D901971FF6FC62780257C0600368CE5">
-<created><datetime dst="true">20131016T105550,13+01</datetime></created>
-<modified><datetime>20131129T141255,94+00</datetime></modified>
-<revised><datetime>20131126T165156,28+00</datetime></revised>
-<lastaccessed><datetime>20131129T141255,94+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131021T141132,18+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name="$Flags"><text>345CgQ</text></item>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$FileModDT" sign="true"><datetime dst="true">20130522T051756,00+01</datetime></item>
-<item name="$TITLE" sign="true"><text>unp/jquery.flot.pie.js</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>unp_2fjquery.flot.pie.js</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?><fileresource designerversion="8.5.3" maintenanceversion="1.0" name="unp/jquery.flot.pie.js" publicaccess="false" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1686" sequence="1" unid="4C3C67F6EF3C37AC80257CF3004A22E0">
+<created><datetime dst="true">20140610T142945,92+01</datetime></created>
+<modified><datetime dst="true">20140610T142946,79+01</datetime></modified>
+<revised><datetime dst="true">20140610T142946,78+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T142946,79+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T142946,79+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby></fileresource>

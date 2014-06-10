@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com" xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xc:layout>
 		<xp:this.facets>
 			<xp:panel xp:key="facet_1">
@@ -21,26 +22,27 @@
 
 								<div class="panel left-aligned">
 									This panel will always be left-aligned
-				</div>
-
-
-								<div style="padding-top:5px;">
-									<input type="button" class="button" value="Generic Button (.button)" />
 								</div>
 
-								<div style="padding-top:5px;">
-									<input type="button" class="button savebutton"
-										value="Save Button (.button .savebutton)" />
-								</div>
-
-								<div style="padding-top:5px;">
-									<input type="button" class="button editbutton"
-										value="Edit Button (.button .editbutton)" />
-								</div>
-
-								<div style="padding-top:5px;">
-									<input type="button" class="button cancelbutton"
-										value="Cancel Button (.button .cancelbutton)" />
+								<div class="panel">
+									<div style="padding-top:5px;">
+										<input type="button" class="button" value="Generic Button (.button)" />
+									</div>
+	
+									<div style="padding-top:5px;">
+										<input type="button" class="button savebutton"
+											value="Save Button (.button .savebutton)" />
+									</div>
+	
+									<div style="padding-top:5px;">
+										<input type="button" class="button editbutton"
+											value="Edit Button (.button .editbutton)" />
+									</div>
+	
+									<div style="padding-top:5px;">
+										<input type="button" class="button cancelbutton"
+											value="Cancel Button (.button .cancelbutton)" />
+									</div>
 								</div>
 
 							</xp:panel>

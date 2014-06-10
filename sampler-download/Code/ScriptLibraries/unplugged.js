@@ -8,7 +8,37 @@
  * KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License
  */
-var bLoaded = false;
+
+var unp = {
+	_firstLoad : true,
+	_oldiscrollbottom : ""
+}
+
+$(window).bind(
+		"popstate",
+		function() {
+			//if (!unp._firstLoad) {
+				unp.loadPage(location.href + " #contentwrapper", 'content',
+						null, false, false);
+			//}
+		});
+
+unp.storePageRequest = function(url) {
+	if (url.indexOf('action=editDocument') == -1){
+		this._firstLoad = false;
+	
+		if (url.indexOf("#") > -1) {
+			url = url.substring(0, url.indexOf(" #"));
+		}
+		if (url.indexOf("?") == -1) {
+			url += "?";
+		}
+		url += "&history=true";
+		history.pushState(null, "", url);
+		console.log("pushed " + url);
+	}
+}
+
 $(window)
 		.load(
 				function() {
@@ -27,16 +57,16 @@ $(window)
 					}
 
 					$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
-					allowFormsInIscroll();
-					if (isAndroid()){
-						$("#menuitems").css("position", "relative");
-					}
+					unp.allowFormsInIscroll();
 
-					initiscroll();
-					$("#menupane").addClass("offScreen");
+					unp.initiscroll();
+					$("#menuPane").removeClass("onScreen")
+							.addClass("offScreen");
+					$("#menuPane").width("0px");
+
 					$('.viewsButton').unbind('click');
 					$('.viewsButton').click( function(event) {
-						toggleViewsMenu();
+						unp.toggleViewsMenu();
 						return false;
 					});
 					try {
@@ -50,13 +80,13 @@ $(window)
 
 					try {
 						$(".opendialoglink").click( function(event) {
-							openDialog($(this).attr('href'));
+							unp.openDialog($(this).attr('href'));
 						});
 					} catch (e) {
 
 					}
 					try {
-						fixNavigatorBottomCorners();
+						unp.fixNavigatorBottomCorners();
 					} catch (e) {
 
 					}
@@ -73,21 +103,24 @@ $(window)
 						}
 					});
 
-					initHorizontalView();
-					initDeleteable();
-					initAutoComplete();
-					initHideFooter();
-					initRichText();
-					initReaderButtons();
+					unp.initHorizontalView();
+					unp.initDeleteable();
+					unp.initAutoComplete();
+					unp.initHideFooter();
+					unp.initRichText();
+					unp.initReaderButtons();
+					unp.initCalendar();
 					$(document).ajaxStop( function() {
-						initHideFooter();
-						initRichText();
-						initReaderButtons();
+						unp.initHideFooter();
+						unp.initRichText();
+						unp.initReaderButtons();
+						unp.initCalendar();
+						$('#underlaydialogPopup').bind('touchmove', function(e){e.preventDefault()});
 					});
+					$('#underlaydialogPopup').bind('touchmove', function(e){e.preventDefault()});
 				});
 
-
-function initReaderButtons() {
+unp.initReaderButtons = function() {
 	if ($(".fontsizebuttons").length > 0) {
 		$(".input-search-frame").hide();
 	} else {
@@ -95,57 +128,67 @@ function initReaderButtons() {
 	}
 }
 
-var oldiscrollbottom = "";
-function initHideFooter() {
+unp.initHideFooter = function() {
 	try {
 		$(':input, textarea, select').on('focus', function() {
-			$(".footer").hide();
-			oldiscrollbottom = $(".iscrollcontent").css("bottom");
-			$(".iscrollcontent").css("bottom", "0px");
+			if ($(this).attr("id") != "input-search"){
+				$(".footer").hide();
+				$(".iHeader").hide();
+				_oldiscrollbottom = $(".iscrollcontent").css("bottom");
+				_oldiscrolltop = $(".iscrollcontent").css("top");
+				_oldsearchtop = $(".input-search-frame").css("top");
+				$(".iscrollcontent").css("bottom", "0px");
+				$(".iscrollcontent").css("top", "0px");
+				$(".input-search-frame").css("top", "-100px");
+			}
 		});
 		$(':input, textarea, select').on('blur', function() {
-			$(".footer").show();
-			$("iscrollbottom").css("bottom", oldiscrollbottom);
-			window.scrollTo(0, 1);
+			if ($(this).attr("id") != "input-search"){
+				$(".footer").show();
+				$(".iHeader").show();
+				$("iscrollbottom").css("bottom", _oldiscrollbottom);
+				$(".iscrollcontent").css("top", _oldiscrolltop);
+				$(".input-search-frame").css("top", _oldsearchtop);
+				window.scrollTo(0, 1);
+			}
 		});
 	} catch (e) {
 
 	}
 }
 
-function isAndroid(){
+unp.isAndroid = function() {
 	return /android/i.test(navigator.userAgent.toLowerCase());
 }
 
-var editor = null;
-var rtfield;
-function initRichText() {
-	//Placeholder for future improvements
+unp.initRichText = function() {
+	// Placeholder for future improvements
 }
 
-function htmlDecode(input) {
+unp.htmlDecode = function(input) {
 	var e = document.createElement('div');
 	e.innerHTML = input;
 	return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
 }
 
-function getURLParameter(name) {
+unp.getURLParameter = function(name) {
 	return decodeURIComponent((new RegExp(
 			'[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [
 			, "" ])[1].replace(/\+/g, '%20'))
 			|| null;
 }
 
-window.addEventListener("orientationchange", setTimeout("changeorientation",
-		100), false);
+window.addEventListener("orientationchange", setTimeout(
+		"unp.changeorientation", 100), false);
 
-function changeorientation() {
-	hideViewsMenu();
-	initiscroll();
-	initHorizontalView();
+unp.changeorientation = function() {
+	unp.hideViewsMenu();
+	unp.initiscroll();
+	unp.initHorizontalView();
+	unp.initCalendar();
 }
 
-function allowFormsInIscroll() {
+unp.allowFormsInIscroll = function() {
 	[].slice.call(document.querySelectorAll('input, select, button, textarea'))
 			.forEach(
 					function(el) {
@@ -158,17 +201,17 @@ function allowFormsInIscroll() {
 }
 
 var firedrequests = new Array();
-function stopViewSpinner() {
+unp.stopViewSpinner = function() {
 	$(".loadmorelink").disabled = false;
 	$("#loadmorespinner").hide();
 }
 
-function loadmore(dbName, viewName, summarycol, detailcol, category, xpage,
-		refreshmethod, photocol, collapserows, wrapsummarycol, ajaxload) {
+unp.loadmore = function(dbName, viewName, summarycol, detailcol, category,
+		xpage, refreshmethod, photocol, collapserows, wrapsummarycol, ajaxload) {
 	try {
 		$(".loadmorelink").hide();
 		$("#loadmorespinner").show();
-		setTimeout("stopViewSpinner()", 5000);
+		setTimeout("unp.stopViewSpinner()", 5000);
 		var itemlist = $("#flatViewRowSet li");
 		var pos = itemlist.length - 1;
 		for ( var i = 0; i < firedrequests.length; i++) {
@@ -219,44 +262,73 @@ function loadmore(dbName, viewName, summarycol, detailcol, category, xpage,
 	}
 }
 
-function openDocument(url, target) {
-	// $.blockUI();
-	// document.location.href = url;
+unp.openDocument = function(url, target, ignoreInHistory) {
 	var thisArea = $("#" + target);
-	thisArea.load(url.replace(" ", "%20") + " #contentwrapper",
-			function(data, status, xhr) {
-				if (status=="error") {
-					alert("An error occurred:\n\n" + xhr.status + " " + xhr.statusText + "\n\n" + $(data).text());
-					return false;
-				}else{
-					if (firedrequests != null) {
-						firedrequests = new Array();
-					}
-	
-					unp.storePageRequest(url);
-	
-					initiscroll();
-					if (url.indexOf("editDocument") > -1
-							|| url.indexOf("newDocument") > -1) {
-						allowFormsInIscroll();
-					}
-					initDeleteable();
-					initAutoComplete();
-					initHorizontalView();
-					if ($("#input-search").hasClass("input-search")) {
-						$(".iscrollcontent").css("top", "90px");
-					}
-					return false;
-				}
-			});
+	thisArea.load(url.replace(" ", "%20") + " #contentwrapper", function(data,
+			status, xhr) {
+		if (status == "error") {
+			alert("An error occurred:\n\n" + xhr.status + " " + xhr.statusText
+					+ "\n\n" + $(data).text());
+			return false;
+		} else {
+			if (firedrequests != null) {
+				firedrequests = new Array();
+			}
+
+			if(!ignoreInHistory){
+				unp.storePageRequest(url);
+			}
+
+			unp.initiscroll();
+			if (url.indexOf("editDocument") > -1
+					|| url.indexOf("newDocument") > -1) {
+				unp.allowFormsInIscroll();
+			}
+			unp.initDeleteable();
+			unp.initAutoComplete();
+			unp.initHorizontalView();
+			if ($("#input-search").hasClass("input-search")) {
+				$(".iscrollcontent").css("top", "90px");
+			}
+			return false;
+		}
+	});
 }
 
-function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname) {
+unp.replaceSubstring = function(inputString, fromString, toString) {
+	if (inputString.indexOf(fromString) > -1){
+		var newval = inputString.split(fromString);
+		return newval[0] + toString + newval[1];
+	}else{
+		return inputString;
+	}
+}
+
+unp.saveDocument = function(formid, unid, viewxpagename, formname, parentunid,
+		dbname) {
 	try {
 		scrollContent.scrollTo(0, -60, 0);
 	} catch (e) {
 	}
 	var data = $(".customform :input").serialize();
+	$('.customform input[type=checkbox]').each( function() {
+		var val;
+		if (!this.checked) {
+			val = "off";
+			if ($(this).attr('uncheckedValue')) {
+				val = $(this).attr('uncheckedValue');
+			}
+			data += '&' + encodeURIComponent(this.name) + '=' + val;
+		} else {
+			val = "on";
+			if ($(this).attr('checkedValue')) {
+				val = $(this).attr('checkedValue');
+			}
+			var newval = encodeURIComponent(this.name) + '=' + val;
+			var oldval = encodeURIComponent(this.name) + '=on'
+			data = unp.replaceSubstring(data, oldval, newval);
+		}
+	});
 	var url = 'UnpSaveDocument.xsp?unid=' + unid + "&formname=" + formname
 			+ "&rnd=" + Math.floor(Math.random() * 1001);
 	if (parentunid) {
@@ -265,7 +337,7 @@ function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname)
 	if (dbname) {
 		url += "&dbname=" + dbname;
 	}
-	var valid = validate();
+	var valid = unp.validate();
 	if (valid) {
 		$.ajax( {
 			type : 'POST',
@@ -280,11 +352,11 @@ function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname)
 				function(response) {
 					console.log(response.length);
 					if (response.length == 32) {
-						openDocument(
+						unp.openDocument(
 								viewxpagename
 										+ "?action=openDocument&documentId="
-										+ response, "content");
-						initiscroll();
+										+ response, "content", true);
+						unp.initiscroll();
 					} else {
 						alert(response);
 					}
@@ -294,58 +366,58 @@ function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname)
 	}
 }
 
-function validate() {
+unp.validate = function() {
 	var valid = true;
+	var msg = "Validation Errors:\n";
 	$(".required").each( function() {
 		if ($(this).val() == "") {
 			var label = $("label[for='" + $(this).attr('id') + "']");
-			alert("Please complete " + label.text());
-			$(this).focus();
+			msg += "Please complete " + label.text() + "\n";
+			if (valid){
+				$(this).focus();
+			}
 			valid = false;
 		}
 	})
+	if (!valid){
+		alert(msg);
+	}
 	return valid;
 }
 
-function toggleViewsMenu() {
-	if ($("#menuPane").hasClass("offScreen")) {
+unp.toggleViewsMenu = function(forcehide) {
+	console.log($("#menuPane").width());
+	if ($("#menuPane").hasClass("offScreen") && !forcehide) {
 		$("#menuPane").removeClass("offScreen").addClass("onScreen");
 		$("#menuPane").animate( {
 			"left" : "+=700px"
-		}, "fast", function(){
-			if (isAndroid()){
+		}, "fast", function() {
+			if (unp.isAndroid()) {
 				$("#menuitems").css("position", "fixed");
 			}
 		});
+		$("#menuPane").width("100%");
 	} else {
 		$("#menuPane").removeClass("onScreen").addClass("offScreen");
 		$("#menuPane").animate( {
 			"left" : "-=700px"
-		}, "fast", function(){
-			if (isAndroid()){
-				$("#menuitems").css("position", "relative");
-			}			
 		});
+		$("#menuPane").width("0px");
 	}
 }
 
-function hideViewsMenu() {
+unp.hideViewsMenu = function() {
 	if (!$("#menuPane").hasClass("offScreen")) {
 		$("#menuPane").removeClass("onScreen").addClass("offScreen");
-
 		$("#menuPane").animate( {
 			"left" : "-=700px"
-		}, "fast", function(){
-			if (isAndroid()){
-				$("#menuitems").css("position", "relative");
-			}
-		});
+		}, "fast");
+		$("#menuPane").width("0px");
 	}
-	// $("#content").fadeIn();
 }
 
 var firedrequests;
-function loadPage(url, target, menuitem, pushState) {
+unp.loadPage = function(url, target, menuitem, pushState) {
 
 	var _pushState = true;
 	if (arguments.length >= 4) {
@@ -354,28 +426,29 @@ function loadPage(url, target, menuitem, pushState) {
 
 	var thisArea = $("#" + target);
 	thisArea.load(url, function(data, status, xhr) {
-		if (status=="error") {
-			alert("An error occurred:\n\n" + xhr.status + " " + xhr.statusText + "\n\n" + $(data).text());
+		if (status == "error") {
+			alert("An error occurred:\n\n" + xhr.status + " " + xhr.statusText
+					+ "\n\n" + $(data).text());
 			return false;
-		}else{
-	
+		} else {
+
 			if (firedrequests != null) {
 				firedrequests = new Array();
 			}
-	
+
 			if (_pushState) {
 				unp.storePageRequest(url);
 			}
-	
-			initiscroll();
-			initHorizontalView();
-			initDeleteable();
-			initAutoComplete();
-			
-			try{
+
+			unp.initiscroll();
+			unp.initHorizontalView();
+			unp.initDeleteable();
+			unp.initAutoComplete();
+
+			try {
 				$('.categoryRow').first().click();
-			}catch(e){
-				
+			} catch (e) {
+
 			}
 
 			return false;
@@ -389,16 +462,16 @@ function loadPage(url, target, menuitem, pushState) {
 		$(".menuitem" + menuitem).removeClass("viewMenuItem");
 		$(".menuitem" + menuitem).addClass("viewMenuItemSelected");
 		$(".menuitem" + menuitem).addClass("active");
-		hideViewsMenu();
+		unp.hideViewsMenu();
 	}
 }
 
-function openPage(url, target) {
+unp.openPage = function(url, target) {
 	$.blockUI();
 	window.location.href = url;
 }
 
-function initDeleteable() {
+unp.initDeleteable = function() {
 	try {
 		$('input.deletable').wrap('<span class="deleteicon" />').after(
 				$('<span/>').click( function() {
@@ -409,37 +482,19 @@ function initDeleteable() {
 	}
 }
 
-var swipers = null;
-function initHorizontalView() {
+unp.initHorizontalView = function() {
 	try {
-		if (swipers != null) {
-			// We need to destroy the existing swipers and re-init
-			// for ( var i = 0; i < swipers.length; i++) {
-			// swipers[i].destroy();
-			// }
-		}
-		swipers = new Array();
 		$(".swiper-container").each( function() {
 			// First we need to re-size the swipe area
 				var items = $(this).find(".hviewitem").length;
 				$(this).find(".swiper-slide").width((items * 140));
-				// Now init the swiper
-				// var mySwiper = $(this).swiper( {
-				// scrollContainer : true,
-				// freeMode : true,
-				// freeModeFluid : true,
-				// momentumBounce : true
-				// });
-
-				// swipers.push(mySwiper);
 			})
 	} catch (e) {
 
 	}
 }
 
-function initAutoComplete() {
-	// try{
+unp.initAutoComplete = function() {
 	$(".autocomplete").each( function() {
 		var thefield = $(this);
 		var options = {
@@ -447,9 +502,6 @@ function initAutoComplete() {
 		};
 		var a = $(this).autocomplete(options);
 	});
-	// }catch(e){
-
-	// }
 }
 
 var touchmovehandler = function(e) {
@@ -458,7 +510,7 @@ var touchmovehandler = function(e) {
 
 var scrollContent;
 var scrollMenu;
-function initiscroll() {
+unp.initiscroll = function() {
 	// Register the letter click events
 	$(".atozletter").click( function(event) {
 		event.stopPropagation();
@@ -466,14 +518,14 @@ function initiscroll() {
 			$(".atozpicker").toggle();
 			$(".numberpicker").toggle();
 		} else {
-			jumpToLetter($(this), event);
+			unp.jumpToLetter($(this), event);
 		}
 		return false;
 	});
-	
+
 	bouncefix.add(document.getElementById("menuitems"));
 	bouncefix.add(document.querySelector('.iscrollcontent'));
-	
+
 	try {
 		pullUpEl = document.getElementById('pullUp');
 		pullUpOffset = pullUpEl.offsetHeight;
@@ -498,7 +550,7 @@ function initiscroll() {
 	$(".atozpicker").show();
 }
 
-function jumpToLetter(letterelement, event) {
+unp.jumpToLetter = function(letterelement, event) {
 	$('.iscrollcontent').animate( {
 		scrollTop : 0
 	}, 0);
@@ -528,10 +580,11 @@ function jumpToLetter(letterelement, event) {
 			});
 }
 
-function openDialog(id) {
+unp.openDialog = function(id) {
 	if (id != null && id != "#") {
 		$("#underlay" + id).css('display', 'block');
 		$("#" + id).css('display', 'block');
+		$(".iscrollcontent").addClass("dialogactive");
 		var boxes = $("div");
 		boxes.click( function() {
 			var el = $(id);
@@ -542,20 +595,21 @@ function openDialog(id) {
 			});
 			el.css("z-index", max + 1);
 		});
-		initiscroll();
-		initHorizontalView();
+		unp.initiscroll();
+		unp.initHorizontalView();
 	}
 }
 
-function closeDialog(id) {
+unp.closeDialog = function(id) {
 	$("#" + id).css('display', 'none');
+	$(".iscrollcontent").removeClass("dialogactive");
 	$("#underlay" + id).css('display', 'none');
-	initiscroll();
-	initHorizontalView();
+	unp.initiscroll();
+	unp.initHorizontalView();
 }
 
-function accordionLoadMore(obj, viewName, catName, xpage, dbname) {
-
+unp.accordionLoadMore = function(obj, viewName, catName, xpage, dbname,
+		summarycol, datacol, photocol) {
 	var thisArea = $(obj).nextAll(".summaryDataRow:first").children(
 			".accordionRowSet");
 	var pos = $(thisArea).find('li').length;
@@ -563,7 +617,8 @@ function accordionLoadMore(obj, viewName, catName, xpage, dbname) {
 	var thisUrl = "UnpAccordionViewList.xsp?chosenView="
 			+ encodeURIComponent(viewName) + "&catFilter="
 			+ encodeURIComponent(catName) + "&xpageDoc=" + xpage + "&start="
-			+ pos + "&dbname=" + dbname;
+			+ pos + "&dbname=" + dbname + "&photocol=" + photocol + "&datacol="
+			+ datacol + "&summarycol=" + summarycol;
 
 	var tempHolder = $(obj).nextAll(".summaryDataRow:first").children(
 			".summaryDataRowHolder");
@@ -598,7 +653,8 @@ function accordionLoadMore(obj, viewName, catName, xpage, dbname) {
 	}
 }
 
-function fetchDetails(obj, viewName, catName, xpage, dbname) {
+unp.fetchDetails = function(obj, viewName, catName, xpage, dbname, summarycol,
+		datacol, photocol) {
 	$('.accordionRowSet').empty();
 	$('.accLoadMoreLink').hide();
 
@@ -613,17 +669,20 @@ function fetchDetails(obj, viewName, catName, xpage, dbname) {
 				.hide();
 	} else {
 		$('.categoryRow').removeClass("accordianExpanded");
-		accordionLoadMore(obj, viewName, catName, xpage, dbname);
+		unp.accordionLoadMore(obj, viewName, catName, xpage, dbname,
+				summarycol, datacol, photocol);
 	}
 }
 
-function fetchMoreDetails(obj, viewName, catName, xpage, dbname) {
+unp.fetchMoreDetails = function(obj, viewName, catName, xpage, dbname,
+		summarycol, datacol, photocol) {
 
 	var objRow = $(obj).parent().parent().prev();
-	accordionLoadMore(objRow, viewName, catName, xpage, dbname);
+	unp.accordionLoadMore(objRow, viewName, catName, xpage, dbname, summarycol,
+			datacol, photocol);
 }
 
-function syncAllDbs() {
+unp.syncAllDbs = function() {
 	$.blockUI( {
 		centerY : 0,
 		css : {
@@ -643,8 +702,8 @@ function x$(idTag, param) { // Updated 18 Feb 2012
 	return ($("#" + idTag));
 }
 
-function doHViewFilter(language, year, primaryview, filterview, xpage, source,
-		toplevelcategory) {
+unp.doHViewFilter = function(language, year, primaryview, filterview, xpage,
+		source, toplevelcategory) {
 	if (language == null) {
 		language = $(".languagelabel").text();
 	}
@@ -665,9 +724,9 @@ function doHViewFilter(language, year, primaryview, filterview, xpage, source,
 			+ "&toplevelcategory="
 			+ toplevelcategory;
 	thisArea.load(url.replace(" ", "%20") + " #repeatholder", function() {
-		initiscroll();
-		initHorizontalView();
-		closeDialog('hviewPopup');
+		unp.initiscroll();
+		unp.initHorizontalView();
+		unp.closeDialog('hviewPopup');
 		return false;
 	});
 	$(".dropdown-menu").hide();
@@ -675,8 +734,8 @@ function doHViewFilter(language, year, primaryview, filterview, xpage, source,
 	$(".yearlabel").text(year);
 }
 
-function loadMoreHorizontal(button, category, primaryview, filterview, xpage,
-		source) {
+unp.loadMoreHorizontal = function(button, category, primaryview, filterview,
+		xpage, source) {
 	var language = $(".languagelabel").text().replace(" ", "%20");
 	var year = $(".yearlabel").text().replace(" ", "%20");
 	var categoryrep = category.replace(" ", "-");
@@ -701,24 +760,24 @@ function loadMoreHorizontal(button, category, primaryview, filterview, xpage,
 				$(".loadmorebutton-" + categoryrep).appendTo(
 						$('.swiper-slide-' + categoryrep));
 			}
-			initHorizontalView();
+			unp.initHorizontalView();
 		}
 	});
 }
 
-function openHViewDialog(xpage, source, unid) {
+unp.openHViewDialog = function(xpage, source, unid) {
 	if (xpage.indexOf(".xsp") == -1) {
 		xpage += ".xsp";
 	}
 	var url = xpage + "?action=openDocument&documentId=" + unid;
 	$("#hviewitemcontent").load(url.replace(" ", "%20") + " #" + source,
 			function() {
-				openDialog("hviewPopup");
+				unp.openDialog("hviewPopup");
 				return false;
 			});
 }
 
-function expandMenuItem(menuitem) {
+unp.expandMenuItem = function(menuitem) {
 	$(".viewMenuItemSub").hide();
 	$(".viewMenuItemSubSub").hide();
 	if ($(menuitem).hasClass("expanded")) {
@@ -733,7 +792,7 @@ function expandMenuItem(menuitem) {
 							&& !$(this).hasClass("viewMenuItemSub")) {
 						return false;
 					} else if ($(this).hasClass("viewMenuItemSub")) {
-						//$(this).toggle();
+						// $(this).toggle();
 						bFinishedCategory = true;
 					} else {
 						if ($(this).hasClass("viewMenuItemSubSub")
@@ -766,7 +825,7 @@ function expandMenuItem(menuitem) {
 						return false;
 					} else {
 						if ($(this).hasClass("viewMenuItemSub")) {
-							if (!bFoundSubSub){
+							if (!bFoundSubSub) {
 								if (!bClickedFirst) {
 									$(this).click();
 									bClickedFirst = true;
@@ -783,9 +842,10 @@ function expandMenuItem(menuitem) {
 		$(".viewMenuItem").removeClass("expanded");
 		$(menuitem).addClass("expanded");
 	}
-	fixNavigatorBottomCorners();
+	unp.fixNavigatorBottomCorners();
 }
-function fixNavigatorBottomCorners() {
+
+unp.fixNavigatorBottomCorners = function() {
 	$(".navroundedbottom").removeClass("navroundedbottom");
 	$(".navScrollArea .viewMenuItem").not(':hidden').last().addClass(
 			"navroundedbottom");
@@ -793,42 +853,42 @@ function fixNavigatorBottomCorners() {
 	$("#menuitems li a").not(':hidden').last().addClass("navroundedbottom");
 }
 
-function hviewFavourite(xpage, unid) {
+unp.hviewFavourite = function(xpage, unid) {
 	if (xpage.indexOf(".xsp") == -1) {
 		xpage += ".xsp";
 	}
 	var url = xpage + "?favorite=toggle&action=openDocument&documentId=" + unid;
 	$("#hviewitemcontent").load(url.replace(" ", "%20") + " #results");
 	$("[unid='" + unid + "'] .badge-favorite").toggle();
-	closeDialog("hviewPopup");
+	unp.closeDialog("hviewPopup");
 }
 
-function hviewDownloadNow() {
+unp.hviewDownloadNow = function() {
 	alert("This feature has not been enabled");
 }
 
-function hviewDownloadLater() {
+unp.hviewDownloadLater = function() {
 	alert("This feature has not been enabled");
 }
 
-function hviewEmail(xpage, unid) {
+unp.hviewEmail = function(xpage, unid) {
 	$("#hviewdialogbuttons").toggle();
 	$("#emailholder").toggle();
 }
 
-function hviewEmailSend(xpage, unid) {
+unp.hviewEmailSend = function(xpage, unid) {
 	alert("This needs to be implemented");
 }
 
-function hviewEmailCancel(xpage, unid) {
+unp.hviewEmailCancel = function(xpage, unid) {
 	$("#hviewdialogbuttons").toggle();
 	$("#emailholder").toggle();
 }
 
-function dropdownToggle(element) {
-	if (element.text.indexOf("Language") > -1){
+unp.dropdownToggle = function(element) {
+	if (element.text.indexOf("Language") > -1) {
 		$("#yeardropdownlink").next().hide();
-	}else if(element.text.indexOf("Year") > -1){
+	} else if (element.text.indexOf("Year") > -1) {
 		$("#dropdownlink").next().hide();
 	}
 	if (element != null) {
@@ -838,43 +898,7 @@ function dropdownToggle(element) {
 	}
 }
 
-// create unp namespace object (if not created before)
-if (!unp) {
-
-	var unp = {
-
-		_firstLoad : true,
-
-		storePageRequest : function(url) {
-
-			this._firstLoad = false;
-
-			if (url.indexOf("#") > -1) {
-				url = url.substring(0, url.indexOf(" #"));
-			}
-			if (url.indexOf("?") == -1) {
-				url += "?";
-			}
-			url += "&history=true";
-			history.pushState(null, "", url);
-			console.log("pushed " + url);
-
-		}
-
-	}
-
-	$(window).bind(
-			"popstate",
-			function() {
-				if (!unp._firstLoad) {
-					loadPage(location.href + " #contentwrapper", 'content',
-							null, false, false);
-				}
-			});
-
-}
-
-function increaseFontSize(button) {
+unp.increaseFontSize = function(button) {
 	$(".typographyreadcontent").find("*").each(
 			function() {
 				$(this).css("font-size",
@@ -888,192 +912,271 @@ function increaseFontSize(button) {
 				}
 			});
 }
-function decreaseFontSize(button) {
+unp.decreaseFontSize = function(button) {
 	$(".typographyreadcontent").find("*").each(
 			function() {
-				$(this).css("font-size",
-						(parseInt($(this).css("font-size"), 10) - 2) + "px");
-				if (parseInt($(this).css("line-height"), 10) > 24) {
-					$(this).css(
-							"line-height",
-							(parseInt($(this).css("line-height"), 10) - 2)
-									+ "px");
+				var tagName = $(this).prop("tagName");
+				var fontSize = parseInt($(this).css("font-size"), 10);
+				var minFontSize = 4;
+				if (tagName == "H1") {
+					minFontSize = 28;
+				} else if (tagName == "H2") {
+					minFontSize = 24;
+				} else if (tagName == "H3") {
+					minFontSize = 18;
+				} else if (tagName == "H4") {
+					minFontSize = 12;
+				} else if (tagName == "H5") {
+					minFontSize = 8;
+				}
+				if (fontSize - 2 >= minFontSize) {
+					$(this).css("font-size", (fontSize - 2) + "px");
+					if (parseInt($(this).css("line-height"), 10) > 24) {
+						$(this).css(
+								"line-height",
+								(parseInt($(this).css("line-height"), 10) - 2)
+										+ "px");
+					}
 				}
 			});
 }
 
-/*!
- * v0.0.3
- * Copyright (c) 2013 Jarid Margolin
- * bouncefix.js is open sourced under the MIT license.
- */ 
+/*
+ * ! v0.0.3 Copyright (c) 2013 Jarid Margolin bouncefix.js is open sourced under
+ * the MIT license.
+ */
 
-;(function (window, document) {
+;
+( function(window, document) {
 
-// Define module
-var bouncefix = {
-  Fix: Fix,
-  cache: {}
-};  
+	// Define module
+	var bouncefix = {
+		Fix : Fix,
+		cache : {}
+	};
 
-//
-// Add/Create new instance
-//
-bouncefix.add = function (className) {
-  if (!this.cache[className]) {
-    this.cache[className] = new this.Fix(className);
-  }
-};
+	//
+	// Add/Create new instance
+	//
+	bouncefix.add = function(className) {
+		if (!this.cache[className]) {
+			this.cache[className] = new this.Fix(className);
+		}
+	};
 
-//
-// Delete/Remove instance
-//
-bouncefix.remove = function (className) {
-  if (this.cache[className]) {
-    this.cache[className].remove();
-    delete this.cache[className];
-  }
-};
-//
-// Class Constructor - Called with new BounceFix(el)
-// Responsible for setting up required instance
-// variables, and listeners.
-//
-function Fix(className) {
-  // If there is no element, then do nothing  
-  if(!className) { return false; }
-  this.className = className;
+	//
+	// Delete/Remove instance
+	//
+	bouncefix.remove = function(className) {
+		if (this.cache[className]) {
+			this.cache[className].remove();
+			delete this.cache[className];
+		}
+	};
+	//
+	// Class Constructor - Called with new BounceFix(el)
+	// Responsible for setting up required instance
+	// variables, and listeners.
+	//
+	function Fix(className) {
+		// If there is no element, then do nothing
+		if (!className) {
+			return false;
+		}
+		this.className = className;
 
-  // The engine
-  this.startListener = new EventListener(document, {
-    evt: 'touchstart',
-    handler: this.touchStart,
-    context: this
-  }).add();
+		// The engine
+		this.startListener = new EventListener(document, {
+			evt : 'touchstart',
+			handler : this.touchStart,
+			context : this
+		}).add();
 
-  // Cleanup
-  this.endListener = new EventListener(document, {
-    evt: 'touchend',
-    handler: this.touchEnd,
-    context: this
-  }).add();
-}
+		// Cleanup
+		this.endListener = new EventListener(document, {
+			evt : 'touchend',
+			handler : this.touchEnd,
+			context : this
+		}).add();
+	}
 
-//
-// touchstart handler
-//
-Fix.prototype.touchStart = function (evt) {
-  this.target = utils.getTargetedEl(evt.target, this.className);
-  if (this.target) {
-    // If scrollable, adjust
-    if (utils.isScrollable(this.target)) { return utils.scrollToEnd(this.target); }
-    // Else block touchmove
-    this.endListener = new EventListener(this.target, {
-      evt: 'touchmove',
-      handler: this.touchMove,
-      context: this
-    }).add();
-  }
-};
+	//
+	// touchstart handler
+	//
+	Fix.prototype.touchStart = function(evt) {
+		this.target = utils.getTargetedEl(evt.target, this.className);
+		if (this.target) {
+			// If scrollable, adjust
+			if (utils.isScrollable(this.target)) {
+				return utils.scrollToEnd(this.target);
+			}
+			// Else block touchmove
+			this.endListener = new EventListener(this.target, {
+				evt : 'touchmove',
+				handler : this.touchMove,
+				context : this
+			}).add();
+		}
+	};
 
-//
-// If this event is called, we block scrolling
-// by preventing default behavior.
-//
-Fix.prototype.touchMove = function (evt) {
-  evt.preventDefault(); 
-};
+	//
+	// If this event is called, we block scrolling
+	// by preventing default behavior.
+	//
+	Fix.prototype.touchMove = function(evt) {
+		evt.preventDefault();
+	};
 
-//
-// On touchend we need to remove and listeners
-// we may have added.
-//
-Fix.prototype.touchEnd = function (evt) {
-  if (this.moveListener) {
-    this.moveListener.remove();
-  }
-};
+	//
+	// On touchend we need to remove and listeners
+	// we may have added.
+	//
+	Fix.prototype.touchEnd = function(evt) {
+		if (this.moveListener) {
+			this.moveListener.remove();
+		}
+	};
 
-//
-// touchend handler
-//
-Fix.prototype.remove = function () {
-  this.startListener.remove();
-  this.endListener.remove();
-};
-// Define module
-var utils = {};
+	//
+	// touchend handler
+	//
+	Fix.prototype.remove = function() {
+		this.startListener.remove();
+		this.endListener.remove();
+	};
+	// Define module
+	var utils = {};
 
-//
-// Search nodes to find target el. Return if exists
-//
-utils.getTargetedEl = function (el, className) {
-  while (true) {
-    if (el.classList.contains(className)) { break; }
-    if ((el = el.parentElement)) { continue; }
-    break;
-  }
-  return el;
-};
+	//
+	// Search nodes to find target el. Return if exists
+	//
+	utils.getTargetedEl = function(el, className) {
+		while (true) {
+			if (el.classList.contains(className)) {
+				break;
+			}
+			if ((el = el.parentElement)) {
+				continue;
+			}
+			break;
+		}
+		return el;
+	};
 
-//
-// Return true or false depending on if content
-// is scrollable
-//
-utils.isScrollable = function (el) {
-  return (el.scrollHeight > el.offsetHeight);
-};
+	//
+	// Return true or false depending on if content
+	// is scrollable
+	//
+	utils.isScrollable = function(el) {
+		return (el.scrollHeight > el.offsetHeight);
+	};
 
-//
-// Keep scrool from hitting end bounds
-//
-utils.scrollToEnd = function (el) {
-  var curPos = el.scrollTop,
-      height = el.offsetHeight,
-      scroll = el.scrollHeight;
-  
-  // If at top, bump down 1px
-  if(curPos <= 0) { el.scrollTop = 1; }
+	//
+	// Keep scrool from hitting end bounds
+	//
+	utils.scrollToEnd = function(el) {
+		var curPos = el.scrollTop, height = el.offsetHeight, scroll = el.scrollHeight;
 
-  // If at bottom, bump up 1px
-  if(curPos + height >= scroll) {
-    el.scrollTop = scroll - height - 1;
-  }
-};
-//
-// Class used to work with addEventListener. Allows
-// context to be specified on handler, and provides
-// a method for easy removal.
-//
-function EventListener(el, opts) {
-  // Make args available to instance
-  this.evt = opts.evt;
-  this.el = el;
-  // Default
-  this.handler = opts.handler;
-  // If context passed call with context
-  if (opts.context) {
-    this.handler = function (evt) {
-      opts.handler.call(opts.context, evt);
-    };
-  }
-}
+		// If at top, bump down 1px
+		if (curPos <= 0) {
+			el.scrollTop = 1;
+		}
 
-//
-// Add EventListener on instance el
-//
-EventListener.prototype.add = function () {
-  this.el.addEventListener(this.evt, this.handler, false);
-};
+		// If at bottom, bump up 1px
+		if (curPos + height >= scroll) {
+			el.scrollTop = scroll - height - 1;
+		}
+	};
+	//
+	// Class used to work with addEventListener. Allows
+	// context to be specified on handler, and provides
+	// a method for easy removal.
+	//
+	function EventListener(el, opts) {
+		// Make args available to instance
+		this.evt = opts.evt;
+		this.el = el;
+		// Default
+		this.handler = opts.handler;
+		// If context passed call with context
+		if (opts.context) {
+			this.handler = function(evt) {
+				opts.handler.call(opts.context, evt);
+			};
+		}
+	}
 
-//
-// Removes EventListener on instance el
-//
-EventListener.prototype.remove = function () {
-  this.el.removeEventListener(this.evt, this.handler);
-};
+	//
+	// Add EventListener on instance el
+	//
+	EventListener.prototype.add = function() {
+		this.el.addEventListener(this.evt, this.handler, false);
+	};
 
-// Expose to window
-if (typeof window !== 'undefined') { window.bouncefix = bouncefix; }
+	//
+	// Removes EventListener on instance el
+	//
+	EventListener.prototype.remove = function() {
+		this.el.removeEventListener(this.evt, this.handler);
+	};
+
+	// Expose to window
+	if (typeof window !== 'undefined') {
+		window.bouncefix = bouncefix;
+	}
 
 })(window, document);
+
+unp.initCalendar = function() {
+	try {
+		var buttons = calendaroptions.headerbuttonsrighttablet;
+		var defaultView = calendaroptions.defaultviewtablet;
+		if ($(window).width() < 400){
+			buttons = calendaroptions.headerbuttonsrightphone;
+			defaultView = calendaroptions.defaultviewphone;
+		}
+		var url = 'UnpCalendarData.xsp?viewname=' + calendaroptions.viewname;
+		url += '&startdatefield=' + calendaroptions.startdatefield;
+		url += '&enddatefield=' + calendaroptions.enddatefield;
+		url += '&titlefield=' + calendaroptions.titlefield;
+		url += '&viewxpage=' + calendaroptions.viewxpage;
+		url += '&highlightfield=' + calendaroptions.highlightfield;
+		url += '&highlighttest=' + calendaroptions.highlighttest;
+		$('#calendar').fullCalendar( {
+			header : {
+				left : calendaroptions.headerbuttonsleft,
+				center : 'title',
+				right : buttons
+			}, 
+			defaultView: defaultView, 
+			events: url,
+			timezone: 'local', 
+			titleFormat: {
+			    month: 'MMMM YYYY',
+			    week: "MMM D",
+			    day: 'MMM DD'
+			}, 
+			viewRender: function(view){
+				var h;
+				if (view.name.indexOf('agenda') > -1){
+					h = 2500;
+				}else{
+					h = $(window).height() - 50;
+				}
+				console.log("Setting height to: " + h);
+				$('#calendar').fullCalendar('option', 'height', h);
+			}
+		});
+		
+		$('.fc-button').each(function(){
+			$(this).removeClass();
+			$(this).addClass('button');
+		})
+		$('.fc-icon-left-single-arrow').parent().addClass('fa fa-arrow-left');
+		$('.fc-icon-left-single-arrow').remove();
+		$('.fc-icon-right-single-arrow').parent().addClass('fa fa-arrow-right');
+		$('.fc-icon-right-single-arrow').remove();
+	} catch (e) {
+
+	}
+}

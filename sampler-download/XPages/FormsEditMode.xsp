@@ -58,9 +58,8 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 											<li>
 												<xp:label value="Date" id="datelabel" for="date">
 												</xp:label>
-												<xp:inputText id="date"
-													value="#{document2.Date}" styleClass="xspInputFieldEditBox"
-													type="date">
+												<xp:inputText id="date" value="#{document2.Date}"
+													styleClass="xspInputFieldEditBox" type="date">
 													<xp:this.converter>
 														<xp:convertDateTime>
 															<xp:this.pattern><![CDATA[${javascript:if (document2.isEditable()){
@@ -78,6 +77,16 @@ return doc.getUniversalID();}]]></xp:this.documentId>
 												<xp:inputText id="email" value="#{document2.Email}"
 													type="email" styleClass="xspInputFieldEditBox deletable">
 												</xp:inputText>
+											</li>
+											<li>
+												<xp:label value="Mobile Enabled" for="mobileenabled"></xp:label>
+												<div class="switch">
+													<xp:checkBox text="" id="mobileenabled"
+														checkedValue="on" uncheckedValue="off"
+														value="#{document2.mobileenabled}" required="false">
+													</xp:checkBox>
+												</div>
+
 											</li>
 											<li>
 												<xp:label value="Department" id="companylabel" for="company">

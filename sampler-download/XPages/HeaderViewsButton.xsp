@@ -26,12 +26,11 @@
 	<unp:unpHeader search="none" searchPage="UnpSearch.xsp"
 		viewsButton="true" title="Views Button" headerHomeLink="/HeaderViewsButton.xsp">
 	</unp:unpHeader>
-	<unp:unpNavigator>
-		<unp:this.menuItem>
-			<unp:menuItem submenu="no" disabled="no" label="Menu Item">
-			</unp:menuItem>
-		</unp:this.menuItem>
-	</unp:unpNavigator>
+	<unp:unpNavigatorComputed>
+		<unp:this.computedmenuitems><![CDATA[#{javascript:[
+        {label: "Menu Item", hasSubMenu: false, page: "/UnpMain.xsp"}
+        ]}]]></unp:this.computedmenuitems>
+	</unp:unpNavigatorComputed> 
 	<div id="content">
 		<xp:panel styleClass="panel nobottompadscroll">
 			<p>This is the demo of the header bar views button</p>

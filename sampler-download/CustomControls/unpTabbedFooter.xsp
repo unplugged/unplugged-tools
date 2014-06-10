@@ -33,10 +33,9 @@
 
 		<div id='tabfooter'>
 			<ul id="footerTabBar">
-				<xp:repeat id="repeat1" rows="30"
-					disableOutputTag="true" var="menuItem"
-					value="#{javascript:compositeData.tab;}"
-					indexVar="menuItemIndex">
+				<xp:repeat id="repeat1" disableOutputTag="true"
+					var="menuItem" value="#{javascript:compositeData.tab;}"
+					indexVar="menuItemIndex" rows="30">
 					<xp:panel tagName="li">
 						<xp:this.styleClass><![CDATA[#{javascript:if (((menuItem.page == null || menuItem.page == "") && menuItemIndex == 0) || matchCurrentURL(menuItem.page)){
 	return "menuitem" + viewScope.menuItemIndex + " tabSelected";
@@ -50,7 +49,7 @@ if (!isEmpty(menuItem.callback)){
 	js += menuItem.callback;
 }
 if (!isEmpty(menuItem.page)){
-	js += "openPage('" + getDbPath() + menuItem.page + "', '" + menuItem.ajaxtargetid + "')";
+	js += "unp.openPage('" + getDbPath() + menuItem.page + "')";
 }
 return js;}]]></xp:this.value>
 							</xp:attr>
@@ -79,14 +78,18 @@ menuItem.icon != null && menuItem.icon != ""}]]></xp:this.rendered>
 				refreshMode="complete">
 				<xp:this.action>
 					<xp:actionGroup>
-
 						<xp:executeScript>
 							<xp:this.script><![CDATA[#{javascript:db = session.getCurrentDatabase();
 var date = new Date();
 session.setEnvironmentVar("ro.last.sync." + @LowerCase(@ReplaceSubstring(db.getFilePath(), "\\", "")), @Text(date.getTime()), true);
 db.replicate("someserver");}]]></xp:this.script>
 						</xp:executeScript>
-						<xp:openPage name="/UnpMain.xsp" target="openDocument">
+						<xp:openPage target="openDocument">
+							<xp:this.name><![CDATA[#{javascript:if (compositeData.postSyncTarget == null || compositeData.postSyncTarget == ""){
+	return "/UnpMain.xsp";
+}else{
+	return compositeData.postSyncTarget;
+}}]]></xp:this.name>
 						</xp:openPage>
 					</xp:actionGroup>
 				</xp:this.action>
@@ -99,11 +102,16 @@ db.replicate("someserver");}]]></xp:this.script>
 			<xp:this.rendered><![CDATA[#{javascript:isUnpluggedServer() && compositeData.synctype == "alldbs";}]]></xp:this.rendered>
 			<span class="icon"></span>
 			<span class="label">Sync</span>
-			<xp:eventHandler event="onclick" submit="false">
-				<xp:this.script><![CDATA[syncAllDbs()]]></xp:this.script>
-			</xp:eventHandler>
+			<xp:this.attrs>
+				<xp:attr name="onclick">
+					<xp:this.value><![CDATA[#{javascript:if (compositeData.postSyncTarget != null && compositeData.postSyncTarget != ""){
+	return "unp.syncAllDbs('" + compositeData.postSyncTarget + "')";
+}else{
+	return "unp.syncAllDbs()";
+}}]]></xp:this.value>
+				</xp:attr>
+			</xp:this.attrs>
 		</xp:link>
-
 		<xp:text styleClass="tabfootertext">
 			<xp:this.value><![CDATA[#{javascript:var dbrep = session.getEnvironmentString("ro.last.sync." + @LowerCase(@ReplaceSubstring(database.getFilePath(), "\\", "/")), true);
 var rep = session.getEnvironmentString("ro.last.sync", true); 

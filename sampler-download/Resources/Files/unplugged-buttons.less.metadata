@@ -1,15 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="376a" sequence="6" unid="83CD9231DB2560E480257C32003D9EBC">
-<created><datetime>20131129T111303,32+00</datetime></created>
-<modified><datetime>20131129T141257,54+00</datetime></modified>
-<revised><datetime>20131129T111303,36+00</datetime></revised>
-<lastaccessed><datetime>20131129T141257,54+00</datetime></lastaccessed>
-<addedtofile><datetime>20131129T141257,54+00</datetime></addedtofile></noteinfo>
-<updatedby><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name><name>Anonymous</name><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<item name="$TITLE"><textlist><text>unplugged-buttons.less</text></textlist></item>
-<item name="$Flags"><text>345CgQ</text></item>
-<item name="$DesignerVersion"><text>6</text></item>
-<item name="$FileNames"><textlist><text>unplugged-buttons.less</text></textlist></item>
-
-
-<item name="$FileModDT"><datetime>20131128T150203,30+00</datetime></item></note>
+<?xml version="1.0" encoding="UTF-8"?><fileresource designerversion="8.5.3" maintenanceversion="1.0" name="unplugged-buttons.less" publicaccess="false" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="16b6" sequence="1" unid="1A393F272AE90F9A80257CF3004A22EC">
+<created><datetime dst="true">20140610T142946,04+01</datetime></created>
+<modified><datetime dst="true">20140610T142947,34+01</datetime></modified>
+<revised><datetime dst="true">20140610T142947,33+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T142947,34+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T142947,34+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby></fileresource>

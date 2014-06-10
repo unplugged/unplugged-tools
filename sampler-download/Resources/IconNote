@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
  maintenanceversion='1.0' replicaid='80257C0B0048759B'>
-<noteinfo noteid='122' unid='2B8A3AC5BC110B9C80257BF000512844' sequence='26'>
+<noteinfo noteid='122' unid='2B8A3AC5BC110B9C80257BF000512844' sequence='0'>
 <created><datetime dst='true'>20130924T154627,24+01</datetime></created>
-<modified><datetime>20131129T141258,22+00</datetime></modified>
-<revised><datetime>20131129T141258,21+00</datetime></revised>
-<lastaccessed><datetime>20131129T141258,22+00</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20131021T141127,10+01</datetime></addedtofile></noteinfo>
+<modified><datetime dst='true'>20140610T141800,77+01</datetime></modified>
+<revised><datetime dst='true'>20140407T154713,39+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20140610T141800,77+01</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20140610T141800,77+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///4Af//8AD//4AAH/8AAA/+AAAH/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAA
@@ -24,10 +25,10 @@ EREdd3fRERER8AAAAAAA////Ed3dEf///wAAAAAAAAAAAPERER8AAAAAAAAAAAAAAAAP///wAAAA
 AAAAUEECICABAAD/////+A4DgA==
 </rawitemdata></item>
 <item name='$Flags'><text>J</text></item>
-<item name='$Daos'><text>0</text></item>
 <item name='$TemplateServerName'><text>CN=Matt White/O=Exhilarate</text></item>
 <item name='$TITLE'><text>Unplugged Sampler Download</text></item>
-<item name='$PIRCRefreshModTime'><datetime>20131129T141252,81+00</datetime></item>
-<item name='$TemplateModTime'><datetime>20131129T121753,52+00</datetime></item>
-<item name='$TemplateFileName'><text>c:\IBM\Notes\Data\UnpSampler_201311291200.ntf</text></item></note>
+<item name='$PIRCRefreshModTime'><datetime dst='true'>20140407T154709,19+01</datetime></item>
+<item name='$TemplateModTime'><datetime dst='true'>20140407T154446,64+01</datetime></item>
+<item name='$TemplateFileName'><text>c:\IBM\Notes\Data\UnpSampler_v3_2_0.ntf</text></item>
+<item name='$Daos'><text>0</text></item></note>
 

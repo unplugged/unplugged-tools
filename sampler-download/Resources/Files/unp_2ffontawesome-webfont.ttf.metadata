@@ -1,20 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="26f2" sequence="6" unid="0AA4A19AF888CC6880257C23003F9D1A">
-<created><datetime>20131114T113449,86+00</datetime></created>
-<modified><datetime>20131129T141255,02+00</datetime></modified>
-<revised><datetime>20131126T165157,00+00</datetime></revised>
-<lastaccessed><datetime>20131129T141255,02+00</datetime></lastaccessed>
-<addedtofile><datetime>20131118T085829,19+00</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name="$Flags"><text>345CgQ</text></item>
-<item name="$FlagsExt" sign="true"><text>D</text></item>
-<item name="$FileModDT" sign="true"><datetime>20131105T080712,00+00</datetime></item>
-<item name="$TITLE" sign="true"><text>unp/fontawesome-webfont.ttf</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-
-
-
-<item name="$FileNames" sign="true"><text>unp_2ffontawesome-webfont.ttf</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?><fileresource designerversion="8.5.3" maintenanceversion="1.0" name="unp/fontawesome-webfont.ttf" publicaccess="false" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="164a" sequence="1" unid="36C1195BD2ED99B580257CF3004A22D1">
+<created><datetime dst="true">20140610T142945,77+01</datetime></created>
+<modified><datetime dst="true">20140610T142946,04+01</datetime></modified>
+<revised><datetime dst="true">20140610T142946,03+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T142946,04+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T142946,04+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby></fileresource>

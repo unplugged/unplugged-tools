@@ -1,20 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="162e" sequence="5" unid="82EBBA669BCD85A980257C1B005129F7">
-<created><datetime>20131106T144631,59+00</datetime></created>
-<modified><datetime>20131129T141252,96+00</datetime></modified>
-<revised><datetime>20131126T165154,84+00</datetime></revised>
-<lastaccessed><datetime>20131129T141252,96+00</datetime></lastaccessed>
-<addedtofile><datetime>20131107T112611,84+00</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" maintenanceversion="1.0" name="ajax-loader.gif" publicaccess="false" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="158a" sequence="1" unid="D672C99EE86B11F680257CF3004A17B3">
+<created><datetime dst="true">20140610T142917,31+01</datetime></created>
+<modified><datetime dst="true">20140610T142917,33+01</datetime></modified>
+<revised><datetime dst="true">20140610T142917,32+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T142917,33+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T142917,33+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name="$TITLE"><text>ajax-loader.gif</text></item>
-<item name="$Flags"><text>34CiQ</text></item>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$ImagesWide" sign="true"><number>1</number></item>
-<item name="$ImagesHigh" sign="true"><number>1</number></item>
-<item name="$ImagesColorize" sign="true"><number>0</number></item>
 <item name="$FileModDT" sign="true"><datetime>20131106T144503,00+00</datetime></item>
-<item name="$ImageNames" sign="true"><text>ajax-loader.gif</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-</note>
+</imageresource>

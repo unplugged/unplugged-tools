@@ -1,20 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="186" sequence="5" unid="EC5CF938209C597380257BF0005147A3">
-<created><datetime dst="true">20130924T154747,55+01</datetime></created>
-<modified><datetime>20131129T141256,22+00</datetime></modified>
-<revised><datetime>20131126T165156,04+00</datetime></revised>
-<lastaccessed><datetime>20131129T141256,22+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131021T141127,60+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name="$Flags"><text>345CgQ</text></item>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$MimeType" sign="true"><text>image/png</text></item>
-<item name="$FileModDT" sign="true"><datetime dst="true">20130610T140601,00+01</datetime></item>
-<item name="$TITLE" sign="true"><text>unp/png.png</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-
-
-<item name="$FileNames" sign="true"><text>unp_2fpng.png</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?><fileresource designerversion="8.5.3" maintenanceversion="1.0" mimetype="image/png" name="unp/png.png" publicaccess="false" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="169a" sequence="1" unid="9113EE1E1682D6AE80257CF3004A22E5">
+<created><datetime dst="true">20140610T142945,97+01</datetime></created>
+<modified><datetime dst="true">20140610T142947,04+01</datetime></modified>
+<revised><datetime dst="true">20140610T142947,03+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T142947,04+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T142947,04+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby></fileresource>

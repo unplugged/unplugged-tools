@@ -1,20 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="15a2" sequence="19" unid="C8B4BDE8278EA92080257C0C00548030">
-<created><datetime dst="true">20131022T162258,40+01</datetime></created>
-<modified><datetime>20131129T141252,92+00</datetime></modified>
-<revised><datetime>20131126T165219,91+00</datetime></revised>
-<lastaccessed><datetime>20131129T141252,92+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131024T132742,14+01</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="172a" sequence="2" unid="791C78DD01A73D9780257CF3004A3EA4">
+<created><datetime dst="true">20140610T143057,00+01</datetime></created>
+<modified><datetime dst="true">20140610T143057,03+01</datetime></modified>
+<revised><datetime dst="true">20140610T143057,02+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T143057,03+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T143057,01+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$TITLE"><text>ActivityEditMode.xsp</text></item>
 <item name="$Flags"><text>gC~4K</text></item>
-<item name="$TITLE" sign="true"><text>ActivityEditMode.xsp</text></item>
 
 
-<item name="$FileNames" sign="true"><text>ActivityEditMode.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-
-
-</note>
+<item name="$FileNames" sign="true"><text>ActivityEditMode.xsp</text></item></note>

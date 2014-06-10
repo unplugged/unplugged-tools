@@ -8,10 +8,16 @@
 						<xp:this.facets>
 							<xp:panel styleClass="panel" xp:key="facet_1">
 								<p style="padding: 40px;">
-									<input type="button" href='#' onclick="openDialog('dialogPopup')"
+									<input type="button" href='#' onclick="unp.openDialog('dialogPopup')"
 										class="button" value="Open Dialog">
 									</input>
+									<input type="button" href='#' onclick="unp.openDialog('alertPopup')"
+										class="button" value="Open Alert">
+									</input>
 								</p>
+								<unp:unpAlert content="This is an alert"
+									title="Alert">
+								</unp:unpAlert>
 								<unp:unpDialog callback="myCallBackFunction"
 									title="Demo Dialog">
 									<xp:this.facets>

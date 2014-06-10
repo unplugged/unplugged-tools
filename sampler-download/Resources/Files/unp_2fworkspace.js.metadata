@@ -1,17 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="19a" sequence="6" unid="4393AB067B78661080257BF0005147A8">
-<created><datetime dst="true">20130924T154747,60+01</datetime></created>
-<modified><datetime>20131129T141256,80+00</datetime></modified>
-<revised><datetime>20131126T165155,74+00</datetime></revised>
-<lastaccessed><datetime>20131129T141256,80+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131021T141127,70+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name="$TITLE" sign="true"><text>unp/workspace.js</text></item>
-<item name="$FileModDT" sign="true"><datetime dst="true">20130610T134603,58+01</datetime></item>
-<item name="$Flags"><text>g345QC</text></item>
-<item name="$FlagsExt" sign="true"><text>D</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>unp_2fworkspace.js</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?><fileresource designerversion="8.5.3" maintenanceversion="1.0" name="unp/workspace.js" publicaccess="false" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="16ae" sequence="1" unid="67CF40DC358267BD80257CF3004A22EA">
+<created><datetime dst="true">20140610T142946,02+01</datetime></created>
+<modified><datetime dst="true">20140610T142947,26+01</datetime></modified>
+<revised><datetime dst="true">20140610T142947,25+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T142947,26+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T142947,26+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby></fileresource>

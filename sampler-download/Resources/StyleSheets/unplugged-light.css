@@ -49,6 +49,11 @@ body {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
+.iscrollcontent.dialogactive {
+  z-index: 999;
+  /* Display above menu (e.g. overlays/modals) */
+
+}
 @media screen and (min-width: 701px) {
   .iscrollcontent {
     top: 57px;
@@ -108,7 +113,7 @@ Jack's Styles from here
 
 **********************/
 body {
-  background-color: #ececed;
+  background: #ececed;
   font-family: "Helvetica Neue", sans-serif;
   padding-top: 0px;
   padding-bottom: 45px;
@@ -305,17 +310,18 @@ textarea,
   height: 36px;
   cursor: pointer;
   border-radius: 6px;
+  -webkit-border-radius: 6px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
   line-height: 36px;
   font-size: 17px;
   color: #ffffff;
-  background-color: #959eb2;
+  background: #959eb2;
   text-shadow: 0 1px rgba(0, 0, 0, 0.2);
   font-weight: bold;
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
   display: inline-block;
   border: 1px solid transparent;
   padding: 0 15px;
+  -webkit-appearance: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   /* Disable Android's default active link styling */
 
@@ -362,21 +368,18 @@ textarea,
 .editButton .label {
   color: #ffffff;
   border: 1px solid transparent;
-  background-color: #959eb2;
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background: #959eb2;
 }
 .cancelButton .label {
   color: #ffffff;
   border: 1px solid transparent;
-  background-color: #ba5656;
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background: #ba5656;
 }
 .proceedButton .label,
 .saveButton .label {
   color: #ffffff;
   border: 1px solid transparent;
-  background-color: #75a540;
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background: #75a540;
 }
 /* NAVBAR/FOOTER BUTTONS */
 .viewsButton,
@@ -396,7 +399,7 @@ textarea,
   line-height: 36px;
   font-size: 17px;
   color: #ffffff;
-  background-color: #959eb2;
+  background: #959eb2;
   text-shadow: 0 1px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
@@ -529,7 +532,7 @@ textarea,
   }
 }
 .syncButton {
-  background-color: #75a540;
+  background: #75a540;
   color: #ffffff;
 }
 .syncButton .icon:before {
@@ -696,14 +699,26 @@ textarea,
   color: #ffffff;
   font-size: 24px;
 }
-#menuitems > li:first-child a,
-#menuitems > li:first-child .menulink {
+#menuitems > li:first-child > a,
+#menuitems > li:first-child > .menulink {
   -webkit-border-top-left-radius: 10px;
   -webkit-border-top-right-radius: 10px;
   border-top: 1px solid transparent;
 }
-#menuitems > li:last-child a,
-#menuitems > li:last-child .menulink {
+#menuitems > li:last-child > a,
+#menuitems > li:last-child > .menulink {
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom: 1px solid transparent;
+}
+#menuitems > li:last-child > a.open,
+#menuitems > li:last-child > .menulink.open {
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom: 1px solid #55657b;
+}
+#menuitems > li:last-child > ul > li:last-child > a,
+#menuitems > li:last-child > ul > li:last-child > .menulink {
   -webkit-border-bottom-left-radius: 10px;
   -webkit-border-bottom-right-radius: 10px;
   border-bottom: 1px solid transparent;
@@ -719,7 +734,7 @@ textarea,
 }
 #menuitems > li > ul > li > a,
 #menuitems.viewMenuItemSub .menulink {
-  background-color: #959eb2;
+  background: #959eb2;
   border-bottom: 1px solid #657893;
   padding-left: 38px;
 }
@@ -728,7 +743,7 @@ textarea,
 }
 #menuitems > li > ul > li > ul > li > a,
 #menuitems.viewMenuItemSubSub .menulink {
-  background-color: #a8b1c4;
+  background: #a8b1c4;
   border: 1px solid #657893;
   padding-left: 76px;
   font-weight: normal;
@@ -1049,7 +1064,17 @@ li.data-row .multiLineIcon {
   border-color: transparent;
   border-top-color: #657893;
 }
-#summaryList .accLoadMoreLink button {
+@media screen and (min-width: 1001px) {
+  .pullleft,
+  .left-aligned {
+    margin-left: -42.8% !important;
+  }
+  .accpullleft {
+    margin-left: -42.8% !important;
+  }
+}
+.loadmorelink button,
+.accLoadMoreLink button {
   display: block;
   text-decoration: none;
   cursor: pointer;
@@ -1065,14 +1090,15 @@ li.data-row .multiLineIcon {
   font-size: 16px;
   font-weight: normal;
 }
-@media screen and (min-width: 1001px) and (orientation: landscape) {
-  .pullleft,
-  .left-aligned {
-    margin-left: -42.8% !important;
-  }
-  .accpullleft {
-    margin-left: -42.8% !important;
-  }
+.loadmorelink {
+  font-size: 0;
+  /* Clear extra space */
+
+  margin-top: 10px;
+}
+.loadmorelink button {
+  border-radius: 10px;
+  border: 0;
 }
 /* DOCUMENT VIEW/EDIT */
 .customform {
@@ -1092,6 +1118,8 @@ li.data-row .multiLineIcon {
   position: relative;
   -webkit-border-radius: 10px;
   margin: 10px;
+  /* Switch - from http://codepen.io/joshnh/pen/hjbuH */
+
 }
 @media screen and (max-width: 1023px) and (min-width: 1020px) {
   #formholder {
@@ -1188,6 +1216,7 @@ li.data-row .multiLineIcon {
   line-height: 24px;
   min-height: 24px;
   background: #fff;
+  word-break: break-word;
 }
 #formholder .body_richtext {
   background: white;
@@ -1263,6 +1292,66 @@ li.data-row .multiLineIcon {
   border-right: none;
   border-bottom: 1px solid #dddddd;
 }
+#formholder fieldset.xspCheckBox {
+  display: none;
+}
+#formholder .switch label.xspTextLabel {
+  display: none;
+}
+#formholder .switch label {
+  float: none;
+  background: transparent;
+  width: auto;
+  border: 0;
+}
+#formholder .switch input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fafafa;
+  border: 1px solid #d3d3d3;
+  border-radius: 26px;
+  cursor: pointer;
+  height: 28px;
+  position: relative;
+  transition: border 0.25s 0.15s, box-shadow 0.25s 0.3s, padding 0.25s;
+  width: 44px;
+  vertical-align: top;
+  margin-top: 7px;
+}
+#formholder .switch input[type="checkbox"]:after {
+  background-color: #ffffff;
+  border: 1px solid #d3d3d3;
+  border-radius: 24px;
+  /*box-shadow: inset 0 -3px 3px hsla(0,0%,0%,.025),
+		                0 1px 4px hsla(0,0%,0%,.15),
+		                0 4px 4px hsla(0,0%,0%,.1);*/
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.1);
+  content: '';
+  display: block;
+  height: 24px;
+  left: 0;
+  position: absolute;
+  right: 16px;
+  top: 0;
+  transition: border .25s .15s,
+		                left .25s .1s,
+		                right .15s .175s;
+}
+#formholder .switch input[type="checkbox"]:checked {
+  border-color: #53d76a;
+  box-shadow: inset 0 0 0 13px #53d76a;
+  padding-left: 18px;
+  transition: border 0.25s, box-shadow 0.25s, padding 0.25s 0.15s;
+}
+#formholder .switch input[type="checkbox"]:checked:after {
+  border-color: #53d76a;
+  left: 16px;
+  right: 0;
+  transition: border .25s,
+		                  left .15s .25s,
+		                  right .25s .175s;
+}
 #formholder .bordered {
   padding: 10px 0 0 0;
 }
@@ -1302,6 +1391,26 @@ li.data-row .multiLineIcon {
   vertical-align: middle;
   text-transform: none;
   -webkit-font-smoothing: antialiased;
+}
+#formholder .xspRadioButton {
+  line-height: normal;
+  margin: auto;
+  padding: 0;
+  padding-left: 1%;
+  float: left;
+  height: 44px;
+}
+#formholder .xspRadioButton label {
+  border-color: transparent;
+  background: transparent;
+  width: 100%;
+  text-align: inherit;
+  padding: 0;
+  line-height: normal;
+  height: inherit;
+  color: #000000;
+  font-weight: normal;
+  font-size: 16px;
 }
 /* Typography Edit View */
 .typographyeditmode {
@@ -1393,7 +1502,7 @@ body.cke_editable p {
 }
 /* Header */
 .workspace-header {
-  background: #3d3d3d;
+  background: #ececed;
   padding: 14px 16px;
   overflow: hidden;
 }
@@ -1404,12 +1513,12 @@ body.cke_editable p {
   float: left;
 }
 .workspace-header li {
-  color: #CCC;
+  color: #657893;
   line-height: 20px;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.2);
   float: left;
   margin-right: 20px;
-  font-size: 13px;
+  font-size: 16px;
 }
 .workspace-header .alert-status {
   float: right;
@@ -1922,7 +2031,7 @@ body.swipe-view #closeButton > a {
   line-height: 36px;
   font-size: 17px;
   color: #ffffff;
-  background-color: #ba5656;
+  background: #ba5656;
   text-shadow: 0 1px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
@@ -2032,6 +2141,7 @@ body.swipe-view #swipenextbutton:after {
 .hviewresults {
   padding-left: 30px;
   padding-top: 10px;
+  padding-right: 10px;
   /* Heading */
 
   /* Row Heading */
@@ -2095,8 +2205,10 @@ body.swipe-view #swipenextbutton:after {
   padding-bottom: 5px;
   padding-left: 14px;
   border-top: 1px solid #d2d2d3;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
   margin-top: 10px;
-  background-color: #dcdcdd;
+  background: #dcdcdd;
   -webkit-border-top-left-radius: 8px;
   -webkit-mask-image: -webkit-linear-gradient(left, #000000 80%, rgba(0, 0, 0, 0));
   -webkit-mask-position: 0px 30px;
@@ -2113,9 +2225,11 @@ body.swipe-view #swipenextbutton:after {
   /* Fix of Webkit flickering */
 
   z-index: 1;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
 }
 .hviewresults .swiper-scroll-container {
-  background-color: #dcdcdd;
+  background: #dcdcdd;
   -webkit-border-bottom-left-radius: 8px;
   width: 100%;
   height: 100px;
@@ -2293,10 +2407,13 @@ body.swipe-view #swipenextbutton:after {
   background-color: black;
   opacity: 0.8;
 }
-#hviewPopup {
+#hviewPopup.dialog {
   background-color: #EEE;
   width: 400px;
-  margin: 100px auto;
+  margin: 0;
+  top: 100px;
+  left: 50%;
+  margin-left: -200px;
   /* Smartphones (portrait) */
 
   /* Header */
@@ -2305,20 +2422,20 @@ body.swipe-view #swipenextbutton:after {
 
 }
 @media only screen and (max-width: 500px) {
-  #hviewPopup {
+  #hviewPopup.dialog {
     width: 300px;
-    top: 50px;
-    margin-top: 0px;
+    top: 60px;
+    margin-left: -150px;
   }
 }
-#hviewPopup #hviewitemheader {
+#hviewPopup.dialog #hviewitemheader {
   border-bottom: 1px solid #DDDDDD;
 }
-#hviewPopup #hviewitemheader .hviewicon {
+#hviewPopup.dialog #hviewitemheader .hviewicon {
   float: left;
   margin-left: 0px;
 }
-#hviewPopup #hviewitemheader .hviewclosebutton {
+#hviewPopup.dialog #hviewitemheader .hviewclosebutton {
   float: right;
   width: 22px;
   height: 22px;
@@ -2327,45 +2444,45 @@ body.swipe-view #swipenextbutton:after {
   cursor: pointer;
   opacity: 0.7;
 }
-#hviewPopup #hviewitemheader .hviewclosebutton:hover {
+#hviewPopup.dialog #hviewitemheader .hviewclosebutton:hover {
   opacity: 1;
 }
-#hviewPopup #hviewitemheader #hviewmetadata {
+#hviewPopup.dialog #hviewitemheader #hviewmetadata {
   padding-bottom: 5px;
   margin-left: 60px;
   color: #999999;
   margin-bottom: 5px;
 }
-#hviewPopup #hviewitemheader #hviewmetadata .hviewmetatitle {
+#hviewPopup.dialog #hviewitemheader #hviewmetadata .hviewmetatitle {
   font-size: 18px;
   font-weight: bold;
   color: #333333;
   display: block;
 }
-#hviewPopup #hviewitemheader #hviewmetadata > div {
+#hviewPopup.dialog #hviewitemheader #hviewmetadata > div {
   padding-top: 6px;
 }
-#hviewPopup #hviewitemheader #hviewmetadata > div:nth-child(2),
-#hviewPopup #hviewitemheader #hviewmetadata > div:nth-child(4) {
+#hviewPopup.dialog #hviewitemheader #hviewmetadata > div:nth-child(2),
+#hviewPopup.dialog #hviewitemheader #hviewmetadata > div:nth-child(4) {
   float: right;
   clear: right;
 }
-#hviewPopup #hviewitembody {
+#hviewPopup.dialog #hviewitembody {
   padding-top: 10px;
 }
-#hviewPopup #hviewitembody .downloadnowbutton {
-  background-color: #75a540;
+#hviewPopup.dialog #hviewitembody .downloadnowbutton {
+  background: #75a540;
   color: #ffffff;
   border: 1px solid transparent;
   filter: none;
   width: 100%;
   height: 45px;
 }
-#hviewPopup #hviewitembody .downloadnowbutton img {
+#hviewPopup.dialog #hviewitembody .downloadnowbutton img {
   display: none;
 }
-#hviewPopup #hviewitembody .togglefavorite {
-  background-color: #959eb2;
+#hviewPopup.dialog #hviewitembody .togglefavorite {
+  background: #959eb2;
   color: #ffffff;
   border: 1px solid transparent;
   margin-top: 10px;
@@ -2374,11 +2491,11 @@ body.swipe-view #swipenextbutton:after {
   filter: none;
   font-size: 15px;
 }
-#hviewPopup #hviewitembody .togglefavorite img {
+#hviewPopup.dialog #hviewitembody .togglefavorite img {
   display: none;
 }
-#hviewPopup #hviewitembody .emailfilebutton {
-  background-color: #959eb2;
+#hviewPopup.dialog #hviewitembody .emailfilebutton {
+  background: #959eb2;
   color: #ffffff;
   border: 1px solid transparent;
   float: right;
@@ -2387,32 +2504,32 @@ body.swipe-view #swipenextbutton:after {
   filter: none;
   font-size: 15px;
 }
-#hviewPopup #hviewitembody .emailfilebutton img {
+#hviewPopup.dialog #hviewitembody .emailfilebutton img {
   display: none;
 }
-#hviewPopup #hviewitembody .emailsendbutton {
-  background-color: #75a540;
+#hviewPopup.dialog #hviewitembody .emailsendbutton {
+  background: #75a540;
   color: #ffffff;
   border: 1px solid transparent;
   width: 60%;
   filter: none;
   float: left;
 }
-#hviewPopup #hviewitembody .emailsendbutton img {
+#hviewPopup.dialog #hviewitembody .emailsendbutton img {
   display: none;
 }
-#hviewPopup #hviewitembody .emailcancelbutton {
-  background-color: #ba5656;
+#hviewPopup.dialog #hviewitembody .emailcancelbutton {
+  background: #ba5656;
   color: #ffffff;
   border: 1px solid transparent;
   width: 37%;
   float: right;
   filter: none;
 }
-#hviewPopup #hviewitembody .emailcancelbutton img {
+#hviewPopup.dialog #hviewitembody .emailcancelbutton img {
   display: none;
 }
-#hviewPopup #hviewitembody #emailaddress {
+#hviewPopup.dialog #hviewitembody #emailaddress {
   height: 36px;
   font-size: 17px;
   border-radius: 6px;
@@ -2423,7 +2540,7 @@ body.swipe-view #swipenextbutton:after {
   width: 100%;
   margin-bottom: 10px;
 }
-#hviewPopup #hviewitembody .timetodownload {
+#hviewPopup.dialog #hviewitembody .timetodownload {
   width: 100%;
   text-align: center;
   color: #999999;
@@ -2756,6 +2873,11 @@ legend {
   margin-left: -140px;
   top: 100px;
 }
+@media screen and (max-width: 700px) {
+  .fontawesome.panel ~ #dialogPopup {
+    top: 50px !important;
+  }
+}
 .fontawesome.panel ~ #dialogPopup #dialogContent {
   height: auto;
   overflow: visible;
@@ -2764,6 +2886,11 @@ legend {
   text-align: center;
   padding-top: 100px;
   font-weight: bold;
+}
+@media screen and (max-width: 700px) {
+  .fontawesome.panel ~ #dialogPopup #dialogContent #fontawesomedetails > div {
+    padding-top: 20px !important;
+  }
 }
 .fontawesome.panel ~ #dialogPopup #dialogContent #fontawesomedetails > div i {
   margin: 0 auto;
@@ -2774,6 +2901,11 @@ legend {
   left: 0;
   width: 100%;
   font-size: 100px;
+}
+@media screen and (max-width: 700px) {
+  .fontawesome.panel ~ #dialogPopup #dialogContent #fontawesomedetails > div i {
+    font-size: 40px !important;
+  }
 }
 .fontawesome.panel ~ #dialogPopup #dialogContent #fontawesomedetails > div i:before {
   font-size: 160px;
@@ -2923,9 +3055,10 @@ legend {
   padding: 15px 20px;
   max-height: 350px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
   #dialogPopup #dialogContent {
-    max-height: 200px;
+    max-height: 100px;
+    padding-top: 1px;
   }
 }
 #dialogPopup .dialogbuttons {
@@ -3008,7 +3141,7 @@ legend {
   background: #fff;
   -webkit-border-radius: 10px;
   -webkit-box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
-  left: 100px;
+  left: 10px;
   top: 70px;
   right: 10px;
   padding: 10px;
@@ -3528,4 +3661,73 @@ Not sure what any of it does, but I don't want to move/change it in case I break
 }
 .formpullleft {
   margin-left: 0% !important;
+}
+/* ALERT */
+.alertPopup {
+  background: white;
+  border-radius: 10px;
+  box-shadow: none;
+  max-width: 600px;
+  padding: 0;
+  margin: 0 auto;
+}
+.alertPopup h2 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.alertPopup #alertContent {
+  font-size: 16px;
+  padding-bottom: 10px;
+  max-height: 350px;
+  text-align: center;
+}
+@media screen and (max-width: 400px) {
+  .alertPopup #alertContent {
+    max-height: 120px;
+  }
+}
+.alertPopup > div .button {
+  border-radius: 6px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  color: #eeeeee;
+  background: #636363;
+  border: 1px solid #535353;
+  display: block;
+  width: auto;
+  height: 36px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 5 0 5;
+  line-height: 36px;
+  font-size: 16px;
+  text-align: center;
+}
+.alertPopup > div .button.closebutton {
+  color: #ffffff;
+  background: #4d9400;
+  border: 1px solid #3d8400;
+}
+.alertPopup {
+  -webkit-box-sizing: border-box;
+  position: fixed;
+  z-index: 9999;
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -webkit-box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
+  left: 10px;
+  top: 70px;
+  right: 10px;
+  padding: 10px;
+}
+.alertPopup h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.alertPopup label {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
 }

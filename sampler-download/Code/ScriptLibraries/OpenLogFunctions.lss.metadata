@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="filter" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="33a" sequence="5" unid="678A03A7ECC3783180257BF0005155C3">
-<created><datetime dst="true">20130924T154823,71+01</datetime></created>
-<modified><datetime>20131129T141253,86+00</datetime></modified>
-<revised><datetime>20131126T165159,78+00</datetime></revised>
-<lastaccessed><datetime>20131129T141253,86+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131021T141129,78+01</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="156e" sequence="1" unid="6FD3498DD21933F980257CF3004A0E97">
+<created><datetime dst="true">20140610T142853,99+01</datetime></created>
+<modified><datetime dst="true">20140610T142854,14+01</datetime></modified>
+<revised><datetime dst="true">20140610T142854,13+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T142854,14+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T142854,14+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
 <item name="$TITLE" sign="true"><text>OpenLogFunctions</text></item>
 <item name="$Flags"><text>s34Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>
 
-
-<item name="$POID"><datetime>20131126T165159,78+00</datetime></item></note>
+</note>

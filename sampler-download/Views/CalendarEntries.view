@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='CalendarEntries' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.0' replicaid='80257C0B0048759B' showinmenu='false'
+ publicaccess='false' designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened'
+ onrefresh='displayindicator' headers='beveled' opencollapsed='false' showresponsehierarchy='true'
+ showmargin='true' shrinkrows='false' extendlastcolumn='false' showhierarchies='false'
+ unreadcolor='black' rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white'
+ totalscolor='black' headerbgcolor='white' boldunreadrows='false' evaluateactions='false'
+ allownewdocuments='false' allowcustomizations='true' hidemarginborder='false'
+ marginwidth='0px' marginbgcolor='white' uniquekeys='false'>
+<noteinfo noteid='1806' unid='620FD83CEF069E1180257CF3004A5133' sequence='2'>
+<created><datetime dst='true'>20140610T143144,51+01</datetime></created>
+<modified><datetime dst='true'>20140610T143153,93+01</datetime></modified>
+<revised><datetime dst='true'>20140610T143153,92+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20140610T143153,93+01</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20140610T143144,70+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby><code event='selection'><formula
+>SELECT ((Form = "CalendarEntry"))</formula></code>
+<column sort='ascending' hidedetailrows='false' itemname='$4' width='10' resizable='true'
+ separatemultiplevalues='true' sortnoaccent='false' sortnocase='true' showaslinks='false'
+ categorized='true'><columnheader title='Filter'><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@Text(@Year(StartDate)) + @Right("0" + @Text(@Month(StartDate)); 2)</formula></code></column>
+<column sort='ascending' hidedetailrows='false' itemname='StartDate' width='10'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><columnheader title='StartDate'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='EndDate' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='EndDate'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='Title' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='Title'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='Details' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='Details'><font size='9pt' style='bold'/></columnheader></column>
+<item name='$SelQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAAif8ZAAAAAAABAA0AQ2FsZW5kYXJFbnRyeQA=
+</rawitemdata></item></view>
+

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<agent name='Fix Bio' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='80257C0B0048759B' hide='v3' publicaccess='false' designerversion='8.5.3'>
+<noteinfo noteid='1ea' unid='79D7B8B25AC0F08C80257C82003B441C' sequence='3'>
+<created><datetime>20140217T104720,60+00</datetime></created>
+<modified><datetime dst='true'>20140610T141807,56+01</datetime></modified>
+<revised><datetime>20140217T104749,09+00</datetime></revised>
+<lastaccessed><datetime dst='true'>20140610T141807,56+01</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20140610T141807,56+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<designchange><datetime>20140217T104749,07+00</datetime></designchange>
+<trigger type='actionsmenu'/>
+<documentset type='selected'/><code event='action'><formula>FIELD Bio:=@If(Bio="&lt;p&gt;&lt;/p&gt;"; ""; Bio);
+SELECT @All</formula></code>
+<rundata processeddocs='503' exitcode='0'>
+<agentmodified><datetime>20140217T104749,10+00</datetime></agentmodified>
+<agentrun><datetime>20140217T104805,19+00</datetime></agentrun>
+<runlog>Started running agent 'Fix Bio' on 17/02/2014 10:48:04
+Running on selected documents: 503 total
+Found 503 document(s) that match search criteria
+503 document(s) were modified by formula
+Done running agent 'Fix Bio' on 17/02/2014 10:48:05
+</runlog></rundata>
+<item name='$POID'><datetime>20140217T104749,09+00</datetime></item></agent>
+

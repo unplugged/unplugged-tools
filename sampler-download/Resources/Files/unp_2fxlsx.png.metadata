@@ -1,19 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257C0B0048759B" version="9.0">
-<noteinfo noteid="19e" sequence="5" unid="4B01B86EA6F019A080257BF0005147A9">
-<created><datetime dst="true">20130924T154747,61+01</datetime></created>
-<modified><datetime>20131129T141256,82+00</datetime></modified>
-<revised><datetime>20131126T165155,68+00</datetime></revised>
-<lastaccessed><datetime>20131129T141256,82+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131021T141127,72+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<item name="$Flags"><text>345CgQ</text></item>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$MimeType" sign="true"><text>image/png</text></item>
-<item name="$FileModDT" sign="true"><datetime dst="true">20130610T140416,00+01</datetime></item>
-<item name="$TITLE" sign="true"><text>unp/xlsx.png</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-
-<item name="$FileNames" sign="true"><text>unp_2fxlsx.png</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?><fileresource designerversion="8.5.3" maintenanceversion="1.0" mimetype="image/png" name="unp/xlsx.png" publicaccess="false" replicaid="80257C0B0048759B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="16b2" sequence="1" unid="CB14D054523A03B280257CF3004A22EB">
+<created><datetime dst="true">20140610T142946,03+01</datetime></created>
+<modified><datetime dst="true">20140610T142947,31+01</datetime></modified>
+<revised><datetime dst="true">20140610T142947,30+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140610T142947,31+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140610T142947,31+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby></fileresource>
