@@ -17,10 +17,10 @@ var unp = {
 $(window).bind(
 		"popstate",
 		function() {
-			if (!unp._firstLoad) {
+			//if (!unp._firstLoad) {
 				unp.loadPage(location.href + " #contentwrapper", 'content',
 						null, false, false);
-			}
+			//}
 		});
 
 unp.storePageRequest = function(url) {

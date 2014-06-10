@@ -558,6 +558,7 @@ legend {
 	right: auto;
 	margin-left: -140px;
 	top: 100px;
+	@media screen and (max-width: 700px) { top: 50px !important; }
 	
 	#dialogContent {
 		height: auto;
@@ -566,6 +567,7 @@ legend {
 		#fontawesomedetails > div {
 			text-align: center;
 			padding-top: 100px;
+			@media screen and (max-width: 700px) { padding-top: 20px !important; }
 			font-weight: bold;
 	
 			i {		
@@ -577,6 +579,7 @@ legend {
 				left: 0;
 				width: 100%;
 				font-size: 100px;
+				@media screen and (max-width: 700px) { font-size: 40px !important; }
 			}
 			
 			i:before {
@@ -608,7 +611,6 @@ legend {
 		}
 	}	
 }
-
 
 /* SAMPLER APP: Glyphicons */
 
@@ -740,7 +742,7 @@ legend {
 		font-size: 16px;
 		padding: 15px 20px;
 		max-height: 350px;
-		@media screen and (max-width: 400px) { max-height: 200px; }
+		@media screen and (max-width: 700px) { max-height: 100px; padding-top: 1px;}
 	}
 	
 	.dialogbuttons {
@@ -837,7 +839,7 @@ legend {
 	background: #fff;
 	-webkit-border-radius: 10px;
 	-webkit-box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
-	left: 100px;
+	left: 10px;
 	top: 70px;
 	right: 10px;
 	padding: 10px;
@@ -1399,7 +1401,6 @@ Not sure what any of it does, but I don't want to move/change it in case I break
   max-height: 350px;
   text-align: center;
 }
-
 @media screen and (max-width: 400px) {
   .alertPopup #alertContent {
     max-height: 120px;
@@ -1453,4 +1454,3 @@ Not sure what any of it does, but I don't want to move/change it in case I break
   font-size: 1.2em;
   font-weight: bold;
 }
-
