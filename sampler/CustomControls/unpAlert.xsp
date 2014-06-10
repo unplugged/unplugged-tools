@@ -27,6 +27,7 @@
 				<xp:text value="#{javascript:compositeData.content}"></xp:text>
 			</xp:panel>
 		</div>
+		<div class="dialogbuttons">
 			<div>
 				<div class="button closebutton" onclick="unp.closeDialog('alertPopup')">
 					<span class="icon"></span>
@@ -34,5 +35,6 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	<div id="underlaydialogPopup" class="underlay"></div>
 </xp:view>
