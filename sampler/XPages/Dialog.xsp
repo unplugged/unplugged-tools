@@ -19,7 +19,7 @@
 									title="Alert">
 								</unp:unpAlert>
 								<unp:unpDialog callback="myCallBackFunction"
-									title="Demo Dialog">
+									title="Demo Dialog" dialogid='dialogPopup'>
 									<xp:this.facets>
 
 										<xp:panel xp:key="facet_1">

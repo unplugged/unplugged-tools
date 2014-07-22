@@ -27,6 +27,14 @@ sessionScope.put('ajaxLoad', compositeData.ajaxload);}]]></xp:this.script>
 	<xp:this.resources>
 		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
 	</xp:this.resources>
+	<xp:text id="inline" tagName="script" escape="false">
+		<xp:this.value><![CDATA[#{javascript:if (compositeData.expandfirstcategory == "yes"){
+	return "var unpexpandfirst = true;"
+}else{
+	return "var unpexpandfirst = false;"
+}}]]></xp:this.value>
+	</xp:text>
+
 	<xp:panel>
 		<xp:this.styleClass><![CDATA[#{javascript:var out = new Array();
 if(compositeData.insetData) {
@@ -45,7 +53,7 @@ if (out.length > 0){
 				disableOutputTag="true">
 				<xp:this.value><![CDATA[#{javascript:var db = @DbName();
 if (compositeData.dbName != null){
-	db = [@DbName()[0], compositeData.dbName];
+	db = [@DbName()[0], @ReplaceSubstring(compositeData.dbName, '\\', '\\\\')];
 }
 var list;
 if (isEmpty(compositeData.filtercategory)){
@@ -67,9 +75,9 @@ if (isEmpty(summarycol)){
 	summarycol = null;
 }
 if (isEmpty(compositeData.filtercategory)){
-	return "unp.fetchDetails(this,'" + @ReplaceSubstring(compositeData.viewName, "\\","\\\\") + "','" + rowData + "', '" + @ReplaceSubstring(compositeData.xpage, "/", "") + "', '" + compositeData.dbName + "', '" + summarycol + "', '" + datacol + "', '" + compositeData.photoColumn + "')";
+	return "unp.fetchDetails(this,'" + @ReplaceSubstring(compositeData.viewName, "\\","\\\\") + "','" + rowData + "', '" + @ReplaceSubstring(compositeData.xpage, "/", "") + "', '" + @ReplaceSubstring(compositeData.dbName, '\\', '\\\\') + "', '" + summarycol + "', '" + datacol + "', '" + compositeData.photoColumn + "')";
 }else{
-	return "unp.fetchDetails(this,'" + @ReplaceSubstring(compositeData.viewName, "\\","\\\\") + "','" + rowData + "~" + compositeData.filtercategory + "', '" + @ReplaceSubstring(compositeData.xpage, "/", "") + "', '" + compositeData.dbName + "', '" + summarycol + "', '" + datacol + "', '" + compositeData.photoColumn + "')";
+	return "unp.fetchDetails(this,'" + @ReplaceSubstring(compositeData.viewName, "\\","\\\\") + "','" + rowData + "~" + compositeData.filtercategory + "', '" + @ReplaceSubstring(compositeData.xpage, "/", "") + "', '" + @ReplaceSubstring(compositeData.dbName, '\\', '\\\\') + "', '" + summarycol + "', '" + datacol + "', '" + compositeData.photoColumn + "')";
 }}]]></xp:this.value>
 						</xp:attr>
 					</xp:this.attrs>
@@ -107,7 +115,7 @@ var summarycol = compositeData.summaryColumn;
 if (isEmpty(summarycol)){
 	summarycol = null;
 }
-"unp.fetchMoreDetails(this,'" + @ReplaceSubstring(compositeData.viewName, "\\","\\\\") + "','" + rowData + "', '" + @ReplaceSubstring(compositeData.xpage, "/", "") + "', '" + compositeData.dbName + "', '" + summarycol + "', '" + datacol + "', '" + compositeData.photoColumn + "');"}]]></xp:this.value>
+"unp.fetchMoreDetails(this,'" + @ReplaceSubstring(compositeData.viewName, "\\","\\\\") + "','" + rowData + "', '" + @ReplaceSubstring(compositeData.xpage, "/", "") + "', '" + @ReplaceSubstring(compositeData.dbName, '\\', '\\\\') + "', '" + summarycol + "', '" + datacol + "', '" + compositeData.photoColumn + "');"}]]></xp:this.value>
 								</xp:attr>
 							</xp:this.attrs>
 						</xp:button>

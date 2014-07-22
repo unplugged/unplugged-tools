@@ -36,4 +36,5 @@
 			</xp:panel>
 		</xp:this.facets>
 	</xc:layout>
-</xp:view>
+	<xp:checkBox text="Label" id="checkBox1" checkedValue="test">
+	</xp:checkBox></xp:view>

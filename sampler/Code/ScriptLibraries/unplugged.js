@@ -17,10 +17,10 @@ var unp = {
 $(window).bind(
 		"popstate",
 		function() {
-			//if (!unp._firstLoad) {
+			if (!unp._firstLoad || document.referrer.toLowerCase().indexOf("$file") > -1) {
 				unp.loadPage(location.href + " #contentwrapper", 'content',
 						null, false, false);
-			//}
+			}
 		});
 
 unp.storePageRequest = function(url) {
@@ -35,7 +35,7 @@ unp.storePageRequest = function(url) {
 		}
 		url += "&history=true";
 		history.pushState(null, "", url);
-		console.log("pushed " + url);
+		//console.log("pushed " + url);
 	}
 }
 
@@ -133,22 +133,22 @@ unp.initHideFooter = function() {
 		$(':input, textarea, select').on('focus', function() {
 			if ($(this).attr("id") != "input-search"){
 				$(".footer").hide();
-				$(".iHeader").hide();
+				//$(".iHeader").hide();
 				_oldiscrollbottom = $(".iscrollcontent").css("bottom");
-				_oldiscrolltop = $(".iscrollcontent").css("top");
-				_oldsearchtop = $(".input-search-frame").css("top");
+				//_oldiscrolltop = $(".iscrollcontent").css("top");
+				//_oldsearchtop = $(".input-search-frame").css("top");
 				$(".iscrollcontent").css("bottom", "0px");
-				$(".iscrollcontent").css("top", "0px");
-				$(".input-search-frame").css("top", "-100px");
+				//$(".iscrollcontent").css("top", "0px");
+				//$(".input-search-frame").css("top", "-100px");
 			}
 		});
 		$(':input, textarea, select').on('blur', function() {
 			if ($(this).attr("id") != "input-search"){
 				$(".footer").show();
-				$(".iHeader").show();
+				//$(".iHeader").show();
 				$("iscrollbottom").css("bottom", _oldiscrollbottom);
-				$(".iscrollcontent").css("top", _oldiscrolltop);
-				$(".input-search-frame").css("top", _oldsearchtop);
+				//$(".iscrollcontent").css("top", _oldiscrolltop);
+				//$(".input-search-frame").css("top", _oldsearchtop);
 				window.scrollTo(0, 1);
 			}
 		});
@@ -346,11 +346,11 @@ unp.saveDocument = function(formid, unid, viewxpagename, formname, parentunid,
 			cache : false,
 			encoding : "UTF-8",
 			beforeSend : function() {
-				console.log("About to open URL");
+				//console.log("About to open URL");
 			}
 		}).done(
 				function(response) {
-					console.log(response.length);
+					//console.log(response.length);
 					if (response.length == 32) {
 						unp.openDocument(
 								viewxpagename
@@ -386,7 +386,7 @@ unp.validate = function() {
 }
 
 unp.toggleViewsMenu = function(forcehide) {
-	console.log($("#menuPane").width());
+	//console.log($("#menuPane").width());
 	if ($("#menuPane").hasClass("offScreen") && !forcehide) {
 		$("#menuPane").removeClass("offScreen").addClass("onScreen");
 		$("#menuPane").animate( {
@@ -446,7 +446,9 @@ unp.loadPage = function(url, target, menuitem, pushState) {
 			unp.initAutoComplete();
 
 			try {
-				$('.categoryRow').first().click();
+				if (unpexpandfirst){
+					$('.categoryRow').first().click();
+				}
 			} catch (e) {
 
 			}
@@ -560,30 +562,31 @@ unp.jumpToLetter = function(letterelement, event) {
 				var summary = $(this).find("span").text();
 				var firstletter = summary.substring(0, 1);
 				if (firstletter == letter) {
-					console.log("we need to jump to " + firstletter
-							+ " because it's equal to " + letter);
+					//console.log("we need to jump to " + firstletter
+					//		+ " because it's equal to " + letter);
 					$('.iscrollcontent').animate( {
 						scrollTop : $(this).offset().top - 60
 					}, 500);
 					return false;
 				} else if (firstletter > letter) {
-					console.log("we need to jump to " + firstletter
-							+ " because it's greater than " + letter);
+					//console.log("we need to jump to " + firstletter
+					//		+ " because it's greater than " + letter);
 					$('.iscrollcontent').animate( {
 						scrollTop : $(this).offset().top - 120
 					}, 500);
 					return false;
 				} else {
-					console.log("we don't need to jump to " + firstletter
-							+ " because it's less than " + letter);
+					//console.log("we don't need to jump to " + firstletter
+					//		+ " because it's less than " + letter);
 				}
 			});
 }
 
+var unpdialogoptions = {};
 unp.openDialog = function(id) {
 	if (id != null && id != "#") {
 		$("#underlay" + id).css('display', 'block');
-		$("#" + id).css('display', 'block');
+		$("." + id).css('display', 'block');
 		$(".iscrollcontent").addClass("dialogactive");
 		var boxes = $("div");
 		boxes.click( function() {
@@ -601,7 +604,7 @@ unp.openDialog = function(id) {
 }
 
 unp.closeDialog = function(id) {
-	$("#" + id).css('display', 'none');
+	$("." + id).css('display', 'none');
 	$(".iscrollcontent").removeClass("dialogactive");
 	$("#underlay" + id).css('display', 'none');
 	unp.initiscroll();
@@ -658,7 +661,7 @@ unp.fetchDetails = function(obj, viewName, catName, xpage, dbname, summarycol,
 	$('.accordionRowSet').empty();
 	$('.accLoadMoreLink').hide();
 
-	console.log('Category: ' + catName);
+	//console.log('Category: ' + catName);
 	if ($(obj).hasClass("accordianExpanded")) {
 		$(obj).nextAll('.summaryDataRow:first').children('.accordionRowSet')
 				.slideUp('fast', function() {
@@ -1129,12 +1132,14 @@ unp.decreaseFontSize = function(button) {
 
 unp.initCalendar = function() {
 	try {
+		var calendaroptions = jQuery.parseJSON($('.calendarconfig').val());
 		var buttons = calendaroptions.headerbuttonsrighttablet;
 		var defaultView = calendaroptions.defaultviewtablet;
 		if ($(window).width() < 400){
 			buttons = calendaroptions.headerbuttonsrightphone;
 			defaultView = calendaroptions.defaultviewphone;
 		}
+		
 		var url = 'UnpCalendarData.xsp?viewname=' + calendaroptions.viewname;
 		url += '&startdatefield=' + calendaroptions.startdatefield;
 		url += '&enddatefield=' + calendaroptions.enddatefield;
@@ -1142,6 +1147,9 @@ unp.initCalendar = function() {
 		url += '&viewxpage=' + calendaroptions.viewxpage;
 		url += '&highlightfield=' + calendaroptions.highlightfield;
 		url += '&highlighttest=' + calendaroptions.highlighttest;
+		url += '&filter=' + calendaroptions.filter;
+		url += '&catfield=' + calendaroptions.catfield;
+		url += '&dbname=' + calendaroptions.dbname;
 		$('#calendar').fullCalendar( {
 			header : {
 				left : calendaroptions.headerbuttonsleft,
@@ -1163,11 +1171,10 @@ unp.initCalendar = function() {
 				}else{
 					h = $(window).height() - 50;
 				}
-				console.log("Setting height to: " + h);
+				//console.log("Setting height to: " + h);
 				$('#calendar').fullCalendar('option', 'height', h);
 			}
 		});
-		
 		$('.fc-button').each(function(){
 			$(this).removeClass();
 			$(this).addClass('button');
@@ -1177,6 +1184,6 @@ unp.initCalendar = function() {
 		$('.fc-icon-right-single-arrow').parent().addClass('fa fa-arrow-right');
 		$('.fc-icon-right-single-arrow').remove();
 	} catch (e) {
-
+		
 	}
 }

@@ -2,11 +2,11 @@
 <form name='CalendarEntry' xmlns='http://www.lotus.com/dxl' version='9.0'
  maintenanceversion='1.0' replicaid='80257CD8002C2999' publicaccess='false'
  designerversion='8.5.3' renderpassthrough='true'>
-<noteinfo noteid='1572' unid='69FC99CF805FF01B80257CE800274074' sequence='1'>
+<noteinfo noteid='1572' unid='69FC99CF805FF01B80257CE800274074' sequence='2'>
 <created><datetime dst='true'>20140530T080844,04+01</datetime></created>
-<modified><datetime dst='true'>20140530T080844,04+01</datetime></modified>
-<revised><datetime dst='true'>20140530T080844,03+01</datetime></revised>
-<lastaccessed><datetime dst='true'>20140530T080844,04+01</datetime></lastaccessed>
+<modified><datetime dst='true'>20140624T162137,68+01</datetime></modified>
+<revised><datetime dst='true'>20140624T162137,67+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20140624T162137,68+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20140530T080844,04+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
@@ -21,18 +21,20 @@
 <par def='3'>Start Date</par></tablecell>
 <tablecell>
 <pardef id='4' keepwithnext='true' keeptogether='true'/>
-<par def='4'><field type='datetime' kind='editable' name='StartDate'><datetimeformat
- show='date' date='yearmonthday' fourdigityearfor21stcentury='true' zone='never'
- dateformat='weekdaydaymonthyear' dayformat='twodigitday' monthformat='twodigitmonth'
+<par def='4'><field usenotesstyle='false' height='0.2500in' width='1in' multiline='true'
+ borderstyle='single' type='datetime' kind='editable' name='StartDate'><datetimeformat
+ show='datetime' date='yearmonthday' fourdigityearfor21stcentury='true' time='hourminute'
+ zone='never' dateformat='weekdaydaymonthyear' dayformat='twodigitday' monthformat='twodigitmonth'
  yearformat='fourdigityear' weekdayformat='shortname' dateseparator1=' ' dateseparator2='/'
  dateseparator3='/' timeseparator=':' timeformat24='true' preference='usersetting'/></field></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
 <par def='3'>End Date</par></tablecell>
 <tablecell>
-<par def='4'><field type='datetime' kind='editable' name='EndDate'><datetimeformat
- show='date' date='yearmonthday' fourdigityearfor21stcentury='true' zone='never'
- dateformat='weekdaydaymonthyear' dayformat='twodigitday' monthformat='twodigitmonth'
+<par def='4'><field usenotesstyle='false' height='0.2500in' width='1in' multiline='true'
+ borderstyle='single' type='datetime' kind='editable' name='EndDate'><datetimeformat
+ show='datetime' date='yearmonthday' fourdigityearfor21stcentury='true' time='hourminute'
+ zone='never' dateformat='weekdaydaymonthyear' dayformat='twodigitday' monthformat='twodigitmonth'
  yearformat='fourdigityear' weekdayformat='shortname' dateseparator1=' ' dateseparator2='/'
  dateseparator3='/' timeseparator=':' timeformat24='true' preference='usersetting'/></field></par></tablecell></tablerow>
 <tablerow>

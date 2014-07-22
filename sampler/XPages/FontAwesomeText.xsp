@@ -239,7 +239,7 @@
 										<span>(&amp;#xf0e2;)</span>
 									</div>
 								</div>
-								<unp:unpDialog>
+								<unp:unpDialog dialogid='dialogPopup'>
 									<xp:this.facets>
 										<xp:panel xp:key="facet_1">
 											<div id="fontawesomedetails"></div>

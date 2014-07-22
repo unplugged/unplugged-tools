@@ -30,7 +30,7 @@
 		<div><i class="fa fa-fw">&#xf196;</i>fa-plus-square-o<span>(&amp;#xf196;)</span></div>
 </div>
 
-								<unp:unpDialog>
+								<unp:unpDialog dialogid='dialogPopup'>
 									<xp:this.facets>
 										<xp:panel xp:key="facet_1">
 											<div id="fontawesomedetails"></div>
