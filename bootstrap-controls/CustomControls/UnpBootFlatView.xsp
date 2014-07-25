@@ -65,7 +65,7 @@
 + compositeData.detailcolumn + "&photocol="
 + compositeData.photocolumn + "&xpage=" + compositeData.xpagedoc + "&dbName="
 + compositeData.dbname + "&refreshmethod=" + compositeData.refreshmethod + "&start=0"
-+ "&ajaxload=" + compositeData.ajaxload + "&target=list";}]]></xp:this.value>
++ "&ajaxload=" + compositeData.ajaxload + "&target=" + compositeData.loaddocumenttarget;}]]></xp:this.value>
 										</xp:attr>
 									</xp:this.attrs>
 									<i class="fa fa-search"></i>
