@@ -35,7 +35,7 @@ unp.storePageRequest = function(url) {
 	}
 	url += "&history=true";
 	history.pushState(null, "", url);
-	console.log("pushed " + url);
+	//console.log("pushed " + url);
 
 }
 
@@ -175,23 +175,19 @@ unp.stopViewSpinner = function() {
 	$("#loadmorespinner").hide();
 }
 
+var loadmoreloading = false;
+var loadedurls = [];
 unp.loadmore = function(dbName, viewName, summarycol, detailcol, category,
 		xpage, refreshmethod, photocol, ajaxload, target) {
-	if ($('.searchbox').val() == ""){
+	if ($('.searchbox').val() == "" && !loadmoreloading){
+		loadmoreloading == true;
 		// try {
 		$(".loadmorelink").hide();
 		$("#loadmorespinner").show();
 		setTimeout("unp.stopViewSpinner()", 5000);
 		var itemlist = $("#list .list-group a");
 		var pos = itemlist.length;
-		//for ( var i = 0; i < firedrequests.length; i++) {
-		//	if (firedrequests[i] == pos) {
-		//		$(".loadmorelink").show();
-		//		$("#loadmorespinner").hide();
-		//		return;
-		//	}
-		//}
-		//firedrequests.push(pos);
+		//console.log('Pos = ' + pos);
 		var thisArea = $(".summaryDataRow");
 		var url = "UnpFlatViewList.xsp?chosenView=" + encodeURIComponent(viewName)
 				+ "&summarycol=" + encodeURIComponent(summarycol) + "&detailcol="
@@ -200,34 +196,48 @@ unp.loadmore = function(dbName, viewName, summarycol, detailcol, category,
 				+ encodeURIComponent(category) + "&xpage=" + xpage + "&dbName="
 				+ dbName + "&refreshmethod=" + refreshmethod + "&start=" + pos
 				+ "&ajaxload=" + ajaxload + "&target=" + target;
-		thisArea.load(url + " #results", function() {
-			$("#list .panel .list-group ").append($(".summaryDataRow a"));
-			if ($(".summaryDataRow").text().indexOf("NOMORERECORDS") > -1) {
-				$("#pullUp").hide();
-				$(".loadmorelink").hide();
-				$("#loadmorespinner").hide();
-			} else {
-				$("#pullUp").show();
-				$(".loadmorelink").show();
-				$("#loadmorespinner").hide();
-			}
-			$(".summaryDataRow").empty();
-			try {
-				scrollContent.refresh();
-			} catch (e) {
-			}
-	
-			if ($("#pullUp").hasClass('loading')) {
-				$("#pullUp").removeClass("loading");
-			}
-			
-			return false;
-		});
-		// } catch (e) {
-		// console.log(e);
-		// }
+		if (loadedurls.indexOf(url) == -1){
+			loadedurls.push(url);
+			//console.log('Loading ' + url);
+			thisArea.load(url + " #results", function() {
+				var firsturl = $(".summaryDataRow a").first().prop('onclick');
+				if ($("#list .panel .list-group a[onclick='" + firsturl + "']").length > 0){
+					//console.log("We've already loaded " + firsturl);
+				}else{
+					//console.log('Adding ' + $('.summaryDataRow a').length + ' items to list');
+					$("#list .panel .list-group ").append($(".summaryDataRow a"));
+				}
+				if ($(".summaryDataRow").text().indexOf("NOMORERECORDS") > -1) {
+					//console.log('Reached end of view with ' + $("#list .list-group a").length + ' elements');
+					$("#pullUp").hide();
+					$(".loadmorelink").hide();
+					$("#loadmorespinner").hide();
+				} else {
+					$("#pullUp").show();
+					$(".loadmorelink").show();
+					$("#loadmorespinner").hide();
+				}
+				$(".summaryDataRow").empty();
+				try {
+					scrollContent.refresh();
+				} catch (e) {
+				}
+		
+				if ($("#pullUp").hasClass('loading')) {
+					$("#pullUp").removeClass("loading");
+				}
+				loadmoreloading = false;
+				return false;
+			});
+		}else{
+			//console.log('We already loaded ' + url);
+		}
+
 	}else{
 		//Don't load more when search is active
+		if (loadmoreloading){
+			//console.log('Load More is loading...');
+		}
 	}
 }
 
@@ -278,7 +288,8 @@ unp.openDocument = function(url, target, caller) {
 					$('#list').animate({scrollTop:0}, '500', 'easeOutExpo'); 
 				}
 			}else{
-				$(document).animate({scrollTop:0}, '500', 'easeOutExpo');
+				//TODO get this working for desktop when opening a document, scroll to top of window
+				$(window).animate({scrollTop:0}, '500', 'easeOutExpo');
 			}
 			return false;
 		}
@@ -334,11 +345,11 @@ unp.saveDocument = function(formid, unid, viewxpagename, formname, parentunid,
 			cache : false,
 			encoding : "UTF-8",
 			beforeSend : function() {
-				console.log("About to open URL");
+				//console.log("About to open URL");
 			}
 		}).done(
 				function(response) {
-					console.log(response.length);
+					//console.log(response.length);
 					if (response.length == 32) {
 						unp.openDocument(
 								viewxpagename
@@ -368,7 +379,7 @@ unp.validate = function() {
 }
 
 unp.toggleViewsMenu = function(forcehide) {
-	console.log($("#menuPane").width());
+	//console.log($("#menuPane").width());
 	if ($("#menuPane").hasClass("offScreen") && !forcehide) {
 		$("#menuPane").removeClass("offScreen").addClass("onScreen");
 		$("#menuPane").animate( {
@@ -510,25 +521,34 @@ unp.initiscroll = function() {
 		pullUpOffset = pullUpEl.offsetHeight;
 	} catch (e) {
 	}
-	$(window)
-			.bind(
-					'scroll',
-					function() {
-						if ($(document).height() <= ($(window).height()
-								+ $(window).scrollTop() + 200)) {
-							console.log('bottom reached');
-							if (pullUpEl) {
-								pullUpEl.className = 'flip';
-								pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
-								if (pullUpEl.className.match('flip')) {
-									pullUpEl.className = 'loading';
-									pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';
-									$(".loadmorebutton").click();
-								}
-							}
-						}
-					})
+	
+	if (unp.isIOS() || unp.isAndroid()){
+		$('#list').scroll( function() {
+			if($(this)[0].scrollHeight - $(this).scrollTop() == $(this).outerHeight()) {
+				unp.doflatviewscroll();
+			}
+		});
+	}else{
+		$(window).bind('scroll', function() {
+			if ($(document).height() <= ($(window).height() + $(window).scrollTop() + 200)) {
+				unp.doflatviewscroll();
+			}
+		})
+	}
+	
 	$(".atozpicker").show();
+}
+
+unp.doflatviewscroll = function(){
+	if (pullUpEl) {
+		pullUpEl.className = 'flip';
+		pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
+		if (pullUpEl.className.match('flip')) {
+			pullUpEl.className = 'loading';
+			pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';
+			$(".loadmorebutton").click();
+		}
+	}
 }
 
 unp.jumpToLetter = function(letterelement, event) {
@@ -541,22 +561,22 @@ unp.jumpToLetter = function(letterelement, event) {
 				var summary = $(this).find("span").text();
 				var firstletter = summary.substring(0, 1);
 				if (firstletter == letter) {
-					console.log("we need to jump to " + firstletter
-							+ " because it's equal to " + letter);
+					//console.log("we need to jump to " + firstletter
+					//		+ " because it's equal to " + letter);
 					$('.iscrollcontent').animate( {
 						scrollTop : $(this).offset().top - 60
 					}, 500);
 					return false;
 				} else if (firstletter > letter) {
-					console.log("we need to jump to " + firstletter
-							+ " because it's greater than " + letter);
+					//console.log("we need to jump to " + firstletter
+					//		+ " because it's greater than " + letter);
 					$('.iscrollcontent').animate( {
 						scrollTop : $(this).offset().top - 120
 					}, 500);
 					return false;
 				} else {
-					console.log("we don't need to jump to " + firstletter
-							+ " because it's less than " + letter);
+					//console.log("we don't need to jump to " + firstletter
+					//		+ " because it's less than " + letter);
 				}
 			});
 }
@@ -637,7 +657,7 @@ unp.fetchDetails = function(obj, viewName, catName, xpage, dbname, photocol) {
 	$('.accordionRowSet').empty();
 	$('.accLoadMoreLink').hide();
 
-	console.log('Category: ' + catName);
+	//console.log('Category: ' + catName);
 	if ($(obj).hasClass("accordianExpanded")) {
 		$(obj).nextAll('.summaryDataRow:first').children('.accordionRowSet')
 				.slideUp('fast', function() {
@@ -1144,5 +1164,6 @@ unp.clearsearch = function(dbName, viewName, summarycol, detailcol, category,
 	$('.clearsearchbutton').hide();
 	$('.searchbox').val('');
 	$("#pullUp").removeClass("loading");
+	loadedurls = [];
 	unp.loadmore(dbName, viewName, summarycol, detailcol, category, xpage, refreshmethod, photocol, ajaxload, target);
 }

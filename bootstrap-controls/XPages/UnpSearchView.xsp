@@ -51,7 +51,7 @@ if (start == ""){
 				value="#{javascript:thisRowData.getColumnValues().elementAt(0)}">
 			</xp:text>
 
-			<xp:panel tagName="a" styleClass="list-group-item pjax"
+			<xp:panel tagName="a" styleClass="list-group-item"
 				rendered="#{javascript:!thisRowData.isCategory()}">
 				<xp:this.attrs>
 					<xp:attr name="onClick">

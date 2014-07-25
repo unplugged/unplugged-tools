@@ -20,4 +20,5 @@
 		workspaceview="HomeLinks" linkurlcol="UnpUrl" labelcol="Title"
 		iconcol="ImgUrl" badgecol="BadgeID">
 	</xc:UnpBootWorkspace>
+	<xc:commonfooter></xc:commonfooter>
 </xp:view>

@@ -11,9 +11,6 @@
 					<xp:link escape="true"
 						text="#{javascript:sidemenuitem.label}" id="sidemenulink"
 						value="#{javascript:sidemenuitem.page}">
-						<xp:this.attrs>
-							<xp:attr name="data-pjax" value="#main"></xp:attr>
-						</xp:this.attrs>
 						<xp:panel id="sidemenuicon" tagName="i">
 							<xp:this.styleClass><![CDATA[#{javascript:"fa fa-lg " + sidemenuitem.icon}]]></xp:this.styleClass>
 						</xp:panel>
