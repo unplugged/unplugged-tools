@@ -288,12 +288,12 @@ unp.openDocument = function(url, target, caller) {
 					$('#list').animate({scrollTop:0}, '500', 'easeOutExpo'); 
 				}
 			}else{
-				//TODO get this working for desktop when opening a document, scroll to top of window
-				$(window).animate({scrollTop:0}, '500', 'easeOutExpo');
+				window.scrollTo(0, 0);
 			}
 			return false;
 		}
 	});
+	return false;
 }
 
 unp.goback = function(){
@@ -1145,7 +1145,7 @@ unp.dosearch = function(){
 			$(".clearsearchbutton").click();
 		}else{
 			var thisArea = $("#list .list-group");
-			var url = searchbox.attr('search') + "&category=" + encodeURIComponent(searchbox.val());
+			var url = searchbox.attr('search') + "&category=" + encodeURIComponent(searchbox.val().toLowerCase());
 			thisArea.load(url + " #results a");
 			$('.loadmorelink').hide();
 			$('.pullupholder').hide();
