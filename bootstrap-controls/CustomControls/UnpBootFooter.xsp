@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+<div class="navbar navbar-default navbar-fixed-bottom">
+		<div class="container">
+			<div class="bootcards-desktop-footer clearfix">
+				<p class="pull-left"></p>
+			</div>
+			<div class="btn-group">
+				<a href="#" class="btn btn-default" data-pjax="#main"
+					data-title="Dashboard">
+					<i class="fa fa-2x fa-dashboard"></i>
+					Dashboard
+				</a>
+			</div>
+		</div>
+	</div>
+</xp:view>
