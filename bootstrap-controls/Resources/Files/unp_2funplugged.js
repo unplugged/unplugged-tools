@@ -151,10 +151,12 @@ unp.getURLParameter = function(name) {
 window.addEventListener("orientationchange", setTimeout(
 		"unp.changeorientation", 100), false);
 
+window.addEventListener('orientationchange', function(){
+	unp.changeorientation();
+})
+
 unp.changeorientation = function() {
-	unp.hideViewsMenu();
 	unp.initiscroll();
-	unp.initHorizontalView();
 }
 
 unp.allowFormsInIscroll = function() {
@@ -446,7 +448,6 @@ unp.loadPage = function(url, target, menuitem, pushState) {
 		$(".menuitem" + menuitem).removeClass("viewMenuItem");
 		$(".menuitem" + menuitem).addClass("viewMenuItemSelected");
 		$(".menuitem" + menuitem).addClass("active");
-		unp.hideViewsMenu();
 	}
 }
 
