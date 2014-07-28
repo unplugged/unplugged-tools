@@ -13,5 +13,27 @@
         <in-palette>true</in-palette>
       </designer-extension>
     </composite-extension>
+    <property>
+      <property-name>synctype</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.workplace.designer.property.editors.comboParameterEditor</editor>
+          <editor-parameter>currentdb&#xd;
+alldbs&#xd;
+none</editor-parameter>
+          <default-value>alldbs</default-value>
+        </designer-extension>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>tabs</property-name>
+      <property-class>object</property-class>
+      <description>A JSON Object that describes the footer tabs to load</description>
+    </property>
+    <property>
+      <property-name>postSyncTarget</property-name>
+      <property-class>string</property-class>
+    </property>
   </composite-component>
 </faces-config>

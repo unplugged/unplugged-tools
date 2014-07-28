@@ -10,7 +10,8 @@
 				viewname="Employees" numberofrows="20" refreshmethod="pull"
 				ajaxload="Yes" loaddocumenttarget="doccontent" detailcolumn="DOB"
 				xpagedoc="UnpDemoFlatView.xsp" newdatatarget="#editModal"
-				newlink="UnpEmployeeEdit.xsp" searchview="Search">
+				newlink="UnpEmployeeEdit.xsp" searchview="Search"
+				photocolumn="Photo">
 			</unp:UnpBootFlatView>
 			<div id="doccontent" class="col-sm-7 bootcards-cards hidden-xs">
 				<xc:employeeviewer></xc:employeeviewer>
