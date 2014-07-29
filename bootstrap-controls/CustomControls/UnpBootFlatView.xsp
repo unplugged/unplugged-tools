@@ -55,11 +55,9 @@
 						<div class="col-xs-11">
 							<div class="form-group">
 								<xp:panel id="searchbox" tagName="input"
-									styleClass="form-control searchbox"
-									rendered="#{javascript:!isEmpty(compositeData.searchview)}">
+									styleClass="form-control searchbox" rendered="#{javascript:!isEmpty(compositeData.searchview)}">
 									<xp:this.attrs>
-										<xp:attr name="placeholder"
-											value="Search...">
+										<xp:attr name="placeholder" value="Search...">
 										</xp:attr>
 										<xp:attr name="search">
 											<xp:this.value><![CDATA[#{javascript:"UnpFlatViewList.xsp?chosenView=" + compositeData.searchview
@@ -72,11 +70,10 @@
 									</xp:this.attrs>
 									<i class="fa fa-search"></i>
 								</xp:panel>
-								<xp:panel id="localsearchbox"
-									tagName="input" styleClass="form-control localsearchbox">
+								<xp:panel id="localsearchbox" tagName="input"
+									styleClass="form-control localsearchbox">
 									<xp:this.attrs>
-										<xp:attr name="placeholder"
-											value="Search...">
+										<xp:attr name="placeholder" value="Search...">
 										</xp:attr>
 									</xp:this.attrs>
 									<xp:this.rendered><![CDATA[#{javascript:isEmpty(compositeData.searchview) && compositeData.searchlocal=='yes'}]]></xp:this.rendered>
@@ -102,7 +99,7 @@ if (compositeData.enableAZPicker == "yes"){
 }}]]></xp:this.rows>
 
 
-					<xp:panel tagName="a" id="datarowcategory" styleClass="list-group-item"
+					<xp:panel tagName="a" id="datarowcategory" styleClass="list-group-item list-group-item-info"
 						disableTheme="true" rendered="#{javascript:thisRowData.isCategory()}">
 						<xp:text>
 							<xp:this.value><![CDATA[#{javascript:var index = 0;
@@ -161,8 +158,7 @@ return out;}]]></xp:this.styleClass>
 }}]]></xp:this.rendered>
 						</xp:image>
 
-						<xp:text id="label" tagName="h4"
-							styleClass="list-group-item-heading"
+						<xp:text id="label" tagName="h4" styleClass="list-group-item-heading"
 							value="#{javascript:thisRowData.getColumnValue(compositeData.summarycolumn);}">
 						</xp:text>
 						<xp:text tagName="p" id="label1">
@@ -175,6 +171,10 @@ return out;}]]></xp:this.styleClass>
 						</xp:text>
 					</xp:panel>
 				</xp:repeat>
+				<br />
+				<br />
+				<br />
+
 			</div>
 			<div class="panel-footer">
 				<div class="summaryDataRow"></div>
