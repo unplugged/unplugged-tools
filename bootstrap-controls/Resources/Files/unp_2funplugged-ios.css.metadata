@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="80257D1E002A1358" version="9.0">
-<noteinfo noteid="56e" sequence="6" unid="007117508EE7BA9B80257D1F002DCE54">
+<noteinfo noteid="56e" sequence="8" unid="007117508EE7BA9B80257D1F002DCE54">
 <created><datetime dst="true">20140724T092019,40+01</datetime></created>
-<modified><datetime dst="true">20140724T095947,31+01</datetime></modified>
-<revised><datetime dst="true">20140724T095947,30+01</datetime></revised>
-<lastaccessed><datetime dst="true">20140724T095947,31+01</datetime></lastaccessed>
+<modified><datetime dst="true">20140729T153025,49+01</datetime></modified>
+<revised><datetime dst="true">20140729T153025,48+01</datetime></revised>
+<lastaccessed><datetime dst="true">20140729T153025,49+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20140724T092019,41+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
 <wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
 <item name="$MimeType" sign="true"><text>text/css</text></item>
 <item name="$Flags"><text>345CgQ</text></item>
 <item name="$MimeCharSet" sign="true"><text>UTF-8</text></item>
-
-
-<item name="$FileNames" sign="true"><text>unp_2funplugged.css</text></item>
 <item name="$TITLE" sign="true"><text>unp/unplugged-ios.css</text></item>
-<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>unp_2funplugged-ios.css</text></item></note>

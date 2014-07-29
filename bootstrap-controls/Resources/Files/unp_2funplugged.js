@@ -85,10 +85,6 @@ $(window).load( function() {
 		} catch (e) {
 		}
 
-		unp.initDeleteable();
-		unp.initAutoComplete();
-		unp.initRichText();
-		unp.initReaderButtons();
 		unp.initSearch();
 		$(document).ajaxStop( function() {
 			unp.initRichText();
@@ -278,9 +274,6 @@ unp.openDocument = function(url, target, caller) {
 					|| url.indexOf("newDocument") > -1) {
 				unp.allowFormsInIscroll();
 			}
-			unp.initDeleteable();
-			unp.initAutoComplete();
-			unp.initHorizontalView();
 			if ($("#input-search").hasClass("input-search")) {
 				$(".iscrollcontent").css("top", "90px");
 			}
@@ -313,6 +306,31 @@ unp.openDocument = function(url, target, caller) {
 	return false;
 }
 
+unp.editDocument = function(xpage, unid){
+	
+	var url = xpage + '?action=editDocument&documentId=' + unid + ' .modal-content';
+	$('#editModal .modal-content').load(url, function(){
+		$('#editModal').modal();
+		unp.initDeleteable();
+		unp.initAutoComplete();
+		unp.initRichText();
+
+	});
+}
+
+unp.newDocument = function(xpage){
+	
+	var url = xpage + '?action=newDocument .modal-content';
+	$('#editModal .modal-content').load(url, function(){
+		$('#editModal').modal();
+		unp.initDeleteable();
+		unp.initAutoComplete();
+		unp.initRichText();
+
+	});
+}
+
+
 unp.goback = function() {
 	if (bootcards.isXS()) {
 		if ($("#doccontent").hasClass("hidden-xs")) {
@@ -337,16 +355,24 @@ unp.goback = function() {
 	}
 }
 
-unp.saveDocument = function(formid, unid, viewxpagename, formname, parentunid,
-		dbname) {
-	try {
-		scrollContent.scrollTo(0, -60, 0);
-	} catch (e) {
-	}
-	var data = $(".customform :input").serialize();
-	$('.customform input[type=checkbox]').each( function() {
+unp.saveDocument = function(formid, unid, viewxpagename, formname, parentunid, dbname) {
+	var data = $("#editModal :input").serialize();
+	$('#editModal input[type=checkbox]').each( function() {
+		var val;
 		if (!this.checked) {
-			data += '&' + this.name + '=off';
+			val = "off";
+			if ($(this).attr('uncheckedValue')) {
+				val = $(this).attr('uncheckedValue');
+			}
+			data += '&' + encodeURIComponent(this.name) + '=' + val;
+		} else {
+			val = "on";
+			if ($(this).attr('checkedValue')) {
+				val = $(this).attr('checkedValue');
+			}
+			var newval = encodeURIComponent(this.name) + '=' + val;
+			var oldval = encodeURIComponent(this.name) + '=on'
+			data = unp.replaceSubstring(data, oldval, newval);
 		}
 	});
 	var url = 'UnpSaveDocument.xsp?unid=' + unid + "&formname=" + formname
@@ -366,34 +392,50 @@ unp.saveDocument = function(formid, unid, viewxpagename, formname, parentunid,
 			cache : false,
 			encoding : "UTF-8",
 			beforeSend : function() {
-				// console.log("About to open URL");
 		}
 		}).done( function(response) {
-			// console.log(response.length);
-				if (response.length == 32) {
-					unp.openDocument(viewxpagename
-							+ "?action=openDocument&documentId=" + response,
-							"content");
-					unp.initiscroll();
-				} else {
-					alert(response);
-				}
-			});
+			if (response.length == 32) {
+				unp.openDocument(viewxpagename
+						+ "?action=openDocument&documentId=" + response,
+						"doccontent");
+				unp.initiscroll();
+				$('#editModal').modal('hide');
+			} else {
+				alert(response);
+			}
+		});
 	} else {
 		return false;
 	}
 }
 
+unp.replaceSubstring = function(inputString, fromString, toString) {
+	if (inputString.indexOf(fromString) > -1){
+		var newval = inputString.split(fromString);
+		return newval[0] + toString + newval[1];
+	}else{
+		return inputString;
+	}
+}
+
 unp.validate = function() {
+	$('.has-error').removeClass('has-error');
 	var valid = true;
+	var msg = "Validation Errors:\n";
 	$(".required").each( function() {
 		if ($(this).val() == "") {
 			var label = $("label[for='" + $(this).attr('id') + "']");
-			alert("Please complete " + label.text());
-			$(this).focus();
+			msg += "Please complete " + label.text() + "\n";
+			if (valid){
+				$(this).focus();
+			}
 			valid = false;
+			$(this).closest(".form-group").addClass('has-error');
 		}
 	})
+	if (!valid){
+		//alert(msg);
+	}
 	return valid;
 }
 
@@ -421,10 +463,6 @@ unp.loadPage = function(url, target, menuitem, pushState) {
 				unp.storePageRequest(url);
 			}
 
-			unp.initiscroll();
-			unp.initDeleteable();
-			unp.initAutoComplete();
-
 			try {
 				$('.categoryRow').first().click();
 			} catch (e) {
@@ -451,10 +489,15 @@ unp.openPage = function(url, target) {
 
 unp.initDeleteable = function() {
 	try {
-		$('input.deletable').wrap('<span class="deleteicon" />').after(
-				$('<span/>').click( function() {
-					$(this).prev('input').val('').focus();
-				}));
+		$('input.deletable').each(function(){
+			if (!$(this).parent().hasClass('deleteicon')){
+				$(this).wrap('<span class="deleteicon" />').after(
+					$('<span/>').click( function() {
+						$(this).prev('input').val('').focus();
+					})
+				);
+			}
+		})
 	} catch (e) {
 
 	}
@@ -526,6 +569,18 @@ unp.initiscroll = function() {
 	}
 
 	$(".atozpicker").show();
+}
+
+unp.doflatviewscroll = function() {
+	if (pullUpEl) {
+		pullUpEl.className = 'flip';
+		pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
+		if (pullUpEl.className.match('flip')) {
+			pullUpEl.className = 'loading';
+			pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';
+			$(".loadmorebutton").click();
+		}
+	}
 }
 
 unp.jumpToLetter = function(letterelement, event) {

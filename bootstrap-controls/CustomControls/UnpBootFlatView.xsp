@@ -34,12 +34,8 @@
 						<xp:panel id="addlink" tagName="a"
 							styleClass="btn btn-primary btn-block">
 							<xp:this.attrs>
-								<xp:attr name="href" value="#{javascript:compositeData.newlink}">
-								</xp:attr>
-								<xp:attr name="data-toggle" value="modal">
-								</xp:attr>
-								<xp:attr name="data-target"
-									value="#{javascript:compositeData.newdatatarget}">
+								<xp:attr name="onclick">
+									<xp:this.value><![CDATA[#{javascript:"unp.newDocument('" + compositeData.newlink + "')"}]]></xp:this.value>
 								</xp:attr>
 							</xp:this.attrs>
 							<i class="fa fa-plus"></i>
@@ -215,4 +211,11 @@ return out;}]]></xp:this.styleClass>
 			</div>
 		</div>
 	</div>
+	<!--  Modals -->
+	<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content"></div>
+		</div>
+	</div>
+	
 </xp:view>
