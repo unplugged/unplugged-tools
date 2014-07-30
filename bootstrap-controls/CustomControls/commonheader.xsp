@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:unp="http://unplugged.teamstudio.com" disableTheme="true">
 	<unp:UnpBootResources></unp:UnpBootResources>
 	<unp:UnpBootHeader title="Bootcards Controls">
 		<unp:this.navitems><![CDATA[#{javascript:[
         {label: "Dashboard", hasSubMenu: false, page: "/UnpMain.xsp", icon: "fa-dashboard"},
         {label: "All Widgets", hasSubMenu: false, page: "/UnpDemoWidgets.xsp", icon: "fa-cubes"}
 ]}]]></unp:this.navitems>
-	</unp:UnpBootHeader>	
+	</unp:UnpBootHeader>
 </xp:view>

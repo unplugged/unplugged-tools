@@ -309,13 +309,15 @@ unp.openDocument = function(url, target, caller) {
 unp.editDocument = function(xpage, unid){
 	
 	var url = xpage + '?action=editDocument&documentId=' + unid + ' .modal-content';
-	$('#editModal .modal-content').load(url, function(){
+	$('#editModal .modal-content').load(url, function(response, status, xhr){
+		//console.log(status);
 		$('#editModal').modal();
 		unp.initDeleteable();
 		unp.initAutoComplete();
 		unp.initRichText();
 
 	});
+	return false;
 }
 
 unp.newDocument = function(xpage){
@@ -614,30 +616,8 @@ unp.jumpToLetter = function(letterelement, event) {
 
 unp.openDialog = function(id) {
 	if (id != null && id != "#") {
-		$("#underlay" + id).css('display', 'block');
-		$("#" + id).css('display', 'block');
-		$(".iscrollcontent").addClass("dialogactive");
-		var boxes = $("div");
-		boxes.click( function() {
-			var el = $(id);
-			var max = 0;
-			boxes.each( function() {
-				var z = parseInt($(this).css("z-index"), 10);
-				max = Math.max(max, z);
-			});
-			el.css("z-index", max + 1);
-		});
-		unp.initiscroll();
-		unp.initHorizontalView();
+		$("." + id).modal('show');
 	}
-}
-
-unp.closeDialog = function(id) {
-	$("#" + id).css('display', 'none');
-	$(".iscrollcontent").removeClass("dialogactive");
-	$("#underlay" + id).css('display', 'none');
-	unp.initiscroll();
-	unp.initHorizontalView();
 }
 
 unp.accordionLoadMore = function(obj, viewName, catName, xpage, dbname,

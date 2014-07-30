@@ -7,7 +7,8 @@
 		<xp:this.facets>
 			<xp:panel id="list-group" xp:key="facet_1">
 				<div class="form-group">
-					<xp:label styleClass="col-xs-4 control-label" for="name">Name</xp:label>
+					<xp:label styleClass="col-xs-4 control-label" for="name"
+						value="Name"></xp:label>
 					<div class="col-xs-8">
 						<xp:inputText id="name" value="#{docedit.name}"
 							styleClass="form-control required deletable">
@@ -51,12 +52,10 @@
 						styleClass="col-xs-4 control-label">
 					</xp:label>
 					<div class="col-xs-8">
-						<xp:inputText id="int_number"
-							value="#{docedit.Number}" type="number"
-							styleClass="form-control">
+						<xp:inputText id="int_number" value="#{docedit.Number}"
+							type="number" styleClass="form-control">
 							<xp:this.converter>
-								<xp:convertNumber type="number"
-									integerOnly="true">
+								<xp:convertNumber type="number" integerOnly="true">
 								</xp:convertNumber>
 							</xp:this.converter>
 						</xp:inputText>
@@ -118,10 +117,19 @@
 						<xp:inputText id="dept" value="#{docedit.Dept}"
 							styleClass="required form-control autocomplete">
 							<xp:this.attrs>
-								<xp:attr name="auto-src" value="EmployeeEditDeptAuto.xsp">
+								<xp:attr name="auto-src" value="UnpDemoEmployeeEditAuto.xsp">
 								</xp:attr>
 							</xp:this.attrs>
 						</xp:inputText>
+					</div>
+				</div>
+				<div class="form-group">
+					<xp:label value="Mobile Enabled?" id="mobilelabel" for="mobileenabled" styleClass="col-xs-4 control-label"></xp:label>
+					<div class="col-xs-8">
+						<div class="switch">
+							<xp:checkBox checkedValue="on" uncheckedValue="off"
+								value="#{docedit.mobileenabled" required="false" id="mobileenabled"></xp:checkBox>
+						</div>
 					</div>
 				</div>
 				<div class="form-group">
@@ -138,7 +146,8 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<xp:label value="Radio Buttons" for="radio" styleClass="col-xs-4 control-label"></xp:label>
+					<xp:label value="Radio Buttons" for="radio"
+						styleClass="col-xs-4 control-label"></xp:label>
 					<div class="col-xs-8">
 						<xp:radioGroup id="radio" value="#{docedit.radio}">
 							<xp:selectItem itemLabel="aaaa" itemValue="aaaa">
