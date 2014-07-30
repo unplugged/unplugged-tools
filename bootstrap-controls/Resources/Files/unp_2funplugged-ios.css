@@ -75,3 +75,7 @@ span.deleteicon span:after {
   background-color: Highlight;
   color: HighlightText;
 }
+
+.bootcards-file .list-group-item:first-child {
+	padding-left: 0px;
+}

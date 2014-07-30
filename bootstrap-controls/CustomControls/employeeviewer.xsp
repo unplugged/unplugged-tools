@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:unp="http://unplugged.teamstudio.com"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
 
 	<unp:UnpBootFormViewer editxpagename="UnpDemoEmployeeEdit.xsp"
 		editxpagewithajax="yes" formname="Employee" showbuttons="yes"
@@ -151,4 +153,8 @@
 			</xp:panel>
 		</xp:this.facets>
 	</unp:UnpBootFormViewer>
+
+	<xc:UnpBootFiles filestitle="Files"
+		fileslist="#{javascript:viewScope.images}">
+	</xc:UnpBootFiles>
 </xp:view>

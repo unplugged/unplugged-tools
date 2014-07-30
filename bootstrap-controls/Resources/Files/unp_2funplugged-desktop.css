@@ -148,3 +148,7 @@ span.deleteicon span:after {
 	right: 0;
 	transition: border .25s, left .15s .25s, right .25s .175s;
 }
+
+.bootcards-file .list-group-item:first-child {
+	padding-left: 0px;
+}
