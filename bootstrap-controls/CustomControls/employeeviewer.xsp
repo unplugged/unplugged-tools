@@ -156,5 +156,6 @@
 
 	<xc:UnpBootFiles filestitle="Files"
 		fileslist="#{javascript:viewScope.images}">
+		<xc:this.rendered><![CDATA[#{javascript:viewScope.images != null && viewScope.images.length > 0;}]]></xc:this.rendered>
 	</xc:UnpBootFiles>
 </xp:view>

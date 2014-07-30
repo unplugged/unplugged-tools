@@ -100,8 +100,6 @@ if(thisRowData.getColumnValues().length > index){
 			<xp:this.rendered><![CDATA[#{javascript:if (sessionScope.accRowcount == null){
 	sessionScope.accRowcount = 12;
 }
-print(viewScope.accRowcount);
-print(sessionScope.accRowcount);
 viewScope.accRowcount != null && viewScope.accRowcount == sessionScope.accRowcount;}]]></xp:this.rendered>
 			<xp:this.attrs>
 				<xp:attr name="onclick">

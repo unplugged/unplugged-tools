@@ -97,10 +97,29 @@ if (!isEmpty(compositeData.dbname)){
 	db = [@DbName()[0], compositeData.dbname];
 }
 var list;
-if (isEmpty(compositeData.filtercategory)){
+if (isEmpty(compositeData.categoryfilter)){
 	list = @Unique(@DbColumn(db, compositeData.viewname, 1));
 }else{
-	list = @Unique(@DbLookup(db, compositeData.viewname, compositeData.categoryfilter, 2));
+	if (isUnpluggedServer()){
+		list = @Unique(@DbLookup(db, compositeData.viewname, compositeData.categoryfilter, 2));
+	}else{
+		var thedb:NotesDatabase = session.getDatabase(db[0], db[1]);
+		var vw:NotesView = thedb.getView(compositeData.viewname);
+		var viewnav:NotesViewNavigator = vw.createViewNavFromCategory(compositeData.categoryfilter);
+		var ve = viewnav.getFirst();
+		var list = [];
+		while (ve != null){
+			if (ve.isCategory()){
+				list.push(ve.getColumnValues().elementAt(1));
+			}
+			var vetemp = viewnav.getNext(ve);
+			ve.recycle();
+			ve = vetemp;
+		}
+		viewnav.recycle();
+		vw.recycle();
+		thedb = null;
+	}
 }
 viewScope.categorycount = list.length;
 return list;}]]></xp:this.value>
@@ -115,10 +134,10 @@ var summarycol = compositeData.summaryColumn;
 if (isEmpty(summarycol)){
 	summarycol = null;
 }
-if (isEmpty(compositeData.filtercategory)){
+if (isEmpty(compositeData.categoryfilter)){
 	return "unp.fetchDetails(this,'" + @ReplaceSubstring(compositeData.viewname, "\\","\\\\") + "','" + thisRowData + "', '" + @ReplaceSubstring(compositeData.xpagedoc, "/", "") + "', '" + compositeData.dbname + "', '" + summarycol + "', '" + datacol + "', '" + compositeData.photocolumn + "')";
 }else{
-	return "unp.fetchDetails(this,'" + @ReplaceSubstring(compositeData.viewName, "\\","\\\\") + "','" + thisRowData + "~" + compositeData.filtercategory + "', '" + @ReplaceSubstring(compositeData.xpagedoc, "/", "") + "', '" + compositeData.dbname + "', '" + summarycol + "', '" + datacol + "', '" + compositeData.photocolumn + "')";
+	return "unp.fetchDetails(this,'" + @ReplaceSubstring(compositeData.viewname, "\\","\\\\") + "','" + thisRowData + "~" + compositeData.categoryfilter + "', '" + @ReplaceSubstring(compositeData.xpagedoc, "/", "") + "', '" + compositeData.dbname + "', '" + summarycol + "', '" + datacol + "', '" + compositeData.photocolumn + "')";
 }}]]></xp:this.value>
 							</xp:attr>
 						</xp:this.attrs>

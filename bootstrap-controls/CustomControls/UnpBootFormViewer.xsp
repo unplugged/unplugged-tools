@@ -15,9 +15,11 @@
 		</xp:dominoDocument>
 	</xp:this.data>
 	
+	
 	<xp:this.beforePageLoad>
 		<xp:executeScript>
-			<xp:this.script><![CDATA[#{javascript:var images = new Array;
+			<xp:this.script><![CDATA[#{javascript:viewScope.images = null;
+var images = new Array;
 var imageFile = "";
 var attachmentList = null;
 if (isUnpluggedServer()){
@@ -31,24 +33,25 @@ if (dbPath == null || dbPath == ""){
 	dbPath = database.getFilePath();
 }
 dbPath = @ReplaceSubstring(dbPath, "\\", "/");
-for(var i=0; i<attachmentList.length; i++){
-
-  var imagename = attachmentList[i];
-  if (isUnpluggedServer()){
-  	imagename = imagename.getName();
-  }
-  
-  imageFile = "/" + dbPath + "/0/" + docview.getDocument().getUniversalID() + "/$FILE/" + imagename;
-  
-  images.push({
-     url: imageFile,
-     filename: imagename
-  }); 
-}
-
-viewScope.put("images", images);
-
-}]]></xp:this.script>
+if (attachmentList != null && attachmentList.length > 0){
+	for(var i=0; i<attachmentList.length; i++){
+	
+	  var imagename = attachmentList[i];
+	  if (isUnpluggedServer()){
+	  	imagename = imagename.getName();
+	  }
+	  
+	  imageFile = "/" + dbPath + "/0/" + docview.getDocument().getUniversalID() + "/$FILE/" + imagename;
+	  if (imagename != ""){
+		  images.push({
+		     url: imageFile,
+		     filename: imagename
+		  });
+	  } 
+	}
+	
+	viewScope.put("images", images);
+}}]]></xp:this.script>
 		</xp:executeScript>
 	</xp:this.beforePageLoad>
 	<div class="panel panel-default">
