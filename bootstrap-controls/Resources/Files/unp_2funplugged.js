@@ -86,9 +86,11 @@ $(window).load( function() {
 		}
 
 		unp.initSearch();
+		unp.highlightCurrentPage();
 		$(document).ajaxStop( function() {
 			unp.initRichText();
 			unp.initReaderButtons();
+			unp.highlightCurrentPage();
 		});
 		
 		//Open first item in flat view if necessary
@@ -99,6 +101,22 @@ $(window).load( function() {
 			}
 		}
 	});
+
+unp.highlightCurrentPage = function(){
+	var href = window.location.href;
+	//Deal with footer links
+	$("navbar-fixed-bottom a").each(function(){
+		if (href.indexOf($(this).attr('href')) > -1){
+			$(this).addClass('active')
+		}
+	})
+	//Deal with header links
+	$(".navbar-fixed-top .navbar-nav a").each(function(){
+		if (href.indexOf($(this).attr('href')) > -1){
+			$(this).parent().addClass('active')
+		}
+	})
+}
 
 unp.initReaderButtons = function() {
 	if ($(".fontsizebuttons").length > 0) {
@@ -678,16 +696,7 @@ unp.fetchMoreDetails = function(obj, viewName, catName, xpage, dbname, photocol)
 }
 
 unp.syncAllDbs = function() {
-	$.blockUI( {
-		centerY : 0,
-		css : {
-			top : '10px',
-			left : '10px',
-			right : ''
-		}
-	});
 	$.get("UnpSyncAll.xsp", function(data) {
-		$.unblockUI();
 		location.reload();
 	});
 }

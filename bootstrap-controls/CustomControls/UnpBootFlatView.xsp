@@ -106,16 +106,10 @@ if (!isEmpty(compositeData.categoryindex)){
 return thisRowData.getColumnValues().elementAt(index);}]]></xp:this.value>
 						</xp:text>
 					</xp:panel>
-					<xp:panel tagName="a" id="datarow"
-						rendered="#{javascript:!thisRowData.isCategory()}">
+					<xp:panel tagName="a" id="datarow">
 						<xp:this.attrs>
 							<xp:attr name="onclick">
 								<xp:this.value><![CDATA[#{javascript:
-if (viewScope.rowcount == null){
-	viewScope.rowcount = 1;
-}else{
-	viewScope.rowcount = viewScope.rowcount + 1;
-}
 var dbPath = getDbPath();
 if (!isEmpty(compositeData.xpagedocdbname)){
 	dbPath = compositeData.xpagedocdbname;
@@ -138,6 +132,12 @@ if (context.getUrlParameter("documentId") == thisRowData.getUniversalID()){
 	out += " active";
 }
 return out;}]]></xp:this.styleClass>
+						<xp:this.rendered><![CDATA[#{javascript:if (viewScope.rowcount == null){
+	viewScope.rowcount = 1;
+}else{
+	viewScope.rowcount = viewScope.rowcount + 1;
+}
+!thisRowData.isCategory()}]]></xp:this.rendered>
 						<xp:image styleClass="img-rounded pull-left"
 							url="#{javascript:thisRowData.getColumnValue(compositeData.photocolumn)}">
 							<xp:this.rendered><![CDATA[#{javascript:if (compositeData.photocolumn != null && compositeData.photocolumn != ""){
@@ -155,7 +155,8 @@ return out;}]]></xp:this.styleClass>
 }}]]></xp:this.rendered>
 						</xp:image>
 
-						<xp:text id="label" tagName="h4" styleClass="list-group-item-heading"
+						<xp:text id="label" tagName="h4"
+							styleClass="list-group-item-heading"
 							value="#{javascript:thisRowData.getColumnValue(compositeData.summarycolumn);}">
 						</xp:text>
 						<xp:text tagName="p" id="label1">
