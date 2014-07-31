@@ -180,8 +180,7 @@ var loadmoreloading = false;
 var loadedurls = [];
 unp.loadmore = function(dbName, viewName, summarycol, detailcol, category,
 		xpage, refreshmethod, photocol, ajaxload, target) {
-	if (($('.searchbox').val() == "" || $('.localsearchbox').val() == "")
-			&& !loadmoreloading) {
+	if (($('.searchbox').val() == "" || $('.localsearchbox').val() == ""  || ($('.searchbox').length == 0 && $('.localsearchbox').length == 0)) && !loadmoreloading) {
 		loadmoreloading == true;
 		// try {
 		$(".loadmorelink").hide();

@@ -32,7 +32,8 @@
 					</div>
 					<div class="col-xs-3">
 						<xp:panel id="addlink" tagName="a"
-							styleClass="btn btn-primary btn-block">
+							styleClass="btn btn-primary btn-block"
+							rendered="#{javascript:!isEmpty(compositeData.newlink)}">
 							<xp:this.attrs>
 								<xp:attr name="onclick">
 									<xp:this.value><![CDATA[#{javascript:"unp.newDocument('" + compositeData.newlink + "')"}]]></xp:this.value>
@@ -167,10 +168,6 @@ return out;}]]></xp:this.styleClass>
 						</xp:text>
 					</xp:panel>
 				</xp:repeat>
-				<br />
-				<br />
-				<br />
-
 			</div>
 			<div class="panel-footer">
 				<div class="summaryDataRow"></div>
