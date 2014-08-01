@@ -8,20 +8,19 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<xp:panel id="okbutton" tagName="a"
-						styleClass="btn btn-success pull-right">
-						<xp:this.attrs>
-							<xp:attr name="data-dismiss"
-								value="modal">
-							</xp:attr>
-							<xp:attr name="href"
-								value="#">
-							</xp:attr>
-						</xp:this.attrs>
-						OK
-					</xp:panel>
-					<xp:text id="title" tagName="h3"
-						styleClass="modal-title"
+					<div class="btn-group pull-right">
+						<xp:panel id="okbutton" tagName="a"
+							styleClass="btn btn-success">
+							<xp:this.attrs>
+								<xp:attr name="data-dismiss" value="modal">
+								</xp:attr>
+								<xp:attr name="href" value="#">
+								</xp:attr>
+							</xp:this.attrs>
+							OK
+						</xp:panel>
+					</div>
+					<xp:text id="title" tagName="h3" styleClass="modal-title"
 						value="#{javascript:compositeData.title}">
 					</xp:text>
 				</div>

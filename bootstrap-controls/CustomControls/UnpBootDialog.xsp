@@ -8,31 +8,30 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button class="btn btn-danger pull-left"
-						data-dismiss="modal">
-						Cancel
+					<div class="btn-group pull-left">
+						<button class="btn btn-danger" data-dismiss="modal">
+							Cancel
 					</button>
-					<xp:panel id="okbutton" tagName="a"
-						styleClass="btn btn-success pull-right">
-						<xp:this.attrs>
-							<xp:attr name="onclick">
-								<xp:this.value><![CDATA[#{javascript:var out = "";
+					</div>
+					<div class="btn-group pull-right">
+						<xp:panel id="okbutton" tagName="a" styleClass="btn btn-success">
+							<xp:this.attrs>
+								<xp:attr name="onclick">
+									<xp:this.value><![CDATA[#{javascript:var out = "";
 if (compositeData.callback){
 	out += compositeData.callback + "(); "
 }
 return out;}]]></xp:this.value>
-							</xp:attr>
-							<xp:attr name="data-dismiss"
-								value="modal">
-							</xp:attr>
-							<xp:attr name="href"
-								value="#">
-							</xp:attr>
-						</xp:this.attrs>
-						OK
-					</xp:panel>
-					<xp:text id="title" tagName="h3"
-						styleClass="modal-title"
+								</xp:attr>
+								<xp:attr name="data-dismiss" value="modal">
+								</xp:attr>
+								<xp:attr name="href" value="#">
+								</xp:attr>
+							</xp:this.attrs>
+							OK
+						</xp:panel>
+					</div>
+					<xp:text id="title" tagName="h3" styleClass="modal-title"
 						value="#{javascript:compositeData.title}">
 					</xp:text>
 				</div>
@@ -40,9 +39,9 @@ return out;}]]></xp:this.value>
 					<xp:callback facetName="facet_1" id="callback1"></xp:callback>
 				</div>
 			</div>
-			<xp:panel id="footer" styleClass="modal-footer" rendered="#{javascript:!isEmpty(compositeData.footertext)}">
-				<xp:text id="footertext" tagName="small"
-					styleClass="pull-left">
+			<xp:panel id="footer" styleClass="modal-footer"
+				rendered="#{javascript:!isEmpty(compositeData.footertext)}">
+				<xp:text id="footertext" tagName="small" styleClass="pull-left">
 					<xp:this.value><![CDATA[#{javascript:var text = compositeData.footertext;
 if (isEmpty(text)){
 	text = " ";

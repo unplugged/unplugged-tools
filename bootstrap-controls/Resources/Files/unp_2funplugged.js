@@ -97,15 +97,20 @@ $(window).load( function() {
 		//highlight first list group option (if non active yet)
 		if ($('[expand-first]').length == 0 || $('[expand-first="yes"]').length > 0){
 			if ( $('.list-group a.active').length == 0 ) {
-				$('.list-group a').first().click();
+				if (!bootcards.isXS()){
+					$('.list-group a').first().click();
+				}
 			}
 		}
 	});
 
 unp.highlightCurrentPage = function(){
 	var href = window.location.href;
+	if (unpluggedserver){
+		href = href.replace('.nsf', '.unp');
+	}
 	//Deal with footer links
-	$("navbar-fixed-bottom a").each(function(){
+	$(".navbar-fixed-bottom a").each(function(){
 		if (href.indexOf($(this).attr('href')) > -1){
 			$(this).addClass('active')
 		}
