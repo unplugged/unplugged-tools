@@ -79,3 +79,7 @@ span.deleteicon span:after {
 .bootcards-file .list-group-item:first-child {
 	padding-left: 0px;
 }
+
+#list, #doccontent {
+	padding-bottom: 100px;
+}

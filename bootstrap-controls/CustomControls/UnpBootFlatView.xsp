@@ -61,8 +61,8 @@
 + "&summarycol=" + compositeData.summarycolumn + "&detailcol="
 + compositeData.detailcolumn + "&photocol="
 + compositeData.photocolumn + "&xpage=" + compositeData.xpagedoc + "&dbName="
-+ compositeData.dbname + "&refreshmethod=" + compositeData.refreshmethod + "&start=0"
-+ "&ajaxload=" + compositeData.ajaxload + "&target=" + compositeData.loaddocumenttarget;}]]></xp:this.value>
++ compositeData.dbname + "&refreshmethod=pull&start=0"
++ "&ajaxload=" + compositeData.ajaxload + "&target=doccontent";}]]></xp:this.value>
 										</xp:attr>
 									</xp:this.attrs>
 									<i class="fa fa-search"></i>
@@ -119,7 +119,7 @@ if (!isEmpty(compositeData.xpagedocdbname)){
 }
 var url = dbPath + "/" + compositeData.xpagedoc + "?action=openDocument&documentId=" + thisRowData.getUniversalID();
 if (compositeData.ajaxload != "No"){
-	return "unp.openDocument('" + url + "', '" + compositeData.loaddocumenttarget + "', this);"
+	return "unp.openDocument('" + url + "', 'doccontent', this);"
 }else{
 	return "document.location.href='" + url + "'";
 }
@@ -173,8 +173,7 @@ return out;}]]></xp:this.styleClass>
 			<div class="panel-footer">
 				<div class="summaryDataRow"></div>
 				<xp:div id="pullUpHolder" styleClass="pullupholder">
-					<xp:this.rendered><![CDATA[#{javascript:
-					compositeData.refreshmethod == "pull" && viewScope.rowcount >= compositeData.numberofrows}]]></xp:this.rendered>
+					<xp:this.rendered><![CDATA[#{javascript:viewScope.rowcount >= compositeData.numberofrows}]]></xp:this.rendered>
 					<div id="pullUp">
 						<span class="pullUpIcon"></span>
 						<span class="pullUpLabel">
@@ -183,8 +182,8 @@ return out;}]]></xp:this.styleClass>
 					</div>
 				</xp:div>
 				<xp:div id="loadmorelink">
-					<xp:this.rendered><![CDATA[#{javascript:compositeData.refreshmethod != "none" && viewScope.rowcount >= compositeData.numberofrows}]]></xp:this.rendered>
-					<xp:this.styleClass><![CDATA[#{javascript:if (compositeData.refreshmethod != "button" && applicationScope.unpluggedserver == true){
+					<xp:this.rendered><![CDATA[#{javascript:viewScope.rowcount >= compositeData.numberofrows}]]></xp:this.rendered>
+					<xp:this.styleClass><![CDATA[#{javascript:if (applicationScope.unpluggedserver == true){
 	return "loadmorelink hidden";
 }else{
 	return "loadmorelink";
@@ -193,7 +192,7 @@ return out;}]]></xp:this.styleClass>
 						styleClass="loadmorebutton btn">
 						<xp:this.attrs>
 							<xp:attr name="onclick">
-								<xp:this.value><![CDATA[#{javascript:"unp.loadmore('" + compositeData.dbname + "', '" + compositeData.viewname + "', '" + compositeData.summarycolumn + "', '" + compositeData.detailcolumn + "', '" + compositeData.categoryfilter + "', '" + compositeData.xpagedoc + "', '" + compositeData.refreshmethod + "', '" + compositeData.photocolumn + "', '" + compositeData.ajaxload + "', '" + compositeData.loaddocumenttarget + "')"}]]></xp:this.value>
+								<xp:this.value><![CDATA[#{javascript:"unp.loadmore('" + compositeData.dbname + "', '" + compositeData.viewname + "', '" + compositeData.summarycolumn + "', '" + compositeData.detailcolumn + "', '" + compositeData.categoryfilter + "', '" + compositeData.xpagedoc + "', 'pull', '" + compositeData.photocolumn + "', '" + compositeData.ajaxload + "', 'doccontent')"}]]></xp:this.value>
 							</xp:attr>
 						</xp:this.attrs>
 					</xp:button>
@@ -202,7 +201,7 @@ return out;}]]></xp:this.styleClass>
 					styleClass="clearsearchbutton btn" style="display: none;">
 					<xp:this.attrs>
 						<xp:attr name="onclick">
-							<xp:this.value><![CDATA[#{javascript:"unp.clearsearch('" + compositeData.dbname + "', '" + compositeData.viewname + "', '" + compositeData.summarycolumn + "', '" + compositeData.detailcolumn + "', '" + compositeData.categoryfilter + "', '" + compositeData.xpagedoc + "', '" + compositeData.refreshmethod + "', '" + compositeData.photocolumn + "', '" + compositeData.ajaxload + "', '" + compositeData.loaddocumenttarget + "')"}]]></xp:this.value>
+							<xp:this.value><![CDATA[#{javascript:"unp.clearsearch('" + compositeData.dbname + "', '" + compositeData.viewname + "', '" + compositeData.summarycolumn + "', '" + compositeData.detailcolumn + "', '" + compositeData.categoryfilter + "', '" + compositeData.xpagedoc + "', 'pull', '" + compositeData.photocolumn + "', '" + compositeData.ajaxload + "', 'doccontent')"}]]></xp:this.value>
 						</xp:attr>
 					</xp:this.attrs>
 				</xp:button>

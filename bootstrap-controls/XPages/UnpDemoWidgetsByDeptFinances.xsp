@@ -7,9 +7,9 @@
 		<div class="row fullheightrow">
 			<unp:UnpBootFlatView title="Finance Employees"
 				summarycolumn="Name" viewname="EmployeesCatByDept" numberofrows="20"
-				refreshmethod="pull" ajaxload="Yes" loaddocumenttarget="doccontent"
+				ajaxload="Yes"
 				detailcolumn="DOB" xpagedoc="UnpDemoFlatViewCategory.xsp"
-				newdatatarget="#editModal" newlink="UnpDemoEmployeeEdit.xsp"
+				newlink="UnpDemoEmployeeEdit.xsp"
 				categoryfilter="Finances">
 			</unp:UnpBootFlatView>
 			<div id="doccontent"

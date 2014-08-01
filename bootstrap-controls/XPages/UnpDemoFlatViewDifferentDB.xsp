@@ -8,9 +8,9 @@
 		<div class="row fullheightrow">
 			<unp:UnpBootFlatView title="Teamroom By Date"
 				summarycolumn="Topic" viewname="(UnpDocumentsByDate)" numberofrows="20"
-				refreshmethod="pull" ajaxload="Yes" loaddocumenttarget="doccontent"
+				ajaxload="Yes"
 				detailcolumn="Categories" xpagedoc="UnpDemoFlatViewDifferentDB.xsp"
-				newdatatarget="#editModal" dbname="teamstudio/widgets/Teamroom.nsf"
+				dbname="teamstudio/widgets/Teamroom.nsf"
 				searchlocal="yes">
 			</unp:UnpBootFlatView>
 			<div id="doccontent" class="col-sm-7 bootcards-cards hidden-xs">

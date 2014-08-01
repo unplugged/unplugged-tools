@@ -596,7 +596,8 @@ unp.doflatviewscroll = function() {
 		pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
 		if (pullUpEl.className.match('flip')) {
 			pullUpEl.className = 'loading';
-			pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';
+			pullUpEl.querySelector('.pullUpLabel').innerHTML = '';
+			$(".pullUpLabel").addClass('fa fa-spinner fa-spin');
 			$(".loadmorebutton").click();
 		}
 	}
