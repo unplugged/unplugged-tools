@@ -124,7 +124,9 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<xp:label value="Mobile Enabled?" id="mobilelabel" for="mobileenabled" styleClass="col-xs-4 control-label"></xp:label>
+					<xp:label value="Mobile Enabled?" id="mobilelabel" for="mobileenabled"
+						styleClass="col-xs-4 control-label">
+					</xp:label>
 					<div class="col-xs-8">
 						<div class="switch">
 							<xp:checkBox checkedValue="on" uncheckedValue="off"
@@ -161,26 +163,25 @@
 				<div class="form-group">
 					<xp:label value="Checkbox" for="checkbox" styleClass="col-xs-4 control-label"></xp:label>
 					<div class="col-xs-8">
-						<div class="switch">
-							<xp:checkBox text="aaaa" id="checkbox" checkedValue="aaaa"
-								uncheckedValue="xxxx" value="#{docedit.checkbox}">
-								<xp:this.attrs>
-									<xp:attr name="uncheckedValue" value="xxxx">
-									</xp:attr>
-									<xp:attr name="checkedValue" value="aaaa">
-									</xp:attr>
-								</xp:this.attrs>
-							</xp:checkBox>
-						</div>
+						<xp:checkBox text="aaaa" id="checkbox" checkedValue="aaaa"
+							uncheckedValue="xxxx" value="#{docedit.checkbox}">
+							<xp:this.attrs>
+								<xp:attr name="uncheckedValue" value="xxxx">
+								</xp:attr>
+								<xp:attr name="checkedValue" value="aaaa">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:checkBox>
 					</div>
 				</div>
+
 				<div class="form-group">
 					<xp:label value="Details" id="detailslabel" for="description"
 						styleClass="col-xs-4 control-label">
 					</xp:label>
 					<div class="col-xs-8">
-						<xp:inputTextarea id="description" styleClass="form-control"
-							value="#{docedit.Description}">
+						<xp:inputTextarea id="description"
+							value="#{docedit.description}">
 						</xp:inputTextarea>
 					</div>
 				</div>

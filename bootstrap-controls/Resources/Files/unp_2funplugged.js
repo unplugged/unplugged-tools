@@ -152,7 +152,7 @@ unp.isIOS = function() {
 }
 
 unp.initRichText = function() {
-	// Placeholder for future improvements
+	//Ready for future development
 }
 
 unp.htmlDecode = function(input) {
