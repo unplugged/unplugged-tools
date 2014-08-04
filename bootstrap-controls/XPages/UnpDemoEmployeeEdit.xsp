@@ -180,9 +180,9 @@
 						styleClass="col-xs-4 control-label">
 					</xp:label>
 					<div class="col-xs-8">
-						<xp:inputTextarea id="description"
-							value="#{docedit.description}">
-						</xp:inputTextarea>
+						<unp:UnpBootTypographyEdit fieldname="description">
+							
+						</unp:UnpBootTypographyEdit>
 					</div>
 				</div>
 			</xp:panel>

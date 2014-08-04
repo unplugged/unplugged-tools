@@ -157,7 +157,21 @@ unp.isIOS = function() {
 }
 
 unp.initRichText = function() {
-	//Ready for future development
+	if ($("#editor-container").length > 0){
+	 var editor = new Quill('#editor-container', {
+		modules: {
+		 'toolbar': { container: '#formatting-container' },
+		 'image-tooltip': false,
+		 'link-tooltip': false
+	    }
+	 });
+	 editor.on('selection-change', function(range) {
+	 });
+	 editor.on('text-change', function(delta, source) {
+		 $(".richtextsourcefield").val(editor.getHTML());
+	 });
+	 editor.setHTML($(".richtextsourcefield").val());
+	}
 }
 
 unp.htmlDecode = function(input) {
@@ -381,6 +395,12 @@ unp.goback = function() {
 
 unp.saveDocument = function(formid, unid, viewxpagename, formname, parentunid, dbname) {
 	var data = $("#editModal :input").serialize();
+	$(".richtextsourcefield").each(function(){
+		var source = $(this);
+		var destfieldname = source.attr("fieldname");
+		var richtext = encodeURIComponent($(this).val());
+		data += "&richtext:" + destfieldname + "=" + richtext; 
+	})
 	$('#editModal input[type=checkbox]').each( function() {
 		var val;
 		if (!this.checked) {
