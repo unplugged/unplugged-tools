@@ -5,7 +5,7 @@
 	<xc:widgetsheader></xc:widgetsheader>
 	<div id="main" class="container">
 		<div class="row fullheightrow">
-			<unp:UnpBootFlatView title="Employees" summarycolumn="Name"
+			<unp:UnpBootFlatView title="Employees (Partial)" summarycolumn="Name"
 				viewname="Employees" numberofrows="20"
 				ajaxload="Yes" detailcolumn="DOB"
 				xpagedoc="UnpDemoWidgetsEmployeesNoIcons.xsp"

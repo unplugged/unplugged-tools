@@ -44,9 +44,10 @@
 						</xp:panel>
 					</xp:repeat>
 
-					<xp:panel id="homenavitem" tagName="li"
-						rendered="#{javascript:!isDesktop()}">
-						<xp:link escape="true" text="Home" value="/" id="homenavitemlink">
+					<xp:panel id="homenavitem" tagName="li">
+						<xp:this.rendered><![CDATA[#{javascript:!isDesktop() && isUnpluggedServer();}]]></xp:this.rendered>
+						<xp:link escape="true" text="Home" value="/unpws.unp/"
+							id="homenavitemlink">
 							<i class="fa fa-home"></i>
 						</xp:link>
 					</xp:panel>
