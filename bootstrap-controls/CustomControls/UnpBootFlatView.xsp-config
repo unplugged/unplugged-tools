@@ -11,6 +11,7 @@
     <composite-extension>
       <designer-extension>
         <in-palette>true</in-palette>
+        <category>Unplugged</category>
       </designer-extension>
     </composite-extension>
     <property>
@@ -19,10 +20,6 @@
     </property>
     <property>
       <property-name>newlink</property-name>
-      <property-class>string</property-class>
-    </property>
-    <property>
-      <property-name>newdatatarget</property-name>
       <property-class>string</property-class>
     </property>
     <property>
@@ -66,10 +63,6 @@
       <property-class>string</property-class>
     </property>
     <property>
-      <property-name>refreshmethod</property-name>
-      <property-class>string</property-class>
-    </property>
-    <property>
       <property-name>enableazpicker</property-name>
       <property-class>string</property-class>
     </property>
@@ -79,10 +72,6 @@
     </property>
     <property>
       <property-name>ajaxload</property-name>
-      <property-class>string</property-class>
-    </property>
-    <property>
-      <property-name>loaddocumenttarget</property-name>
       <property-class>string</property-class>
     </property>
     <property>

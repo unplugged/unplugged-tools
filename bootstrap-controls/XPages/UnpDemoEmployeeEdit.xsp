@@ -11,11 +11,14 @@
 						value="Name"></xp:label>
 					<div class="col-xs-8">
 						<xp:inputText id="name" value="#{docedit.name}"
-							styleClass="form-control required deletable">
+							styleClass="form-control required">
 							<xp:this.attrs>
 								<xp:attr name="placeholder" value="Name"></xp:attr>
 							</xp:this.attrs>
 						</xp:inputText>
+						<a href="" class="bootcards-clearinput">
+							<i class="fa fa-lg fa-times-circle"></i>
+						</a>
 					</div>
 				</div>
 				<div class="form-group">
@@ -43,8 +46,11 @@
 					</xp:label>
 					<div class="col-xs-8">
 						<xp:inputText id="email" value="#{docedit.Email}"
-							type="email" styleClass="form-control deletable">
+							type="email" styleClass="form-control">
 						</xp:inputText>
+						<a href="" class="bootcards-clearinput">
+							<i class="fa fa-lg fa-times-circle"></i>
+						</a>
 					</div>
 				</div>
 				<div class="form-group">
@@ -105,8 +111,11 @@
 					</xp:label>
 					<div class="col-xs-8">
 						<xp:inputText id="manager" value="#{docedit.Manager}"
-							styleClass="form-control deletable">
+							styleClass="form-control">
 						</xp:inputText>
+						<a href="" class="bootcards-clearinput">
+							<i class="fa fa-lg fa-times-circle"></i>
+						</a>
 					</div>
 				</div>
 				<div class="form-group">
@@ -124,12 +133,20 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<xp:label value="Mobile Enabled?" id="mobilelabel" for="mobileenabled" styleClass="col-xs-4 control-label"></xp:label>
+					<xp:label value="Mobile Enabled?" id="mobilelabel" for="mobileenabled"
+						styleClass="col-xs-4 control-label">
+					</xp:label>
 					<div class="col-xs-8">
-						<div class="switch">
-							<xp:checkBox checkedValue="on" uncheckedValue="off"
-								value="#{docedit.mobileenabled" required="false" id="mobileenabled"></xp:checkBox>
-						</div>
+						<xp:panel id="toggle">
+							<xp:this.styleClass><![CDATA[#{javascript:var out = "bootcards-toggle";
+if (docedit.getItemValueString('mobileenabled') == "on"){
+	out += " active";
+}
+return out;}]]></xp:this.styleClass>
+							<div class="bootcards-toggle-handle"></div>
+						</xp:panel>
+						<xp:checkBox checkedValue="on" uncheckedValue="off" style="display: none;"
+							value="#{docedit.mobileenabled}" required="false" id="mobileenabled"></xp:checkBox>
 					</div>
 				</div>
 				<div class="form-group">
@@ -161,27 +178,26 @@
 				<div class="form-group">
 					<xp:label value="Checkbox" for="checkbox" styleClass="col-xs-4 control-label"></xp:label>
 					<div class="col-xs-8">
-						<div class="switch">
-							<xp:checkBox text="aaaa" id="checkbox" checkedValue="aaaa"
-								uncheckedValue="xxxx" value="#{docedit.checkbox}">
-								<xp:this.attrs>
-									<xp:attr name="uncheckedValue" value="xxxx">
-									</xp:attr>
-									<xp:attr name="checkedValue" value="aaaa">
-									</xp:attr>
-								</xp:this.attrs>
-							</xp:checkBox>
-						</div>
+						<xp:checkBox text="aaaa" id="checkbox" checkedValue="aaaa"
+							uncheckedValue="xxxx" value="#{docedit.checkbox}">
+							<xp:this.attrs>
+								<xp:attr name="uncheckedValue" value="xxxx">
+								</xp:attr>
+								<xp:attr name="checkedValue" value="aaaa">
+								</xp:attr>
+							</xp:this.attrs>
+						</xp:checkBox>
 					</div>
 				</div>
+
 				<div class="form-group">
 					<xp:label value="Details" id="detailslabel" for="description"
 						styleClass="col-xs-4 control-label">
 					</xp:label>
 					<div class="col-xs-8">
-						<xp:inputTextarea id="description" styleClass="form-control"
-							value="#{docedit.Description}">
-						</xp:inputTextarea>
+						<unp:UnpBootTypographyEdit fieldname="description">
+
+						</unp:UnpBootTypographyEdit>
 					</div>
 				</div>
 			</xp:panel>
