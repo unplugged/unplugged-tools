@@ -123,7 +123,9 @@ if (isEmpty(compositeData.categoryfilter)){
 }
 viewScope.categorycount = list.length;
 return list;}]]></xp:this.value>
-					<xp:panel tagName="a" styleClass="list-group-item list-group-item-info">
+					<xp:text tagName="a"
+						styleClass="list-group-item bootcards-list-subheading collapsed"
+						value="#{javascript:thisRowData}">
 						<xp:this.attrs>
 							<xp:attr name="onClick">
 								<xp:this.value><![CDATA[#{javascript:var datacol = compositeData.dataColumn;
@@ -141,10 +143,7 @@ if (isEmpty(compositeData.categoryfilter)){
 }}]]></xp:this.value>
 							</xp:attr>
 						</xp:this.attrs>
-						<xp:text escape="true" tagName="h4" id="computedField2"
-							value="#{thisRowData}">
-						</xp:text>
-					</xp:panel>
+					</xp:text>
 				</xp:repeat>
 				<br />
 				<br />

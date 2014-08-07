@@ -18,8 +18,7 @@ $(window).bind(
 		"popstate",
 		function() {
 			if (!unp._firstLoad) {
-				unp.loadPage(location.href + " #contentwrapper", 'content',
-						null, false, false);
+				
 			}
 		});
 
@@ -87,10 +86,13 @@ $(window).load( function() {
 
 		unp.initSearch();
 		unp.highlightCurrentPage();
+		unp.initCalendar();
+		unp.initNavigator();
 		$(document).ajaxStop( function() {
 			unp.initRichText();
 			unp.initReaderButtons();
 			unp.highlightCurrentPage();
+			unp.initCalendar();
 		});
 		
 		//Open first item in flat view if necessary
@@ -120,6 +122,14 @@ unp.highlightCurrentPage = function(){
 		if (href.indexOf($(this).attr('href')) > -1){
 			$(this).parent().addClass('active')
 		}
+	})
+}
+
+unp.initNavigator = function(){
+	$('[data-toggle="collapse"]').click(function(){
+		$(this).next().toggleClass('in');
+		//$(this).find("i").toggleClass('fa-chevron-circle-right');
+		//$(this).find("i").toggleClass('fa-chevron-circle-down');
 	})
 }
 
@@ -193,6 +203,7 @@ window.addEventListener('orientationchange', function() {
 
 unp.changeorientation = function() {
 	unp.initiscroll();
+	unp.initCalendar();
 }
 
 unp.allowFormsInIscroll = function() {
@@ -223,7 +234,7 @@ unp.loadmore = function(dbName, viewName, summarycol, detailcol, category,
 		$(".loadmorelink").hide();
 		$("#loadmorespinner").show();
 		setTimeout("unp.stopViewSpinner()", 5000);
-		var itemlist = $("#list .list-group a");
+		var itemlist = $("#list .list-group .list-group-item");
 		var pos = itemlist.length;
 		// console.log('Pos = ' + pos);
 		var thisArea = $(".summaryDataRow");
@@ -249,7 +260,7 @@ unp.loadmore = function(dbName, viewName, summarycol, detailcol, category,
 					// console.log('Adding ' + $('.summaryDataRow a').length + '
 					// items to list');
 					$("#list .panel .list-group ").append(
-							$(".summaryDataRow a"));
+							$(".summaryDataRow .list-group-item"));
 				}
 				if ($(".summaryDataRow").text().indexOf("NOMORERECORDS") > -1) {
 					// console.log('Reached end of view with ' + $("#list
@@ -351,7 +362,8 @@ unp.editDocument = function(xpage, unid){
 		unp.initDeleteable();
 		unp.initAutoComplete();
 		unp.initRichText();
-
+		unp.initToggle();
+		unp.initDates();
 	});
 	return false;
 }
@@ -364,7 +376,8 @@ unp.newDocument = function(xpage){
 		unp.initDeleteable();
 		unp.initAutoComplete();
 		unp.initRichText();
-
+		unp.initToggle();
+		unp.initDate();
 	});
 }
 
@@ -444,6 +457,7 @@ unp.saveDocument = function(formid, unid, viewxpagename, formname, parentunid, d
 						"doccontent");
 				unp.initiscroll();
 				$('#editModal').modal('hide');
+				unp.refreshCalendar();
 			} else {
 				alert(response);
 			}
@@ -532,19 +546,30 @@ unp.openPage = function(url, target) {
 }
 
 unp.initDeleteable = function() {
-	try {
-		$('input.deletable').each(function(){
-			if (!$(this).parent().hasClass('deleteicon')){
-				$(this).wrap('<span class="deleteicon" />').after(
-					$('<span/>').click( function() {
-						$(this).prev('input').val('').focus();
-					})
-				);
-			}
-		})
-	} catch (e) {
+	$('.bootcards-clearinput').click(function(){
+		$(this).blur();
+		$(this).prev().val('');
+		$(this).prev().focus();
+	})
+}
 
-	}
+unp.initToggle = function(){
+	$('.bootcards-toggle').click(function(){
+		$(this).toggleClass('active');
+		var checkboxes = $(this).parent().find('input [type="checkbox"]');
+		if (checkboxes.length > 0){
+			checkboxes[0].prop("checked", !checkboxes[0].prop("checked"));
+		}
+	})
+}
+
+unp.initDates = function(){
+	//Now init datetime-local fields bloody Domino won't output correct format!
+	$('[datevalue]').each(function(){
+		var newval = moment(parseInt($(this).attr('datevalue'), 10)).format().substr(0, 16);
+		$(this).attr('value', newval);
+		$(this).attr('type', 'datetime-local');
+	})
 }
 
 unp.initAutoComplete = function() {
@@ -565,7 +590,7 @@ var scrollContent;
 var scrollMenu;
 unp.initiscroll = function() {
 	// Register the letter click events
-	$(".atozletter").click( function(event) {
+	$(".bootcards-az-picker a").click( function(event) {
 		event.stopPropagation();
 		if ($(this).hasClass("switchletterlist")) {
 			$(".atozpicker").toggle();
@@ -575,8 +600,6 @@ unp.initiscroll = function() {
 		}
 		return false;
 	});
-
-	// bouncefix.add(document.getElementById("list"));
 
 	if (unp.isIOS() || unp.isAndroid()) {
 		var navbarheight = 0;
@@ -629,30 +652,24 @@ unp.doflatviewscroll = function() {
 }
 
 unp.jumpToLetter = function(letterelement, event) {
-	$('.iscrollcontent').animate( {
+	$('#list').animate( {
 		scrollTop : 0
 	}, 0);
 	var letter = letterelement.text();
-	var list = $("li.categoryRowFixed").each( function() {
-		var summary = $(this).find("span").text();
+	var list = $("#list .list-group a").each( function() {
+		var summary = $(this).find("h4").text();
 		var firstletter = summary.substring(0, 1);
 		if (firstletter == letter) {
-			// console.log("we need to jump to " + firstletter
-			// + " because it's equal to " + letter);
-			$('.iscrollcontent').animate( {
+			$('#list').animate( {
 				scrollTop : $(this).offset().top - 60
-			}, 500);
+			}, 0);
 			return false;
 		} else if (firstletter > letter) {
-			// console.log("we need to jump to " + firstletter
-			// + " because it's greater than " + letter);
-			$('.iscrollcontent').animate( {
+			$('#list').animate( {
 				scrollTop : $(this).offset().top - 120
-			}, 500);
+			}, 0);
 			return false;
 		} else {
-			// console.log("we don't need to jump to " + firstletter
-			// + " because it's less than " + letter);
 		}
 	});
 }
@@ -680,7 +697,7 @@ unp.accordionLoadMore = function(obj, viewName, catName, xpage, dbname,
 				if ($(obj).hasClass('load-more')){
 					$(obj).remove();
 				}else{
-					$(obj).addClass('active');
+					//$(obj).addClass('active');
 				}
 			});
 
@@ -695,10 +712,10 @@ unp.accordionLoadMore = function(obj, viewName, catName, xpage, dbname,
 }
 
 unp.fetchDetails = function(obj, viewName, catName, xpage, dbname, photocol) {
-	if ($(obj).hasClass("active")) {
+	if (!$(obj).hasClass("collapsed")) {
 		//We want to collapse the current category
 		console.log('Collapsing rows...');
-		$(obj).removeClass("active");
+		$(obj).addClass("collapsed");
 		$('.data-row').remove();
 		$('.load-more').remove();
 		//Scroll to the top of the object
@@ -706,11 +723,12 @@ unp.fetchDetails = function(obj, viewName, catName, xpage, dbname, photocol) {
 	} else {
 		//We want to get a new category
 		//First make sure that all other categories are closed
-		$('.active').removeClass('active');
+		$('#list .list-group-item').addClass('collapsed');
+		$("#list .active").removeClass('active');
 		$('.data-row').remove();
 		$('.load-more').remove();
 		console.log('Getting category ' + catName);
-		$(obj).addClass('active');
+		$(obj).removeClass('collapsed');
 		$('#list').scrollTop($('#list').scrollTop() + $(obj).position().top);
 		unp.accordionLoadMore(obj, viewName, catName, xpage, dbname, photocol);
 	}
@@ -856,4 +874,70 @@ unp.dolocalsearch = function() {
 		$("#pullUp").removeClass("loading");
 	}
 	return false;
+}
+
+unp.initCalendar = function() {
+	try {
+		var calendaroptions = jQuery.parseJSON($('.calendarconfig').val());
+		var buttons = calendaroptions.headerbuttonsrighttablet;
+		var defaultView = calendaroptions.defaultviewtablet;
+		if ($(window).width() < 400){
+			buttons = calendaroptions.headerbuttonsrightphone;
+			defaultView = calendaroptions.defaultviewphone;
+		}
+
+		var url = 'UnpCalendarData.xsp?viewname=' + calendaroptions.viewname;
+		url += '&startdatefield=' + calendaroptions.startdatefield;
+		url += '&enddatefield=' + calendaroptions.enddatefield;
+		url += '&titlefield=' + calendaroptions.titlefield;
+		url += '&viewxpage=' + calendaroptions.viewxpage;
+		url += '&highlightfield=' + calendaroptions.highlightfield;
+		url += '&highlighttest=' + calendaroptions.highlighttest;
+		url += '&filter=' + calendaroptions.filter;
+		url += '&catfield=' + calendaroptions.catfield;
+		url += '&dbname=' + calendaroptions.dbname;
+		$('#calendar').fullCalendar( {
+			header : {
+				left : calendaroptions.headerbuttonsleft,
+				center : 'title',
+				right : buttons
+			}, 
+			defaultView: defaultView, 
+			events: url,
+			timezone: 'local', 
+			titleFormat: {
+			    month: 'MMMM YYYY',
+			    week: "MMM D",
+			    day: 'MMM DD'
+			}, 
+			viewRender: function(view){
+				var h;
+				if (view.name.indexOf('agenda') > -1){
+					h = 2500;
+				}else{
+					h = $(window).height() - 50;
+				}
+				//console.log("Setting height to: " + h);
+				$('#calendar').fullCalendar('option', 'height', h);
+			}
+		});
+		$('.fc-button').each(function(){
+			$(this).removeClass();
+			$(this).addClass('btn btn-default');
+		})
+		$('.fc-icon-left-single-arrow').parent().addClass('fa fa-arrow-left');
+		$('.fc-icon-left-single-arrow').remove();
+		$('.fc-icon-right-single-arrow').parent().addClass('fa fa-arrow-right');
+		$('.fc-icon-right-single-arrow').remove();
+	} catch (e) {
+
+	}
+}
+
+unp.refreshCalendar = function(){
+	try{
+		$('#calendar').fullCalendar('refetchEvents');
+	}catch(e){
+		
+	}
 }

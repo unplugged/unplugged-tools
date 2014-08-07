@@ -63,7 +63,7 @@ try{
 			var key = keys.next();
 			resp = ("Processing " + key);
 			var value = unescape(param.get(key));
-			if (dateformat.test(value)){
+			if (dateformat.test(value) && fieldname.indexOf("datetime_") == -1){
 				value = value.split("-");
 				value = session.createDateTime(@Date(parseInt(value[0], 10), parseInt(value[1], 10), parseInt(value[2], 10)));
 			}
@@ -103,6 +103,12 @@ try{
 					if (isNaN(value)){
 						value = 0;
 					}
+				}else if(fieldname.indexOf("datetime_") > -1){
+					fieldnames = fieldname.split("datetime_");
+					fieldname = fieldnames[fieldnames.length - 1]
+					var dateval = @Left(value, "T").split("-");
+					var timeval = @Right(value, "T").split(":");
+					value = session.createDateTime(@Date(parseInt(dateval[0], 10), parseInt(dateval[1], 10), parseInt(dateval[2], 10), parseInt(timeval[0]), parseInt(timeval[1], 10), 0));
 				}
 				doc.replaceItemValue(fieldname, value);
 				resp = (fieldname + ": " + value);

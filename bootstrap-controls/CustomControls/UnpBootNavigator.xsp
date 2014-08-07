@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div
+		class="navmenu navmenu-default navmenu-fixed-left offcanvas"
+		id="slideInMenu">
+		<ul class="nav navmenu-nav">
+			<xp:repeat value="#{javascript:compositeData.menuitems}"
+				var="menuitem" disableOutputTag="true">
+				<xp:panel id="litop" tagName="li">
+
+					<xp:this.styleClass><![CDATA[#{javascript:if (viewScope.litop){
+	viewScope.litop = viewScope.litop + 1
+}else{
+	viewScope.litop = 1;
+}
+"collapse litop" + viewScope.litop;}]]></xp:this.styleClass>
+					<xp:link text="#{javascript:menuitem.label}">
+						<xp:this.styleClass><![CDATA[#{javascript:if (menuitem.children){
+	return "collapsed bootcards-parent";
+}}]]></xp:this.styleClass>
+						<xp:this.value><![CDATA[#{javascript:if (menuitem.children){
+	return "#" + getClientId("collapse");
+}else{
+	return menuitem.url;
+}}]]></xp:this.value>
+						<xp:this.attrs>
+							<xp:attr name="data-toggle" value="collapse"
+								rendered="#{javascript:menuitem.children}">
+							</xp:attr>
+							<xp:attr name="data-parent"
+								rendered="#{javascript:menuitem.children}">
+								<xp:this.value><![CDATA[#{javascript:".litop" + viewScope.litop}]]></xp:this.value>
+							</xp:attr>
+						</xp:this.attrs>
+						<xp:panel id="toplevelicon" tagName="i">
+							<xp:this.styleClass><![CDATA[#{javascript:var out = "fa fa-lg fa-fw ";
+if (menuitem.children){
+	out += "fa-chevron-circle-right";
+}else{
+	out += menuitem.icon;
+}
+return out;}]]></xp:this.styleClass>
+						</xp:panel>
+					</xp:link>
+					<xp:panel id="collapse" styleClass="collapse"
+						rendered="#{javascript:menuitem.children}">
+						<ul class="nav navmenu-nav">
+							<xp:repeat id="children"
+								disableOutputTag="true" value="#{javascript:menuitem.children}"
+								var="child">
+								<xp:panel id="childitem" tagName="li"
+									rendered="#{javascript:!child.children}">
+									<xp:link id="childlink"
+										text="#{javascript:child.label}"
+										value="#{javascript:child.url}">
+										<xp:panel id="childicon"
+											tagName="i">
+											<xp:this.styleClass><![CDATA[#{javascript:"fa fa-lg fa-fw " + child.icon}]]></xp:this.styleClass>
+										</xp:panel>
+									</xp:link>
+								</xp:panel>
+								<xp:panel id="accordion2" tagName="li"
+									rendered="#{javascript:child.children}">
+									<xp:link id="collapselink"
+										styleClass="collapsed bootcards-parent"
+										text="#{javascript:child.label}">
+										<xp:this.attrs>
+											<xp:attr name="data-toggle"
+												value="collapse">
+											</xp:attr>
+										</xp:this.attrs>
+										<xp:this.value><![CDATA[#{javascript:"#" + getClientId("accordion2")}]]></xp:this.value>
+										<i
+											class="fa fa-lg fa-fw fa-chevron-circle-right">
+										</i>
+									</xp:link>
+									<xp:panel id="collapse2"
+										styleClass="collapse">
+										<ul class="nav navmenu-nav">
+											<xp:repeat
+												value="#{javascript:child.children}" var="grandchild">
+												<li>
+													<xp:link
+														id="grandchildlink" text="#{javascript:grandchild.label}"
+														value="#{javascript:grandchild.url}">
+														<xp:panel
+															id="grandchildicon" tagName="i">
+															<xp:this.styleClass><![CDATA[#{javascript:"fa fa-lg fa-fw " + grandchild.icon}]]></xp:this.styleClass>
+														</xp:panel>
+													</xp:link>
+												</li>
+											</xp:repeat>
+										</ul>
+									</xp:panel>
+								</xp:panel>
+							</xp:repeat>
+						</ul>
+					</xp:panel>
+				</xp:panel>
+			</xp:repeat>
+		</ul>
+	</div>
+</xp:view>

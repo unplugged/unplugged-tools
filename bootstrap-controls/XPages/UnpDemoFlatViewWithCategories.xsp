@@ -8,8 +8,8 @@
 			<unp:UnpBootFlatView title="Finance Employees"
 				summarycolumn="Name" viewname="EmployeesCatByDept" numberofrows="20"
 				ajaxload="Yes" detailcolumn="DOB"
-				xpagedoc="UnpDemoFlatViewCategory.xsp"
-				newlink="UnpDemoEmployeeEdit.xsp" categoryfilter="Finances"
+				xpagedoc="UnpDemoFlatViewWithCategories.xsp"
+				newlink="UnpDemoEmployeeEdit.xsp"
 				enableazpicker="yes">
 			</unp:UnpBootFlatView>
 			<div id="doccontent"

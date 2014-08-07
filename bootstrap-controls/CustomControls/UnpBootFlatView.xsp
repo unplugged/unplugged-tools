@@ -19,6 +19,23 @@
 		</xp:dominoView>
 	</xp:this.data>
 	<div class="col-sm-5 bootcards-list" id="list">
+		<xp:panel id="azpicker" styleClass="bootcards-az-picker"
+			tagName="ol">
+			<xp:this.rendered><![CDATA[#{javascript:compositeData.enableazpicker=="yes" && (isIOS() || isAndroid())}]]></xp:this.rendered>
+			<xp:repeat id="azlist" var="letter" disableOutputTag="true">
+				<xp:this.value><![CDATA[#{javascript:['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']}]]></xp:this.value>
+				<li>
+					<xp:text id="letter" tagName="a" value="#{javascript:letter}">
+						<xp:this.attrs>
+							<xp:attr name="href" value=""></xp:attr>
+						</xp:this.attrs>
+					</xp:text>
+				</li>
+			</xp:repeat>
+			<li>
+				<a href="">#</a>
+			</li>
+		</xp:panel>
 		<div class="panel panel-default">
 			<xp:panel tagName="div" id="title" styleClass="panel-heading">
 				<div class="row">
@@ -32,8 +49,7 @@
 					</div>
 					<div class="col-xs-3">
 						<xp:panel id="addlink" tagName="a"
-							styleClass="btn btn-primary btn-block"
-							rendered="#{javascript:!isEmpty(compositeData.newlink)}">
+							styleClass="btn btn-primary btn-block" rendered="#{javascript:!isEmpty(compositeData.newlink)}">
 							<xp:this.attrs>
 								<xp:attr name="onclick">
 									<xp:this.value><![CDATA[#{javascript:"unp.newDocument('" + compositeData.newlink + "')"}]]></xp:this.value>
@@ -96,16 +112,15 @@ if (compositeData.enableAZPicker == "yes"){
 }}]]></xp:this.rows>
 
 
-					<xp:panel tagName="a" id="datarowcategory" styleClass="list-group-item list-group-item-info"
+					<xp:text tagName="div" id="datarowcategory"
+						styleClass="list-group-item bootcards-list-subheading"
 						disableTheme="true" rendered="#{javascript:thisRowData.isCategory()}">
-						<xp:text>
-							<xp:this.value><![CDATA[#{javascript:var index = 0;
+						<xp:this.value><![CDATA[#{javascript:var index = 0;
 if (!isEmpty(compositeData.categoryindex)){
 	index = parseInt(compositeData.categoryindex, 10);
 }
 return thisRowData.getColumnValues().elementAt(index);}]]></xp:this.value>
-						</xp:text>
-					</xp:panel>
+					</xp:text>
 					<xp:panel tagName="a" id="datarow">
 						<xp:this.attrs>
 							<xp:attr name="onclick">
@@ -155,8 +170,7 @@ return out;}]]></xp:this.styleClass>
 }}]]></xp:this.rendered>
 						</xp:image>
 
-						<xp:text id="label" tagName="h4"
-							styleClass="list-group-item-heading"
+						<xp:text id="label" tagName="h4" styleClass="list-group-item-heading"
 							value="#{javascript:thisRowData.getColumnValue(compositeData.summarycolumn);}">
 						</xp:text>
 						<xp:text tagName="p" id="label1">
@@ -209,10 +223,11 @@ return out;}]]></xp:this.styleClass>
 		</div>
 	</div>
 	<!--  Modals -->
-	<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+	<div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+		aria-labelledby="editModal" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content"></div>
 		</div>
 	</div>
-	
+
 </xp:view>

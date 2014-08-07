@@ -46,7 +46,7 @@ if (start == ""){
 }else{
 	return 20;
 }}]]></xp:this.rows>
-			<xp:text escape="false" tagName="a" styleClass="list-group-item list-group-item-info"
+			<xp:text escape="false" tagName="div" styleClass="list-group-item bootcards-list-subheading"
 				disableTheme="true" rendered="#{javascript:thisRowData.isCategory()}"
 				value="#{javascript:thisRowData.getColumnValues().elementAt(0)}">
 			</xp:text>

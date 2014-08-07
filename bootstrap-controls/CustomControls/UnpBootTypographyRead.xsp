@@ -4,13 +4,11 @@
 	<div class="panel panel-default bootcards-richtext">
 		<div class="panel-heading">
 			<div class="pull-right btn-group">
-				<a href="#" class="btn btn-default" onclick="unp.increaseFontSize(this)">
-					<i class="fa fa-search-plus" />
-					Larger Text
+				<a href="#" class="btn btn-primary" onclick="unp.increaseFontSize(this)">
+					<i class="fa fa-lg fa-search-plus" />
 				</a>
-				<a href="#" class="btn btn-default" onclick="unp.decreaseFontSize(this)">
-					<i class="fa fa-search-minus" />
-					Smaller Text
+				<a href="#" class="btn btn-primary" onclick="unp.decreaseFontSize(this)">
+					<i class="fa fa-lg fa-search-minus" />
 				</a>
 			</div>
 			<xp:text id="rttitle" tagName="h3" styleClass="panel-title"
