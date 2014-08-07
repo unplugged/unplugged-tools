@@ -9,10 +9,10 @@
 							<xp:panel styleClass="panel" xp:key="facet_1">
 								<p style="padding: 40px;">
 									<input type="button" href='#' onclick="unp.openDialog('dialogPopup')"
-										class="button" value="Open Dialog">
-									</input>
+										class="button" value="Open Dialog" style="margin-top: 5px;">
+									</input> &#160;
 									<input type="button" href='#' onclick="unp.openDialog('alertPopup')"
-										class="button" value="Open Alert">
+										class="button" value="Open Alert" style="margin-top: 5px;">
 									</input>
 								</p>
 								<unp:unpAlert content="This is an alert"
