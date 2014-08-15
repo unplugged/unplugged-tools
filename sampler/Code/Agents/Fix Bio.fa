@@ -1,25 +1,55 @@
 <?xml version='1.0' encoding='utf-8'?>
-<agent name='Fix Bio' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
- replicaid='80257CD8002C2999' hide='v3' publicaccess='false' designerversion='8.5.3'>
-<noteinfo noteid='46e' unid='8CF2EA2A582743B280257CD8002C3436' sequence='2'>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='80257CD8002C2999'>
+<noteinfo noteid='19a' unid='8CF2EA2A582743B280257CD8002C3436' sequence='9'>
 <created><datetime dst='true'>20140514T090249,50+01</datetime></created>
-<modified><datetime dst='true'>20140514T090250,78+01</datetime></modified>
-<revised><datetime dst='true'>20140514T090250,77+01</datetime></revised>
-<lastaccessed><datetime dst='true'>20140514T090250,78+01</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20140514T090250,76+01</datetime></addedtofile></noteinfo>
+<modified><datetime dst='true'>20140815T090129,01+01</datetime></modified>
+<revised><datetime dst='true'>20140815T090129,00+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20140815T090129,01+01</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20140604T151718,41+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
-<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
-<designchange><datetime>20140217T104749,07+00</datetime></designchange>
-<trigger type='actionsmenu'/>
-<documentset type='selected'/><code event='action'><formula>FIELD Bio:=@If(Bio="&lt;p&gt;&lt;/p&gt;"; ""; Bio);
-SELECT @All</formula></code>
-<rundata processeddocs='503' exitcode='0'>
-<agentmodified><datetime>20140217T104749,10+00</datetime></agentmodified>
-<agentrun><datetime>20140217T104805,19+00</datetime></agentrun>
-<runlog>Started running agent 'Fix Bio' on 17/02/2014 10:48:04
-Running on selected documents: 503 total
-Found 503 document(s) that match search criteria
-503 document(s) were modified by formula
-Done running agent 'Fix Bio' on 17/02/2014 10:48:05
-</runlog></rundata></agent>
+<item name='$AssistAction_Ex' sign='true'>
+<rawitemdata type='14'>
+gQI=
+</rawitemdata></item>
+<item name='$AssistAction_Ex' sign='true'>
+<rawitemdata type='14'>
+gQI=
+</rawitemdata></item>
+<item name='$TITLE' sign='true'><text>Fix Bio</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$Restricted' sign='true'><number>1</number></item>
+<item name='$AssistVersion'><datetime dst='true'>20140815T090128,98+01</datetime></item>
+<item name='$AssistTrigger'><text>4</text></item>
+<item name='$AssistAction' sign='true'>
+<rawitemdata type='10'>
+gQKE/2wAAAAAAGIAYgADAD4AAwBCaW8ABQADAEJpbwABAAcAPHA+PC9wPgAKAq8AGgAKAAEAAACu
+ABAABQADAEJpbwCuAAQAtQMDAAcADgAIAAkxUzlTMTFTAAAIAGYAAwAHAAwABgAJMFJMMVM=
+</rawitemdata></item>
+<item name='$AssistAction_Ex' sign='true'>
+<rawitemdata type='14'>
+gQI=
+</rawitemdata></item>
+<item name='$AssistType' sign='true'><number>65426</number></item>
+<item name='$AssistFlags' sign='true'><text>sE</text></item>
+<item name='$AssistInfo' sign='true'>
+<rawitemdata type='11'>
+AQAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+</rawitemdata></item>
+<item name='$AssistQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAA
+</rawitemdata></item>
+<item name='$AssistLastRun' sign='true'>
+<rawitemdata type='400'>
+AAAAAAAAAAA=
+</rawitemdata></item>
+<item name='$AssistDocCount' sign='true'><number>0</number></item>
+<item name='$AssistRunInfo' summary='true'>
+<rawitemdata type='3'>
+BgABAAAACADaFgAAAAAAAAEAAAAAAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$Flags'><text>3f</text></item>
+<item name='$FlagsExt' sign='true'><text/></item></note>
 
