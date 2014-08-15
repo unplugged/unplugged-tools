@@ -58,6 +58,9 @@ $(window)
 
 					$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
 					unp.allowFormsInIscroll();
+					if (unp.isStockAndroid()){
+						$("#menuitems").css("position", "relative");
+					}
 
 					unp.initiscroll();
 					$("#menuPane").removeClass("onScreen")
@@ -159,6 +162,10 @@ unp.initHideFooter = function() {
 
 unp.isAndroid = function() {
 	return /android/i.test(navigator.userAgent.toLowerCase());
+}
+
+unp.isStockAndroid = function() {
+	return unp.isAndroid() && navigator.userAgent.toLowerCase().indexOf("chrome") == -1;
 }
 
 unp.initRichText = function() {
@@ -392,7 +399,7 @@ unp.toggleViewsMenu = function(forcehide) {
 		$("#menuPane").animate( {
 			"left" : "+=700px"
 		}, "fast", function() {
-			if (unp.isAndroid()) {
+			if (unp.isAndroid() && !unp.isStockAndroid()) {
 				$("#menuitems").css("position", "fixed");
 			}
 		});
